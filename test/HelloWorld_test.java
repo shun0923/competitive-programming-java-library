@@ -10,6 +10,6 @@ public class HelloWorld_test extends Main {
 
 	@Override
 	public void solve() {
-		System.out.println("Hello World");
+		System.out.println("HelloWorld");
 	}
 }
