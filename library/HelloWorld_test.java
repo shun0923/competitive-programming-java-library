@@ -2,6 +2,8 @@
 
 package library;
 
+import library.Util;
+
 public class HelloWorld_test extends Util {
 	public static void main(final String[] args) {
 		DEBUG = args.length > 0 && args[0].equals("-DEBUG");

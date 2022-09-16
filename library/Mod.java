@@ -1,6 +1,7 @@
 package library;
 
 import java.util.*;
+import library.Util;
 
 abstract class Mod {
 	public final long MOD;

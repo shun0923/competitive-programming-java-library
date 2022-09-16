@@ -2,6 +2,8 @@ package library;
 
 import java.util.*;
 import java.util.function.*;
+import library.FastInputStream;
+import library.FastOutputStream;
 
 abstract public class Util implements Runnable {
 	@Override
