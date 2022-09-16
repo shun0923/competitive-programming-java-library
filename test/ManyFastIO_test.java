@@ -3,11 +3,11 @@ package test;
 
 import library.Solver;
 
-public class ManyFastIO_Test extends Solver {
+public class ManyFastIO_test extends Solver {
 	public static void main(final String[] args) {
 		DEBUG = args.length > 0 && args[0].equals("-DEBUG");
 		Thread.setDefaultUncaughtExceptionHandler((t, e) -> { flush(); e.printStackTrace(); System.exit(1); });
-		new Thread(null, new ManyFastIO_Test(), "", 1 << 31).start();
+		new Thread(null, new ManyFastIO_test(), "", 1 << 31).start();
 	}
 
 	public void solve() {
