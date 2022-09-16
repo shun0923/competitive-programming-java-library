@@ -1,9 +1,9 @@
 // verification-helper: PROBLEM https://judge.yosupo.jp/problem/many_aplusb
 package test;
 
-import library.Solver;
+import library.Util;
 
-public class ManyFastIO_test extends Solver {
+public class ManyFastIO_test extends Util {
 	public static void main(final String[] args) {
 		DEBUG = args.length > 0 && args[0].equals("-DEBUG");
 		Thread.setDefaultUncaughtExceptionHandler((t, e) -> { flush(); e.printStackTrace(); System.exit(1); });
