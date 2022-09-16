@@ -3,16 +3,16 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/FastInputStream.java
       title: library/FastInputStream.java
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/FastOutputStream.java
       title: library/FastOutputStream.java
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/Mod.java
       title: library/Mod.java
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/Util.java
       title: library/Util.java
   verificationCategories:
@@ -21,13 +21,13 @@ data:
     - icon: ':x:'
       path: library/ArbitraryMod_test.java
       title: library/ArbitraryMod_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/FastIO_test.java
       title: library/FastIO_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/HelloWorld_test.java
       title: library/HelloWorld_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/ManyFastIO_test.java
       title: library/ManyFastIO_test.java
     - icon: ':x:'
