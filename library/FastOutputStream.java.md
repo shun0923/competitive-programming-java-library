@@ -1,29 +1,41 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
+  - icon: ':x:'
+    path: test/FastIO_test.java
+    title: test/FastIO_test.java
   - icon: ':heavy_check_mark:'
     path: test/HelloWorld_test.java
     title: test/HelloWorld_test.java
+  - icon: ':x:'
+    path: test/ManyFastIO_test.java
+    title: test/ManyFastIO_test.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/FastIO_test.java
+    title: test/FastIO_test.java
   - icon: ':heavy_check_mark:'
     path: test/HelloWorld_test.java
     title: test/HelloWorld_test.java
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/ManyFastIO_test.java
+    title: test/ManyFastIO_test.java
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -109,6 +121,8 @@ data:
     \ }\n\t}\n}"
   dependsOn:
   - test/HelloWorld_test.java
+  - test/ManyFastIO_test.java
+  - test/FastIO_test.java
   - library/FastInputStream.java
   - library/Solver.java
   isVerificationFile: false
@@ -116,10 +130,12 @@ data:
   requiredBy:
   - library/FastInputStream.java
   - library/Solver.java
-  timestamp: '2022-09-16 16:54:40+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-09-16 17:40:01+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/HelloWorld_test.java
+  - test/ManyFastIO_test.java
+  - test/FastIO_test.java
 documentation_of: library/FastOutputStream.java
 layout: document
 redirect_from:
