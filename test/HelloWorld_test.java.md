@@ -91,7 +91,7 @@ data:
   - library/FastInputStream.java
   - library/FastOutputStream.java
   - library/Mod.java
-  timestamp: '2022-09-16 20:12:31+09:00'
+  timestamp: '2022-09-16 20:39:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith:
   - test/ArbitraryMod_test.java

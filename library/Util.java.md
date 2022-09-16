@@ -66,41 +66,42 @@ data:
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/Util.java\n"
-  code: "package library;\n\nabstract class Util implements Runnable {\n\t@Override\n\
-    \tpublic void run() { solve(); flush(); }\n\n\tabstract public void solve();\n\
-    \n\tpublic static boolean DEBUG;\n\n\tprivate static final FastInputStream in\
-    \ = new FastInputStream(System.in);\n\tpublic static final String nline() { return\
-    \ in.nextLine(); }\n\tpublic static final String[] nline(final int n) { final\
-    \ String a[] = new String[n]; for(int i = 0; i < n; i ++) a[i] = nline(); return\
-    \ a; }\n\tpublic static final char nc() { return in.nextChar(); }\n\tpublic static\
-    \ final char[] nc(int n) {\n\t\tfinal String str = nline();\n\t\tif(n < 0) n =\
-    \ str.length();\n\t\tfinal char a[] = new char[n];\n\t\tfor(int i = 0; i < n;\
-    \ i ++) a[i] = str.charAt(i);\n\t\treturn a;\n\t}\n\tpublic static final char[][]\
-    \ nc(final int n, final int m) { final char a[][] = new char[n][m]; for(int i\
-    \ = 0; i < n; i ++) a[i] = nc(m); return a; }\n\tpublic static final boolean[]\
-    \ nb(int n, final char t) {\n\t\tfinal char c[] = nc(-1);\n\t\tif(n < 0) n = c.length;\n\
-    \t\tfinal boolean a[] = new boolean[n];\n\t\tfor(int i = 0; i < n; i ++) a[i]\
-    \ = c[i] == t;\n\t\treturn a;\n\t}\n\tpublic static final boolean[][] nb(final\
-    \ int n, final int m, final char t) { final boolean a[][] = new boolean[n][];\
-    \ for(int i = 0; i < n; i ++) a[i] = nb(m, t); return a; }\n\tpublic static final\
-    \ int ni() { return in.nextInt(); }\n\tpublic static final int[] ni(final int\
-    \ n) { final int a[] = new int[n]; for(int i = 0; i < n; i ++) a[i] = ni(); return\
-    \ a; }\n\tpublic static final int[][] ni(final int n, final int m) { final int\
-    \ a[][] = new int[n][]; for(int i = 0; i < n; i ++) a[i] = ni(m); return a; }\n\
-    \tpublic static final long nl() { return in.nextLong(); }\n\tpublic static final\
-    \ long[] nl(final int n) { final long a[] = new long[n]; for(int i = 0; i < n;\
-    \ i ++) a[i] = nl(); return a; }\n\tpublic static final long[][] nl(final int\
-    \ n, final int m) { final long a[][] = new long[n][]; for(int i = 0; i < n; i\
-    \ ++) a[i] = nl(m); return a; }\n\tpublic static final double nd() { return in.nextDouble();\
-    \ }\n\tpublic static final double[] nd(final int n) { final double a[] = new double[n];\
-    \ for(int i = 0; i < n; i ++) a[i] = nd(); return a; }\n\tpublic static final\
-    \ double[][] nd(final int n, final int m) { final double a[][] = new double[n][];\
-    \ for(int i = 0; i < n; i ++) a[i] = nd(m); return a; }\n\tpublic static final\
-    \ String ns() { return in.next(); }\n\tpublic static final String[] ns(final int\
-    \ n) { final String a[] = new String[n]; for(int i = 0; i < n; i ++) a[i] = ns();\
-    \ return a; }\n\tpublic static final String[][] ns(final int n, final int m) {\
-    \ final String a[][] = new String[n][]; for(int i = 0; i < n; i ++) a[i] = ns(m);\
-    \ return a; }\n\n\tprivate static final FastOutputStream out = new FastOutputStream(System.out);\n\
+  code: "package library;\n\nimport java.util.*;\nimport java.math.*;\n\nabstract\
+    \ class Util implements Runnable {\n\t@Override\n\tpublic void run() { solve();\
+    \ flush(); }\n\n\tabstract public void solve();\n\n\tpublic static boolean DEBUG;\n\
+    \n\tprivate static final FastInputStream in = new FastInputStream(System.in);\n\
+    \tpublic static final String nline() { return in.nextLine(); }\n\tpublic static\
+    \ final String[] nline(final int n) { final String a[] = new String[n]; for(int\
+    \ i = 0; i < n; i ++) a[i] = nline(); return a; }\n\tpublic static final char\
+    \ nc() { return in.nextChar(); }\n\tpublic static final char[] nc(int n) {\n\t\
+    \tfinal String str = nline();\n\t\tif(n < 0) n = str.length();\n\t\tfinal char\
+    \ a[] = new char[n];\n\t\tfor(int i = 0; i < n; i ++) a[i] = str.charAt(i);\n\t\
+    \treturn a;\n\t}\n\tpublic static final char[][] nc(final int n, final int m)\
+    \ { final char a[][] = new char[n][m]; for(int i = 0; i < n; i ++) a[i] = nc(m);\
+    \ return a; }\n\tpublic static final boolean[] nb(int n, final char t) {\n\t\t\
+    final char c[] = nc(-1);\n\t\tif(n < 0) n = c.length;\n\t\tfinal boolean a[] =\
+    \ new boolean[n];\n\t\tfor(int i = 0; i < n; i ++) a[i] = c[i] == t;\n\t\treturn\
+    \ a;\n\t}\n\tpublic static final boolean[][] nb(final int n, final int m, final\
+    \ char t) { final boolean a[][] = new boolean[n][]; for(int i = 0; i < n; i ++)\
+    \ a[i] = nb(m, t); return a; }\n\tpublic static final int ni() { return in.nextInt();\
+    \ }\n\tpublic static final int[] ni(final int n) { final int a[] = new int[n];\
+    \ for(int i = 0; i < n; i ++) a[i] = ni(); return a; }\n\tpublic static final\
+    \ int[][] ni(final int n, final int m) { final int a[][] = new int[n][]; for(int\
+    \ i = 0; i < n; i ++) a[i] = ni(m); return a; }\n\tpublic static final long nl()\
+    \ { return in.nextLong(); }\n\tpublic static final long[] nl(final int n) { final\
+    \ long a[] = new long[n]; for(int i = 0; i < n; i ++) a[i] = nl(); return a; }\n\
+    \tpublic static final long[][] nl(final int n, final int m) { final long a[][]\
+    \ = new long[n][]; for(int i = 0; i < n; i ++) a[i] = nl(m); return a; }\n\tpublic\
+    \ static final double nd() { return in.nextDouble(); }\n\tpublic static final\
+    \ double[] nd(final int n) { final double a[] = new double[n]; for(int i = 0;\
+    \ i < n; i ++) a[i] = nd(); return a; }\n\tpublic static final double[][] nd(final\
+    \ int n, final int m) { final double a[][] = new double[n][]; for(int i = 0; i\
+    \ < n; i ++) a[i] = nd(m); return a; }\n\tpublic static final String ns() { return\
+    \ in.next(); }\n\tpublic static final String[] ns(final int n) { final String\
+    \ a[] = new String[n]; for(int i = 0; i < n; i ++) a[i] = ns(); return a; }\n\t\
+    public static final String[][] ns(final int n, final int m) { final String a[][]\
+    \ = new String[n][]; for(int i = 0; i < n; i ++) a[i] = ns(m); return a; }\n\n\
+    \tprivate static final FastOutputStream out = new FastOutputStream(System.out);\n\
     \tprivate static final FastOutputStream err = new FastOutputStream(System.err);\n\
     \tpublic static final void prt() { out.print(); }\n\tpublic static final void\
     \ prt(final char c) { out.print(c); }\n\tpublic static final void prt(final boolean\
@@ -905,7 +906,7 @@ data:
   - library/FastInputStream.java
   - library/FastOutputStream.java
   - library/Mod.java
-  timestamp: '2022-09-16 20:12:31+09:00'
+  timestamp: '2022-09-16 20:39:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/HelloWorld_test.java

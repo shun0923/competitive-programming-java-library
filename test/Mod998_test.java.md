@@ -68,9 +68,9 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: test/Mod998_test.java\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/1/ITP1_1_A\n\
-    package test;\n\nimport library.Util;\nimport library.Mod;\n\npublic class Mod998_test\
-    \ extends Util {\n\tpublic static void main(final String[] args) {\n\t\tDEBUG\
-    \ = args.length > 0 && args[0].equals(\"-DEBUG\");\n\t\tThread.setDefaultUncaughtExceptionHandler((t,\
+    package test;\n\nimport library.Util;\nimport library.Mod998;\n\npublic class\
+    \ Mod998_test extends Util {\n\tpublic static void main(final String[] args) {\n\
+    \t\tDEBUG = args.length > 0 && args[0].equals(\"-DEBUG\");\n\t\tThread.setDefaultUncaughtExceptionHandler((t,\
     \ e) -> { flush(); e.printStackTrace(); System.exit(1); });\n\t\tnew Thread(null,\
     \ new Mod998_test(), \"\", 1 << 31).start();\n\t}\n\n\tpublic void solve() {\n\
     \t\tRandom rnd = new Random(0);\n\t\tfor(int i = 0; i < 10000000; i ++) checkAdd(rnd.nextInt(),\
@@ -103,7 +103,7 @@ data:
   - library/FastInputStream.java
   - library/FastOutputStream.java
   - library/Mod.java
-  timestamp: '2022-09-16 20:12:31+09:00'
+  timestamp: '2022-09-16 20:39:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith:
   - test/HelloWorld_test.java

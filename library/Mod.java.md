@@ -210,7 +210,7 @@ data:
   - library/Util.java
   - library/FastInputStream.java
   - library/FastOutputStream.java
-  timestamp: '2022-09-16 20:12:31+09:00'
+  timestamp: '2022-09-16 20:39:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/HelloWorld_test.java
