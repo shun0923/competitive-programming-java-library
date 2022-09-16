@@ -3,19 +3,19 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: library/ArbitraryMod.java
       title: library/ArbitraryMod.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: library/FastInputStream.java
       title: library/FastInputStream.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: library/FastOutputStream.java
       title: library/FastOutputStream.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: library/Mod.java
       title: library/Mod.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: library/Util.java
       title: library/Util.java
   verificationCategories:

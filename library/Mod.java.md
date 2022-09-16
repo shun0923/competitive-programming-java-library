@@ -1,71 +1,11 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod.java
-    title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod_test.java
-    title: library/ArbitraryMod_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/FastIO_test.java
-    title: library/FastIO_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/FastInputStream.java
-    title: library/FastInputStream.java
-  - icon: ':heavy_check_mark:'
-    path: library/FastOutputStream.java
-    title: library/FastOutputStream.java
-  - icon: ':heavy_check_mark:'
-    path: library/HelloWorld_test.java
-    title: library/HelloWorld_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/ManyFastIO_test.java
-    title: library/ManyFastIO_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod107_test.java
-    title: library/Mod107_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod998_test.java
-    title: library/Mod998_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Util.java
-    title: library/Util.java
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod.java
-    title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
-    path: library/FastInputStream.java
-    title: library/FastInputStream.java
-  - icon: ':heavy_check_mark:'
-    path: library/FastOutputStream.java
-    title: library/FastOutputStream.java
-  - icon: ':heavy_check_mark:'
-    path: library/Util.java
-    title: library/Util.java
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod_test.java
-    title: library/ArbitraryMod_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/FastIO_test.java
-    title: library/FastIO_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/HelloWorld_test.java
-    title: library/HelloWorld_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/ManyFastIO_test.java
-    title: library/ManyFastIO_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod107_test.java
-    title: library/Mod107_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod998_test.java
-    title: library/Mod998_test.java
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -188,33 +128,13 @@ data:
     \ < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long x, long y)\
     \ {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\t\
     x = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}"
-  dependsOn:
-  - library/HelloWorld_test.java
-  - library/ArbitraryMod_test.java
-  - library/Util.java
-  - library/FastInputStream.java
-  - library/ManyFastIO_test.java
-  - library/Mod998_test.java
-  - library/FastIO_test.java
-  - library/FastOutputStream.java
-  - library/ArbitraryMod.java
-  - library/Mod107_test.java
+  dependsOn: []
   isVerificationFile: false
   path: library/Mod.java
-  requiredBy:
-  - library/Util.java
-  - library/FastInputStream.java
-  - library/FastOutputStream.java
-  - library/ArbitraryMod.java
+  requiredBy: []
   timestamp: '2022-09-17 01:02:57+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - library/HelloWorld_test.java
-  - library/ArbitraryMod_test.java
-  - library/ManyFastIO_test.java
-  - library/Mod998_test.java
-  - library/FastIO_test.java
-  - library/Mod107_test.java
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: library/Mod.java
 layout: document
 redirect_from:

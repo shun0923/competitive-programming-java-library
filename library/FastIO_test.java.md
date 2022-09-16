@@ -1,68 +1,8 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod.java
-    title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod_test.java
-    title: library/ArbitraryMod_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/FastInputStream.java
-    title: library/FastInputStream.java
-  - icon: ':heavy_check_mark:'
-    path: library/FastOutputStream.java
-    title: library/FastOutputStream.java
-  - icon: ':heavy_check_mark:'
-    path: library/HelloWorld_test.java
-    title: library/HelloWorld_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/ManyFastIO_test.java
-    title: library/ManyFastIO_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod.java
-    title: library/Mod.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod107_test.java
-    title: library/Mod107_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod998_test.java
-    title: library/Mod998_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Util.java
-    title: library/Util.java
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod.java
-    title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
-    path: library/FastInputStream.java
-    title: library/FastInputStream.java
-  - icon: ':heavy_check_mark:'
-    path: library/FastOutputStream.java
-    title: library/FastOutputStream.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod.java
-    title: library/Mod.java
-  - icon: ':heavy_check_mark:'
-    path: library/Util.java
-    title: library/Util.java
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod_test.java
-    title: library/ArbitraryMod_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/HelloWorld_test.java
-    title: library/HelloWorld_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/ManyFastIO_test.java
-    title: library/ManyFastIO_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod107_test.java
-    title: library/Mod107_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod998_test.java
-    title: library/Mod998_test.java
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -80,33 +20,13 @@ data:
     \ e) -> { flush(); e.printStackTrace(); System.exit(1); });\n\t\tnew Thread(null,\
     \ new FastIO_test(), \"\", 1 << 31).start();\n\t}\n\n\tpublic void solve() {\n\
     \t\tprtln(nl() + nl());\n\t}\n}"
-  dependsOn:
-  - library/HelloWorld_test.java
-  - library/ArbitraryMod_test.java
-  - library/Util.java
-  - library/FastInputStream.java
-  - library/ManyFastIO_test.java
-  - library/Mod998_test.java
-  - library/FastOutputStream.java
-  - library/Mod.java
-  - library/ArbitraryMod.java
-  - library/Mod107_test.java
+  dependsOn: []
   isVerificationFile: true
   path: library/FastIO_test.java
-  requiredBy:
-  - library/Util.java
-  - library/FastInputStream.java
-  - library/FastOutputStream.java
-  - library/Mod.java
-  - library/ArbitraryMod.java
-  timestamp: '2022-09-17 01:02:57+09:00'
+  requiredBy: []
+  timestamp: '2022-09-17 00:44:48+09:00'
   verificationStatus: TEST_ACCEPTED
-  verifiedWith:
-  - library/HelloWorld_test.java
-  - library/ArbitraryMod_test.java
-  - library/ManyFastIO_test.java
-  - library/Mod998_test.java
-  - library/Mod107_test.java
+  verifiedWith: []
 documentation_of: library/FastIO_test.java
 layout: document
 redirect_from:
