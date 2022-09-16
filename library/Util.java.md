@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: library/ArbitraryMod.java
+    title: library/ArbitraryMod.java
+  - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod_test.java
     title: library/ArbitraryMod_test.java
   - icon: ':heavy_check_mark:'
@@ -29,6 +32,9 @@ data:
     path: library/Mod998_test.java
     title: library/Mod998_test.java
   _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/ArbitraryMod.java
+    title: library/ArbitraryMod.java
   - icon: ':heavy_check_mark:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
@@ -900,6 +906,7 @@ data:
   - library/FastIO_test.java
   - library/FastOutputStream.java
   - library/Mod.java
+  - library/ArbitraryMod.java
   - library/Mod107_test.java
   isVerificationFile: false
   path: library/Util.java
@@ -907,7 +914,8 @@ data:
   - library/FastInputStream.java
   - library/FastOutputStream.java
   - library/Mod.java
-  timestamp: '2022-09-17 00:44:48+09:00'
+  - library/ArbitraryMod.java
+  timestamp: '2022-09-17 01:02:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/HelloWorld_test.java

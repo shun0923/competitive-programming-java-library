@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod.java
-    title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod_test.java
     title: library/ArbitraryMod_test.java
   - icon: ':heavy_check_mark:'
@@ -29,12 +26,12 @@ data:
     path: library/Mod107_test.java
     title: library/Mod107_test.java
   - icon: ':heavy_check_mark:'
+    path: library/Mod998_test.java
+    title: library/Mod998_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod.java
-    title: library/ArbitraryMod.java
   - icon: ':heavy_check_mark:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
@@ -63,66 +60,63 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Mod107_test.java
     title: library/Mod107_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/Mod998_test.java
+    title: library/Mod998_test.java
   _isVerificationFailed: false
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/1/ITP1_1_A
+  attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: library/Mod998_test.java\n"
-  code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/1/ITP1_1_A\n\
-    \npackage library;\n\nimport java.util.*;\nimport library.Util;\nimport library.Mod;\n\
-    \npublic class Mod998_test extends Util {\n\tpublic static void main(final String[]\
-    \ args) {\n\t\tDEBUG = args.length > 0 && args[0].equals(\"-DEBUG\");\n\t\tThread.setDefaultUncaughtExceptionHandler((t,\
-    \ e) -> { flush(); e.printStackTrace(); System.exit(1); });\n\t\tnew Thread(null,\
-    \ new Mod998_test(), \"\", 1 << 31).start();\n\t}\n\n\tpublic void solve() {\n\
-    \t\tRandom rnd = new Random(0);\n\t\tfor(int i = 0; i < 10000000; i ++) checkAdd(rnd.nextInt(),\
-    \ rnd.nextInt());\n\t\tfor(int i = 0; i < 10000000; i ++) checkMul(rnd.nextInt(),\
-    \ rnd.nextInt());\n\t\tfor(int i = 0; i < 10000000; i ++) checkDiv(rnd.nextInt(),\
-    \ rnd.nextInt());\n\t\tfor(int i = 0; i < 10000000; i ++) checkDiv(rnd.nextInt(),\
-    \ rnd.nextInt());\n\t\tfor(int x = -3000; x <= 3000; x ++) {\n\t\t\tfor(int y\
-    \ = -3000; y <= 3000; y ++) {\n\t\t\t\tcheckDiv(x, y);\n\t\t\t}\n\t\t}\n\t\tprtln(\"\
-    Hello World\");\n\t}\n\n\tpublic void checkAdd(long x, long y) {\n\t\tlong z =\
-    \ (x + y) % 998_244_353; if(z < 0) z += 998_244_353;\n\t\tassertion(z == Mod998.md.add(x,\
-    \ y));\n\t}\n\tpublic void checkMul(long x, long y) {\n\t\tlong z = (x * y) %\
-    \ 998_244_353; if(z < 0) z += 998_244_353;\n\t\tassertion(z == Mod998.md.mul(x,\
-    \ y));\n\t}\n\tpublic void checkDiv(long x, long y) {\n\t\tif(y == 0) return;\n\
-    \t\tlong z = Mod998.md.div(x, y);\n\t\tassertion(z >= 0 && z < 998_244_353 &&\
-    \ (z * y - x) % 998_244_353 == 0);\n\t}\n}"
+    RuntimeError: bundler is not specified: library/ArbitraryMod.java\n"
+  code: "package library;\n\nimport library.Mod;\n\nfinal class ArbitraryMod extends\
+    \ Mod {\n\tprivate static final long MASK = 0xffff_ffffl;\n\tprivate final long\
+    \ MH;\n\tprivate final long ML;\n\tpublic ArbitraryMod(long mod) { super(mod);\
+    \ long a = (1l << 32) / MOD; long b = (1l << 32) % MOD; long m = a * a * MOD +\
+    \ 2 * a * b + (b * b) / MOD; MH = m >>> 32; ML = m & MASK; }\n\n\tprivate final\
+    \ long reduce(long x) {\n\t\tif(MOD == 1) return 0;\n\t\tif(x < 0) return (x =\
+    \ reduce(- x)) == 0 ? 0 : MOD - x;\n\t\tlong z = (x & MASK) * ML;\n\t\tz = (x\
+    \ & MASK) * MH + (x >>> 32) * ML + (z >>> 32);\n\t\tz = (x >>> 32) * MH + (z >>>\
+    \ 32);\n\t\tx -= z * MOD;\n\t\treturn x < MOD ? x : x - MOD;\n\t}\n\t@Override\n\
+    \tpublic long mod(long x) {\n\t\tif(0 <= x && x < MOD) return x;\n\t\tif(- MOD\
+    \ <= x && x < 0) return x + MOD;\n\t\treturn reduce(x);\n\t}\n\t@Override\n\t\
+    public long mul(long x, long y) {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD)\
+    \ return reduce(x * y);\n\t\tx = mod(x);\n\t\ty = mod(y);\n\t\treturn reduce(x\
+    \ * y);\n\t}\n}"
   dependsOn:
   - library/HelloWorld_test.java
   - library/ArbitraryMod_test.java
   - library/Util.java
   - library/FastInputStream.java
   - library/ManyFastIO_test.java
+  - library/Mod998_test.java
   - library/FastIO_test.java
   - library/FastOutputStream.java
   - library/Mod.java
-  - library/ArbitraryMod.java
   - library/Mod107_test.java
-  isVerificationFile: true
-  path: library/Mod998_test.java
+  isVerificationFile: false
+  path: library/ArbitraryMod.java
   requiredBy:
   - library/Util.java
   - library/FastInputStream.java
   - library/FastOutputStream.java
   - library/Mod.java
-  - library/ArbitraryMod.java
   timestamp: '2022-09-17 01:02:57+09:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/HelloWorld_test.java
   - library/ArbitraryMod_test.java
   - library/ManyFastIO_test.java
+  - library/Mod998_test.java
   - library/FastIO_test.java
   - library/Mod107_test.java
-documentation_of: library/Mod998_test.java
+documentation_of: library/ArbitraryMod.java
 layout: document
 redirect_from:
-- /verify/library/Mod998_test.java
-- /verify/library/Mod998_test.java.html
-title: library/Mod998_test.java
+- /library/library/ArbitraryMod.java
+- /library/library/ArbitraryMod.java.html
+title: library/ArbitraryMod.java
 ---

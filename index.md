@@ -4,6 +4,9 @@ data:
   - name: library
     pages:
     - icon: ':heavy_check_mark:'
+      path: library/ArbitraryMod.java
+      title: library/ArbitraryMod.java
+    - icon: ':heavy_check_mark:'
       path: library/FastInputStream.java
       title: library/FastInputStream.java
     - icon: ':heavy_check_mark:'

@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: library/ArbitraryMod.java
+    title: library/ArbitraryMod.java
+  - icon: ':heavy_check_mark:'
     path: library/FastIO_test.java
     title: library/FastIO_test.java
   - icon: ':heavy_check_mark:'
@@ -29,6 +32,9 @@ data:
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/ArbitraryMod.java
+    title: library/ArbitraryMod.java
   - icon: ':heavy_check_mark:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
@@ -68,7 +74,7 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/ArbitraryMod_test.java\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/1/ITP1_1_A\n\
-    \npackage library;\n\nimport java.util.*;\nimport library.Util;\nimport library.Mod;\n\
+    \npackage library;\n\nimport java.util.*;\nimport library.Util;\nimport library.ArbitraryMod;\n\
     \npublic class ArbitraryMod_test extends Util {\n\tpublic static void main(final\
     \ String[] args) {\n\t\tDEBUG = args.length > 0 && args[0].equals(\"-DEBUG\");\n\
     \t\tThread.setDefaultUncaughtExceptionHandler((t, e) -> { flush(); e.printStackTrace();\
@@ -99,6 +105,7 @@ data:
   - library/FastIO_test.java
   - library/FastOutputStream.java
   - library/Mod.java
+  - library/ArbitraryMod.java
   - library/Mod107_test.java
   isVerificationFile: true
   path: library/ArbitraryMod_test.java
@@ -107,7 +114,8 @@ data:
   - library/FastInputStream.java
   - library/FastOutputStream.java
   - library/Mod.java
-  timestamp: '2022-09-17 00:44:48+09:00'
+  - library/ArbitraryMod.java
+  timestamp: '2022-09-17 01:02:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith:
   - library/HelloWorld_test.java
