@@ -2,8 +2,9 @@ package library;
 
 import java.util.*;
 import java.math.*;
+import java.util.function.*;
 
-abstract class Util implements Runnable {
+abstract public class Util implements Runnable {
 	@Override
 	public void run() { solve(); flush(); }
 
