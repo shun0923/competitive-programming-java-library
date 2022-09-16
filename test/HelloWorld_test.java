@@ -1,15 +1,16 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/1/ITP1_1_A
 package test;
-import library.Main;
 
-public class HelloWorld_test extends Main {
+import library.Solver;
+
+public class HelloWorld_test extends Solver {
 	public static void main(final String[] args) {
-		Thread.setDefaultUncaughtExceptionHandler((t, e) -> { e.printStackTrace(); System.exit(1); });
+		DEBUG = args.length > 0 && args[0].equals("-DEBUG");
+		Thread.setDefaultUncaughtExceptionHandler((t, e) -> { flush(); e.printStackTrace(); System.exit(1); });
 		new Thread(null, new HelloWorld_test(), "", 1 << 31).start();
 	}
 
-	@Override
 	public void solve() {
-		System.out.println("Hello World");
+		prtln("Hello World");
 	}
 }
