@@ -1,0 +1,2 @@
+[languages.java]
+list_dependencies = "sed 's/^import \"\\(.*\\)\"$/\\1/ ; t ; d' {path}"
