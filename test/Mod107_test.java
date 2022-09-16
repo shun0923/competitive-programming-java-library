@@ -2,7 +2,7 @@
 package test;
 
 import library.Util;
-import library.Mod;
+import library.Mod107;
 
 public class Mod107_test extends Util {
 	public static void main(final String[] args) {
