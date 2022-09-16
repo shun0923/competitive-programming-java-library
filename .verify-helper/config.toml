@@ -1,2 +1,2 @@
 [languages.java]
-list_dependencies = "sed 's/^import \\(.*\\)\\;/\\1\\/java/;t;d' main.java | sed 's/^java.*$//;t lbl;y/\\.\\//\\/\\./;p;:lbl d' {path}"
+list_dependencies = "sed 's/^import \\(.*\\)\\;/\\1\\/java/;t labal;d;:labal y/\\.\\//\\/\\./' {path}"
