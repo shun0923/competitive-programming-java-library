@@ -1,5 +1,7 @@
 // verification-helper: PROBLEM https://judge.yosupo.jp/problem/many_aplusb
 
+package library;
+
 public class ManyFastIO_test extends Util {
 	public static void main(final String[] args) {
 		DEBUG = args.length > 0 && args[0].equals("-DEBUG");
