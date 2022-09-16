@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:

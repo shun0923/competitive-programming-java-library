@@ -5,10 +5,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Util.java
     title: library/Util.java
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: library/FastIO_test.java
+    title: library/FastIO_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/ManyFastIO_test.java
+    title: library/ManyFastIO_test.java
   _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -77,8 +83,10 @@ data:
   requiredBy:
   - library/Util.java
   timestamp: '2022-09-16 23:13:20+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - library/ManyFastIO_test.java
+  - library/FastIO_test.java
 documentation_of: library/FastInputStream.java
 layout: document
 redirect_from:

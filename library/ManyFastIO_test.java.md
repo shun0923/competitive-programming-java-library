@@ -2,6 +2,12 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: library/FastInputStream.java
+    title: library/FastInputStream.java
+  - icon: ':heavy_check_mark:'
+    path: library/FastOutputStream.java
+    title: library/FastOutputStream.java
+  - icon: ':heavy_check_mark:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy: []
@@ -17,8 +23,9 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/ManyFastIO_test.java\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/many_aplusb\n\
-    \npackage library;\n\nimport library.Util;\n\npublic class ManyFastIO_test extends\
-    \ Util {\n\tpublic static void main(final String[] args) {\n\t\tDEBUG = args.length\
+    \npackage library;\n\nimport library.Util;\nimport library.FastInputStream;\n\
+    import library.FastOutputStream;\n\npublic class ManyFastIO_test extends Util\
+    \ {\n\tpublic static void main(final String[] args) {\n\t\tDEBUG = args.length\
     \ > 0 && args[0].equals(\"-DEBUG\");\n\t\tThread.setDefaultUncaughtExceptionHandler((t,\
     \ e) -> { flush(); e.printStackTrace(); System.exit(1); });\n\t\tnew Thread(null,\
     \ new ManyFastIO_test(), \"\", 1 << 31).start();\n\t}\n\n\tpublic void solve()\
@@ -26,10 +33,12 @@ data:
     }\n}"
   dependsOn:
   - library/Util.java
+  - library/FastInputStream.java
+  - library/FastOutputStream.java
   isVerificationFile: true
   path: library/ManyFastIO_test.java
   requiredBy: []
-  timestamp: '2022-09-17 00:44:48+09:00'
+  timestamp: '2022-09-17 03:47:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/ManyFastIO_test.java
