@@ -1,41 +1,41 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/FastIO_test.java
     title: test/FastIO_test.java
   - icon: ':heavy_check_mark:'
     path: test/HelloWorld_test.java
     title: test/HelloWorld_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/ManyFastIO_test.java
     title: test/ManyFastIO_test.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/FastIO_test.java
     title: test/FastIO_test.java
   - icon: ':heavy_check_mark:'
     path: test/HelloWorld_test.java
     title: test/HelloWorld_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/ManyFastIO_test.java
     title: test/ManyFastIO_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -109,8 +109,8 @@ data:
   requiredBy:
   - library/Solver.java
   - library/FastOutputStream.java
-  timestamp: '2022-09-16 17:40:01+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2022-09-16 18:22:27+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/HelloWorld_test.java
   - test/ManyFastIO_test.java
