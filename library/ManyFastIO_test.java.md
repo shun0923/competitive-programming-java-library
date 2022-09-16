@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/Util.java
-    title: library/Util.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -24,12 +21,11 @@ data:
     \ new ManyFastIO_test(), \"\", 1 << 31).start();\n\t}\n\n\tpublic void solve()\
     \ {\n\t\tint t = ni();\n\t\tfor(int i = 0; i < t; i ++) prtln(nl() + nl());\n\t\
     }\n}"
-  dependsOn:
-  - library/Util.java
+  dependsOn: []
   isVerificationFile: true
   path: library/ManyFastIO_test.java
   requiredBy: []
-  timestamp: '2022-09-17 00:44:48+09:00'
+  timestamp: '1970-01-01 00:00:00+00:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/ManyFastIO_test.java
