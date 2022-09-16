@@ -1,5 +1,3 @@
-package library;
-
 import java.util.*;
 
 abstract class Mod {

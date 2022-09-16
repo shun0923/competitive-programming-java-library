@@ -1,5 +1,4 @@
 // verification-helper: PROBLEM https://judge.yosupo.jp/problem/aplusb
-package library;
 
 public class FastIO_test extends Util {
 	public static void main(final String[] args) {
