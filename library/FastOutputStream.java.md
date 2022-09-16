@@ -1,41 +1,65 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':heavy_check_mark:'
-    path: library/Solver.java
-    title: library/Solver.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
+    path: library/Mod.java
+    title: library/Mod.java
+  - icon: ':x:'
+    path: library/Util.java
+    title: library/Util.java
+  - icon: ':x:'
+    path: test/ArbitraryMod_test.java
+    title: test/ArbitraryMod_test.java
+  - icon: ':x:'
     path: test/FastIO_test.java
     title: test/FastIO_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/HelloWorld_test.java
     title: test/HelloWorld_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/ManyFastIO_test.java
     title: test/ManyFastIO_test.java
+  - icon: ':x:'
+    path: test/Mod107_test.java
+    title: test/Mod107_test.java
+  - icon: ':x:'
+    path: test/Mod998_test.java
+    title: test/Mod998_test.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':heavy_check_mark:'
-    path: library/Solver.java
-    title: library/Solver.java
+  - icon: ':x:'
+    path: library/Mod.java
+    title: library/Mod.java
+  - icon: ':x:'
+    path: library/Util.java
+    title: library/Util.java
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
+    path: test/ArbitraryMod_test.java
+    title: test/ArbitraryMod_test.java
+  - icon: ':x:'
     path: test/FastIO_test.java
     title: test/FastIO_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/HelloWorld_test.java
     title: test/HelloWorld_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/ManyFastIO_test.java
     title: test/ManyFastIO_test.java
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/Mod107_test.java
+    title: test/Mod107_test.java
+  - icon: ':x:'
+    path: test/Mod998_test.java
+    title: test/Mod998_test.java
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -121,21 +145,29 @@ data:
     \ }\n\t}\n}"
   dependsOn:
   - test/HelloWorld_test.java
+  - test/ArbitraryMod_test.java
   - test/ManyFastIO_test.java
+  - test/Mod998_test.java
   - test/FastIO_test.java
+  - test/Mod107_test.java
+  - library/Util.java
   - library/FastInputStream.java
-  - library/Solver.java
+  - library/Mod.java
   isVerificationFile: false
   path: library/FastOutputStream.java
   requiredBy:
+  - library/Util.java
   - library/FastInputStream.java
-  - library/Solver.java
-  timestamp: '2022-09-16 18:22:27+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  - library/Mod.java
+  timestamp: '2022-09-16 20:12:31+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/HelloWorld_test.java
+  - test/ArbitraryMod_test.java
   - test/ManyFastIO_test.java
+  - test/Mod998_test.java
   - test/FastIO_test.java
+  - test/Mod107_test.java
 documentation_of: library/FastOutputStream.java
 layout: document
 redirect_from:

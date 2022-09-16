@@ -20,14 +20,14 @@ data:
     path: test/FastIO_test.java
     title: test/FastIO_test.java
   - icon: ':x:'
+    path: test/HelloWorld_test.java
+    title: test/HelloWorld_test.java
+  - icon: ':x:'
     path: test/ManyFastIO_test.java
     title: test/ManyFastIO_test.java
   - icon: ':x:'
     path: test/Mod107_test.java
     title: test/Mod107_test.java
-  - icon: ':x:'
-    path: test/Mod998_test.java
-    title: test/Mod998_test.java
   _extendedRequiredBy:
   - icon: ':x:'
     path: library/FastInputStream.java
@@ -49,14 +49,14 @@ data:
     path: test/FastIO_test.java
     title: test/FastIO_test.java
   - icon: ':x:'
+    path: test/HelloWorld_test.java
+    title: test/HelloWorld_test.java
+  - icon: ':x:'
     path: test/ManyFastIO_test.java
     title: test/ManyFastIO_test.java
   - icon: ':x:'
     path: test/Mod107_test.java
     title: test/Mod107_test.java
-  - icon: ':x:'
-    path: test/Mod998_test.java
-    title: test/Mod998_test.java
   _isVerificationFailed: true
   _pathExtension: java
   _verificationStatusIcon: ':x:'
@@ -66,18 +66,30 @@ data:
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: test/HelloWorld_test.java\n"
+    RuntimeError: bundler is not specified: test/Mod998_test.java\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/1/ITP1_1_A\n\
-    package test;\n\nimport library.Util;\n\npublic class HelloWorld_test extends\
-    \ Util {\n\tpublic static void main(final String[] args) {\n\t\tDEBUG = args.length\
-    \ > 0 && args[0].equals(\"-DEBUG\");\n\t\tThread.setDefaultUncaughtExceptionHandler((t,\
+    package test;\n\nimport library.Util;\nimport library.Mod;\n\npublic class Mod998_test\
+    \ extends Util {\n\tpublic static void main(final String[] args) {\n\t\tDEBUG\
+    \ = args.length > 0 && args[0].equals(\"-DEBUG\");\n\t\tThread.setDefaultUncaughtExceptionHandler((t,\
     \ e) -> { flush(); e.printStackTrace(); System.exit(1); });\n\t\tnew Thread(null,\
-    \ new HelloWorld_test(), \"\", 1 << 31).start();\n\t}\n\n\tpublic void solve()\
-    \ {\n\t\tprtln(\"Hello World\");\n\t}\n}"
+    \ new Mod998_test(), \"\", 1 << 31).start();\n\t}\n\n\tpublic void solve() {\n\
+    \t\tRandom rnd = new Random(0);\n\t\tfor(int i = 0; i < 10000000; i ++) checkAdd(rnd.nextInt(),\
+    \ rnd.nextInt());\n\t\tfor(int i = 0; i < 10000000; i ++) checkMul(rnd.nextInt(),\
+    \ rnd.nextInt());\n\t\tfor(int i = 0; i < 10000000; i ++) checkDiv(rnd.nextInt(),\
+    \ rnd.nextInt());\n\t\tfor(int i = 0; i < 10000000; i ++) checkDiv(rnd.nextInt(),\
+    \ rnd.nextInt());\n\t\tfor(int x = -3000; x <= 3000; x ++) {\n\t\t\tfor(int y\
+    \ = -3000; y <= 3000; y ++) {\n\t\t\t\tcheckDiv(x, y);\n\t\t\t}\n\t\t}\n\t\tprtln(\"\
+    Hello World\");\n\t}\n\n\tpublic void checkAdd(long x, long y) {\n\t\tlong z =\
+    \ (x + y) % 998_244_353; if(z < 0) z += 998_244_353;\n\t\tassertion(z == Mod998.md.add(x,\
+    \ y));\n\t}\n\tpublic void checkMul(long x, long y) {\n\t\tlong z = (x * y) %\
+    \ 998_244_353; if(z < 0) z += 998_244_353;\n\t\tassertion(z == Mod998.md.mul(x,\
+    \ y));\n\t}\n\tpublic void checkDiv(long x, long y) {\n\t\tif(y == 0) return;\n\
+    \t\tlong z = Mod998.md.div(x, y);\n\t\tassertion(z >= 0 && z < 998_244_353 &&\
+    \ (z * y - x) % 998_244_353 == 0);\n\t}\n}"
   dependsOn:
+  - test/HelloWorld_test.java
   - test/ArbitraryMod_test.java
   - test/ManyFastIO_test.java
-  - test/Mod998_test.java
   - test/FastIO_test.java
   - test/Mod107_test.java
   - library/Util.java
@@ -85,7 +97,7 @@ data:
   - library/FastOutputStream.java
   - library/Mod.java
   isVerificationFile: true
-  path: test/HelloWorld_test.java
+  path: test/Mod998_test.java
   requiredBy:
   - library/Util.java
   - library/FastInputStream.java
@@ -94,15 +106,15 @@ data:
   timestamp: '2022-09-16 20:12:31+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith:
+  - test/HelloWorld_test.java
   - test/ArbitraryMod_test.java
   - test/ManyFastIO_test.java
-  - test/Mod998_test.java
   - test/FastIO_test.java
   - test/Mod107_test.java
-documentation_of: test/HelloWorld_test.java
+documentation_of: test/Mod998_test.java
 layout: document
 redirect_from:
-- /verify/test/HelloWorld_test.java
-- /verify/test/HelloWorld_test.java.html
-title: test/HelloWorld_test.java
+- /verify/test/Mod998_test.java
+- /verify/test/Mod998_test.java.html
+title: test/Mod998_test.java
 ---
