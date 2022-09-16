@@ -1,8 +1,7 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/1/ITP1_1_A
-package test;
+package library;
 
-import library.Util;
-import library.Mod998;
+import java.util.*;
 
 public class Mod998_test extends Util {
 	public static void main(final String[] args) {

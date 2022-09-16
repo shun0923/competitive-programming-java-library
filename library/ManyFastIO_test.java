@@ -1,7 +1,5 @@
 // verification-helper: PROBLEM https://judge.yosupo.jp/problem/many_aplusb
-package test;
-
-import library.Util;
+package library;
 
 public class ManyFastIO_test extends Util {
 	public static void main(final String[] args) {
