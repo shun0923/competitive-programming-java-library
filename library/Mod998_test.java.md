@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod_test.java
     title: library/ArbitraryMod_test.java
   - icon: ':heavy_check_mark:'
     path: library/FastIO_test.java
     title: library/FastIO_test.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   - icon: ':heavy_check_mark:'
@@ -19,30 +19,30 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod107_test.java
     title: library/Mod107_test.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Util.java
     title: library/Util.java
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod_test.java
     title: library/ArbitraryMod_test.java
   - icon: ':heavy_check_mark:'
@@ -54,12 +54,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod107_test.java
     title: library/Mod107_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/1/ITP1_1_A
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -68,9 +68,9 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/Mod998_test.java\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/1/ITP1_1_A\n\
-    \npackage library;\n\nimport library.Mod998;\nimport java.util.*;\n\npublic class\
-    \ Mod998_test extends Util {\n\tpublic static void main(final String[] args) {\n\
-    \t\tDEBUG = args.length > 0 && args[0].equals(\"-DEBUG\");\n\t\tThread.setDefaultUncaughtExceptionHandler((t,\
+    \npackage library;\n\nimport java.util.*;\nimport library.Util;\nimport library.Mod;\n\
+    \npublic class Mod998_test extends Util {\n\tpublic static void main(final String[]\
+    \ args) {\n\t\tDEBUG = args.length > 0 && args[0].equals(\"-DEBUG\");\n\t\tThread.setDefaultUncaughtExceptionHandler((t,\
     \ e) -> { flush(); e.printStackTrace(); System.exit(1); });\n\t\tnew Thread(null,\
     \ new Mod998_test(), \"\", 1 << 31).start();\n\t}\n\n\tpublic void solve() {\n\
     \t\tRandom rnd = new Random(0);\n\t\tfor(int i = 0; i < 10000000; i ++) checkAdd(rnd.nextInt(),\
@@ -80,12 +80,12 @@ data:
     \ rnd.nextInt());\n\t\tfor(int x = -3000; x <= 3000; x ++) {\n\t\t\tfor(int y\
     \ = -3000; y <= 3000; y ++) {\n\t\t\t\tcheckDiv(x, y);\n\t\t\t}\n\t\t}\n\t\tprtln(\"\
     Hello World\");\n\t}\n\n\tpublic void checkAdd(long x, long y) {\n\t\tlong z =\
-    \ (x + y) % 998_244_353; if(z < 0) z += 998_244_353;\n\t\tassertion(z == library.Mod998.md.add(x,\
+    \ (x + y) % 998_244_353; if(z < 0) z += 998_244_353;\n\t\tassertion(z == Mod998.md.add(x,\
     \ y));\n\t}\n\tpublic void checkMul(long x, long y) {\n\t\tlong z = (x * y) %\
-    \ 998_244_353; if(z < 0) z += 998_244_353;\n\t\tassertion(z == library.Mod998.md.mul(x,\
+    \ 998_244_353; if(z < 0) z += 998_244_353;\n\t\tassertion(z == Mod998.md.mul(x,\
     \ y));\n\t}\n\tpublic void checkDiv(long x, long y) {\n\t\tif(y == 0) return;\n\
-    \t\tlong z = library.Mod998.md.div(x, y);\n\t\tassertion(z >= 0 && z < 998_244_353\
-    \ && (z * y - x) % 998_244_353 == 0);\n\t}\n}"
+    \t\tlong z = Mod998.md.div(x, y);\n\t\tassertion(z >= 0 && z < 998_244_353 &&\
+    \ (z * y - x) % 998_244_353 == 0);\n\t}\n}"
   dependsOn:
   - library/HelloWorld_test.java
   - library/ArbitraryMod_test.java
@@ -103,8 +103,8 @@ data:
   - library/FastInputStream.java
   - library/FastOutputStream.java
   - library/Mod.java
-  timestamp: '2022-09-17 00:18:49+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-09-17 00:44:48+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith:
   - library/HelloWorld_test.java
   - library/ArbitraryMod_test.java
