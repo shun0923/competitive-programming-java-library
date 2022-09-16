@@ -1,11 +1,23 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/Util.java
+    title: library/Util.java
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/ArbitraryMod.java
+    title: library/ArbitraryMod.java
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: library/Mod107_test.java
+    title: library/Mod107_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/Mod998_test.java
+    title: library/Mod998_test.java
   _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -128,13 +140,17 @@ data:
     \ < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long x, long y)\
     \ {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\t\
     x = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/Util.java
   isVerificationFile: false
   path: library/Mod.java
-  requiredBy: []
+  requiredBy:
+  - library/ArbitraryMod.java
   timestamp: '2022-09-17 01:02:57+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - library/Mod998_test.java
+  - library/Mod107_test.java
 documentation_of: library/Mod.java
 layout: document
 redirect_from:

@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/ArbitraryMod.java
       title: library/ArbitraryMod.java
     - icon: ':warning:'
@@ -12,10 +12,10 @@ data:
     - icon: ':warning:'
       path: library/FastOutputStream.java
       title: library/FastOutputStream.java
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/Util.java
       title: library/Util.java
   verificationCategories:

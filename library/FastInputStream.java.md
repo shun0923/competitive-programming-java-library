@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/Util.java
+    title: library/Util.java
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: java
@@ -71,7 +74,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/FastInputStream.java
-  requiredBy: []
+  requiredBy:
+  - library/Util.java
   timestamp: '2022-09-16 23:13:20+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
