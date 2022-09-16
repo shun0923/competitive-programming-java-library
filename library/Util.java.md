@@ -1,11 +1,38 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/FastInputStream.java
+    title: library/FastInputStream.java
+  - icon: ':warning:'
+    path: library/FastOutputStream.java
+    title: library/FastOutputStream.java
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/Mod.java
+    title: library/Mod.java
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: library/ArbitraryMod_test.java
+    title: library/ArbitraryMod_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/FastIO_test.java
+    title: library/FastIO_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/HelloWorld_test.java
+    title: library/HelloWorld_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/ManyFastIO_test.java
+    title: library/ManyFastIO_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/Mod107_test.java
+    title: library/Mod107_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/Mod998_test.java
+    title: library/Mod998_test.java
   _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -837,13 +864,22 @@ data:
     \ * 2 + right) / 3.0;\n\t\t\tdouble m2 = (left + right * 2) / 3.0;\n\t\t\tif(op.apply(m1)\
     \ > op.apply(m2) ^ minimize) right = m2; else left = m1;\n\t\t}\n\t\treturn (left\
     \ + right) / 2.0;\n\t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/FastInputStream.java
+  - library/FastOutputStream.java
   isVerificationFile: false
   path: library/Util.java
-  requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/Mod.java
+  timestamp: '2022-09-17 00:44:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - library/HelloWorld_test.java
+  - library/ArbitraryMod_test.java
+  - library/ManyFastIO_test.java
+  - library/Mod998_test.java
+  - library/FastIO_test.java
+  - library/Mod107_test.java
 documentation_of: library/Util.java
 layout: document
 redirect_from:

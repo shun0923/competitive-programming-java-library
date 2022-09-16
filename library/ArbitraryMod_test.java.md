@@ -1,6 +1,12 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/ArbitraryMod.java
+    title: library/ArbitraryMod.java
+  - icon: ':heavy_check_mark:'
+    path: library/Util.java
+    title: library/Util.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -36,11 +42,13 @@ data:
     }\n\tpublic void checkDiv(long x, long y, long m) {\n\t\tif(y == 0) return;\n\t\
     \tlong z = new ArbitraryMod(m).div(x, y);\n\t\tassertion(z >= 0 && z < m && (z\
     \ * y - x) % m == 0);\n\t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/Util.java
+  - library/ArbitraryMod.java
   isVerificationFile: true
   path: library/ArbitraryMod_test.java
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  timestamp: '2022-09-17 01:02:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/ArbitraryMod_test.java

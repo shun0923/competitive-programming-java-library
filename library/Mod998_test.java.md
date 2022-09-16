@@ -1,6 +1,12 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/Mod.java
+    title: library/Mod.java
+  - icon: ':heavy_check_mark:'
+    path: library/Util.java
+    title: library/Util.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -32,11 +38,13 @@ data:
     \ y));\n\t}\n\tpublic void checkDiv(long x, long y) {\n\t\tif(y == 0) return;\n\
     \t\tlong z = Mod998.md.div(x, y);\n\t\tassertion(z >= 0 && z < 998_244_353 &&\
     \ (z * y - x) % 998_244_353 == 0);\n\t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/Util.java
+  - library/Mod.java
   isVerificationFile: true
   path: library/Mod998_test.java
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  timestamp: '2022-09-17 01:02:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Mod998_test.java

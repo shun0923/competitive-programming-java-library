@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/Util.java
+    title: library/Util.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -20,11 +23,12 @@ data:
     \ e) -> { flush(); e.printStackTrace(); System.exit(1); });\n\t\tnew Thread(null,\
     \ new FastIO_test(), \"\", 1 << 31).start();\n\t}\n\n\tpublic void solve() {\n\
     \t\tprtln(nl() + nl());\n\t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/Util.java
   isVerificationFile: true
   path: library/FastIO_test.java
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  timestamp: '2022-09-17 00:44:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/FastIO_test.java
