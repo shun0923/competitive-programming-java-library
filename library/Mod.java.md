@@ -1,19 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod.java
-    title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/ArbitraryMod_test.java
     title: library/ArbitraryMod_test.java
   - icon: ':heavy_check_mark:'
     path: library/FastIO_test.java
     title: library/FastIO_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   - icon: ':heavy_check_mark:'
@@ -22,30 +19,27 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod107_test.java
     title: library/Mod107_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod998_test.java
     title: library/Mod998_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod.java
-    title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Util.java
     title: library/Util.java
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/ArbitraryMod_test.java
     title: library/ArbitraryMod_test.java
   - icon: ':heavy_check_mark:'
@@ -57,15 +51,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod107_test.java
     title: library/Mod107_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod998_test.java
     title: library/Mod998_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -151,37 +145,50 @@ data:
     \ != 1) {\n\t\t\tlong pows[] = new long[m + 1];\n\t\t\tpows[0] = t;\n\t\t\tfor(int\
     \ i = 0; i < m; i ++) pows[i + 1] = mul(pows[i], pows[i]);\n\t\t\twhile(pows[m\
     \ --] == 1) c = mul(c, c);\n\t\t\tr = mul(r, c);\n\t\t\tc = mul(c, c);\n\t\t\t\
-    t = mul(t, c);\n\t\t}\n\t\treturn r;\n\t}\n}\nfinal class Mod107 extends Mod {\n\
-    \tpublic static final Mod107 md = new Mod107();\n\tpublic static final long MOD\
-    \ = 1_000_000_007;\n\tprivate Mod107() { super(MOD); }\n\n\t@Override\n\tpublic\
-    \ final long mod(long x) {\n\t\tif(0 <= x && x < MOD) return x;\n\t\tif(- MOD\
-    \ <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD) < 0 ? x + MOD : x;\n\t\
-    }\n\t@Override\n\tpublic final long mul(long x, long y) {\n\t\tif(x >= 0 && x\
-    \ < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\tx = mod(x);\n\t\ty =\
-    \ mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\nfinal class Mod998 extends Mod {\n\
-    \tpublic static final Mod998 md = new Mod998();\n\tpublic static final long MOD\
-    \ = 998_244_353;\n\tprivate Mod998() { super(MOD); }\n\n\t@Override\n\tpublic\
-    \ final long mod(long x) {\n\t\tif(0 <= x && x < MOD) return x;\n\t\tif(- MOD\
-    \ <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD) < 0 ? x + MOD : x;\n\t\
-    }\n\t@Override\n\tpublic final long mul(long x, long y) {\n\t\tif(x >= 0 && x\
-    \ < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\tx = mod(x);\n\t\ty =\
-    \ mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\nfinal class Mod754974721 extends\
-    \ Mod {\n\tpublic static final Mod754974721 md = new Mod754974721();\n\tpublic\
-    \ static final long MOD = 754_974_721;\n\tprivate Mod754974721() { super(MOD);\
-    \ }\n\n\t@Override\n\tpublic final long mod(long x) {\n\t\tif(0 <= x && x < MOD)\
-    \ return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD)\
-    \ < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long x, long y)\
-    \ {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\t\
-    x = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\nfinal class Mod167772161\
-    \ extends Mod {\n\tpublic static final Mod167772161 md = new Mod167772161();\n\
-    \tpublic static final long MOD = 167_772_161;\n\tprivate Mod167772161() { super(MOD);\
-    \ }\n\n\t@Override\n\tpublic final long mod(long x) {\n\t\tif(0 <= x && x < MOD)\
-    \ return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD)\
-    \ < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long x, long y)\
-    \ {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\t\
-    x = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\nfinal class Mod469762049\
-    \ extends Mod {\n\tpublic static final Mod469762049 md = new Mod469762049();\n\
-    \tpublic static final long MOD = 469_762_049;\n\tprivate Mod469762049() { super(MOD);\
+    t = mul(t, c);\n\t\t}\n\t\treturn r;\n\t}\n}\nfinal class ArbitraryMod extends\
+    \ Mod {\n\tprivate static final long MASK = 0xffff_ffffl;\n\tprivate final long\
+    \ MH;\n\tprivate final long ML;\n\tpublic ArbitraryMod(long mod) { super(mod);\
+    \ long a = (1l << 32) / MOD; long b = (1l << 32) % MOD; long m = a * a * MOD +\
+    \ 2 * a * b + (b * b) / MOD; MH = m >>> 32; ML = m & MASK; }\n\n\tprivate final\
+    \ long reduce(long x) {\n\t\tif(MOD == 1) return 0;\n\t\tif(x < 0) return (x =\
+    \ reduce(- x)) == 0 ? 0 : MOD - x;\n\t\tlong z = (x & MASK) * ML;\n\t\tz = (x\
+    \ & MASK) * MH + (x >>> 32) * ML + (z >>> 32);\n\t\tz = (x >>> 32) * MH + (z >>>\
+    \ 32);\n\t\tx -= z * MOD;\n\t\treturn x < MOD ? x : x - MOD;\n\t}\n\t@Override\n\
+    \tpublic long mod(long x) {\n\t\tif(0 <= x && x < MOD) return x;\n\t\tif(- MOD\
+    \ <= x && x < 0) return x + MOD;\n\t\treturn reduce(x);\n\t}\n\t@Override\n\t\
+    public long mul(long x, long y) {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD)\
+    \ return reduce(x * y);\n\t\tx = mod(x);\n\t\ty = mod(y);\n\t\treturn reduce(x\
+    \ * y);\n\t}\n}\nfinal class Mod107 extends Mod {\n\tpublic static final Mod107\
+    \ md = new Mod107();\n\tpublic static final long MOD = 1_000_000_007;\n\tprivate\
+    \ Mod107() { super(MOD); }\n\n\t@Override\n\tpublic final long mod(long x) {\n\
+    \t\tif(0 <= x && x < MOD) return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\
+    \t\treturn (x %= MOD) < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long\
+    \ mul(long x, long y) {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return\
+    \ (x * y) % MOD;\n\t\tx = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\
+    \t}\n}\nfinal class Mod998 extends Mod {\n\tpublic static final Mod998 md = new\
+    \ Mod998();\n\tpublic static final long MOD = 998_244_353;\n\tprivate Mod998()\
+    \ { super(MOD); }\n\n\t@Override\n\tpublic final long mod(long x) {\n\t\tif(0\
+    \ <= x && x < MOD) return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\t\t\
+    return (x %= MOD) < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long\
+    \ x, long y) {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return (x * y)\
+    \ % MOD;\n\t\tx = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\n\
+    final class Mod754974721 extends Mod {\n\tpublic static final Mod754974721 md\
+    \ = new Mod754974721();\n\tpublic static final long MOD = 754_974_721;\n\tprivate\
+    \ Mod754974721() { super(MOD); }\n\n\t@Override\n\tpublic final long mod(long\
+    \ x) {\n\t\tif(0 <= x && x < MOD) return x;\n\t\tif(- MOD <= x && x < 0) return\
+    \ x + MOD;\n\t\treturn (x %= MOD) < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic\
+    \ final long mul(long x, long y) {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y <\
+    \ MOD) return (x * y) % MOD;\n\t\tx = mod(x);\n\t\ty = mod(y);\n\t\treturn (x\
+    \ * y) % MOD;\n\t}\n}\nfinal class Mod167772161 extends Mod {\n\tpublic static\
+    \ final Mod167772161 md = new Mod167772161();\n\tpublic static final long MOD\
+    \ = 167_772_161;\n\tprivate Mod167772161() { super(MOD); }\n\n\t@Override\n\t\
+    public final long mod(long x) {\n\t\tif(0 <= x && x < MOD) return x;\n\t\tif(-\
+    \ MOD <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD) < 0 ? x + MOD : x;\n\
+    \t}\n\t@Override\n\tpublic final long mul(long x, long y) {\n\t\tif(x >= 0 &&\
+    \ x < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\tx = mod(x);\n\t\ty\
+    \ = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\nfinal class Mod469762049 extends\
+    \ Mod {\n\tpublic static final Mod469762049 md = new Mod469762049();\n\tpublic\
+    \ static final long MOD = 469_762_049;\n\tprivate Mod469762049() { super(MOD);\
     \ }\n\n\t@Override\n\tpublic final long mod(long x) {\n\t\tif(0 <= x && x < MOD)\
     \ return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD)\
     \ < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long x, long y)\
@@ -196,7 +203,6 @@ data:
   - library/Mod998_test.java
   - library/FastIO_test.java
   - library/FastOutputStream.java
-  - library/ArbitraryMod.java
   - library/Mod107_test.java
   isVerificationFile: false
   path: library/Mod.java
@@ -204,9 +210,8 @@ data:
   - library/Util.java
   - library/FastInputStream.java
   - library/FastOutputStream.java
-  - library/ArbitraryMod.java
-  timestamp: '2022-09-16 23:37:24+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-09-17 00:00:17+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/HelloWorld_test.java
   - library/ArbitraryMod_test.java

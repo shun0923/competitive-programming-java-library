@@ -1,54 +1,48 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod.java
-    title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/ArbitraryMod_test.java
     title: library/ArbitraryMod_test.java
   - icon: ':heavy_check_mark:'
     path: library/FastIO_test.java
     title: library/FastIO_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   - icon: ':heavy_check_mark:'
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod107_test.java
     title: library/Mod107_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod998_test.java
     title: library/Mod998_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod.java
-    title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Util.java
     title: library/Util.java
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/ArbitraryMod_test.java
     title: library/ArbitraryMod_test.java
   - icon: ':heavy_check_mark:'
@@ -57,10 +51,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod107_test.java
     title: library/Mod107_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod998_test.java
     title: library/Mod998_test.java
   _isVerificationFailed: false
@@ -89,7 +83,6 @@ data:
   - library/FastIO_test.java
   - library/FastOutputStream.java
   - library/Mod.java
-  - library/ArbitraryMod.java
   - library/Mod107_test.java
   isVerificationFile: true
   path: library/HelloWorld_test.java
@@ -98,8 +91,7 @@ data:
   - library/FastInputStream.java
   - library/FastOutputStream.java
   - library/Mod.java
-  - library/ArbitraryMod.java
-  timestamp: '2022-09-16 23:37:24+09:00'
+  timestamp: '2022-09-17 00:00:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith:
   - library/ArbitraryMod_test.java
