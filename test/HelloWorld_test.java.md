@@ -2,64 +2,70 @@
 data:
   _extendedDependsOn:
   - icon: ':x:'
+    path: library/ArbitraryMod_test.java
+    title: library/ArbitraryMod_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/FastIO_test.java
+    title: library/FastIO_test.java
+  - icon: ':question:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
   - icon: ':x:'
+    path: library/Mod107_test.java
+    title: library/Mod107_test.java
+  - icon: ':question:'
     path: library/Util.java
     title: library/Util.java
-  - icon: ':x:'
-    path: test/ArbitraryMod_test.java
-    title: test/ArbitraryMod_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/FastIO_test.java
     title: test/FastIO_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/ManyFastIO_test.java
     title: test/ManyFastIO_test.java
-  - icon: ':x:'
-    path: test/Mod107_test.java
-    title: test/Mod107_test.java
   - icon: ':x:'
     path: test/Mod998_test.java
     title: test/Mod998_test.java
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Util.java
     title: library/Util.java
   _extendedVerifiedWith:
   - icon: ':x:'
-    path: test/ArbitraryMod_test.java
-    title: test/ArbitraryMod_test.java
+    path: library/ArbitraryMod_test.java
+    title: library/ArbitraryMod_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/FastIO_test.java
+    title: library/FastIO_test.java
   - icon: ':x:'
+    path: library/Mod107_test.java
+    title: library/Mod107_test.java
+  - icon: ':heavy_check_mark:'
     path: test/FastIO_test.java
     title: test/FastIO_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/ManyFastIO_test.java
     title: test/ManyFastIO_test.java
   - icon: ':x:'
-    path: test/Mod107_test.java
-    title: test/Mod107_test.java
-  - icon: ':x:'
     path: test/Mod998_test.java
     title: test/Mod998_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/1/ITP1_1_A
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -75,15 +81,16 @@ data:
     \ new HelloWorld_test(), \"\", 1 << 31).start();\n\t}\n\n\tpublic void solve()\
     \ {\n\t\tprtln(\"Hello World\");\n\t}\n}"
   dependsOn:
-  - test/ArbitraryMod_test.java
   - test/ManyFastIO_test.java
   - test/Mod998_test.java
   - test/FastIO_test.java
-  - test/Mod107_test.java
+  - library/ArbitraryMod_test.java
   - library/Util.java
   - library/FastInputStream.java
+  - library/FastIO_test.java
   - library/FastOutputStream.java
   - library/Mod.java
+  - library/Mod107_test.java
   isVerificationFile: true
   path: test/HelloWorld_test.java
   requiredBy:
@@ -91,14 +98,15 @@ data:
   - library/FastInputStream.java
   - library/FastOutputStream.java
   - library/Mod.java
-  timestamp: '2022-09-16 20:39:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-09-16 21:13:27+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith:
-  - test/ArbitraryMod_test.java
   - test/ManyFastIO_test.java
   - test/Mod998_test.java
   - test/FastIO_test.java
-  - test/Mod107_test.java
+  - library/ArbitraryMod_test.java
+  - library/FastIO_test.java
+  - library/Mod107_test.java
 documentation_of: test/HelloWorld_test.java
 layout: document
 redirect_from:

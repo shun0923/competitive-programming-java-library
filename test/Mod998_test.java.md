@@ -2,61 +2,67 @@
 data:
   _extendedDependsOn:
   - icon: ':x:'
+    path: library/ArbitraryMod_test.java
+    title: library/ArbitraryMod_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/FastIO_test.java
+    title: library/FastIO_test.java
+  - icon: ':question:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
   - icon: ':x:'
+    path: library/Mod107_test.java
+    title: library/Mod107_test.java
+  - icon: ':question:'
     path: library/Util.java
     title: library/Util.java
-  - icon: ':x:'
-    path: test/ArbitraryMod_test.java
-    title: test/ArbitraryMod_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/FastIO_test.java
     title: test/FastIO_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/HelloWorld_test.java
     title: test/HelloWorld_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/ManyFastIO_test.java
     title: test/ManyFastIO_test.java
-  - icon: ':x:'
-    path: test/Mod107_test.java
-    title: test/Mod107_test.java
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Util.java
     title: library/Util.java
   _extendedVerifiedWith:
   - icon: ':x:'
-    path: test/ArbitraryMod_test.java
-    title: test/ArbitraryMod_test.java
+    path: library/ArbitraryMod_test.java
+    title: library/ArbitraryMod_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/FastIO_test.java
+    title: library/FastIO_test.java
   - icon: ':x:'
+    path: library/Mod107_test.java
+    title: library/Mod107_test.java
+  - icon: ':heavy_check_mark:'
     path: test/FastIO_test.java
     title: test/FastIO_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/HelloWorld_test.java
     title: test/HelloWorld_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/ManyFastIO_test.java
     title: test/ManyFastIO_test.java
-  - icon: ':x:'
-    path: test/Mod107_test.java
-    title: test/Mod107_test.java
   _isVerificationFailed: true
   _pathExtension: java
   _verificationStatusIcon: ':x:'
@@ -88,14 +94,15 @@ data:
     \ (z * y - x) % 998_244_353 == 0);\n\t}\n}"
   dependsOn:
   - test/HelloWorld_test.java
-  - test/ArbitraryMod_test.java
   - test/ManyFastIO_test.java
   - test/FastIO_test.java
-  - test/Mod107_test.java
+  - library/ArbitraryMod_test.java
   - library/Util.java
   - library/FastInputStream.java
+  - library/FastIO_test.java
   - library/FastOutputStream.java
   - library/Mod.java
+  - library/Mod107_test.java
   isVerificationFile: true
   path: test/Mod998_test.java
   requiredBy:
@@ -103,14 +110,15 @@ data:
   - library/FastInputStream.java
   - library/FastOutputStream.java
   - library/Mod.java
-  timestamp: '2022-09-16 20:39:02+09:00'
+  timestamp: '2022-09-16 21:13:27+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith:
   - test/HelloWorld_test.java
-  - test/ArbitraryMod_test.java
   - test/ManyFastIO_test.java
   - test/FastIO_test.java
-  - test/Mod107_test.java
+  - library/ArbitraryMod_test.java
+  - library/FastIO_test.java
+  - library/Mod107_test.java
 documentation_of: test/Mod998_test.java
 layout: document
 redirect_from:

@@ -2,72 +2,78 @@
 data:
   _extendedDependsOn:
   - icon: ':x:'
+    path: library/ArbitraryMod_test.java
+    title: library/ArbitraryMod_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/FastIO_test.java
+    title: library/FastIO_test.java
+  - icon: ':question:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
   - icon: ':x:'
+    path: library/Mod107_test.java
+    title: library/Mod107_test.java
+  - icon: ':question:'
     path: library/Util.java
     title: library/Util.java
-  - icon: ':x:'
-    path: test/ArbitraryMod_test.java
-    title: test/ArbitraryMod_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/FastIO_test.java
     title: test/FastIO_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/HelloWorld_test.java
     title: test/HelloWorld_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/ManyFastIO_test.java
     title: test/ManyFastIO_test.java
-  - icon: ':x:'
-    path: test/Mod107_test.java
-    title: test/Mod107_test.java
   - icon: ':x:'
     path: test/Mod998_test.java
     title: test/Mod998_test.java
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Util.java
     title: library/Util.java
   _extendedVerifiedWith:
   - icon: ':x:'
-    path: test/ArbitraryMod_test.java
-    title: test/ArbitraryMod_test.java
+    path: library/ArbitraryMod_test.java
+    title: library/ArbitraryMod_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/FastIO_test.java
+    title: library/FastIO_test.java
   - icon: ':x:'
+    path: library/Mod107_test.java
+    title: library/Mod107_test.java
+  - icon: ':heavy_check_mark:'
     path: test/FastIO_test.java
     title: test/FastIO_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/HelloWorld_test.java
     title: test/HelloWorld_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/ManyFastIO_test.java
     title: test/ManyFastIO_test.java
-  - icon: ':x:'
-    path: test/Mod107_test.java
-    title: test/Mod107_test.java
   - icon: ':x:'
     path: test/Mod998_test.java
     title: test/Mod998_test.java
   _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/FastOutputStream.java\n"
-  code: "package library;\nimport java.io.*;\n\nfinal class FastOutputStream {\n\t\
-    private static final int BUF_SIZE = 1 << 13;\n\tprivate final byte buf[] = new\
+  code: "package library;\n\nimport java.io.*;\n\nfinal class FastOutputStream {\n\
+    \tprivate static final int BUF_SIZE = 1 << 13;\n\tprivate final byte buf[] = new\
     \ byte[BUF_SIZE];\n\tprivate final OutputStream out;\n\tprivate int count = 0;\n\
     \tprivate static final byte TRUE_BYTES[] = {116, 114, 117, 101};\n\tprivate static\
     \ final byte FALSE_BYTES[] = {102, 97, 108, 115, 101};\n\tprivate static final\
@@ -145,29 +151,31 @@ data:
     \ }\n\t}\n}"
   dependsOn:
   - test/HelloWorld_test.java
-  - test/ArbitraryMod_test.java
   - test/ManyFastIO_test.java
   - test/Mod998_test.java
   - test/FastIO_test.java
-  - test/Mod107_test.java
+  - library/ArbitraryMod_test.java
   - library/Util.java
   - library/FastInputStream.java
+  - library/FastIO_test.java
   - library/Mod.java
+  - library/Mod107_test.java
   isVerificationFile: false
   path: library/FastOutputStream.java
   requiredBy:
   - library/Util.java
   - library/FastInputStream.java
   - library/Mod.java
-  timestamp: '2022-09-16 20:39:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-09-16 21:13:27+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/HelloWorld_test.java
-  - test/ArbitraryMod_test.java
   - test/ManyFastIO_test.java
   - test/Mod998_test.java
   - test/FastIO_test.java
-  - test/Mod107_test.java
+  - library/ArbitraryMod_test.java
+  - library/FastIO_test.java
+  - library/Mod107_test.java
 documentation_of: library/FastOutputStream.java
 layout: document
 redirect_from:
