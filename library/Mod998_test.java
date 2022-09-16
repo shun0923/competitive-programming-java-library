@@ -28,15 +28,15 @@ public class Mod998_test extends Util {
 
 	public void checkAdd(long x, long y) {
 		long z = (x + y) % 998_244_353; if(z < 0) z += 998_244_353;
-		assertion(z == Mod998.md.add(x, y));
+		assertion(z == library.Mod998.md.add(x, y));
 	}
 	public void checkMul(long x, long y) {
 		long z = (x * y) % 998_244_353; if(z < 0) z += 998_244_353;
-		assertion(z == Mod998.md.mul(x, y));
+		assertion(z == library.Mod998.md.mul(x, y));
 	}
 	public void checkDiv(long x, long y) {
 		if(y == 0) return;
-		long z = Mod998.md.div(x, y);
+		long z = library.Mod998.md.div(x, y);
 		assertion(z >= 0 && z < 998_244_353 && (z * y - x) % 998_244_353 == 0);
 	}
 }
