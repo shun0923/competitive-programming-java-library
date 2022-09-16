@@ -24,22 +24,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/FastIO_test.java
       title: library/FastIO_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/HelloWorld_test.java
+      title: library/HelloWorld_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/ManyFastIO_test.java
+      title: library/ManyFastIO_test.java
     - icon: ':x:'
       path: library/Mod107_test.java
       title: library/Mod107_test.java
-  - name: test
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: test/FastIO_test.java
-      title: test/FastIO_test.java
-    - icon: ':heavy_check_mark:'
-      path: test/HelloWorld_test.java
-      title: test/HelloWorld_test.java
-    - icon: ':heavy_check_mark:'
-      path: test/ManyFastIO_test.java
-      title: test/ManyFastIO_test.java
     - icon: ':x:'
-      path: test/Mod998_test.java
-      title: test/Mod998_test.java
+      path: library/Mod998_test.java
+      title: library/Mod998_test.java
 layout: toppage
 ---

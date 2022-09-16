@@ -13,24 +13,21 @@ data:
   - icon: ':question:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
+  - icon: ':heavy_check_mark:'
+    path: library/HelloWorld_test.java
+    title: library/HelloWorld_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/ManyFastIO_test.java
+    title: library/ManyFastIO_test.java
   - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
   - icon: ':x:'
     path: library/Mod107_test.java
     title: library/Mod107_test.java
-  - icon: ':heavy_check_mark:'
-    path: test/FastIO_test.java
-    title: test/FastIO_test.java
-  - icon: ':heavy_check_mark:'
-    path: test/HelloWorld_test.java
-    title: test/HelloWorld_test.java
-  - icon: ':heavy_check_mark:'
-    path: test/ManyFastIO_test.java
-    title: test/ManyFastIO_test.java
   - icon: ':x:'
-    path: test/Mod998_test.java
-    title: test/Mod998_test.java
+    path: library/Mod998_test.java
+    title: library/Mod998_test.java
   _extendedRequiredBy:
   - icon: ':question:'
     path: library/FastInputStream.java
@@ -48,21 +45,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/FastIO_test.java
     title: library/FastIO_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/HelloWorld_test.java
+    title: library/HelloWorld_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/ManyFastIO_test.java
+    title: library/ManyFastIO_test.java
   - icon: ':x:'
     path: library/Mod107_test.java
     title: library/Mod107_test.java
-  - icon: ':heavy_check_mark:'
-    path: test/FastIO_test.java
-    title: test/FastIO_test.java
-  - icon: ':heavy_check_mark:'
-    path: test/HelloWorld_test.java
-    title: test/HelloWorld_test.java
-  - icon: ':heavy_check_mark:'
-    path: test/ManyFastIO_test.java
-    title: test/ManyFastIO_test.java
   - icon: ':x:'
-    path: test/Mod998_test.java
-    title: test/Mod998_test.java
+    path: library/Mod998_test.java
+    title: library/Mod998_test.java
   _isVerificationFailed: true
   _pathExtension: java
   _verificationStatusIcon: ':question:'
@@ -897,12 +891,11 @@ data:
     \ > op.apply(m2) ^ minimize) right = m2; else left = m1;\n\t\t}\n\t\treturn (left\
     \ + right) / 2.0;\n\t}\n}"
   dependsOn:
-  - test/HelloWorld_test.java
-  - test/ManyFastIO_test.java
-  - test/Mod998_test.java
-  - test/FastIO_test.java
+  - library/HelloWorld_test.java
   - library/ArbitraryMod_test.java
   - library/FastInputStream.java
+  - library/ManyFastIO_test.java
+  - library/Mod998_test.java
   - library/FastIO_test.java
   - library/FastOutputStream.java
   - library/Mod.java
@@ -913,14 +906,13 @@ data:
   - library/FastInputStream.java
   - library/FastOutputStream.java
   - library/Mod.java
-  timestamp: '2022-09-16 21:13:27+09:00'
+  timestamp: '2022-09-16 22:37:32+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/HelloWorld_test.java
-  - test/ManyFastIO_test.java
-  - test/Mod998_test.java
-  - test/FastIO_test.java
+  - library/HelloWorld_test.java
   - library/ArbitraryMod_test.java
+  - library/ManyFastIO_test.java
+  - library/Mod998_test.java
   - library/FastIO_test.java
   - library/Mod107_test.java
 documentation_of: library/Util.java
