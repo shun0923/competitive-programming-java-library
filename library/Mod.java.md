@@ -4,19 +4,19 @@ data:
   - icon: ':x:'
     path: library/ArbitraryMod_test.java
     title: library/ArbitraryMod_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/FastIO_test.java
     title: library/FastIO_test.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/HelloWorld_test.java
     title: library/HelloWorld_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
   - icon: ':x:'
@@ -25,30 +25,30 @@ data:
   - icon: ':x:'
     path: library/Mod998_test.java
     title: library/Mod998_test.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/Util.java
     title: library/Util.java
   _extendedVerifiedWith:
   - icon: ':x:'
     path: library/ArbitraryMod_test.java
     title: library/ArbitraryMod_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/FastIO_test.java
     title: library/FastIO_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/HelloWorld_test.java
     title: library/HelloWorld_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
   - icon: ':x:'
@@ -59,33 +59,33 @@ data:
     title: library/Mod998_test.java
   _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/Mod.java\n"
-  code: "package library;\n\nimport java.util.*;\n\nabstract class Mod {\n\tpublic\
-    \ final long MOD;\n\tpublic Mod(long mod) { MOD = mod; }\n\n\tpublic abstract\
-    \ long mod(long x);\n\tpublic final long[] mod(final long[] a) { for(int i = 0;\
-    \ i < a.length; i ++) a[i] = mod(a[i]); return a; }\n\tpublic final long[][] mod(final\
-    \ long[][] a) { for(int i = 0; i < a.length; i ++) mod(a[i]); return a; }\n\t\
-    public final long[][][] mod(final long[][][] a) { for(int i = 0; i < a.length;\
-    \ i ++) mod(a[i]); return a; }\n\n\tpublic long add(long x, final long y) { return\
-    \ (x += y) >= MOD * 2 || x < 0 ? mod(x) : x >= MOD ? x - MOD : x; }\n\tpublic\
-    \ final long sum(final long... x) { long sum = 0; for(long ele : x) sum = add(sum,\
-    \ ele); return sum; }\n\tpublic long sub(long x, final long y) { return (x -=\
-    \ y) < - MOD || x >= MOD ? mod(x) : x < 0 ? x + MOD : x; }\n\tpublic final long\
-    \ pow(long x, long y) {\n\t\tUtil.nonNegativeCheck(y);\n\t\tx = mod(x);\n\t\t\
-    long ans = 1;\n\t\tfor(; y > 0; y >>= 1) {\n\t\t\tif((y & 1) != 0) ans = mul(ans,\
-    \ x);\n\t\t\tx = mul(x, x);\n\t\t}\n\t\treturn ans;\n\t}\n\tpublic abstract long\
-    \ mul(long x, long y);\n\tpublic final long mul(final long... x) { long ans =\
-    \ 1; for(long ele : x) ans = mul(ans, ele); return ans; }\n\tpublic final long\
-    \ div(final long x, final long y) { return mul(x, inv(y)); }\n\n\tpublic final\
-    \ long[] pows(long x, final int n) {\n\t\tx = mod(x);\n\t\tlong pow[] = new long[n\
-    \ + 1];\n\t\tpow[0] = 1;\n\t\tfor(int i = 0; i < n; i ++) pow[i + 1] = mul(pow[i],\
-    \ x);\n\t\treturn pow;\n\t}\n\tpublic final long fact(final int n) {\n\t\tUtil.nonNegativeCheck(n);\n\
+  code: "import java.util.*;\n\nabstract class Mod {\n\tpublic final long MOD;\n\t\
+    public Mod(long mod) { MOD = mod; }\n\n\tpublic abstract long mod(long x);\n\t\
+    public final long[] mod(final long[] a) { for(int i = 0; i < a.length; i ++) a[i]\
+    \ = mod(a[i]); return a; }\n\tpublic final long[][] mod(final long[][] a) { for(int\
+    \ i = 0; i < a.length; i ++) mod(a[i]); return a; }\n\tpublic final long[][][]\
+    \ mod(final long[][][] a) { for(int i = 0; i < a.length; i ++) mod(a[i]); return\
+    \ a; }\n\n\tpublic long add(long x, final long y) { return (x += y) >= MOD * 2\
+    \ || x < 0 ? mod(x) : x >= MOD ? x - MOD : x; }\n\tpublic final long sum(final\
+    \ long... x) { long sum = 0; for(long ele : x) sum = add(sum, ele); return sum;\
+    \ }\n\tpublic long sub(long x, final long y) { return (x -= y) < - MOD || x >=\
+    \ MOD ? mod(x) : x < 0 ? x + MOD : x; }\n\tpublic final long pow(long x, long\
+    \ y) {\n\t\tUtil.nonNegativeCheck(y);\n\t\tx = mod(x);\n\t\tlong ans = 1;\n\t\t\
+    for(; y > 0; y >>= 1) {\n\t\t\tif((y & 1) != 0) ans = mul(ans, x);\n\t\t\tx =\
+    \ mul(x, x);\n\t\t}\n\t\treturn ans;\n\t}\n\tpublic abstract long mul(long x,\
+    \ long y);\n\tpublic final long mul(final long... x) { long ans = 1; for(long\
+    \ ele : x) ans = mul(ans, ele); return ans; }\n\tpublic final long div(final long\
+    \ x, final long y) { return mul(x, inv(y)); }\n\n\tpublic final long[] pows(long\
+    \ x, final int n) {\n\t\tx = mod(x);\n\t\tlong pow[] = new long[n + 1];\n\t\t\
+    pow[0] = 1;\n\t\tfor(int i = 0; i < n; i ++) pow[i + 1] = mul(pow[i], x);\n\t\t\
+    return pow;\n\t}\n\tpublic final long fact(final int n) {\n\t\tUtil.nonNegativeCheck(n);\n\
     \t\tprepareFact();\n\t\tif(n < MAX_FACT1) return fact[n];\n\t\telse {\n\t\t\t\
     long ans = fact[MAX_FACT1 - 1];\n\t\t\tfor(int i = MAX_FACT1; i <= n; i ++) ans\
     \ = mul(ans, i);\n\t\t\treturn ans;\n\t\t}\n\t}\n\tpublic final long invFact(final\
@@ -210,8 +210,8 @@ data:
   - library/Util.java
   - library/FastInputStream.java
   - library/FastOutputStream.java
-  timestamp: '2022-09-16 22:37:32+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2022-09-16 22:48:41+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/HelloWorld_test.java
   - library/ArbitraryMod_test.java

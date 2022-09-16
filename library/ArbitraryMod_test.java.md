@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/FastIO_test.java
     title: library/FastIO_test.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/HelloWorld_test.java
     title: library/HelloWorld_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/Mod.java
     title: library/Mod.java
   - icon: ':x:'
@@ -25,30 +25,30 @@ data:
   - icon: ':x:'
     path: library/Mod998_test.java
     title: library/Mod998_test.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/FastInputStream.java
     title: library/FastInputStream.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/Util.java
     title: library/Util.java
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/FastIO_test.java
     title: library/FastIO_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/HelloWorld_test.java
     title: library/HelloWorld_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
   - icon: ':x:'
@@ -68,15 +68,15 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/ArbitraryMod_test.java\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/1/ITP1_1_A\n\
-    package library;\n\nimport java.util.*;\n\npublic class ArbitraryMod_test extends\
-    \ Util {\n\tpublic static void main(final String[] args) {\n\t\tDEBUG = args.length\
-    \ > 0 && args[0].equals(\"-DEBUG\");\n\t\tThread.setDefaultUncaughtExceptionHandler((t,\
-    \ e) -> { flush(); e.printStackTrace(); System.exit(1); });\n\t\tnew Thread(null,\
-    \ new ArbitraryMod_test(), \"\", 1 << 31).start();\n\t}\n\n\tpublic void solve()\
-    \ {\n\t\tRandom rnd = new Random(0);\n\t\tfor(int i = 0; i < 10000000; i ++) checkAdd(rnd.nextInt(),\
-    \ rnd.nextInt(), rnd.nextInt(Integer.MAX_VALUE - 1) + 1);\n\t\tfor(int i = 0;\
-    \ i < 10000000; i ++) checkMul(rnd.nextInt(), rnd.nextInt(), rnd.nextInt(Integer.MAX_VALUE\
-    \ - 1) + 1);\n\t\tfor(int i = 0; i < 10000000; i ++) checkDiv(rnd.nextInt(), rnd.nextInt(),\
+    import java.util.*;\n\npublic class ArbitraryMod_test extends Util {\n\tpublic\
+    \ static void main(final String[] args) {\n\t\tDEBUG = args.length > 0 && args[0].equals(\"\
+    -DEBUG\");\n\t\tThread.setDefaultUncaughtExceptionHandler((t, e) -> { flush();\
+    \ e.printStackTrace(); System.exit(1); });\n\t\tnew Thread(null, new ArbitraryMod_test(),\
+    \ \"\", 1 << 31).start();\n\t}\n\n\tpublic void solve() {\n\t\tRandom rnd = new\
+    \ Random(0);\n\t\tfor(int i = 0; i < 10000000; i ++) checkAdd(rnd.nextInt(), rnd.nextInt(),\
+    \ rnd.nextInt(Integer.MAX_VALUE - 1) + 1);\n\t\tfor(int i = 0; i < 10000000; i\
+    \ ++) checkMul(rnd.nextInt(), rnd.nextInt(), rnd.nextInt(Integer.MAX_VALUE - 1)\
+    \ + 1);\n\t\tfor(int i = 0; i < 10000000; i ++) checkDiv(rnd.nextInt(), rnd.nextInt(),\
     \ 998_244_353);\n\t\tfor(int i = 0; i < 10000000; i ++) checkDiv(rnd.nextInt(),\
     \ rnd.nextInt(), 1_000_000_007);\n\t\tfor(int x = -100; x <= 100; x ++) {\n\t\t\
     \tfor(int y = -100; y <= 100; y ++) {\n\t\t\t\tfor(int m = 1; m <= 1000; m ++)\
@@ -106,7 +106,7 @@ data:
   - library/FastInputStream.java
   - library/FastOutputStream.java
   - library/Mod.java
-  timestamp: '2022-09-16 22:37:32+09:00'
+  timestamp: '2022-09-16 22:48:41+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith:
   - library/HelloWorld_test.java
