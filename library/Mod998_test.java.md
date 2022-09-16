@@ -80,12 +80,12 @@ data:
     \ rnd.nextInt());\n\t\tfor(int x = -3000; x <= 3000; x ++) {\n\t\t\tfor(int y\
     \ = -3000; y <= 3000; y ++) {\n\t\t\t\tcheckDiv(x, y);\n\t\t\t}\n\t\t}\n\t\tprtln(\"\
     Hello World\");\n\t}\n\n\tpublic void checkAdd(long x, long y) {\n\t\tlong z =\
-    \ (x + y) % 998_244_353; if(z < 0) z += 998_244_353;\n\t\tassertion(z == Mod998.md.add(x,\
+    \ (x + y) % 998_244_353; if(z < 0) z += 998_244_353;\n\t\tassertion(z == library.Mod998.md.add(x,\
     \ y));\n\t}\n\tpublic void checkMul(long x, long y) {\n\t\tlong z = (x * y) %\
-    \ 998_244_353; if(z < 0) z += 998_244_353;\n\t\tassertion(z == Mod998.md.mul(x,\
+    \ 998_244_353; if(z < 0) z += 998_244_353;\n\t\tassertion(z == library.Mod998.md.mul(x,\
     \ y));\n\t}\n\tpublic void checkDiv(long x, long y) {\n\t\tif(y == 0) return;\n\
-    \t\tlong z = Mod998.md.div(x, y);\n\t\tassertion(z >= 0 && z < 998_244_353 &&\
-    \ (z * y - x) % 998_244_353 == 0);\n\t}\n}"
+    \t\tlong z = library.Mod998.md.div(x, y);\n\t\tassertion(z >= 0 && z < 998_244_353\
+    \ && (z * y - x) % 998_244_353 == 0);\n\t}\n}"
   dependsOn:
   - library/HelloWorld_test.java
   - library/ArbitraryMod_test.java
@@ -103,7 +103,7 @@ data:
   - library/FastInputStream.java
   - library/FastOutputStream.java
   - library/Mod.java
-  timestamp: '2022-09-17 00:00:17+09:00'
+  timestamp: '2022-09-17 00:18:49+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith:
   - library/HelloWorld_test.java
