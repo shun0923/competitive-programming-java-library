@@ -1,4 +1,5 @@
 package library;
+
 import java.io.*;
 
 final class FastOutputStream {
