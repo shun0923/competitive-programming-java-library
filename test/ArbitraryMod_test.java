@@ -18,31 +18,19 @@ public class ArbitraryMod_test extends Util {
 		for(int i = 0; i < 10000000; i ++) checkDiv(rnd.nextInt(), rnd.nextInt(), 1_000_000_007);
 		for(int x = -100; x <= 100; x ++) {
 			for(int y = -100; y <= 100; y ++) {
-				for(int m = 1; m <= 100; m ++) {
+				for(int m = 1; m <= 1000; m ++) {
 					checkAdd(x, y, m);
 					checkMul(x, y, m);
 				}
 				checkDiv(x, y, 998_244_353);
 			}
 		}
-		checkAdd(Long.MAX_VALUE, Long.MAX_VALUE, 998_244_353);
-		checkAdd(Long.MAX_VALUE, Long.MIN_VALUE, 998_244_353);
-		checkAdd(Long.MIN_VALUE, Long.MAX_VALUE, 998_244_353);
-		checkAdd(Long.MIN_VALUE, Long.MIN_VALUE, 998_244_353);
-		checkMul(Integer.MAX_VALUE, Integer.MAX_VALUE, 998_244_353);
-		checkMul(Integer.MAX_VALUE, Integer.MIN_VALUE, 998_244_353);
-		checkMul(Integer.MIN_VALUE, Integer.MAX_VALUE, 998_244_353);
-		checkMul(Integer.MIN_VALUE, Integer.MIN_VALUE, 998_244_353);
-		checkDiv(Integer.MAX_VALUE, Integer.MAX_VALUE, 998_244_353);
-		checkDiv(Integer.MAX_VALUE, Integer.MIN_VALUE, 998_244_353);
-		checkDiv(Integer.MIN_VALUE, Integer.MAX_VALUE, 998_244_353);
-		checkDiv(Integer.MIN_VALUE, Integer.MIN_VALUE, 998_244_353);
 		prtln("Hello World");
 	}
 
 	public void checkAdd(long x, long y, long m) {
 		long z = (x + y) % m; if(z < 0) z += m;
-		assertion(z == new ArbitraryMod(m).add(x, y), z+" "+m);
+		assertion(z == new ArbitraryMod(m).add(x, y));
 	}
 	public void checkMul(long x, long y, long m) {
 		long z = (x * y) % m; if(z < 0) z += m;
