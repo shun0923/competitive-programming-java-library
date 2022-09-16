@@ -3,6 +3,8 @@
 package library;
 
 import library.Util;
+import library.FastInputStream;
+import library.FastOutputStream;
 
 public class ManyFastIO_test extends Util {
 	public static void main(final String[] args) {
