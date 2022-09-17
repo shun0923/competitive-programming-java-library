@@ -1,11 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: library/ArbitraryModPow_test.java
+    title: library/ArbitraryModPow_test.java
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod_test.java
     title: library/ArbitraryMod_test.java
@@ -41,6 +44,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/ArbitraryMod_test.java
+  - library/ArbitraryModPow_test.java
 documentation_of: library/ArbitraryMod.java
 layout: document
 redirect_from:

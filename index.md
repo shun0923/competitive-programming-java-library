@@ -12,15 +12,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/FastOutputStream.java
       title: library/FastOutputStream.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Util.java
       title: library/Util.java
   verificationCategories:
   - name: library
     pages:
+    - icon: ':heavy_check_mark:'
+      path: library/ArbitraryModPow_test.java
+      title: library/ArbitraryModPow_test.java
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryMod_test.java
       title: library/ArbitraryMod_test.java
@@ -33,15 +36,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ManyFastIO_test.java
       title: library/ManyFastIO_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Mod107Pow_test.java
       title: library/Mod107Pow_test.java
     - icon: ':heavy_check_mark:'
       path: library/Mod107_test.java
       title: library/Mod107_test.java
-    - icon: ':x:'
-      path: library/Mod998Pow_test.java
-      title: library/Mod998Pow_test.java
     - icon: ':heavy_check_mark:'
       path: library/Mod998_test.java
       title: library/Mod998_test.java

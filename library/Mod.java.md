@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy:
@@ -9,21 +9,18 @@ data:
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod107Pow_test.java
     title: library/Mod107Pow_test.java
   - icon: ':heavy_check_mark:'
     path: library/Mod107_test.java
     title: library/Mod107_test.java
-  - icon: ':x:'
-    path: library/Mod998Pow_test.java
-    title: library/Mod998Pow_test.java
   - icon: ':heavy_check_mark:'
     path: library/Mod998_test.java
     title: library/Mod998_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -153,11 +150,10 @@ data:
   requiredBy:
   - library/ArbitraryMod.java
   timestamp: '2022-09-17 01:02:57+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Mod107Pow_test.java
   - library/Mod998_test.java
-  - library/Mod998Pow_test.java
   - library/Mod107_test.java
 documentation_of: library/Mod.java
 layout: document
