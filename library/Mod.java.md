@@ -10,11 +10,17 @@ data:
     title: library/ArbitraryMod.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: library/Mod107ManyCombination_test.java
+    title: library/Mod107ManyCombination_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Mod107Pow_test.java
     title: library/Mod107Pow_test.java
   - icon: ':heavy_check_mark:'
     path: library/Mod107Random_test.java
     title: library/Mod107Random_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/Mod998ManyCombination_test.java
+    title: library/Mod998ManyCombination_test.java
   - icon: ':heavy_check_mark:'
     path: library/Mod998Random_test.java
     title: library/Mod998Random_test.java
@@ -153,8 +159,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Mod998Random_test.java
+  - library/Mod998ManyCombination_test.java
   - library/Mod107Pow_test.java
   - library/Mod107Random_test.java
+  - library/Mod107ManyCombination_test.java
 documentation_of: library/Mod.java
 layout: document
 redirect_from:

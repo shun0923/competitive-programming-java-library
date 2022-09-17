@@ -13,6 +13,9 @@ data:
     title: library/Mod.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: library/ArbitraryModCombination_test.java
+    title: library/ArbitraryModCombination_test.java
+  - icon: ':heavy_check_mark:'
     path: library/ArbitraryModOperation_test.java
     title: library/ArbitraryModOperation_test.java
   - icon: ':heavy_check_mark:'
@@ -31,11 +34,17 @@ data:
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
   - icon: ':heavy_check_mark:'
+    path: library/Mod107ManyCombination_test.java
+    title: library/Mod107ManyCombination_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Mod107Pow_test.java
     title: library/Mod107Pow_test.java
   - icon: ':heavy_check_mark:'
     path: library/Mod107Random_test.java
     title: library/Mod107Random_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/Mod998ManyCombination_test.java
+    title: library/Mod998ManyCombination_test.java
   - icon: ':heavy_check_mark:'
     path: library/Mod998Random_test.java
     title: library/Mod998Random_test.java
@@ -885,11 +894,14 @@ data:
   verifiedWith:
   - library/ArbitraryModOperation_test.java
   - library/HelloWorld_test.java
+  - library/ArbitraryModCombination_test.java
   - library/Mod998Random_test.java
+  - library/Mod998ManyCombination_test.java
   - library/Mod107Pow_test.java
   - library/Mod107Random_test.java
   - library/ManyFastIO_test.java
   - library/ArbitraryModPow_test.java
+  - library/Mod107ManyCombination_test.java
   - library/FastIO_test.java
   - library/ArbitraryModRandom_test.java
 documentation_of: library/Util.java
