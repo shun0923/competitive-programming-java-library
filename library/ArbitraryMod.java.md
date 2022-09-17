@@ -7,11 +7,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: library/ArbitraryModOperation_test.java
+    title: library/ArbitraryModOperation_test.java
+  - icon: ':heavy_check_mark:'
     path: library/ArbitraryModPow_test.java
     title: library/ArbitraryModPow_test.java
   - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod_test.java
-    title: library/ArbitraryMod_test.java
+    path: library/ArbitraryModRandom_test.java
+    title: library/ArbitraryModRandom_test.java
   _isVerificationFailed: false
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -43,8 +46,9 @@ data:
   timestamp: '2022-09-17 01:02:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - library/ArbitraryMod_test.java
+  - library/ArbitraryModOperation_test.java
   - library/ArbitraryModPow_test.java
+  - library/ArbitraryModRandom_test.java
 documentation_of: library/ArbitraryMod.java
 layout: document
 redirect_from:

@@ -13,11 +13,11 @@ data:
     path: library/Mod107Pow_test.java
     title: library/Mod107Pow_test.java
   - icon: ':heavy_check_mark:'
-    path: library/Mod107_test.java
-    title: library/Mod107_test.java
+    path: library/Mod107Random_test.java
+    title: library/Mod107Random_test.java
   - icon: ':heavy_check_mark:'
-    path: library/Mod998_test.java
-    title: library/Mod998_test.java
+    path: library/Mod998Random_test.java
+    title: library/Mod998Random_test.java
   _isVerificationFailed: false
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -152,9 +152,9 @@ data:
   timestamp: '2022-09-17 01:02:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - library/Mod998Random_test.java
   - library/Mod107Pow_test.java
-  - library/Mod998_test.java
-  - library/Mod107_test.java
+  - library/Mod107Random_test.java
 documentation_of: library/Mod.java
 layout: document
 redirect_from:

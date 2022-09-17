@@ -13,11 +13,14 @@ data:
     title: library/Mod.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: library/ArbitraryModOperation_test.java
+    title: library/ArbitraryModOperation_test.java
+  - icon: ':heavy_check_mark:'
     path: library/ArbitraryModPow_test.java
     title: library/ArbitraryModPow_test.java
   - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod_test.java
-    title: library/ArbitraryMod_test.java
+    path: library/ArbitraryModRandom_test.java
+    title: library/ArbitraryModRandom_test.java
   - icon: ':heavy_check_mark:'
     path: library/FastIO_test.java
     title: library/FastIO_test.java
@@ -31,11 +34,11 @@ data:
     path: library/Mod107Pow_test.java
     title: library/Mod107Pow_test.java
   - icon: ':heavy_check_mark:'
-    path: library/Mod107_test.java
-    title: library/Mod107_test.java
+    path: library/Mod107Random_test.java
+    title: library/Mod107Random_test.java
   - icon: ':heavy_check_mark:'
-    path: library/Mod998_test.java
-    title: library/Mod998_test.java
+    path: library/Mod998Random_test.java
+    title: library/Mod998Random_test.java
   _isVerificationFailed: false
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -880,14 +883,15 @@ data:
   timestamp: '2022-09-17 00:44:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - library/ArbitraryModOperation_test.java
   - library/HelloWorld_test.java
-  - library/ArbitraryMod_test.java
+  - library/Mod998Random_test.java
   - library/Mod107Pow_test.java
+  - library/Mod107Random_test.java
   - library/ManyFastIO_test.java
-  - library/Mod998_test.java
   - library/ArbitraryModPow_test.java
   - library/FastIO_test.java
-  - library/Mod107_test.java
+  - library/ArbitraryModRandom_test.java
 documentation_of: library/Util.java
 layout: document
 redirect_from:

@@ -22,11 +22,14 @@ data:
   - name: library
     pages:
     - icon: ':heavy_check_mark:'
+      path: library/ArbitraryModOperation_test.java
+      title: library/ArbitraryModOperation_test.java
+    - icon: ':heavy_check_mark:'
       path: library/ArbitraryModPow_test.java
       title: library/ArbitraryModPow_test.java
     - icon: ':heavy_check_mark:'
-      path: library/ArbitraryMod_test.java
-      title: library/ArbitraryMod_test.java
+      path: library/ArbitraryModRandom_test.java
+      title: library/ArbitraryModRandom_test.java
     - icon: ':heavy_check_mark:'
       path: library/FastIO_test.java
       title: library/FastIO_test.java
@@ -40,10 +43,10 @@ data:
       path: library/Mod107Pow_test.java
       title: library/Mod107Pow_test.java
     - icon: ':heavy_check_mark:'
-      path: library/Mod107_test.java
-      title: library/Mod107_test.java
+      path: library/Mod107Random_test.java
+      title: library/Mod107Random_test.java
     - icon: ':heavy_check_mark:'
-      path: library/Mod998_test.java
-      title: library/Mod998_test.java
+      path: library/Mod998Random_test.java
+      title: library/Mod998Random_test.java
 layout: toppage
 ---
