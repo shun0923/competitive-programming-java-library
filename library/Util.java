@@ -5,7 +5,7 @@ import java.util.function.*;
 import library.FastInputStream;
 import library.FastOutputStream;
 
-abstract public class Util implements Runnable {
+abstract class Util implements Runnable {
 	@Override
 	public void run() { solve(); flush(); }
 

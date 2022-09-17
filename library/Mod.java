@@ -167,7 +167,7 @@ abstract class Mod {
 
 	public final long sqrt(long x) {
 		x = mod(x);
-		if(x == 0) return 0;
+		if(x < 2) return x;
 		long p = (MOD - 1) >> 1;
 		if(pow(x, p) != 1) return -1;
 		long q = MOD - 1;
@@ -189,7 +189,7 @@ abstract class Mod {
 			c = mul(c, c);
 			t = mul(t, c);
 		}
-		return r;
+		return Math.min(r, MOD - r);
 	}
 }
 final class Mod107 extends Mod {
