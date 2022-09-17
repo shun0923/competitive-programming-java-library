@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy: []

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://yukicoder.me/problems/no/1044
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -36,8 +36,8 @@ data:
   isVerificationFile: true
   path: library/Mod107ManyCombination_test.java
   requiredBy: []
-  timestamp: '2022-09-17 17:40:42+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-09-17 17:52:24+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/Mod107ManyCombination_test.java
 layout: document

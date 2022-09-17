@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod.java
     title: library/Mod.java
   _extendedRequiredBy: []
@@ -18,9 +18,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryModRandom_test.java
     title: library/ArbitraryModRandom_test.java
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: library/ArbitraryModSqrt_test.java
+    title: library/ArbitraryModSqrt_test.java
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -46,11 +49,12 @@ data:
   isVerificationFile: false
   path: library/ArbitraryMod.java
   requiredBy: []
-  timestamp: '2022-09-17 17:11:19+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-09-17 17:52:24+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/ArbitraryModOperation_test.java
   - library/ArbitraryModCombination_test.java
+  - library/ArbitraryModSqrt_test.java
   - library/ArbitraryModPow_test.java
   - library/ArbitraryModRandom_test.java
 documentation_of: library/ArbitraryMod.java
