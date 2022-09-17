@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/ArbitraryMod.java
       title: library/ArbitraryMod.java
     - icon: ':heavy_check_mark:'
@@ -12,10 +12,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/FastOutputStream.java
       title: library/FastOutputStream.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Util.java
       title: library/Util.java
   verificationCategories:
@@ -33,7 +33,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryModRandom_test.java
       title: library/ArbitraryModRandom_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/ArbitraryModSqrt_test.java
       title: library/ArbitraryModSqrt_test.java
     - icon: ':heavy_check_mark:'
@@ -45,19 +45,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ManyFastIO_test.java
       title: library/ManyFastIO_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Mod107ManyCombination_test.java
       title: library/Mod107ManyCombination_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Mod107Pow_test.java
       title: library/Mod107Pow_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Mod107Random_test.java
       title: library/Mod107Random_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Mod998ManyCombination_test.java
       title: library/Mod998ManyCombination_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Mod998Random_test.java
       title: library/Mod998Random_test.java
 layout: toppage

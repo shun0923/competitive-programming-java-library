@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod107ManyCombination_test.java
     title: library/Mod107ManyCombination_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod107Pow_test.java
     title: library/Mod107Pow_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod107Random_test.java
     title: library/Mod107Random_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod998ManyCombination_test.java
     title: library/Mod998ManyCombination_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod998Random_test.java
     title: library/Mod998Random_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -105,7 +105,7 @@ data:
     \ r2 = r / MOD;\n\t\t\tans = mul(ans, C(n - n2 * MOD, r - r2 * MOD));\n\t\t\t\
     n = n2;\n\t\t\tr = r2;\n\t\t}\n\t\treturn ans;\n\t}\n\tpublic final long H(final\
     \ long n, final long r) { return C(n - 1 + r, r); }\n\n\tpublic final long sqrt(long\
-    \ x) {\n\t\tx = mod(x);\n\t\tif(x == 0) return 0;\n\t\tlong p = (MOD - 1) >> 1;\n\
+    \ x) {\n\t\tx = mod(x);\n\t\tif(x < 2) return x;\n\t\tlong p = (MOD - 1) >> 1;\n\
     \t\tif(pow(x, p) != 1) return -1;\n\t\tlong q = MOD - 1;\n\t\tint m = 1;\n\t\t\
     while(((q >>= 1) & 1) == 0) m ++;\n\t\tlong z = 1;\n\t\twhile(pow(z, p) == 1)\
     \ z = (long)Math.floor(Math.random() * (MOD - 1)) + 1;\n\t\tlong c = pow(z, q);\n\
@@ -113,37 +113,38 @@ data:
     \ 0;\n\t\tm -= 2;\n\t\twhile(t != 1) {\n\t\t\tlong pows[] = new long[m + 1];\n\
     \t\t\tpows[0] = t;\n\t\t\tfor(int i = 0; i < m; i ++) pows[i + 1] = mul(pows[i],\
     \ pows[i]);\n\t\t\twhile(pows[m --] == 1) c = mul(c, c);\n\t\t\tr = mul(r, c);\n\
-    \t\t\tc = mul(c, c);\n\t\t\tt = mul(t, c);\n\t\t}\n\t\treturn r;\n\t}\n}\nfinal\
-    \ class Mod107 extends Mod {\n\tpublic static final Mod107 md = new Mod107();\n\
-    \tpublic static final long MOD = 1_000_000_007;\n\tprivate Mod107() { super(MOD);\
-    \ }\n\n\t@Override\n\tpublic final long mod(long x) {\n\t\tif(0 <= x && x < MOD)\
-    \ return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD)\
-    \ < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long x, long y)\
-    \ {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\t\
-    x = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\nfinal class Mod998\
-    \ extends Mod {\n\tpublic static final Mod998 md = new Mod998();\n\tpublic static\
-    \ final long MOD = 998_244_353;\n\tprivate Mod998() { super(MOD); }\n\n\t@Override\n\
-    \tpublic final long mod(long x) {\n\t\tif(0 <= x && x < MOD) return x;\n\t\tif(-\
+    \t\t\tc = mul(c, c);\n\t\t\tt = mul(t, c);\n\t\t}\n\t\treturn Math.min(r, MOD\
+    \ - r);\n\t}\n}\nfinal class Mod107 extends Mod {\n\tpublic static final Mod107\
+    \ md = new Mod107();\n\tpublic static final long MOD = 1_000_000_007;\n\tprivate\
+    \ Mod107() { super(MOD); }\n\n\t@Override\n\tpublic final long mod(long x) {\n\
+    \t\tif(0 <= x && x < MOD) return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\
+    \t\treturn (x %= MOD) < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long\
+    \ mul(long x, long y) {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return\
+    \ (x * y) % MOD;\n\t\tx = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\
+    \t}\n}\nfinal class Mod998 extends Mod {\n\tpublic static final Mod998 md = new\
+    \ Mod998();\n\tpublic static final long MOD = 998_244_353;\n\tprivate Mod998()\
+    \ { super(MOD); }\n\n\t@Override\n\tpublic final long mod(long x) {\n\t\tif(0\
+    \ <= x && x < MOD) return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\t\t\
+    return (x %= MOD) < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long\
+    \ x, long y) {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return (x * y)\
+    \ % MOD;\n\t\tx = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\n\
+    final class Mod754974721 extends Mod {\n\tpublic static final Mod754974721 md\
+    \ = new Mod754974721();\n\tpublic static final long MOD = 754_974_721;\n\tprivate\
+    \ Mod754974721() { super(MOD); }\n\n\t@Override\n\tpublic final long mod(long\
+    \ x) {\n\t\tif(0 <= x && x < MOD) return x;\n\t\tif(- MOD <= x && x < 0) return\
+    \ x + MOD;\n\t\treturn (x %= MOD) < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic\
+    \ final long mul(long x, long y) {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y <\
+    \ MOD) return (x * y) % MOD;\n\t\tx = mod(x);\n\t\ty = mod(y);\n\t\treturn (x\
+    \ * y) % MOD;\n\t}\n}\nfinal class Mod167772161 extends Mod {\n\tpublic static\
+    \ final Mod167772161 md = new Mod167772161();\n\tpublic static final long MOD\
+    \ = 167_772_161;\n\tprivate Mod167772161() { super(MOD); }\n\n\t@Override\n\t\
+    public final long mod(long x) {\n\t\tif(0 <= x && x < MOD) return x;\n\t\tif(-\
     \ MOD <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD) < 0 ? x + MOD : x;\n\
     \t}\n\t@Override\n\tpublic final long mul(long x, long y) {\n\t\tif(x >= 0 &&\
     \ x < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\tx = mod(x);\n\t\ty\
-    \ = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\nfinal class Mod754974721 extends\
-    \ Mod {\n\tpublic static final Mod754974721 md = new Mod754974721();\n\tpublic\
-    \ static final long MOD = 754_974_721;\n\tprivate Mod754974721() { super(MOD);\
-    \ }\n\n\t@Override\n\tpublic final long mod(long x) {\n\t\tif(0 <= x && x < MOD)\
-    \ return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD)\
-    \ < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long x, long y)\
-    \ {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\t\
-    x = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\nfinal class Mod167772161\
-    \ extends Mod {\n\tpublic static final Mod167772161 md = new Mod167772161();\n\
-    \tpublic static final long MOD = 167_772_161;\n\tprivate Mod167772161() { super(MOD);\
-    \ }\n\n\t@Override\n\tpublic final long mod(long x) {\n\t\tif(0 <= x && x < MOD)\
-    \ return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD)\
-    \ < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long x, long y)\
-    \ {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\t\
-    x = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\nfinal class Mod469762049\
-    \ extends Mod {\n\tpublic static final Mod469762049 md = new Mod469762049();\n\
-    \tpublic static final long MOD = 469_762_049;\n\tprivate Mod469762049() { super(MOD);\
+    \ = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\nfinal class Mod469762049 extends\
+    \ Mod {\n\tpublic static final Mod469762049 md = new Mod469762049();\n\tpublic\
+    \ static final long MOD = 469_762_049;\n\tprivate Mod469762049() { super(MOD);\
     \ }\n\n\t@Override\n\tpublic final long mod(long x) {\n\t\tif(0 <= x && x < MOD)\
     \ return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD)\
     \ < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long x, long y)\
@@ -155,8 +156,8 @@ data:
   path: library/Mod.java
   requiredBy:
   - library/ArbitraryMod.java
-  timestamp: '2022-09-17 17:52:24+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-09-17 23:18:18+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Mod998Random_test.java
   - library/Mod998ManyCombination_test.java

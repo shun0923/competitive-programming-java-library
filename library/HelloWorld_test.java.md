@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy: []
@@ -28,7 +28,7 @@ data:
   isVerificationFile: true
   path: library/HelloWorld_test.java
   requiredBy: []
-  timestamp: '2022-09-17 17:14:12+09:00'
+  timestamp: '2022-09-17 23:18:18+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/HelloWorld_test.java

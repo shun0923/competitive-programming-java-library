@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy: []
@@ -37,7 +37,7 @@ data:
   isVerificationFile: true
   path: library/ArbitraryModOperation_test.java
   requiredBy: []
-  timestamp: '2022-09-17 17:11:19+09:00'
+  timestamp: '2022-09-17 23:18:18+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/ArbitraryModOperation_test.java

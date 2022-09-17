@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy: []
@@ -38,7 +38,7 @@ data:
   isVerificationFile: true
   path: library/ManyFastIO_test.java
   requiredBy: []
-  timestamp: '2022-09-17 03:47:46+09:00'
+  timestamp: '2022-09-17 23:18:18+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/ManyFastIO_test.java
