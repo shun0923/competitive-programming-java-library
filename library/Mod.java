@@ -167,6 +167,7 @@ abstract class Mod {
 
 	public final long sqrt(long x) {
 		x = mod(x);
+		if(x == 0) return 0;
 		long p = (MOD - 1) >> 1;
 		if(pow(x, p) != 1) return -1;
 		long q = MOD - 1;
