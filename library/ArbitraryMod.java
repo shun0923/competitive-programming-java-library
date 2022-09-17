@@ -6,7 +6,14 @@ final class ArbitraryMod extends Mod {
 	private static final long MASK = 0xffff_ffffl;
 	private final long MH;
 	private final long ML;
-	public ArbitraryMod(long mod) { super(mod); long a = (1l << 32) / MOD; long b = (1l << 32) % MOD; long m = a * a * MOD + 2 * a * b + (b * b) / MOD; MH = m >>> 32; ML = m & MASK; }
+	public ArbitraryMod(long mod) {
+		super(mod);
+		final long a = (1l << 32) / MOD;
+		final long b = (1l << 32) % MOD;
+		final long m = a * a * MOD + 2 * a * b + (b * b) / MOD;
+		MH = m >>> 32;
+		ML = m & MASK;
+	}
 
 	private final long reduce(long x) {
 		if(MOD == 1) return 0;
