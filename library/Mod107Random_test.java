@@ -6,11 +6,11 @@ import java.util.*;
 import library.Util;
 import library.Mod;
 
-public class Mod998_test extends Util {
+public class Mod107Random_test extends Util {
 	public static void main(final String[] args) {
 		DEBUG = args.length > 0 && args[0].equals("-DEBUG");
 		Thread.setDefaultUncaughtExceptionHandler((t, e) -> { flush(); e.printStackTrace(); System.exit(1); });
-		new Thread(null, new Mod998_test(), "", 1 << 31).start();
+		new Thread(null, new Mod107Random_test(), "", 1 << 31).start();
 	}
 
 	public void solve() {
@@ -28,16 +28,16 @@ public class Mod998_test extends Util {
 	}
 
 	public void checkAdd(long x, long y) {
-		long z = (x + y) % 998_244_353; if(z < 0) z += 998_244_353;
-		assertion(z == Mod998.md.add(x, y));
+		long z = (x + y) % 1_000_000_007; if(z < 0) z += 1_000_000_007;
+		assertion(z == Mod107.md.add(x, y));
 	}
 	public void checkMul(long x, long y) {
-		long z = (x * y) % 998_244_353; if(z < 0) z += 998_244_353;
-		assertion(z == Mod998.md.mul(x, y));
+		long z = (x * y) % 1_000_000_007; if(z < 0) z += 1_000_000_007;
+		assertion(z == Mod107.md.mul(x, y));
 	}
 	public void checkDiv(long x, long y) {
 		if(y == 0) return;
-		long z = Mod998.md.div(x, y);
-		assertion(z >= 0 && z < 998_244_353 && (z * y - x) % 998_244_353 == 0);
+		long z = Mod107.md.div(x, y);
+		assertion(z >= 0 && z < 1_000_000_007 && (z * y - x) % 1_000_000_007 == 0);
 	}
 }

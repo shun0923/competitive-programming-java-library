@@ -6,11 +6,11 @@ import java.util.*;
 import library.Util;
 import library.ArbitraryMod;
 
-public class ArbitraryMod_test extends Util {
+public class ArbitraryModRandom_test extends Util {
 	public static void main(final String[] args) {
 		DEBUG = args.length > 0 && args[0].equals("-DEBUG");
 		Thread.setDefaultUncaughtExceptionHandler((t, e) -> { flush(); e.printStackTrace(); System.exit(1); });
-		new Thread(null, new ArbitraryMod_test(), "", 1 << 31).start();
+		new Thread(null, new ArbitraryModRandom_test(), "", 1 << 31).start();
 	}
 
 	public void solve() {
