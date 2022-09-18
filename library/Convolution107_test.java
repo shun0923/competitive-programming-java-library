@@ -4,7 +4,7 @@ package library;
 
 import java.util.*;
 import library.Util;
-import library.Convolution107;
+import library.ExtendedConvolution;
 
 public class Convolution107_test extends Util {
 	public static void main(final String[] args) {

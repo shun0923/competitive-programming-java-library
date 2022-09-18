@@ -4,7 +4,7 @@ package library;
 
 import java.util.*;
 import library.Util;
-import library.Convolution998;
+import library.Convolution;
 
 public class Convolution998_test extends Util {
 	public static void main(final String[] args) {
