@@ -6,6 +6,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryMod.java
       title: library/ArbitraryMod.java
+    - icon: ':warning:'
+      path: library/Convolution.java
+      title: library/Convolution.java
+    - icon: ':warning:'
+      path: library/ExtendedConvolution.java
+      title: library/ExtendedConvolution.java
     - icon: ':heavy_check_mark:'
       path: library/FastInputStream.java
       title: library/FastInputStream.java
@@ -15,7 +21,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Util.java
       title: library/Util.java
   verificationCategories:
@@ -36,6 +42,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryModSqrt_test.java
       title: library/ArbitraryModSqrt_test.java
+    - icon: ':x:'
+      path: library/Convolution107_test.java
+      title: library/Convolution107_test.java
+    - icon: ':x:'
+      path: library/Convolution998_test.java
+      title: library/Convolution998_test.java
     - icon: ':heavy_check_mark:'
       path: library/FastIO_test.java
       title: library/FastIO_test.java

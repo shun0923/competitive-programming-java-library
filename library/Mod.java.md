@@ -1,13 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
+  - icon: ':warning:'
+    path: library/Convolution.java
+    title: library/Convolution.java
+  - icon: ':warning:'
+    path: library/ExtendedConvolution.java
+    title: library/ExtendedConvolution.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: library/Mod107ManyCombination_test.java
@@ -155,6 +161,8 @@ data:
   isVerificationFile: false
   path: library/Mod.java
   requiredBy:
+  - library/Convolution.java
+  - library/ExtendedConvolution.java
   - library/ArbitraryMod.java
   timestamp: '2022-09-17 23:18:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
