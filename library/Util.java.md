@@ -8,10 +8,10 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/ExtendedConvolution.java
     title: library/ExtendedConvolution.java
   - icon: ':heavy_check_mark:'
@@ -33,10 +33,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryModSqrt_test.java
     title: library/ArbitraryModSqrt_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Convolution107_test.java
     title: library/Convolution107_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Convolution998_test.java
     title: library/Convolution998_test.java
   - icon: ':heavy_check_mark:'
@@ -63,9 +63,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Mod998Random_test.java
     title: library/Mod998Random_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -907,7 +907,7 @@ data:
   - library/ExtendedConvolution.java
   - library/Mod.java
   timestamp: '2022-09-17 23:18:18+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Convolution998_test.java
   - library/ArbitraryModOperation_test.java

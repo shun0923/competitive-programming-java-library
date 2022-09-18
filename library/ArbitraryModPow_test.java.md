@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy: []

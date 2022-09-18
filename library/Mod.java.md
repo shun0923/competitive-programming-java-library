@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/ExtendedConvolution.java
     title: library/ExtendedConvolution.java
   _extendedVerifiedWith:
