@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.Util;
+import library.SimpleUtil;
 
 abstract class Mod {
 	public final long MOD;
@@ -16,7 +16,7 @@ abstract class Mod {
 	public final long sum(final long... x) { long sum = 0; for(long ele : x) sum = add(sum, ele); return sum; }
 	public long sub(long x, final long y) { return (x -= y) < - MOD || x >= MOD ? mod(x) : x < 0 ? x + MOD : x; }
 	public final long pow(long x, long y) {
-		Util.nonNegativeCheck(y);
+		SimpleUtil.nonNegativeCheck(y);
 		x = mod(x);
 		long ans = 1;
 		for(; y > 0; y >>= 1) {
@@ -37,7 +37,7 @@ abstract class Mod {
 		return pow;
 	}
 	public final long fact(final int n) {
-		Util.nonNegativeCheck(n);
+		SimpleUtil.nonNegativeCheck(n);
 		prepareFact();
 		if(n < MAX_FACT1) return fact[n];
 		else {
@@ -47,7 +47,7 @@ abstract class Mod {
 		}
 	}
 	public final long invFact(final int n) {
-		Util.nonNegativeCheck(n);
+		SimpleUtil.nonNegativeCheck(n);
 		prepareFact();
 		if(n < MAX_FACT1) return invFact[n];
 		else return inv(fact(n));
@@ -79,7 +79,7 @@ abstract class Mod {
 		return s1;
 	}
 	public final long[] invs(final int n) { // O(N)
-		Util.positiveCheck(n);
+		SimpleUtil.positiveCheck(n);
 		long inv[] = new long[n + 1];
 		inv[1] = 1;
 		for(int i = 2; i <= n; i ++) inv[i] = mul(inv[(int)(MOD % i)], (MOD - MOD / i));

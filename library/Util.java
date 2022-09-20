@@ -2,7 +2,7 @@ package library;
 
 import java.util.*;
 import java.util.function.*;
-import library.Util;
+import library.SimpleUtil;
 
 class Util extends SimpleUtil {
 	public static final int min(final int a, final int b) { return Math.min(a, b); }

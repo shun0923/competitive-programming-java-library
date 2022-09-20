@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.Util;
+import library.SimpleUtil;
 import library.Mod;
 
 class Convolution { // M=MOD
@@ -87,7 +87,7 @@ class Convolution { // M=MOD
 	// O((N_1+N_2)log(N_1+N_2))
 	public final long[] cnv(final long[] a, final long[] b) { return cnv(a, b, Math.max(0, a.length + b.length - 1)); }
 	public long[] cnv(final long[] a, final long[] b, final int l) {
-		Util.nonNegativeCheck(l);
+		SimpleUtil.nonNegativeCheck(l);
 		if(a.length == 0 || b.length == 0) return new long[l];
 
 		int len = 1;
@@ -118,7 +118,7 @@ class Convolution { // M=MOD
 		return naiveCnv(a, b, Math.max(0, a.length + b.length - 1));
 	}
 	public long[] naiveCnv(final long[] a, final long[] b, final int l) {
-		Util.nonNegativeCheck(l);
+		SimpleUtil.nonNegativeCheck(l);
 		if(a.length == 0 || b.length == 0) return new long[l];
 
 		final long f[] = new long[l];
@@ -204,7 +204,7 @@ final class Convolution998 extends Convolution { // M=MOD
 
 	// O((N_1+N_2)log(N_1+N_2))
 	public final long[] cnv(final long[] a, final long[] b, final int l) {
-		Util.nonNegativeCheck(l);
+		SimpleUtil.nonNegativeCheck(l);
 		if(a.length == 0 || b.length == 0) return new long[l];
 
 		int len = 1;
@@ -231,7 +231,7 @@ final class Convolution998 extends Convolution { // M=MOD
 	}
 
 	public final long[] naiveCnv(final long[] a, final long[] b, final int l) {
-		Util.nonNegativeCheck(l);
+		SimpleUtil.nonNegativeCheck(l);
 		if(a.length == 0 || b.length == 0) return new long[l];
 
 		final long f[] = new long[l];
@@ -295,7 +295,7 @@ final class Convolution754974721 extends Convolution { // M=MOD
 
 	// O((N_1+N_2)log(N_1+N_2))
 	public final long[] cnv(final long[] a, final long[] b, final int l) {
-		Util.nonNegativeCheck(l);
+		SimpleUtil.nonNegativeCheck(l);
 		if(a.length == 0 || b.length == 0) return new long[l];
 
 		int len = 1;
@@ -322,7 +322,7 @@ final class Convolution754974721 extends Convolution { // M=MOD
 	}
 
 	public final long[] naiveCnv(final long[] a, final long[] b, final int l) {
-		Util.nonNegativeCheck(l);
+		SimpleUtil.nonNegativeCheck(l);
 		if(a.length == 0 || b.length == 0) return new long[l];
 
 		final long f[] = new long[l];
@@ -386,7 +386,7 @@ final class Convolution167772161 extends Convolution { // M=MOD
 
 	// O((N_1+N_2)log(N_1+N_2))
 	public final long[] cnv(final long[] a, final long[] b, final int l) {
-		Util.nonNegativeCheck(l);
+		SimpleUtil.nonNegativeCheck(l);
 		if(a.length == 0 || b.length == 0) return new long[l];
 
 		int len = 1;
@@ -413,7 +413,7 @@ final class Convolution167772161 extends Convolution { // M=MOD
 	}
 
 	public final long[] naiveCnv(final long[] a, final long[] b, final int l) {
-		Util.nonNegativeCheck(l);
+		SimpleUtil.nonNegativeCheck(l);
 		if(a.length == 0 || b.length == 0) return new long[l];
 
 		final long f[] = new long[l];
@@ -477,7 +477,7 @@ final class Convolution469762049 extends Convolution { // M=MOD
 
 	// O((N_1+N_2)log(N_1+N_2))
 	public final long[] cnv(final long[] a, final long[] b, final int l) {
-		Util.nonNegativeCheck(l);
+		SimpleUtil.nonNegativeCheck(l);
 		if(a.length == 0 || b.length == 0) return new long[l];
 
 		int len = 1;
@@ -504,7 +504,7 @@ final class Convolution469762049 extends Convolution { // M=MOD
 	}
 
 	public final long[] naiveCnv(final long[] a, final long[] b, final int l) {
-		Util.nonNegativeCheck(l);
+		SimpleUtil.nonNegativeCheck(l);
 		if(a.length == 0 || b.length == 0) return new long[l];
 
 		final long f[] = new long[l];
