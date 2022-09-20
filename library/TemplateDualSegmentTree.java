@@ -3,7 +3,7 @@ package library;
 import java.util.function.*;
 import library.SimpleUtil;
 
-class TemplatedDualSegmentTree<T> {
+class TemplateDualSegmentTree<T> {
 	@FunctionalInterface
 	interface BinaryConsumer<T> extends BiConsumer<T, T> {  }
 
@@ -18,16 +18,16 @@ class TemplatedDualSegmentTree<T> {
 	int rangeR[];
 
 	// O(N)
-	TemplatedDualSegmentTree(T[] a, Supplier<T> e2Supplier, BinaryConsumer<T> g) {
+	TemplateDualSegmentTree(T[] a, Supplier<T> e2Supplier, BinaryConsumer<T> g) {
 		this(a.length, e2Supplier, g);
 		System.arraycopy(a, 0, lazy, n, a.length);
 	}
-	TemplatedDualSegmentTree(int len, Supplier<T> xSupplier, Supplier<T> e2Supplier, BinaryConsumer<T> g) {
+	TemplateDualSegmentTree(int len, Supplier<T> xSupplier, Supplier<T> e2Supplier, BinaryConsumer<T> g) {
 		this(len, e2Supplier, g);
 		for(int i = 0; i < len; i ++) lazy[i + n] = xSupplier.get();
 	}
 	@SuppressWarnings("unchecked")
-	TemplatedDualSegmentTree(int len, Supplier<T> e2Supplier, BinaryConsumer<T> g) {
+	TemplateDualSegmentTree(int len, Supplier<T> e2Supplier, BinaryConsumer<T> g) {
 		SimpleUtil.nonNegativeCheck(len);
 		this.e2Supplier = e2Supplier;
 		this.e2 = e2Supplier.get();

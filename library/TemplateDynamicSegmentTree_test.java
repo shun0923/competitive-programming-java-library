@@ -3,14 +3,14 @@
 package library;
 
 import library.Solver;
-import library.TemplatedDynamicSegmentTree;
+import library.TemplateDynamicSegmentTree;
 
-public class TemplatedDynamicSegmentTree_test extends Solver {
-	public static void main(final String[] args) { main(args, new TemplatedDynamicSegmentTree_test()); }
+public class TemplateDynamicSegmentTree_test extends Solver {
+	public static void main(final String[] args) { main(args, new TemplateDynamicSegmentTree_test()); }
 
 	public void solve() {
 		int n = ni();
-		TemplatedDynamicSegmentTree<Long> st = new TemplatedDynamicSegmentTree<>(1_000_000_001,
+		TemplateDynamicSegmentTree<Long> st = new TemplateDynamicSegmentTree<>(1_000_000_001,
 				() -> 0l, (ele1, ele2) -> ele1 + ele2);
 		long ans = 0;
 		for(int i = 0; i < n; i ++) {

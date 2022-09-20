@@ -3,7 +3,7 @@ package library;
 import java.util.function.*;
 import library.SimpleUtil;
 
-class TemplatedSegmentTree<T> {
+class TemplateSegmentTree<T> {
 	private Supplier<T> eSupplier;
 	private T e;
 	private BinaryOperator<T> f;
@@ -14,18 +14,18 @@ class TemplatedSegmentTree<T> {
 	private int rangeR[];
 
 	// O(N)
-	public TemplatedSegmentTree(T[] a, Supplier<T> eSupplier, BinaryOperator<T> f) {
+	public TemplateSegmentTree(T[] a, Supplier<T> eSupplier, BinaryOperator<T> f) {
 		this(a.length, eSupplier, f);
 		System.arraycopy(a, 0, nodes, n, a.length);
 		for(int i = n - 1; i > 0; i --) nodes[i] = f.apply(nodes[i << 1], nodes[(i << 1) + 1]);
 	}
-	public TemplatedSegmentTree(int len, Supplier<T> xSupplier, Supplier<T> eSupplier, BinaryOperator<T> f) {
+	public TemplateSegmentTree(int len, Supplier<T> xSupplier, Supplier<T> eSupplier, BinaryOperator<T> f) {
 		this(len, eSupplier, f);
 		for(int i = 0; i < len; i ++) nodes[n + i] = xSupplier.get();
 		for(int i = n - 1; i > 0; i --) nodes[i] = f.apply(nodes[i << 1], nodes[(i << 1) + 1]);
 	}
 	@SuppressWarnings("unchecked")
-	public TemplatedSegmentTree(int len, Supplier<T> eSupplier, BinaryOperator<T> f) {
+	public TemplateSegmentTree(int len, Supplier<T> eSupplier, BinaryOperator<T> f) {
 		SimpleUtil.nonNegativeCheck(len);
 		this.eSupplier = eSupplier;
 		this.e = eSupplier.get();

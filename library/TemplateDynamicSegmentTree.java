@@ -3,7 +3,7 @@ package library;
 import java.util.function.*;
 import library.SimpleUtil;
 
-class TemplatedDynamicSegmentTree<T> {
+class TemplateDynamicSegmentTree<T> {
 	class NodeST {
 		T val;
 		NodeST l = null;
@@ -20,7 +20,7 @@ class TemplatedDynamicSegmentTree<T> {
 	NodeST root;
 
 	// O(1)
-	TemplatedDynamicSegmentTree(long len, Supplier<T> eSupplier, BinaryOperator<T> f) {
+	TemplateDynamicSegmentTree(long len, Supplier<T> eSupplier, BinaryOperator<T> f) {
 		SimpleUtil.nonNegativeCheck(len);
 		this.n = len; this.eSupplier = eSupplier; this.e = eSupplier.get(); this.f = f;
 		root = new NodeST();
