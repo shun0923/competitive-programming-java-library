@@ -3,27 +3,27 @@ package library;
 import java.util.function.*;
 import library.SimpleUtil;
 
-class SegTree {
-	long e;
-	LongBinaryOperator f;
+class SegmentTree {
+	private long e;
+	private LongBinaryOperator f;
 
-	int n;
-	long nodes[];
-	int rangeL[];
-	int rangeR[];
+	private int n;
+	private long nodes[];
+	private int rangeL[];
+	private int rangeR[];
 
 	// O(N)
-	SegTree(long[] a, long e, LongBinaryOperator f) {
+	public SegmentTree(long[] a, long e, LongBinaryOperator f) {
 		this(a.length, e, f);
 		System.arraycopy(a, 0, nodes, n, a.length);
 		for(int i = n - 1; i > 0; i --) nodes[i] = f.applyAsLong(nodes[i << 1], nodes[(i << 1) + 1]);
 	}
-	SegTree(int len, long x, long e, LongBinaryOperator f) {
+	public SegmentTree(int len, long x, long e, LongBinaryOperator f) {
 		this(len, e, f);
 		Arrays.fill(nodes, n, n + len, x);
 		for(int i = n - 1; i > 0; i --) nodes[i] = f.applyAsLong(nodes[i << 1], nodes[(i << 1) + 1]);
 	}
-	SegTree(int len, long e, LongBinaryOperator f) {
+	public SegmentTree(int len, long e, LongBinaryOperator f) {
 		SimpleUtil.nonNegativeCheck(len);
 		this.e = e;
 		this.f = f;
@@ -44,7 +44,7 @@ class SegTree {
 	}
 
 	// O(logN)
-	void set(int i, long val) {
+	public void set(int i, long val) {
 		SimpleUtil.rangeCheck(i, n);
 		i += n;
 		nodes[i] = val;
@@ -53,11 +53,11 @@ class SegTree {
 			nodes[i] = f.applyAsLong(nodes[i << 1], nodes[(i << 1) + 1]);
 		}
 	}
-	void update(int i, long val) { set(i, f.applyAsLong(nodes[i + n], val)); }
+	public void update(int i, long val) { set(i, f.applyAsLong(nodes[i + n], val)); }
 
-	long get(int i) { SimpleUtil.rangeCheck(i, n); return nodes[i + n]; } // O(1)
+	public long get(int i) { SimpleUtil.rangeCheck(i, n); return nodes[i + n]; } // O(1)
 
-	long find(int l, int r) { // O(logN)
+	public long find(int l, int r) { // O(logN)
 		SimpleUtil.inclusiveRangeCheck(l, n);
 		SimpleUtil.inclusiveRangeCheck(r, n);
 		SimpleUtil.assertion(l <= r, "l is larger than r.");
@@ -73,9 +73,9 @@ class SegTree {
 	}
 
 	// min idx s.t. a<=idx<b && check(find(a,idx)) && !check(find(a,idx+1)) // O(logN)
-	int findLeftmost(LongPredicate check) { return findLeftmost(0, check); }
-	int findLeftmost(int l, LongPredicate check) { return findLeftmost(l, n, check); }
-	int findLeftmost(int l, int r, LongPredicate check){
+	public int findLeftmost(LongPredicate check) { return findLeftmost(0, check); }
+	public int findLeftmost(int l, LongPredicate check) { return findLeftmost(l, n, check); }
+	public int findLeftmost(int l, int r, LongPredicate check){
 		SimpleUtil.inclusiveRangeCheck(l, n);
 		SimpleUtil.inclusiveRangeCheck(r, n);
 		SimpleUtil.assertion(l <= r, "l is larger than r.");
@@ -92,9 +92,9 @@ class SegTree {
 		return l >= r ? r : l;
 	}
 	// max idx s.t. a<=idx<b && !check(find(idx-1,b)) && check(find(idx,b)) // O(logN)
-	int findRightmost(LongPredicate check) { return findRightmost(n, check); }
-	int findRightmost(int r, LongPredicate check) { return findRightmost(0, r, check); }
-	int findRightmost(int l, int r, LongPredicate check) {
+	public int findRightmost(LongPredicate check) { return findRightmost(n, check); }
+	public int findRightmost(int r, LongPredicate check) { return findRightmost(0, r, check); }
+	public int findRightmost(int l, int r, LongPredicate check) {
 		SimpleUtil.inclusiveRangeCheck(l, n);
 		SimpleUtil.inclusiveRangeCheck(r, n);
 		SimpleUtil.assertion(l <= r, "l is larger than r.");

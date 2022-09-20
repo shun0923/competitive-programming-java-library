@@ -11,7 +11,7 @@ public class SegmentTree_test extends Solver {
 	public void solve() {
 		int n = ni();
 		int q = ni();
-		SegTree st = new SegTree(nl(n),
+		SegmentTree st = new SegmentTree(nl(n),
 				0, (ele1, ele2) -> ele1 + ele2);
 		for(int i = 0; i < q; i ++) {
 			if(ni() == 0) st.update(ni(), nl());
