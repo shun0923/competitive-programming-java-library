@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://judge.yosupo.jp/problem/point_add_range_sum
+// verification-helper: PROBLEM https://judge.yosupo.jp/problem/point_set_range_composite
 
 package library;
 
@@ -6,8 +6,8 @@ import library.Solver;
 import library.Mod;
 import library.TemplatedSegmentTree;
 
-public class TemplatedSegmentTree_PairLL_test extends Solver {
-	public static void main(final String[] args) { main(args, new TemplatedSegmentTree_PairLL_test()); }
+public class TemplatedSegmentTree_Composite_test extends Solver {
+	public static void main(final String[] args) { main(args, new TemplatedSegmentTree_Composite_test()); }
 
 	public void solve() {
 		Mod md = Mod998.md;
