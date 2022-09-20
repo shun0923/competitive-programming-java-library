@@ -21,6 +21,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
+    - icon: ':warning:'
+      path: library/SimpleUtil.java
+      title: library/SimpleUtil.java
     - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java

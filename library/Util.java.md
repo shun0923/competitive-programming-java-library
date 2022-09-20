@@ -1,12 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/FastInputStream.java
-    title: library/FastInputStream.java
-  - icon: ':heavy_check_mark:'
-    path: library/FastOutputStream.java
-    title: library/FastOutputStream.java
+  _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/Convolution.java
@@ -31,313 +25,99 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/Util.java\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
-    \ library.FastInputStream;\nimport library.FastOutputStream;\n\nclass FastIO {\n\
-    \tpublic static boolean DEBUG;\n\n\tprivate static final FastInputStream in =\
-    \ new FastInputStream(System.in);\n\tpublic static final String nline() { return\
-    \ in.nextLine(); }\n\tpublic static final String[] nline(final int n) { final\
-    \ String a[] = new String[n]; for(int i = 0; i < n; i ++) a[i] = nline(); return\
-    \ a; }\n\tpublic static final char nc() { return in.nextChar(); }\n\tpublic static\
-    \ final char[] nc(int n) {\n\t\tfinal String str = nline();\n\t\tif(n < 0) n =\
-    \ str.length();\n\t\tfinal char a[] = new char[n];\n\t\tfor(int i = 0; i < n;\
-    \ i ++) a[i] = str.charAt(i);\n\t\treturn a;\n\t}\n\tpublic static final char[][]\
-    \ nc(final int n, final int m) { final char a[][] = new char[n][m]; for(int i\
-    \ = 0; i < n; i ++) a[i] = nc(m); return a; }\n\tpublic static final boolean[]\
-    \ nb(int n, final char t) {\n\t\tfinal char c[] = nc(-1);\n\t\tif(n < 0) n = c.length;\n\
-    \t\tfinal boolean a[] = new boolean[n];\n\t\tfor(int i = 0; i < n; i ++) a[i]\
-    \ = c[i] == t;\n\t\treturn a;\n\t}\n\tpublic static final boolean[][] nb(final\
-    \ int n, final int m, final char t) { final boolean a[][] = new boolean[n][];\
-    \ for(int i = 0; i < n; i ++) a[i] = nb(m, t); return a; }\n\tpublic static final\
-    \ int ni() { return in.nextInt(); }\n\tpublic static final int[] ni(final int\
-    \ n) { final int a[] = new int[n]; for(int i = 0; i < n; i ++) a[i] = ni(); return\
-    \ a; }\n\tpublic static final int[][] ni(final int n, final int m) { final int\
-    \ a[][] = new int[n][]; for(int i = 0; i < n; i ++) a[i] = ni(m); return a; }\n\
-    \tpublic static final long nl() { return in.nextLong(); }\n\tpublic static final\
-    \ long[] nl(final int n) { final long a[] = new long[n]; for(int i = 0; i < n;\
-    \ i ++) a[i] = nl(); return a; }\n\tpublic static final long[][] nl(final int\
-    \ n, final int m) { final long a[][] = new long[n][]; for(int i = 0; i < n; i\
-    \ ++) a[i] = nl(m); return a; }\n\tpublic static final double nd() { return in.nextDouble();\
-    \ }\n\tpublic static final double[] nd(final int n) { final double a[] = new double[n];\
-    \ for(int i = 0; i < n; i ++) a[i] = nd(); return a; }\n\tpublic static final\
-    \ double[][] nd(final int n, final int m) { final double a[][] = new double[n][];\
-    \ for(int i = 0; i < n; i ++) a[i] = nd(m); return a; }\n\tpublic static final\
-    \ String ns() { return in.next(); }\n\tpublic static final String[] ns(final int\
-    \ n) { final String a[] = new String[n]; for(int i = 0; i < n; i ++) a[i] = ns();\
-    \ return a; }\n\tpublic static final String[][] ns(final int n, final int m) {\
-    \ final String a[][] = new String[n][]; for(int i = 0; i < n; i ++) a[i] = ns(m);\
-    \ return a; }\n\n\tprivate static final FastOutputStream out = new FastOutputStream(System.out);\n\
-    \tprivate static final FastOutputStream err = new FastOutputStream(System.err);\n\
-    \tpublic static final void prt() { out.print(); }\n\tpublic static final void\
-    \ prt(final char c) { out.print(c); }\n\tpublic static final void prt(final boolean\
-    \ b) { out.print(b); }\n\tpublic static final void prt(final int x) { out.print(x);\
-    \ }\n\tpublic static final void prt(final long x) { out.print(x); }\n\tpublic\
-    \ static final void prt(final double d) { out.print(d); }\n\tpublic static final\
-    \ void prt(final String s) { out.print(s); }\n\tpublic static final void prt(final\
-    \ Object o) { out.print(o); }\n\tpublic static final void prtln() { out.println();\
-    \ }\n\tpublic static final void prtln(final char c) { out.println(c); }\n\tpublic\
-    \ static final void prtln(final boolean b) { out.println(b); }\n\tpublic static\
-    \ final void prtln(final int x) { out.println(x); }\n\tpublic static final void\
-    \ prtln(final long x) { out.println(x); }\n\tpublic static final void prtln(final\
-    \ double d) { out.println(d); }\n\tpublic static final void prtln(final String\
-    \ s) { out.println(s); }\n\tpublic static final void prtln(final Object o) { out.println(o);\
-    \ }\n\tpublic static final void prtln(final char... a) { out.println(a); }\n\t\
-    public static final void prtln(final boolean... a) { out.println(booleanToChar(a));\
-    \ }\n\tpublic static final void prtln(final int... a) { out.println(a); }\n\t\
-    public static final void prtln(final long... a) { out.println(a); }\n\tpublic\
-    \ static final void prtln(final double... a) { out.println(a); }\n\tpublic static\
-    \ final void prtln(final double[] a, int precision) { out.println(a, precision);\
-    \ }\n\tpublic static final void prtln(final String... a) { out.println(a); }\n\
-    \tpublic static final void prtln(final Object[] a) { out.println(a); }\n\tpublic\
-    \ static final void prtlns(final char... a) { for(char ele : a) prtln(ele); }\n\
-    \tpublic static final void prtlns(final boolean... a) { for(boolean ele : a) prtln(ele);\
-    \ }\n\tpublic static final void prtlns(final int... a) { for(int ele : a) prtln(ele);\
-    \ }\n\tpublic static final void prtlns(final long... a) { for(long ele : a) prtln(ele);\
-    \ }\n\tpublic static final void prtlns(final double... a) { for(double ele : a)\
-    \ prtln(ele); }\n\tpublic static final void prtlns(final Object[] a) { for(Object\
-    \ ele : a) prtln(ele); }\n\tpublic static final void prtln(final char[][] a) {\
-    \ for(char[] ele : a) prtln(ele); }\n\tpublic static final void prtln(final boolean[][]\
-    \ a) { for(boolean[] ele : a) prtln(ele); }\n\tpublic static final void prtln(final\
-    \ int[][] a) { for(int[] ele : a) prtln(ele); }\n\tpublic static final void prtln(final\
-    \ long[][] a) { for(long[] ele : a) prtln(ele); }\n\tpublic static final void\
-    \ prtln(final double[][] a) { for(double[] ele : a) prtln(ele); }\n\tpublic static\
-    \ final void prtln(final double[][] a, int precision) { for(double[] ele : a)\
-    \ prtln(ele, precision); }\n\tpublic static final void prtln(final String[][]\
-    \ a) { for(String[] ele : a) prtln(ele); }\n\tpublic static final void prtln(final\
-    \ Object[][] a) { for(Object[] ele : a) prtln(ele); }\n\n\tpublic static final\
-    \ void errprt() { if(DEBUG) err.print(); }\n\tpublic static final void errprt(final\
-    \ char c) { if(DEBUG) err.print(c); }\n\tpublic static final void errprt(final\
-    \ boolean b) { if(DEBUG) err.print(booleanToChar(b)); }\n\tpublic static final\
-    \ void errprt(final int x) { if(DEBUG) if(isINF(x)) err.print('_'); else err.print(x);\
-    \ }\n\tpublic static final void errprt(final long x) { if(DEBUG) if(isINF(x))\
-    \ err.print('_'); else err.print(x); }\n\tpublic static final void errprt(final\
-    \ double d) { if(DEBUG) err.print(d); }\n\tpublic static final void errprt(final\
-    \ String s) { if(DEBUG) err.print(s); }\n\tpublic static final void errprt(final\
-    \ Object o) { if(DEBUG) err.print(o); }\n\tpublic static final void errprtln()\
-    \ { if(DEBUG) err.println(); }\n\tpublic static final void errprtln(final char\
-    \ c) { if(DEBUG) err.println(c); }\n\tpublic static final void errprtln(final\
-    \ boolean b) { if(DEBUG) err.println(booleanToChar(b)); }\n\tpublic static final\
-    \ void errprtln(final int x) { if(DEBUG) if(isINF(x)) err.println('_'); else err.println(x);\
-    \ }\n\tpublic static final void errprtln(final long x) { if(DEBUG) if(isINF(x))\
-    \ err.println('_'); else err.println(x); }\n\tpublic static final void errprtln(final\
-    \ double d) { if(DEBUG) err.println(d); }\n\tpublic static final void errprtln(final\
-    \ String s) { if(DEBUG) err.println(s); }\n\tpublic static final void errprtln(final\
-    \ Object o) { if(DEBUG) err.println(o); }\n\tpublic static final void errprtln(final\
-    \ char... a) { if(DEBUG) err.println(a); }\n\tpublic static final void errprtln(final\
-    \ boolean... a) { if(DEBUG) err.println(booleanToChar(a)); }\n\tpublic static\
-    \ final void errprtln(final int... a) {\n\t\tif(DEBUG) {\n\t\t\tboolean start\
-    \ = false;\n\t\t\tfor(int ele : a) {\n\t\t\t\terrprt(ele);\n\t\t\t\tif(!start)\
-    \ errprt(' ');\n\t\t\t\tstart = false;\n\t\t\t}\n\t\t\terr.println();\n\t\t}\n\
-    \t}\n\tpublic static final void errprtln(final long... a) {\n\t\tif(DEBUG) {\n\
-    \t\t\tboolean start = false;\n\t\t\tfor(long ele : a) {\n\t\t\t\terrprt(ele);\n\
-    \t\t\t\tif(!start) errprt(' ');\n\t\t\t\tstart = false;\n\t\t\t}\n\t\t\terr.println();\n\
-    \t\t}\n\t}\n\tpublic static final void errprtln(final double... a) { if(DEBUG)\
-    \ err.println(a); }\n\tpublic static final void errprtln(final double[] a, final\
-    \ int precision) { if(DEBUG) err.println(a, precision); }\n\tpublic static final\
-    \ void errprtln(final String... a) { if(DEBUG) err.println(a); }\n\tpublic static\
-    \ final void errprtln(final Object[] a) { if(DEBUG) err.println(a); }\n\tpublic\
-    \ static final void errprtlns(final char... a) { if(DEBUG) for(char ele : a) errprtln(ele);\
-    \ }\n\tpublic static final void errprtlns(final boolean... a) { if(DEBUG) for(boolean\
-    \ ele : a) errprtln(ele); }\n\tpublic static final void errprtlns(final int...\
-    \ a) { if(DEBUG) for(int ele : a) errprtln(ele); }\n\tpublic static final void\
-    \ errprtlns(final long... a) { if(DEBUG) for(long ele : a) errprtln(ele); }\n\t\
-    public static final void errprtlns(final double... a) { if(DEBUG) for(double ele\
-    \ : a) errprtln(ele); }\n\tpublic static final void errprtlns(final Object[] a)\
-    \ { if(DEBUG) for(Object ele : a) errprtln(ele); }\n\tpublic static final void\
-    \ errprtln(final char[][] a) { if(DEBUG) for(char[] ele : a) errprtln(ele); }\n\
-    \tpublic static final void errprtln(final boolean[][] a) { if(DEBUG) for(boolean[]\
-    \ ele : a) errprtln(ele); }\n\tpublic static final void errprtln(final int[][]\
-    \ a) { if(DEBUG) for(int[] ele : a) errprtln(ele); }\n\tpublic static final void\
-    \ errprtln(final long[][] a) { if(DEBUG) for(long[] ele : a) errprtln(ele); }\n\
-    \tpublic static final void errprtln(final double[][] a) { if(DEBUG) for(double[]\
-    \ ele : a) errprtln(ele); }\n\tpublic static final void errprtln(final double[][]\
-    \ a, int precision) { if(DEBUG) for(double[] ele : a) errprtln(ele, precision);\
-    \ }\n\tpublic static final void errprtln(final String[][] a) { if(DEBUG) for(String[]\
-    \ ele : a) errprtln(ele); }\n\tpublic static final void errprtln(final Object[][]\
-    \ a) { if(DEBUG) for(Object[] ele : a) errprtln(ele); }\n\tpublic static final\
-    \ void errprtlns(final Object[][] a) { if(DEBUG) for(Object[] ele : a) { errprtlns(ele);\
-    \ errprtln(); } }\n\n\tpublic static final void reply(final boolean b) { prtln(b\
-    \ ? \"Yes\" : \"No\"); }\n\tpublic static final void REPLY(final boolean b) {\
-    \ prtln(b ? \"YES\" : \"NO\"); }\n\n\tpublic static final void flush() { out.flush();\
-    \ if(DEBUG) err.flush(); }\n\tpublic static final void assertion(final boolean\
-    \ b) { if(!b) { flush(); throw new AssertionError(); } }\n\tpublic static final\
-    \ void assertion(final boolean b, final char c) { if(!b) { errprtln(c); flush();\
-    \ throw new AssertionError(); } }\n\tpublic static final void assertion(final\
-    \ boolean b, final boolean b2) { if(!b) { errprtln(b2); flush(); throw new AssertionError();\
-    \ } }\n\tpublic static final void assertion(final boolean b, final int x) { if(!b)\
-    \ { errprtln(x); flush(); throw new AssertionError(); } }\n\tpublic static final\
-    \ void assertion(final boolean b, final long x) { if(!b) { errprtln(x); flush();\
-    \ throw new AssertionError(); } }\n\tpublic static final void assertion(final\
-    \ boolean b, final double d) { if(!b) { errprtln(d); flush(); throw new AssertionError();\
-    \ } }\n\tpublic static final void assertion(final boolean b, final String s) {\
-    \ if(!b) { errprtln(s); flush(); throw new AssertionError(); } }\n\tpublic static\
-    \ final void assertion(final boolean b, final Object o) { if(!b) { errprtln(o);\
-    \ flush(); throw new AssertionError(); } }\n\tpublic static final void assertion(final\
-    \ boolean b, final char... a) { if(!b) { errprtln(a); flush(); throw new AssertionError();\
-    \ } }\n\tpublic static final void assertion(final boolean b, final boolean...\
-    \ a) { if(!b) { errprtln(a); flush(); throw new AssertionError(); } }\n\tpublic\
-    \ static final void assertion(final boolean b, final int... a) { if(!b) { errprtln(a);\
-    \ flush(); throw new AssertionError(); } }\n\tpublic static final void assertion(final\
-    \ boolean b, final long... a) { if(!b) { errprtln(a); flush(); throw new AssertionError();\
-    \ } }\n\tpublic static final void assertion(final boolean b, final double... a)\
-    \ { if(!b) { errprtln(a); flush(); throw new AssertionError(); } }\n\tpublic static\
-    \ final void assertion(final boolean b, final String... a) { if(!b) { errprtln(a);\
-    \ flush(); throw new AssertionError(); } }\n\tpublic static final void assertion(final\
-    \ boolean b, final Object[] a) { if(!b) { errprtln(a); flush(); throw new AssertionError();\
-    \ } }\n\tpublic static final void assertion(final boolean b, final char[][] a)\
-    \ { if(!b) { errprtln(a); flush(); throw new AssertionError(); } }\n\tpublic static\
-    \ final void assertion(final boolean b, final boolean[][] a) { if(!b) { errprtln(a);\
-    \ flush(); throw new AssertionError(); } }\n\tpublic static final void assertion(final\
-    \ boolean b, final int[][] a) { if(!b) { errprtln(a); flush(); throw new AssertionError();\
-    \ } }\n\tpublic static final void assertion(final boolean b, final long[][] a)\
-    \ { if(!b) { errprtln(a); flush(); throw new AssertionError(); } }\n\tpublic static\
-    \ final void assertion(final boolean b, final double[][] a) { if(!b) { errprtln(a);\
-    \ flush(); throw new AssertionError(); } }\n\tpublic static final void assertion(final\
-    \ boolean b, final String[][] a) { if(!b) { errprtln(a); flush(); throw new AssertionError();\
-    \ } }\n\tpublic static final void assertion(final boolean b, final Object[][]\
-    \ a) { if(!b) { errprtln(a); flush(); throw new AssertionError(); } }\n\tpublic\
-    \ static final void inclusiveRangeCheck(final int i, final int max) { inclusiveRangeCheck(i,\
-    \ 0, max); }\n\tpublic static final void inclusiveRangeCheck(final int i, final\
-    \ int min, final int max) { rangeCheck(i, min, max + 1); }\n\tpublic static final\
-    \ void inclusiveRangeCheck(final long i, final long max) { inclusiveRangeCheck(i,\
-    \ 0, max); }\n\tpublic static final void inclusiveRangeCheck(final long i, final\
-    \ long min, final long max) { rangeCheck(i, min, max + 1); }\n\tpublic static\
-    \ final void rangeCheck(final int i, final int max) { rangeCheck(i, 0, max); }\n\
-    \tpublic static final void rangeCheck(final int i, final int min, final int max)\
-    \ { if(i < min || i >= max) throw new IndexOutOfBoundsException(String.format(\"\
-    Index %d out of bounds for length %d\", i, max)); }\n\tpublic static final void\
-    \ rangeCheck(final long i, final long max) { rangeCheck(i, 0, max); }\n\tpublic\
-    \ static final void rangeCheck(final long i, final long min, final long max) {\
-    \ if(i < min || i >= max) throw new IndexOutOfBoundsException(String.format(\"\
-    Index %d out of bounds for length %d\", i, max)); }\n\tpublic static final void\
-    \ nonNegativeCheck(final long x) { nonNegativeCheck(x, \"the argument\"); }\n\t\
-    public static final void nonNegativeCheck(final long x, final String attribute)\
-    \ { if(x < 0) throw new IllegalArgumentException(String.format(\"%s %d is negative\"\
-    , attribute, x)); }\n\tpublic static final void positiveCheck(final long x) {\
-    \ positiveCheck(x, \"the argument\"); }\n\tpublic static final void positiveCheck(final\
-    \ long x, final String attribute) { if(x <= 0) throw new IllegalArgumentException(String.format(\"\
-    %s %d is negative\", attribute, x)); }\n\n\tpublic static final void exit() {\
-    \ flush(); System.exit(0); }\n\tpublic static final void exit(final char c) {\
-    \ prtln(c); exit(); }\n\tpublic static final void exit(final boolean b) { prtln(b);\
-    \ exit(); }\n\tpublic static final void exit(final int x) { prtln(x); exit();\
-    \ }\n\tpublic static final void exit(final long x) { prtln(x); exit(); }\n\tpublic\
-    \ static final void exit(final double d) { prtln(d); exit(); }\n\tpublic static\
-    \ final void exit(final String s) { prtln(s); exit(); }\n\tpublic static final\
-    \ void exit(final Object o) { prtln(o); exit(); }\n\tpublic static final void\
-    \ exit(final char... a) { prtln(a); exit(); }\n\tpublic static final void exit(final\
-    \ boolean... a) { prtln(a); exit(); }\n\tpublic static final void exit(final int...\
-    \ a) { prtln(a); exit(); }\n\tpublic static final void exit(final long... a) {\
-    \ prtln(a); exit(); }\n\tpublic static final void exit(final double... a) { prtln(a);\
-    \ exit(); }\n\tpublic static final void exit(final String... a) { prtln(a); exit();\
-    \ }\n\tpublic static final void exit(final Object[] a) { prtln(a); exit(); }\n\
-    \tpublic static final void exit(final char[][] a) { prtln(a); exit(); }\n\tpublic\
-    \ static final void exit(final boolean[][] a) { prtln(a); exit(); }\n\tpublic\
-    \ static final void exit(final int[][] a) { prtln(a); exit(); }\n\tpublic static\
-    \ final void exit(final long[][] a) { prtln(a); exit(); }\n\tpublic static final\
-    \ void exit(final double[][] a) { prtln(a); exit(); }\n\tpublic static final void\
-    \ exit(final String[][] a) { prtln(a); exit(); }\n\tpublic static final void exit(final\
-    \ Object[][] a) { prtln(a); exit(); }\n\n\n\tpublic static final char booleanToChar(final\
-    \ boolean b) { return b ? '#' : '.'; }\n\tpublic static final char[] booleanToChar(final\
-    \ boolean... a) {\n\t\tfinal char c[] = new char[a.length];\n\t\tfor(int i = 0;\
-    \ i < a.length; i ++) c[i] = booleanToChar(a[i]);\n\t\treturn c;\n\t}\n\tpublic\
-    \ static final long INF = (long)4e18;\n\tpublic static final boolean isPlusINF(final\
-    \ long x) { return x > INF / 10; }\n\tpublic static final boolean isMinusINF(final\
-    \ long x) { return isPlusINF(- x); }\n\tpublic static final boolean isINF(final\
-    \ long x) { return isPlusINF(x) || isMinusINF(x); }\n\tpublic static final int\
-    \ I_INF = (int)1e9 + 1000;\n\tpublic static final boolean isPlusINF(final int\
-    \ x) { return x > I_INF / 10; }\n\tpublic static final boolean isMinusINF(final\
-    \ int x) { return isPlusINF(- x); }\n\tpublic static final boolean isINF(final\
-    \ int x) { return isPlusINF(x) || isMinusINF(x); }\n}\nclass Util extends FastIO\
-    \ {\n\tpublic static final int min(final int a, final int b) { return Math.min(a,\
-    \ b); }\n\tpublic static final long min(final long a, final long b) { return Math.min(a,\
-    \ b); }\n\tpublic static final double min(final double a, final double b) { return\
-    \ Math.min(a, b); }\n\tpublic static final <T extends Comparable<T>> T min(final\
-    \ T a, final T b) { return a.compareTo(b) <= 0 ? a : b; }\n\tpublic static final\
-    \ int min(final int... x) { int min = x[0]; for(int val : x) min = min(min, val);\
-    \ return min; }\n\tpublic static final long min(final long... x) { long min =\
-    \ x[0]; for(long val : x) min = min(min, val); return min; }\n\tpublic static\
-    \ final double min(final double... x) { double min = x[0]; for(double val : x)\
-    \ min = min(min, val); return min; }\n\tpublic static final int max(final int\
-    \ a, final int b) { return Math.max(a, b); }\n\tpublic static final long max(final\
-    \ long a, final long b) { return Math.max(a, b); }\n\tpublic static final double\
-    \ max(final double a, final double b) { return Math.max(a, b); }\n\tpublic static\
-    \ final <T extends Comparable<T>> T max(final T a, final T b) { return a.compareTo(b)\
-    \ >= 0 ? a : b; }\n\tpublic static final int max(final int... x) { int max = x[0];\
-    \ for(int val : x) max = max(max, val); return max; }\n\tpublic static final long\
-    \ max(final long... x) { long max = x[0]; for(long val : x) max = max(max, val);\
-    \ return max; }\n\tpublic static final double max(final double... x) { double\
-    \ max = x[0]; for(double val : x) max = max(max, val); return max; }\n\tpublic\
-    \ static final <T extends Comparable<T>> T max(final T[] x) { T max = x[0]; for(T\
-    \ val : x) max = max(max, val); return max; }\n\tpublic static final int max(final\
-    \ int[][] a) { int max = a[0][0]; for(int[] ele : a) max = max(max, max(ele));\
-    \ return max; }\n\tpublic static final long max(final long[][] a) { long max =\
-    \ a[0][0]; for(long[] ele : a) max = max(max, max(ele)); return max; }\n\tpublic\
-    \ static final double max(final double[][] a) { double max = a[0][0]; for(double[]\
-    \ ele : a) max = max(max, max(ele)); return max; }\n\tpublic static final <T extends\
-    \ Comparable<T>> T max(final T[][] a) { T max = a[0][0]; for(T[] ele : a) max\
-    \ = max(max, max(ele)); return max; }\n\tpublic static final long sum(final int...\
-    \ a) { long sum = 0; for(int ele : a) sum += ele; return sum; }\n\tpublic static\
-    \ final long sum(final long... a) { long sum = 0; for(long ele : a) sum += ele;\
-    \ return sum; }\n\tpublic static final double sum(final double... a) { double\
-    \ sum = 0; for(double ele : a) sum += ele; return sum; }\n\tpublic static final\
-    \ int sum(final boolean... a) { int sum = 0; for(boolean ele : a) sum += ele ?\
-    \ 1 : 0; return sum; }\n\tpublic static final long[] sums(final int[] a) { long\
-    \ sum[] = new long[a.length + 1]; sum[0] = 0; for(int i = 0; i < a.length; i ++)\
-    \ sum[i + 1] = sum[i] + a[i]; return sum; }\n\tpublic static final long[] sums(final\
-    \ long[] a) { long sum[] = new long[a.length + 1]; sum[0] = 0; for(int i = 0;\
-    \ i < a.length; i ++) sum[i + 1] = sum[i] + a[i]; return sum; }\n\tpublic static\
-    \ final double[] sums(final double[] a) { double sum[] = new double[a.length +\
-    \ 1]; sum[0] = 0; for(int i = 0; i < a.length; i ++) sum[i + 1] = sum[i] + a[i];\
-    \ return sum; }\n\tpublic static final int[] sums(final boolean[] a) { int sum[]\
-    \ = new int[a.length + 1]; sum[0] = 0; for(int i = 0; i < a.length; i ++) sum[i\
-    \ + 1] = sum[i] + (a[i] ? 1 : 0); return sum; }\n\tpublic static final long[][]\
-    \ sums(final int[][] a) {\n\t\tfinal long sum[][] = new long[a.length + 1][a[0].length\
-    \ + 1];\n\t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\tfor(int j = 0; j < a[i].length;\
-    \ j ++) sum[i + 1][j + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j] + a[i][j];\n\
-    \t\t}\n\t\treturn sum;\n\t}\n\tpublic static final long[][] sums(final long[][]\
-    \ a) {\n\t\tfinal long sum[][] = new long[a.length + 1][a[0].length + 1];\n\t\t\
-    for(int i = 0; i < a.length; i ++) {\n\t\t\tfor(int j = 0; j < a[i].length; j\
-    \ ++) sum[i + 1][j + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j] + a[i][j];\n\
-    \t\t}\n\t\treturn sum;\n\t}\n\tpublic static final double[][] sums(final double[][]\
-    \ a) {\n\t\tfinal double sum[][] = new double[a.length + 1][a[0].length + 1];\n\
-    \t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\tfor(int j = 0; j < a[i].length;\
-    \ j ++) sum[i + 1][j + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j] + a[i][j];\n\
-    \t\t}\n\t\treturn sum;\n\t}\n\tpublic static final int[][] sums(final boolean[][]\
-    \ a) {\n\t\tfinal int sum[][] = new int[a.length + 1][a[0].length + 1];\n\t\t\
-    for(int i = 0; i < a.length; i ++) {\n\t\t\tfor(int j = 0; j < a[i].length; j\
-    \ ++) sum[i + 1][j + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j] + (a[i][j]\
-    \ ? 1 : 0);\n\t\t}\n\t\treturn sum;\n\t}\n\tpublic static final int constrain(final\
-    \ int x, final int l, final int r) { return min(max(x, min(l, r)), max(l, r));\
-    \ }\n\tpublic static final long constrain(final long x, final long l, final long\
-    \ r) { return min(max(x, min(l, r)), max(l, r)); }\n\tpublic static final double\
-    \ constrain(final double x, final double l, final double r) { return min(max(x,\
-    \ min(l, r)), max(l, r)); }\n\tpublic static final int abs(final int x) { return\
-    \ x >= 0 ? x : - x; }\n\tpublic static final long abs(final long x) { return x\
-    \ >= 0 ? x : - x; }\n\tpublic static final double abs(final double x) { return\
-    \ x >= 0 ? x : - x; }\n\tpublic static final int signum(final int x) { return\
-    \ x > 0 ? 1 : x < 0 ? -1 : 0; }\n\tpublic static final int signum(final long x)\
-    \ { return x > 0 ? 1 : x < 0 ? -1 : 0; }\n\tpublic static final int signum(final\
-    \ double x) { return x > 0 ? 1 : x < 0 ? -1 : 0; }\n\tpublic static final long\
-    \ round(final double x) { return Math.round(x); }\n\tpublic static final long\
-    \ floor(final double x) { return round(Math.floor(x)); }\n\tpublic static final\
-    \ int divfloor(final int a, final int b) { return signum(a) == signum(b) ? a /\
-    \ b : - divceil(abs(a), abs(b)); }\n\tpublic static final long divfloor(final\
-    \ long a, final long b) { return signum(a) == signum(b) ? a / b : - divceil(abs(a),\
-    \ abs(b)); }\n\tpublic static final long ceil(final double x) { return round(Math.ceil(x));\
-    \ }\n\tpublic static final int divceil(final int a, final int b) { return a >=\
-    \ 0 && b > 0 ? (a + b - 1) / b : a < 0 && b < 0 ? divceil(abs(a), abs(b)) : -\
-    \ divfloor(abs(a), abs(b)); }\n\tpublic static final long divceil(final long a,\
-    \ final long b) { return a >= 0 && b > 0 ? (a + b - 1) / b : a < 0 && b < 0 ?\
-    \ divceil(abs(a), abs(b)) : - divfloor(abs(a), abs(b)); }\n\tpublic static final\
-    \ boolean mulGreater(final long a, final long b, long c) { return b == 0 ? c <\
-    \ 0 : b < 0 ? mulLess(a, - b, - c) : a > divfloor(c, b); } // a * b > c\n\tpublic\
-    \ static final boolean mulGreaterEquals(final long a, final long b, final long\
-    \ c) { return b == 0 ? c <= 0 : b < 0 ? mulLessEquals(a, - b, - c) : a >= divceil(c,\
-    \ b); } // a * b >= c\n\tpublic static final boolean mulLess(final long a, final\
-    \ long b, final long c) { return !mulGreaterEquals(a, b, c); } // a * b < c\n\t\
-    public static final boolean mulLessEquals(final long a, final long b, final long\
-    \ c) { return !mulGreater(a, b, c); } // a * b <= c\n\tpublic static final double\
-    \ sqrt(final int x) { return Math.sqrt((double)x); }\n\tpublic static final double\
-    \ sqrt(final long x) { return Math.sqrt((double)x); }\n\tpublic static final double\
-    \ sqrt(final double x) { return Math.sqrt(x); }\n\tpublic static final int floorsqrt(final\
+    \ library.Util;\n\nclass Util extends SimpleUtil {\n\tpublic static final int\
+    \ min(final int a, final int b) { return Math.min(a, b); }\n\tpublic static final\
+    \ long min(final long a, final long b) { return Math.min(a, b); }\n\tpublic static\
+    \ final double min(final double a, final double b) { return Math.min(a, b); }\n\
+    \tpublic static final <T extends Comparable<T>> T min(final T a, final T b) {\
+    \ return a.compareTo(b) <= 0 ? a : b; }\n\tpublic static final int min(final int...\
+    \ x) { int min = x[0]; for(int val : x) min = min(min, val); return min; }\n\t\
+    public static final long min(final long... x) { long min = x[0]; for(long val\
+    \ : x) min = min(min, val); return min; }\n\tpublic static final double min(final\
+    \ double... x) { double min = x[0]; for(double val : x) min = min(min, val); return\
+    \ min; }\n\tpublic static final int max(final int a, final int b) { return Math.max(a,\
+    \ b); }\n\tpublic static final long max(final long a, final long b) { return Math.max(a,\
+    \ b); }\n\tpublic static final double max(final double a, final double b) { return\
+    \ Math.max(a, b); }\n\tpublic static final <T extends Comparable<T>> T max(final\
+    \ T a, final T b) { return a.compareTo(b) >= 0 ? a : b; }\n\tpublic static final\
+    \ int max(final int... x) { int max = x[0]; for(int val : x) max = max(max, val);\
+    \ return max; }\n\tpublic static final long max(final long... x) { long max =\
+    \ x[0]; for(long val : x) max = max(max, val); return max; }\n\tpublic static\
+    \ final double max(final double... x) { double max = x[0]; for(double val : x)\
+    \ max = max(max, val); return max; }\n\tpublic static final <T extends Comparable<T>>\
+    \ T max(final T[] x) { T max = x[0]; for(T val : x) max = max(max, val); return\
+    \ max; }\n\tpublic static final int max(final int[][] a) { int max = a[0][0];\
+    \ for(int[] ele : a) max = max(max, max(ele)); return max; }\n\tpublic static\
+    \ final long max(final long[][] a) { long max = a[0][0]; for(long[] ele : a) max\
+    \ = max(max, max(ele)); return max; }\n\tpublic static final double max(final\
+    \ double[][] a) { double max = a[0][0]; for(double[] ele : a) max = max(max, max(ele));\
+    \ return max; }\n\tpublic static final <T extends Comparable<T>> T max(final T[][]\
+    \ a) { T max = a[0][0]; for(T[] ele : a) max = max(max, max(ele)); return max;\
+    \ }\n\tpublic static final long sum(final int... a) { long sum = 0; for(int ele\
+    \ : a) sum += ele; return sum; }\n\tpublic static final long sum(final long...\
+    \ a) { long sum = 0; for(long ele : a) sum += ele; return sum; }\n\tpublic static\
+    \ final double sum(final double... a) { double sum = 0; for(double ele : a) sum\
+    \ += ele; return sum; }\n\tpublic static final int sum(final boolean... a) { int\
+    \ sum = 0; for(boolean ele : a) sum += ele ? 1 : 0; return sum; }\n\tpublic static\
+    \ final long[] sums(final int[] a) { long sum[] = new long[a.length + 1]; sum[0]\
+    \ = 0; for(int i = 0; i < a.length; i ++) sum[i + 1] = sum[i] + a[i]; return sum;\
+    \ }\n\tpublic static final long[] sums(final long[] a) { long sum[] = new long[a.length\
+    \ + 1]; sum[0] = 0; for(int i = 0; i < a.length; i ++) sum[i + 1] = sum[i] + a[i];\
+    \ return sum; }\n\tpublic static final double[] sums(final double[] a) { double\
+    \ sum[] = new double[a.length + 1]; sum[0] = 0; for(int i = 0; i < a.length; i\
+    \ ++) sum[i + 1] = sum[i] + a[i]; return sum; }\n\tpublic static final int[] sums(final\
+    \ boolean[] a) { int sum[] = new int[a.length + 1]; sum[0] = 0; for(int i = 0;\
+    \ i < a.length; i ++) sum[i + 1] = sum[i] + (a[i] ? 1 : 0); return sum; }\n\t\
+    public static final long[][] sums(final int[][] a) {\n\t\tfinal long sum[][] =\
+    \ new long[a.length + 1][a[0].length + 1];\n\t\tfor(int i = 0; i < a.length; i\
+    \ ++) {\n\t\t\tfor(int j = 0; j < a[i].length; j ++) sum[i + 1][j + 1] = sum[i\
+    \ + 1][j] + sum[i][j + 1] - sum[i][j] + a[i][j];\n\t\t}\n\t\treturn sum;\n\t}\n\
+    \tpublic static final long[][] sums(final long[][] a) {\n\t\tfinal long sum[][]\
+    \ = new long[a.length + 1][a[0].length + 1];\n\t\tfor(int i = 0; i < a.length;\
+    \ i ++) {\n\t\t\tfor(int j = 0; j < a[i].length; j ++) sum[i + 1][j + 1] = sum[i\
+    \ + 1][j] + sum[i][j + 1] - sum[i][j] + a[i][j];\n\t\t}\n\t\treturn sum;\n\t}\n\
+    \tpublic static final double[][] sums(final double[][] a) {\n\t\tfinal double\
+    \ sum[][] = new double[a.length + 1][a[0].length + 1];\n\t\tfor(int i = 0; i <\
+    \ a.length; i ++) {\n\t\t\tfor(int j = 0; j < a[i].length; j ++) sum[i + 1][j\
+    \ + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j] + a[i][j];\n\t\t}\n\t\treturn\
+    \ sum;\n\t}\n\tpublic static final int[][] sums(final boolean[][] a) {\n\t\tfinal\
+    \ int sum[][] = new int[a.length + 1][a[0].length + 1];\n\t\tfor(int i = 0; i\
+    \ < a.length; i ++) {\n\t\t\tfor(int j = 0; j < a[i].length; j ++) sum[i + 1][j\
+    \ + 1] = sum[i + 1][j] + sum[i][j + 1] - sum[i][j] + (a[i][j] ? 1 : 0);\n\t\t\
+    }\n\t\treturn sum;\n\t}\n\tpublic static final int constrain(final int x, final\
+    \ int l, final int r) { return min(max(x, min(l, r)), max(l, r)); }\n\tpublic\
+    \ static final long constrain(final long x, final long l, final long r) { return\
+    \ min(max(x, min(l, r)), max(l, r)); }\n\tpublic static final double constrain(final\
+    \ double x, final double l, final double r) { return min(max(x, min(l, r)), max(l,\
+    \ r)); }\n\tpublic static final int abs(final int x) { return x >= 0 ? x : - x;\
+    \ }\n\tpublic static final long abs(final long x) { return x >= 0 ? x : - x; }\n\
+    \tpublic static final double abs(final double x) { return x >= 0 ? x : - x; }\n\
+    \tpublic static final int signum(final int x) { return x > 0 ? 1 : x < 0 ? -1\
+    \ : 0; }\n\tpublic static final int signum(final long x) { return x > 0 ? 1 :\
+    \ x < 0 ? -1 : 0; }\n\tpublic static final int signum(final double x) { return\
+    \ x > 0 ? 1 : x < 0 ? -1 : 0; }\n\tpublic static final long round(final double\
+    \ x) { return Math.round(x); }\n\tpublic static final long floor(final double\
+    \ x) { return round(Math.floor(x)); }\n\tpublic static final int divfloor(final\
+    \ int a, final int b) { return signum(a) == signum(b) ? a / b : - divceil(abs(a),\
+    \ abs(b)); }\n\tpublic static final long divfloor(final long a, final long b)\
+    \ { return signum(a) == signum(b) ? a / b : - divceil(abs(a), abs(b)); }\n\tpublic\
+    \ static final long ceil(final double x) { return round(Math.ceil(x)); }\n\tpublic\
+    \ static final int divceil(final int a, final int b) { return a >= 0 && b > 0\
+    \ ? (a + b - 1) / b : a < 0 && b < 0 ? divceil(abs(a), abs(b)) : - divfloor(abs(a),\
+    \ abs(b)); }\n\tpublic static final long divceil(final long a, final long b) {\
+    \ return a >= 0 && b > 0 ? (a + b - 1) / b : a < 0 && b < 0 ? divceil(abs(a),\
+    \ abs(b)) : - divfloor(abs(a), abs(b)); }\n\tpublic static final boolean mulGreater(final\
+    \ long a, final long b, long c) { return b == 0 ? c < 0 : b < 0 ? mulLess(a, -\
+    \ b, - c) : a > divfloor(c, b); } // a * b > c\n\tpublic static final boolean\
+    \ mulGreaterEquals(final long a, final long b, final long c) { return b == 0 ?\
+    \ c <= 0 : b < 0 ? mulLessEquals(a, - b, - c) : a >= divceil(c, b); } // a * b\
+    \ >= c\n\tpublic static final boolean mulLess(final long a, final long b, final\
+    \ long c) { return !mulGreaterEquals(a, b, c); } // a * b < c\n\tpublic static\
+    \ final boolean mulLessEquals(final long a, final long b, final long c) { return\
+    \ !mulGreater(a, b, c); } // a * b <= c\n\tpublic static final double sqrt(final\
+    \ int x) { return Math.sqrt((double)x); }\n\tpublic static final double sqrt(final\
+    \ long x) { return Math.sqrt((double)x); }\n\tpublic static final double sqrt(final\
+    \ double x) { return Math.sqrt(x); }\n\tpublic static final int floorsqrt(final\
     \ int x) { int s = (int)floor(sqrt(x)) + 1; while(s * s > x) s --; return s; }\n\
     \tpublic static final long floorsqrt(final long x) { long s = floor(sqrt(x)) +\
     \ 1; while(s * s > x) s --; return s; }\n\tpublic static final int ceilsqrt(final\
@@ -852,10 +632,597 @@ data:
     \ int loop) {\n\t\tfor(int cnt = 0; cnt < loop; cnt ++) {\n\t\t\tdouble m1 = (left\
     \ * 2 + right) / 3.0;\n\t\t\tdouble m2 = (left + right * 2) / 3.0;\n\t\t\tif(op.apply(m1)\
     \ > op.apply(m2) ^ minimize) right = m2; else left = m1;\n\t\t}\n\t\treturn (left\
-    \ + right) / 2.0;\n\t}\n}"
-  dependsOn:
-  - library/FastInputStream.java
-  - library/FastOutputStream.java
+    \ + right) / 2.0;\n\t}\n\n\n\t// Pair\n\tpublic static final PairII npii() { return\
+    \ new PairII(ni(), ni()); }\n\tpublic static final PairII[] npii(final int n)\
+    \ { final PairII a[] = new PairII[n]; for(int i = 0; i < n; i ++) a[i] = npii();\
+    \ return a; }\n\tpublic static final PairII[][] npii(final int n, final int m)\
+    \ { final PairII a[][] = new PairII[n][m]; for(int i = 0; i < n; i ++) a[i] =\
+    \ npii(m); return a; }\n\tpublic static final PairIL npil() { return new PairIL(ni(),\
+    \ nl()); }\n\tpublic static final PairIL[] npil(final int n) { final PairIL a[]\
+    \ = new PairIL[n]; for(int i = 0; i < n; i ++) a[i] = npil(); return a; }\n\t\
+    public static final PairIL[][] npil(final int n, final int m) { final PairIL a[][]\
+    \ = new PairIL[n][m]; for(int i = 0; i < n; i ++) a[i] = npil(m); return a; }\n\
+    \tpublic static final PairID npid() { return new PairID(ni(), nd()); }\n\tpublic\
+    \ static final PairID[] npid(final int n) { final PairID a[] = new PairID[n];\
+    \ for(int i = 0; i < n; i ++) a[i] = npid(); return a; }\n\tpublic static final\
+    \ PairID[][] npid(final int n, final int m) { final PairID a[][] = new PairID[n][m];\
+    \ for(int i = 0; i < n; i ++) a[i] = npid(m); return a; }\n\tpublic static final\
+    \ PairLI npli() { return new PairLI(nl(), ni()); }\n\tpublic static final PairLI[]\
+    \ npli(final int n) { final PairLI a[] = new PairLI[n]; for(int i = 0; i < n;\
+    \ i ++) a[i] = npli(); return a; }\n\tpublic static final PairLI[][] npli(final\
+    \ int n, final int m) { final PairLI a[][] = new PairLI[n][m]; for(int i = 0;\
+    \ i < n; i ++) a[i] = npli(m); return a; }\n\tpublic static final PairLL npll()\
+    \ { return new PairLL(nl(), nl()); }\n\tpublic static final PairLL[] npll(final\
+    \ int n) { final PairLL a[] = new PairLL[n]; for(int i = 0; i < n; i ++) a[i]\
+    \ = npll(); return a; }\n\tpublic static final PairLL[][] npll(final int n, final\
+    \ int m) { final PairLL a[][] = new PairLL[n][m]; for(int i = 0; i < n; i ++)\
+    \ a[i] = npll(m); return a; }\n\tpublic static final PairLD npld() { return new\
+    \ PairLD(nl(), nd()); }\n\tpublic static final PairLD[] npld(final int n) { final\
+    \ PairLD a[] = new PairLD[n]; for(int i = 0; i < n; i ++) a[i] = npld(); return\
+    \ a; }\n\tpublic static final PairLD[][] npld(final int n, final int m) { final\
+    \ PairLD a[][] = new PairLD[n][m]; for(int i = 0; i < n; i ++) a[i] = npld(m);\
+    \ return a; }\n\tpublic static final PairDI npdi() { return new PairDI(nd(), ni());\
+    \ }\n\tpublic static final PairDI[] npdi(final int n) { final PairDI a[] = new\
+    \ PairDI[n]; for(int i = 0; i < n; i ++) a[i] = npdi(); return a; }\n\tpublic\
+    \ static final PairDI[][] npdi(final int n, final int m) { final PairDI a[][]\
+    \ = new PairDI[n][m]; for(int i = 0; i < n; i ++) a[i] = npdi(m); return a; }\n\
+    \tpublic static final PairDL npdl() { return new PairDL(nd(), nl()); }\n\tpublic\
+    \ static final PairDL[] npdl(final int n) { final PairDL a[] = new PairDL[n];\
+    \ for(int i = 0; i < n; i ++) a[i] = npdl(); return a; }\n\tpublic static final\
+    \ PairDL[][] npdl(final int n, final int m) { final PairDL a[][] = new PairDL[n][m];\
+    \ for(int i = 0; i < n; i ++) a[i] = npdl(m); return a; }\n\tpublic static final\
+    \ PairDD npdd() { return new PairDD(nd(), nd()); }\n\tpublic static final PairDD[]\
+    \ npdd(final int n) { final PairDD a[] = new PairDD[n]; for(int i = 0; i < n;\
+    \ i ++) a[i] = npdd(); return a; }\n\tpublic static final PairDD[][] npdd(final\
+    \ int n, final int m) { final PairDD a[][] = new PairDD[n][m]; for(int i = 0;\
+    \ i < n; i ++) a[i] = npdd(m); return a; }\n\tpublic static final class Pair<T\
+    \ extends Comparable<? super T>, U extends Comparable<? super U>> implements Comparable<Pair<T,\
+    \ U>> {\n\t\tpublic T a; public U b;\n\t\tpublic Pair() { }\n\t\tpublic Pair(final\
+    \ T a, final U b) { this.a = a; this.b = b; }\n\n\t\t@Override public final String\
+    \ toString() { return \"(\"+a.toString()+\", \"+b.toString()+\")\"; }\n\t\t@Override\
+    \ public final int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\
+    \tpublic final boolean equals(final Object obj) {\n\t\t\tif(this == obj) return\
+    \ true;\n\t\t\tif(obj == null) return false;\n\t\t\tif(this.getClass() != obj.getClass())\
+    \ return false;\n\t\t\tPair that = (Pair) obj;\n\t\t\tif(this.a.getClass() !=\
+    \ that.a.getClass()) return false;\n\t\t\tif(this.b.getClass() != that.b.getClass())\
+    \ return false;\n\t\t\tif(!this.a.equals(that.a)) return false;\n\t\t\tif(!this.b.equals(that.b))\
+    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
+    \ Pair<T, U> that) { int c = (this.a).compareTo(that.a); if(c == 0) c = (this.b).compareTo(that.b);\
+    \ return c; }\n\t}\n\tpublic static final class PairII implements Comparable<PairII>\
+    \ {\n\t\tpublic int a; public int b;\n\t\tpublic PairII() { }\n\t\tpublic PairII(final\
+    \ int a, final int b) { this.a = a; this.b = b; }\n\t\t@Override public final\
+    \ String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final\
+    \ int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
+    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
+    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
+    \t\t\tPairII that = (PairII) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
+    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
+    \ PairII that) { int c = Integer.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b,\
+    \ that.b); return c; }\n\t}\n\tpublic static final class PairIL implements Comparable<PairIL>\
+    \ {\n\t\tpublic int a; public long b;\n\t\tpublic PairIL() { }\n\t\tpublic PairIL(final\
+    \ int a, final long b) { this.a = a; this.b = b; }\n\t\t@Override public final\
+    \ String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final\
+    \ int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
+    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
+    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
+    \t\t\tPairIL that = (PairIL) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
+    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
+    \ PairIL that) { int c = Integer.compare(this.a, that.a); if(c == 0) c = Long.compare(this.b,\
+    \ that.b); return c; }\n\t}\n\tpublic static final class PairID implements Comparable<PairID>\
+    \ {\n\t\tpublic int a; public double b;\n\t\tpublic PairID() { }\n\t\tpublic PairID(final\
+    \ int a, final double b) { this.a = a; this.b = b; }\n\t\t@Override public final\
+    \ String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final\
+    \ int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
+    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
+    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
+    \t\t\tPairID that = (PairID) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
+    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
+    \ PairID that) { int c = Integer.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
+    \ that.b); return c; }\n\t}\n\tpublic static final class PairLI implements Comparable<PairLI>\
+    \ {\n\t\tpublic long a; public int b;\n\t\tpublic PairLI() { }\n\t\tpublic PairLI(final\
+    \ long a, final int b) { this.a = a; this.b = b; }\n\t\t@Override public final\
+    \ String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final\
+    \ int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
+    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
+    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
+    \t\t\tPairLI that = (PairLI) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
+    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
+    \ PairLI that) { int c = Long.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b,\
+    \ that.b); return c; }\n\t}\n\tpublic static final class PairLL implements Comparable<PairLL>\
+    \ {\n\t\tpublic long a; public long b;\n\t\tpublic PairLL() { }\n\t\tpublic PairLL(final\
+    \ long a, final long b) { this.a = a; this.b = b; }\n\t\t@Override public final\
+    \ String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final\
+    \ int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
+    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
+    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
+    \t\t\tPairLL that = (PairLL) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
+    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
+    \ PairLL that) { int c = Long.compare(this.a, that.a); if(c == 0) c = Long.compare(this.b,\
+    \ that.b); return c; }\n\t}\n\tpublic static final class PairLD implements Comparable<PairLD>\
+    \ {\n\t\tpublic long a; public double b;\n\t\tpublic PairLD() { }\n\t\tpublic\
+    \ PairLD(final long a, final double b) { this.a = a; this.b = b; }\n\t\t@Override\
+    \ public final String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override\
+    \ public final int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\
+    \tpublic boolean equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\
+    \t\t\tif(obj == null) return false;\n\t\t\tif(this.getClass() != obj.getClass())\
+    \ return false;\n\t\t\tPairLD that = (PairLD) obj;\n\t\t\tif(this.a != that.a\
+    \ || this.b != that.b) return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override\
+    \ public final int compareTo(final PairLD that) { int c = Long.compare(this.a,\
+    \ that.a); if(c == 0) c = Double.compare(this.b, that.b); return c; }\n\t}\n\t\
+    public static final class PairDI implements Comparable<PairDI> {\n\t\tpublic double\
+    \ a; public int b;\n\t\tpublic PairDI() { }\n\t\tpublic PairDI(final double a,\
+    \ final int b) { this.a = a; this.b = b; }\n\t\t@Override public final String\
+    \ toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final int\
+    \ hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
+    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
+    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
+    \t\t\tPairDI that = (PairDI) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
+    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
+    \ PairDI that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b,\
+    \ that.b); return c; }\n\t}\n\tpublic static final class PairDL implements Comparable<PairDL>\
+    \ {\n\t\tpublic double a; public long b;\n\t\tpublic PairDL() { }\n\t\tpublic\
+    \ PairDL(final double a, final long b) { this.a = a; this.b = b; }\n\t\t@Override\
+    \ public final String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override\
+    \ public final int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\
+    \tpublic boolean equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\
+    \t\t\tif(obj == null) return false;\n\t\t\tif(this.getClass() != obj.getClass())\
+    \ return false;\n\t\t\tPairDL that = (PairDL) obj;\n\t\t\tif(this.a != that.a\
+    \ || this.b != that.b) return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override\
+    \ public final int compareTo(final PairDL that) { int c = Double.compare(this.a,\
+    \ that.a); if(c == 0) c = Long.compare(this.b, that.b); return c; }\n\t}\n\tpublic\
+    \ static final class PairDD implements Comparable<PairDD> {\n\t\tpublic double\
+    \ a; public double b;\n\t\tpublic PairDD() { }\n\t\tpublic PairDD(final double\
+    \ a, final double b) { this.a = a; this.b = b; }\n\t\t@Override public final String\
+    \ toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final int\
+    \ hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
+    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
+    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
+    \t\t\tPairDD that = (PairDD) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
+    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
+    \ PairDD that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
+    \ that.b); return c; }\n\t}\n\n\t// Tuple\n\tprivate interface ITuple {\n\t\t\
+    public StringBuilder toStringBuilder();\n\t\t@Override public String toString();\n\
+    \t\t@Override public int hashCode();\n\t\t@Override public boolean equals(Object\
+    \ obj);\n\t}\n\tprivate static class BasicTuple<T extends ITuple & Comparable<?\
+    \ super T>, V extends Comparable<? super V>> implements Comparable<BasicTuple>\
+    \ {\n\t\tpublic T t; public V a;\n\t\tpublic BasicTuple() {  }\n\n\t\tprivate\
+    \ final StringBuilder sbTuple = new StringBuilder();\n\t\tpublic final StringBuilder\
+    \ toStringBuilder() {\n\t\t\tsbTuple.setLength(0);\n\t\t\treturn sbTuple.append(t.toStringBuilder()).append(\"\
+    , \").append(a);\n\t\t}\n\t\t@Override public final String toString() { return\
+    \ \"(\"+toStringBuilder().toString()+\")\"; }\n\t\t@Override public final int\
+    \ hashCode() { return Objects.hash(t, a); }\n\t\t@Override\n\t\tpublic final boolean\
+    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
+    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
+    \t\t\tBasicTuple that = (BasicTuple) obj;\n\t\t\tif(this.t.getClass() != that.t.getClass())\
+    \ return false;\n\t\t\tif(this.a.getClass() != that.a.getClass()) return false;\n\
+    \t\t\tif(!this.t.equals(that.t)) return false;\n\t\t\tif(!this.a.equals(that.a))\
+    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override @SuppressWarnings(\"\
+    unchecked\") public final int compareTo(BasicTuple that) { int c = (this.t).compareTo((T)\
+    \ (Object) that.t); if(c == 0) c = (this.a).compareTo((V) (Object) that.a); return\
+    \ c; }\n\t}\n\tprivate static class UniqueTuple<V extends Comparable<? super V>>\
+    \ implements ITuple, Comparable<UniqueTuple> {\n\t\tpublic V a;\n\t\tpublic UniqueTuple()\
+    \ {  }\n\n\t\tprivate final StringBuilder sbTuple = new StringBuilder();\n\t\t\
+    public final StringBuilder toStringBuilder() { sbTuple.setLength(0); return sbTuple.append(a);\
+    \ }\n\t\t@Override public final String toString() { return \"(\"+a.toString()+\"\
+    )\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a); }\n\
+    \t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\t\t\tif(this\
+    \ == obj) return true;\n\t\t\tif(obj == null) return false;\n\t\t\tif(this.getClass()\
+    \ != obj.getClass()) return false;\n\t\t\tUniqueTuple that = (UniqueTuple) obj;\n\
+    \t\t\tif(this.a.getClass() != that.a.getClass()) return false;\n\t\t\tif(!this.a.equals(that.a))\
+    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override @SuppressWarnings(\"\
+    unchecked\") public final int compareTo(UniqueTuple that) { return (this.a).compareTo((V)\
+    \ (Object) that.a); }\n\t}\n\n\tpublic static class Tuple1<T0 extends Comparable<?\
+    \ super T0>> extends UniqueTuple<T0> implements ITuple {\n\t\tpublic Tuple1()\
+    \ { super(); }\n\t\tpublic Tuple1(final T0 a0) { super(); this.a = a0; }\n\t\t\
+    final T0 get0() { return a; }\n\t\tfinal void set0(final T0 x) { a = x; }\n\t\
+    }\n\tpublic static class Tuple2<\n\t\t\tT0 extends Comparable<? super T0>,\n\t\
+    \t\tT1 extends Comparable<? super T1>>\n\t\t\textends BasicTuple<Tuple1<T0>, T1>\
+    \ implements ITuple {\n\t\tpublic Tuple2() { super(); }\n\t\tpublic Tuple2(final\
+    \ T0 a0, final T1 a1) { super(); this.t = new Tuple1<>(a0); this.a = a1; }\n\t\
+    \tfinal T0 get0() { return t.get0(); }\n\t\tfinal T1 get1() { return a; }\n\t\t\
+    final void set0(final T0 x) { t.set0(x); }\n\t\tfinal void set1(final T1 x) {\
+    \ a = x; }\n\t}\n\tpublic static class Tuple3<\n\t\t\tT0 extends Comparable<?\
+    \ super T0>,\n\t\t\tT1 extends Comparable<? super T1>,\n\t\t\tT2 extends Comparable<?\
+    \ super T2>>\n\t\t\textends BasicTuple<Tuple2<T0, T1>, T2> implements ITuple {\n\
+    \t\tpublic Tuple3() { super(); }\n\t\tpublic Tuple3(final T0 a0, final T1 a1,\
+    \ final T2 a2) { super(); this.t = new Tuple2<>(a0, a1); this.a = a2; }\n\t\t\
+    final T0 get0() { return t.get0(); }\n\t\tfinal T1 get1() { return t.get1(); }\n\
+    \t\tfinal T2 get2() { return a; }\n\t\tfinal void set0(final T0 x) { t.set0(x);\
+    \ }\n\t\tfinal void set1(final T1 x) { t.set1(x); }\n\t\tfinal void set2(final\
+    \ T2 x) { a = x; }\n\t}\n\tpublic static class Tuple4<\n\t\t\tT0 extends Comparable<?\
+    \ super T0>,\n\t\t\tT1 extends Comparable<? super T1>,\n\t\t\tT2 extends Comparable<?\
+    \ super T2>,\n\t\t\tT3 extends Comparable<? super T3>>\n\t\t\textends BasicTuple<Tuple3<T0,\
+    \ T1, T2>, T3> implements ITuple {\n\t\tpublic Tuple4() { super(); }\n\t\tpublic\
+    \ Tuple4(final T0 a0, final T1 a1, final T2 a2, final T3 a3) { super(); this.t\
+    \ = new Tuple3<>(a0, a1, a2); this.a = a3; }\n\t\tfinal T0 get0() { return t.get0();\
+    \ }\n\t\tfinal T1 get1() { return t.get1(); }\n\t\tfinal T2 get2() { return t.get2();\
+    \ }\n\t\tfinal T3 get3() { return a; }\n\t\tfinal void set0(final T0 x) { t.set0(x);\
+    \ }\n\t\tfinal void set1(final T1 x) { t.set1(x); }\n\t\tfinal void set2(final\
+    \ T2 x) { t.set2(x); }\n\t\tfinal void set3(final T3 x) { a = x; }\n\t}\n\tpublic\
+    \ static class Tuple5<\n\t\t\tT0 extends Comparable<? super T0>,\n\t\t\tT1 extends\
+    \ Comparable<? super T1>,\n\t\t\tT2 extends Comparable<? super T2>,\n\t\t\tT3\
+    \ extends Comparable<? super T3>,\n\t\t\tT4 extends Comparable<? super T4>>\n\t\
+    \t\textends BasicTuple<Tuple4<T0, T1, T2, T3>, T4> implements ITuple {\n\t\tpublic\
+    \ Tuple5() { super(); }\n\t\tpublic Tuple5(final T0 a0, final T1 a1, final T2\
+    \ a2, final T3 a3, final T4 a4) { super(); this.t = new Tuple4<>(a0, a1, a2, a3);\
+    \ this.a = a4; }\n\t\tfinal T0 get0() { return t.get0(); }\n\t\tfinal T1 get1()\
+    \ { return t.get1(); }\n\t\tfinal T2 get2() { return t.get2(); }\n\t\tfinal T3\
+    \ get3() { return t.get3(); }\n\t\tfinal T4 get4() { return a; }\n\t\tfinal void\
+    \ set0(final T0 x) { t.set0(x); }\n\t\tfinal void set1(final T1 x) { t.set1(x);\
+    \ }\n\t\tfinal void set2(final T2 x) { t.set2(x); }\n\t\tfinal void set3(final\
+    \ T3 x) { t.set3(x); }\n\t\tfinal void set4(final T4 x) { a = x; }\n\t}\n\tpublic\
+    \ static class Tuple6<\n\t\t\tT0 extends Comparable<? super T0>,\n\t\t\tT1 extends\
+    \ Comparable<? super T1>,\n\t\t\tT2 extends Comparable<? super T2>,\n\t\t\tT3\
+    \ extends Comparable<? super T3>,\n\t\t\tT4 extends Comparable<? super T4>,\n\t\
+    \t\tT5 extends Comparable<? super T5>>\n\t\t\textends BasicTuple<Tuple5<T0, T1,\
+    \ T2, T3, T4>, T5> implements ITuple {\n\t\tpublic Tuple6() { super(); }\n\t\t\
+    public Tuple6(final T0 a0, final T1 a1, final T2 a2, final T3 a3, final T4 a4,\
+    \ final T5 a5) { super(); this.t = new Tuple5<>(a0, a1, a2, a3, a4); this.a =\
+    \ a5; }\n\t\tfinal T0 get0() { return t.get0(); }\n\t\tfinal T1 get1() { return\
+    \ t.get1(); }\n\t\tfinal T2 get2() { return t.get2(); }\n\t\tfinal T3 get3() {\
+    \ return t.get3(); }\n\t\tfinal T4 get4() { return t.get4(); }\n\t\tfinal T5 get5()\
+    \ { return a; }\n\t\tfinal void set0(final T0 x) { t.set0(x); }\n\t\tfinal void\
+    \ set1(final T1 x) { t.set1(x); }\n\t\tfinal void set2(final T2 x) { t.set2(x);\
+    \ }\n\t\tfinal void set3(final T3 x) { t.set3(x); }\n\t\tfinal void set4(final\
+    \ T4 x) { t.set4(x); }\n\t\tfinal void set5(final T5 x) { a = x; }\n\t}\n\tpublic\
+    \ static class Tuple7<\n\t\t\tT0 extends Comparable<? super T0>,\n\t\t\tT1 extends\
+    \ Comparable<? super T1>,\n\t\t\tT2 extends Comparable<? super T2>,\n\t\t\tT3\
+    \ extends Comparable<? super T3>,\n\t\t\tT4 extends Comparable<? super T4>,\n\t\
+    \t\tT5 extends Comparable<? super T5>,\n\t\t\tT6 extends Comparable<? super T6>>\n\
+    \t\t\textends BasicTuple<Tuple6<T0, T1, T2, T3, T4, T5>, T6> implements ITuple\
+    \ {\n\t\tpublic Tuple7() { super(); }\n\t\tpublic Tuple7(final T0 a0, final T1\
+    \ a1, final T2 a2, final T3 a3, final T4 a4, final T5 a5, final T6 a6) { super();\
+    \ this.t = new Tuple6<>(a0, a1, a2, a3, a4, a5); this.a = a6; }\n\t\tfinal T0\
+    \ get0() { return t.get0(); }\n\t\tfinal T1 get1() { return t.get1(); }\n\t\t\
+    final T2 get2() { return t.get2(); }\n\t\tfinal T3 get3() { return t.get3(); }\n\
+    \t\tfinal T4 get4() { return t.get4(); }\n\t\tfinal T5 get5() { return t.get5();\
+    \ }\n\t\tfinal T6 get6() { return a; }\n\t\tfinal void set0(final T0 x) { t.set0(x);\
+    \ }\n\t\tfinal void set1(final T1 x) { t.set1(x); }\n\t\tfinal void set2(final\
+    \ T2 x) { t.set2(x); }\n\t\tfinal void set3(final T3 x) { t.set3(x); }\n\t\tfinal\
+    \ void set4(final T4 x) { t.set4(x); }\n\t\tfinal void set5(final T5 x) { t.set5(x);\
+    \ }\n\t\tfinal void set6(final T6 x) { a = x; }\n\t}\n\tpublic static class Tuple8<\n\
+    \t\t\tT0 extends Comparable<? super T0>,\n\t\t\tT1 extends Comparable<? super\
+    \ T1>,\n\t\t\tT2 extends Comparable<? super T2>,\n\t\t\tT3 extends Comparable<?\
+    \ super T3>,\n\t\t\tT4 extends Comparable<? super T4>,\n\t\t\tT5 extends Comparable<?\
+    \ super T5>,\n\t\t\tT6 extends Comparable<? super T6>,\n\t\t\tT7 extends Comparable<?\
+    \ super T7>>\n\t\t\textends BasicTuple<Tuple7<T0, T1, T2, T3, T4, T5, T6>, T7>\
+    \ implements ITuple {\n\t\tpublic Tuple8() { super(); }\n\t\tpublic Tuple8(final\
+    \ T0 a0, final T1 a1, final T2 a2, final T3 a3, final T4 a4, final T5 a5, final\
+    \ T6 a6, final T7 a7) { super(); this.t = new Tuple7<>(a0, a1, a2, a3, a4, a5,\
+    \ a6); this.a = a7; }\n\t\tfinal T0 get0() { return t.get0(); }\n\t\tfinal T1\
+    \ get1() { return t.get1(); }\n\t\tfinal T2 get2() { return t.get2(); }\n\t\t\
+    final T3 get3() { return t.get3(); }\n\t\tfinal T4 get4() { return t.get4(); }\n\
+    \t\tfinal T5 get5() { return t.get5(); }\n\t\tfinal T6 get6() { return t.get6();\
+    \ }\n\t\tfinal T7 get7() { return a; }\n\t\tfinal void set0(final T0 x) { t.set0(x);\
+    \ }\n\t\tfinal void set1(final T1 x) { t.set1(x); }\n\t\tfinal void set2(final\
+    \ T2 x) { t.set2(x); }\n\t\tfinal void set3(final T3 x) { t.set3(x); }\n\t\tfinal\
+    \ void set4(final T4 x) { t.set4(x); }\n\t\tfinal void set5(final T5 x) { t.set5(x);\
+    \ }\n\t\tfinal void set6(final T6 x) { t.set6(x); }\n\t\tfinal void set7(final\
+    \ T7 x) { a = x; }\n\t}\n\n\t// Tuple3\n\tpublic static class TupleIII implements\
+    \ Comparable<TupleIII> {\n\t\tpublic int a; public int b; public int c;\n\t\t\
+    public TupleIII() {  }\n\t\tpublic TupleIII(final int a, final int b, final int\
+    \ c) { this.a = a; this.b = b; this.c = c; }\n\t\t@Override public final String\
+    \ toString() { return \"(\"+a+\", \"+b+\", \"+c+\")\"; }\n\t\t@Override public\
+    \ final int hashCode() { return Objects.hash(a, b, c); }\n\t\t@Override\n\t\t\
+    public final boolean equals(final Object obj) {\n\t\t\tif(this == obj) return\
+    \ true;\n\t\t\tif(obj == null || this.getClass() != obj.getClass()) return false;\n\
+    \t\t\tTupleIII that = (TupleIII) obj;\n\t\t\tif(this.a != that.a || this.b !=\
+    \ that.b || this.c != that.c) return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override\
+    \ public final int compareTo(final TupleIII that) { int c = Integer.compare(this.a,\
+    \ that.a); if(c == 0) c = Integer.compare(this.b, that.b); if(c == 0) c = Integer.compare(this.c,\
+    \ that.c); return c; }\n\t}\n\tpublic static class TupleIIL implements Comparable<TupleIIL>\
+    \ {\n\t\tpublic int a; public int b; public long c;\n\t\tpublic TupleIIL() { \
+    \ }\n\t\tpublic TupleIIL(final int a, final int b, final long c) { this.a = a;\
+    \ this.b = b; this.c = c; }\n\t\t@Override public final String toString() { return\
+    \ \"(\"+a+\", \"+b+\", \"+c+\")\"; }\n\t\t@Override public final int hashCode()\
+    \ { return Objects.hash(a, b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final\
+    \ Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass()\
+    \ != obj.getClass()) return false;\n\t\t\tTupleIIL that = (TupleIIL) obj;\n\t\t\
+    \tif(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\
+    \t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleIIL\
+    \ that) { int c = Integer.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b,\
+    \ that.b); if(c == 0) c = Long.compare(this.c, that.c); return c;\n\t\t}\n\t}\n\
+    \tpublic static class TupleIID implements Comparable<TupleIID> {\n\t\tpublic int\
+    \ a; public int b; public double c;\n\t\tpublic TupleIID() {  }\n\t\tpublic TupleIID(final\
+    \ int a, final int b, final double c) { this.a = a; this.b = b; this.c = c; }\n\
+    \t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"\
+    +c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleIID that = (TupleIID) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleIID\
+    \ that) { int c = Integer.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b,\
+    \ that.b); if(c == 0) c = Double.compare(this.c, that.c); return c; }\n\t}\n\t\
+    public static class TupleILI implements Comparable<TupleILI> {\n\t\tpublic int\
+    \ a; public long b; public int c;\n\t\tpublic TupleILI() {  }\n\t\tpublic TupleILI(final\
+    \ int a, final long b, final int c) { this.a = a; this.b = b; this.c = c; }\n\t\
+    \t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"+c+\"\
+    )\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a, b,\
+    \ c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\t\
+    \t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() != obj.getClass())\
+    \ return false;\n\t\t\tTupleILI that = (TupleILI) obj;\n\t\t\tif(this.a != that.a\
+    \ || this.b != that.b || this.c != that.c) return false;\n\t\t\treturn true;\n\
+    \t\t}\n\t\t@Override public final int compareTo(final TupleILI that) { int c =\
+    \ Integer.compare(this.a, that.a); if(c == 0) c = Long.compare(this.b, that.b);\
+    \ if(c == 0) c = Integer.compare(this.c, that.c); return c; }\n\t}\n\tpublic static\
+    \ class TupleILL implements Comparable<TupleILL> {\n\t\tpublic int a; public long\
+    \ b; public long c;\n\t\tpublic TupleILL() {  }\n\t\tpublic TupleILL(final int\
+    \ a, final long b, final long c) { this.a = a; this.b = b; this.c = c; }\n\t\t\
+    @Override public final String toString() { return \"(\"+a+\", \"+b+\", \"+c+\"\
+    )\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a, b,\
+    \ c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\t\
+    \t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() != obj.getClass())\
+    \ return false;\n\t\t\tTupleILL that = (TupleILL) obj;\n\t\t\tif(this.a != that.a\
+    \ || this.b != that.b || this.c != that.c) return false;\n\t\t\treturn true;\n\
+    \t\t}\n\t\t@Override public final int compareTo(final TupleILL that) { int c =\
+    \ Integer.compare(this.a, that.a); if(c == 0) c = Long.compare(this.b, that.b);\
+    \ if(c == 0) c = Long.compare(this.c, that.c); return c; }\n\t}\n\tpublic static\
+    \ class TupleILD implements Comparable<TupleILD> {\n\t\tpublic int a; public long\
+    \ b; public double c;\n\t\tpublic TupleILD() {  }\n\t\tpublic TupleILD(final int\
+    \ a, final long b, final double c) { this.a = a; this.b = b; this.c = c; }\n\t\
+    \t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"+c+\"\
+    )\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a, b,\
+    \ c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\t\
+    \t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() != obj.getClass())\
+    \ return false;\n\t\t\tTupleILD that = (TupleILD) obj;\n\t\t\tif(this.a != that.a\
+    \ || this.b != that.b || this.c != that.c) return false;\n\t\t\treturn true;\n\
+    \t\t}\n\t\t@Override public final int compareTo(final TupleILD that) { int c =\
+    \ Integer.compare(this.a, that.a); if(c == 0) c = Long.compare(this.b, that.b);\
+    \ if(c == 0) c = Double.compare(this.c, that.c); return c; }\n\t}\n\tpublic static\
+    \ class TupleIDI implements Comparable<TupleIDI> {\n\t\tpublic int a; public double\
+    \ b; public int c;\n\t\tpublic TupleIDI() {  }\n\t\tpublic TupleIDI(final int\
+    \ a, final double b, final int c) { this.a = a; this.b = b; this.c = c; }\n\t\t\
+    @Override public final String toString() { return \"(\"+a+\", \"+b+\", \"+c+\"\
+    )\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a, b,\
+    \ c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\t\
+    \t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() != obj.getClass())\
+    \ return false;\n\t\t\tTupleIDI that = (TupleIDI) obj;\n\t\t\tif(this.a != that.a\
+    \ || this.b != that.b || this.c != that.c) return false;\n\t\t\treturn true;\n\
+    \t\t}\n\t\t@Override public final int compareTo(final TupleIDI that) { int c =\
+    \ Integer.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b, that.b);\
+    \ if(c == 0) c = Integer.compare(this.c, that.c); return c; }\n\t}\n\tpublic static\
+    \ class TupleIDL implements Comparable<TupleIDL> {\n\t\tpublic int a; public double\
+    \ b; public long c;\n\t\tpublic TupleIDL() {  }\n\t\tpublic TupleIDL(final int\
+    \ a, final double b, final long c) { this.a = a; this.b = b; this.c = c; }\n\t\
+    \t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"+c+\"\
+    )\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a, b,\
+    \ c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\t\
+    \t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() != obj.getClass())\
+    \ return false;\n\t\t\tTupleIDL that = (TupleIDL) obj;\n\t\t\tif(this.a != that.a\
+    \ || this.b != that.b || this.c != that.c) return false;\n\t\t\treturn true;\n\
+    \t\t}\n\t\t@Override public final int compareTo(final TupleIDL that) { int c =\
+    \ Integer.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b, that.b);\
+    \ if(c == 0) c = Long.compare(this.c, that.c); return c; }\n\t}\n\tpublic static\
+    \ class TupleIDD implements Comparable<TupleIDD> {\n\t\tpublic int a; public double\
+    \ b; public double c;\n\t\tpublic TupleIDD() {  }\n\t\tpublic TupleIDD(final int\
+    \ a, final double b, final double c) { this.a = a; this.b = b; this.c = c; }\n\
+    \t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"\
+    +c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleIDD that = (TupleIDD) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleIDD\
+    \ that) { int c = Integer.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
+    \ that.b); if(c == 0) c = Double.compare(this.c, that.c); return c; }\n\t}\n\t\
+    public static class TupleLII implements Comparable<TupleLII> {\n\t\tpublic long\
+    \ a; public int b; public int c;\n\t\tpublic TupleLII() {  }\n\t\tpublic TupleLII(final\
+    \ long a, final int b, final int c) { this.a = a; this.b = b; this.c = c; }\n\t\
+    \t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"+c+\"\
+    )\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a, b,\
+    \ c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\t\
+    \t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() != obj.getClass())\
+    \ return false;\n\t\t\tTupleLII that = (TupleLII) obj;\n\t\t\tif(this.a != that.a\
+    \ || this.b != that.b || this.c != that.c) return false;\n\t\t\treturn true;\n\
+    \t\t}\n\t\t@Override public final int compareTo(final TupleLII that) { int c =\
+    \ Long.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b, that.b);\
+    \ if(c == 0) c = Integer.compare(this.c, that.c); return c; }\n\t}\n\tpublic static\
+    \ class TupleLIL implements Comparable<TupleLIL> {\n\t\tpublic long a; public\
+    \ int b; public long c;\n\t\tpublic TupleLIL() {  }\n\t\tpublic TupleLIL(final\
+    \ long a, final int b, final long c) { this.a = a; this.b = b; this.c = c; }\n\
+    \t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"\
+    +c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleLIL that = (TupleLIL) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleLIL\
+    \ that) { int c = Long.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b,\
+    \ that.b); if(c == 0) c = Long.compare(this.c, that.c); return c; }\n\t}\n\tpublic\
+    \ static class TupleLID implements Comparable<TupleLID> {\n\t\tpublic long a;\
+    \ public int b; public double c;\n\t\tpublic TupleLID() {  }\n\t\tpublic TupleLID(final\
+    \ long a, final int b, final double c) { this.a = a; this.b = b; this.c = c; }\n\
+    \t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"\
+    +c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleLID that = (TupleLID) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleLID\
+    \ that) { int c = Long.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b,\
+    \ that.b); if(c == 0) c = Double.compare(this.c, that.c); return c; }\n\t}\n\t\
+    public static class TupleLLI implements Comparable<TupleLLI> {\n\t\tpublic long\
+    \ a; public long b; public int c;\n\t\tpublic TupleLLI() {  }\n\t\tpublic TupleLLI(final\
+    \ long a, final long b, final int c) { this.a = a; this.b = b; this.c = c; }\n\
+    \t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"\
+    +c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleLLI that = (TupleLLI) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleLLI\
+    \ that) { int c = Long.compare(this.a, that.a); if(c == 0) c = Long.compare(this.b,\
+    \ that.b); if(c == 0) c = Integer.compare(this.c, that.c); return c; }\n\t}\n\t\
+    public static class TupleLLL implements Comparable<TupleLLL> {\n\t\tpublic long\
+    \ a; public long b; public long c;\n\t\tpublic TupleLLL() {  }\n\t\tpublic TupleLLL(final\
+    \ long a, final long b, final long c) { this.a = a; this.b = b; this.c = c; }\n\
+    \t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"\
+    +c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleLLL that = (TupleLLL) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleLLL\
+    \ that) { int c = Long.compare(this.a, that.a); if(c == 0) c = Long.compare(this.b,\
+    \ that.b); if(c == 0) c = Long.compare(this.c, that.c); return c; }\n\t}\n\tpublic\
+    \ static class TupleLLD implements Comparable<TupleLLD> {\n\t\tpublic long a;\
+    \ public long b; public double c;\n\t\tpublic TupleLLD() {  }\n\t\tpublic TupleLLD(final\
+    \ long a, final long b, final double c) { this.a = a; this.b = b; this.c = c;\
+    \ }\n\t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\"\
+    , \"+c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleLLD that = (TupleLLD) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleLLD\
+    \ that) { int c = Long.compare(this.a, that.a); if(c == 0) c = Long.compare(this.b,\
+    \ that.b); if(c == 0) c = Double.compare(this.c, that.c); return c; }\n\t}\n\t\
+    public static class TupleLDI implements Comparable<TupleLDI> {\n\t\tpublic long\
+    \ a; public double b; public int c;\n\t\tpublic TupleLDI() {  }\n\t\tpublic TupleLDI(final\
+    \ long a, final double b, final int c) { this.a = a; this.b = b; this.c = c; }\n\
+    \t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"\
+    +c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleLDI that = (TupleLDI) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleLDI\
+    \ that) { int c = Long.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
+    \ that.b); if(c == 0) c = Integer.compare(this.c, that.c); return c; }\n\t}\n\t\
+    public static class TupleLDL implements Comparable<TupleLDL> {\n\t\tpublic long\
+    \ a; public double b; public long c;\n\t\tpublic TupleLDL() {  }\n\t\tpublic TupleLDL(final\
+    \ long a, final double b, final long c) { this.a = a; this.b = b; this.c = c;\
+    \ }\n\t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\"\
+    , \"+c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleLDL that = (TupleLDL) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleLDL\
+    \ that) { int c = Long.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
+    \ that.b); if(c == 0) c = Long.compare(this.c, that.c); return c; }\n\t}\n\tpublic\
+    \ static class TupleLDD implements Comparable<TupleLDD> {\n\t\tpublic long a;\
+    \ public double b; public double c;\n\t\tpublic TupleLDD() {  }\n\t\tpublic TupleLDD(final\
+    \ long a, final double b, final double c) { this.a = a; this.b = b; this.c = c;\
+    \ }\n\t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\"\
+    , \"+c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleLDD that = (TupleLDD) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleLDD\
+    \ that) { int c = Long.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
+    \ that.b); if(c == 0) c = Double.compare(this.c, that.c); return c; }\n\t}\n\t\
+    public static class TupleDII implements Comparable<TupleDII> {\n\t\tpublic double\
+    \ a; public int b; public int c;\n\t\tpublic TupleDII() {  }\n\t\tpublic TupleDII(final\
+    \ double a, final int b, final int c) { this.a = a; this.b = b; this.c = c; }\n\
+    \t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"\
+    +c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleDII that = (TupleDII) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleDII\
+    \ that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b,\
+    \ that.b); if(c == 0) c = Integer.compare(this.c, that.c); return c; }\n\t}\n\t\
+    public static class TupleDIL implements Comparable<TupleDIL> {\n\t\tpublic double\
+    \ a; public int b; public long c;\n\t\tpublic TupleDIL() {  }\n\t\tpublic TupleDIL(final\
+    \ double a, final int b, final long c) { this.a = a; this.b = b; this.c = c; }\n\
+    \t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"\
+    +c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleDIL that = (TupleDIL) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleDIL\
+    \ that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b,\
+    \ that.b); if(c == 0) c = Long.compare(this.c, that.c); return c; }\n\t}\n\tpublic\
+    \ static class TupleDID implements Comparable<TupleDID> {\n\t\tpublic double a;\
+    \ public int b; public double c;\n\t\tpublic TupleDID() {  }\n\t\tpublic TupleDID(final\
+    \ double a, final int b, final double c) { this.a = a; this.b = b; this.c = c;\
+    \ }\n\t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\"\
+    , \"+c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleDID that = (TupleDID) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleDID\
+    \ that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b,\
+    \ that.b); if(c == 0) c = Double.compare(this.c, that.c); return c; }\n\t}\n\t\
+    public static class TupleDLI implements Comparable<TupleDLI> {\n\t\tpublic double\
+    \ a; public long b; public int c;\n\t\tpublic TupleDLI() {  }\n\t\tpublic TupleDLI(final\
+    \ double a, final long b, final int c) { this.a = a; this.b = b; this.c = c; }\n\
+    \t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\", \"\
+    +c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleDLI that = (TupleDLI) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleDLI\
+    \ that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Long.compare(this.b,\
+    \ that.b); if(c == 0) c = Integer.compare(this.c, that.c); return c; }\n\t}\n\t\
+    public static class TupleDLL implements Comparable<TupleDLL> {\n\t\tpublic double\
+    \ a; public long b; public long c;\n\t\tpublic TupleDLL() {  }\n\t\tpublic TupleDLL(final\
+    \ double a, final long b, final long c) { this.a = a; this.b = b; this.c = c;\
+    \ }\n\t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\"\
+    , \"+c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleDLL that = (TupleDLL) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleDLL\
+    \ that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Long.compare(this.b,\
+    \ that.b); if(c == 0) c = Long.compare(this.c, that.c); return c; }\n\t}\n\tpublic\
+    \ static class TupleDLD implements Comparable<TupleDLD> {\n\t\tpublic double a;\
+    \ public long b; public double c;\n\t\tpublic TupleDLD() {  }\n\t\tpublic TupleDLD(final\
+    \ double a, final long b, final double c) { this.a = a; this.b = b; this.c = c;\
+    \ }\n\t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\"\
+    , \"+c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleDLD that = (TupleDLD) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleDLD\
+    \ that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Long.compare(this.b,\
+    \ that.b); if(c == 0) c = Double.compare(this.c, that.c); return c; }\n\t}\n\t\
+    public static class TupleDDI implements Comparable<TupleDDI> {\n\t\tpublic double\
+    \ a; public double b; public int c;\n\t\tpublic TupleDDI() {  }\n\t\tpublic TupleDDI(final\
+    \ double a, final double b, final int c) { this.a = a; this.b = b; this.c = c;\
+    \ }\n\t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\"\
+    , \"+c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleDDI that = (TupleDDI) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleDDI\
+    \ that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
+    \ that.b); if(c == 0) c = Integer.compare(this.c, that.c); return c; }\n\t}\n\t\
+    public static class TupleDDL implements Comparable<TupleDDL> {\n\t\tpublic double\
+    \ a; public double b; public long c;\n\t\tpublic TupleDDL() {  }\n\t\tpublic TupleDDL(final\
+    \ double a, final double b, final long c) { this.a = a; this.b = b; this.c = c;\
+    \ }\n\t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\"\
+    , \"+c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleDDL that = (TupleDDL) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleDDL\
+    \ that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
+    \ that.b); if(c == 0) c = Long.compare(this.c, that.c); return c; }\n\t}\n\tpublic\
+    \ static class TupleDDD implements Comparable<TupleDDD> {\n\t\tpublic double a;\
+    \ public double b; public double c;\n\t\tpublic TupleDDD() {  }\n\t\tpublic TupleDDD(final\
+    \ double a, final double b, final double c) { this.a = a; this.b = b; this.c =\
+    \ c; }\n\t\t@Override public final String toString() { return \"(\"+a+\", \"+b+\"\
+    , \"+c+\")\"; }\n\t\t@Override public final int hashCode() { return Objects.hash(a,\
+    \ b, c); }\n\t\t@Override\n\t\tpublic final boolean equals(final Object obj) {\n\
+    \t\t\tif(this == obj) return true;\n\t\t\tif(obj == null || this.getClass() !=\
+    \ obj.getClass()) return false;\n\t\t\tTupleDDD that = (TupleDDD) obj;\n\t\t\t\
+    if(this.a != that.a || this.b != that.b || this.c != that.c) return false;\n\t\
+    \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleDDD\
+    \ that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
+    \ that.b); if(c == 0) c = Double.compare(this.c, that.c); return c; }\n\t}\n}"
+  dependsOn: []
   isVerificationFile: false
   path: library/Util.java
   requiredBy:
@@ -863,7 +1230,7 @@ data:
   - library/Solver.java
   - library/ExtendedConvolution.java
   - library/Mod.java
-  timestamp: '2022-09-20 14:50:17+09:00'
+  timestamp: '2022-09-20 15:15:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/Util.java

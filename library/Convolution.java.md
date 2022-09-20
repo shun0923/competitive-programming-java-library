@@ -237,7 +237,7 @@ data:
   path: library/Convolution.java
   requiredBy:
   - library/ExtendedConvolution.java
-  timestamp: '2022-09-20 14:50:17+09:00'
+  timestamp: '2022-09-20 15:15:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Convolution998_test.java
