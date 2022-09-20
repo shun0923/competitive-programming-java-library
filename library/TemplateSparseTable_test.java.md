@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateSparseTable.java
     title: library/TemplateSparseTable.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -24,17 +24,17 @@ data:
     \npublic class TemplateSparseTable_test extends Solver {\n\tpublic static void\
     \ main(final String[] args) { main(args, new TemplateSparseTable_test()); }\n\n\
     \tpublic void solve() {\n\t\tint n = ni();\n\t\tint q = ni();\n\t\tLong a[] =\
-    \ new Long[n];\n\t\tfor(int i = 0; i < n; i ++) a[i] = nl();\n\t\tSparseTable<Long>\
-    \ st = new SparseTable<>(a, (ele1, ele2) -> min(ele1, ele2));\n\t\tfor(int i =\
-    \ 0; i < q; i ++) prtln(st.find(ni(), ni()));\n\t}\n}"
+    \ new Long[n];\n\t\tfor(int i = 0; i < n; i ++) a[i] = nl();\n\t\tTemplateSparseTable<Long>\
+    \ st = new TemplateSparseTable<>(a, (ele1, ele2) -> min(ele1, ele2));\n\t\tfor(int\
+    \ i = 0; i < q; i ++) prtln(st.find(ni(), ni()));\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/TemplateSparseTable.java
   isVerificationFile: true
   path: library/TemplateSparseTable_test.java
   requiredBy: []
-  timestamp: '2022-09-20 18:58:58+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-09-20 19:18:27+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/TemplateSparseTable_test.java
 layout: document

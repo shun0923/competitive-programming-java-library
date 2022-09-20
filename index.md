@@ -36,10 +36,10 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/SparseTable.java
       title: library/SparseTable.java
     - icon: ':heavy_check_mark:'
@@ -51,7 +51,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSegmentTree.java
       title: library/TemplateSegmentTree.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSparseTable.java
       title: library/TemplateSparseTable.java
     - icon: ':warning:'
@@ -123,7 +123,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/SegmentTree_test.java
       title: library/SegmentTree_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/SparseTable_test.java
       title: library/SparseTable_test.java
     - icon: ':heavy_check_mark:'
@@ -141,7 +141,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSegmentTree_test.java
       title: library/TemplateSegmentTree_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSparseTable_test.java
       title: library/TemplateSparseTable_test.java
 layout: toppage

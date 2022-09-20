@@ -29,7 +29,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/SegmentTree.java
     title: library/SegmentTree.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/SparseTable.java
     title: library/SparseTable.java
   - icon: ':heavy_check_mark:'
@@ -41,7 +41,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSegmentTree.java
     title: library/TemplateSegmentTree.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateSparseTable.java
     title: library/TemplateSparseTable.java
   - icon: ':warning:'
