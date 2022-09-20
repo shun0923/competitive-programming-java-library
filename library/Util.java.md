@@ -17,55 +17,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
-  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModCombination_test.java
-    title: library/ArbitraryModCombination_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModOperation_test.java
-    title: library/ArbitraryModOperation_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModPow_test.java
-    title: library/ArbitraryModPow_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModRandom_test.java
-    title: library/ArbitraryModRandom_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModSqrt_test.java
-    title: library/ArbitraryModSqrt_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Convolution107_test.java
-    title: library/Convolution107_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Convolution998_test.java
-    title: library/Convolution998_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/FastIO_test.java
-    title: library/FastIO_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/HelloWorld_test.java
-    title: library/HelloWorld_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/ManyFastIO_test.java
-    title: library/ManyFastIO_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod107ManyCombination_test.java
-    title: library/Mod107ManyCombination_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod107Pow_test.java
-    title: library/Mod107Pow_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod107Random_test.java
-    title: library/Mod107Random_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod998ManyCombination_test.java
-    title: library/Mod998ManyCombination_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod998Random_test.java
-    title: library/Mod998Random_test.java
+    path: library/Solver.java
+    title: library/Solver.java
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -73,42 +31,40 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/Util.java\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
-    \ library.FastInputStream;\nimport library.FastOutputStream;\n\nabstract class\
-    \ Util implements Runnable {\n\t@Override\n\tpublic void run() { solve(); flush();\
-    \ }\n\n\tabstract public void solve();\n\n\tpublic static boolean DEBUG;\n\n\t\
-    private static final FastInputStream in = new FastInputStream(System.in);\n\t\
-    public static final String nline() { return in.nextLine(); }\n\tpublic static\
-    \ final String[] nline(final int n) { final String a[] = new String[n]; for(int\
-    \ i = 0; i < n; i ++) a[i] = nline(); return a; }\n\tpublic static final char\
-    \ nc() { return in.nextChar(); }\n\tpublic static final char[] nc(int n) {\n\t\
-    \tfinal String str = nline();\n\t\tif(n < 0) n = str.length();\n\t\tfinal char\
-    \ a[] = new char[n];\n\t\tfor(int i = 0; i < n; i ++) a[i] = str.charAt(i);\n\t\
-    \treturn a;\n\t}\n\tpublic static final char[][] nc(final int n, final int m)\
-    \ { final char a[][] = new char[n][m]; for(int i = 0; i < n; i ++) a[i] = nc(m);\
-    \ return a; }\n\tpublic static final boolean[] nb(int n, final char t) {\n\t\t\
-    final char c[] = nc(-1);\n\t\tif(n < 0) n = c.length;\n\t\tfinal boolean a[] =\
-    \ new boolean[n];\n\t\tfor(int i = 0; i < n; i ++) a[i] = c[i] == t;\n\t\treturn\
-    \ a;\n\t}\n\tpublic static final boolean[][] nb(final int n, final int m, final\
-    \ char t) { final boolean a[][] = new boolean[n][]; for(int i = 0; i < n; i ++)\
-    \ a[i] = nb(m, t); return a; }\n\tpublic static final int ni() { return in.nextInt();\
-    \ }\n\tpublic static final int[] ni(final int n) { final int a[] = new int[n];\
-    \ for(int i = 0; i < n; i ++) a[i] = ni(); return a; }\n\tpublic static final\
-    \ int[][] ni(final int n, final int m) { final int a[][] = new int[n][]; for(int\
-    \ i = 0; i < n; i ++) a[i] = ni(m); return a; }\n\tpublic static final long nl()\
-    \ { return in.nextLong(); }\n\tpublic static final long[] nl(final int n) { final\
-    \ long a[] = new long[n]; for(int i = 0; i < n; i ++) a[i] = nl(); return a; }\n\
-    \tpublic static final long[][] nl(final int n, final int m) { final long a[][]\
-    \ = new long[n][]; for(int i = 0; i < n; i ++) a[i] = nl(m); return a; }\n\tpublic\
-    \ static final double nd() { return in.nextDouble(); }\n\tpublic static final\
-    \ double[] nd(final int n) { final double a[] = new double[n]; for(int i = 0;\
-    \ i < n; i ++) a[i] = nd(); return a; }\n\tpublic static final double[][] nd(final\
-    \ int n, final int m) { final double a[][] = new double[n][]; for(int i = 0; i\
-    \ < n; i ++) a[i] = nd(m); return a; }\n\tpublic static final String ns() { return\
-    \ in.next(); }\n\tpublic static final String[] ns(final int n) { final String\
-    \ a[] = new String[n]; for(int i = 0; i < n; i ++) a[i] = ns(); return a; }\n\t\
-    public static final String[][] ns(final int n, final int m) { final String a[][]\
-    \ = new String[n][]; for(int i = 0; i < n; i ++) a[i] = ns(m); return a; }\n\n\
-    \tprivate static final FastOutputStream out = new FastOutputStream(System.out);\n\
+    \ library.FastInputStream;\nimport library.FastOutputStream;\n\nclass FastIO {\n\
+    \tpublic static boolean DEBUG;\n\n\tprivate static final FastInputStream in =\
+    \ new FastInputStream(System.in);\n\tpublic static final String nline() { return\
+    \ in.nextLine(); }\n\tpublic static final String[] nline(final int n) { final\
+    \ String a[] = new String[n]; for(int i = 0; i < n; i ++) a[i] = nline(); return\
+    \ a; }\n\tpublic static final char nc() { return in.nextChar(); }\n\tpublic static\
+    \ final char[] nc(int n) {\n\t\tfinal String str = nline();\n\t\tif(n < 0) n =\
+    \ str.length();\n\t\tfinal char a[] = new char[n];\n\t\tfor(int i = 0; i < n;\
+    \ i ++) a[i] = str.charAt(i);\n\t\treturn a;\n\t}\n\tpublic static final char[][]\
+    \ nc(final int n, final int m) { final char a[][] = new char[n][m]; for(int i\
+    \ = 0; i < n; i ++) a[i] = nc(m); return a; }\n\tpublic static final boolean[]\
+    \ nb(int n, final char t) {\n\t\tfinal char c[] = nc(-1);\n\t\tif(n < 0) n = c.length;\n\
+    \t\tfinal boolean a[] = new boolean[n];\n\t\tfor(int i = 0; i < n; i ++) a[i]\
+    \ = c[i] == t;\n\t\treturn a;\n\t}\n\tpublic static final boolean[][] nb(final\
+    \ int n, final int m, final char t) { final boolean a[][] = new boolean[n][];\
+    \ for(int i = 0; i < n; i ++) a[i] = nb(m, t); return a; }\n\tpublic static final\
+    \ int ni() { return in.nextInt(); }\n\tpublic static final int[] ni(final int\
+    \ n) { final int a[] = new int[n]; for(int i = 0; i < n; i ++) a[i] = ni(); return\
+    \ a; }\n\tpublic static final int[][] ni(final int n, final int m) { final int\
+    \ a[][] = new int[n][]; for(int i = 0; i < n; i ++) a[i] = ni(m); return a; }\n\
+    \tpublic static final long nl() { return in.nextLong(); }\n\tpublic static final\
+    \ long[] nl(final int n) { final long a[] = new long[n]; for(int i = 0; i < n;\
+    \ i ++) a[i] = nl(); return a; }\n\tpublic static final long[][] nl(final int\
+    \ n, final int m) { final long a[][] = new long[n][]; for(int i = 0; i < n; i\
+    \ ++) a[i] = nl(m); return a; }\n\tpublic static final double nd() { return in.nextDouble();\
+    \ }\n\tpublic static final double[] nd(final int n) { final double a[] = new double[n];\
+    \ for(int i = 0; i < n; i ++) a[i] = nd(); return a; }\n\tpublic static final\
+    \ double[][] nd(final int n, final int m) { final double a[][] = new double[n][];\
+    \ for(int i = 0; i < n; i ++) a[i] = nd(m); return a; }\n\tpublic static final\
+    \ String ns() { return in.next(); }\n\tpublic static final String[] ns(final int\
+    \ n) { final String a[] = new String[n]; for(int i = 0; i < n; i ++) a[i] = ns();\
+    \ return a; }\n\tpublic static final String[][] ns(final int n, final int m) {\
+    \ final String a[][] = new String[n][]; for(int i = 0; i < n; i ++) a[i] = ns(m);\
+    \ return a; }\n\n\tprivate static final FastOutputStream out = new FastOutputStream(System.out);\n\
     \tprivate static final FastOutputStream err = new FastOutputStream(System.err);\n\
     \tpublic static final void prt() { out.print(); }\n\tpublic static final void\
     \ prt(final char c) { out.print(c); }\n\tpublic static final void prt(final boolean\
@@ -278,15 +234,19 @@ data:
     \ final void exit(final long[][] a) { prtln(a); exit(); }\n\tpublic static final\
     \ void exit(final double[][] a) { prtln(a); exit(); }\n\tpublic static final void\
     \ exit(final String[][] a) { prtln(a); exit(); }\n\tpublic static final void exit(final\
-    \ Object[][] a) { prtln(a); exit(); }\n\n\n\tpublic static final long INF = (long)4e18;\n\
-    \tpublic static final boolean isPlusINF(final long x) { return x > INF / 10; }\n\
-    \tpublic static final boolean isMinusINF(final long x) { return isPlusINF(- x);\
-    \ }\n\tpublic static final boolean isINF(final long x) { return isPlusINF(x) ||\
-    \ isMinusINF(x); }\n\tpublic static final int I_INF = (int)1e9 + 1000;\n\tpublic\
-    \ static final boolean isPlusINF(final int x) { return x > I_INF / 10; }\n\tpublic\
-    \ static final boolean isMinusINF(final int x) { return isPlusINF(- x); }\n\t\
-    public static final boolean isINF(final int x) { return isPlusINF(x) || isMinusINF(x);\
-    \ }\n\n\tpublic static final int min(final int a, final int b) { return Math.min(a,\
+    \ Object[][] a) { prtln(a); exit(); }\n\n\n\tpublic static final char booleanToChar(final\
+    \ boolean b) { return b ? '#' : '.'; }\n\tpublic static final char[] booleanToChar(final\
+    \ boolean... a) {\n\t\tfinal char c[] = new char[a.length];\n\t\tfor(int i = 0;\
+    \ i < a.length; i ++) c[i] = booleanToChar(a[i]);\n\t\treturn c;\n\t}\n\tpublic\
+    \ static final long INF = (long)4e18;\n\tpublic static final boolean isPlusINF(final\
+    \ long x) { return x > INF / 10; }\n\tpublic static final boolean isMinusINF(final\
+    \ long x) { return isPlusINF(- x); }\n\tpublic static final boolean isINF(final\
+    \ long x) { return isPlusINF(x) || isMinusINF(x); }\n\tpublic static final int\
+    \ I_INF = (int)1e9 + 1000;\n\tpublic static final boolean isPlusINF(final int\
+    \ x) { return x > I_INF / 10; }\n\tpublic static final boolean isMinusINF(final\
+    \ int x) { return isPlusINF(- x); }\n\tpublic static final boolean isINF(final\
+    \ int x) { return isPlusINF(x) || isMinusINF(x); }\n}\nclass Util extends FastIO\
+    \ {\n\tpublic static final int min(final int a, final int b) { return Math.min(a,\
     \ b); }\n\tpublic static final long min(final long a, final long b) { return Math.min(a,\
     \ b); }\n\tpublic static final double min(final double a, final double b) { return\
     \ Math.min(a, b); }\n\tpublic static final <T extends Comparable<T>> T min(final\
@@ -479,27 +439,23 @@ data:
     \ return Long.toString(x).length(); }\n\tpublic static final long bitFlag(final\
     \ int i) { nonNegativeCheck(i); return 1L << i; }\n\tpublic static final boolean\
     \ isFlagged(final long x, final int i) { nonNegativeCheck(x); nonNegativeCheck(i);\
-    \ return (x >> i & 1) != 0; }\n\n\n\tpublic static final char booleanToChar(final\
-    \ boolean b) { return b ? '#' : '.'; }\n\tpublic static final char[] booleanToChar(final\
-    \ boolean... a) {\n\t\tfinal char c[] = new char[a.length];\n\t\tfor(int i = 0;\
-    \ i < a.length; i ++) c[i] = booleanToChar(a[i]);\n\t\treturn c;\n\t}\n\tpublic\
-    \ static final boolean isUpper(final char c) { return c >= 'A' && c <= 'Z'; }\n\
-    \tpublic static final boolean isLower(final char c) { return c >= 'a' && c <=\
-    \ 'z'; }\n\tpublic static final int upperToInt(final char c) { return c - 'A';\
-    \ }\n\tpublic static final int lowerToInt(final char c) { return c - 'a'; }\n\t\
-    public static final int numToInt(final char c) { return c - '0'; }\n\tpublic static\
-    \ final int charToInt(final char c) { return isLower(c) ? lowerToInt(c) : isUpper(c)\
-    \ ? upperToInt(c) : numToInt(c); }\n\tpublic static final int alphabetToInt(final\
-    \ char c) { return isLower(c) ? lowerToInt(c) : isUpper(c) ? upperToInt(c) + 26\
-    \ : 52; }\n\tpublic static final char intToUpper(final int x) { return (char)(x\
-    \ + 'A'); }\n\tpublic static final char intToLower(final int x) { return (char)(x\
-    \ + 'a'); }\n\tpublic static final char intToNum(final int x) { return (char)(x\
-    \ + '0'); }\n\tpublic static final int[] charToInt(final char[] a) { final int\
-    \ toint[] = new int[a.length]; for(int i = 0; i < a.length; i ++) toint[i] = charToInt(a[i]);\
-    \ return toint; }\n\tpublic static final int[][] charToInt(final char[][] a) {\
-    \ final int toint[][] = new int[a.length][]; for(int i = 0; i < a.length; i ++)\
-    \ toint[i] = charToInt(a[i]); return toint; }\n\n\n\tpublic static final String\
-    \ reverse(final String s) { return (new StringBuilder(s)).reverse().toString();\
+    \ return (x >> i & 1) != 0; }\n\n\n\tpublic static final boolean isUpper(final\
+    \ char c) { return c >= 'A' && c <= 'Z'; }\n\tpublic static final boolean isLower(final\
+    \ char c) { return c >= 'a' && c <= 'z'; }\n\tpublic static final int upperToInt(final\
+    \ char c) { return c - 'A'; }\n\tpublic static final int lowerToInt(final char\
+    \ c) { return c - 'a'; }\n\tpublic static final int numToInt(final char c) { return\
+    \ c - '0'; }\n\tpublic static final int charToInt(final char c) { return isLower(c)\
+    \ ? lowerToInt(c) : isUpper(c) ? upperToInt(c) : numToInt(c); }\n\tpublic static\
+    \ final int alphabetToInt(final char c) { return isLower(c) ? lowerToInt(c) :\
+    \ isUpper(c) ? upperToInt(c) + 26 : 52; }\n\tpublic static final char intToUpper(final\
+    \ int x) { return (char)(x + 'A'); }\n\tpublic static final char intToLower(final\
+    \ int x) { return (char)(x + 'a'); }\n\tpublic static final char intToNum(final\
+    \ int x) { return (char)(x + '0'); }\n\tpublic static final int[] charToInt(final\
+    \ char[] a) { final int toint[] = new int[a.length]; for(int i = 0; i < a.length;\
+    \ i ++) toint[i] = charToInt(a[i]); return toint; }\n\tpublic static final int[][]\
+    \ charToInt(final char[][] a) { final int toint[][] = new int[a.length][]; for(int\
+    \ i = 0; i < a.length; i ++) toint[i] = charToInt(a[i]); return toint; }\n\n\n\
+    \tpublic static final String reverse(final String s) { return (new StringBuilder(s)).reverse().toString();\
     \ }\n\tpublic static final char[] reverse(final char[] a) { for(int i = 0; i <\
     \ a.length / 2; i ++) swap(a, i, a.length - i - 1); return a; }\n\tpublic static\
     \ final boolean[] reverse(final boolean[] a) { for(int i = 0; i < a.length / 2;\
@@ -904,26 +860,12 @@ data:
   path: library/Util.java
   requiredBy:
   - library/Convolution.java
+  - library/Solver.java
   - library/ExtendedConvolution.java
   - library/Mod.java
-  timestamp: '2022-09-17 23:18:18+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - library/Convolution998_test.java
-  - library/ArbitraryModOperation_test.java
-  - library/HelloWorld_test.java
-  - library/ArbitraryModCombination_test.java
-  - library/Mod998Random_test.java
-  - library/Mod998ManyCombination_test.java
-  - library/Mod107Pow_test.java
-  - library/Mod107Random_test.java
-  - library/ArbitraryModSqrt_test.java
-  - library/ManyFastIO_test.java
-  - library/ArbitraryModPow_test.java
-  - library/Mod107ManyCombination_test.java
-  - library/Convolution107_test.java
-  - library/FastIO_test.java
-  - library/ArbitraryModRandom_test.java
+  timestamp: '2022-09-20 14:50:17+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: library/Util.java
 layout: document
 redirect_from:

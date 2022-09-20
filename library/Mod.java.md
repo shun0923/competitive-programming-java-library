@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy:
@@ -164,7 +164,7 @@ data:
   - library/Convolution.java
   - library/ExtendedConvolution.java
   - library/ArbitraryMod.java
-  timestamp: '2022-09-17 23:18:18+09:00'
+  timestamp: '2022-09-20 14:50:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Mod998Random_test.java

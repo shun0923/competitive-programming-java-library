@@ -5,8 +5,8 @@ data:
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
   - icon: ':heavy_check_mark:'
-    path: library/Util.java
-    title: library/Util.java
+    path: library/Solver.java
+    title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -20,21 +20,19 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/ArbitraryModSqrt_test.java\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/sqrt_mod\n\
-    \npackage library;\n\nimport java.util.*;\nimport library.Util;\nimport library.ArbitraryMod;\n\
-    \npublic class ArbitraryModSqrt_test extends Util {\n\tpublic static void main(final\
-    \ String[] args) {\n\t\tDEBUG = args.length > 0 && args[0].equals(\"-DEBUG\");\n\
-    \t\tThread.setDefaultUncaughtExceptionHandler((t, e) -> { flush(); e.printStackTrace();\
-    \ System.exit(1); });\n\t\tnew Thread(null, new ArbitraryModSqrt_test(), \"\"\
-    , 1 << 31).start();\n\t}\n\n\tpublic void solve() {\n\t\tint t = ni();\n\t\tfor(int\
-    \ i = 0; i < t; i ++) {\n\t\t\tlong y = nl();\n\t\t\tlong p = nl();\n\t\t\tprtln(new\
-    \ ArbitraryMod(p).sqrt(y));\n\t\t}\n\t}\n}"
+    \npackage library;\n\nimport library.Solver;\nimport library.ArbitraryMod;\n\n\
+    public class ArbitraryModSqrt_test extends Solver {\n\tpublic static void main(final\
+    \ String[] args) { main(args, new ArbitraryModSqrt_test()); }\n\n\tpublic void\
+    \ solve() {\n\t\tint t = ni();\n\t\tfor(int i = 0; i < t; i ++) {\n\t\t\tlong\
+    \ y = nl();\n\t\t\tlong p = nl();\n\t\t\tprtln(new ArbitraryMod(p).sqrt(y));\n\
+    \t\t}\n\t}\n}"
   dependsOn:
-  - library/Util.java
+  - library/Solver.java
   - library/ArbitraryMod.java
   isVerificationFile: true
   path: library/ArbitraryModSqrt_test.java
   requiredBy: []
-  timestamp: '2022-09-17 23:18:18+09:00'
+  timestamp: '2022-09-20 14:50:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/ArbitraryModSqrt_test.java

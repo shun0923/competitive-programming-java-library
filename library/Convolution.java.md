@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy:
@@ -237,7 +237,7 @@ data:
   path: library/Convolution.java
   requiredBy:
   - library/ExtendedConvolution.java
-  timestamp: '2022-09-18 23:53:33+09:00'
+  timestamp: '2022-09-20 14:50:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Convolution998_test.java

@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: library/Util.java
-    title: library/Util.java
+    path: library/Solver.java
+    title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,18 +17,15 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/HelloWorld_test.java\n"
   code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\n\
-    \npackage library;\n\nimport library.Util;\n\npublic class HelloWorld_test extends\
-    \ Util {\n\tpublic static void main(final String[] args) {\n\t\tDEBUG = args.length\
-    \ > 0 && args[0].equals(\"-DEBUG\");\n\t\tThread.setDefaultUncaughtExceptionHandler((t,\
-    \ e) -> { flush(); e.printStackTrace(); System.exit(1); });\n\t\tnew Thread(null,\
-    \ new HelloWorld_test(), \"\", 1 << 31).start();\n\t}\n\n\tpublic void solve()\
-    \ {\n\t\tprtln(\"Hello World\");\n\t}\n}"
+    \npackage library;\n\nimport library.Solver;\n\npublic class HelloWorld_test extends\
+    \ Solver {\n\tpublic static void main(final String[] args) { main(args, new HelloWorld_test());\
+    \ }\n\n\tpublic void solve() {\n\t\tprtln(\"Hello World\");\n\t}\n}"
   dependsOn:
-  - library/Util.java
+  - library/Solver.java
   isVerificationFile: true
   path: library/HelloWorld_test.java
   requiredBy: []
-  timestamp: '2022-09-17 23:18:18+09:00'
+  timestamp: '2022-09-20 14:50:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/HelloWorld_test.java

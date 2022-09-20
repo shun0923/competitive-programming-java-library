@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: library/Util.java
     title: library/Util.java
   _extendedVerifiedWith:
