@@ -15,5 +15,8 @@
 "library/Mod107Random_test.java": "2022-09-20 15:28:33 +0900",
 "library/Mod998ManyCombination_test.java": "2022-09-20 15:28:33 +0900",
 "library/Mod998Random_test.java": "2022-09-20 15:28:33 +0900",
+"library/SegmentTree_Composite_test.java": "2022-09-20 16:48:42 +0900",
+"library/SegmentTree_test.java": "2022-09-20 16:48:42 +0900",
+"library/TemplatedSegmentTree_Composite_test.java": "2022-09-20 16:42:37 +0900",
 "library/TemplatedSegmentTree_test.java": "2022-09-20 16:29:22 +0900"
 }
