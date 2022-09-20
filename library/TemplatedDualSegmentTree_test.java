@@ -5,8 +5,8 @@ package library;
 import library.Solver;
 import library.TemplatedDualSegmentTree;
 
-public class TemplatedSegmentDualTree_test extends Solver {
-	public static void main(final String[] args) { main(args, new TemplatedSegmentDualTree_test()); }
+public class TemplatedDualSegmentTree_test extends Solver {
+	public static void main(final String[] args) { main(args, new TemplatedDualSegmentTree_test()); }
 
 	public void solve() {
 		int n = ni();
