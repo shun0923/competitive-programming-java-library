@@ -31,6 +31,9 @@ data:
     path: library/FastIO_test.java
     title: library/FastIO_test.java
   - icon: ':heavy_check_mark:'
+    path: library/FenwickTree_test.java
+    title: library/FenwickTree_test.java
+  - icon: ':heavy_check_mark:'
     path: library/HelloWorld_test.java
     title: library/HelloWorld_test.java
   - icon: ':heavy_check_mark:'
@@ -51,9 +54,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Mod998Random_test.java
     title: library/Mod998Random_test.java
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: library/SegmentTree_test.java
+    title: library/SegmentTree_test.java
+  - icon: ':x:'
+    path: library/TemplatedSegmentTree_PairLL_test.java
+    title: library/TemplatedSegmentTree_PairLL_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/TemplatedSegmentTree_test.java
+    title: library/TemplatedSegmentTree_test.java
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -72,14 +84,15 @@ data:
   isVerificationFile: false
   path: library/Solver.java
   requiredBy: []
-  timestamp: '2022-09-20 15:15:22+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-09-20 15:28:33+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Convolution998_test.java
   - library/ArbitraryModOperation_test.java
   - library/HelloWorld_test.java
   - library/ArbitraryModCombination_test.java
   - library/Mod998Random_test.java
+  - library/SegmentTree_test.java
   - library/Mod998ManyCombination_test.java
   - library/Mod107Pow_test.java
   - library/Mod107Random_test.java
@@ -87,7 +100,10 @@ data:
   - library/ManyFastIO_test.java
   - library/ArbitraryModPow_test.java
   - library/Mod107ManyCombination_test.java
+  - library/TemplatedSegmentTree_test.java
+  - library/TemplatedSegmentTree_PairLL_test.java
   - library/Convolution107_test.java
+  - library/FenwickTree_test.java
   - library/FastIO_test.java
   - library/ArbitraryModRandom_test.java
 documentation_of: library/Solver.java

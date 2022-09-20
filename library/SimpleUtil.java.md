@@ -7,7 +7,28 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/Convolution.java
+    title: library/Convolution.java
+  - icon: ':heavy_check_mark:'
+    path: library/ExtendedConvolution.java
+    title: library/ExtendedConvolution.java
+  - icon: ':heavy_check_mark:'
+    path: library/FenwickTree.java
+    title: library/FenwickTree.java
+  - icon: ':question:'
+    path: library/Mod.java
+    title: library/Mod.java
+  - icon: ':x:'
+    path: library/SegmentTree.java
+    title: library/SegmentTree.java
+  - icon: ':question:'
+    path: library/TemplatedSegmentTree.java
+    title: library/TemplatedSegmentTree.java
+  - icon: ':warning:'
+    path: library/Util.java
+    title: library/Util.java
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: java
@@ -238,7 +259,14 @@ data:
   - library/FastOutputStream.java
   isVerificationFile: false
   path: library/SimpleUtil.java
-  requiredBy: []
+  requiredBy:
+  - library/SegmentTree.java
+  - library/FenwickTree.java
+  - library/Util.java
+  - library/Convolution.java
+  - library/ExtendedConvolution.java
+  - library/Mod.java
+  - library/TemplatedSegmentTree.java
   timestamp: '2022-09-20 15:15:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

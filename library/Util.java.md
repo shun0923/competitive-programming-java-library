@@ -1,17 +1,11 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/SimpleUtil.java
+    title: library/SimpleUtil.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: library/Convolution.java
-    title: library/Convolution.java
-  - icon: ':heavy_check_mark:'
-    path: library/ExtendedConvolution.java
-    title: library/ExtendedConvolution.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod.java
-    title: library/Mod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedVerifiedWith: []
@@ -25,15 +19,15 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/Util.java\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
-    \ library.Util;\n\nclass Util extends SimpleUtil {\n\tpublic static final int\
-    \ min(final int a, final int b) { return Math.min(a, b); }\n\tpublic static final\
-    \ long min(final long a, final long b) { return Math.min(a, b); }\n\tpublic static\
-    \ final double min(final double a, final double b) { return Math.min(a, b); }\n\
-    \tpublic static final <T extends Comparable<T>> T min(final T a, final T b) {\
-    \ return a.compareTo(b) <= 0 ? a : b; }\n\tpublic static final int min(final int...\
-    \ x) { int min = x[0]; for(int val : x) min = min(min, val); return min; }\n\t\
-    public static final long min(final long... x) { long min = x[0]; for(long val\
-    \ : x) min = min(min, val); return min; }\n\tpublic static final double min(final\
+    \ library.SimpleUtil;\n\nclass Util extends SimpleUtil {\n\tpublic static final\
+    \ int min(final int a, final int b) { return Math.min(a, b); }\n\tpublic static\
+    \ final long min(final long a, final long b) { return Math.min(a, b); }\n\tpublic\
+    \ static final double min(final double a, final double b) { return Math.min(a,\
+    \ b); }\n\tpublic static final <T extends Comparable<T>> T min(final T a, final\
+    \ T b) { return a.compareTo(b) <= 0 ? a : b; }\n\tpublic static final int min(final\
+    \ int... x) { int min = x[0]; for(int val : x) min = min(min, val); return min;\
+    \ }\n\tpublic static final long min(final long... x) { long min = x[0]; for(long\
+    \ val : x) min = min(min, val); return min; }\n\tpublic static final double min(final\
     \ double... x) { double min = x[0]; for(double val : x) min = min(min, val); return\
     \ min; }\n\tpublic static final int max(final int a, final int b) { return Math.max(a,\
     \ b); }\n\tpublic static final long max(final long a, final long b) { return Math.max(a,\
@@ -1222,15 +1216,13 @@ data:
     \t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final TupleDDD\
     \ that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
     \ that.b); if(c == 0) c = Double.compare(this.c, that.c); return c; }\n\t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/SimpleUtil.java
   isVerificationFile: false
   path: library/Util.java
   requiredBy:
-  - library/Convolution.java
   - library/Solver.java
-  - library/ExtendedConvolution.java
-  - library/Mod.java
-  timestamp: '2022-09-20 15:15:22+09:00'
+  timestamp: '2022-09-20 15:28:33+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/Util.java
