@@ -10,6 +10,9 @@ data:
       path: library/Convolution.java
       title: library/Convolution.java
     - icon: ':heavy_check_mark:'
+      path: library/DualSegmentTree.java
+      title: library/DualSegmentTree.java
+    - icon: ':heavy_check_mark:'
       path: library/ExtendedConvolution.java
       title: library/ExtendedConvolution.java
     - icon: ':heavy_check_mark:'
@@ -30,9 +33,12 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
+    - icon: ':x:'
+      path: library/TemplatedDualSegmentTree.java
+      title: library/TemplatedDualSegmentTree.java
     - icon: ':heavy_check_mark:'
       path: library/TemplatedSegmentTree.java
       title: library/TemplatedSegmentTree.java
@@ -63,6 +69,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Convolution998_test.java
       title: library/Convolution998_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/DualSegmentTree_test.java
+      title: library/DualSegmentTree_test.java
     - icon: ':heavy_check_mark:'
       path: library/FastIO_test.java
       title: library/FastIO_test.java
@@ -96,6 +105,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/SegmentTree_test.java
       title: library/SegmentTree_test.java
+    - icon: ':x:'
+      path: library/TemplatedDualSegmentTree_test.java
+      title: library/TemplatedDualSegmentTree_test.java
     - icon: ':heavy_check_mark:'
       path: library/TemplatedSegmentTree_Composite_test.java
       title: library/TemplatedSegmentTree_Composite_test.java
