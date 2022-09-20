@@ -7,11 +7,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: library/TemplatedSegmentTree_Composite_test.java
-    title: library/TemplatedSegmentTree_Composite_test.java
+    path: library/TemplateSegmentTree_Composite_test.java
+    title: library/TemplateSegmentTree_Composite_test.java
   - icon: ':heavy_check_mark:'
-    path: library/TemplatedSegmentTree_test.java
-    title: library/TemplatedSegmentTree_test.java
+    path: library/TemplateSegmentTree_test.java
+    title: library/TemplateSegmentTree_test.java
   _isVerificationFailed: false
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -20,19 +20,19 @@ data:
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: library/TemplatedSegmentTree.java\n"
+    RuntimeError: bundler is not specified: library/TemplateSegmentTree.java\n"
   code: "package library;\n\nimport java.util.function.*;\nimport library.SimpleUtil;\n\
-    \nclass TemplatedSegmentTree<T> {\n\tprivate Supplier<T> eSupplier;\n\tprivate\
+    \nclass TemplateSegmentTree<T> {\n\tprivate Supplier<T> eSupplier;\n\tprivate\
     \ T e;\n\tprivate BinaryOperator<T> f;\n\n\tprivate int n;\n\tprivate T nodes[];\n\
-    \tprivate int rangeL[];\n\tprivate int rangeR[];\n\n\t// O(N)\n\tpublic TemplatedSegmentTree(T[]\
+    \tprivate int rangeL[];\n\tprivate int rangeR[];\n\n\t// O(N)\n\tpublic TemplateSegmentTree(T[]\
     \ a, Supplier<T> eSupplier, BinaryOperator<T> f) {\n\t\tthis(a.length, eSupplier,\
     \ f);\n\t\tSystem.arraycopy(a, 0, nodes, n, a.length);\n\t\tfor(int i = n - 1;\
     \ i > 0; i --) nodes[i] = f.apply(nodes[i << 1], nodes[(i << 1) + 1]);\n\t}\n\t\
-    public TemplatedSegmentTree(int len, Supplier<T> xSupplier, Supplier<T> eSupplier,\
+    public TemplateSegmentTree(int len, Supplier<T> xSupplier, Supplier<T> eSupplier,\
     \ BinaryOperator<T> f) {\n\t\tthis(len, eSupplier, f);\n\t\tfor(int i = 0; i <\
     \ len; i ++) nodes[n + i] = xSupplier.get();\n\t\tfor(int i = n - 1; i > 0; i\
     \ --) nodes[i] = f.apply(nodes[i << 1], nodes[(i << 1) + 1]);\n\t}\n\t@SuppressWarnings(\"\
-    unchecked\")\n\tpublic TemplatedSegmentTree(int len, Supplier<T> eSupplier, BinaryOperator<T>\
+    unchecked\")\n\tpublic TemplateSegmentTree(int len, Supplier<T> eSupplier, BinaryOperator<T>\
     \ f) {\n\t\tSimpleUtil.nonNegativeCheck(len);\n\t\tthis.eSupplier = eSupplier;\n\
     \t\tthis.e = eSupplier.get();\n\t\tthis.f = f;\n\t\tn = 1;\n\t\twhile(n < len)\
     \ n <<= 1;\n\t\tnodes = (T[]) new Object[n << 1];\n\t\tfor(int i = 0; i < nodes.length;\
@@ -74,17 +74,17 @@ data:
   dependsOn:
   - library/SimpleUtil.java
   isVerificationFile: false
-  path: library/TemplatedSegmentTree.java
+  path: library/TemplateSegmentTree.java
   requiredBy: []
-  timestamp: '2022-09-20 16:29:22+09:00'
+  timestamp: '2022-09-20 18:17:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - library/TemplatedSegmentTree_Composite_test.java
-  - library/TemplatedSegmentTree_test.java
-documentation_of: library/TemplatedSegmentTree.java
+  - library/TemplateSegmentTree_Composite_test.java
+  - library/TemplateSegmentTree_test.java
+documentation_of: library/TemplateSegmentTree.java
 layout: document
 redirect_from:
-- /library/library/TemplatedSegmentTree.java
-- /library/library/TemplatedSegmentTree.java.html
-title: library/TemplatedSegmentTree.java
+- /library/library/TemplateSegmentTree.java
+- /library/library/TemplateSegmentTree.java.html
+title: library/TemplateSegmentTree.java
 ---

@@ -29,12 +29,11 @@ data:
     \n\tpublic void solve() {\n\t\tlong mask = (1 << 31) - 1;\n\t\tMod md = Mod998.md;\n\
     \t\tint n = ni();\n\t\tint q = ni();\n\t\tlong f[] = new long[n];\n\t\tfor(int\
     \ i = 0; i < n; i ++) f[i] = nl() << 31 | nl();\n\t\tSegmentTree st = new SegmentTree(f,\n\
-    \t\t\t1l << 31,\n\t\t\t(ele1, ele2) -> {\n\t\t\t\tlong ele1_a = ele1 >> 31;\n\t\
-    \t\t\tlong ele2_a = ele2 >> 31;\n\t\t\t\treturn md.mul(ele1_a, ele2_a) << 31 |\
-    \ md.mod(ele2_a * (ele1 & mask) + (ele2 & mask));\n\t\t\t});\n\t\tfor(int i =\
-    \ 0; i < q; i ++) {\n\t\t\tif(ni() == 0) st.set(ni(), nl() << 31 | nl());\n\t\t\
-    \telse {\n\t\t\t\tlong p = st.find(ni(), ni());\n\t\t\t\tprtln(md.mod((p >> 31)\
-    \ * nl() + (p & mask)));\n\t\t\t}\n\t\t}\n\t}\n}"
+    \t\t\t1l << 31,\n\t\t\t(ele1, ele2) -> md.mul(ele1 >> 31, ele2 >> 31) << 31 |\
+    \ md.mod((ele2 >> 31) * (ele1 & mask) + (ele2 & mask)));\n\t\tfor(int i = 0; i\
+    \ < q; i ++) {\n\t\t\tif(ni() == 0) st.set(ni(), nl() << 31 | nl());\n\t\t\telse\
+    \ {\n\t\t\t\tlong p = st.find(ni(), ni());\n\t\t\t\tprtln(md.mod((p >> 31) * nl()\
+    \ + (p & mask)));\n\t\t\t}\n\t\t}\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/Mod.java
@@ -42,7 +41,7 @@ data:
   isVerificationFile: true
   path: library/SegmentTree_Composite_test.java
   requiredBy: []
-  timestamp: '2022-09-20 16:48:42+09:00'
+  timestamp: '2022-09-20 18:45:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/SegmentTree_Composite_test.java

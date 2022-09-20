@@ -39,15 +39,21 @@ data:
     - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
+    - icon: ':x:'
+      path: library/SparseTable.java
+      title: library/SparseTable.java
     - icon: ':heavy_check_mark:'
-      path: library/TemplatedDualSegmentTree.java
-      title: library/TemplatedDualSegmentTree.java
-    - icon: ':question:'
-      path: library/TemplatedDynamicSegmentTree.java
-      title: library/TemplatedDynamicSegmentTree.java
+      path: library/TemplateDualSegmentTree.java
+      title: library/TemplateDualSegmentTree.java
     - icon: ':heavy_check_mark:'
-      path: library/TemplatedSegmentTree.java
-      title: library/TemplatedSegmentTree.java
+      path: library/TemplateDynamicSegmentTree.java
+      title: library/TemplateDynamicSegmentTree.java
+    - icon: ':heavy_check_mark:'
+      path: library/TemplateSegmentTree.java
+      title: library/TemplateSegmentTree.java
+    - icon: ':x:'
+      path: library/TemplateSparseTable.java
+      title: library/TemplateSparseTable.java
     - icon: ':warning:'
       path: library/Util.java
       title: library/Util.java
@@ -117,20 +123,26 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/SegmentTree_test.java
       title: library/SegmentTree_test.java
-    - icon: ':heavy_check_mark:'
-      path: library/TemplatedDualSegmentTree_test.java
-      title: library/TemplatedDualSegmentTree_test.java
     - icon: ':x:'
-      path: library/TemplatedDynamicSegmentTree_Small_test.java
-      title: library/TemplatedDynamicSegmentTree_Small_test.java
+      path: library/SparseTable_test.java
+      title: library/SparseTable_test.java
     - icon: ':heavy_check_mark:'
-      path: library/TemplatedDynamicSegmentTree_test.java
-      title: library/TemplatedDynamicSegmentTree_test.java
+      path: library/TemplateDualSegmentTree_test.java
+      title: library/TemplateDualSegmentTree_test.java
     - icon: ':heavy_check_mark:'
-      path: library/TemplatedSegmentTree_Composite_test.java
-      title: library/TemplatedSegmentTree_Composite_test.java
+      path: library/TemplateDynamicSegmentTree_Small_test.java
+      title: library/TemplateDynamicSegmentTree_Small_test.java
     - icon: ':heavy_check_mark:'
-      path: library/TemplatedSegmentTree_test.java
-      title: library/TemplatedSegmentTree_test.java
+      path: library/TemplateDynamicSegmentTree_test.java
+      title: library/TemplateDynamicSegmentTree_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/TemplateSegmentTree_Composite_test.java
+      title: library/TemplateSegmentTree_Composite_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/TemplateSegmentTree_test.java
+      title: library/TemplateSegmentTree_test.java
+    - icon: ':x:'
+      path: library/TemplateSparseTable_test.java
+      title: library/TemplateSparseTable_test.java
 layout: toppage
 ---

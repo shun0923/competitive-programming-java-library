@@ -34,8 +34,8 @@ data:
     path: library/SegmentTree_Composite_test.java
     title: library/SegmentTree_Composite_test.java
   - icon: ':heavy_check_mark:'
-    path: library/TemplatedSegmentTree_Composite_test.java
-    title: library/TemplatedSegmentTree_Composite_test.java
+    path: library/TemplateSegmentTree_Composite_test.java
+    title: library/TemplateSegmentTree_Composite_test.java
   _isVerificationFailed: false
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -174,7 +174,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Mod998Random_test.java
-  - library/TemplatedSegmentTree_Composite_test.java
+  - library/TemplateSegmentTree_Composite_test.java
   - library/Mod998ManyCombination_test.java
   - library/Mod107Pow_test.java
   - library/Mod107Random_test.java

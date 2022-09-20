@@ -29,15 +29,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/SegmentTree.java
     title: library/SegmentTree.java
+  - icon: ':x:'
+    path: library/SparseTable.java
+    title: library/SparseTable.java
   - icon: ':heavy_check_mark:'
-    path: library/TemplatedDualSegmentTree.java
-    title: library/TemplatedDualSegmentTree.java
-  - icon: ':question:'
-    path: library/TemplatedDynamicSegmentTree.java
-    title: library/TemplatedDynamicSegmentTree.java
+    path: library/TemplateDualSegmentTree.java
+    title: library/TemplateDualSegmentTree.java
   - icon: ':heavy_check_mark:'
-    path: library/TemplatedSegmentTree.java
-    title: library/TemplatedSegmentTree.java
+    path: library/TemplateDynamicSegmentTree.java
+    title: library/TemplateDynamicSegmentTree.java
+  - icon: ':heavy_check_mark:'
+    path: library/TemplateSegmentTree.java
+    title: library/TemplateSegmentTree.java
+  - icon: ':x:'
+    path: library/TemplateSparseTable.java
+    title: library/TemplateSparseTable.java
   - icon: ':warning:'
     path: library/Util.java
     title: library/Util.java
@@ -273,16 +279,18 @@ data:
   path: library/SimpleUtil.java
   requiredBy:
   - library/DualSegmentTree.java
-  - library/TemplatedDynamicSegmentTree.java
+  - library/TemplateSparseTable.java
+  - library/SparseTable.java
+  - library/TemplateSegmentTree.java
   - library/SegmentTree.java
   - library/DynamicSegmentTree.java
   - library/FenwickTree.java
   - library/Util.java
   - library/Convolution.java
+  - library/TemplateDynamicSegmentTree.java
+  - library/TemplateDualSegmentTree.java
   - library/ExtendedConvolution.java
   - library/Mod.java
-  - library/TemplatedDualSegmentTree.java
-  - library/TemplatedSegmentTree.java
   timestamp: '2022-09-20 15:15:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

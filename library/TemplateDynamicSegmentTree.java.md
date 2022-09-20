@@ -6,26 +6,26 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: library/TemplatedDynamicSegmentTree_Small_test.java
-    title: library/TemplatedDynamicSegmentTree_Small_test.java
   - icon: ':heavy_check_mark:'
-    path: library/TemplatedDynamicSegmentTree_test.java
-    title: library/TemplatedDynamicSegmentTree_test.java
-  _isVerificationFailed: true
+    path: library/TemplateDynamicSegmentTree_Small_test.java
+    title: library/TemplateDynamicSegmentTree_Small_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/TemplateDynamicSegmentTree_test.java
+    title: library/TemplateDynamicSegmentTree_test.java
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: library/TemplatedDynamicSegmentTree.java\n"
+    RuntimeError: bundler is not specified: library/TemplateDynamicSegmentTree.java\n"
   code: "package library;\n\nimport java.util.function.*;\nimport library.SimpleUtil;\n\
-    \nclass TemplatedDynamicSegmentTree<T> {\n\tclass NodeST {\n\t\tT val;\n\t\tNodeST\
+    \nclass TemplateDynamicSegmentTree<T> {\n\tclass NodeST {\n\t\tT val;\n\t\tNodeST\
     \ l = null;\n\t\tNodeST r = null;\n\t\tNodeST() { val = eSupplier.get(); }\n\t\
     \tNodeST(T val) { this.val = val; }\n\t}\n\n\tlong n;\n\tSupplier<T> eSupplier;\n\
-    \tT e;\n\tBinaryOperator<T> f;\n\n\tNodeST root;\n\n\t// O(1)\n\tTemplatedDynamicSegmentTree(long\
+    \tT e;\n\tBinaryOperator<T> f;\n\n\tNodeST root;\n\n\t// O(1)\n\tTemplateDynamicSegmentTree(long\
     \ len, Supplier<T> eSupplier, BinaryOperator<T> f) {\n\t\tSimpleUtil.nonNegativeCheck(len);\n\
     \t\tthis.n = len; this.eSupplier = eSupplier; this.e = eSupplier.get(); this.f\
     \ = f;\n\t\troot = new NodeST();\n\t}\n\n\t// O(logN)\n\tvoid set(long i, T val)\
@@ -52,17 +52,17 @@ data:
   dependsOn:
   - library/SimpleUtil.java
   isVerificationFile: false
-  path: library/TemplatedDynamicSegmentTree.java
+  path: library/TemplateDynamicSegmentTree.java
   requiredBy: []
-  timestamp: '2022-09-20 17:46:28+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2022-09-20 18:17:06+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - library/TemplatedDynamicSegmentTree_Small_test.java
-  - library/TemplatedDynamicSegmentTree_test.java
-documentation_of: library/TemplatedDynamicSegmentTree.java
+  - library/TemplateDynamicSegmentTree_Small_test.java
+  - library/TemplateDynamicSegmentTree_test.java
+documentation_of: library/TemplateDynamicSegmentTree.java
 layout: document
 redirect_from:
-- /library/library/TemplatedDynamicSegmentTree.java
-- /library/library/TemplatedDynamicSegmentTree.java.html
-title: library/TemplatedDynamicSegmentTree.java
+- /library/library/TemplateDynamicSegmentTree.java
+- /library/library/TemplateDynamicSegmentTree.java.html
+title: library/TemplateDynamicSegmentTree.java
 ---

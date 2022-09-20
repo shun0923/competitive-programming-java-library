@@ -69,21 +69,27 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/SegmentTree_test.java
     title: library/SegmentTree_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/TemplatedDualSegmentTree_test.java
-    title: library/TemplatedDualSegmentTree_test.java
   - icon: ':x:'
-    path: library/TemplatedDynamicSegmentTree_Small_test.java
-    title: library/TemplatedDynamicSegmentTree_Small_test.java
+    path: library/SparseTable_test.java
+    title: library/SparseTable_test.java
   - icon: ':heavy_check_mark:'
-    path: library/TemplatedDynamicSegmentTree_test.java
-    title: library/TemplatedDynamicSegmentTree_test.java
+    path: library/TemplateDualSegmentTree_test.java
+    title: library/TemplateDualSegmentTree_test.java
   - icon: ':heavy_check_mark:'
-    path: library/TemplatedSegmentTree_Composite_test.java
-    title: library/TemplatedSegmentTree_Composite_test.java
+    path: library/TemplateDynamicSegmentTree_Small_test.java
+    title: library/TemplateDynamicSegmentTree_Small_test.java
   - icon: ':heavy_check_mark:'
-    path: library/TemplatedSegmentTree_test.java
-    title: library/TemplatedSegmentTree_test.java
+    path: library/TemplateDynamicSegmentTree_test.java
+    title: library/TemplateDynamicSegmentTree_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/TemplateSegmentTree_Composite_test.java
+    title: library/TemplateSegmentTree_Composite_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/TemplateSegmentTree_test.java
+    title: library/TemplateSegmentTree_test.java
+  - icon: ':x:'
+    path: library/TemplateSparseTable_test.java
+    title: library/TemplateSparseTable_test.java
   _isVerificationFailed: true
   _pathExtension: java
   _verificationStatusIcon: ':question:'
@@ -109,16 +115,19 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/DualSegmentTree_test.java
+  - library/TemplateSparseTable_test.java
   - library/Convolution998_test.java
   - library/ArbitraryModOperation_test.java
   - library/HelloWorld_test.java
   - library/ArbitraryModCombination_test.java
-  - library/TemplatedDynamicSegmentTree_Small_test.java
   - library/Mod998Random_test.java
   - library/SegmentTree_test.java
+  - library/TemplateDynamicSegmentTree_Small_test.java
+  - library/TemplateSegmentTree_Composite_test.java
   - library/DynamicSegmentTree_Small_test.java
-  - library/TemplatedSegmentTree_Composite_test.java
   - library/Mod998ManyCombination_test.java
+  - library/TemplateDualSegmentTree_test.java
+  - library/TemplateDynamicSegmentTree_test.java
   - library/Mod107Pow_test.java
   - library/Mod107Random_test.java
   - library/ArbitraryModSqrt_test.java
@@ -126,14 +135,13 @@ data:
   - library/ManyFastIO_test.java
   - library/ArbitraryModPow_test.java
   - library/Mod107ManyCombination_test.java
-  - library/TemplatedSegmentTree_test.java
-  - library/TemplatedDualSegmentTree_test.java
   - library/Convolution107_test.java
   - library/FenwickTree_test.java
   - library/DynamicSegmentTree_test.java
   - library/FastIO_test.java
   - library/ArbitraryModRandom_test.java
-  - library/TemplatedDynamicSegmentTree_test.java
+  - library/SparseTable_test.java
+  - library/TemplateSegmentTree_test.java
 documentation_of: library/Solver.java
 layout: document
 redirect_from:

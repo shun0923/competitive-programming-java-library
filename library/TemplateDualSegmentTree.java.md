@@ -7,8 +7,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: library/TemplatedDualSegmentTree_test.java
-    title: library/TemplatedDualSegmentTree_test.java
+    path: library/TemplateDualSegmentTree_test.java
+    title: library/TemplateDualSegmentTree_test.java
   _isVerificationFailed: false
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -17,17 +17,17 @@ data:
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: library/TemplatedDualSegmentTree.java\n"
+    RuntimeError: bundler is not specified: library/TemplateDualSegmentTree.java\n"
   code: "package library;\n\nimport java.util.function.*;\nimport library.SimpleUtil;\n\
-    \nclass TemplatedDualSegmentTree<T> {\n\t@FunctionalInterface\n\tinterface BinaryConsumer<T>\
+    \nclass TemplateDualSegmentTree<T> {\n\t@FunctionalInterface\n\tinterface BinaryConsumer<T>\
     \ extends BiConsumer<T, T> {  }\n\n\tSupplier<T> e2Supplier;\n\tT e2;\n\tBinaryConsumer<T>\
     \ g;\n\n\tint n;\n\tint height;\n\tT lazy[];\n\tint rangeL[];\n\tint rangeR[];\n\
-    \n\t// O(N)\n\tTemplatedDualSegmentTree(T[] a, Supplier<T> e2Supplier, BinaryConsumer<T>\
+    \n\t// O(N)\n\tTemplateDualSegmentTree(T[] a, Supplier<T> e2Supplier, BinaryConsumer<T>\
     \ g) {\n\t\tthis(a.length, e2Supplier, g);\n\t\tSystem.arraycopy(a, 0, lazy, n,\
-    \ a.length);\n\t}\n\tTemplatedDualSegmentTree(int len, Supplier<T> xSupplier,\
-    \ Supplier<T> e2Supplier, BinaryConsumer<T> g) {\n\t\tthis(len, e2Supplier, g);\n\
-    \t\tfor(int i = 0; i < len; i ++) lazy[i + n] = xSupplier.get();\n\t}\n\t@SuppressWarnings(\"\
-    unchecked\")\n\tTemplatedDualSegmentTree(int len, Supplier<T> e2Supplier, BinaryConsumer<T>\
+    \ a.length);\n\t}\n\tTemplateDualSegmentTree(int len, Supplier<T> xSupplier, Supplier<T>\
+    \ e2Supplier, BinaryConsumer<T> g) {\n\t\tthis(len, e2Supplier, g);\n\t\tfor(int\
+    \ i = 0; i < len; i ++) lazy[i + n] = xSupplier.get();\n\t}\n\t@SuppressWarnings(\"\
+    unchecked\")\n\tTemplateDualSegmentTree(int len, Supplier<T> e2Supplier, BinaryConsumer<T>\
     \ g) {\n\t\tSimpleUtil.nonNegativeCheck(len);\n\t\tthis.e2Supplier = e2Supplier;\n\
     \t\tthis.e2 = e2Supplier.get();\n\t\tthis.g = g;\n\t\tn = 1;\n\t\theight = 0;\n\
     \t\twhile(n < len) { n <<= 1; height ++; }\n\t\tlazy = (T[]) new Object[n << 1];\n\
@@ -50,16 +50,16 @@ data:
   dependsOn:
   - library/SimpleUtil.java
   isVerificationFile: false
-  path: library/TemplatedDualSegmentTree.java
+  path: library/TemplateDualSegmentTree.java
   requiredBy: []
-  timestamp: '2022-09-20 17:17:01+09:00'
+  timestamp: '2022-09-20 18:17:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - library/TemplatedDualSegmentTree_test.java
-documentation_of: library/TemplatedDualSegmentTree.java
+  - library/TemplateDualSegmentTree_test.java
+documentation_of: library/TemplateDualSegmentTree.java
 layout: document
 redirect_from:
-- /library/library/TemplatedDualSegmentTree.java
-- /library/library/TemplatedDualSegmentTree.java.html
-title: library/TemplatedDualSegmentTree.java
+- /library/library/TemplateDualSegmentTree.java
+- /library/library/TemplateDualSegmentTree.java.html
+title: library/TemplateDualSegmentTree.java
 ---
