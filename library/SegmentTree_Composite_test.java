@@ -18,11 +18,7 @@ public class SegmentTree_Composite_test extends Solver {
 		for(int i = 0; i < n; i ++) f[i] = nl() << 31 | nl();
 		SegmentTree st = new SegmentTree(f,
 			1l << 31,
-			(ele1, ele2) -> {
-				long ele1_a = ele1 >> 31;
-				long ele2_a = ele2 >> 31;
-				return md.mul(ele1_a, ele2_a) << 31 | md.mod(ele2_a * (ele1 & mask) + (ele2 & mask));
-			});
+			(ele1, ele2) -> md.mul(ele1 >> 31, ele2 >> 31) << 31 | md.mod((ele2 >> 31) * (ele1 & mask) + (ele2 & mask)));
 		for(int i = 0; i < q; i ++) {
 			if(ni() == 0) st.set(ni(), nl() << 31 | nl());
 			else {
