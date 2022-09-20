@@ -6,22 +6,25 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
+    path: library/SegmentTree_Composite_test.java
+    title: library/SegmentTree_Composite_test.java
+  - icon: ':heavy_check_mark:'
     path: library/SegmentTree_test.java
     title: library/SegmentTree_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/SegmentTree.java\n"
-  code: "package library;\n\nimport java.util.function.*;\nimport library.SimpleUtil;\n\
-    \nclass SegmentTree {\n\tprivate long e;\n\tprivate LongBinaryOperator f;\n\n\t\
-    private int n;\n\tprivate long nodes[];\n\tprivate int rangeL[];\n\tprivate int\
-    \ rangeR[];\n\n\t// O(N)\n\tpublic SegmentTree(long[] a, long e, LongBinaryOperator\
+  code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
+    \ library.SimpleUtil;\n\nclass SegmentTree {\n\tprivate long e;\n\tprivate LongBinaryOperator\
+    \ f;\n\n\tprivate int n;\n\tprivate long nodes[];\n\tprivate int rangeL[];\n\t\
+    private int rangeR[];\n\n\t// O(N)\n\tpublic SegmentTree(long[] a, long e, LongBinaryOperator\
     \ f) {\n\t\tthis(a.length, e, f);\n\t\tSystem.arraycopy(a, 0, nodes, n, a.length);\n\
     \t\tfor(int i = n - 1; i > 0; i --) nodes[i] = f.applyAsLong(nodes[i << 1], nodes[(i\
     \ << 1) + 1]);\n\t}\n\tpublic SegmentTree(int len, long x, long e, LongBinaryOperator\
@@ -71,10 +74,11 @@ data:
   isVerificationFile: false
   path: library/SegmentTree.java
   requiredBy: []
-  timestamp: '2022-09-20 16:27:42+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-09-20 16:48:42+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/SegmentTree_test.java
+  - library/SegmentTree_Composite_test.java
 documentation_of: library/SegmentTree.java
 layout: document
 redirect_from:

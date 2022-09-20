@@ -21,19 +21,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/FenwickTree.java
       title: library/FenwickTree.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/SegmentTree.java
       title: library/SegmentTree.java
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplatedSegmentTree.java
       title: library/TemplatedSegmentTree.java
     - icon: ':warning:'
@@ -90,12 +90,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Mod998Random_test.java
       title: library/Mod998Random_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
+      path: library/SegmentTree_Composite_test.java
+      title: library/SegmentTree_Composite_test.java
+    - icon: ':heavy_check_mark:'
       path: library/SegmentTree_test.java
       title: library/SegmentTree_test.java
-    - icon: ':x:'
-      path: library/TemplatedSegmentTree_PairLL_test.java
-      title: library/TemplatedSegmentTree_PairLL_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/TemplatedSegmentTree_Composite_test.java
+      title: library/TemplatedSegmentTree_Composite_test.java
     - icon: ':heavy_check_mark:'
       path: library/TemplatedSegmentTree_test.java
       title: library/TemplatedSegmentTree_test.java

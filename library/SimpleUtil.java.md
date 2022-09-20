@@ -17,13 +17,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/FenwickTree.java
     title: library/FenwickTree.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/SegmentTree.java
     title: library/SegmentTree.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplatedSegmentTree.java
     title: library/TemplatedSegmentTree.java
   - icon: ':warning:'

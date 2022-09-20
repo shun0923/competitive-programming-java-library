@@ -30,12 +30,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Mod998Random_test.java
     title: library/Mod998Random_test.java
-  - icon: ':x:'
-    path: library/TemplatedSegmentTree_PairLL_test.java
-    title: library/TemplatedSegmentTree_PairLL_test.java
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: library/SegmentTree_Composite_test.java
+    title: library/SegmentTree_Composite_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/TemplatedSegmentTree_Composite_test.java
+    title: library/TemplatedSegmentTree_Composite_test.java
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -168,14 +171,15 @@ data:
   - library/ExtendedConvolution.java
   - library/ArbitraryMod.java
   timestamp: '2022-09-20 15:28:33+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Mod998Random_test.java
+  - library/TemplatedSegmentTree_Composite_test.java
   - library/Mod998ManyCombination_test.java
   - library/Mod107Pow_test.java
   - library/Mod107Random_test.java
+  - library/SegmentTree_Composite_test.java
   - library/Mod107ManyCombination_test.java
-  - library/TemplatedSegmentTree_PairLL_test.java
 documentation_of: library/Mod.java
 layout: document
 redirect_from:
