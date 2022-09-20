@@ -2,16 +2,12 @@
 
 package library;
 
-import library.Util;
+import library.Solver;
 import library.FastInputStream;
 import library.FastOutputStream;
 
-public class FastIO_test extends Util {
-	public static void main(final String[] args) {
-		DEBUG = args.length > 0 && args[0].equals("-DEBUG");
-		Thread.setDefaultUncaughtExceptionHandler((t, e) -> { flush(); e.printStackTrace(); System.exit(1); });
-		new Thread(null, new FastIO_test(), "", 1 << 31).start();
-	}
+public class FastIO_test extends Solver {
+	public static void main(final String[] args) { main(args, new FastIO_test()); }
 
 	public void solve() {
 		prtln(nl() + nl());

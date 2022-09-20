@@ -5,12 +5,7 @@ import java.util.function.*;
 import library.FastInputStream;
 import library.FastOutputStream;
 
-abstract class Util implements Runnable {
-	@Override
-	public void run() { solve(); flush(); }
-
-	abstract public void solve();
-
+class FastIO {
 	public static boolean DEBUG;
 
 	private static final FastInputStream in = new FastInputStream(System.in);
@@ -210,6 +205,12 @@ abstract class Util implements Runnable {
 	public static final void exit(final Object[][] a) { prtln(a); exit(); }
 
 
+	public static final char booleanToChar(final boolean b) { return b ? '#' : '.'; }
+	public static final char[] booleanToChar(final boolean... a) {
+		final char c[] = new char[a.length];
+		for(int i = 0; i < a.length; i ++) c[i] = booleanToChar(a[i]);
+		return c;
+	}
 	public static final long INF = (long)4e18;
 	public static final boolean isPlusINF(final long x) { return x > INF / 10; }
 	public static final boolean isMinusINF(final long x) { return isPlusINF(- x); }
@@ -218,7 +219,8 @@ abstract class Util implements Runnable {
 	public static final boolean isPlusINF(final int x) { return x > I_INF / 10; }
 	public static final boolean isMinusINF(final int x) { return isPlusINF(- x); }
 	public static final boolean isINF(final int x) { return isPlusINF(x) || isMinusINF(x); }
-
+}
+class Util extends FastIO {
 	public static final int min(final int a, final int b) { return Math.min(a, b); }
 	public static final long min(final long a, final long b) { return Math.min(a, b); }
 	public static final double min(final double a, final double b) { return Math.min(a, b); }
@@ -462,12 +464,6 @@ abstract class Util implements Runnable {
 	public static final boolean isFlagged(final long x, final int i) { nonNegativeCheck(x); nonNegativeCheck(i); return (x >> i & 1) != 0; }
 
 
-	public static final char booleanToChar(final boolean b) { return b ? '#' : '.'; }
-	public static final char[] booleanToChar(final boolean... a) {
-		final char c[] = new char[a.length];
-		for(int i = 0; i < a.length; i ++) c[i] = booleanToChar(a[i]);
-		return c;
-	}
 	public static final boolean isUpper(final char c) { return c >= 'A' && c <= 'Z'; }
 	public static final boolean isLower(final char c) { return c >= 'a' && c <= 'z'; }
 	public static final int upperToInt(final char c) { return c - 'A'; }

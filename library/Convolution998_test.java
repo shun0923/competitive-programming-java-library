@@ -2,16 +2,11 @@
 
 package library;
 
-import java.util.*;
-import library.Util;
+import library.Solver;
 import library.Convolution;
 
-public class Convolution998_test extends Util {
-	public static void main(final String[] args) {
-		DEBUG = args.length > 0 && args[0].equals("-DEBUG");
-		Thread.setDefaultUncaughtExceptionHandler((t, e) -> { flush(); e.printStackTrace(); System.exit(1); });
-		new Thread(null, new Convolution998_test(), "", 1 << 31).start();
-	}
+public class Convolution998_test extends Solver {
+	public static void main(final String[] args) { main(args, new Convolution998_test()); }
 
 	public void solve() {
 		int n = ni();
