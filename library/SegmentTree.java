@@ -16,7 +16,6 @@ class SegTree {
 		this(a.length, e, f);
 		System.arraycopy(a, 0, nodes, n, a.length);
 		for(int i = n - 1; i > 0; i --) nodes[i] = f.applyAsLong(nodes[i << 1], nodes[(i << 1) + 1]);
-	
 	}
 	SegTree(int len, long x, long e, LongBinaryOperator f) {
 		this(len, e, f);
