@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplatedDualSegmentTree.java
     title: library/TemplatedDualSegmentTree.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -21,8 +21,8 @@ data:
     RuntimeError: bundler is not specified: library/TemplatedDualSegmentTree_test.java\n"
   code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E\n\
     \npackage library;\n\nimport library.Solver;\nimport library.TemplatedDualSegmentTree;\n\
-    \npublic class TemplatedSegmentDualTree_test extends Solver {\n\tpublic static\
-    \ void main(final String[] args) { main(args, new TemplatedSegmentDualTree_test());\
+    \npublic class TemplatedDualSegmentTree_test extends Solver {\n\tpublic static\
+    \ void main(final String[] args) { main(args, new TemplatedDualSegmentTree_test());\
     \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tint q = ni();\n\t\tTemplatedDualSegmentTree<long[]>\
     \ st = new TemplatedDualSegmentTree<>(n,\n\t\t\t\t() -> new long[]{0}, (ele1,\
     \ ele2) -> ele1[0] += ele2[0]);\n\t\tfor(int i = 0; i < q; i ++) {\n\t\t\tif(ni()\
@@ -34,8 +34,8 @@ data:
   isVerificationFile: true
   path: library/TemplatedDualSegmentTree_test.java
   requiredBy: []
-  timestamp: '2022-09-20 17:17:01+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-09-20 17:28:38+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/TemplatedDualSegmentTree_test.java
 layout: document

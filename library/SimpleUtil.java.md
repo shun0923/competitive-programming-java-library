@@ -15,6 +15,9 @@ data:
     path: library/DualSegmentTree.java
     title: library/DualSegmentTree.java
   - icon: ':heavy_check_mark:'
+    path: library/DynamicSegmentTree.java
+    title: library/DynamicSegmentTree.java
+  - icon: ':heavy_check_mark:'
     path: library/ExtendedConvolution.java
     title: library/ExtendedConvolution.java
   - icon: ':heavy_check_mark:'
@@ -26,9 +29,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/SegmentTree.java
     title: library/SegmentTree.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplatedDualSegmentTree.java
     title: library/TemplatedDualSegmentTree.java
+  - icon: ':question:'
+    path: library/TemplatedDynamicSegmentTree.java
+    title: library/TemplatedDynamicSegmentTree.java
   - icon: ':heavy_check_mark:'
     path: library/TemplatedSegmentTree.java
     title: library/TemplatedSegmentTree.java
@@ -267,7 +273,9 @@ data:
   path: library/SimpleUtil.java
   requiredBy:
   - library/DualSegmentTree.java
+  - library/TemplatedDynamicSegmentTree.java
   - library/SegmentTree.java
+  - library/DynamicSegmentTree.java
   - library/FenwickTree.java
   - library/Util.java
   - library/Convolution.java

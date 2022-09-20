@@ -31,6 +31,12 @@ data:
     path: library/DualSegmentTree_test.java
     title: library/DualSegmentTree_test.java
   - icon: ':heavy_check_mark:'
+    path: library/DynamicSegmentTree_Small_test.java
+    title: library/DynamicSegmentTree_Small_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/DynamicSegmentTree_test.java
+    title: library/DynamicSegmentTree_test.java
+  - icon: ':heavy_check_mark:'
     path: library/FastIO_test.java
     title: library/FastIO_test.java
   - icon: ':heavy_check_mark:'
@@ -63,9 +69,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/SegmentTree_test.java
     title: library/SegmentTree_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplatedDualSegmentTree_test.java
     title: library/TemplatedDualSegmentTree_test.java
+  - icon: ':x:'
+    path: library/TemplatedDynamicSegmentTree_Small_test.java
+    title: library/TemplatedDynamicSegmentTree_Small_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/TemplatedDynamicSegmentTree_test.java
+    title: library/TemplatedDynamicSegmentTree_test.java
   - icon: ':heavy_check_mark:'
     path: library/TemplatedSegmentTree_Composite_test.java
     title: library/TemplatedSegmentTree_Composite_test.java
@@ -101,8 +113,10 @@ data:
   - library/ArbitraryModOperation_test.java
   - library/HelloWorld_test.java
   - library/ArbitraryModCombination_test.java
+  - library/TemplatedDynamicSegmentTree_Small_test.java
   - library/Mod998Random_test.java
   - library/SegmentTree_test.java
+  - library/DynamicSegmentTree_Small_test.java
   - library/TemplatedSegmentTree_Composite_test.java
   - library/Mod998ManyCombination_test.java
   - library/Mod107Pow_test.java
@@ -116,8 +130,10 @@ data:
   - library/TemplatedDualSegmentTree_test.java
   - library/Convolution107_test.java
   - library/FenwickTree_test.java
+  - library/DynamicSegmentTree_test.java
   - library/FastIO_test.java
   - library/ArbitraryModRandom_test.java
+  - library/TemplatedDynamicSegmentTree_test.java
 documentation_of: library/Solver.java
 layout: document
 redirect_from:
