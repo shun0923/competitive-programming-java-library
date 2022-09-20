@@ -3,7 +3,7 @@
 package library;
 
 import library.Solver;
-import library.FenwickTree;
+import library.SegmentTree;
 
 public class SegmentTree_test extends Solver {
 	public static void main(final String[] args) { main(args, new SegmentTree_test()); }
