@@ -1,5 +1,6 @@
 package library;
 
+import java.util.function.*;
 import library.SimpleUtil;
 
 class TemplateSparseTable<T> {
