@@ -16,6 +16,9 @@ data:
     title: library/ExtendedConvolution.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: library/DynamicSwag_test.java
+    title: library/DynamicSwag_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Mod107ManyCombination_test.java
     title: library/Mod107ManyCombination_test.java
   - icon: ':heavy_check_mark:'
@@ -33,12 +36,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/SegmentTree_Composite_test.java
     title: library/SegmentTree_Composite_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
+    path: library/TemplateDynamicSwag_test.java
+    title: library/TemplateDynamicSwag_test.java
+  - icon: ':x:'
     path: library/TemplateSegmentTree_Composite_test.java
     title: library/TemplateSegmentTree_Composite_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -171,15 +177,17 @@ data:
   - library/ExtendedConvolution.java
   - library/ArbitraryMod.java
   timestamp: '2022-09-20 15:28:33+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Mod998Random_test.java
   - library/TemplateSegmentTree_Composite_test.java
   - library/Mod998ManyCombination_test.java
+  - library/DynamicSwag_test.java
   - library/Mod107Pow_test.java
   - library/Mod107Random_test.java
   - library/SegmentTree_Composite_test.java
   - library/Mod107ManyCombination_test.java
+  - library/TemplateDynamicSwag_test.java
 documentation_of: library/Mod.java
 layout: document
 redirect_from:

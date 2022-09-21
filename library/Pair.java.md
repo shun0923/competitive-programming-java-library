@@ -6,15 +6,27 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: library/DynamicSwag.java
+    title: library/DynamicSwag.java
+  - icon: ':heavy_check_mark:'
     path: library/Swag.java
     title: library/Swag.java
+  - icon: ':x:'
+    path: library/TemplateDynamicSwag.java
+    title: library/TemplateDynamicSwag.java
   - icon: ':heavy_check_mark:'
     path: library/TemplateSwag.java
     title: library/TemplateSwag.java
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: library/TemplateDynamicSwag_test.java
+    title: library/TemplateDynamicSwag_test.java
+  - icon: ':x:'
+    path: library/TemplateSegmentTree_Composite_test.java
+    title: library/TemplateSegmentTree_Composite_test.java
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -155,10 +167,14 @@ data:
   path: library/Pair.java
   requiredBy:
   - library/Swag.java
+  - library/DynamicSwag.java
   - library/TemplateSwag.java
+  - library/TemplateDynamicSwag.java
   timestamp: '2022-09-21 19:01:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - library/TemplateSegmentTree_Composite_test.java
+  - library/TemplateDynamicSwag_test.java
 documentation_of: library/Pair.java
 layout: document
 redirect_from:

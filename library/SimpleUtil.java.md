@@ -18,15 +18,18 @@ data:
     path: library/DynamicSegmentTree.java
     title: library/DynamicSegmentTree.java
   - icon: ':heavy_check_mark:'
+    path: library/DynamicSwag.java
+    title: library/DynamicSwag.java
+  - icon: ':heavy_check_mark:'
     path: library/ExtendedConvolution.java
     title: library/ExtendedConvolution.java
   - icon: ':heavy_check_mark:'
     path: library/FenwickTree.java
     title: library/FenwickTree.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/Pair.java
     title: library/Pair.java
   - icon: ':heavy_check_mark:'
@@ -44,7 +47,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSegmentTree.java
     title: library/TemplateDynamicSegmentTree.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
+    path: library/TemplateDynamicSwag.java
+    title: library/TemplateDynamicSwag.java
+  - icon: ':question:'
     path: library/TemplateSegmentTree.java
     title: library/TemplateSegmentTree.java
   - icon: ':heavy_check_mark:'
@@ -295,6 +301,7 @@ data:
   - library/SegmentTree.java
   - library/DynamicSegmentTree.java
   - library/FenwickTree.java
+  - library/DynamicSwag.java
   - library/TemplateSwag.java
   - library/Util.java
   - library/Convolution.java
@@ -302,6 +309,7 @@ data:
   - library/Pair.java
   - library/TemplateDualSegmentTree.java
   - library/ExtendedConvolution.java
+  - library/TemplateDynamicSwag.java
   - library/Mod.java
   timestamp: '2022-09-20 15:15:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS

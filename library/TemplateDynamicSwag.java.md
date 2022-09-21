@@ -9,18 +9,18 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: library/TemplateSwag_test.java
-    title: library/TemplateSwag_test.java
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: library/TemplateDynamicSwag_test.java
+    title: library/TemplateDynamicSwag_test.java
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: library/TemplateSwag.java\n"
+    RuntimeError: bundler is not specified: library/TemplateDynamicSwag.java\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
     \ library.SimpleUtil;\nimport library.Pair;\n\nclass TemplateSwag<T> {\n\tint\
     \ n;\n\tT val[];\n\tSupplier<T> eSupplier;\n\tBinaryOperator<T> f;\n\n\tT front;\n\
@@ -48,16 +48,16 @@ data:
   - library/SimpleUtil.java
   - library/Pair.java
   isVerificationFile: false
-  path: library/TemplateSwag.java
+  path: library/TemplateDynamicSwag.java
   requiredBy: []
-  timestamp: '2022-09-21 20:20:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-09-22 00:01:09+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - library/TemplateSwag_test.java
-documentation_of: library/TemplateSwag.java
+  - library/TemplateDynamicSwag_test.java
+documentation_of: library/TemplateDynamicSwag.java
 layout: document
 redirect_from:
-- /library/library/TemplateSwag.java
-- /library/library/TemplateSwag.java.html
-title: library/TemplateSwag.java
+- /library/library/TemplateDynamicSwag.java
+- /library/library/TemplateDynamicSwag.java.html
+title: library/TemplateDynamicSwag.java
 ---

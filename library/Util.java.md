@@ -5,7 +5,7 @@ data:
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedVerifiedWith: []
@@ -626,157 +626,9 @@ data:
     \ int loop) {\n\t\tfor(int cnt = 0; cnt < loop; cnt ++) {\n\t\t\tdouble m1 = (left\
     \ * 2 + right) / 3.0;\n\t\t\tdouble m2 = (left + right * 2) / 3.0;\n\t\t\tif(op.apply(m1)\
     \ > op.apply(m2) ^ minimize) right = m2; else left = m1;\n\t\t}\n\t\treturn (left\
-    \ + right) / 2.0;\n\t}\n\n\n\t// Pair\n\tpublic static final PairII npii() { return\
-    \ new PairII(ni(), ni()); }\n\tpublic static final PairII[] npii(final int n)\
-    \ { final PairII a[] = new PairII[n]; for(int i = 0; i < n; i ++) a[i] = npii();\
-    \ return a; }\n\tpublic static final PairII[][] npii(final int n, final int m)\
-    \ { final PairII a[][] = new PairII[n][m]; for(int i = 0; i < n; i ++) a[i] =\
-    \ npii(m); return a; }\n\tpublic static final PairIL npil() { return new PairIL(ni(),\
-    \ nl()); }\n\tpublic static final PairIL[] npil(final int n) { final PairIL a[]\
-    \ = new PairIL[n]; for(int i = 0; i < n; i ++) a[i] = npil(); return a; }\n\t\
-    public static final PairIL[][] npil(final int n, final int m) { final PairIL a[][]\
-    \ = new PairIL[n][m]; for(int i = 0; i < n; i ++) a[i] = npil(m); return a; }\n\
-    \tpublic static final PairID npid() { return new PairID(ni(), nd()); }\n\tpublic\
-    \ static final PairID[] npid(final int n) { final PairID a[] = new PairID[n];\
-    \ for(int i = 0; i < n; i ++) a[i] = npid(); return a; }\n\tpublic static final\
-    \ PairID[][] npid(final int n, final int m) { final PairID a[][] = new PairID[n][m];\
-    \ for(int i = 0; i < n; i ++) a[i] = npid(m); return a; }\n\tpublic static final\
-    \ PairLI npli() { return new PairLI(nl(), ni()); }\n\tpublic static final PairLI[]\
-    \ npli(final int n) { final PairLI a[] = new PairLI[n]; for(int i = 0; i < n;\
-    \ i ++) a[i] = npli(); return a; }\n\tpublic static final PairLI[][] npli(final\
-    \ int n, final int m) { final PairLI a[][] = new PairLI[n][m]; for(int i = 0;\
-    \ i < n; i ++) a[i] = npli(m); return a; }\n\tpublic static final PairLL npll()\
-    \ { return new PairLL(nl(), nl()); }\n\tpublic static final PairLL[] npll(final\
-    \ int n) { final PairLL a[] = new PairLL[n]; for(int i = 0; i < n; i ++) a[i]\
-    \ = npll(); return a; }\n\tpublic static final PairLL[][] npll(final int n, final\
-    \ int m) { final PairLL a[][] = new PairLL[n][m]; for(int i = 0; i < n; i ++)\
-    \ a[i] = npll(m); return a; }\n\tpublic static final PairLD npld() { return new\
-    \ PairLD(nl(), nd()); }\n\tpublic static final PairLD[] npld(final int n) { final\
-    \ PairLD a[] = new PairLD[n]; for(int i = 0; i < n; i ++) a[i] = npld(); return\
-    \ a; }\n\tpublic static final PairLD[][] npld(final int n, final int m) { final\
-    \ PairLD a[][] = new PairLD[n][m]; for(int i = 0; i < n; i ++) a[i] = npld(m);\
-    \ return a; }\n\tpublic static final PairDI npdi() { return new PairDI(nd(), ni());\
-    \ }\n\tpublic static final PairDI[] npdi(final int n) { final PairDI a[] = new\
-    \ PairDI[n]; for(int i = 0; i < n; i ++) a[i] = npdi(); return a; }\n\tpublic\
-    \ static final PairDI[][] npdi(final int n, final int m) { final PairDI a[][]\
-    \ = new PairDI[n][m]; for(int i = 0; i < n; i ++) a[i] = npdi(m); return a; }\n\
-    \tpublic static final PairDL npdl() { return new PairDL(nd(), nl()); }\n\tpublic\
-    \ static final PairDL[] npdl(final int n) { final PairDL a[] = new PairDL[n];\
-    \ for(int i = 0; i < n; i ++) a[i] = npdl(); return a; }\n\tpublic static final\
-    \ PairDL[][] npdl(final int n, final int m) { final PairDL a[][] = new PairDL[n][m];\
-    \ for(int i = 0; i < n; i ++) a[i] = npdl(m); return a; }\n\tpublic static final\
-    \ PairDD npdd() { return new PairDD(nd(), nd()); }\n\tpublic static final PairDD[]\
-    \ npdd(final int n) { final PairDD a[] = new PairDD[n]; for(int i = 0; i < n;\
-    \ i ++) a[i] = npdd(); return a; }\n\tpublic static final PairDD[][] npdd(final\
-    \ int n, final int m) { final PairDD a[][] = new PairDD[n][m]; for(int i = 0;\
-    \ i < n; i ++) a[i] = npdd(m); return a; }\n\tpublic static final class Pair<T\
-    \ extends Comparable<? super T>, U extends Comparable<? super U>> implements Comparable<Pair<T,\
-    \ U>> {\n\t\tpublic T a; public U b;\n\t\tpublic Pair() { }\n\t\tpublic Pair(final\
-    \ T a, final U b) { this.a = a; this.b = b; }\n\n\t\t@Override public final String\
-    \ toString() { return \"(\"+a.toString()+\", \"+b.toString()+\")\"; }\n\t\t@Override\
-    \ public final int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\
-    \tpublic final boolean equals(final Object obj) {\n\t\t\tif(this == obj) return\
-    \ true;\n\t\t\tif(obj == null) return false;\n\t\t\tif(this.getClass() != obj.getClass())\
-    \ return false;\n\t\t\tPair that = (Pair) obj;\n\t\t\tif(this.a.getClass() !=\
-    \ that.a.getClass()) return false;\n\t\t\tif(this.b.getClass() != that.b.getClass())\
-    \ return false;\n\t\t\tif(!this.a.equals(that.a)) return false;\n\t\t\tif(!this.b.equals(that.b))\
-    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
-    \ Pair<T, U> that) { int c = (this.a).compareTo(that.a); if(c == 0) c = (this.b).compareTo(that.b);\
-    \ return c; }\n\t}\n\tpublic static final class PairII implements Comparable<PairII>\
-    \ {\n\t\tpublic int a; public int b;\n\t\tpublic PairII() { }\n\t\tpublic PairII(final\
-    \ int a, final int b) { this.a = a; this.b = b; }\n\t\t@Override public final\
-    \ String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final\
-    \ int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
-    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
-    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
-    \t\t\tPairII that = (PairII) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
-    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
-    \ PairII that) { int c = Integer.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b,\
-    \ that.b); return c; }\n\t}\n\tpublic static final class PairIL implements Comparable<PairIL>\
-    \ {\n\t\tpublic int a; public long b;\n\t\tpublic PairIL() { }\n\t\tpublic PairIL(final\
-    \ int a, final long b) { this.a = a; this.b = b; }\n\t\t@Override public final\
-    \ String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final\
-    \ int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
-    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
-    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
-    \t\t\tPairIL that = (PairIL) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
-    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
-    \ PairIL that) { int c = Integer.compare(this.a, that.a); if(c == 0) c = Long.compare(this.b,\
-    \ that.b); return c; }\n\t}\n\tpublic static final class PairID implements Comparable<PairID>\
-    \ {\n\t\tpublic int a; public double b;\n\t\tpublic PairID() { }\n\t\tpublic PairID(final\
-    \ int a, final double b) { this.a = a; this.b = b; }\n\t\t@Override public final\
-    \ String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final\
-    \ int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
-    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
-    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
-    \t\t\tPairID that = (PairID) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
-    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
-    \ PairID that) { int c = Integer.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
-    \ that.b); return c; }\n\t}\n\tpublic static final class PairLI implements Comparable<PairLI>\
-    \ {\n\t\tpublic long a; public int b;\n\t\tpublic PairLI() { }\n\t\tpublic PairLI(final\
-    \ long a, final int b) { this.a = a; this.b = b; }\n\t\t@Override public final\
-    \ String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final\
-    \ int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
-    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
-    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
-    \t\t\tPairLI that = (PairLI) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
-    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
-    \ PairLI that) { int c = Long.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b,\
-    \ that.b); return c; }\n\t}\n\tpublic static final class PairLL implements Comparable<PairLL>\
-    \ {\n\t\tpublic long a; public long b;\n\t\tpublic PairLL() { }\n\t\tpublic PairLL(final\
-    \ long a, final long b) { this.a = a; this.b = b; }\n\t\t@Override public final\
-    \ String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final\
-    \ int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
-    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
-    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
-    \t\t\tPairLL that = (PairLL) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
-    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
-    \ PairLL that) { int c = Long.compare(this.a, that.a); if(c == 0) c = Long.compare(this.b,\
-    \ that.b); return c; }\n\t}\n\tpublic static final class PairLD implements Comparable<PairLD>\
-    \ {\n\t\tpublic long a; public double b;\n\t\tpublic PairLD() { }\n\t\tpublic\
-    \ PairLD(final long a, final double b) { this.a = a; this.b = b; }\n\t\t@Override\
-    \ public final String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override\
-    \ public final int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\
-    \tpublic boolean equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\
-    \t\t\tif(obj == null) return false;\n\t\t\tif(this.getClass() != obj.getClass())\
-    \ return false;\n\t\t\tPairLD that = (PairLD) obj;\n\t\t\tif(this.a != that.a\
-    \ || this.b != that.b) return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override\
-    \ public final int compareTo(final PairLD that) { int c = Long.compare(this.a,\
-    \ that.a); if(c == 0) c = Double.compare(this.b, that.b); return c; }\n\t}\n\t\
-    public static final class PairDI implements Comparable<PairDI> {\n\t\tpublic double\
-    \ a; public int b;\n\t\tpublic PairDI() { }\n\t\tpublic PairDI(final double a,\
-    \ final int b) { this.a = a; this.b = b; }\n\t\t@Override public final String\
-    \ toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final int\
-    \ hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
-    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
-    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
-    \t\t\tPairDI that = (PairDI) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
-    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
-    \ PairDI that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Integer.compare(this.b,\
-    \ that.b); return c; }\n\t}\n\tpublic static final class PairDL implements Comparable<PairDL>\
-    \ {\n\t\tpublic double a; public long b;\n\t\tpublic PairDL() { }\n\t\tpublic\
-    \ PairDL(final double a, final long b) { this.a = a; this.b = b; }\n\t\t@Override\
-    \ public final String toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override\
-    \ public final int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\
-    \tpublic boolean equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\
-    \t\t\tif(obj == null) return false;\n\t\t\tif(this.getClass() != obj.getClass())\
-    \ return false;\n\t\t\tPairDL that = (PairDL) obj;\n\t\t\tif(this.a != that.a\
-    \ || this.b != that.b) return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override\
-    \ public final int compareTo(final PairDL that) { int c = Double.compare(this.a,\
-    \ that.a); if(c == 0) c = Long.compare(this.b, that.b); return c; }\n\t}\n\tpublic\
-    \ static final class PairDD implements Comparable<PairDD> {\n\t\tpublic double\
-    \ a; public double b;\n\t\tpublic PairDD() { }\n\t\tpublic PairDD(final double\
-    \ a, final double b) { this.a = a; this.b = b; }\n\t\t@Override public final String\
-    \ toString() { return \"(\"+a+\", \"+b+\")\"; }\n\t\t@Override public final int\
-    \ hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic boolean\
-    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
-    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
-    \t\t\tPairDD that = (PairDD) obj;\n\t\t\tif(this.a != that.a || this.b != that.b)\
-    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
-    \ PairDD that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
-    \ that.b); return c; }\n\t}\n\n\t// Tuple\n\tprivate interface ITuple {\n\t\t\
-    public StringBuilder toStringBuilder();\n\t\t@Override public String toString();\n\
-    \t\t@Override public int hashCode();\n\t\t@Override public boolean equals(Object\
+    \ + right) / 2.0;\n\t}\n\n\n\t// Tuple\n\tprivate interface ITuple {\n\t\tpublic\
+    \ StringBuilder toStringBuilder();\n\t\t@Override public String toString();\n\t\
+    \t@Override public int hashCode();\n\t\t@Override public boolean equals(Object\
     \ obj);\n\t}\n\tprivate static class BasicTuple<T extends ITuple & Comparable<?\
     \ super T>, V extends Comparable<? super V>> implements Comparable<BasicTuple>\
     \ {\n\t\tpublic T t; public V a;\n\t\tpublic BasicTuple() {  }\n\n\t\tprivate\
@@ -1222,7 +1074,7 @@ data:
   path: library/Util.java
   requiredBy:
   - library/Solver.java
-  timestamp: '2022-09-20 15:28:33+09:00'
+  timestamp: '2022-09-21 20:30:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/Util.java

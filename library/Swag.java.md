@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/Pair.java
     title: library/Pair.java
   - icon: ':warning:'
