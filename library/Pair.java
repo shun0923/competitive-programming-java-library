@@ -1,5 +1,6 @@
 package library;
 
+import java.util.*;
 import library.SimpleUtil;
 
 class Pair extends SimpleUtil {
