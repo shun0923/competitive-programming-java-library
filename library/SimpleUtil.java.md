@@ -35,7 +35,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/SparseTable.java
     title: library/SparseTable.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Swag.java
     title: library/Swag.java
   - icon: ':heavy_check_mark:'
@@ -50,6 +50,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSparseTable.java
     title: library/TemplateSparseTable.java
+  - icon: ':heavy_check_mark:'
+    path: library/TemplateSwag.java
+    title: library/TemplateSwag.java
   - icon: ':warning:'
     path: library/Util.java
     title: library/Util.java
@@ -292,6 +295,7 @@ data:
   - library/SegmentTree.java
   - library/DynamicSegmentTree.java
   - library/FenwickTree.java
+  - library/TemplateSwag.java
   - library/Util.java
   - library/Convolution.java
   - library/TemplateDynamicSegmentTree.java

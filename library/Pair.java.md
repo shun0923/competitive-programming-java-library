@@ -5,9 +5,12 @@ data:
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Swag.java
     title: library/Swag.java
+  - icon: ':heavy_check_mark:'
+    path: library/TemplateSwag.java
+    title: library/TemplateSwag.java
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: java
@@ -18,42 +21,43 @@ data:
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/Pair.java\n"
-  code: "package library;\n\nimport library.SimpleUtil;\n\nclass Pair extends SimpleUtil\
-    \ {\n\t// Pair\n\tpublic static final II npii() { return new II(ni(), ni()); }\n\
-    \tpublic static final II[] npii(final int n) { final II a[] = new II[n]; for(int\
-    \ i = 0; i < n; i ++) a[i] = npii(); return a; }\n\tpublic static final IL npil()\
-    \ { return new IL(ni(), nl()); }\n\tpublic static final IL[] npil(final int n)\
-    \ { final IL a[] = new IL[n]; for(int i = 0; i < n; i ++) a[i] = npil(); return\
-    \ a; }\n\tpublic static final LI npli() { return new LI(nl(), ni()); }\n\tpublic\
-    \ static final LI[] npli(final int n) { final LI a[] = new LI[n]; for(int i =\
-    \ 0; i < n; i ++) a[i] = npli(); return a; }\n\tpublic static final LL npll()\
-    \ { return new LL(nl(), nl()); }\n\tpublic static final LL[] npll(final int n)\
-    \ { final LL a[] = new LL[n]; for(int i = 0; i < n; i ++) a[i] = npll(); return\
-    \ a; }\n\tpublic static final ID npid() { return new ID(ni(), nd()); }\n\tpublic\
-    \ static final ID[] npid(final int n) { final ID a[] = new ID[n]; for(int i =\
-    \ 0; i < n; i ++) a[i] = npid(); return a; }\n\tpublic static final LD npld()\
-    \ { return new LD(nl(), nd()); }\n\tpublic static final LD[] npld(final int n)\
-    \ { final LD a[] = new LD[n]; for(int i = 0; i < n; i ++) a[i] = npld(); return\
-    \ a; }\n\tpublic static final DI npdi() { return new DI(nd(), ni()); }\n\tpublic\
-    \ static final DI[] npdi(final int n) { final DI a[] = new DI[n]; for(int i =\
-    \ 0; i < n; i ++) a[i] = npdi(); return a; }\n\tpublic static final DL npdl()\
-    \ { return new DL(nd(), nl()); }\n\tpublic static final DL[] npdl(final int n)\
-    \ { final DL a[] = new DL[n]; for(int i = 0; i < n; i ++) a[i] = npdl(); return\
-    \ a; }\n\tpublic static final DD npdd() { return new DD(nd(), nd()); }\n\tpublic\
-    \ static final DD[] npdd(final int n) { final DD a[] = new DD[n]; for(int i =\
-    \ 0; i < n; i ++) a[i] = npdd(); return a; }\n\tpublic static final class TT<T\
-    \ extends Comparable<? super T>, U extends Comparable<? super U>> implements Comparable<TT<T,\
-    \ U>> {\n\t\tpublic T a; public U b;\n\t\tpublic TT() { }\n\t\tpublic TT(final\
-    \ T a, final U b) { this.a = a; this.b = b; }\n\n\t\t@Override public final String\
-    \ toString() { return \"(\"+a.toString()+\", \"+b.toString()+\")\"; }\n\t\t@Override\
-    \ public final int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\
-    \tpublic final boolean equals(final Object obj) {\n\t\t\tif(this == obj) return\
-    \ true;\n\t\t\tif(obj == null) return false;\n\t\t\tif(this.getClass() != obj.getClass())\
-    \ return false;\n\t\t\tTT that = (TT) obj;\n\t\t\tif(this.a.getClass() != that.a.getClass())\
-    \ return false;\n\t\t\tif(this.b.getClass() != that.b.getClass()) return false;\n\
-    \t\t\tif(!this.a.equals(that.a)) return false;\n\t\t\tif(!this.b.equals(that.b))\
-    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
-    \ TT<T, U> that) { int c = (this.a).compareTo(that.a); if(c == 0) c = (this.b).compareTo(that.b);\
+  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nclass\
+    \ Pair extends SimpleUtil {\n\t// Pair\n\tpublic static final II npii() { return\
+    \ new II(ni(), ni()); }\n\tpublic static final II[] npii(final int n) { final\
+    \ II a[] = new II[n]; for(int i = 0; i < n; i ++) a[i] = npii(); return a; }\n\
+    \tpublic static final IL npil() { return new IL(ni(), nl()); }\n\tpublic static\
+    \ final IL[] npil(final int n) { final IL a[] = new IL[n]; for(int i = 0; i <\
+    \ n; i ++) a[i] = npil(); return a; }\n\tpublic static final LI npli() { return\
+    \ new LI(nl(), ni()); }\n\tpublic static final LI[] npli(final int n) { final\
+    \ LI a[] = new LI[n]; for(int i = 0; i < n; i ++) a[i] = npli(); return a; }\n\
+    \tpublic static final LL npll() { return new LL(nl(), nl()); }\n\tpublic static\
+    \ final LL[] npll(final int n) { final LL a[] = new LL[n]; for(int i = 0; i <\
+    \ n; i ++) a[i] = npll(); return a; }\n\tpublic static final ID npid() { return\
+    \ new ID(ni(), nd()); }\n\tpublic static final ID[] npid(final int n) { final\
+    \ ID a[] = new ID[n]; for(int i = 0; i < n; i ++) a[i] = npid(); return a; }\n\
+    \tpublic static final LD npld() { return new LD(nl(), nd()); }\n\tpublic static\
+    \ final LD[] npld(final int n) { final LD a[] = new LD[n]; for(int i = 0; i <\
+    \ n; i ++) a[i] = npld(); return a; }\n\tpublic static final DI npdi() { return\
+    \ new DI(nd(), ni()); }\n\tpublic static final DI[] npdi(final int n) { final\
+    \ DI a[] = new DI[n]; for(int i = 0; i < n; i ++) a[i] = npdi(); return a; }\n\
+    \tpublic static final DL npdl() { return new DL(nd(), nl()); }\n\tpublic static\
+    \ final DL[] npdl(final int n) { final DL a[] = new DL[n]; for(int i = 0; i <\
+    \ n; i ++) a[i] = npdl(); return a; }\n\tpublic static final DD npdd() { return\
+    \ new DD(nd(), nd()); }\n\tpublic static final DD[] npdd(final int n) { final\
+    \ DD a[] = new DD[n]; for(int i = 0; i < n; i ++) a[i] = npdd(); return a; }\n\
+    \tpublic static final class TT<T extends Comparable<? super T>, U extends Comparable<?\
+    \ super U>> implements Comparable<TT<T, U>> {\n\t\tpublic T a; public U b;\n\t\
+    \tpublic TT() { }\n\t\tpublic TT(final T a, final U b) { this.a = a; this.b =\
+    \ b; }\n\n\t\t@Override public final String toString() { return \"(\"+a.toString()+\"\
+    , \"+b.toString()+\")\"; }\n\t\t@Override public final int hashCode() { return\
+    \ Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic final boolean equals(final\
+    \ Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj == null) return\
+    \ false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\t\t\tTT\
+    \ that = (TT) obj;\n\t\t\tif(this.a.getClass() != that.a.getClass()) return false;\n\
+    \t\t\tif(this.b.getClass() != that.b.getClass()) return false;\n\t\t\tif(!this.a.equals(that.a))\
+    \ return false;\n\t\t\tif(!this.b.equals(that.b)) return false;\n\t\t\treturn\
+    \ true;\n\t\t}\n\t\t@Override public final int compareTo(final TT<T, U> that)\
+    \ { int c = (this.a).compareTo(that.a); if(c == 0) c = (this.b).compareTo(that.b);\
     \ return c; }\n\t}\n\tpublic static final class II implements Comparable<II> {\n\
     \t\tpublic int a; public int b;\n\t\tpublic II() { }\n\t\tpublic II(final int\
     \ a, final int b) { this.a = a; this.b = b; }\n\t\t@Override public final String\
@@ -151,7 +155,8 @@ data:
   path: library/Pair.java
   requiredBy:
   - library/Swag.java
-  timestamp: '2022-09-21 18:45:16+09:00'
+  - library/TemplateSwag.java
+  timestamp: '2022-09-21 19:01:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/Pair.java
