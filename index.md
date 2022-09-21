@@ -30,18 +30,24 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
+    - icon: ':warning:'
+      path: library/Pair.java
+      title: library/Pair.java
     - icon: ':heavy_check_mark:'
       path: library/SegmentTree.java
       title: library/SegmentTree.java
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
       path: library/SparseTable.java
       title: library/SparseTable.java
+    - icon: ':x:'
+      path: library/Swag.java
+      title: library/Swag.java
     - icon: ':heavy_check_mark:'
       path: library/TemplateDualSegmentTree.java
       title: library/TemplateDualSegmentTree.java
@@ -126,6 +132,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/SparseTable_test.java
       title: library/SparseTable_test.java
+    - icon: ':x:'
+      path: library/Swag_test.java
+      title: library/Swag_test.java
     - icon: ':heavy_check_mark:'
       path: library/TemplateDualSegmentTree_test.java
       title: library/TemplateDualSegmentTree_test.java

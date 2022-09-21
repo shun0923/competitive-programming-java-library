@@ -72,6 +72,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/SparseTable_test.java
     title: library/SparseTable_test.java
+  - icon: ':x:'
+    path: library/Swag_test.java
+    title: library/Swag_test.java
   - icon: ':heavy_check_mark:'
     path: library/TemplateDualSegmentTree_test.java
     title: library/TemplateDualSegmentTree_test.java
@@ -90,9 +93,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSparseTable_test.java
     title: library/TemplateSparseTable_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -112,13 +115,14 @@ data:
   path: library/Solver.java
   requiredBy: []
   timestamp: '2022-09-20 15:28:33+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/DualSegmentTree_test.java
   - library/TemplateSparseTable_test.java
   - library/Convolution998_test.java
   - library/ArbitraryModOperation_test.java
   - library/HelloWorld_test.java
+  - library/Swag_test.java
   - library/ArbitraryModCombination_test.java
   - library/Mod998Random_test.java
   - library/SegmentTree_test.java

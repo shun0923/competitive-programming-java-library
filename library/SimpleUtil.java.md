@@ -26,12 +26,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
+  - icon: ':warning:'
+    path: library/Pair.java
+    title: library/Pair.java
   - icon: ':heavy_check_mark:'
     path: library/SegmentTree.java
     title: library/SegmentTree.java
   - icon: ':heavy_check_mark:'
     path: library/SparseTable.java
     title: library/SparseTable.java
+  - icon: ':x:'
+    path: library/Swag.java
+    title: library/Swag.java
   - icon: ':heavy_check_mark:'
     path: library/TemplateDualSegmentTree.java
     title: library/TemplateDualSegmentTree.java
@@ -278,6 +284,7 @@ data:
   isVerificationFile: false
   path: library/SimpleUtil.java
   requiredBy:
+  - library/Swag.java
   - library/DualSegmentTree.java
   - library/TemplateSparseTable.java
   - library/SparseTable.java
@@ -288,6 +295,7 @@ data:
   - library/Util.java
   - library/Convolution.java
   - library/TemplateDynamicSegmentTree.java
+  - library/Pair.java
   - library/TemplateDualSegmentTree.java
   - library/ExtendedConvolution.java
   - library/Mod.java
