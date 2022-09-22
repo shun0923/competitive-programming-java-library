@@ -109,6 +109,9 @@ data:
     path: library/TemplateSwag_test.java
     title: library/TemplateSwag_test.java
   - icon: ':x:'
+    path: library/WavletMatrix_freq_test.java
+    title: library/WavletMatrix_freq_test.java
+  - icon: ':x:'
     path: library/WavletMatrix_smallest_test.java
     title: library/WavletMatrix_smallest_test.java
   _isVerificationFailed: true
@@ -157,6 +160,7 @@ data:
   - library/Swag_gcd_test.java
   - library/ArbitraryModSqrt_test.java
   - library/SegmentTree_Composite_test.java
+  - library/WavletMatrix_freq_test.java
   - library/ManyFastIO_test.java
   - library/ArbitraryModPow_test.java
   - library/Mod107ManyCombination_test.java
