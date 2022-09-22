@@ -46,9 +46,9 @@ data:
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/Mod.java\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nabstract\
@@ -179,15 +179,15 @@ data:
   timestamp: '2022-09-20 15:28:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - library/SegmentTree_Composite_test.java
-  - library/Mod998ManyCombination_test.java
-  - library/Mod107Random_test.java
-  - library/DynamicSwag_test.java
-  - library/Mod107ManyCombination_test.java
-  - library/Mod107Pow_test.java
-  - library/TemplateSegmentTree_Composite_test.java
-  - library/TemplateDynamicSwag_test.java
   - library/Mod998Random_test.java
+  - library/TemplateSegmentTree_Composite_test.java
+  - library/Mod998ManyCombination_test.java
+  - library/DynamicSwag_test.java
+  - library/Mod107Pow_test.java
+  - library/Mod107Random_test.java
+  - library/SegmentTree_Composite_test.java
+  - library/Mod107ManyCombination_test.java
+  - library/TemplateDynamicSwag_test.java
 documentation_of: library/Mod.java
 layout: document
 redirect_from:

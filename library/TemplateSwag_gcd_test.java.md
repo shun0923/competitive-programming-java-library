@@ -4,39 +4,39 @@ data:
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateSwag.java
     title: library/TemplateSwag.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://yukicoder.me/problems/no/1036
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/TemplateSwag_gcd_test.java\n"
   code: "// verification-helper: PROBLEM https://yukicoder.me/problems/no/1036\n\n\
     package library;\n\nimport library.Solver;\nimport library.TemplateSwag;\n\npublic\
     \ class TemplateSwag_gcd_test extends Solver {\n\tpublic static void main(final\
     \ String[] args) { main(args, new TemplateSwag_gcd_test()); }\n\n\tpublic void\
-    \ solve() {\n\t\tint n = ni();\n\t\tlong a[] = nl(n);\n\t\tLong a[] = new Long[n];\n\
-    \t\tfor(int i = 0; i < n; i ++) a[i] = nl();\n\t\tTemplateSwag<Long> swag = new\
-    \ TemplateSwag<>(a, () -> 0l, (ele1, ele2) -> gcd(ele1, ele2));\n\t\tlong ans\
-    \ = 0;\n\t\tint r = 0;\n\t\tfor(int l = 0; l < n; l ++) {\n\t\t\tfor(; r <= n;\
-    \ r ++) {\n\t\t\t\tif(swag.fold(l, r) == 1) { ans += n - r + 1; break; }\n\t\t\
-    \t}\n\t\t}\n\t\tprtln(ans);\n\t}\n}"
+    \ solve() {\n\t\tint n = ni();\n\t\tLong a[] = new Long[n];\n\t\tfor(int i = 0;\
+    \ i < n; i ++) a[i] = nl();\n\t\tTemplateSwag<Long> swag = new TemplateSwag<>(a,\
+    \ () -> 0l, (ele1, ele2) -> gcd(ele1, ele2));\n\t\tlong ans = 0;\n\t\tint r =\
+    \ 0;\n\t\tfor(int l = 0; l < n; l ++) {\n\t\t\tfor(; r <= n; r ++) {\n\t\t\t\t\
+    if(swag.fold(l, r) == 1) { ans += n - r + 1; break; }\n\t\t\t}\n\t\t}\n\t\tprtln(ans);\n\
+    \t}\n}"
   dependsOn:
   - library/Solver.java
   - library/TemplateSwag.java
   isVerificationFile: true
   path: library/TemplateSwag_gcd_test.java
   requiredBy: []
-  timestamp: '2022-09-22 13:24:58+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-09-22 14:18:38+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/TemplateSwag_gcd_test.java
 layout: document

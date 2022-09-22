@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryMod.java
       title: library/ArbitraryMod.java
+    - icon: ':warning:'
+      path: library/BitVector.java
+      title: library/BitVector.java
     - icon: ':heavy_check_mark:'
       path: library/Convolution.java
       title: library/Convolution.java
@@ -66,12 +69,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSparseTable.java
       title: library/TemplateSparseTable.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSwag.java
       title: library/TemplateSwag.java
     - icon: ':warning:'
       path: library/Util.java
       title: library/Util.java
+    - icon: ':x:'
+      path: library/WavletMatrix.java
+      title: library/WavletMatrix.java
   verificationCategories:
   - name: library
     pages:
@@ -171,11 +177,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSparseTable_test.java
       title: library/TemplateSparseTable_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSwag_gcd_test.java
       title: library/TemplateSwag_gcd_test.java
     - icon: ':heavy_check_mark:'
       path: library/TemplateSwag_test.java
       title: library/TemplateSwag_test.java
+    - icon: ':x:'
+      path: library/WavletMatrix_smallest_test.java
+      title: library/WavletMatrix_smallest_test.java
 layout: toppage
 ---

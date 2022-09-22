@@ -8,6 +8,9 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/BitVector.java
+    title: library/BitVector.java
   - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
@@ -56,20 +59,23 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSparseTable.java
     title: library/TemplateSparseTable.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateSwag.java
     title: library/TemplateSwag.java
   - icon: ':warning:'
     path: library/Util.java
     title: library/Util.java
+  - icon: ':x:'
+    path: library/WavletMatrix.java
+    title: library/WavletMatrix.java
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: java
   _verificationStatusIcon: ':warning:'
   attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/SimpleUtil.java\n"
   code: "package library;\n\nimport library.FastInputStream;\nimport library.FastOutputStream;\n\
@@ -293,24 +299,26 @@ data:
   isVerificationFile: false
   path: library/SimpleUtil.java
   requiredBy:
-  - library/FenwickTree.java
-  - library/TemplateDynamicSegmentTree.java
-  - library/TemplateSegmentTree.java
-  - library/DynamicSwag.java
-  - library/TemplateSwag.java
-  - library/TemplateDualSegmentTree.java
   - library/Swag.java
-  - library/Convolution.java
-  - library/Mod.java
-  - library/Pair.java
-  - library/Util.java
-  - library/SparseTable.java
-  - library/TemplateSparseTable.java
-  - library/ExtendedConvolution.java
   - library/DualSegmentTree.java
+  - library/TemplateSparseTable.java
+  - library/BitVector.java
+  - library/SparseTable.java
+  - library/TemplateSegmentTree.java
   - library/SegmentTree.java
   - library/DynamicSegmentTree.java
+  - library/FenwickTree.java
+  - library/DynamicSwag.java
+  - library/TemplateSwag.java
+  - library/Util.java
+  - library/Convolution.java
+  - library/TemplateDynamicSegmentTree.java
+  - library/WavletMatrix.java
+  - library/Pair.java
+  - library/TemplateDualSegmentTree.java
+  - library/ExtendedConvolution.java
   - library/TemplateDynamicSwag.java
+  - library/Mod.java
   timestamp: '2022-09-20 15:15:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
