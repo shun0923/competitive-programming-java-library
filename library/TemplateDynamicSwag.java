@@ -5,7 +5,7 @@ import java.util.function.*;
 import library.SimpleUtil;
 import library.Pair;
 
-class TemplateSwag<T> {
+class TemplateDynamicSwag<T> {
 	int n;
 	T val[];
 	Supplier<T> eSupplier;
@@ -17,7 +17,7 @@ class TemplateSwag<T> {
 	int r = 0;
 
 	// O(1)
-	TemplateSwag(T[] val, Supplier<T> eSupplier, BinaryOperator<T> f) {
+	TemplateDynamicSwag(T[] val, Supplier<T> eSupplier, BinaryOperator<T> f) {
 		n = val.length;
 		this.val = val;
 		this.eSupplier = eSupplier;
