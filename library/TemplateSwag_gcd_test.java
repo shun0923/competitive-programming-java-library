@@ -10,7 +10,6 @@ public class TemplateSwag_gcd_test extends Solver {
 
 	public void solve() {
 		int n = ni();
-		long a[] = nl(n);
 		Long a[] = new Long[n];
 		for(int i = 0; i < n; i ++) a[i] = nl();
 		TemplateSwag<Long> swag = new TemplateSwag<>(a, () -> 0l, (ele1, ele2) -> gcd(ele1, ele2));
