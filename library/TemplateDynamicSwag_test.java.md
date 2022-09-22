@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Pair.java
     title: library/Pair.java
   - icon: ':question:'
@@ -44,7 +44,7 @@ data:
   isVerificationFile: true
   path: library/TemplateDynamicSwag_test.java
   requiredBy: []
-  timestamp: '2022-09-22 00:01:09+09:00'
+  timestamp: '2022-09-22 12:26:46+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/TemplateDynamicSwag_test.java

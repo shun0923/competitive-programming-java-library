@@ -90,7 +90,7 @@ data:
   - icon: ':x:'
     path: library/TemplateDynamicSwag_test.java
     title: library/TemplateDynamicSwag_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateSegmentTree_Composite_test.java
     title: library/TemplateSegmentTree_Composite_test.java
   - icon: ':heavy_check_mark:'

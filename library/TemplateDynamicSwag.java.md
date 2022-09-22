@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Pair.java
     title: library/Pair.java
   - icon: ':warning:'
@@ -22,12 +22,12 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/TemplateDynamicSwag.java\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
-    \ library.SimpleUtil;\nimport library.Pair;\n\nclass TemplateSwag<T> {\n\tint\
-    \ n;\n\tT val[];\n\tSupplier<T> eSupplier;\n\tBinaryOperator<T> f;\n\n\tT front;\n\
-    \tDeque<T> back = new ArrayDeque<>();\n\tint l = 0;\n\tint r = 0;\n\n\t// O(1)\n\
-    \tTemplateSwag(T[] val, Supplier<T> eSupplier, BinaryOperator<T> f) {\n\t\tn =\
-    \ val.length;\n\t\tthis.val = val;\n\t\tthis.eSupplier = eSupplier;\n\t\tthis.f\
-    \ = f;\n\t\tfront = eSupplier.get();\n\t}\n\n\t// O(N + QlogQ)\n\t@SuppressWarnings(\"\
+    \ library.SimpleUtil;\nimport library.Pair;\n\nclass TemplateDynamicSwag<T> {\n\
+    \tint n;\n\tT val[];\n\tSupplier<T> eSupplier;\n\tBinaryOperator<T> f;\n\n\tT\
+    \ front;\n\tDeque<T> back = new ArrayDeque<>();\n\tint l = 0;\n\tint r = 0;\n\n\
+    \t// O(1)\n\tTemplateDynamicSwag(T[] val, Supplier<T> eSupplier, BinaryOperator<T>\
+    \ f) {\n\t\tn = val.length;\n\t\tthis.val = val;\n\t\tthis.eSupplier = eSupplier;\n\
+    \t\tthis.f = f;\n\t\tfront = eSupplier.get();\n\t}\n\n\t// O(N + QlogQ)\n\t@SuppressWarnings(\"\
     unchecked\")\n\tT[] query(Pair.II[] p) {\n\t\tInteger idx[] = new Integer[p.length];\n\
     \t\tArrays.sort(idx, (ele1, ele2) -> {\n\t\t\tint c = Integer.compare(p[ele1].a,\
     \ p[ele2].a);\n\t\t\tif(c == 0) c = Integer.compare(p[ele1].b, p[ele2].b);\n\t\
@@ -50,7 +50,7 @@ data:
   isVerificationFile: false
   path: library/TemplateDynamicSwag.java
   requiredBy: []
-  timestamp: '2022-09-22 00:01:09+09:00'
+  timestamp: '2022-09-22 12:26:46+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/TemplateDynamicSwag_test.java

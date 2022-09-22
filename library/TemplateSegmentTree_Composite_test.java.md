@@ -4,20 +4,20 @@ data:
   - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Pair.java
     title: library/Pair.java
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateSegmentTree.java
     title: library/TemplateSegmentTree.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -30,12 +30,13 @@ data:
     import library.TemplateSegmentTree;\n\npublic class TemplateSegmentTree_Composite_test\
     \ extends Solver {\n\tpublic static void main(final String[] args) { main(args,\
     \ new TemplateSegmentTree_Composite_test()); }\n\n\tpublic void solve() {\n\t\t\
-    Mod md = Mod998.md;\n\t\tint n = ni();\n\t\tint q = ni();\n\t\tPair.LL f[] = npll(n);\n\
+    Mod md = Mod998.md;\n\t\tint n = ni();\n\t\tint q = ni();\n\t\tPair.LL f[] = Pair.npll(n);\n\
     \t\tTemplateSegmentTree<Pair.LL> st = new TemplateSegmentTree<>(f,\n\t\t\t() ->\
     \ new Pair.LL(1, 0),\n\t\t\t(ele1, ele2) -> new Pair.LL(md.mul(ele1.a, ele2.a),\
     \ md.mod(ele2.a * ele1.b + ele2.b)));\n\t\tfor(int i = 0; i < q; i ++) {\n\t\t\
-    \tif(ni() == 0) st.set(ni(), npll());\n\t\t\telse {\n\t\t\t\tPair.LL p = st.find(ni(),\
-    \ ni());\n\t\t\t\tprtln(md.mod(p.a * nl() + p.b));\n\t\t\t}\n\t\t}\n\t}\n}"
+    \tif(ni() == 0) st.set(ni(), Pair.npll());\n\t\t\telse {\n\t\t\t\tPair.LL p =\
+    \ st.find(ni(), ni());\n\t\t\t\tprtln(md.mod(p.a * nl() + p.b));\n\t\t\t}\n\t\t\
+    }\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/Pair.java
@@ -44,8 +45,8 @@ data:
   isVerificationFile: true
   path: library/TemplateSegmentTree_Composite_test.java
   requiredBy: []
-  timestamp: '2022-09-21 20:30:17+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-09-22 12:26:46+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/TemplateSegmentTree_Composite_test.java
 layout: document

@@ -33,7 +33,7 @@ data:
     - icon: ':question:'
       path: library/Mod.java
       title: library/Mod.java
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/Pair.java
       title: library/Pair.java
     - icon: ':heavy_check_mark:'
@@ -60,7 +60,7 @@ data:
     - icon: ':x:'
       path: library/TemplateDynamicSwag.java
       title: library/TemplateDynamicSwag.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSegmentTree.java
       title: library/TemplateSegmentTree.java
     - icon: ':heavy_check_mark:'
@@ -159,7 +159,7 @@ data:
     - icon: ':x:'
       path: library/TemplateDynamicSwag_test.java
       title: library/TemplateDynamicSwag_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSegmentTree_Composite_test.java
       title: library/TemplateSegmentTree_Composite_test.java
     - icon: ':heavy_check_mark:'
