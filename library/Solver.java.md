@@ -76,6 +76,9 @@ data:
     path: library/SparseTable_test.java
     title: library/SparseTable_test.java
   - icon: ':heavy_check_mark:'
+    path: library/Swag_gcd_test.java
+    title: library/Swag_gcd_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Swag_test.java
     title: library/Swag_test.java
   - icon: ':heavy_check_mark:'
@@ -87,7 +90,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSegmentTree_test.java
     title: library/TemplateDynamicSegmentTree_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSwag_test.java
     title: library/TemplateDynamicSwag_test.java
   - icon: ':heavy_check_mark:'
@@ -99,6 +102,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSparseTable_test.java
     title: library/TemplateSparseTable_test.java
+  - icon: ':x:'
+    path: library/TemplateSwag_gcd_test.java
+    title: library/TemplateSwag_gcd_test.java
   - icon: ':heavy_check_mark:'
     path: library/TemplateSwag_test.java
     title: library/TemplateSwag_test.java
@@ -106,9 +112,9 @@ data:
   _pathExtension: java
   _verificationStatusIcon: ':question:'
   attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/Solver.java\n"
   code: "package library;\n\nimport library.Util;\n\nabstract class Solver extends\
@@ -126,38 +132,40 @@ data:
   timestamp: '2022-09-21 20:30:17+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - library/DualSegmentTree_test.java
   - library/TemplateSparseTable_test.java
-  - library/Convolution998_test.java
-  - library/ArbitraryModOperation_test.java
-  - library/HelloWorld_test.java
-  - library/Swag_test.java
-  - library/ArbitraryModCombination_test.java
-  - library/Mod998Random_test.java
-  - library/SegmentTree_test.java
-  - library/TemplateDynamicSegmentTree_Small_test.java
-  - library/TemplateSegmentTree_Composite_test.java
-  - library/DynamicSegmentTree_Small_test.java
+  - library/DynamicSegmentTree_test.java
+  - library/DualSegmentTree_test.java
+  - library/SparseTable_test.java
+  - library/SegmentTree_Composite_test.java
+  - library/FenwickTree_test.java
+  - library/ArbitraryModRandom_test.java
   - library/Mod998ManyCombination_test.java
-  - library/DynamicSwag_test.java
-  - library/TemplateDualSegmentTree_test.java
-  - library/TemplateDynamicSegmentTree_test.java
-  - library/Mod107Pow_test.java
+  - library/HelloWorld_test.java
   - library/Mod107Random_test.java
   - library/ArbitraryModSqrt_test.java
-  - library/SegmentTree_Composite_test.java
-  - library/ManyFastIO_test.java
-  - library/ArbitraryModPow_test.java
+  - library/ArbitraryModOperation_test.java
+  - library/DynamicSwag_test.java
+  - library/Swag_test.java
   - library/Mod107ManyCombination_test.java
-  - library/Convolution107_test.java
-  - library/FenwickTree_test.java
-  - library/DynamicSegmentTree_test.java
-  - library/FastIO_test.java
-  - library/TemplateDynamicSwag_test.java
-  - library/ArbitraryModRandom_test.java
-  - library/SparseTable_test.java
+  - library/DynamicSegmentTree_Small_test.java
+  - library/Swag_gcd_test.java
   - library/TemplateSegmentTree_test.java
+  - library/Mod107Pow_test.java
+  - library/ArbitraryModPow_test.java
+  - library/TemplateSegmentTree_Composite_test.java
+  - library/Convolution107_test.java
+  - library/TemplateDynamicSegmentTree_test.java
+  - library/SegmentTree_test.java
+  - library/ManyFastIO_test.java
   - library/TemplateSwag_test.java
+  - library/TemplateSwag_gcd_test.java
+  - library/Convolution998_test.java
+  - library/TemplateDynamicSwag_test.java
+  - library/TemplateDynamicSegmentTree_Small_test.java
+  - library/ArbitraryModCombination_test.java
+  - library/Mod998Random_test.java
+  - library/TemplateDualSegmentTree_test.java
+  - library/FastIO_test.java
 documentation_of: library/Solver.java
 layout: document
 redirect_from:

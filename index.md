@@ -30,10 +30,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/FenwickTree.java
       title: library/FenwickTree.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Pair.java
       title: library/Pair.java
     - icon: ':heavy_check_mark:'
@@ -57,7 +57,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateDynamicSegmentTree.java
       title: library/TemplateDynamicSegmentTree.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateDynamicSwag.java
       title: library/TemplateDynamicSwag.java
     - icon: ':heavy_check_mark:'
@@ -66,7 +66,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSparseTable.java
       title: library/TemplateSparseTable.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/TemplateSwag.java
       title: library/TemplateSwag.java
     - icon: ':warning:'
@@ -145,6 +145,9 @@ data:
       path: library/SparseTable_test.java
       title: library/SparseTable_test.java
     - icon: ':heavy_check_mark:'
+      path: library/Swag_gcd_test.java
+      title: library/Swag_gcd_test.java
+    - icon: ':heavy_check_mark:'
       path: library/Swag_test.java
       title: library/Swag_test.java
     - icon: ':heavy_check_mark:'
@@ -156,7 +159,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateDynamicSegmentTree_test.java
       title: library/TemplateDynamicSegmentTree_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateDynamicSwag_test.java
       title: library/TemplateDynamicSwag_test.java
     - icon: ':heavy_check_mark:'
@@ -168,6 +171,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSparseTable_test.java
       title: library/TemplateSparseTable_test.java
+    - icon: ':x:'
+      path: library/TemplateSwag_gcd_test.java
+      title: library/TemplateSwag_gcd_test.java
     - icon: ':heavy_check_mark:'
       path: library/TemplateSwag_test.java
       title: library/TemplateSwag_test.java

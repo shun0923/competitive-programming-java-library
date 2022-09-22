@@ -26,10 +26,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/FenwickTree.java
     title: library/FenwickTree.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Pair.java
     title: library/Pair.java
   - icon: ':heavy_check_mark:'
@@ -47,7 +47,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSegmentTree.java
     title: library/TemplateDynamicSegmentTree.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSwag.java
     title: library/TemplateDynamicSwag.java
   - icon: ':heavy_check_mark:'
@@ -56,7 +56,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSparseTable.java
     title: library/TemplateSparseTable.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/TemplateSwag.java
     title: library/TemplateSwag.java
   - icon: ':warning:'
@@ -67,9 +67,9 @@ data:
   _pathExtension: java
   _verificationStatusIcon: ':warning:'
   attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/SimpleUtil.java\n"
   code: "package library;\n\nimport library.FastInputStream;\nimport library.FastOutputStream;\n\
@@ -293,24 +293,24 @@ data:
   isVerificationFile: false
   path: library/SimpleUtil.java
   requiredBy:
-  - library/Swag.java
-  - library/DualSegmentTree.java
-  - library/TemplateSparseTable.java
-  - library/SparseTable.java
-  - library/TemplateSegmentTree.java
-  - library/SegmentTree.java
-  - library/DynamicSegmentTree.java
   - library/FenwickTree.java
+  - library/TemplateDynamicSegmentTree.java
+  - library/TemplateSegmentTree.java
   - library/DynamicSwag.java
   - library/TemplateSwag.java
-  - library/Util.java
-  - library/Convolution.java
-  - library/TemplateDynamicSegmentTree.java
-  - library/Pair.java
   - library/TemplateDualSegmentTree.java
-  - library/ExtendedConvolution.java
-  - library/TemplateDynamicSwag.java
+  - library/Swag.java
+  - library/Convolution.java
   - library/Mod.java
+  - library/Pair.java
+  - library/Util.java
+  - library/SparseTable.java
+  - library/TemplateSparseTable.java
+  - library/ExtendedConvolution.java
+  - library/DualSegmentTree.java
+  - library/SegmentTree.java
+  - library/DynamicSegmentTree.java
+  - library/TemplateDynamicSwag.java
   timestamp: '2022-09-20 15:15:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

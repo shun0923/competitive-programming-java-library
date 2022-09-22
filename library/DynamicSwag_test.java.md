@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/DynamicSwag.java
     title: library/DynamicSwag.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
   - icon: ':question:'
@@ -17,9 +17,9 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/queue_operate_all_composite
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/DynamicSwag_test.java\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/queue_operate_all_composite\n\
@@ -40,7 +40,7 @@ data:
   isVerificationFile: true
   path: library/DynamicSwag_test.java
   requiredBy: []
-  timestamp: '2022-09-22 00:07:52+09:00'
+  timestamp: '2022-09-22 13:28:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/DynamicSwag_test.java

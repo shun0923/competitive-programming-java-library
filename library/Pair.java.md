@@ -6,31 +6,25 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: library/DynamicSwag.java
-    title: library/DynamicSwag.java
-  - icon: ':heavy_check_mark:'
     path: library/Swag.java
     title: library/Swag.java
-  - icon: ':x:'
-    path: library/TemplateDynamicSwag.java
-    title: library/TemplateDynamicSwag.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/TemplateSwag.java
     title: library/TemplateSwag.java
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSwag_test.java
     title: library/TemplateDynamicSwag_test.java
   - icon: ':heavy_check_mark:'
     path: library/TemplateSegmentTree_Composite_test.java
     title: library/TemplateSegmentTree_Composite_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/Pair.java\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nclass\
@@ -166,12 +160,10 @@ data:
   isVerificationFile: false
   path: library/Pair.java
   requiredBy:
-  - library/Swag.java
-  - library/DynamicSwag.java
   - library/TemplateSwag.java
-  - library/TemplateDynamicSwag.java
+  - library/Swag.java
   timestamp: '2022-09-21 19:01:13+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/TemplateSegmentTree_Composite_test.java
   - library/TemplateDynamicSwag_test.java

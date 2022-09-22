@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Pair.java
     title: library/Pair.java
   - icon: ':warning:'
@@ -9,16 +9,19 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: library/TemplateSwag_gcd_test.java
+    title: library/TemplateSwag_gcd_test.java
   - icon: ':heavy_check_mark:'
     path: library/TemplateSwag_test.java
     title: library/TemplateSwag_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/TemplateSwag.java\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
@@ -51,9 +54,10 @@ data:
   path: library/TemplateSwag.java
   requiredBy: []
   timestamp: '2022-09-21 20:20:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/TemplateSwag_test.java
+  - library/TemplateSwag_gcd_test.java
 documentation_of: library/TemplateSwag.java
 layout: document
 redirect_from:

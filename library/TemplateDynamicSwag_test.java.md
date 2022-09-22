@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Pair.java
     title: library/Pair.java
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSwag.java
     title: library/TemplateDynamicSwag.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/queue_operate_all_composite
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/TemplateDynamicSwag_test.java\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/queue_operate_all_composite\n\
@@ -44,8 +44,8 @@ data:
   isVerificationFile: true
   path: library/TemplateDynamicSwag_test.java
   requiredBy: []
-  timestamp: '2022-09-22 12:26:46+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-09-22 13:28:40+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/TemplateDynamicSwag_test.java
 layout: document
