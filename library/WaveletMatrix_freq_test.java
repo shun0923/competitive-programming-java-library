@@ -3,10 +3,10 @@
 package library;
 
 import library.Solver;
-import library.WavletMatrix;
+import library.WaveletMatrix;
 
-public class WavletMatrix_freq_test extends Solver {
-	public static void main(final String[] args) { main(args, new WavletMatrix_freq_test()); }
+public class WaveletMatrix_freq_test extends Solver {
+	public static void main(final String[] args) { main(args, new WaveletMatrix_freq_test()); }
 
 	public void solve() {
 		int d = ni();

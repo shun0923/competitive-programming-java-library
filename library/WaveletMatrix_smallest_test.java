@@ -3,10 +3,10 @@
 package library;
 
 import library.Solver;
-import library.WavletMatrix;
+import library.WaveletMatrix;
 
-public class WavletMatrix_smallest_test extends Solver {
-	public static void main(final String[] args) { main(args, new WavletMatrix_smallest_test()); }
+public class WaveletMatrix_smallest_test extends Solver {
+	public static void main(final String[] args) { main(args, new WaveletMatrix_smallest_test()); }
 
 	public void solve() {
 		int n = ni();
