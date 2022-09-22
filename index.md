@@ -9,6 +9,9 @@ data:
     - icon: ':warning:'
       path: library/BitVector.java
       title: library/BitVector.java
+    - icon: ':x:'
+      path: library/CompressedWaveletMatrix.java
+      title: library/CompressedWaveletMatrix.java
     - icon: ':heavy_check_mark:'
       path: library/Convolution.java
       title: library/Convolution.java
@@ -76,8 +79,8 @@ data:
       path: library/Util.java
       title: library/Util.java
     - icon: ':x:'
-      path: library/WavletMatrix.java
-      title: library/WavletMatrix.java
+      path: library/WaveletMatrix.java
+      title: library/WaveletMatrix.java
   verificationCategories:
   - name: library
     pages:
@@ -96,6 +99,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryModSqrt_test.java
       title: library/ArbitraryModSqrt_test.java
+    - icon: ':x:'
+      path: library/CompressedWaveletMatrix_freq_test.java
+      title: library/CompressedWaveletMatrix_freq_test.java
+    - icon: ':x:'
+      path: library/CompressedWaveletMatrix_smallest_test.java
+      title: library/CompressedWaveletMatrix_smallest_test.java
     - icon: ':heavy_check_mark:'
       path: library/Convolution107_test.java
       title: library/Convolution107_test.java
@@ -184,10 +193,10 @@ data:
       path: library/TemplateSwag_test.java
       title: library/TemplateSwag_test.java
     - icon: ':x:'
-      path: library/WavletMatrix_freq_test.java
-      title: library/WavletMatrix_freq_test.java
+      path: library/WaveletMatrix_freq_test.java
+      title: library/WaveletMatrix_freq_test.java
     - icon: ':x:'
-      path: library/WavletMatrix_smallest_test.java
-      title: library/WavletMatrix_smallest_test.java
+      path: library/WaveletMatrix_smallest_test.java
+      title: library/WaveletMatrix_smallest_test.java
 layout: toppage
 ---

@@ -6,8 +6,8 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy:
   - icon: ':x:'
-    path: library/WavletMatrix.java
-    title: library/WavletMatrix.java
+    path: library/WaveletMatrix.java
+    title: library/WaveletMatrix.java
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: java
@@ -18,14 +18,14 @@ data:
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/BitVector.java\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nclass\
-    \ BitVector {\n\tfinal int lg = 5;\n\tfinal int bitSize = 1 << lg;\n\tfinal int\
-    \ mask = bitSize - 1;\n\tfinal int n;\n\tfinal int len;\n\tint bit[];\n\tint sum[];\n\
-    \tint head0[];\n\tint head1[];\n\tint pos0[];\n\tint pos1[];\n\n\t// O(1)\n\t\
-    BitVector(int n) {\n\t\tthis.n = n;\n\t\tlen = (n >> lg) + 1;\n\t\tbit = new int[len];\n\
-    \t\tsum = new int[len + 1];\n\t\tpos0 = new int[len];\n\t\tpos1 = new int[len];\n\
-    \t}\n\n\t// O(N)\n\tfinal void init(boolean b[]) {\n\t\tfor(int i = 0, j = 0;\
-    \ i < b.length; i += bitSize, j ++) {\n\t\t\tbit[j] = 0;\n\t\t\tfor(int i2 = min(b.length,\
+  code: "package library;\n\nimport library.SimpleUtil;\n\nclass BitVector {\n\tfinal\
+    \ int lg = 5;\n\tfinal int bitSize = 1 << lg;\n\tfinal int mask = bitSize - 1;\n\
+    \tfinal int n;\n\tfinal int len;\n\tint bit[];\n\tint sum[];\n\tint head0[];\n\
+    \tint head1[];\n\tint pos0[];\n\tint pos1[];\n\n\t// O(1)\n\tBitVector(int n)\
+    \ {\n\t\tthis.n = n;\n\t\tlen = (n >> lg) + 1;\n\t\tbit = new int[len];\n\t\t\
+    sum = new int[len + 1];\n\t\tpos0 = new int[len];\n\t\tpos1 = new int[len];\n\t\
+    }\n\n\t// O(N)\n\tfinal void init(boolean b[]) {\n\t\tfor(int i = 0, j = 0; i\
+    \ < b.length; i += bitSize, j ++) {\n\t\t\tbit[j] = 0;\n\t\t\tfor(int i2 = min(b.length,\
     \ i + bitSize) - 1; i2 >= i; i2 --) {\n\t\t\t\tbit[j] <<= 1;\n\t\t\t\tif(b[i2])\
     \ bit[j] |= 1;\n\t\t\t}\n\t\t}\n\t\tinit();\n\t}\n\tfinal void init() {\n\t\t\
     sum[0] = 0;\n\t\tfor(int i = 0; i < len; i ++) sum[i + 1] = sum[i] + Integer.bitCount(bit[i]);\n\
@@ -46,16 +46,16 @@ data:
     \t}\n\t\t}\n\t}\n\n\tStringBuilder sb = new StringBuilder();\n\t// O(N)\n\t@Override\
     \ public String toString() {\n\t\tsb.setLength(0);\n\t\tfor(int i = 0; i < n;\
     \ i ++) sb.append(booleanToChar(get(i)));\n\t\treturn sb.toString();\n\t}\n\n\t\
-    // O(1)\n\tfinal boolean get(int k) { rangeCheck(k, n); return (bit[k >> lg] >>\
-    \ (k & mask) & 1) != 0; }\n\n\t// O(1)\n\tfinal void set(int k) { set(true, k);\
-    \ }\n\tfinal void set(boolean b, int k) { rangeCheck(k, n); if(b) bit[k >> lg]\
-    \ |= 1 << (k & mask); else bit[k >> lg] &= ~(1 << (k & mask)); }\n\n\t// O(loglogN)\n\
-    \t// count b in [0, k)\n\tfinal int rank(int k) { inclusiveRangeCheck(k, n); return\
-    \ sum[k >> lg] + Integer.bitCount(bit[k >> lg] & ((1 << (k & mask)) - 1)); }\n\
-    \tfinal int rank(boolean b, int k) { return b ? rank(k) : k - rank(k); }\n\n\t\
-    // O(loglogN)\n\t// position of k-th occurrence of b\n\tfinal int select(int k)\
-    \ { return select(true, k); }\n\tfinal int select(boolean b, int k) {\n\t\tif(k\
-    \ >= (b ? sum[len] : n - sum[len])) return n;\n\t\tint l = (b ? head1 : head0)[k\
+    // O(1)\n\tfinal boolean get(int k) { SimpleUtil.rangeCheck(k, n); return (bit[k\
+    \ >> lg] >> (k & mask) & 1) != 0; }\n\n\t// O(1)\n\tfinal void set(int k) { set(true,\
+    \ k); }\n\tfinal void set(boolean b, int k) { SimpleUtil.rangeCheck(k, n); if(b)\
+    \ bit[k >> lg] |= 1 << (k & mask); else bit[k >> lg] &= ~(1 << (k & mask)); }\n\
+    \n\t// O(loglogN)\n\t// count b in [0, k)\n\tfinal int rank(int k) { SimpleUtil.inclusiveRangeCheck(k,\
+    \ n); return sum[k >> lg] + Integer.bitCount(bit[k >> lg] & ((1 << (k & mask))\
+    \ - 1)); }\n\tfinal int rank(boolean b, int k) { return b ? rank(k) : k - rank(k);\
+    \ }\n\n\t// O(loglogN)\n\t// position of k-th occurrence of b\n\tfinal int select(int\
+    \ k) { return select(true, k); }\n\tfinal int select(boolean b, int k) {\n\t\t\
+    if(k >= (b ? sum[len] : n - sum[len])) return n;\n\t\tint l = (b ? head1 : head0)[k\
     \ >> lg] >> lg;\n\t\tint r = (b ? head1 : head0)[(k >> lg) + 1] + mask >> lg;\n\
     \t\tif(r - l > bitSize) return (b ? pos1 : pos0)[l + (k & mask)];\n\t\twhile(r\
     \ - l != 1) {\n\t\t\tint m = (l + r) >> 1;\n\t\t\tif((b ? sum[m] : (m << lg) -\
@@ -75,8 +75,8 @@ data:
   isVerificationFile: false
   path: library/BitVector.java
   requiredBy:
-  - library/WavletMatrix.java
-  timestamp: '2022-09-22 16:52:53+09:00'
+  - library/WaveletMatrix.java
+  timestamp: '2022-09-22 21:14:01+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/BitVector.java

@@ -7,14 +7,17 @@ data:
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':x:'
+    path: library/CompressedWaveletMatrix.java
+    title: library/CompressedWaveletMatrix.java
   _extendedVerifiedWith:
   - icon: ':x:'
-    path: library/WavletMatrix_freq_test.java
-    title: library/WavletMatrix_freq_test.java
+    path: library/WaveletMatrix_freq_test.java
+    title: library/WaveletMatrix_freq_test.java
   - icon: ':x:'
-    path: library/WavletMatrix_smallest_test.java
-    title: library/WavletMatrix_smallest_test.java
+    path: library/WaveletMatrix_smallest_test.java
+    title: library/WaveletMatrix_smallest_test.java
   _isVerificationFailed: true
   _pathExtension: java
   _verificationStatusIcon: ':x:'
@@ -23,12 +26,12 @@ data:
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: library/WavletMatrix.java\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.BitVector;\n\nclass WaveletMatrix {\n\tfinal int bitSize;\n\tfinal int\
-    \ n;\n\tBitVector mat[];\n\tint mid[];\n\tfinal int max;\n\n\t// O(NlogA)\n\t\
-    WaveletMatrix(int[] a) {\n\t\tn = a.length;\n\t\tlong tmp = 1;\n\t\tfor(int i\
-    \ = 0; i < n; i ++) tmp = Math.max(tmp, a[i]);\n\t\tbitSize = n == 0 ? 1 : Long.numberOfTrailingZeros(Long.highestOneBit(tmp))\
+    RuntimeError: bundler is not specified: library/WaveletMatrix.java\n"
+  code: "package library;\n\nimport library.SimpleUtil;\nimport library.BitVector;\n\
+    \nclass WaveletMatrix {\n\tfinal int bitSize;\n\tfinal int n;\n\tBitVector mat[];\n\
+    \tint mid[];\n\tfinal int max;\n\n\t// O(NlogA)\n\tWaveletMatrix(int[] a) {\n\t\
+    \tn = a.length;\n\t\tlong tmp = 1;\n\t\tfor(int i = 0; i < n; i ++) tmp = Math.max(tmp,\
+    \ a[i]);\n\t\tbitSize = n == 0 ? 1 : Long.numberOfTrailingZeros(Long.highestOneBit(tmp))\
     \ + 1;\n\t\tmax = 1 << bitSize;\n\t\tmat = new BitVector[bitSize];\n\t\tmid =\
     \ new int[bitSize];\n\t\tfor(int i = bitSize - 1; i >= 0; i --) {\n\t\t\tmat[i]\
     \ = new BitVector(n);\n\t\t\tint a2[] = new int[n];\n\t\t\tint idx = 0;\n\t\t\t\
@@ -77,17 +80,18 @@ data:
   - library/SimpleUtil.java
   - library/BitVector.java
   isVerificationFile: false
-  path: library/WavletMatrix.java
-  requiredBy: []
-  timestamp: '2022-09-22 17:14:26+09:00'
+  path: library/WaveletMatrix.java
+  requiredBy:
+  - library/CompressedWaveletMatrix.java
+  timestamp: '2022-09-22 21:14:01+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - library/WavletMatrix_smallest_test.java
-  - library/WavletMatrix_freq_test.java
-documentation_of: library/WavletMatrix.java
+  - library/WaveletMatrix_smallest_test.java
+  - library/WaveletMatrix_freq_test.java
+documentation_of: library/WaveletMatrix.java
 layout: document
 redirect_from:
-- /library/library/WavletMatrix.java
-- /library/library/WavletMatrix.java.html
-title: library/WavletMatrix.java
+- /library/library/WaveletMatrix.java
+- /library/library/WaveletMatrix.java.html
+title: library/WaveletMatrix.java
 ---

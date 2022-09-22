@@ -11,6 +11,9 @@ data:
   - icon: ':warning:'
     path: library/BitVector.java
     title: library/BitVector.java
+  - icon: ':x:'
+    path: library/CompressedWaveletMatrix.java
+    title: library/CompressedWaveletMatrix.java
   - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
@@ -66,8 +69,8 @@ data:
     path: library/Util.java
     title: library/Util.java
   - icon: ':x:'
-    path: library/WavletMatrix.java
-    title: library/WavletMatrix.java
+    path: library/WaveletMatrix.java
+    title: library/WaveletMatrix.java
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: java
@@ -302,6 +305,7 @@ data:
   - library/Swag.java
   - library/DualSegmentTree.java
   - library/TemplateSparseTable.java
+  - library/CompressedWaveletMatrix.java
   - library/BitVector.java
   - library/SparseTable.java
   - library/TemplateSegmentTree.java
@@ -313,7 +317,7 @@ data:
   - library/Util.java
   - library/Convolution.java
   - library/TemplateDynamicSegmentTree.java
-  - library/WavletMatrix.java
+  - library/WaveletMatrix.java
   - library/Pair.java
   - library/TemplateDualSegmentTree.java
   - library/ExtendedConvolution.java

@@ -21,6 +21,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryModSqrt_test.java
     title: library/ArbitraryModSqrt_test.java
+  - icon: ':x:'
+    path: library/CompressedWaveletMatrix_freq_test.java
+    title: library/CompressedWaveletMatrix_freq_test.java
+  - icon: ':x:'
+    path: library/CompressedWaveletMatrix_smallest_test.java
+    title: library/CompressedWaveletMatrix_smallest_test.java
   - icon: ':heavy_check_mark:'
     path: library/Convolution107_test.java
     title: library/Convolution107_test.java
@@ -109,11 +115,11 @@ data:
     path: library/TemplateSwag_test.java
     title: library/TemplateSwag_test.java
   - icon: ':x:'
-    path: library/WavletMatrix_freq_test.java
-    title: library/WavletMatrix_freq_test.java
+    path: library/WaveletMatrix_freq_test.java
+    title: library/WaveletMatrix_freq_test.java
   - icon: ':x:'
-    path: library/WavletMatrix_smallest_test.java
-    title: library/WavletMatrix_smallest_test.java
+    path: library/WaveletMatrix_smallest_test.java
+    title: library/WaveletMatrix_smallest_test.java
   _isVerificationFailed: true
   _pathExtension: java
   _verificationStatusIcon: ':question:'
@@ -144,13 +150,14 @@ data:
   - library/ArbitraryModOperation_test.java
   - library/HelloWorld_test.java
   - library/Swag_test.java
+  - library/CompressedWaveletMatrix_freq_test.java
   - library/ArbitraryModCombination_test.java
   - library/Mod998Random_test.java
   - library/SegmentTree_test.java
   - library/TemplateDynamicSegmentTree_Small_test.java
   - library/TemplateSegmentTree_Composite_test.java
   - library/DynamicSegmentTree_Small_test.java
-  - library/WavletMatrix_smallest_test.java
+  - library/WaveletMatrix_smallest_test.java
   - library/Mod998ManyCombination_test.java
   - library/DynamicSwag_test.java
   - library/TemplateDualSegmentTree_test.java
@@ -160,12 +167,13 @@ data:
   - library/Swag_gcd_test.java
   - library/ArbitraryModSqrt_test.java
   - library/SegmentTree_Composite_test.java
-  - library/WavletMatrix_freq_test.java
+  - library/WaveletMatrix_freq_test.java
   - library/ManyFastIO_test.java
   - library/ArbitraryModPow_test.java
   - library/Mod107ManyCombination_test.java
   - library/Convolution107_test.java
   - library/FenwickTree_test.java
+  - library/CompressedWaveletMatrix_smallest_test.java
   - library/DynamicSegmentTree_test.java
   - library/FastIO_test.java
   - library/TemplateDynamicSwag_test.java
