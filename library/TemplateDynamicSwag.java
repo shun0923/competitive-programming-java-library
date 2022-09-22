@@ -3,70 +3,39 @@ package library;
 import java.util.*;
 import java.util.function.*;
 import library.SimpleUtil;
-import library.Pair;
 
 class TemplateDynamicSwag<T> {
-	int n;
-	T val[];
 	Supplier<T> eSupplier;
 	BinaryOperator<T> f;
 
+	Deque<T> frontVal = new ArrayDeque<>();
 	T front;
 	Deque<T> back = new ArrayDeque<>();
-	int l = 0;
-	int r = 0;
 
 	// O(1)
-	TemplateDynamicSwag(T[] val, Supplier<T> eSupplier, BinaryOperator<T> f) {
-		n = val.length;
-		this.val = val;
+	TemplateDynamicSwag(Supplier<T> eSupplier, BinaryOperator<T> f) {
 		this.eSupplier = eSupplier;
 		this.f = f;
 		front = eSupplier.get();
 	}
 
-	// O(N + QlogQ)
-	@SuppressWarnings("unchecked")
-	T[] query(Pair.II[] p) {
-		Integer idx[] = new Integer[p.length];
-		Arrays.sort(idx, (ele1, ele2) -> {
-			int c = Integer.compare(p[ele1].a, p[ele2].a);
-			if(c == 0) c = Integer.compare(p[ele1].b, p[ele2].b);
-			if(c == 0) c = Integer.compare(ele1, ele2);
-			return c;
-		});
-		T ans[] = (T[]) new Object[p.length];
-		for(int i : idx) ans[i] = fold(p[i]);
-		return ans;
+	// O(1)
+	T fold() { return back.isEmpty() ? front : f.apply(back.getLast(), front); }
+	// O(1)
+	void push(T x) {
+		frontVal.addLast(x);
+		front = f.apply(front, x);
 	}
-	// O(N + Q)
-	// p is sorted
-	@SuppressWarnings("unchecked")
-	T[] sortedQuery(Pair.II[] p) {
-		T ans[] = (T[]) new Object[p.length];
-		for(int i = 0; i < p.length; i ++) ans[i] = fold(p[i]);
-		return ans;
-	}
-
-	// return fold [i, j)
-	T fold(Pair.II p) { return fold(p.a, p.b); }
-	T fold(int i, int j) {
-		SimpleUtil.rangeCheck(i, n);
-		SimpleUtil.inclusiveRangeCheck(j, n);
-		SimpleUtil.assertion(i >= l && j >= r);
-		while(r < j) front = f.apply(front, val[r ++]);
-		while(l < i) {
-			if(back.isEmpty()) {
-				T tmp = eSupplier.get();
-				for(int u = r - 1; u >= l; u --) {
-					tmp = f.apply(val[u], tmp);
-					back.addLast(tmp);
-				}
-				front = eSupplier.get();
+	// O(1) amortized
+	void pop() {
+		if(back.isEmpty()) {
+			T tmp = eSupplier.get();
+			while(!frontVal.isEmpty()) {
+				tmp = f.apply(frontVal.removeLast(), tmp);
+				back.addLast(tmp);
 			}
-			back.removeLast();
-			l ++;
+			front = eSupplier.get();
 		}
-		return back.isEmpty() ? front : f.apply(back.getLast(), front);
+		back.removeLast();
 	}
 }

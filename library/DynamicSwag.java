@@ -3,7 +3,6 @@ package library;
 import java.util.*;
 import java.util.function.*;
 import library.SimpleUtil;
-import library.Pair;
 
 class DynamicSwag {
 	long e;
