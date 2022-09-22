@@ -109,7 +109,7 @@ class WaveletMatrix {
 	final int largest(int l, int r, int k) { return smallest(l, r, r - l - k - 1); }
 
 	// count [0, x) in [l, r)
-	final int less_freq(int x, int l, int r) {
+	final int lessFreq(int x, int l, int r) {
 		SimpleUtil.inclusiveRangeCheck(l, n);
 		SimpleUtil.inclusiveRangeCheck(r, n);
 		SimpleUtil.assertion(l <= r);
@@ -127,7 +127,7 @@ class WaveletMatrix {
 		return cnt;
 	}
 	// count [x, ) in [l, r)
-	final int greater_freq(int x, int l, int r) { return r - l - less_freq(x, l, r); }
+	final int greaterFreq(int x, int l, int r) { return r - l - lessFreq(x, l, r); }
 	// count [lower, upper) in [l, r)
-	final int range_freq(int lower, int upper, int l, int r) { return less_freq(upper, l, r) - less_freq(lower, l, r); }
+	final int rangeFreq(int lower, int upper, int l, int r) { return lessFreq(upper, l, r) - lessFreq(lower, l, r); }
 }
