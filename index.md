@@ -9,7 +9,7 @@ data:
     - icon: ':warning:'
       path: library/BitVector.java
       title: library/BitVector.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/CompressedWaveletMatrix.java
       title: library/CompressedWaveletMatrix.java
     - icon: ':heavy_check_mark:'
@@ -48,7 +48,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -99,7 +99,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryModSqrt_test.java
       title: library/ArbitraryModSqrt_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/CompressedWaveletMatrix_freq_test.java
       title: library/CompressedWaveletMatrix_freq_test.java
     - icon: ':heavy_check_mark:'

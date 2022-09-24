@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/CompressedWaveletMatrix.java
     title: library/CompressedWaveletMatrix.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -32,7 +32,7 @@ data:
   isVerificationFile: true
   path: library/CompressedWaveletMatrix_smallest_test.java
   requiredBy: []
-  timestamp: '2022-09-22 21:14:25+09:00'
+  timestamp: '2022-09-24 15:48:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/CompressedWaveletMatrix_smallest_test.java

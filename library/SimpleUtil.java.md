@@ -11,7 +11,7 @@ data:
   - icon: ':warning:'
     path: library/BitVector.java
     title: library/BitVector.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/CompressedWaveletMatrix.java
     title: library/CompressedWaveletMatrix.java
   - icon: ':heavy_check_mark:'

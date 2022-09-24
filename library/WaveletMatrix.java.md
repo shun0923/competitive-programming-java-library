@@ -8,7 +8,7 @@ data:
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/CompressedWaveletMatrix.java
     title: library/CompressedWaveletMatrix.java
   _extendedVerifiedWith:
