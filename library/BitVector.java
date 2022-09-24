@@ -29,7 +29,7 @@ class BitVector {
 	final void init(boolean b[]) {
 		for(int i = 0, j = 0; i < b.length; i += bitSize, j ++) {
 			bit[j] = 0;
-			for(int i2 = min(b.length, i + bitSize) - 1; i2 >= i; i2 --) {
+			for(int i2 = Math.min(b.length, i + bitSize) - 1; i2 >= i; i2 --) {
 				bit[j] <<= 1;
 				if(b[i2]) bit[j] |= 1;
 			}
@@ -74,7 +74,7 @@ class BitVector {
 	// O(N)
 	@Override public String toString() {
 		sb.setLength(0);
-		for(int i = 0; i < n; i ++) sb.append(booleanToChar(get(i)));
+		for(int i = 0; i < n; i ++) sb.append(get(i) ? "#" : ":");
 		return sb.toString();
 	}
 
