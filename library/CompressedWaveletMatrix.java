@@ -28,7 +28,7 @@ class CompressedWaveletMatrix {
 	final int select(long x, int k) { return tm.containsKey(x) ? wm.select(tm.get(x), k) : n; }
 	final long smallest(int l, int r, int k) { return val[wm.smallest(l, r, k)]; }
 	final long largest(int l, int r, int k) { return val[wm.largest(l, r, k)]; }
-	final int lessFreq(long x, int l, int r) { var e = tm.floorEntry(x); return e == null ? 0 : wm.lessFreq(e.getValue(), l, r); }
+	final int lessFreq(long x, int l, int r) { var e = tm.ceilingEntry(x); return e == null ? r - l : wm.lessFreq(e.getValue(), l, r); }
 	final int greaterFreq(long x, int l, int r) { var e = tm.ceilingEntry(x); return e == null ? 0 : wm.greaterFreq(e.getValue(), l, r); }
 	final int rangeFreq(long lower, long upper, int l, int r) { return lessFreq(upper, l, r) - lessFreq(lower, l, r); }
 	final int freq(int x, int l, int r) { return rank(x, r) - rank(x, l); }
