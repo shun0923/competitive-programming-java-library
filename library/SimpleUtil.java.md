@@ -11,7 +11,7 @@ data:
   - icon: ':warning:'
     path: library/BitVector.java
     title: library/BitVector.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/CompressedWaveletMatrix.java
     title: library/CompressedWaveletMatrix.java
   - icon: ':heavy_check_mark:'
@@ -68,7 +68,7 @@ data:
   - icon: ':warning:'
     path: library/Util.java
     title: library/Util.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
   _extendedVerifiedWith: []

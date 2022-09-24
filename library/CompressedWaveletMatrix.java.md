@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
   _extendedRequiredBy: []
@@ -12,12 +12,12 @@ data:
   - icon: ':x:'
     path: library/CompressedWaveletMatrix_freq_test.java
     title: library/CompressedWaveletMatrix_freq_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/CompressedWaveletMatrix_smallest_test.java
     title: library/CompressedWaveletMatrix_smallest_test.java
   _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.6/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -51,7 +51,7 @@ data:
   path: library/CompressedWaveletMatrix.java
   requiredBy: []
   timestamp: '2022-09-22 21:14:25+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/CompressedWaveletMatrix_freq_test.java
   - library/CompressedWaveletMatrix_smallest_test.java

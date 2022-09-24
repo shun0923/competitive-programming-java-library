@@ -9,7 +9,7 @@ data:
     - icon: ':warning:'
       path: library/BitVector.java
       title: library/BitVector.java
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/CompressedWaveletMatrix.java
       title: library/CompressedWaveletMatrix.java
     - icon: ':heavy_check_mark:'
@@ -78,7 +78,7 @@ data:
     - icon: ':warning:'
       path: library/Util.java
       title: library/Util.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix.java
       title: library/WaveletMatrix.java
   verificationCategories:
@@ -102,7 +102,7 @@ data:
     - icon: ':x:'
       path: library/CompressedWaveletMatrix_freq_test.java
       title: library/CompressedWaveletMatrix_freq_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/CompressedWaveletMatrix_smallest_test.java
       title: library/CompressedWaveletMatrix_smallest_test.java
     - icon: ':heavy_check_mark:'
@@ -192,10 +192,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSwag_test.java
       title: library/TemplateSwag_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix_freq_test.java
       title: library/WaveletMatrix_freq_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix_smallest_test.java
       title: library/WaveletMatrix_smallest_test.java
 layout: toppage

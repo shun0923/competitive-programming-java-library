@@ -5,7 +5,7 @@ data:
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
   _extendedVerifiedWith: []
@@ -25,7 +25,7 @@ data:
     \ {\n\t\tthis.n = n;\n\t\tlen = (n >> lg) + 1;\n\t\tbit = new int[len];\n\t\t\
     sum = new int[len + 1];\n\t\tpos0 = new int[len];\n\t\tpos1 = new int[len];\n\t\
     }\n\n\t// O(N)\n\tfinal void init(boolean b[]) {\n\t\tfor(int i = 0, j = 0; i\
-    \ < b.length; i += bitSize, j ++) {\n\t\t\tbit[j] = 0;\n\t\t\tfor(int i2 = min(b.length,\
+    \ < b.length; i += bitSize, j ++) {\n\t\t\tbit[j] = 0;\n\t\t\tfor(int i2 = Math.min(b.length,\
     \ i + bitSize) - 1; i2 >= i; i2 --) {\n\t\t\t\tbit[j] <<= 1;\n\t\t\t\tif(b[i2])\
     \ bit[j] |= 1;\n\t\t\t}\n\t\t}\n\t\tinit();\n\t}\n\tfinal void init() {\n\t\t\
     sum[0] = 0;\n\t\tfor(int i = 0; i < len; i ++) sum[i + 1] = sum[i] + Integer.bitCount(bit[i]);\n\
@@ -45,8 +45,8 @@ data:
     \ j < head0[i + 1]; j ++) if(!get(j)) pos0[l + (idx ++)] = j;\n\t\t\t\t}\n\t\t\
     \t}\n\t\t}\n\t}\n\n\tStringBuilder sb = new StringBuilder();\n\t// O(N)\n\t@Override\
     \ public String toString() {\n\t\tsb.setLength(0);\n\t\tfor(int i = 0; i < n;\
-    \ i ++) sb.append(booleanToChar(get(i)));\n\t\treturn sb.toString();\n\t}\n\n\t\
-    // O(1)\n\tfinal boolean get(int k) { SimpleUtil.rangeCheck(k, n); return (bit[k\
+    \ i ++) sb.append(get(i) ? \"#\" : \":\");\n\t\treturn sb.toString();\n\t}\n\n\
+    \t// O(1)\n\tfinal boolean get(int k) { SimpleUtil.rangeCheck(k, n); return (bit[k\
     \ >> lg] >> (k & mask) & 1) != 0; }\n\n\t// O(1)\n\tfinal void set(int k) { set(true,\
     \ k); }\n\tfinal void set(boolean b, int k) { SimpleUtil.rangeCheck(k, n); if(b)\
     \ bit[k >> lg] |= 1 << (k & mask); else bit[k >> lg] &= ~(1 << (k & mask)); }\n\
@@ -76,7 +76,7 @@ data:
   path: library/BitVector.java
   requiredBy:
   - library/WaveletMatrix.java
-  timestamp: '2022-09-22 21:14:01+09:00'
+  timestamp: '2022-09-24 13:10:26+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/BitVector.java
