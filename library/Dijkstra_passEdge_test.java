@@ -17,7 +17,7 @@ public class Dijkstra_passEdge_test extends Solver {
 		int t = ni();
 		ArrayWeightedGraph g = new ArrayWeightedGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
-		WeightedRestorableDistCalc djk = new Dijkstra(g);
+		Dijkstra djk = new Dijkstra(g);
 		long x = djk.dist(s)[t];
 		if(isINF(x)) prtln(-1);
 		else {
