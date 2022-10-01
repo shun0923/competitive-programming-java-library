@@ -1,0 +1,174 @@
+---
+data:
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/SimpleUtil.java
+    title: library/SimpleUtil.java
+  _extendedRequiredBy:
+  - icon: ':x:'
+    path: library/Dijkstra.java
+    title: library/Dijkstra.java
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: library/Dijkstra_test.java
+    title: library/Dijkstra_test.java
+  _isVerificationFailed: true
+  _pathExtension: java
+  _verificationStatusIcon: ':x:'
+  attributes: {}
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
+    RuntimeError: bundler is not specified: library/Graph.java\n"
+  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nabstract\
+    \ class AbstractGraph<Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>\
+    \ {\n\tpublic int numNode;\n\tpublic boolean directed;\n\tpublic Node edges;\n\
+    \tpublic Node nodes[];\n\tprotected Node reversedNodes[] = null;\n\n\tprotected\
+    \ abstract Node createNode(final int id);\n\tprotected abstract Node[] createNodeList(final\
+    \ int size);\n\n\tpublic AbstractGraph(final int numNode, final boolean directed)\
+    \ {\n\t\tSimpleUtil.nonNegativeCheck(numNode);\n\t\tthis.numNode = numNode;\n\t\
+    \tthis.directed = directed;\n\t\tedges = createNode(-1);\n\t\tnodes = createNodeList(numNode);\n\
+    \t\tfor(int i = 0; i < numNode; i ++) nodes[i] = createNode(i);\n\t}\n\n\tpublic\
+    \ final Node[] reverseNodes() {\n\t\tif(reversedNodes == null) {\n\t\t\treversedNodes\
+    \ = createNodeList(numNode);\n\t\t\tfor(int i = 0; i < numNode; i ++) reversedNodes[i]\
+    \ = createNode(i);\n\t\t\tfor(Edge e : edges) reversedNodes[e.target].add(e.reverse());\n\
+    \t\t}\n\t\treturn reversedNodes;\n\t}\n\n\tpublic final void add(final AbstractNode<?\
+    \ extends Edge> edges) { this.edges.addAll(edges); }\n\tpublic final void add(final\
+    \ Edge e) {\n\t\tedges.add(e);\n\t\tnodes[e.source].add(e);\n\t\tif(reversedNodes\
+    \ != null) reversedNodes[e.target].add(e.reverse());\n\t\tif(!directed) nodes[e.target].add(e.reverse());\n\
+    \t}\n\n\tpublic final void remove(final Edge e) {\n\t\tedges.remove(e);\n\t\t\
+    nodes[e.source].remove(e);\n\t\tif(reversedNodes != null) reversedNodes[e.target].remove(e.reverse());\n\
+    \t\tif(!directed) nodes[e.target].remove(e.reverse());\n\t}\n\n\tpublic final\
+    \ void clear() { edges.clear(); for(Node n : nodes) n.clear(); reversedNodes =\
+    \ null; }\n}\nabstract class UnweightedGraph<Node extends AbstractNode<UnweightedEdge>>\
+    \ extends AbstractGraph<Node, UnweightedEdge> {\n\tpublic UnweightedGraph(final\
+    \ int numNode, final boolean directed) { super(numNode, directed); }\n\tpublic\
+    \ void add(final int source, final int target) { add(new UnweightedEdge(source,\
+    \ target)); }\n}\nabstract class WeightedGraph<Node extends AbstractNode<WeightedEdge>>\
+    \ extends AbstractGraph<Node, WeightedEdge> {\n\tpublic WeightedGraph(final int\
+    \ numNode, final boolean directed) { super(numNode, directed); }\n\tpublic void\
+    \ add(final int source, final int target, final long cost) { add(new WeightedEdge(source,\
+    \ target, cost)); }\n\tpublic void update(final WeightedEdge e, final long cost)\
+    \ { remove(e); e.cost = cost; add(e); }\n}\nabstract class TemplateGraph<T extends\
+    \ Comparable<T>, Node extends AbstractNode<TemplateEdge<T>>> extends AbstractGraph<Node,\
+    \ TemplateEdge<T>> {\n\tpublic TemplateGraph(final int numNode, final boolean\
+    \ directed) { super(numNode, directed); }\n\tpublic void add(final int source,\
+    \ final int target, final T cost) { add(new TemplateEdge<T>(source, target, cost));\
+    \ }\n\tpublic void update(final TemplateEdge<T> e, final T cost) { remove(e);\
+    \ e.cost = cost; add(e); }\n}\nclass ArrayUnweightedGraph extends UnweightedGraph<ArrayUnweightedNode>\
+    \ {\n\tpublic ArrayUnweightedGraph(final int numNode, final boolean directed)\
+    \ { super(numNode, directed); }\n\t@Override protected final ArrayUnweightedNode\
+    \ createNode(final int id) { return new ArrayUnweightedNode(id); }\n\t@Override\
+    \ protected final ArrayUnweightedNode[] createNodeList(final int size) { return\
+    \ new ArrayUnweightedNode[size]; }\n}\nclass ArrayWeightedGraph extends WeightedGraph<ArrayWeightedNode>\
+    \ {\n\tpublic ArrayWeightedGraph(final int numNode, final boolean directed) {\
+    \ super(numNode, directed); }\n\t@Override protected final ArrayWeightedNode createNode(final\
+    \ int id) { return new ArrayWeightedNode(id); }\n\t@Override protected final ArrayWeightedNode[]\
+    \ createNodeList(final int size) { return new ArrayWeightedNode[size]; }\n}\n\
+    class ArrayTemplateGraph<T extends Comparable<T>> extends TemplateGraph<T, ArrayTemplateNode<T>>\
+    \ {\n\tpublic ArrayTemplateGraph(final int numNode, final boolean directed) {\
+    \ super(numNode, directed); }\n\t@Override protected final ArrayTemplateNode<T>\
+    \ createNode(final int id) { return new ArrayTemplateNode<T>(id); }\n\t@Override\
+    \ @SuppressWarnings(\"unchecked\") protected final ArrayTemplateNode<T>[] createNodeList(final\
+    \ int size) { return new ArrayTemplateNode[size]; }\n}\nclass HashUnweightedGraph\
+    \ extends UnweightedGraph<HashUnweightedNode> {\n\tpublic HashUnweightedGraph(final\
+    \ int numNode, final boolean directed) { super(numNode, directed); }\n\t@Override\
+    \ protected final HashUnweightedNode createNode(final int id) { return new HashUnweightedNode(id);\
+    \ }\n\t@Override protected final HashUnweightedNode[] createNodeList(final int\
+    \ size) { return new HashUnweightedNode[size]; }\n}\nclass HashWeightedGraph extends\
+    \ WeightedGraph<HashWeightedNode> {\n\tpublic HashWeightedGraph(final int numNode,\
+    \ final boolean directed) { super(numNode, directed); }\n\t@Override protected\
+    \ final HashWeightedNode createNode(final int id) { return new HashWeightedNode(id);\
+    \ }\n\t@Override protected final HashWeightedNode[] createNodeList(final int size)\
+    \ { return new HashWeightedNode[size]; }\n}\nclass HashTemplateGraph<T extends\
+    \ Comparable<T>> extends TemplateGraph<T, HashTemplateNode<T>> {\n\tpublic HashTemplateGraph(final\
+    \ int numNode, final boolean directed) { super(numNode, directed); }\n\t@Override\
+    \ protected final HashTemplateNode<T> createNode(final int id) { return new HashTemplateNode<T>(id);\
+    \ }\n\t@Override @SuppressWarnings(\"unchecked\") protected final HashTemplateNode<T>[]\
+    \ createNodeList(final int size) { return new HashTemplateNode[size]; }\n}\n\n\
+    interface AbstractNode<Edge extends AbstractEdge<Edge>> extends Collection<Edge>\
+    \ {  }\nclass ArrayNode<Edge extends AbstractEdge<Edge>> extends ArrayList<Edge>\
+    \ implements AbstractNode<Edge> {\n\tpublic final int id;\n\tpublic ArrayNode(final\
+    \ int id) { this.id = id; }\n}\nclass ArrayUnweightedNode extends ArrayNode<UnweightedEdge>\
+    \ { public ArrayUnweightedNode(final int id) { super(id); } }\nclass ArrayWeightedNode\
+    \ extends ArrayNode<WeightedEdge> { public ArrayWeightedNode(final int id) { super(id);\
+    \ } }\nclass ArrayTemplateNode<T extends Comparable<T>> extends ArrayNode<TemplateEdge<T>>\
+    \ { public ArrayTemplateNode(final int id) { super(id); } }\nclass HashNode<Edge\
+    \ extends AbstractEdge<Edge>> extends HashSet<Edge> implements AbstractNode<Edge>\
+    \ {\n\tpublic final int id;\n\tpublic HashNode(final int id) { this.id = id; }\n\
+    }\nclass HashUnweightedNode extends HashNode<UnweightedEdge> { public HashUnweightedNode(final\
+    \ int id) { super(id); } }\nclass HashWeightedNode extends HashNode<WeightedEdge>\
+    \ { public HashWeightedNode(final int id) { super(id); } }\nclass HashTemplateNode<T\
+    \ extends Comparable<T>> extends HashNode<TemplateEdge<T>> { public HashTemplateNode(final\
+    \ int id) { super(id); } }\n\nabstract class AbstractEdge<Edge extends AbstractEdge>\
+    \ {\n\tpublic int source, target;\n\tprotected Edge reversed = null;\n\tpublic\
+    \ AbstractEdge(final int source, final int target) { this.source = source; this.target\
+    \ = target; }\n\tpublic final Edge reverse() { return reversed == null ? reversed\
+    \ = createReversed() : reversed; }\n\tprotected abstract Edge createReversed();\n\
+    \t@Override public abstract String toString();\n\t@Override public final int hashCode()\
+    \ { return Objects.hash(source, target); }\n\t@Override public abstract boolean\
+    \ equals(final Object obj);\n}\nclass UnweightedEdge extends AbstractEdge<UnweightedEdge>\
+    \ implements Comparable<UnweightedEdge> {\n\tpublic UnweightedEdge(final int source,\
+    \ final int target) { super(source, target); }\n\tpublic UnweightedEdge(final\
+    \ int source, final int target, final UnweightedEdge reversed) { this(source,\
+    \ target); this.reversed = reversed; }\n\n\t@Override protected final UnweightedEdge\
+    \ createReversed() { return new UnweightedEdge(target, source, this); }\n\t@Override\
+    \ public final String toString() { return source+\" -> \"+target; }\n\t@Override\n\
+    \tpublic final boolean equals(final Object obj) {\n\t\tif(this == obj) return\
+    \ true;\n\t\tif(obj == null) return false;\n\t\tif(this.getClass() != obj.getClass())\
+    \ return false;\n\t\tUnweightedEdge that = (UnweightedEdge) obj;\n\t\tif(this.source\
+    \ != that.source) return false;\n\t\tif(this.target != that.target) return false;\n\
+    \t\treturn true;\n\t}\n\t@Override\n\tpublic final int compareTo(final UnweightedEdge\
+    \ that) {\n\t\tint c = Integer.compare(this.source, that.source);\n\t\tif(c ==\
+    \ 0) c = Integer.compare(this.target, that.target);\n\t\treturn c;\n\t}\n}\nclass\
+    \ WeightedEdge extends AbstractEdge<WeightedEdge> implements Comparable<WeightedEdge>\
+    \ {\n\tpublic long cost;\n\tpublic WeightedEdge(final int source, final int target,\
+    \ final long cost) { super(source, target); this.cost = cost; }\n\tpublic WeightedEdge(final\
+    \ int source, final int target, final long cost, final WeightedEdge reversed)\
+    \ { this(source, target, cost); this.reversed = reversed; }\n\t@Override protected\
+    \ final WeightedEdge createReversed() { return new WeightedEdge(target, source,\
+    \ cost, this); }\n\t@Override public final String toString() { return source+\"\
+    \ - \"+cost+\" -> \"+target; }\n\t@Override\n\tpublic final boolean equals(final\
+    \ Object obj) {\n\t\tif(this == obj) return true;\n\t\tif(obj == null) return\
+    \ false;\n\t\tif(this.getClass() != obj.getClass()) return false;\n\t\tWeightedEdge\
+    \ that = (WeightedEdge) obj;\n\t\tif(this.source != that.source) return false;\n\
+    \t\tif(this.target != that.target) return false;\n\t\tif(this.cost != that.cost)\
+    \ return false;\n\t\treturn true;\n\t}\n\t@Override\n\tpublic final int compareTo(final\
+    \ WeightedEdge that) {\n\t\tint c = Long.compare(this.cost, that.cost);\n\t\t\
+    if(c == 0) c = Integer.compare(this.source, that.source);\n\t\tif(c == 0) c =\
+    \ Integer.compare(this.target, that.target);\n\t\treturn c;\n\t}\n}\nclass TemplateEdge<T\
+    \ extends Comparable<T>> extends AbstractEdge<TemplateEdge<T>> implements Comparable<TemplateEdge<T>>\
+    \ {\n\tpublic T cost;\n\tpublic TemplateEdge(final int source, final int target,\
+    \ final T cost) { super(source, target); this.cost = cost; }\n\tpublic TemplateEdge(final\
+    \ int source, final int target, final T cost, final TemplateEdge<T> reversed)\
+    \ { this(source, target, cost); this.reversed = reversed; }\n\n\t@Override protected\
+    \ final TemplateEdge<T> createReversed() { return new TemplateEdge<T>(target,\
+    \ source, cost, this); }\n\t@Override public final String toString() { return\
+    \ source+\" - \"+cost.toString()+\" -> \"+target; }\n\t@Override\n\t@SuppressWarnings(\"\
+    unchecked\")\n\tpublic final boolean equals(final Object obj) {\n\t\tif(this ==\
+    \ obj) return true;\n\t\tif(obj == null) return false;\n\t\tif(this.getClass()\
+    \ != obj.getClass()) return false;\n\t\tTemplateEdge<T> that = (TemplateEdge<T>)\
+    \ obj;\n\t\tif(this.source != that.source) return false;\n\t\tif(this.target !=\
+    \ that.target) return false;\n\t\tif(!this.cost.equals(that.cost)) return false;\n\
+    \t\treturn true;\n\t}\n\t@Override\n\tpublic final int compareTo(final TemplateEdge<T>\
+    \ that) {\n\t\tint c = this.cost.compareTo(that.cost);\n\t\tif(c == 0) c = Integer.compare(this.source,\
+    \ that.source);\n\t\tif(c == 0) c = Integer.compare(this.target, that.target);\n\
+    \t\treturn c;\n\t}\n}"
+  dependsOn:
+  - library/SimpleUtil.java
+  isVerificationFile: false
+  path: library/Graph.java
+  requiredBy:
+  - library/Dijkstra.java
+  timestamp: '2022-10-01 13:17:40+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - library/Dijkstra_test.java
+documentation_of: library/Graph.java
+layout: document
+redirect_from:
+- /library/library/Graph.java
+- /library/library/Graph.java.html
+title: library/Graph.java
+---
