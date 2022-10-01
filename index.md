@@ -121,6 +121,12 @@ data:
       path: library/Convolution998_test.java
       title: library/Convolution998_test.java
     - icon: ':heavy_check_mark:'
+      path: library/Dijkstra_passEdge_test.java
+      title: library/Dijkstra_passEdge_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/Dijkstra_pass_test.java
+      title: library/Dijkstra_pass_test.java
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra_test.java
       title: library/Dijkstra_test.java
     - icon: ':heavy_check_mark:'

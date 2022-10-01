@@ -34,6 +34,12 @@ data:
     path: library/Convolution998_test.java
     title: library/Convolution998_test.java
   - icon: ':heavy_check_mark:'
+    path: library/Dijkstra_passEdge_test.java
+    title: library/Dijkstra_passEdge_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/Dijkstra_pass_test.java
+    title: library/Dijkstra_pass_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
   - icon: ':heavy_check_mark:'
@@ -150,6 +156,7 @@ data:
   - library/ArbitraryModOperation_test.java
   - library/CompressedWaveletMatrix_smallest_test.java
   - library/ArbitraryModCombination_test.java
+  - library/Dijkstra_passEdge_test.java
   - library/TemplateDynamicSegmentTree_test.java
   - library/ArbitraryModSqrt_test.java
   - library/Mod107ManyCombination_test.java
@@ -169,6 +176,7 @@ data:
   - library/TemplateSwag_test.java
   - library/WaveletMatrix_freq_test.java
   - library/TemplateDynamicSwag_test.java
+  - library/Dijkstra_pass_test.java
   - library/Mod107Random_test.java
   - library/CompressedWaveletMatrix_freq_test.java
   - library/Swag_gcd_test.java
