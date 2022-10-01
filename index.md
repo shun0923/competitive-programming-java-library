@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -21,10 +21,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Convolution.java
       title: library/Convolution.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Dijkstra.java
       title: library/Dijkstra.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/DistCalc.java
       title: library/DistCalc.java
     - icon: ':heavy_check_mark:'
@@ -60,7 +60,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -90,6 +90,9 @@ data:
     - icon: ':warning:'
       path: library/Util.java
       title: library/Util.java
+    - icon: ':x:'
+      path: library/WarshallFloyd.java
+      title: library/WarshallFloyd.java
     - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix.java
       title: library/WaveletMatrix.java
@@ -126,10 +129,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Convolution998_test.java
       title: library/Convolution998_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Dijkstra_passEdge_test.java
       title: library/Dijkstra_passEdge_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Dijkstra_pass_test.java
       title: library/Dijkstra_pass_test.java
     - icon: ':heavy_check_mark:'
@@ -216,6 +219,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSwag_test.java
       title: library/TemplateSwag_test.java
+    - icon: ':x:'
+      path: library/WarshallFloyd_test.java
+      title: library/WarshallFloyd_test.java
     - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix_freq_test.java
       title: library/WaveletMatrix_freq_test.java

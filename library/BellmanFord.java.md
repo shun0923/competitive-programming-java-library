@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/DistCalc.java
     title: library/DistCalc.java
   - icon: ':warning:'
@@ -26,18 +26,19 @@ data:
     RuntimeError: bundler is not specified: library/BellmanFord.java\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
     \ library.AbstractGraph;\nimport library.DistCalc;\n\nfinal class BellmanFord\
-    \ extends WeightedDistCalc {\n\tpublic BellmanFord(WeightedGraph g) { super(g);\
-    \ };\n\n\tpublic final long[] dist(int start) { // O(VE)\n\t\tSimpleUtil.rangeCheck(start,\
-    \ g.numNode);\n\t\tdist = new long[g.numNode];\n\t\tprv = new int[g.numNode];\n\
-    \t\tprvEdge = new WeightedEdge[g.numNode];\n\n\t\tArrays.fill(dist, SimpleUtil.INF);\n\
-    \t\tdist[start] = 0;\n\t\tfor(int i = 0; i < g.numNode - 1; i ++) {\n\t\t\tfor(WeightedEdge\
-    \ e : g.edges()) {\n\t\t\t\tlong updated = dist[e.source] + e.cost;\n\t\t\t\t\
-    if(!SimpleUtil.isPlusINF(dist[e.source]) && dist[e.target] > updated) {\n\t\t\t\
-    \t\tdist[e.target] = updated;\n\t\t\t\t\tprv[e.target] = e.source;\n\t\t\t\t\t\
-    prvEdge[e.target] = e;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tfor(int i = 0; i < g.numNode;\
-    \ i ++) {\n\t\t\tfor(WeightedEdge e : g.edges()) {\n\t\t\t\tif(!SimpleUtil.isPlusINF(dist[e.source])\
-    \ && dist[e.target] > dist[e.source] + e.cost) {\n\t\t\t\t\tdist[e.target] = -\
-    \ SimpleUtil.INF;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n}"
+    \ extends WeightedRestorableDistCalc {\n\tprivate long dist[];\n\n\tpublic BellmanFord(WeightedGraph\
+    \ g) { super(g); };\n\n\tpublic final long[] dist(int start) { // O(VE)\n\t\t\
+    SimpleUtil.rangeCheck(start, g.numNode);\n\t\tdist = new long[g.numNode];\n\t\t\
+    prv = new int[g.numNode];\n\t\tprvEdge = new WeightedEdge[g.numNode];\n\n\t\t\
+    Arrays.fill(dist, SimpleUtil.INF);\n\t\tdist[start] = 0;\n\t\tfor(int i = 0; i\
+    \ < g.numNode - 1; i ++) {\n\t\t\tfor(WeightedEdge e : g.edges()) {\n\t\t\t\t\
+    long updated = dist[e.source] + e.cost;\n\t\t\t\tif(!SimpleUtil.isPlusINF(dist[e.source])\
+    \ && dist[e.target] > updated) {\n\t\t\t\t\tdist[e.target] = updated;\n\t\t\t\t\
+    \tprv[e.target] = e.source;\n\t\t\t\t\tprvEdge[e.target] = e;\n\t\t\t\t}\n\t\t\
+    \t}\n\t\t}\n\t\tfor(int i = 0; i < g.numNode; i ++) {\n\t\t\tfor(WeightedEdge\
+    \ e : g.edges()) {\n\t\t\t\tif(!SimpleUtil.isPlusINF(dist[e.source]) && dist[e.target]\
+    \ > dist[e.source] + e.cost) {\n\t\t\t\t\tdist[e.target] = - SimpleUtil.INF;\n\
+    \t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
   - library/AbstractGraph.java
@@ -45,7 +46,7 @@ data:
   isVerificationFile: false
   path: library/BellmanFord.java
   requiredBy: []
-  timestamp: '2022-10-01 17:55:14+09:00'
+  timestamp: '2022-10-01 18:33:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/BellmanFord_test.java

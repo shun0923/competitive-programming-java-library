@@ -36,10 +36,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Convolution998_test.java
     title: library/Convolution998_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_passEdge_test.java
     title: library/Dijkstra_passEdge_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_pass_test.java
     title: library/Dijkstra_pass_test.java
   - icon: ':heavy_check_mark:'
@@ -126,15 +126,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSwag_test.java
     title: library/TemplateSwag_test.java
+  - icon: ':x:'
+    path: library/WarshallFloyd_test.java
+    title: library/WarshallFloyd_test.java
   - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix_freq_test.java
     title: library/WaveletMatrix_freq_test.java
   - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix_smallest_test.java
     title: library/WaveletMatrix_smallest_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -154,7 +157,7 @@ data:
   path: library/Solver.java
   requiredBy: []
   timestamp: '2022-09-21 20:30:17+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/ArbitraryModOperation_test.java
   - library/CompressedWaveletMatrix_smallest_test.java
@@ -162,6 +165,7 @@ data:
   - library/Dijkstra_passEdge_test.java
   - library/TemplateDynamicSegmentTree_test.java
   - library/ArbitraryModSqrt_test.java
+  - library/WarshallFloyd_test.java
   - library/Mod107ManyCombination_test.java
   - library/SegmentTree_Composite_test.java
   - library/TemplateSegmentTree_Composite_test.java

@@ -8,28 +8,34 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/DistCalc.java
     title: library/DistCalc.java
+  - icon: ':x:'
+    path: library/WarshallFloyd.java
+    title: library/WarshallFloyd.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_passEdge_test.java
     title: library/Dijkstra_passEdge_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_pass_test.java
     title: library/Dijkstra_pass_test.java
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: library/WarshallFloyd_test.java
+    title: library/WarshallFloyd_test.java
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -205,12 +211,14 @@ data:
   path: library/AbstractGraph.java
   requiredBy:
   - library/BellmanFord.java
+  - library/WarshallFloyd.java
   - library/Dijkstra.java
   - library/DistCalc.java
   timestamp: '2022-10-01 13:37:15+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_passEdge_test.java
+  - library/WarshallFloyd_test.java
   - library/Dijkstra_test.java
   - library/Dijkstra_pass_test.java
   - library/BellmanFord_test.java

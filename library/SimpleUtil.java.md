@@ -8,7 +8,7 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':heavy_check_mark:'
@@ -23,10 +23,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/DistCalc.java
     title: library/DistCalc.java
   - icon: ':heavy_check_mark:'
@@ -80,6 +80,9 @@ data:
   - icon: ':warning:'
     path: library/Util.java
     title: library/Util.java
+  - icon: ':x:'
+    path: library/WarshallFloyd.java
+    title: library/WarshallFloyd.java
   - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
@@ -322,6 +325,7 @@ data:
   - library/Pair.java
   - library/TemplateSwag.java
   - library/BellmanFord.java
+  - library/WarshallFloyd.java
   - library/ExtendedConvolution.java
   - library/SegmentTree.java
   - library/TemplateDynamicSwag.java

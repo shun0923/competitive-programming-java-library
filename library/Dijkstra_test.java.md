@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -37,7 +37,7 @@ data:
   isVerificationFile: true
   path: library/Dijkstra_test.java
   requiredBy: []
-  timestamp: '2022-10-01 17:32:42+09:00'
+  timestamp: '2022-10-01 18:33:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Dijkstra_test.java
