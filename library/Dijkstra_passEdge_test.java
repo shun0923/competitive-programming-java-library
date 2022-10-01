@@ -4,6 +4,7 @@ package library;
 
 import library.Solver;
 import library.AbstractGraph;
+import library.DistCalc;
 import library.Dijkstra;
 
 public class Dijkstra_passEdge_test extends Solver {
@@ -16,10 +17,11 @@ public class Dijkstra_passEdge_test extends Solver {
 		int t = ni();
 		ArrayWeightedGraph g = new ArrayWeightedGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
-		long x = Dijkstra.dist(g, s)[t];
+		WeightedDistCalc djk = new Dijkstra(g);
+		long x = djk.dist(s)[t];
 		if(isINF(x)) prtln(-1);
 		else {
-			WeightedEdge pass[] = Dijkstra.passEdge(s, t);
+			WeightedEdge pass[] = djk.passEdge(s, t);
 			prtln(x, pass.length);
 			for(WeightedEdge e : pass) prtln(e.source, e.target);
 		}

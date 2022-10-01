@@ -4,7 +4,7 @@ import java.util.*;
 import library.SimpleUtil;
 import library.AbstractGraph;
 
-abstract class DistCalc { // V=numNode, E=numEdge
+abstract class DistCalc<Edge extends AbstractEdge<Edge>> { // V=numNode, E=numEdge
 	protected static final class Dist implements Comparable<Dist> {
 		public int target;
 		public long cost;
@@ -29,9 +29,9 @@ abstract class DistCalc { // V=numNode, E=numEdge
 		}
 	}
 
-	public static int prv[];
-	public static int pass[];
-	public static final int[] pass(final int start, int goal) { // O(V)
+	protected int prv[];
+	public int pass[];
+	public final int[] pass(final int start, int goal) { // O(V)
 		SimpleUtil.rangeCheck(start, prv.length);
 		SimpleUtil.rangeCheck(goal, prv.length);
 		final Deque<Integer> passList = new ArrayDeque<>();
@@ -40,5 +40,19 @@ abstract class DistCalc { // V=numNode, E=numEdge
 		pass = new int[passList.size()];
 		for(int i = 0; i < pass.length; i ++) pass[i] = passList.removeLast();
 		return pass;
+	}
+	public abstract Edge[] passEdge(final int start, final int goal);
+	public abstract long[] dist(int start);
+}
+abstract class WeightedDistCalc extends DistCalc<WeightedEdge> {
+	protected WeightedGraph g;
+	public WeightedDistCalc(WeightedGraph g) { this.g = g; };
+	protected WeightedEdge prvEdge[];
+	public WeightedEdge passEdge[];
+	public final WeightedEdge[] passEdge(final int start, final int goal) {
+		pass(start, goal);
+		passEdge = new WeightedEdge[pass.length - 1];
+		for(int i = 1; i < pass.length; i ++) passEdge[i - 1] = prvEdge[pass[i]];
+		return passEdge;
 	}
 }

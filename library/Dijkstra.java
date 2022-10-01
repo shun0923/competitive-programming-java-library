@@ -5,18 +5,19 @@ import library.SimpleUtil;
 import library.AbstractGraph;
 import library.DistCalc;
 
-final class Dijkstra extends DistCalc {
-	public static long dist[];
-	public static WeightedEdge prvEdge[];
-	public static final long[] dist(WeightedGraph g, int start) { // O((E+V)logV)
+final class Dijkstra extends WeightedDistCalc {
+	public Dijkstra(WeightedGraph g) { super(g); };
+
+	public long dist[];
+	public final long[] dist(int start) { // O((E+V)logV)
 		SimpleUtil.rangeCheck(start, g.numNode);
 		dist = new long[g.numNode];
 		prv = new int[g.numNode];
 		prvEdge = new WeightedEdge[g.numNode];
+		Queue<Dist> q = new PriorityQueue<>();
+
 		Arrays.fill(dist, SimpleUtil.INF);
 		dist[start] = 0;
-
-		Queue<Dist> q = new PriorityQueue<>();
 		q.add(new Dist(start, dist[start]));
 		while(!q.isEmpty()) {
 			Dist crt = q.poll();
@@ -32,12 +33,5 @@ final class Dijkstra extends DistCalc {
 			}
 		}
 		return dist;
-	}
-	public static WeightedEdge passEdge[];
-	public static final WeightedEdge[] passEdge(final int start, final int goal) {
-		pass(start, goal);
-		passEdge = new WeightedEdge[pass.length - 1];
-		for(int i = 1; i < pass.length; i ++) passEdge[i - 1] = prvEdge[pass[i]];
-		return passEdge;
 	}
 }
