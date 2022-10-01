@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -21,10 +21,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Convolution.java
       title: library/Convolution.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra.java
       title: library/Dijkstra.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/DistCalc.java
       title: library/DistCalc.java
     - icon: ':heavy_check_mark:'
@@ -60,7 +60,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -90,7 +90,7 @@ data:
     - icon: ':warning:'
       path: library/Util.java
       title: library/Util.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WarshallFloyd.java
       title: library/WarshallFloyd.java
     - icon: ':heavy_check_mark:'
@@ -129,10 +129,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Convolution998_test.java
       title: library/Convolution998_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra_passEdge_test.java
       title: library/Dijkstra_passEdge_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra_pass_test.java
       title: library/Dijkstra_pass_test.java
     - icon: ':heavy_check_mark:'
@@ -219,7 +219,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSwag_test.java
       title: library/TemplateSwag_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WarshallFloyd_test.java
       title: library/WarshallFloyd_test.java
     - icon: ':heavy_check_mark:'
