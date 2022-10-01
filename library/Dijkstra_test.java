@@ -3,7 +3,7 @@
 package library;
 
 import library.Solver;
-import library.AbstractGraph;
+import library.Graph;
 import library.Dijkstra;
 
 public class Dijkstra_test extends Solver {
