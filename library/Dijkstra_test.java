@@ -15,7 +15,6 @@ public class Dijkstra_test extends Solver {
 		int r = ni();
 		ArrayWeightedGraph g = new ArrayWeightedGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
-		long dist[] = Dijkstra.dist(g, r);
-		for(long ele : dist) prtln(isINF(ele) ? "INF" : ele);
+		for(long ele : new Dijkstra(g).dist(r)) prtln(isINF(ele) ? "INF" : ele);
 	}
 }
