@@ -5,7 +5,9 @@ import library.SimpleUtil;
 import library.AbstractGraph;
 import library.DistCalc;
 
-final class BellmanFord extends WeightedDistCalc {
+final class BellmanFord extends WeightedRestorableDistCalc {
+	private long dist[];
+
 	public BellmanFord(WeightedGraph g) { super(g); };
 
 	public final long[] dist(int start) { // O(VE)

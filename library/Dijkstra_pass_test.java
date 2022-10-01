@@ -17,7 +17,7 @@ public class Dijkstra_pass_test extends Solver {
 		int t = ni();
 		ArrayWeightedGraph g = new ArrayWeightedGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
-		WeightedDistCalc djk = new Dijkstra(g);
+		WeightedRestorableDistCalc djk = new Dijkstra(g);
 		long x = djk.dist(s)[t];
 		if(isINF(x)) prtln(-1);
 		else {
