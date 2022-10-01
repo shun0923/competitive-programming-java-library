@@ -8,6 +8,9 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
+  - icon: ':x:'
+    path: library/AbstractGraph.java
+    title: library/AbstractGraph.java
   - icon: ':warning:'
     path: library/BitVector.java
     title: library/BitVector.java
@@ -38,9 +41,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/FenwickTree.java
     title: library/FenwickTree.java
-  - icon: ':x:'
-    path: library/Graph.java
-    title: library/Graph.java
   - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
@@ -328,13 +328,13 @@ data:
   - library/DualSegmentTree.java
   - library/Swag.java
   - library/Convolution.java
+  - library/AbstractGraph.java
   - library/BitVector.java
   - library/FenwickTree.java
   - library/DynamicSwag.java
   - library/TemplateDynamicSegmentTree.java
   - library/CompressedWaveletMatrix.java
   - library/TemplateSparseTable.java
-  - library/Graph.java
   timestamp: '2022-09-20 15:15:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

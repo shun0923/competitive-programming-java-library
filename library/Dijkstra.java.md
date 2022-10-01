@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':x:'
+    path: library/AbstractGraph.java
+    title: library/AbstractGraph.java
   - icon: ':warning:'
     path: library/DistCalc.java
     title: library/DistCalc.java
-  - icon: ':x:'
-    path: library/Graph.java
-    title: library/Graph.java
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
@@ -25,8 +25,8 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/Dijkstra.java\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.Graph;\nimport library.DistCalc;\n\nfinal class Dijkstra extends DistCalc\
-    \ {\n\tpublic static long dist[];\n\tpublic static final long[] dist(WeightedGraph\
+    \ library.AbstractGraph;\nimport library.DistCalc;\n\nfinal class Dijkstra extends\
+    \ DistCalc {\n\tpublic static long dist[];\n\tpublic static final long[] dist(WeightedGraph\
     \ g, int start) { // O((E+V)logV)\n\t\tSimpleUtil.rangeCheck(start, g.numNode);\n\
     \t\tdist = new long[g.numNode];\n\t\tprv = new int[g.numNode];\n\t\tArrays.fill(dist,\
     \ SimpleUtil.INF);\n\t\tdist[start] = 0;\n\n\t\tQueue<Dist> q = new PriorityQueue<>();\n\
@@ -38,12 +38,12 @@ data:
     \t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
-  - library/Graph.java
+  - library/AbstractGraph.java
   - library/DistCalc.java
   isVerificationFile: false
   path: library/Dijkstra.java
   requiredBy: []
-  timestamp: '2022-10-01 13:17:40+09:00'
+  timestamp: '2022-10-01 13:29:59+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Dijkstra_test.java

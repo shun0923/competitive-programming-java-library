@@ -3,6 +3,9 @@ data:
   libraryCategories:
   - name: library
     pages:
+    - icon: ':x:'
+      path: library/AbstractGraph.java
+      title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryMod.java
       title: library/ArbitraryMod.java
@@ -42,9 +45,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/FenwickTree.java
       title: library/FenwickTree.java
-    - icon: ':x:'
-      path: library/Graph.java
-      title: library/Graph.java
     - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
