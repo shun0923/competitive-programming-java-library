@@ -8,7 +8,6 @@ import library.DistCalc;
 final class Dijkstra extends WeightedDistCalc {
 	public Dijkstra(WeightedGraph g) { super(g); };
 
-	public long dist[];
 	public final long[] dist(int start) { // O((E+V)logV)
 		SimpleUtil.rangeCheck(start, g.numNode);
 		dist = new long[g.numNode];

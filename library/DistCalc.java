@@ -31,6 +31,7 @@ abstract class DistCalc<Edge extends AbstractEdge<Edge>> { // V=numNode, E=numEd
 
 	protected int prv[];
 	public int pass[];
+
 	public final int[] pass(final int start, int goal) { // O(V)
 		SimpleUtil.rangeCheck(start, prv.length);
 		SimpleUtil.rangeCheck(goal, prv.length);
@@ -42,13 +43,17 @@ abstract class DistCalc<Edge extends AbstractEdge<Edge>> { // V=numNode, E=numEd
 		return pass;
 	}
 	public abstract Edge[] passEdge(final int start, final int goal);
-	public abstract long[] dist(int start);
 }
 abstract class WeightedDistCalc extends DistCalc<WeightedEdge> {
 	protected WeightedGraph g;
-	public WeightedDistCalc(WeightedGraph g) { this.g = g; };
+	public long dist[];
 	protected WeightedEdge prvEdge[];
 	public WeightedEdge passEdge[];
+
+	public WeightedDistCalc(WeightedGraph g) { this.g = g; };
+
+	public abstract long[] dist(int start);
+
 	public final WeightedEdge[] passEdge(final int start, final int goal) {
 		pass(start, goal);
 		passEdge = new WeightedEdge[pass.length - 1];
