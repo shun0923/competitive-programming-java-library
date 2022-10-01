@@ -6,12 +6,18 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: library/BellmanFord.java
+    title: library/BellmanFord.java
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/DistCalc.java
     title: library/DistCalc.java
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: library/BellmanFord_test.java
+    title: library/BellmanFord_test.java
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra_passEdge_test.java
     title: library/Dijkstra_passEdge_test.java
@@ -198,6 +204,7 @@ data:
   isVerificationFile: false
   path: library/AbstractGraph.java
   requiredBy:
+  - library/BellmanFord.java
   - library/Dijkstra.java
   - library/DistCalc.java
   timestamp: '2022-10-01 13:37:15+09:00'
@@ -206,6 +213,7 @@ data:
   - library/Dijkstra_passEdge_test.java
   - library/Dijkstra_test.java
   - library/Dijkstra_pass_test.java
+  - library/BellmanFord_test.java
 documentation_of: library/AbstractGraph.java
 layout: document
 redirect_from:

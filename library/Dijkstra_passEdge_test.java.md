@@ -8,6 +8,9 @@ data:
     path: library/Dijkstra.java
     title: library/Dijkstra.java
   - icon: ':heavy_check_mark:'
+    path: library/DistCalc.java
+    title: library/DistCalc.java
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -24,22 +27,24 @@ data:
     RuntimeError: bundler is not specified: library/Dijkstra_passEdge_test.java\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/shortest_path\n\
     \npackage library;\n\nimport library.Solver;\nimport library.AbstractGraph;\n\
-    import library.Dijkstra;\n\npublic class Dijkstra_passEdge_test extends Solver\
-    \ {\n\tpublic static void main(final String[] args) { main(args, new Dijkstra_passEdge_test());\
-    \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tint\
-    \ s = ni();\n\t\tint t = ni();\n\t\tArrayWeightedGraph g = new ArrayWeightedGraph(n,\
-    \ true);\n\t\tfor(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());\n\t\tlong x\
-    \ = Dijkstra.dist(g, s)[t];\n\t\tif(isINF(x)) prtln(-1);\n\t\telse {\n\t\t\tWeightedEdge\
-    \ pass[] = Dijkstra.passEdge(s, t);\n\t\t\tprtln(x, pass.length);\n\t\t\tfor(WeightedEdge\
-    \ e : pass) prtln(e.source, e.target);\n\t\t}\n\t}\n}"
+    import library.DistCalc;\nimport library.Dijkstra;\n\npublic class Dijkstra_passEdge_test\
+    \ extends Solver {\n\tpublic static void main(final String[] args) { main(args,\
+    \ new Dijkstra_passEdge_test()); }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\
+    \t\tint m = ni();\n\t\tint s = ni();\n\t\tint t = ni();\n\t\tArrayWeightedGraph\
+    \ g = new ArrayWeightedGraph(n, true);\n\t\tfor(int i = 0; i < m; i ++) g.add(ni(),\
+    \ ni(), nl());\n\t\tWeightedDistCalc djk = new Dijkstra(g);\n\t\tlong x = djk.dist(s)[t];\n\
+    \t\tif(isINF(x)) prtln(-1);\n\t\telse {\n\t\t\tWeightedEdge pass[] = djk.passEdge(s,\
+    \ t);\n\t\t\tprtln(x, pass.length);\n\t\t\tfor(WeightedEdge e : pass) prtln(e.source,\
+    \ e.target);\n\t\t}\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/AbstractGraph.java
+  - library/DistCalc.java
   - library/Dijkstra.java
   isVerificationFile: true
   path: library/Dijkstra_passEdge_test.java
   requiredBy: []
-  timestamp: '2022-10-01 16:55:20+09:00'
+  timestamp: '2022-10-01 17:43:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Dijkstra_passEdge_test.java

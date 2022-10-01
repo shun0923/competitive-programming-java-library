@@ -22,6 +22,9 @@ data:
     path: library/ArbitraryModSqrt_test.java
     title: library/ArbitraryModSqrt_test.java
   - icon: ':heavy_check_mark:'
+    path: library/BellmanFord_test.java
+    title: library/BellmanFord_test.java
+  - icon: ':heavy_check_mark:'
     path: library/CompressedWaveletMatrix_freq_test.java
     title: library/CompressedWaveletMatrix_freq_test.java
   - icon: ':heavy_check_mark:'
@@ -180,6 +183,7 @@ data:
   - library/Mod107Random_test.java
   - library/CompressedWaveletMatrix_freq_test.java
   - library/Swag_gcd_test.java
+  - library/BellmanFord_test.java
   - library/WaveletMatrix_smallest_test.java
   - library/TemplateSparseTable_test.java
   - library/Convolution107_test.java

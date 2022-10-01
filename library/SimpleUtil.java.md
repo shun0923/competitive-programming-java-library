@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
+  - icon: ':heavy_check_mark:'
+    path: library/BellmanFord.java
+    title: library/BellmanFord.java
   - icon: ':warning:'
     path: library/BitVector.java
     title: library/BitVector.java
@@ -23,7 +26,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/DistCalc.java
     title: library/DistCalc.java
   - icon: ':heavy_check_mark:'
@@ -318,6 +321,7 @@ data:
   - library/Mod.java
   - library/Pair.java
   - library/TemplateSwag.java
+  - library/BellmanFord.java
   - library/ExtendedConvolution.java
   - library/SegmentTree.java
   - library/TemplateDynamicSwag.java

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/DistCalc.java
     title: library/DistCalc.java
   - icon: ':warning:'
@@ -32,22 +32,17 @@ data:
     RuntimeError: bundler is not specified: library/Dijkstra.java\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
     \ library.AbstractGraph;\nimport library.DistCalc;\n\nfinal class Dijkstra extends\
-    \ DistCalc {\n\tpublic static long dist[];\n\tpublic static WeightedEdge prvEdge[];\n\
-    \tpublic static final long[] dist(WeightedGraph g, int start) { // O((E+V)logV)\n\
-    \t\tSimpleUtil.rangeCheck(start, g.numNode);\n\t\tdist = new long[g.numNode];\n\
-    \t\tprv = new int[g.numNode];\n\t\tprvEdge = new WeightedEdge[g.numNode];\n\t\t\
-    Arrays.fill(dist, SimpleUtil.INF);\n\t\tdist[start] = 0;\n\n\t\tQueue<Dist> q\
-    \ = new PriorityQueue<>();\n\t\tq.add(new Dist(start, dist[start]));\n\t\twhile(!q.isEmpty())\
-    \ {\n\t\t\tDist crt = q.poll();\n\t\t\tif(dist[crt.target] < crt.cost) continue;\n\
-    \t\t\tfor(WeightedEdge e : g.nodes()[crt.target]) {\n\t\t\t\tlong updated = dist[e.source]\
-    \ + e.cost;\n\t\t\t\tif(dist[e.target] > updated) {\n\t\t\t\t\tdist[e.target]\
-    \ = updated;\n\t\t\t\t\tq.add(new Dist(e.target, updated));\n\t\t\t\t\tprv[e.target]\
-    \ = e.source;\n\t\t\t\t\tprvEdge[e.target] = e;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\
-    \treturn dist;\n\t}\n\tpublic static WeightedEdge passEdge[];\n\tpublic static\
-    \ final WeightedEdge[] passEdge(final int start, final int goal) {\n\t\tpass(start,\
-    \ goal);\n\t\tpassEdge = new WeightedEdge[pass.length - 1];\n\t\tfor(int i = 1;\
-    \ i < pass.length; i ++) passEdge[i - 1] = prvEdge[pass[i]];\n\t\treturn passEdge;\n\
-    \t}\n}"
+    \ WeightedDistCalc {\n\tpublic Dijkstra(WeightedGraph g) { super(g); };\n\n\t\
+    public final long[] dist(int start) { // O((E+V)logV)\n\t\tSimpleUtil.rangeCheck(start,\
+    \ g.numNode);\n\t\tdist = new long[g.numNode];\n\t\tprv = new int[g.numNode];\n\
+    \t\tprvEdge = new WeightedEdge[g.numNode];\n\t\tQueue<Dist> q = new PriorityQueue<>();\n\
+    \n\t\tArrays.fill(dist, SimpleUtil.INF);\n\t\tdist[start] = 0;\n\t\tq.add(new\
+    \ Dist(start, dist[start]));\n\t\twhile(!q.isEmpty()) {\n\t\t\tDist crt = q.poll();\n\
+    \t\t\tif(dist[crt.target] < crt.cost) continue;\n\t\t\tfor(WeightedEdge e : g.nodes()[crt.target])\
+    \ {\n\t\t\t\tlong updated = dist[e.source] + e.cost;\n\t\t\t\tif(dist[e.target]\
+    \ > updated) {\n\t\t\t\t\tdist[e.target] = updated;\n\t\t\t\t\tq.add(new Dist(e.target,\
+    \ updated));\n\t\t\t\t\tprv[e.target] = e.source;\n\t\t\t\t\tprvEdge[e.target]\
+    \ = e;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
   - library/AbstractGraph.java
@@ -55,7 +50,7 @@ data:
   isVerificationFile: false
   path: library/Dijkstra.java
   requiredBy: []
-  timestamp: '2022-10-01 16:55:20+09:00'
+  timestamp: '2022-10-01 17:43:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Dijkstra_passEdge_test.java

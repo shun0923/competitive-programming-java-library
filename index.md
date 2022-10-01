@@ -9,6 +9,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryMod.java
       title: library/ArbitraryMod.java
+    - icon: ':heavy_check_mark:'
+      path: library/BellmanFord.java
+      title: library/BellmanFord.java
     - icon: ':warning:'
       path: library/BitVector.java
       title: library/BitVector.java
@@ -21,7 +24,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Dijkstra.java
       title: library/Dijkstra.java
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/DistCalc.java
       title: library/DistCalc.java
     - icon: ':heavy_check_mark:'
@@ -108,6 +111,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryModSqrt_test.java
       title: library/ArbitraryModSqrt_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/BellmanFord_test.java
+      title: library/BellmanFord_test.java
     - icon: ':heavy_check_mark:'
       path: library/CompressedWaveletMatrix_freq_test.java
       title: library/CompressedWaveletMatrix_freq_test.java
