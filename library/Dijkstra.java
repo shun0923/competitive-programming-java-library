@@ -2,7 +2,7 @@ package library;
 
 import java.util.*;
 import library.SimpleUtil;
-import library.Graph;
+import library.AbstractGraph;
 import library.DistCalc;
 
 final class Dijkstra extends DistCalc {
