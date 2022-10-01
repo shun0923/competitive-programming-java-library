@@ -2,6 +2,7 @@ package library;
 
 import java.util.*;
 import library.SimpleUtil;
+import library.AbstractGraph;
 
 abstract class DistCalc { // V=numNode, E=numEdge
 	protected static final class Dist implements Comparable<Dist> {
@@ -29,13 +30,14 @@ abstract class DistCalc { // V=numNode, E=numEdge
 	}
 
 	public static int prv[];
-	public static final int[] getPass(final int start, int goal) { // O(V)
+	public static int pass[];
+	public static final int[] pass(final int start, int goal) { // O(V)
 		SimpleUtil.rangeCheck(start, prv.length);
 		SimpleUtil.rangeCheck(goal, prv.length);
 		final Deque<Integer> passList = new ArrayDeque<>();
 		passList.addLast(goal);
 		while(goal != start) passList.addLast(goal = prv[goal]);
-		final int pass[] = new int[passList.size()];
+		pass = new int[passList.size()];
 		for(int i = 0; i < pass.length; i ++) pass[i] = passList.removeLast();
 		return pass;
 	}
