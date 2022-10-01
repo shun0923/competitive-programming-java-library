@@ -5,7 +5,7 @@ data:
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
   _extendedVerifiedWith: []

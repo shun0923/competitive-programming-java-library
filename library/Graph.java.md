@@ -5,22 +5,22 @@ data:
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: library/AbstractGraph.java\n"
+    RuntimeError: bundler is not specified: library/Graph.java\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nabstract\
     \ class AbstractGraph<Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>\
     \ {\n\tpublic int numNode;\n\tpublic boolean directed;\n\tprivate Node edges;\n\
@@ -187,17 +187,17 @@ data:
   dependsOn:
   - library/SimpleUtil.java
   isVerificationFile: false
-  path: library/AbstractGraph.java
+  path: library/Graph.java
   requiredBy:
   - library/Dijkstra.java
-  timestamp: '2022-10-01 13:33:40+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-10-01 13:35:26+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Dijkstra_test.java
-documentation_of: library/AbstractGraph.java
+documentation_of: library/Graph.java
 layout: document
 redirect_from:
-- /library/library/AbstractGraph.java
-- /library/library/AbstractGraph.java.html
-title: library/AbstractGraph.java
+- /library/library/Graph.java
+- /library/library/Graph.java.html
+title: library/Graph.java
 ---
