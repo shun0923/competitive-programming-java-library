@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -21,7 +21,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Convolution.java
       title: library/Convolution.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra.java
       title: library/Dijkstra.java
     - icon: ':heavy_check_mark:'
@@ -60,7 +60,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -135,9 +135,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Dijkstra_forDenseGraph_reversed_test.java
       title: library/Dijkstra_forDenseGraph_reversed_test.java
-    - icon: ':x:'
-      path: library/Dijkstra_forDenseGraph_test.java
-      title: library/Dijkstra_forDenseGraph_test.java
     - icon: ':heavy_check_mark:'
       path: library/Dijkstra_pathEdge_test.java
       title: library/Dijkstra_pathEdge_test.java
