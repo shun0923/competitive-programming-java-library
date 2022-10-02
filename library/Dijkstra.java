@@ -67,6 +67,47 @@ final class Dijkstra {
 		return dist;
 	}
 
-	public static final int[] path(final int start, final int goal) { return PathRestoration.path(prv, start, goal); }
-	public static final WeightedEdge[] pathEdge(final int start, final int goal) { return PathRestoration.pathEdge(prv, prvEdge, start, goal); }
+	// O(V^2)
+	public static final long[] distForDenseGraph(WeightedGraph g, int start) { return distForDenseGraph(g, start, false); }
+	public static final long[] distForDenseGraph(WeightedGraph g, int start, boolean memoize) { return distForDenseGraph(g.numNode, g.nodes(), start, memoize); }
+	public static final long[] distForDenseGraph(int numNode, WeightedNode[] nodes, int start) { return distForDenseGraph(numNode, nodes, start, false); }
+	public static final long[] distForDenseGraph(int numNode, WeightedNode[] nodes, int start, boolean memoize) {
+		SimpleUtil.rangeCheck(start, numNode);
+		final long dist[] = new long[numNode];
+		final boolean visited[] = new boolean[numNode];
+		if(memoize) {
+			prv = new int[numNode];
+			prvEdge = new WeightedEdge[numNode];
+		}
+
+		Arrays.fill(dist, SimpleUtil.INF);
+		dist[start] = 0;
+		int idx = start;
+		int cnt = 0;
+		while(cnt < numNode) {
+			long minCost = SimpleUtil.INF;
+			for(int i = 0; i < numNode; i ++) {
+				if(!visited[i] && dist[i] < minCost) {
+					idx = i;
+					minCost = dist[i];
+				}
+			}
+			visited[idx] = true;
+			cnt ++;
+			for(WeightedEdge e : nodes[idx]) {
+				long updated = dist[e.source] + e.cost;
+				if(dist[e.target] > updated) {
+					dist[e.target] = updated;
+					if(memoize) {
+						prv[e.target] = e.source;
+						prvEdge[e.target] = e;
+					}
+				}
+			}
+		}
+		return dist;
+	}
+
+	public static final int[] path(final int start, final int goal) { return RestorePath.path(prv, start, goal); }
+	public static final WeightedEdge[] pathEdge(final int start, final int goal) { return RestorePath.pathEdge(prv, prvEdge, start, goal); }
 }
