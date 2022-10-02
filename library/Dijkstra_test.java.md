@@ -37,7 +37,7 @@ data:
   isVerificationFile: true
   path: library/Dijkstra_test.java
   requiredBy: []
-  timestamp: '2022-10-02 19:48:55+09:00'
+  timestamp: '2022-10-02 20:26:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Dijkstra_test.java

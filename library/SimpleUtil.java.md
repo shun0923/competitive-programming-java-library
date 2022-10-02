@@ -11,7 +11,7 @@ data:
   - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
   - icon: ':warning:'
@@ -80,7 +80,7 @@ data:
   - icon: ':warning:'
     path: library/Util.java
     title: library/Util.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
   - icon: ':heavy_check_mark:'

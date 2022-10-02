@@ -7,7 +7,7 @@ data:
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
   _extendedRequiredBy: []
@@ -40,7 +40,7 @@ data:
   isVerificationFile: true
   path: library/WarshallFloyd_test.java
   requiredBy: []
-  timestamp: '2022-10-02 19:48:55+09:00'
+  timestamp: '2022-10-02 20:26:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/WarshallFloyd_test.java

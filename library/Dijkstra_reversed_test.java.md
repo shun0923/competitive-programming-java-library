@@ -12,9 +12,9 @@ data:
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2005
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -32,8 +32,9 @@ data:
     \ true);\n\t\t\tfor(int i = 0; i < m; i ++) g.add(ni() - 1, ni() - 1, nl());\n\
     \t\t\tlong distS[] = Dijkstra.dist(g, s);\n\t\t\tlong distG1[] = Dijkstra.dist(g.numNode,\
     \ g.reverseNodes(), g1);\n\t\t\tlong distG2[] = Dijkstra.dist(g.numNode, g.reverseNodes(),\
-    \ g2);\n\t\t\tlong min = INF;\n\t\t\tfor(int i = 0; i < n; i ++) min = min(min,\
-    \ distS[i] + distG1[i] + distG2[i]);\n\t\t\tprtln(min);\n\t\t}\n\t}\n}"
+    \ g2);\n\t\t\tlong min = INF;\n\t\t\tfor(int i = 0; i < n; i ++) {\n\t\t\t\tif(isINF(distS[i])\
+    \ || isINF(distG1[i]) || isINF(distG2[i])) continue;\n\t\t\t\tmin = min(min, distS[i]\
+    \ + distG1[i] + distG2[i]);\n\t\t\t}\n\t\t\tprtln(min);\n\t\t}\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/AbstractGraph.java
@@ -41,8 +42,8 @@ data:
   isVerificationFile: true
   path: library/Dijkstra_reversed_test.java
   requiredBy: []
-  timestamp: '2022-10-02 20:17:54+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-02 20:26:48+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Dijkstra_reversed_test.java
 layout: document

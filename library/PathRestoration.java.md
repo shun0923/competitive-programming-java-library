@@ -8,13 +8,13 @@ data:
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
   - icon: ':question:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
   _extendedVerifiedWith:
@@ -54,7 +54,7 @@ data:
   - library/BellmanFord.java
   - library/WarshallFloyd.java
   - library/Dijkstra.java
-  timestamp: '2022-10-02 20:02:12+09:00'
+  timestamp: '2022-10-02 20:26:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Dijkstra_path_test.java

@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryMod.java
       title: library/ArbitraryMod.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/BellmanFord.java
       title: library/BellmanFord.java
     - icon: ':warning:'
@@ -90,7 +90,7 @@ data:
     - icon: ':warning:'
       path: library/Util.java
       title: library/Util.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/WarshallFloyd.java
       title: library/WarshallFloyd.java
     - icon: ':heavy_check_mark:'
@@ -114,7 +114,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryModSqrt_test.java
       title: library/ArbitraryModSqrt_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/BellmanFord_reversed_test.java
       title: library/BellmanFord_reversed_test.java
     - icon: ':heavy_check_mark:'
@@ -132,7 +132,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Convolution998_test.java
       title: library/Convolution998_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra_forDenseGraph_reversed_test.java
       title: library/Dijkstra_forDenseGraph_reversed_test.java
     - icon: ':x:'
@@ -144,7 +144,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Dijkstra_path_test.java
       title: library/Dijkstra_path_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra_reversed_test.java
       title: library/Dijkstra_reversed_test.java
     - icon: ':heavy_check_mark:'
@@ -231,7 +231,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSwag_test.java
       title: library/TemplateSwag_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WarshallFloyd_reversed_test.java
       title: library/WarshallFloyd_reversed_test.java
     - icon: ':heavy_check_mark:'

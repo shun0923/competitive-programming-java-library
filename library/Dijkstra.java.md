@@ -12,7 +12,7 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_forDenseGraph_reversed_test.java
     title: library/Dijkstra_forDenseGraph_reversed_test.java
   - icon: ':x:'
@@ -24,7 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_reversed_test.java
     title: library/Dijkstra_reversed_test.java
   - icon: ':heavy_check_mark:'
@@ -102,7 +102,7 @@ data:
   isVerificationFile: false
   path: library/Dijkstra.java
   requiredBy: []
-  timestamp: '2022-10-02 20:02:12+09:00'
+  timestamp: '2022-10-02 20:26:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
