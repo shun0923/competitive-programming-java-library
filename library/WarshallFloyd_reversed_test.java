@@ -24,7 +24,10 @@ public class WarshallFloyd_reversed_test extends Solver {
 			long distG1[] = distReversed[g1];
 			long distG2[] = distReversed[g2];
 			long min = INF;
-			for(int i = 0; i < n; i ++) min = min(min, distS[i] + distG1[i] + distG2[i]);
+			for(int i = 0; i < n; i ++) {
+				if(isINF(distS[i]) || isINF(distG1[i]) || isINF(distG2[i])) continue;
+				min = min(min, distS[i] + distG1[i] + distG2[i]);
+			}
 			prtln(min);
 		}
 	}

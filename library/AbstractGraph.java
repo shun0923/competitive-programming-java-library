@@ -8,7 +8,8 @@ abstract class AbstractGraph<Node extends AbstractNode<Edge>, Edge extends Abstr
 	public boolean directed;
 	private Node edges;
 	private Node nodes[];
-	private Node reversedNodes[] = null;
+	private Node reversedEdges;
+	private Node reversedNodes[];
 
 	protected abstract Node createNode(final int id);
 	protected abstract Node[] createNodeList(final int size);
@@ -25,6 +26,13 @@ abstract class AbstractGraph<Node extends AbstractNode<Edge>, Edge extends Abstr
 	public final int numEdge() { return edges.size(); }
 	public Node edges() { return edges; }
 	public Node[] nodes() { return nodes; }
+	public Node reverseEdges() {
+		if(reversedEdges == null) {
+			reversedEdges = createNode(-1);
+			for(Edge e : edges) reversedEdges.add(e.reverse());
+		}
+		return reversedEdges;
+	}
 	public Node[] reverseNodes() {
 		if(reversedNodes == null) {
 			reversedNodes = createNodeList(numNode);
@@ -38,6 +46,7 @@ abstract class AbstractGraph<Node extends AbstractNode<Edge>, Edge extends Abstr
 	public final void add(final Edge e) {
 		edges.add(e);
 		nodes[e.source].add(e);
+		if(reversedEdges != null) reversedEdges.add(e.reverse());
 		if(reversedNodes != null) reversedNodes[e.target].add(e.reverse());
 		if(!directed) nodes[e.target].add(e.reverse());
 	}
@@ -45,11 +54,12 @@ abstract class AbstractGraph<Node extends AbstractNode<Edge>, Edge extends Abstr
 	public final void remove(final Edge e) {
 		edges.remove(e);
 		nodes[e.source].remove(e);
+		if(reversedEdges != null) reversedEdges.add(e.reverse());
 		if(reversedNodes != null) reversedNodes[e.target].remove(e.reverse());
 		if(!directed) nodes[e.target].remove(e.reverse());
 	}
 
-	public final void clear() { edges.clear(); for(Node n : nodes) n.clear(); reversedNodes = null; }
+	public final void clear() { edges.clear(); for(Node n : nodes) n.clear(); reversedEdges = null; reversedNodes = null; }
 }
 abstract class UnweightedGraph<Node extends UnweightedNode> extends AbstractGraph<Node, UnweightedEdge> {
 	public UnweightedGraph(final int numNode, final boolean directed) { super(numNode, directed); }
