@@ -15,11 +15,9 @@ final class PathRestoration {
 		for(int i = 0; i < path.length; i ++) path[i] = pathList.removeLast();
 		return path;
 	}
-	@SuppressWarnings("unchecked")
-	public static final <Edge extends AbstractEdge<Edge>> Edge[] pathEdge(final int[] prv, final Edge[] prvEdge, final int start, final int goal) {
+	public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> Node pathEdge(Node pathEdge, final int[] prv, final Edge[] prvEdge, final int start, final int goal) {
 		final int path[] = path(prv, start, goal);
-		final Edge pathEdge[] = (Edge[]) new Object[path.length - 1];
-		for(int i = 1; i < path.length; i ++) pathEdge[i - 1] = prvEdge[path[i]];
+		for(int i = 1; i < path.length; i ++) pathEdge.add(prvEdge[path[i]]);
 		return pathEdge;
 	}
 }
