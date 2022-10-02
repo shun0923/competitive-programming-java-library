@@ -4,10 +4,10 @@ data:
   - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':question:'
@@ -44,7 +44,7 @@ data:
   isVerificationFile: true
   path: library/Dijkstra_pathEdge_test.java
   requiredBy: []
-  timestamp: '2022-10-02 17:47:10+09:00'
+  timestamp: '2022-10-02 19:07:51+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/Dijkstra_pathEdge_test.java

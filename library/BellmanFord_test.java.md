@@ -38,7 +38,7 @@ data:
   isVerificationFile: true
   path: library/BellmanFord_test.java
   requiredBy: []
-  timestamp: '2022-10-02 17:01:16+09:00'
+  timestamp: '2022-10-02 19:07:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/BellmanFord_test.java
