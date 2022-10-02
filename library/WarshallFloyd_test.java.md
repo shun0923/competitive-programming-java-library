@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   - icon: ':heavy_check_mark:'
@@ -28,10 +28,10 @@ data:
     \ {\n\tpublic static void main(final String[] args) { main(args, new WarshallFloyd_test());\
     \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tArrayWeightedGraph\
     \ g = new ArrayWeightedGraph(n, true);\n\t\tfor(int i = 0; i < m; i ++) g.add(ni(),\
-    \ ni(), nl());\n\t\tlong dist[][] = new WarshallFloyd(g).dist();\n\t\tfor(int\
-    \ i = 0; i < n; i ++) if(dist[i][i] < 0) { prtln(\"NEGATIVE CYCLE\"); return;\
-    \ }\n\t\tString ans[][] = new String[n][n];\n\t\tfor(int i = 0; i < n; i ++) for(int\
-    \ j = 0; j < n; j ++) {\n\t\t\tans[i][j] = isINF(dist[i][j]) ? \"INF\" : String.valueOf(dist[i][j]);\n\
+    \ ni(), nl());\n\t\tlong dist[][] = WarshallFloyd.dist(g);\n\t\tfor(int i = 0;\
+    \ i < n; i ++) if(dist[i][i] < 0) { prtln(\"NEGATIVE CYCLE\"); return; }\n\t\t\
+    String ans[][] = new String[n][n];\n\t\tfor(int i = 0; i < n; i ++) for(int j\
+    \ = 0; j < n; j ++) {\n\t\t\tans[i][j] = isINF(dist[i][j]) ? \"INF\" : String.valueOf(dist[i][j]);\n\
     \t\t}\n\t\tprtln(ans);\n\t}\n}"
   dependsOn:
   - library/Solver.java
@@ -40,7 +40,7 @@ data:
   isVerificationFile: true
   path: library/WarshallFloyd_test.java
   requiredBy: []
-  timestamp: '2022-10-01 18:40:19+09:00'
+  timestamp: '2022-10-02 16:35:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/WarshallFloyd_test.java

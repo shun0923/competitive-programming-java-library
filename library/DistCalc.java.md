@@ -1,29 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: library/BellmanFord.java
-    title: library/BellmanFord.java
-  - icon: ':heavy_check_mark:'
-    path: library/Dijkstra.java
-    title: library/Dijkstra.java
-  - icon: ':heavy_check_mark:'
-    path: library/WarshallFloyd.java
-    title: library/WarshallFloyd.java
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: library/Dijkstra_passEdge_test.java
-    title: library/Dijkstra_passEdge_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Dijkstra_pass_test.java
-    title: library/Dijkstra_pass_test.java
+    path: library/Dijkstra_path_test.java
+    title: library/Dijkstra_path_test.java
   _isVerificationFailed: false
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -58,15 +46,11 @@ data:
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/DistCalc.java
-  requiredBy:
-  - library/BellmanFord.java
-  - library/WarshallFloyd.java
-  - library/Dijkstra.java
+  requiredBy: []
   timestamp: '2022-10-01 18:33:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - library/Dijkstra_passEdge_test.java
-  - library/Dijkstra_pass_test.java
+  - library/Dijkstra_path_test.java
 documentation_of: library/DistCalc.java
 layout: document
 redirect_from:

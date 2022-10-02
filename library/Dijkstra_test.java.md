@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -28,7 +28,7 @@ data:
     \ static void main(final String[] args) { main(args, new Dijkstra_test()); }\n\
     \n\tpublic void solve() {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tint r = ni();\n\
     \t\tArrayWeightedGraph g = new ArrayWeightedGraph(n, true);\n\t\tfor(int i = 0;\
-    \ i < m; i ++) g.add(ni(), ni(), nl());\n\t\tfor(long ele : new Dijkstra(g).dist(r))\
+    \ i < m; i ++) g.add(ni(), ni(), nl());\n\t\tfor(long ele : Dijkstra.dist(g, r))\
     \ prtln(isINF(ele) ? \"INF\" : ele);\n\t}\n}"
   dependsOn:
   - library/Solver.java
@@ -37,7 +37,7 @@ data:
   isVerificationFile: true
   path: library/Dijkstra_test.java
   requiredBy: []
-  timestamp: '2022-10-01 18:33:09+09:00'
+  timestamp: '2022-10-02 16:35:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Dijkstra_test.java

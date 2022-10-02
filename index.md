@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -21,7 +21,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Convolution.java
       title: library/Convolution.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Dijkstra.java
       title: library/Dijkstra.java
     - icon: ':heavy_check_mark:'
@@ -54,13 +54,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Pair.java
       title: library/Pair.java
+    - icon: ':x:'
+      path: library/RestorePath.java
+      title: library/RestorePath.java
     - icon: ':heavy_check_mark:'
       path: library/SegmentTree.java
       title: library/SegmentTree.java
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -129,12 +132,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Convolution998_test.java
       title: library/Convolution998_test.java
+    - icon: ':x:'
+      path: library/Dijkstra_pathEdge_test.java
+      title: library/Dijkstra_pathEdge_test.java
     - icon: ':heavy_check_mark:'
-      path: library/Dijkstra_passEdge_test.java
-      title: library/Dijkstra_passEdge_test.java
-    - icon: ':heavy_check_mark:'
-      path: library/Dijkstra_pass_test.java
-      title: library/Dijkstra_pass_test.java
+      path: library/Dijkstra_path_test.java
+      title: library/Dijkstra_path_test.java
     - icon: ':heavy_check_mark:'
       path: library/Dijkstra_test.java
       title: library/Dijkstra_test.java
