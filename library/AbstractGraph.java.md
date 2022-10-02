@@ -12,8 +12,8 @@ data:
     path: library/Dijkstra.java
     title: library/Dijkstra.java
   - icon: ':question:'
-    path: library/RestorePath.java
-    title: library/RestorePath.java
+    path: library/PathRestoration.java
+    title: library/PathRestoration.java
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
@@ -213,7 +213,7 @@ data:
   - library/BellmanFord.java
   - library/WarshallFloyd.java
   - library/Dijkstra.java
-  - library/RestorePath.java
+  - library/PathRestoration.java
   timestamp: '2022-10-01 13:37:15+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:

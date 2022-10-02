@@ -52,8 +52,8 @@ data:
       path: library/Pair.java
       title: library/Pair.java
     - icon: ':question:'
-      path: library/RestorePath.java
-      title: library/RestorePath.java
+      path: library/PathRestoration.java
+      title: library/PathRestoration.java
     - icon: ':heavy_check_mark:'
       path: library/SegmentTree.java
       title: library/SegmentTree.java

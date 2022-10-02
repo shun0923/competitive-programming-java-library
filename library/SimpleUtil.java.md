@@ -48,8 +48,8 @@ data:
     path: library/Pair.java
     title: library/Pair.java
   - icon: ':question:'
-    path: library/RestorePath.java
-    title: library/RestorePath.java
+    path: library/PathRestoration.java
+    title: library/PathRestoration.java
   - icon: ':heavy_check_mark:'
     path: library/SegmentTree.java
     title: library/SegmentTree.java
@@ -339,10 +339,10 @@ data:
   - library/BitVector.java
   - library/FenwickTree.java
   - library/DynamicSwag.java
-  - library/RestorePath.java
   - library/TemplateDynamicSegmentTree.java
   - library/CompressedWaveletMatrix.java
   - library/TemplateSparseTable.java
+  - library/PathRestoration.java
   timestamp: '2022-09-20 15:15:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

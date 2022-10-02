@@ -5,8 +5,8 @@ data:
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':question:'
-    path: library/RestorePath.java
-    title: library/RestorePath.java
+    path: library/PathRestoration.java
+    title: library/PathRestoration.java
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
@@ -31,7 +31,7 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/Dijkstra.java\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.AbstractGraph;\nimport library.RestorePath;\n\nfinal class Dijkstra\
+    \ library.AbstractGraph;\nimport library.PathRestoration;\n\nfinal class Dijkstra\
     \ {\n\tprivate static final class Dist implements Comparable<Dist> {\n\t\tpublic\
     \ int target;\n\t\tpublic long cost;\n\t\tpublic Dist(final int target, final\
     \ long cost) { this.target = target; this.cost = cost; }\n\t\t@Override public\
@@ -61,18 +61,18 @@ data:
     \ = updated;\n\t\t\t\t\tq.add(new Dist(e.target, updated));\n\t\t\t\t\tif(memoize)\
     \ {\n\t\t\t\t\t\tprv[e.target] = e.source;\n\t\t\t\t\t\tprvEdge[e.target] = e;\n\
     \t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n\n\tpublic static\
-    \ final int[] path(final int start, final int goal) { return RestorePath.path(prv,\
+    \ final int[] path(final int start, final int goal) { return PathRestoration.path(prv,\
     \ start, goal); }\n\tpublic static final WeightedEdge[] pathEdge(final int start,\
-    \ final int goal) { return RestorePath.pathEdge(prv, prvEdge, start, goal); }\n\
-    }"
+    \ final int goal) { return PathRestoration.pathEdge(prv, prvEdge, start, goal);\
+    \ }\n}"
   dependsOn:
   - library/SimpleUtil.java
   - library/AbstractGraph.java
-  - library/RestorePath.java
+  - library/PathRestoration.java
   isVerificationFile: false
   path: library/Dijkstra.java
   requiredBy: []
-  timestamp: '2022-10-02 16:35:54+09:00'
+  timestamp: '2022-10-02 17:12:12+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_path_test.java

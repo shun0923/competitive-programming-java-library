@@ -8,8 +8,8 @@ data:
     path: library/Dijkstra.java
     title: library/Dijkstra.java
   - icon: ':question:'
-    path: library/RestorePath.java
-    title: library/RestorePath.java
+    path: library/PathRestoration.java
+    title: library/PathRestoration.java
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
@@ -27,7 +27,7 @@ data:
     RuntimeError: bundler is not specified: library/Dijkstra_path_test.java\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/shortest_path\n\
     \npackage library;\n\nimport library.Solver;\nimport library.AbstractGraph;\n\
-    import library.Dijkstra;\nimport library.RestorePath;\n\npublic class Dijkstra_path_test\
+    import library.Dijkstra;\nimport library.PathRestoration;\n\npublic class Dijkstra_path_test\
     \ extends Solver {\n\tpublic static void main(final String[] args) { main(args,\
     \ new Dijkstra_path_test()); }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\
     \t\tint m = ni();\n\t\tint s = ni();\n\t\tint t = ni();\n\t\tArrayWeightedGraph\
@@ -40,11 +40,11 @@ data:
   - library/Solver.java
   - library/AbstractGraph.java
   - library/Dijkstra.java
-  - library/RestorePath.java
+  - library/PathRestoration.java
   isVerificationFile: true
   path: library/Dijkstra_path_test.java
   requiredBy: []
-  timestamp: '2022-10-02 17:01:16+09:00'
+  timestamp: '2022-10-02 17:12:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Dijkstra_path_test.java

@@ -4,9 +4,6 @@ data:
   - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':question:'
-    path: library/RestorePath.java
-    title: library/RestorePath.java
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
@@ -49,11 +46,10 @@ data:
   dependsOn:
   - library/SimpleUtil.java
   - library/AbstractGraph.java
-  - library/RestorePath.java
   isVerificationFile: false
   path: library/BellmanFord.java
   requiredBy: []
-  timestamp: '2022-10-02 17:01:16+09:00'
+  timestamp: '2022-10-02 17:12:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/BellmanFord_test.java
