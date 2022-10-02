@@ -12,8 +12,8 @@ final class WarshallFloyd {
 		for(long[] ele : dist) Arrays.fill(ele, SimpleUtil.INF);
 		for(int i = 0; i < numNode; i ++) dist[i][i] = 0;
 		for(WeightedEdge e : edges) {
-			dist[e.source][e.target] = e.cost;
-			if(!directed) dist[e.target][e.source] = e.cost;
+			if(dist[e.source][e.target] > e.cost) dist[e.source][e.target] = e.cost;
+			if(!directed && dist[e.target][e.cost] > e.cost) dist[e.target][e.source] = e.cost;
 		}
 		for(int k = 0; k < numNode; k ++) {
 			for(int i = 0; i < numNode; i ++) {
