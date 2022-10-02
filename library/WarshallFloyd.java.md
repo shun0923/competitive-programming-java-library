@@ -9,12 +9,12 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -28,7 +28,8 @@ data:
     \ WeightedNode edges) { \n\t\tfinal long dist[][] = new long[numNode][numNode];\n\
     \t\tfor(long[] ele : dist) Arrays.fill(ele, SimpleUtil.INF);\n\t\tfor(int i =\
     \ 0; i < numNode; i ++) dist[i][i] = 0;\n\t\tfor(WeightedEdge e : edges) {\n\t\
-    \t\tdist[e.source][e.target] = e.cost;\n\t\t\tif(!directed) dist[e.target][e.source]\
+    \t\tif(dist[e.source][e.target] > e.cost) dist[e.source][e.target] = e.cost;\n\
+    \t\t\tif(!directed && dist[e.target][e.cost] > e.cost) dist[e.target][e.source]\
     \ = e.cost;\n\t\t}\n\t\tfor(int k = 0; k < numNode; k ++) {\n\t\t\tfor(int i =\
     \ 0; i < numNode; i ++) {\n\t\t\t\tfor(int j = 0; j < numNode; j ++) {\n\t\t\t\
     \t\tlong updated = dist[i][k] + dist[k][j];\n\t\t\t\t\tif(updated < dist[i][j])\
@@ -39,8 +40,8 @@ data:
   isVerificationFile: false
   path: library/WarshallFloyd.java
   requiredBy: []
-  timestamp: '2022-10-02 16:35:54+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-10-02 17:58:35+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/WarshallFloyd_test.java
 documentation_of: library/WarshallFloyd.java

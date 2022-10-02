@@ -39,10 +39,10 @@ data:
   - icon: ':x:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
   - icon: ':heavy_check_mark:'
@@ -126,7 +126,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSwag_test.java
     title: library/TemplateSwag_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
   - icon: ':heavy_check_mark:'

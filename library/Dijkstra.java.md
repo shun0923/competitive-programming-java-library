@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':warning:'
@@ -15,15 +15,15 @@ data:
   - icon: ':x:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
   _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -60,11 +60,29 @@ data:
     \ + e.cost;\n\t\t\t\tif(dist[e.target] > updated) {\n\t\t\t\t\tdist[e.target]\
     \ = updated;\n\t\t\t\t\tq.add(new Dist(e.target, updated));\n\t\t\t\t\tif(memoize)\
     \ {\n\t\t\t\t\t\tprv[e.target] = e.source;\n\t\t\t\t\t\tprvEdge[e.target] = e;\n\
-    \t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n\n\tpublic static\
-    \ final int[] path(final int start, final int goal) { return PathRestoration.path(prv,\
-    \ start, goal); }\n\tpublic static final WeightedEdge[] pathEdge(final int start,\
-    \ final int goal) { return PathRestoration.pathEdge(prv, prvEdge, start, goal);\
-    \ }\n}"
+    \t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n\n\t// O(V^2)\n\
+    \tpublic static final long[] distForDenseGraph(WeightedGraph g, int start) { return\
+    \ distForDenseGraph(g, start, false); }\n\tpublic static final long[] distForDenseGraph(WeightedGraph\
+    \ g, int start, boolean memoize) { return distForDenseGraph(g.numNode, g.nodes(),\
+    \ start, memoize); }\n\tpublic static final long[] distForDenseGraph(int numNode,\
+    \ WeightedNode[] nodes, int start) { return distForDenseGraph(numNode, nodes,\
+    \ start, false); }\n\tpublic static final long[] distForDenseGraph(int numNode,\
+    \ WeightedNode[] nodes, int start, boolean memoize) {\n\t\tSimpleUtil.rangeCheck(start,\
+    \ numNode);\n\t\tfinal long dist[] = new long[numNode];\n\t\tfinal boolean visited[]\
+    \ = new boolean[numNode];\n\t\tif(memoize) {\n\t\t\tprv = new int[numNode];\n\t\
+    \t\tprvEdge = new WeightedEdge[numNode];\n\t\t}\n\n\t\tArrays.fill(dist, SimpleUtil.INF);\n\
+    \t\tdist[start] = 0;\n\t\tint idx = start;\n\t\tint cnt = 0;\n\t\twhile(cnt <\
+    \ numNode) {\n\t\t\tlong minCost = SimpleUtil.INF;\n\t\t\tfor(int i = 0; i < numNode;\
+    \ i ++) {\n\t\t\t\tif(!visited[i] && dist[i] < minCost) {\n\t\t\t\t\tidx = i;\n\
+    \t\t\t\t\tminCost = dist[i];\n\t\t\t\t}\n\t\t\t}\n\t\t\tvisited[idx] = true;\n\
+    \t\t\tcnt ++;\n\t\t\tfor(WeightedEdge e : nodes[idx]) {\n\t\t\t\tlong updated\
+    \ = dist[e.source] + e.cost;\n\t\t\t\tif(dist[e.target] > updated) {\n\t\t\t\t\
+    \tdist[e.target] = updated;\n\t\t\t\t\tif(memoize) {\n\t\t\t\t\t\tprv[e.target]\
+    \ = e.source;\n\t\t\t\t\t\tprvEdge[e.target] = e;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\
+    \t}\n\t\t}\n\t\treturn dist;\n\t}\n\n\tpublic static final int[] path(final int\
+    \ start, final int goal) { return RestorePath.path(prv, start, goal); }\n\tpublic\
+    \ static final WeightedEdge[] pathEdge(final int start, final int goal) { return\
+    \ RestorePath.pathEdge(prv, prvEdge, start, goal); }\n}"
   dependsOn:
   - library/SimpleUtil.java
   - library/AbstractGraph.java
@@ -72,8 +90,8 @@ data:
   isVerificationFile: false
   path: library/Dijkstra.java
   requiredBy: []
-  timestamp: '2022-10-02 17:12:12+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2022-10-02 17:47:10+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java
