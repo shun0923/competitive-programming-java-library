@@ -27,9 +27,6 @@ data:
     path: library/Dijkstra.java
     title: library/Dijkstra.java
   - icon: ':heavy_check_mark:'
-    path: library/DistCalc.java
-    title: library/DistCalc.java
-  - icon: ':heavy_check_mark:'
     path: library/DualSegmentTree.java
     title: library/DualSegmentTree.java
   - icon: ':heavy_check_mark:'
@@ -50,7 +47,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Pair.java
     title: library/Pair.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/RestorePath.java
     title: library/RestorePath.java
   - icon: ':heavy_check_mark:'
@@ -335,7 +332,6 @@ data:
   - library/Dijkstra.java
   - library/TemplateSegmentTree.java
   - library/SparseTable.java
-  - library/DistCalc.java
   - library/DualSegmentTree.java
   - library/Swag.java
   - library/Convolution.java

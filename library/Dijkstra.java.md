@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/RestorePath.java
     title: library/RestorePath.java
   - icon: ':warning:'

@@ -7,7 +7,7 @@ data:
   - icon: ':question:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/RestorePath.java
     title: library/RestorePath.java
   - icon: ':question:'

@@ -4,6 +4,9 @@ data:
   - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
+  - icon: ':question:'
+    path: library/RestorePath.java
+    title: library/RestorePath.java
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
@@ -22,17 +25,17 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/BellmanFord.java\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.AbstractGraph;\n\nfinal class BellmanFord {\n\tprivate static int prv[];\n\
-    \tprivate static WeightedEdge prvEdge[];\n\n\t// O(VE)\n\tpublic static final\
-    \ long[] dist(WeightedGraph g, int start) { return dist(g, start, false); }\n\t\
-    public static final long[] dist(WeightedGraph g, int start, boolean memoize) {\
-    \ return dist(g.numNode, g.edges(), start, memoize); }\n\tpublic static final\
-    \ long[] dist(int numNode, WeightedNode edges, int start) { return dist(numNode,\
-    \ edges, start, false); }\n\tpublic static final long[] dist(int numNode, WeightedNode\
-    \ edges, int start, boolean memoize) {\n\t\tSimpleUtil.rangeCheck(start, numNode);\n\
-    \t\tlong dist[] = new long[numNode];\n\t\tprv = new int[numNode];\n\t\tprvEdge\
-    \ = new WeightedEdge[numNode];\n\n\t\tArrays.fill(dist, SimpleUtil.INF);\n\t\t\
-    dist[start] = 0;\n\t\tfor(int i = 0; i < numNode - 1; i ++) {\n\t\t\tfor(WeightedEdge\
+    \ library.AbstractGraph;\nimport library.RestorePath;\n\nfinal class BellmanFord\
+    \ {\n\tprivate static int prv[];\n\tprivate static WeightedEdge prvEdge[];\n\n\
+    \t// O(VE)\n\tpublic static final long[] dist(WeightedGraph g, int start) { return\
+    \ dist(g, start, false); }\n\tpublic static final long[] dist(WeightedGraph g,\
+    \ int start, boolean memoize) { return dist(g.numNode, g.edges(), start, memoize);\
+    \ }\n\tpublic static final long[] dist(int numNode, WeightedNode edges, int start)\
+    \ { return dist(numNode, edges, start, false); }\n\tpublic static final long[]\
+    \ dist(int numNode, WeightedNode edges, int start, boolean memoize) {\n\t\tSimpleUtil.rangeCheck(start,\
+    \ numNode);\n\t\tlong dist[] = new long[numNode];\n\t\tprv = new int[numNode];\n\
+    \t\tprvEdge = new WeightedEdge[numNode];\n\n\t\tArrays.fill(dist, SimpleUtil.INF);\n\
+    \t\tdist[start] = 0;\n\t\tfor(int i = 0; i < numNode - 1; i ++) {\n\t\t\tfor(WeightedEdge\
     \ e : edges) {\n\t\t\t\tlong updated = dist[e.source] + e.cost;\n\t\t\t\tif(!SimpleUtil.isPlusINF(dist[e.source])\
     \ && dist[e.target] > updated) {\n\t\t\t\t\tdist[e.target] = updated;\n\t\t\t\t\
     \tprv[e.target] = e.source;\n\t\t\t\t\tprvEdge[e.target] = e;\n\t\t\t\t}\n\t\t\
@@ -46,10 +49,11 @@ data:
   dependsOn:
   - library/SimpleUtil.java
   - library/AbstractGraph.java
+  - library/RestorePath.java
   isVerificationFile: false
   path: library/BellmanFord.java
   requiredBy: []
-  timestamp: '2022-10-02 16:35:54+09:00'
+  timestamp: '2022-10-02 17:01:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/BellmanFord_test.java

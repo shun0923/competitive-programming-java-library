@@ -8,6 +8,9 @@ data:
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/BellmanFord.java
+    title: library/BellmanFord.java
   - icon: ':question:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
@@ -15,9 +18,12 @@ data:
   - icon: ':x:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/Dijkstra_path_test.java
+    title: library/Dijkstra_path_test.java
   _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -43,10 +49,12 @@ data:
   isVerificationFile: false
   path: library/RestorePath.java
   requiredBy:
+  - library/BellmanFord.java
   - library/Dijkstra.java
   timestamp: '2022-10-02 16:35:54+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java
 documentation_of: library/RestorePath.java
 layout: document

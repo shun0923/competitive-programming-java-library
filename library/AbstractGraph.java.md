@@ -11,10 +11,7 @@ data:
   - icon: ':question:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':heavy_check_mark:'
-    path: library/DistCalc.java
-    title: library/DistCalc.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/RestorePath.java
     title: library/RestorePath.java
   - icon: ':heavy_check_mark:'
@@ -216,7 +213,6 @@ data:
   - library/BellmanFord.java
   - library/WarshallFloyd.java
   - library/Dijkstra.java
-  - library/DistCalc.java
   - library/RestorePath.java
   timestamp: '2022-10-01 13:37:15+09:00'
   verificationStatus: LIBRARY_SOME_WA
