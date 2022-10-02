@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':warning:'
@@ -12,12 +12,12 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -46,9 +46,9 @@ data:
     \ && dist[e.target] > dist[e.source] + e.cost) {\n\t\t\t\t\tdist[e.target] = -\
     \ SimpleUtil.INF;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n\n\tpublic\
     \ static final int[] path(final int start, final int goal) { return PathRestoration.path(prv,\
-    \ start, goal); }\n\tpublic static final WeightedEdge[] pathEdge(final int start,\
-    \ final int goal) { return PathRestoration.pathEdge(prv, prvEdge, start, goal);\
-    \ }\n}"
+    \ start, goal); }\n\tpublic static final ArrayWeightedNode pathEdge(final int\
+    \ start, final int goal) { return PathRestoration.pathEdge(new ArrayWeightedNode(-1),\
+    \ prv, prvEdge, start, goal); }\n}"
   dependsOn:
   - library/SimpleUtil.java
   - library/AbstractGraph.java
@@ -56,8 +56,8 @@ data:
   isVerificationFile: false
   path: library/BellmanFord.java
   requiredBy: []
-  timestamp: '2022-10-02 19:07:51+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-10-02 19:48:55+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/BellmanFord_test.java
 documentation_of: library/BellmanFord.java

@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryModSqrt_test.java
     title: library/ArbitraryModSqrt_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
   - icon: ':heavy_check_mark:'
@@ -37,12 +37,15 @@ data:
     path: library/Convolution998_test.java
     title: library/Convolution998_test.java
   - icon: ':x:'
+    path: library/Dijkstra_forDenseGraph_test.java
+    title: library/Dijkstra_forDenseGraph_test.java
+  - icon: ':x:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
   - icon: ':heavy_check_mark:'
@@ -126,7 +129,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSwag_test.java
     title: library/TemplateSwag_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
   - icon: ':heavy_check_mark:'
@@ -200,6 +203,7 @@ data:
   - library/Mod998ManyCombination_test.java
   - library/ArbitraryModRandom_test.java
   - library/Mod107Pow_test.java
+  - library/Dijkstra_forDenseGraph_test.java
   - library/FenwickTree_test.java
   - library/TemplateDualSegmentTree_test.java
 documentation_of: library/Solver.java

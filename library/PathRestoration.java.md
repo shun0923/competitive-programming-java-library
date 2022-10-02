@@ -1,29 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
+  - icon: ':x:'
+    path: library/WarshallFloyd.java
+    title: library/WarshallFloyd.java
   _extendedVerifiedWith:
   - icon: ':x:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
   _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -50,9 +53,10 @@ data:
   path: library/PathRestoration.java
   requiredBy:
   - library/BellmanFord.java
+  - library/WarshallFloyd.java
   - library/Dijkstra.java
-  timestamp: '2022-10-02 17:12:12+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2022-10-02 19:48:55+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java

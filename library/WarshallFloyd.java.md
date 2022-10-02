@@ -1,20 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
+  - icon: ':x:'
+    path: library/PathRestoration.java
+    title: library/PathRestoration.java
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -22,17 +25,17 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/WarshallFloyd.java\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.AbstractGraph;\n\nfinal class WarshallFloyd {\n\tprivate static int\
-    \ prv[][];\n\tprivate static WeightedEdge prvEdge[][];\n\t// O(V^3)\n\tpublic\
-    \ static final long[][] dist(final WeightedGraph g) { return dist(g, false); }\n\
-    \tpublic static final long[][] dist(final WeightedGraph g, final boolean memoize)\
-    \ { return dist(g.numNode, g.directed, g.edges(), memoize); }\n\tpublic static\
-    \ final long[][] dist(final int numNode, final boolean directed, final WeightedNode\
-    \ edges) { return dist(numNode, directed, edges, false); }\n\tpublic static final\
-    \ long[][] dist(final int numNode, final boolean directed, final WeightedNode\
-    \ edges, final boolean memoize) {\n\t\tfinal long dist[][] = new long[numNode][numNode];\n\
-    \t\tif(memoize) {\n\t\t\tprv = new int[numNode][numNode];\n\t\t\tfor(int[] ele\
-    \ : prv) Arrays.fill(ele, -1);\n\t\t\tprvEdge = new WeightedEdge[numNode][numNode];\n\
+    \ library.AbstractGraph;\nimport library.PathRestoration;\n\nfinal class WarshallFloyd\
+    \ {\n\tprivate static int prv[][];\n\tprivate static WeightedEdge prvEdge[][];\n\
+    \t// O(V^3)\n\tpublic static final long[][] dist(final WeightedGraph g) { return\
+    \ dist(g, false); }\n\tpublic static final long[][] dist(final WeightedGraph g,\
+    \ final boolean memoize) { return dist(g.numNode, g.directed, g.edges(), memoize);\
+    \ }\n\tpublic static final long[][] dist(final int numNode, final boolean directed,\
+    \ final WeightedNode edges) { return dist(numNode, directed, edges, false); }\n\
+    \tpublic static final long[][] dist(final int numNode, final boolean directed,\
+    \ final WeightedNode edges, final boolean memoize) {\n\t\tfinal long dist[][]\
+    \ = new long[numNode][numNode];\n\t\tif(memoize) {\n\t\t\tprv = new int[numNode][numNode];\n\
+    \t\t\tfor(int[] ele : prv) Arrays.fill(ele, -1);\n\t\t\tprvEdge = new WeightedEdge[numNode][numNode];\n\
     \t\t}\n\n\t\tfor(long[] ele : dist) Arrays.fill(ele, SimpleUtil.INF);\n\t\tfor(int\
     \ i = 0; i < numNode; i ++) dist[i][i] = 0;\n\t\tfor(WeightedEdge e : edges) updateDist(dist,\
     \ e, memoize);\n\t\tif(!directed) for(WeightedEdge e : edges) updateDist(dist,\
@@ -47,17 +50,18 @@ data:
     \t\t\t\tprv[e.source][e.target] = e.source;\n\t\t\t\tprvEdge[e.source][e.target]\
     \ = e;\n\t\t\t}\n\t\t}\n\t}\n\n\tpublic static final int[] path(final int start,\
     \ final int goal) { return PathRestoration.path(prv[start], start, goal); }\n\t\
-    public static final WeightedEdge[] pathEdge(final int start, final int goal) {\
-    \ return PathRestoration.pathEdge(prv[start], prvEdge[start], start, goal); }\n\
-    }"
+    public static final ArrayWeightedNode pathEdge(final int start, final int goal)\
+    \ { return PathRestoration.pathEdge(new ArrayWeightedNode(-1), prv[start], prvEdge[start],\
+    \ start, goal); }\n}"
   dependsOn:
   - library/SimpleUtil.java
   - library/AbstractGraph.java
+  - library/PathRestoration.java
   isVerificationFile: false
   path: library/WarshallFloyd.java
   requiredBy: []
-  timestamp: '2022-10-02 19:07:51+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-10-02 19:48:55+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/WarshallFloyd_test.java
 documentation_of: library/WarshallFloyd.java

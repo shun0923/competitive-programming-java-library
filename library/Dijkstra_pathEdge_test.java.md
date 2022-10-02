@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':question:'
@@ -33,8 +33,8 @@ data:
     \t\tint m = ni();\n\t\tint s = ni();\n\t\tint t = ni();\n\t\tArrayWeightedGraph\
     \ g = new ArrayWeightedGraph(n, true);\n\t\tfor(int i = 0; i < m; i ++) g.add(ni(),\
     \ ni(), nl());\n\t\tlong x = Dijkstra.dist(g, s, true)[t];\n\t\tif(isINF(x)) prtln(-1);\n\
-    \t\telse {\n\t\t\tWeightedEdge path[] = Dijkstra.pathEdge(s, t);\n\t\t\tprtln(x,\
-    \ path.length);\n\t\t\tfor(WeightedEdge e : path) prtln(e.source, e.target);\n\
+    \t\telse {\n\t\t\tArrayWeightedNode path = Dijkstra.pathEdge(s, t);\n\t\t\tprtln(x,\
+    \ path.size());\n\t\t\tfor(WeightedEdge e : path) prtln(e.source, e.target);\n\
     \t\t}\n\t}\n}"
   dependsOn:
   - library/Solver.java
@@ -44,7 +44,7 @@ data:
   isVerificationFile: true
   path: library/Dijkstra_pathEdge_test.java
   requiredBy: []
-  timestamp: '2022-10-02 19:07:51+09:00'
+  timestamp: '2022-10-02 19:48:55+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/Dijkstra_pathEdge_test.java

@@ -5,37 +5,40 @@ data:
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
   - icon: ':x:'
+    path: library/Dijkstra_forDenseGraph_test.java
+    title: library/Dijkstra_forDenseGraph_test.java
+  - icon: ':x:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
   _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -57,9 +60,9 @@ data:
     \t\t\tfor(int i = 0; i < numNode; i ++) reversedNodes[i] = createNode(i);\n\t\t\
     \tfor(Edge e : edges) reversedNodes[e.target].add(e.reverse());\n\t\t}\n\t\treturn\
     \ reversedNodes;\n\t}\n\n\tpublic final void addAll(final Collection<? extends\
-    \ Edge> edges) { this.edges.addAll(edges); }\n\tpublic final void add(final Edge\
-    \ e) {\n\t\tedges.add(e);\n\t\tnodes[e.source].add(e);\n\t\tif(reversedNodes !=\
-    \ null) reversedNodes[e.target].add(e.reverse());\n\t\tif(!directed) nodes[e.target].add(e.reverse());\n\
+    \ Edge> edges) { for(Edge e : edges) add(e); }\n\tpublic final void add(final\
+    \ Edge e) {\n\t\tedges.add(e);\n\t\tnodes[e.source].add(e);\n\t\tif(reversedNodes\
+    \ != null) reversedNodes[e.target].add(e.reverse());\n\t\tif(!directed) nodes[e.target].add(e.reverse());\n\
     \t}\n\n\tpublic final void remove(final Edge e) {\n\t\tedges.remove(e);\n\t\t\
     nodes[e.source].remove(e);\n\t\tif(reversedNodes != null) reversedNodes[e.target].remove(e.reverse());\n\
     \t\tif(!directed) nodes[e.target].remove(e.reverse());\n\t}\n\n\tpublic final\
@@ -214,14 +217,15 @@ data:
   - library/WarshallFloyd.java
   - library/Dijkstra.java
   - library/PathRestoration.java
-  timestamp: '2022-10-01 13:37:15+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2022-10-02 19:48:55+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java
   - library/WarshallFloyd_test.java
   - library/Dijkstra_test.java
   - library/BellmanFord_test.java
+  - library/Dijkstra_forDenseGraph_test.java
 documentation_of: library/AbstractGraph.java
 layout: document
 redirect_from:
