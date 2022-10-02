@@ -14,7 +14,7 @@ public class WarshallFloyd_test extends Solver {
 		int m = ni();
 		ArrayWeightedGraph g = new ArrayWeightedGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
-		long dist[][] = new WarshallFloyd(g).dist();
+		long dist[][] = WarshallFloyd.dist(g);
 		for(int i = 0; i < n; i ++) if(dist[i][i] < 0) { prtln("NEGATIVE CYCLE"); return; }
 		String ans[][] = new String[n][n];
 		for(int i = 0; i < n; i ++) for(int j = 0; j < n; j ++) {

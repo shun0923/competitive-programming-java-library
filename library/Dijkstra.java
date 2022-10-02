@@ -3,9 +3,9 @@ package library;
 import java.util.*;
 import library.SimpleUtil;
 import library.AbstractGraph;
-import library.DistCalc;
+import library.RestorePath;
 
-final class Dijkstra extends WeightedRestorableDistCalc {
+final class Dijkstra {
 	private static final class Dist implements Comparable<Dist> {
 		public int target;
 		public long cost;
@@ -30,15 +30,20 @@ final class Dijkstra extends WeightedRestorableDistCalc {
 		}
 	}
 
-	private long dist[];
+	private static int prv[];
+	private static WeightedEdge prvEdge[];
 
-	public Dijkstra(WeightedGraph g) { super(g); };
-
-	public final long[] dist(int start) { // O((E+V)logV)
-		SimpleUtil.rangeCheck(start, g.numNode);
-		dist = new long[g.numNode];
-		prv = new int[g.numNode];
-		prvEdge = new WeightedEdge[g.numNode];
+	// O((E+V)logV)
+	public static final long[] dist(WeightedGraph g, int start) { return dist(g, start, false); }
+	public static final long[] dist(WeightedGraph g, int start, boolean memoize) { return dist(g.numNode, g.nodes(), start, memoize); }
+	public static final long[] dist(int numNode, WeightedNode[] nodes, int start) { return dist(numNode, nodes, start, false); }
+	public static final long[] dist(int numNode, WeightedNode[] nodes, int start, boolean memoize) {
+		SimpleUtil.rangeCheck(start, numNode);
+		final long dist[] = new long[numNode];
+		if(memoize) {
+			prv = new int[numNode];
+			prvEdge = new WeightedEdge[numNode];
+		}
 		Queue<Dist> q = new PriorityQueue<>();
 
 		Arrays.fill(dist, SimpleUtil.INF);
@@ -47,16 +52,21 @@ final class Dijkstra extends WeightedRestorableDistCalc {
 		while(!q.isEmpty()) {
 			Dist crt = q.poll();
 			if(dist[crt.target] < crt.cost) continue;
-			for(WeightedEdge e : g.nodes()[crt.target]) {
+			for(WeightedEdge e : nodes[crt.target]) {
 				long updated = dist[e.source] + e.cost;
 				if(dist[e.target] > updated) {
 					dist[e.target] = updated;
 					q.add(new Dist(e.target, updated));
-					prv[e.target] = e.source;
-					prvEdge[e.target] = e;
+					if(memoize) {
+						prv[e.target] = e.source;
+						prvEdge[e.target] = e;
+					}
 				}
 			}
 		}
 		return dist;
 	}
+
+	public static final int[] path(final int start, final int goal) { return RestorePath.path(prv, start, goal); }
+	public static final WeightedEdge[] pathEdge(final int start, final int goal) { return RestorePath.pathEdge(prv, prvEdge, start, goal); }
 }
