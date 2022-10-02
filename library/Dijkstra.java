@@ -3,7 +3,7 @@ package library;
 import java.util.*;
 import library.SimpleUtil;
 import library.AbstractGraph;
-import library.RestorePath;
+import library.PathRestoration;
 
 final class Dijkstra {
 	private static final class Dist implements Comparable<Dist> {
@@ -67,6 +67,6 @@ final class Dijkstra {
 		return dist;
 	}
 
-	public static final int[] path(final int start, final int goal) { return RestorePath.path(prv, start, goal); }
-	public static final WeightedEdge[] pathEdge(final int start, final int goal) { return RestorePath.pathEdge(prv, prvEdge, start, goal); }
+	public static final int[] path(final int start, final int goal) { return PathRestoration.path(prv, start, goal); }
+	public static final WeightedEdge[] pathEdge(final int start, final int goal) { return PathRestoration.pathEdge(prv, prvEdge, start, goal); }
 }

@@ -4,7 +4,7 @@ import java.util.*;
 import library.SimpleUtil;
 import library.AbstractGraph;
 
-final class RestorePath {
+final class PathRestoration {
 	public static final int[] path(final int[] prv, final int start, int goal) { // O(V)
 		SimpleUtil.rangeCheck(start, prv.length);
 		SimpleUtil.rangeCheck(goal, prv.length);
