@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':question:'
@@ -15,9 +15,9 @@ data:
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/shortest_path
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -44,8 +44,8 @@ data:
   isVerificationFile: true
   path: library/Dijkstra_pathEdge_test.java
   requiredBy: []
-  timestamp: '2022-10-02 19:48:55+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-02 20:02:12+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Dijkstra_pathEdge_test.java
 layout: document

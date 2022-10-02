@@ -22,6 +22,9 @@ data:
     path: library/ArbitraryModSqrt_test.java
     title: library/ArbitraryModSqrt_test.java
   - icon: ':x:'
+    path: library/BellmanFord_reversed_test.java
+    title: library/BellmanFord_reversed_test.java
+  - icon: ':heavy_check_mark:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
   - icon: ':heavy_check_mark:'
@@ -37,15 +40,21 @@ data:
     path: library/Convolution998_test.java
     title: library/Convolution998_test.java
   - icon: ':x:'
+    path: library/Dijkstra_forDenseGraph_reversed_test.java
+    title: library/Dijkstra_forDenseGraph_reversed_test.java
+  - icon: ':x:'
     path: library/Dijkstra_forDenseGraph_test.java
     title: library/Dijkstra_forDenseGraph_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
   - icon: ':x:'
+    path: library/Dijkstra_reversed_test.java
+    title: library/Dijkstra_reversed_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
   - icon: ':heavy_check_mark:'
@@ -130,6 +139,9 @@ data:
     path: library/TemplateSwag_test.java
     title: library/TemplateSwag_test.java
   - icon: ':x:'
+    path: library/WarshallFloyd_reversed_test.java
+    title: library/WarshallFloyd_reversed_test.java
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
   - icon: ':heavy_check_mark:'
@@ -167,13 +179,16 @@ data:
   - library/Dijkstra_pathEdge_test.java
   - library/CompressedWaveletMatrix_smallest_test.java
   - library/ArbitraryModCombination_test.java
+  - library/BellmanFord_reversed_test.java
   - library/TemplateDynamicSegmentTree_test.java
+  - library/WarshallFloyd_reversed_test.java
   - library/ArbitraryModSqrt_test.java
   - library/WarshallFloyd_test.java
   - library/Mod107ManyCombination_test.java
   - library/SegmentTree_Composite_test.java
   - library/TemplateSegmentTree_Composite_test.java
   - library/DynamicSegmentTree_test.java
+  - library/Dijkstra_forDenseGraph_reversed_test.java
   - library/Mod998Random_test.java
   - library/DualSegmentTree_test.java
   - library/FastIO_test.java
@@ -198,6 +213,7 @@ data:
   - library/ArbitraryModPow_test.java
   - library/SparseTable_test.java
   - library/TemplateSwag_gcd_test.java
+  - library/Dijkstra_reversed_test.java
   - library/SegmentTree_test.java
   - library/TemplateSegmentTree_test.java
   - library/Mod998ManyCombination_test.java

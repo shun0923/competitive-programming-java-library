@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -40,11 +40,10 @@ data:
     \ pathList = new ArrayDeque<>();\n\t\tpathList.addLast(goal);\n\t\twhile(goal\
     \ != start) pathList.addLast(goal = prv[goal]);\n\t\tfinal int path[] = new int[pathList.size()];\n\
     \t\tfor(int i = 0; i < path.length; i ++) path[i] = pathList.removeLast();\n\t\
-    \treturn path;\n\t}\n\t@SuppressWarnings(\"unchecked\")\n\tpublic static final\
-    \ <Edge extends AbstractEdge<Edge>> Edge[] pathEdge(final int[] prv, final Edge[]\
-    \ prvEdge, final int start, final int goal) {\n\t\tfinal int path[] = path(prv,\
-    \ start, goal);\n\t\tfinal Edge pathEdge[] = (Edge[]) new Object[path.length -\
-    \ 1];\n\t\tfor(int i = 1; i < path.length; i ++) pathEdge[i - 1] = prvEdge[path[i]];\n\
+    \treturn path;\n\t}\n\tpublic static final <Node extends AbstractNode<Edge>, Edge\
+    \ extends AbstractEdge<Edge>> Node pathEdge(Node pathEdge, final int[] prv, final\
+    \ Edge[] prvEdge, final int start, final int goal) {\n\t\tfinal int path[] = path(prv,\
+    \ start, goal);\n\t\tfor(int i = 1; i < path.length; i ++) pathEdge.add(prvEdge[path[i]]);\n\
     \t\treturn pathEdge;\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
@@ -55,8 +54,8 @@ data:
   - library/BellmanFord.java
   - library/WarshallFloyd.java
   - library/Dijkstra.java
-  timestamp: '2022-10-02 19:48:55+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-10-02 20:02:12+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java

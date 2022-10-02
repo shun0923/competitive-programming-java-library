@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
   - icon: ':question:'

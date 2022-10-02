@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':warning:'
@@ -13,11 +13,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':x:'
+    path: library/WarshallFloyd_reversed_test.java
+    title: library/WarshallFloyd_reversed_test.java
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
   _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -60,9 +63,10 @@ data:
   isVerificationFile: false
   path: library/WarshallFloyd.java
   requiredBy: []
-  timestamp: '2022-10-02 19:48:55+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-10-02 20:02:12+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - library/WarshallFloyd_reversed_test.java
   - library/WarshallFloyd_test.java
 documentation_of: library/WarshallFloyd.java
 layout: document
