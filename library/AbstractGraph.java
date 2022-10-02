@@ -34,7 +34,7 @@ abstract class AbstractGraph<Node extends AbstractNode<Edge>, Edge extends Abstr
 		return reversedNodes;
 	}
 
-	public final void addAll(final Collection<? extends Edge> edges) { this.edges.addAll(edges); }
+	public final void addAll(final Collection<? extends Edge> edges) { for(Edge e : edges) add(e); }
 	public final void add(final Edge e) {
 		edges.add(e);
 		nodes[e.source].add(e);

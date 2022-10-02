@@ -20,8 +20,8 @@ public class Dijkstra_pathEdge_test extends Solver {
 		long x = Dijkstra.dist(g, s, true)[t];
 		if(isINF(x)) prtln(-1);
 		else {
-			WeightedEdge path[] = Dijkstra.pathEdge(s, t);
-			prtln(x, path.length);
+			ArrayWeightedNode path = Dijkstra.pathEdge(s, t);
+			prtln(x, path.size());
 			for(WeightedEdge e : path) prtln(e.source, e.target);
 		}
 	}

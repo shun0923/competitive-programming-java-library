@@ -111,5 +111,5 @@ final class Dijkstra {
 	}
 
 	public static final int[] path(final int start, final int goal) { return PathRestoration.path(prv, start, goal); }
-	public static final WeightedEdge[] pathEdge(final int start, final int goal) { return PathRestoration.pathEdge(prv, prvEdge, start, goal); }
+	public static final ArrayWeightedNode pathEdge(final int start, final int goal) { return PathRestoration.pathEdge(new ArrayWeightedNode(-1), prv, prvEdge, start, goal); }
 }

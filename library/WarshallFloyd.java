@@ -3,6 +3,7 @@ package library;
 import java.util.*;
 import library.SimpleUtil;
 import library.AbstractGraph;
+import library.PathRestoration;
 
 final class WarshallFloyd {
 	private static int prv[][];
@@ -48,5 +49,5 @@ final class WarshallFloyd {
 	}
 
 	public static final int[] path(final int start, final int goal) { return PathRestoration.path(prv[start], start, goal); }
-	public static final WeightedEdge[] pathEdge(final int start, final int goal) { return PathRestoration.pathEdge(prv[start], prvEdge[start], start, goal); }
+	public static final ArrayWeightedNode pathEdge(final int start, final int goal) { return PathRestoration.pathEdge(new ArrayWeightedNode(-1), prv[start], prvEdge[start], start, goal); }
 }
