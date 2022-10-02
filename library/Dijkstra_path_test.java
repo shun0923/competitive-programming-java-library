@@ -4,8 +4,8 @@ package library;
 
 import library.Solver;
 import library.AbstractGraph;
-import library.DistCalc;
 import library.Dijkstra;
+import library.RestorePath;
 
 public class Dijkstra_path_test extends Solver {
 	public static void main(final String[] args) { main(args, new Dijkstra_path_test()); }
