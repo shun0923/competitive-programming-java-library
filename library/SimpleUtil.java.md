@@ -95,7 +95,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind.java
     title: library/WeightedUnionFind.java
   _extendedVerifiedWith: []

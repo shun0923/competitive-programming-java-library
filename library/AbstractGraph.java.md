@@ -23,7 +23,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind.java
     title: library/WeightedUnionFind.java
   _extendedVerifiedWith:

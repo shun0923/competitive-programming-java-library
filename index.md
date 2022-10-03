@@ -63,7 +63,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -105,7 +105,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix.java
       title: library/WaveletMatrix.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WeightedUnionFind.java
       title: library/WeightedUnionFind.java
   verificationCategories:
@@ -264,7 +264,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix_smallest_test.java
       title: library/WaveletMatrix_smallest_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WeightedUnionFind_test.java
       title: library/WeightedUnionFind_test.java
 layout: toppage

@@ -9,12 +9,12 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind_test.java
     title: library/WeightedUnionFind_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -48,8 +48,8 @@ data:
     \ final long diff(final int x, final int y) { SimpleUtil.rangeCheck(x, n); SimpleUtil.rangeCheck(y,\
     \ n); return same(x, y) ? weight(y) - weight(x) : SimpleUtil.INF; } // O(a(N))\n\
     \n\tpublic final int root(final int i) { // O(a(N))\n\t\tSimpleUtil.rangeCheck(i,\
-    \ n);\n\t\tif(nodes[i] < 0) return i;\n\t\tint root = root(nodes[i]);\n\t\tnodes[i]\
-    \ = root;\n\t\tweight[i] += weight[nodes[i]];\n\t\treturn root;\n\t}\n\n\tpublic\
+    \ n);\n\t\tif(nodes[i] < 0) return i;\n\t\tint root = root(nodes[i]);\n\t\tweight[i]\
+    \ += weight[nodes[i]];\n\t\tnodes[i] = root;\n\t\treturn root;\n\t}\n\n\tpublic\
     \ final boolean same(final int x, final int y) { SimpleUtil.rangeCheck(x, n);\
     \ SimpleUtil.rangeCheck(y, n); return root(x) == root(y); } // O(a(N))\n\n\tpublic\
     \ final HashMap<Integer, HashSet<Integer>> groups() { // O(N)\n\t\tHashMap<Integer,\
@@ -62,8 +62,8 @@ data:
   isVerificationFile: false
   path: library/WeightedUnionFind.java
   requiredBy: []
-  timestamp: '2022-10-03 16:47:29+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-10-03 16:52:28+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/WeightedUnionFind_test.java
 documentation_of: library/WeightedUnionFind.java
