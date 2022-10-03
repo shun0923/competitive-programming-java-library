@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -30,8 +30,8 @@ data:
     \ r = ni();\n\t\tArrayTemplateGraph<Long> g = new ArrayTemplateGraph<>(n, true);\n\
     \t\tfor(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());\n\t\tTemplateDijkstra<Long>\
     \ djk = new TemplateDijkstra<>(() -> 0l, (dist, cost) -> dist + cost,\n\t\t\t\
-    Comparator.comparing((ele) -> ele));\n\t\tfor(long ele : djk.dist(g, r)) prtln(isINF(ele)\
-    \ ? \"INF\" : ele);\n\t}\n}"
+    Comparator.comparing((ele) -> ele));\n\t\tfor(Long ele : djk.dist(g, r)) prtln(ele\
+    \ == null ? \"INF\" : ele);\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/AbstractGraph.java
@@ -39,8 +39,8 @@ data:
   isVerificationFile: true
   path: library/TemplateDijkstra_test.java
   requiredBy: []
-  timestamp: '2022-10-03 14:25:16+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-03 14:30:02+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/TemplateDijkstra_test.java
 layout: document
