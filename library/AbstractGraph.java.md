@@ -18,6 +18,9 @@ data:
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
   - icon: ':heavy_check_mark:'
+    path: library/UnionFind.java
+    title: library/UnionFind.java
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
   _extendedVerifiedWith:
@@ -240,6 +243,7 @@ data:
   isVerificationFile: false
   path: library/AbstractGraph.java
   requiredBy:
+  - library/UnionFind.java
   - library/TemplateDijkstra.java
   - library/BellmanFord.java
   - library/WarshallFloyd.java

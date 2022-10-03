@@ -1,17 +1,20 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/AbstractGraph.java
+    title: library/AbstractGraph.java
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/UnionFind_test.java
     title: library/UnionFind_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -22,17 +25,17 @@ data:
     \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
     , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nclass\
-    \ UnionFind { // N=numNode\n\tpublic final int n;\n\tprivate final int nodes[];\
-    \ // non neg: parent idx, neg: - size\n\tpublic int numGroups;\n\n\tpublic UnionFind(final\
-    \ int n) { // O(N)\n\t\tSimpleUtil.nonNegativeCheck(n);\n\t\tthis.n = n;\n\t\t\
-    nodes = new int[n];\n\t\tnumGroups = n;\n\t\tArrays.fill(nodes, -1);\n\t}\n\n\t\
-    public final void uniteAll(final AbstractNode<? extends AbstractEdge> edges) {\
-    \ for(AbstractEdge e : edges) unite(e); } // O(a(N)M)\n\tpublic final void uniteAll(final\
-    \ AbstractEdge[] edges) { for(AbstractEdge e : edges) unite(e); } // O(a(N)M)\n\
-    \tpublic final boolean unite(final AbstractEdge e) { return unite(e.source, e.target);\
-    \ }\n\tpublic final boolean unite(final int x, final int y) { // O(a(N))\n\t\t\
-    SimpleUtil.rangeCheck(x, n);\n\t\tSimpleUtil.rangeCheck(y, n);\n\t\tint xRoot\
+  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
+    \ library.AbstractGraph;\n\nclass UnionFind { // N=numNode\n\tpublic final int\
+    \ n;\n\tprivate final int nodes[]; // non neg: parent idx, neg: - size\n\tpublic\
+    \ int numGroups;\n\n\tpublic UnionFind(final int n) { // O(N)\n\t\tSimpleUtil.nonNegativeCheck(n);\n\
+    \t\tthis.n = n;\n\t\tnodes = new int[n];\n\t\tnumGroups = n;\n\t\tArrays.fill(nodes,\
+    \ -1);\n\t}\n\n\tpublic final void uniteAll(final AbstractNode<? extends AbstractEdge>\
+    \ edges) { for(AbstractEdge e : edges) unite(e); } // O(a(N)M)\n\tpublic final\
+    \ void uniteAll(final AbstractEdge[] edges) { for(AbstractEdge e : edges) unite(e);\
+    \ } // O(a(N)M)\n\tpublic final boolean unite(final AbstractEdge e) { return unite(e.source,\
+    \ e.target); }\n\tpublic final boolean unite(final int x, final int y) { // O(a(N))\n\
+    \t\tSimpleUtil.rangeCheck(x, n);\n\t\tSimpleUtil.rangeCheck(y, n);\n\t\tint xRoot\
     \ = root(x);\n\t\tint yRoot = root(y);\n\t\tif(xRoot == yRoot) return true;\n\t\
     \tnumGroups --;\n\t\tif(nodes[yRoot] < nodes[xRoot]) {\n\t\t\tnodes[yRoot] +=\
     \ nodes[xRoot];\n\t\t\tnodes[xRoot] = yRoot;\n\t\t}else {\n\t\t\tnodes[xRoot]\
@@ -49,11 +52,12 @@ data:
     \t\t}\n\t\treturn groups;\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
+  - library/AbstractGraph.java
   isVerificationFile: false
   path: library/UnionFind.java
   requiredBy: []
-  timestamp: '2022-10-03 16:12:46+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-10-03 16:15:13+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/UnionFind_test.java
 documentation_of: library/UnionFind.java

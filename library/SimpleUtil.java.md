@@ -83,7 +83,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSwag.java
     title: library/TemplateSwag.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/UnionFind.java
     title: library/UnionFind.java
   - icon: ':warning:'
