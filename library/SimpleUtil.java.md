@@ -83,6 +83,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSwag.java
     title: library/TemplateSwag.java
+  - icon: ':x:'
+    path: library/UnionFind.java
+    title: library/UnionFind.java
   - icon: ':warning:'
     path: library/Util.java
     title: library/Util.java
@@ -334,6 +337,7 @@ data:
   - library/Mod.java
   - library/Pair.java
   - library/TemplateSwag.java
+  - library/UnionFind.java
   - library/TemplateDijkstra.java
   - library/BellmanFord.java
   - library/WarshallFloyd.java

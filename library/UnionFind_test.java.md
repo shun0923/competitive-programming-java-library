@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryMod.java
-    title: library/ArbitraryMod.java
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
+  - icon: ':x:'
+    path: library/UnionFind.java
+    title: library/UnionFind.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
+    PROBLEM: https://judge.yosupo.jp/problem/unionfind
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
@@ -23,25 +23,26 @@ data:
     \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
     , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\n\
-    \npackage library;\n\nimport library.Solver;\nimport library.ArbitraryMod;\n\n\
-    public class ArbitraryModPow_test extends Solver {\n\tpublic static void main(final\
-    \ String[] args) { main(args, new ArbitraryModPow_test()); }\n\n\tpublic void\
-    \ solve() {\n\t\tprtln(new ArbitraryMod(1_000_000_007).pow(nl(), nl()));\n\t}\n\
-    }"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/unionfind\n\
+    \npackage library;\n\nimport library.Solver;\nimport library.UnionFind;\n\npublic\
+    \ class UnionFind_test extends Solver {\n\tpublic static void main(final String[]\
+    \ args) { main(args, new UnionFind_test()); }\n\n\tpublic void solve() {\n\t\t\
+    int n = ni();\n\t\tint q = ni();\n\t\tUnionFind uf = new UnionFind(n);\n\t\tfor(int\
+    \ i = 0; i < q; i ++) {\n\t\t\tif(ni() == 0) uf.unite(ni(), ni());\n\t\t\telse\
+    \ prtln(uf.same(ni(), ni()) ? 1 : 0);\n\t\t}\n\t}\n}"
   dependsOn:
   - library/Solver.java
-  - library/ArbitraryMod.java
+  - library/UnionFind.java
   isVerificationFile: true
-  path: library/ArbitraryModPow_test.java
+  path: library/UnionFind_test.java
   requiredBy: []
-  timestamp: '2022-09-20 14:50:17+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-10-03 16:12:46+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: library/ArbitraryModPow_test.java
+documentation_of: library/UnionFind_test.java
 layout: document
 redirect_from:
-- /verify/library/ArbitraryModPow_test.java
-- /verify/library/ArbitraryModPow_test.java.html
-title: library/ArbitraryModPow_test.java
+- /verify/library/UnionFind_test.java
+- /verify/library/UnionFind_test.java.html
+title: library/UnionFind_test.java
 ---

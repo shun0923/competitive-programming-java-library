@@ -63,7 +63,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -93,6 +93,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSwag.java
       title: library/TemplateSwag.java
+    - icon: ':x:'
+      path: library/UnionFind.java
+      title: library/UnionFind.java
     - icon: ':warning:'
       path: library/Util.java
       title: library/Util.java
@@ -243,6 +246,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSwag_test.java
       title: library/TemplateSwag_test.java
+    - icon: ':x:'
+      path: library/UnionFind_test.java
+      title: library/UnionFind_test.java
     - icon: ':heavy_check_mark:'
       path: library/WarshallFloyd_reversed_test.java
       title: library/WarshallFloyd_reversed_test.java
