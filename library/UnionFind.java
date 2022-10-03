@@ -2,6 +2,7 @@ package library;
 
 import java.util.*;
 import library.SimpleUtil;
+import library.AbstractGraph;
 
 class UnionFind { // N=numNode
 	public final int n;
