@@ -54,7 +54,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/PathRestoration.java
       title: library/PathRestoration.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Permutation.java
       title: library/Permutation.java
     - icon: ':heavy_check_mark:'
@@ -63,7 +63,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -192,7 +192,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Mod998Random_test.java
       title: library/Mod998Random_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Permutation_test.java
       title: library/Permutation_test.java
     - icon: ':heavy_check_mark:'
