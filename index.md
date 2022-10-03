@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -60,13 +60,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Permutation.java
       title: library/Permutation.java
+    - icon: ':x:'
+      path: library/Scc.java
+      title: library/Scc.java
     - icon: ':heavy_check_mark:'
       path: library/SegmentTree.java
       title: library/SegmentTree.java
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -210,6 +213,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Permutation_test.java
       title: library/Permutation_test.java
+    - icon: ':x:'
+      path: library/Scc_groups_test.java
+      title: library/Scc_groups_test.java
+    - icon: ':x:'
+      path: library/Scc_ids_test.java
+      title: library/Scc_ids_test.java
     - icon: ':heavy_check_mark:'
       path: library/SegmentTree_Composite_test.java
       title: library/SegmentTree_Composite_test.java

@@ -17,6 +17,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
+  - icon: ':x:'
+    path: library/Scc.java
+    title: library/Scc.java
   - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
@@ -57,6 +60,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Kruskal_test.java
     title: library/Kruskal_test.java
+  - icon: ':x:'
+    path: library/Scc_groups_test.java
+    title: library/Scc_groups_test.java
+  - icon: ':x:'
+    path: library/Scc_ids_test.java
+    title: library/Scc_ids_test.java
   - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra_pathEdge_test.java
     title: library/TemplateDijkstra_pathEdge_test.java
@@ -72,9 +81,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -278,10 +287,11 @@ data:
   - library/BellmanFord.java
   - library/WarshallFloyd.java
   - library/Dijkstra.java
+  - library/Scc.java
   - library/WeightedUnionFind.java
   - library/PathRestoration.java
   timestamp: '2022-10-03 17:15:22+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java
@@ -295,6 +305,8 @@ data:
   - library/BellmanFord_test.java
   - library/Kruskal_test.java
   - library/Dijkstra_reversed_test.java
+  - library/Scc_groups_test.java
+  - library/Scc_ids_test.java
   - library/TemplateDijkstra_pathEdge_test.java
   - library/Dijkstra_forDenseGraph_test.java
 documentation_of: library/AbstractGraph.java

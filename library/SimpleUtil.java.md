@@ -8,7 +8,7 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':heavy_check_mark:'
@@ -56,6 +56,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Permutation.java
     title: library/Permutation.java
+  - icon: ':x:'
+    path: library/Scc.java
+    title: library/Scc.java
   - icon: ':heavy_check_mark:'
     path: library/SegmentTree.java
     title: library/SegmentTree.java
@@ -357,6 +360,7 @@ data:
   - library/DualSegmentTree.java
   - library/Swag.java
   - library/Convolution.java
+  - library/Scc.java
   - library/Permutation.java
   - library/AbstractGraph.java
   - library/BitVector.java
