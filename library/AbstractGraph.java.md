@@ -23,6 +23,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
+  - icon: ':x:'
+    path: library/WeightedUnionFind.java
+    title: library/WeightedUnionFind.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord_reversed_test.java
@@ -248,6 +251,7 @@ data:
   - library/BellmanFord.java
   - library/WarshallFloyd.java
   - library/Dijkstra.java
+  - library/WeightedUnionFind.java
   - library/PathRestoration.java
   timestamp: '2022-10-02 20:26:48+09:00'
   verificationStatus: LIBRARY_ALL_AC

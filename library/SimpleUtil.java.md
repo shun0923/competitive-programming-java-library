@@ -95,6 +95,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
+  - icon: ':x:'
+    path: library/WeightedUnionFind.java
+    title: library/WeightedUnionFind.java
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: java
@@ -353,6 +356,7 @@ data:
   - library/Permutation.java
   - library/AbstractGraph.java
   - library/BitVector.java
+  - library/WeightedUnionFind.java
   - library/FenwickTree.java
   - library/DynamicSwag.java
   - library/TemplateDynamicSegmentTree.java
