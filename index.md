@@ -253,6 +253,9 @@ data:
       path: library/UnionFind_test.java
       title: library/UnionFind_test.java
     - icon: ':heavy_check_mark:'
+      path: library/UnionFind_uniteAll_test.java
+      title: library/UnionFind_uniteAll_test.java
+    - icon: ':heavy_check_mark:'
       path: library/WarshallFloyd_reversed_test.java
       title: library/WarshallFloyd_reversed_test.java
     - icon: ':heavy_check_mark:'

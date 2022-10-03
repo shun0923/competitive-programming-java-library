@@ -103,7 +103,7 @@ data:
   isVerificationFile: false
   path: library/Dijkstra.java
   requiredBy: []
-  timestamp: '2022-10-02 20:26:48+09:00'
+  timestamp: '2022-10-03 17:15:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Dijkstra_path_test.java

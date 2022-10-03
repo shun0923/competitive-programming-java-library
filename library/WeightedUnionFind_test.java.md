@@ -13,7 +13,7 @@ data:
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1330
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
@@ -23,23 +23,21 @@ data:
     \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
     , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1330\n\
+  code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B\n\
     \npackage library;\n\nimport library.Solver;\nimport library.WeightedUnionFind;\n\
     \npublic class WeightedUnionFind_test extends Solver {\n\tpublic static void main(final\
     \ String[] args) { main(args, new WeightedUnionFind_test()); }\n\n\tpublic void\
-    \ solve() {\n\t\twhile(true) {\n\t\t\tint n = ni();\n\t\t\tint q = ni();\n\t\t\
-    \tif(n == 0) break;\n\t\t\tWeightedUnionFind uf = new WeightedUnionFind(n);\n\t\
-    \t\tfor(int i = 0; i < q; i ++) {\n\t\t\t\tif(nc() == '!') uf.unite(ni() - 1,\
-    \ ni() - 1, nl());\n\t\t\t\telse {\n\t\t\t\t\tlong w = uf.diff(ni() - 1, ni()\
-    \ - 1);\n\t\t\t\t\tprtln(isINF(w) ? \"UNKNOWN\" : w);\n\t\t\t\t}\n\t\t\t}\n\t\t\
-    }\n\t}\n}"
+    \ solve() {\n\t\tint n = ni();\n\t\tint q = ni();\n\t\tWeightedUnionFind uf =\
+    \ new WeightedUnionFind(n);\n\t\tfor(int i = 0; i < q; i ++) {\n\t\t\tif(ni()\
+    \ == 0) uf.unite(ni(), ni(), nl());\n\t\t\telse {\n\t\t\t\tlong w = uf.diff(ni(),\
+    \ ni());\n\t\t\t\tprtln(isINF(w) ? \"?\" : w);\n\t\t\t}\n\t\t}\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/WeightedUnionFind.java
   isVerificationFile: true
   path: library/WeightedUnionFind_test.java
   requiredBy: []
-  timestamp: '2022-10-03 16:52:28+09:00'
+  timestamp: '2022-10-03 17:15:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/WeightedUnionFind_test.java

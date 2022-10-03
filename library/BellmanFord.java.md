@@ -63,7 +63,7 @@ data:
   isVerificationFile: false
   path: library/BellmanFord.java
   requiredBy: []
-  timestamp: '2022-10-02 20:26:48+09:00'
+  timestamp: '2022-10-03 17:15:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/BellmanFord_reversed_test.java

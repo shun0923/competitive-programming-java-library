@@ -55,6 +55,9 @@ data:
     path: library/TemplateDijkstra_test.java
     title: library/TemplateDijkstra_test.java
   - icon: ':heavy_check_mark:'
+    path: library/UnionFind_uniteAll_test.java
+    title: library/UnionFind_uniteAll_test.java
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_reversed_test.java
     title: library/WarshallFloyd_reversed_test.java
   - icon: ':heavy_check_mark:'
@@ -172,25 +175,39 @@ data:
     \ nodes() { return super.nodes(); }\n\t@Override public HashTemplateNode<T>[]\
     \ reverseNodes() { return super.reverseNodes(); }\n}\n\ninterface AbstractNode<Edge\
     \ extends AbstractEdge<Edge>> extends Collection<Edge> {  }\ninterface UnweightedNode\
-    \ extends AbstractNode<UnweightedEdge> {  }\ninterface WeightedNode extends AbstractNode<WeightedEdge>\
-    \ {  }\ninterface TemplateNode<T extends Comparable<T>> extends AbstractNode<TemplateEdge<T>>\
-    \ {  }\nclass ArrayUnweightedNode extends ArrayList<UnweightedEdge> implements\
-    \ UnweightedNode { public final int id; public ArrayUnweightedNode(final int id)\
-    \ { this.id = id; } }\nclass ArrayWeightedNode extends ArrayList<WeightedEdge>\
-    \ implements WeightedNode { public final int id; public ArrayWeightedNode(final\
-    \ int id) { this.id = id; } }\nclass ArrayTemplateNode<T extends Comparable<T>>\
-    \ extends ArrayList<TemplateEdge<T>> implements TemplateNode<T> { public final\
-    \ int id; public ArrayTemplateNode(final int id) { this.id = id; } }\nclass HashUnweightedNode\
-    \ extends HashSet<UnweightedEdge> implements UnweightedNode { public final int\
-    \ id; public HashUnweightedNode(final int id) { this.id = id; } }\nclass HashWeightedNode\
-    \ extends HashSet<WeightedEdge> implements WeightedNode { public final int id;\
-    \ public HashWeightedNode(final int id) { this.id = id; } }\nclass HashTemplateNode<T\
+    \ extends AbstractNode<UnweightedEdge> { public boolean add(final int source,\
+    \ final int target); }\ninterface WeightedNode extends AbstractNode<WeightedEdge>\
+    \ { public boolean add(final int source, final int target, final long cost); }\n\
+    interface TemplateNode<T extends Comparable<T>> extends AbstractNode<TemplateEdge<T>>\
+    \ { public boolean add(final int source, final int target, final T cost); }\n\
+    class ArrayUnweightedNode extends ArrayList<UnweightedEdge> implements UnweightedNode\
+    \ {\n\tpublic final int id;\n\tpublic ArrayUnweightedNode(final int id) { this.id\
+    \ = id; }\n\t@Override public final boolean add(final int source, final int target)\
+    \ { return add(new UnweightedEdge(source, target)); }\n}\nclass ArrayWeightedNode\
+    \ extends ArrayList<WeightedEdge> implements WeightedNode {\n\tpublic final int\
+    \ id;\n\tpublic ArrayWeightedNode(final int id) { this.id = id; }\n\t@Override\
+    \ public final boolean add(final int source, final int target, final long cost)\
+    \ { return add(new WeightedEdge(source, target, cost)); }\n}\nclass ArrayTemplateNode<T\
+    \ extends Comparable<T>> extends ArrayList<TemplateEdge<T>> implements TemplateNode<T>\
+    \ {\n\tpublic final int id;\n\tpublic ArrayTemplateNode(final int id) { this.id\
+    \ = id; }\n\t@Override public final boolean add(final int source, final int target,\
+    \ final T cost) { return add(new TemplateEdge<T>(source, target, cost)); }\n}\n\
+    class HashUnweightedNode extends HashSet<UnweightedEdge> implements UnweightedNode\
+    \ {\n\tpublic final int id;\n\tpublic HashUnweightedNode(final int id) { this.id\
+    \ = id; }\n\t@Override public final boolean add(final int source, final int target)\
+    \ { return add(new UnweightedEdge(source, target)); }\n}\nclass HashWeightedNode\
+    \ extends HashSet<WeightedEdge> implements WeightedNode {\n\tpublic final int\
+    \ id;\n\tpublic HashWeightedNode(final int id) { this.id = id; }\n\t@Override\
+    \ public final boolean add(final int source, final int target, final long cost)\
+    \ { return add(new WeightedEdge(source, target, cost)); }\n}\nclass HashTemplateNode<T\
     \ extends Comparable<T>> extends HashSet<TemplateEdge<T>> implements TemplateNode<T>\
-    \ { public final int id; public HashTemplateNode(final int id) { this.id = id;\
-    \ } }\n\nabstract class AbstractEdge<Edge extends AbstractEdge> {\n\tpublic int\
-    \ source, target;\n\tprotected Edge reversed = null;\n\tpublic AbstractEdge(final\
-    \ int source, final int target) { this.source = source; this.target = target;\
-    \ }\n\tpublic final Edge reverse() { return reversed == null ? reversed = createReversed()\
+    \ {\n\tpublic final int id;\n\tpublic HashTemplateNode(final int id) { this.id\
+    \ = id; }\n\t@Override public final boolean add(final int source, final int target,\
+    \ final T cost) { return add(new TemplateEdge<T>(source, target, cost)); }\n}\n\
+    \nabstract class AbstractEdge<Edge extends AbstractEdge> {\n\tpublic int source,\
+    \ target;\n\tprotected Edge reversed = null;\n\tpublic AbstractEdge(final int\
+    \ source, final int target) { this.source = source; this.target = target; }\n\t\
+    public final Edge reverse() { return reversed == null ? reversed = createReversed()\
     \ : reversed; }\n\tprotected abstract Edge createReversed();\n\t@Override public\
     \ abstract String toString();\n\t@Override public final int hashCode() { return\
     \ Objects.hash(source, target); }\n\t@Override public abstract boolean equals(final\
@@ -253,7 +270,7 @@ data:
   - library/Dijkstra.java
   - library/WeightedUnionFind.java
   - library/PathRestoration.java
-  timestamp: '2022-10-02 20:26:48+09:00'
+  timestamp: '2022-10-03 17:15:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Dijkstra_path_test.java
@@ -261,6 +278,7 @@ data:
   - library/BellmanFord_reversed_test.java
   - library/WarshallFloyd_reversed_test.java
   - library/WarshallFloyd_test.java
+  - library/UnionFind_uniteAll_test.java
   - library/Dijkstra_forDenseGraph_reversed_test.java
   - library/Dijkstra_test.java
   - library/TemplateDijkstra_test.java

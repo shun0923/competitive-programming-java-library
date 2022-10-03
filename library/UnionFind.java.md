@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/UnionFind_test.java
     title: library/UnionFind_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/UnionFind_uniteAll_test.java
+    title: library/UnionFind_uniteAll_test.java
   _isVerificationFailed: false
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -56,9 +59,10 @@ data:
   isVerificationFile: false
   path: library/UnionFind.java
   requiredBy: []
-  timestamp: '2022-10-03 16:15:13+09:00'
+  timestamp: '2022-10-03 17:15:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - library/UnionFind_uniteAll_test.java
   - library/UnionFind_test.java
 documentation_of: library/UnionFind.java
 layout: document
