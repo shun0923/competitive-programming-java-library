@@ -1,2 +1,3 @@
 [languages.java]
+bundle = "false"
 list_dependencies = "sed 's/^import \\(.*\\)\\;/\\1\\/java/;t labal;d;:labal y/\\.\\//\\/\\./' {path}"
