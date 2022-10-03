@@ -1,6 +1,5 @@
 package library;
 
-import java.util.*;
 import java.io.*;
 
 final class FastInputStream {

@@ -1,6 +1,5 @@
 package library;
 
-import java.util.*;
 import library.SimpleUtil;
 import library.Mod;
 import library.Convolution;
