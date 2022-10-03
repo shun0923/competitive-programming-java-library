@@ -11,9 +11,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
+  - icon: ':x:'
+    path: library/TemplateDijkstra.java
+    title: library/TemplateDijkstra.java
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
@@ -39,15 +42,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
+  - icon: ':x:'
+    path: library/TemplateDijkstra_pathEdge_test.java
+    title: library/TemplateDijkstra_pathEdge_test.java
+  - icon: ':x:'
+    path: library/TemplateDijkstra_test.java
+    title: library/TemplateDijkstra_test.java
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_reversed_test.java
     title: library/WarshallFloyd_reversed_test.java
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -227,12 +236,13 @@ data:
   isVerificationFile: false
   path: library/AbstractGraph.java
   requiredBy:
+  - library/TemplateDijkstra.java
   - library/BellmanFord.java
   - library/WarshallFloyd.java
   - library/Dijkstra.java
   - library/PathRestoration.java
   timestamp: '2022-10-02 20:26:48+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java
@@ -241,8 +251,10 @@ data:
   - library/WarshallFloyd_test.java
   - library/Dijkstra_forDenseGraph_reversed_test.java
   - library/Dijkstra_test.java
+  - library/TemplateDijkstra_test.java
   - library/BellmanFord_test.java
   - library/Dijkstra_reversed_test.java
+  - library/TemplateDijkstra_pathEdge_test.java
 documentation_of: library/AbstractGraph.java
 layout: document
 redirect_from:

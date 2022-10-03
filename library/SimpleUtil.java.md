@@ -8,7 +8,7 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':heavy_check_mark:'
@@ -47,7 +47,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Pair.java
     title: library/Pair.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':heavy_check_mark:'
@@ -59,6 +59,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Swag.java
     title: library/Swag.java
+  - icon: ':x:'
+    path: library/TemplateDijkstra.java
+    title: library/TemplateDijkstra.java
   - icon: ':heavy_check_mark:'
     path: library/TemplateDualSegmentTree.java
     title: library/TemplateDualSegmentTree.java
@@ -324,6 +327,7 @@ data:
   - library/Mod.java
   - library/Pair.java
   - library/TemplateSwag.java
+  - library/TemplateDijkstra.java
   - library/BellmanFord.java
   - library/WarshallFloyd.java
   - library/ExtendedConvolution.java
