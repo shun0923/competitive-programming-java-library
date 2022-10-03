@@ -134,15 +134,39 @@ class HashTemplateGraph<T extends Comparable<T>> extends TemplateGraph<T, HashTe
 }
 
 interface AbstractNode<Edge extends AbstractEdge<Edge>> extends Collection<Edge> {  }
-interface UnweightedNode extends AbstractNode<UnweightedEdge> {  }
-interface WeightedNode extends AbstractNode<WeightedEdge> {  }
-interface TemplateNode<T extends Comparable<T>> extends AbstractNode<TemplateEdge<T>> {  }
-class ArrayUnweightedNode extends ArrayList<UnweightedEdge> implements UnweightedNode { public final int id; public ArrayUnweightedNode(final int id) { this.id = id; } }
-class ArrayWeightedNode extends ArrayList<WeightedEdge> implements WeightedNode { public final int id; public ArrayWeightedNode(final int id) { this.id = id; } }
-class ArrayTemplateNode<T extends Comparable<T>> extends ArrayList<TemplateEdge<T>> implements TemplateNode<T> { public final int id; public ArrayTemplateNode(final int id) { this.id = id; } }
-class HashUnweightedNode extends HashSet<UnweightedEdge> implements UnweightedNode { public final int id; public HashUnweightedNode(final int id) { this.id = id; } }
-class HashWeightedNode extends HashSet<WeightedEdge> implements WeightedNode { public final int id; public HashWeightedNode(final int id) { this.id = id; } }
-class HashTemplateNode<T extends Comparable<T>> extends HashSet<TemplateEdge<T>> implements TemplateNode<T> { public final int id; public HashTemplateNode(final int id) { this.id = id; } }
+interface UnweightedNode extends AbstractNode<UnweightedEdge> { public boolean add(final int source, final int target); }
+interface WeightedNode extends AbstractNode<WeightedEdge> { public boolean add(final int source, final int target, final long cost); }
+interface TemplateNode<T extends Comparable<T>> extends AbstractNode<TemplateEdge<T>> { public boolean add(final int source, final int target, final T cost); }
+class ArrayUnweightedNode extends ArrayList<UnweightedEdge> implements UnweightedNode {
+	public final int id;
+	public ArrayUnweightedNode(final int id) { this.id = id; }
+	@Override public final boolean add(final int source, final int target) { return add(new UnweightedEdge(source, target)); }
+}
+class ArrayWeightedNode extends ArrayList<WeightedEdge> implements WeightedNode {
+	public final int id;
+	public ArrayWeightedNode(final int id) { this.id = id; }
+	@Override public final boolean add(final int source, final int target, final long cost) { return add(new WeightedEdge(source, target, cost)); }
+}
+class ArrayTemplateNode<T extends Comparable<T>> extends ArrayList<TemplateEdge<T>> implements TemplateNode<T> {
+	public final int id;
+	public ArrayTemplateNode(final int id) { this.id = id; }
+	@Override public final boolean add(final int source, final int target, final T cost) { return add(new TemplateEdge<T>(source, target, cost)); }
+}
+class HashUnweightedNode extends HashSet<UnweightedEdge> implements UnweightedNode {
+	public final int id;
+	public HashUnweightedNode(final int id) { this.id = id; }
+	@Override public final boolean add(final int source, final int target) { return add(new UnweightedEdge(source, target)); }
+}
+class HashWeightedNode extends HashSet<WeightedEdge> implements WeightedNode {
+	public final int id;
+	public HashWeightedNode(final int id) { this.id = id; }
+	@Override public final boolean add(final int source, final int target, final long cost) { return add(new WeightedEdge(source, target, cost)); }
+}
+class HashTemplateNode<T extends Comparable<T>> extends HashSet<TemplateEdge<T>> implements TemplateNode<T> {
+	public final int id;
+	public HashTemplateNode(final int id) { this.id = id; }
+	@Override public final boolean add(final int source, final int target, final T cost) { return add(new TemplateEdge<T>(source, target, cost)); }
+}
 
 abstract class AbstractEdge<Edge extends AbstractEdge> {
 	public int source, target;

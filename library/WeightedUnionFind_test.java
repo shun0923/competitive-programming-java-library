@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1330
+// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B
 
 package library;
 
@@ -9,17 +9,14 @@ public class WeightedUnionFind_test extends Solver {
 	public static void main(final String[] args) { main(args, new WeightedUnionFind_test()); }
 
 	public void solve() {
-		while(true) {
-			int n = ni();
-			int q = ni();
-			if(n == 0) break;
-			WeightedUnionFind uf = new WeightedUnionFind(n);
-			for(int i = 0; i < q; i ++) {
-				if(nc() == '!') uf.unite(ni() - 1, ni() - 1, nl());
-				else {
-					long w = uf.diff(ni() - 1, ni() - 1);
-					prtln(isINF(w) ? "UNKNOWN" : w);
-				}
+		int n = ni();
+		int q = ni();
+		WeightedUnionFind uf = new WeightedUnionFind(n);
+		for(int i = 0; i < q; i ++) {
+			if(ni() == 0) uf.unite(ni(), ni(), nl());
+			else {
+				long w = uf.diff(ni(), ni());
+				prtln(isINF(w) ? "?" : w);
 			}
 		}
 	}
