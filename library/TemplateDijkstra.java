@@ -4,6 +4,7 @@ import java.util.*;
 import library.SimpleUtil;
 import library.AbstractGraph;
 import library.PathRestoration;
+import java.util.function.*;
 
 final class TemplateDijkstra<T extends Comparable<T>> {
 	private final class Dist implements Comparable<Dist> {
