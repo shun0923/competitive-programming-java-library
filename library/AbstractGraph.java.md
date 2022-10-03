@@ -12,6 +12,9 @@ data:
     path: library/Dijkstra.java
     title: library/Dijkstra.java
   - icon: ':heavy_check_mark:'
+    path: library/Kruskal.java
+    title: library/Kruskal.java
+  - icon: ':heavy_check_mark:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':heavy_check_mark:'
@@ -37,6 +40,9 @@ data:
     path: library/Dijkstra_forDenseGraph_reversed_test.java
     title: library/Dijkstra_forDenseGraph_reversed_test.java
   - icon: ':heavy_check_mark:'
+    path: library/Dijkstra_forDenseGraph_test.java
+    title: library/Dijkstra_forDenseGraph_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
   - icon: ':heavy_check_mark:'
@@ -48,6 +54,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/Kruskal_test.java
+    title: library/Kruskal_test.java
   - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra_pathEdge_test.java
     title: library/TemplateDijkstra_pathEdge_test.java
@@ -263,6 +272,7 @@ data:
   isVerificationFile: false
   path: library/AbstractGraph.java
   requiredBy:
+  - library/Kruskal.java
   - library/UnionFind.java
   - library/TemplateDijkstra.java
   - library/BellmanFord.java
@@ -283,8 +293,10 @@ data:
   - library/Dijkstra_test.java
   - library/TemplateDijkstra_test.java
   - library/BellmanFord_test.java
+  - library/Kruskal_test.java
   - library/Dijkstra_reversed_test.java
   - library/TemplateDijkstra_pathEdge_test.java
+  - library/Dijkstra_forDenseGraph_test.java
 documentation_of: library/AbstractGraph.java
 layout: document
 redirect_from:

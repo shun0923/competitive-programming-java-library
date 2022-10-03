@@ -46,6 +46,9 @@ data:
       path: library/FenwickTree.java
       title: library/FenwickTree.java
     - icon: ':heavy_check_mark:'
+      path: library/Kruskal.java
+      title: library/Kruskal.java
+    - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
     - icon: ':heavy_check_mark:'
@@ -148,6 +151,9 @@ data:
       path: library/Dijkstra_forDenseGraph_reversed_test.java
       title: library/Dijkstra_forDenseGraph_reversed_test.java
     - icon: ':heavy_check_mark:'
+      path: library/Dijkstra_forDenseGraph_test.java
+      title: library/Dijkstra_forDenseGraph_test.java
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra_pathEdge_test.java
       title: library/Dijkstra_pathEdge_test.java
     - icon: ':heavy_check_mark:'
@@ -180,6 +186,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/HelloWorld_test.java
       title: library/HelloWorld_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/Kruskal_test.java
+      title: library/Kruskal_test.java
     - icon: ':heavy_check_mark:'
       path: library/ManyFastIO_test.java
       title: library/ManyFastIO_test.java

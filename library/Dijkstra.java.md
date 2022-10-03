@@ -16,6 +16,9 @@ data:
     path: library/Dijkstra_forDenseGraph_reversed_test.java
     title: library/Dijkstra_forDenseGraph_reversed_test.java
   - icon: ':heavy_check_mark:'
+    path: library/Dijkstra_forDenseGraph_test.java
+    title: library/Dijkstra_forDenseGraph_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
   - icon: ':heavy_check_mark:'
@@ -111,6 +114,7 @@ data:
   - library/Dijkstra_forDenseGraph_reversed_test.java
   - library/Dijkstra_test.java
   - library/Dijkstra_reversed_test.java
+  - library/Dijkstra_forDenseGraph_test.java
 documentation_of: library/Dijkstra.java
 layout: document
 redirect_from:

@@ -7,7 +7,10 @@ data:
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/Kruskal.java
+    title: library/Kruskal.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: library/UnionFind_test.java
@@ -58,7 +61,8 @@ data:
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/UnionFind.java
-  requiredBy: []
+  requiredBy:
+  - library/Kruskal.java
   timestamp: '2022-10-03 17:15:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

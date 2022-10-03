@@ -42,6 +42,9 @@ data:
     path: library/FenwickTree.java
     title: library/FenwickTree.java
   - icon: ':heavy_check_mark:'
+    path: library/Kruskal.java
+    title: library/Kruskal.java
+  - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
   - icon: ':heavy_check_mark:'
@@ -340,6 +343,7 @@ data:
   - library/Mod.java
   - library/Pair.java
   - library/TemplateSwag.java
+  - library/Kruskal.java
   - library/UnionFind.java
   - library/TemplateDijkstra.java
   - library/BellmanFord.java
