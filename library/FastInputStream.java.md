@@ -82,7 +82,7 @@ data:
   path: library/FastInputStream.java
   requiredBy:
   - library/SimpleUtil.java
-  timestamp: '2022-09-16 23:13:20+09:00'
+  timestamp: '2022-10-03 15:04:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/FastIO_test.java

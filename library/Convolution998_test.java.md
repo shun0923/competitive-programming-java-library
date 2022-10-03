@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -31,7 +31,7 @@ data:
   isVerificationFile: true
   path: library/Convolution998_test.java
   requiredBy: []
-  timestamp: '2022-09-20 15:28:33+09:00'
+  timestamp: '2022-10-03 14:58:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Convolution998_test.java

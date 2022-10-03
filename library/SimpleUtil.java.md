@@ -50,6 +50,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
+  - icon: ':x:'
+    path: library/Permutation.java
+    title: library/Permutation.java
   - icon: ':heavy_check_mark:'
     path: library/SegmentTree.java
     title: library/SegmentTree.java
@@ -339,6 +342,7 @@ data:
   - library/DualSegmentTree.java
   - library/Swag.java
   - library/Convolution.java
+  - library/Permutation.java
   - library/AbstractGraph.java
   - library/BitVector.java
   - library/FenwickTree.java
@@ -347,7 +351,7 @@ data:
   - library/CompressedWaveletMatrix.java
   - library/TemplateSparseTable.java
   - library/PathRestoration.java
-  timestamp: '2022-09-20 15:15:22+09:00'
+  timestamp: '2022-10-03 15:04:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/SimpleUtil.java
