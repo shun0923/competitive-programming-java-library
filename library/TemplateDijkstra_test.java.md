@@ -23,7 +23,7 @@ data:
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/TemplateDijkstra_test.java\n"
   code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\n\
-    \npackage library;\n\nimport library.Solver;\nimport library.AbstractGraph;\n\
+    \npackage library;\n\nimport java.util.*;\nimport library.Solver;\nimport library.AbstractGraph;\n\
     import library.TemplateDijkstra;\n\npublic class TemplateDijkstra_test extends\
     \ Solver {\n\tpublic static void main(final String[] args) { main(args, new TemplateDijkstra_test());\
     \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tint\
@@ -39,7 +39,7 @@ data:
   isVerificationFile: true
   path: library/TemplateDijkstra_test.java
   requiredBy: []
-  timestamp: '2022-10-03 14:21:50+09:00'
+  timestamp: '2022-10-03 14:25:16+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/TemplateDijkstra_test.java

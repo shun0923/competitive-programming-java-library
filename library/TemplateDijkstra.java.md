@@ -27,8 +27,8 @@ data:
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: library/TemplateDijkstra.java\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.AbstractGraph;\nimport library.PathRestoration;\nimport java.util.function.*;\n\
+  code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
+    \ library.SimpleUtil;\nimport library.AbstractGraph;\nimport library.PathRestoration;\n\
     \nfinal class TemplateDijkstra<T extends Comparable<T>> {\n\tprivate final class\
     \ Dist implements Comparable<Dist> {\n\t\tpublic int target;\n\t\tpublic T cost;\n\
     \t\tpublic Dist(final int target, final T cost) { this.target = target; this.cost\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: false
   path: library/TemplateDijkstra.java
   requiredBy: []
-  timestamp: '2022-10-03 14:21:50+09:00'
+  timestamp: '2022-10-03 14:25:16+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/TemplateDijkstra_test.java
