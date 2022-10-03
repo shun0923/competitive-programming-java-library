@@ -18,6 +18,6 @@ public class TemplateDijkstra_test extends Solver {
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
 		TemplateDijkstra<Long> djk = new TemplateDijkstra<>(() -> 0l, (dist, cost) -> dist + cost,
 			Comparator.comparing((ele) -> ele));
-		for(long ele : djk.dist(g, r)) prtln(isINF(ele) ? "INF" : ele);
+		for(Long ele : djk.dist(g, r)) prtln(ele == null ? "INF" : ele);
 	}
 }

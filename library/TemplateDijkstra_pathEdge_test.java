@@ -20,8 +20,8 @@ public class TemplateDijkstra_pathEdge_test extends Solver {
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
 		TemplateDijkstra<Long> djk = new TemplateDijkstra<>(() -> 0l, (dist, cost) -> dist + cost,
 			Comparator.comparing((ele) -> ele));
-		long x = djk.dist(g, s, true).get(t);
-		if(isINF(x)) prtln(-1);
+		Long x = djk.dist(g, s, true).get(t);
+		if(x == null) prtln(-1);
 		else {
 			int path[] = djk.path(s, t);
 			prtln(x, path.length - 1);
