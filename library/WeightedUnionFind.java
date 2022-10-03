@@ -52,8 +52,8 @@ class WeightedUnionFind { // N=numNode
 		SimpleUtil.rangeCheck(i, n);
 		if(nodes[i] < 0) return i;
 		int root = root(nodes[i]);
-		nodes[i] = root;
 		weight[i] += weight[nodes[i]];
+		nodes[i] = root;
 		return root;
 	}
 
