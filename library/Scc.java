@@ -8,7 +8,8 @@ final class Scc {
 	private static int low[];
 	private static int ord[];
 	private static int ids[];
-	private static Deque<Integer> visited = new ArrayDeque<>();
+	private static int visited[];
+	private static int ptr;
 	private static int now;
 	private static int numGroup;
 
@@ -42,7 +43,8 @@ final class Scc {
 		low = new int[numNode];
 		ord = new int[numNode];
 		ids = new int[numNode];
-		visited.clear();
+		visited = new int[numNode];
+		ptr = 0;
 		now = 0;
 		numGroup = 0;
 		Arrays.fill(ord, -1);
@@ -56,7 +58,7 @@ final class Scc {
 		low[v] = now;
 		ord[v] = now;
 		now ++;
-		visited.addLast(v);
+		visited[ptr ++] = v;
 		for(AbstractEdge e : nodes[v]) {
 			if(ord[e.target] == -1) {
 				dfs(e.target, numNode, nodes);
@@ -65,7 +67,7 @@ final class Scc {
 		}
 		if(low[v] == ord[v]) {
 			while(true) {
-				int u = visited.removeLast();
+				int u = visited[-- ptr];
 				ord[u] = numNode;
 				ids[u] = numGroup;
 				if(u == v) break;
