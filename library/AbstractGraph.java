@@ -76,10 +76,18 @@ abstract class WeightedGraph<Node extends WeightedNode> extends AbstractGraph<No
 	@Override public Node[] nodes() { return super.nodes(); }
 	@Override public Node[] reverseNodes() { return super.reverseNodes(); }
 }
-abstract class TemplateGraph<T extends Comparable<T>, Node extends TemplateNode<T>> extends AbstractGraph<Node, TemplateEdge<T>> {
+abstract class TemplateGraph<T, Node extends TemplateNode<T>> extends AbstractGraph<Node, TemplateEdge<T>> {
 	public TemplateGraph(final int numNode, final boolean directed) { super(numNode, directed); }
 	public void add(final int source, final int target, final T cost) { add(new TemplateEdge<T>(source, target, cost)); }
 	public void update(final TemplateEdge<T> e, final T cost) { remove(e); e.cost = cost; add(e); }
+	@Override public Node edges() { return super.edges(); }
+	@Override public Node[] nodes() { return super.nodes(); }
+	@Override public Node[] reverseNodes() { return super.reverseNodes(); }
+}
+abstract class ComparableTemplateGraph<T extends Comparable<T>, Node extends ComparableTemplateNode<T>> extends AbstractGraph<Node, ComparableTemplateEdge<T>> {
+	public ComparableTemplateGraph(final int numNode, final boolean directed) { super(numNode, directed); }
+	public void add(final int source, final int target, final T cost) { add(new ComparableTemplateEdge<T>(source, target, cost)); }
+	public void update(final ComparableTemplateEdge<T> e, final T cost) { remove(e); e.cost = cost; add(e); }
 	@Override public Node edges() { return super.edges(); }
 	@Override public Node[] nodes() { return super.nodes(); }
 	@Override public Node[] reverseNodes() { return super.reverseNodes(); }
@@ -100,13 +108,21 @@ class ArrayWeightedGraph extends WeightedGraph<ArrayWeightedNode> {
 	@Override public ArrayWeightedNode[] nodes() { return super.nodes(); }
 	@Override public ArrayWeightedNode[] reverseNodes() { return super.reverseNodes(); }
 }
-class ArrayTemplateGraph<T extends Comparable<T>> extends TemplateGraph<T, ArrayTemplateNode<T>> {
+class ArrayTemplateGraph<T> extends TemplateGraph<T, ArrayTemplateNode<T>> {
 	public ArrayTemplateGraph(final int numNode, final boolean directed) { super(numNode, directed); }
 	@Override protected final ArrayTemplateNode<T> createNode(final int id) { return new ArrayTemplateNode<T>(id); }
 	@Override @SuppressWarnings("unchecked") protected final ArrayTemplateNode<T>[] createNodeList(final int size) { return new ArrayTemplateNode[size]; }
 	@Override public ArrayTemplateNode<T> edges() { return super.edges(); }
 	@Override public ArrayTemplateNode<T>[] nodes() { return super.nodes(); }
 	@Override public ArrayTemplateNode<T>[] reverseNodes() { return super.reverseNodes(); }
+}
+class ArrayComparableTemplateGraph<T extends Comparable<T>> extends ComparableTemplateGraph<T, ArrayComparableTemplateNode<T>> {
+	public ArrayComparableTemplateGraph(final int numNode, final boolean directed) { super(numNode, directed); }
+	@Override protected final ArrayComparableTemplateNode<T> createNode(final int id) { return new ArrayComparableTemplateNode<T>(id); }
+	@Override @SuppressWarnings("unchecked") protected final ArrayComparableTemplateNode<T>[] createNodeList(final int size) { return new ArrayComparableTemplateNode[size]; }
+	@Override public ArrayComparableTemplateNode<T> edges() { return super.edges(); }
+	@Override public ArrayComparableTemplateNode<T>[] nodes() { return super.nodes(); }
+	@Override public ArrayComparableTemplateNode<T>[] reverseNodes() { return super.reverseNodes(); }
 }
 class HashUnweightedGraph extends UnweightedGraph<HashUnweightedNode> {
 	public HashUnweightedGraph(final int numNode, final boolean directed) { super(numNode, directed); }
@@ -124,13 +140,21 @@ class HashWeightedGraph extends WeightedGraph<HashWeightedNode> {
 	@Override public HashWeightedNode[] nodes() { return super.nodes(); }
 	@Override public HashWeightedNode[] reverseNodes() { return super.reverseNodes(); }
 }
-class HashTemplateGraph<T extends Comparable<T>> extends TemplateGraph<T, HashTemplateNode<T>> {
+class HashTemplateGraph<T> extends TemplateGraph<T, HashTemplateNode<T>> {
 	public HashTemplateGraph(final int numNode, final boolean directed) { super(numNode, directed); }
 	@Override protected final HashTemplateNode<T> createNode(final int id) { return new HashTemplateNode<T>(id); }
 	@Override @SuppressWarnings("unchecked") protected final HashTemplateNode<T>[] createNodeList(final int size) { return new HashTemplateNode[size]; }
 	@Override public HashTemplateNode<T> edges() { return super.edges(); }
 	@Override public HashTemplateNode<T>[] nodes() { return super.nodes(); }
 	@Override public HashTemplateNode<T>[] reverseNodes() { return super.reverseNodes(); }
+}
+class HashComparableTemplateGraph<T extends Comparable<T>> extends ComparableTemplateGraph<T, HashComparableTemplateNode<T>> {
+	public HashComparableTemplateGraph(final int numNode, final boolean directed) { super(numNode, directed); }
+	@Override protected final HashComparableTemplateNode<T> createNode(final int id) { return new HashComparableTemplateNode<T>(id); }
+	@Override @SuppressWarnings("unchecked") protected final HashComparableTemplateNode<T>[] createNodeList(final int size) { return new HashComparableTemplateNode[size]; }
+	@Override public HashComparableTemplateNode<T> edges() { return super.edges(); }
+	@Override public HashComparableTemplateNode<T>[] nodes() { return super.nodes(); }
+	@Override public HashComparableTemplateNode<T>[] reverseNodes() { return super.reverseNodes(); }
 }
 
 interface AbstractNode<Edge extends AbstractEdge<Edge>> extends Collection<Edge> {  }
