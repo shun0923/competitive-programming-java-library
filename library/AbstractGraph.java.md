@@ -32,6 +32,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
+  - icon: ':x:'
+    path: library/TemplateRerooting.java
+    title: library/TemplateRerooting.java
   - icon: ':heavy_check_mark:'
     path: library/UnionFind.java
     title: library/UnionFind.java
@@ -96,6 +99,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra_test.java
     title: library/TemplateDijkstra_test.java
+  - icon: ':x:'
+    path: library/TemplateRerooting_test.java
+    title: library/TemplateRerooting_test.java
   - icon: ':heavy_check_mark:'
     path: library/UnionFind_uniteAll_test.java
     title: library/UnionFind_uniteAll_test.java
@@ -111,9 +117,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WeightedLca_test.java
     title: library/WeightedLca_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -315,6 +321,7 @@ data:
   - library/UnionFind.java
   - library/Lca.java
   - library/TemplateDijkstra.java
+  - library/TemplateRerooting.java
   - library/BellmanFord.java
   - library/WarshallFloyd.java
   - library/Dijkstra.java
@@ -326,7 +333,7 @@ data:
   - library/WeightedLca.java
   - library/PathRestoration.java
   timestamp: '2022-10-03 17:15:22+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java
@@ -341,6 +348,7 @@ data:
   - library/Dijkstra_test.java
   - library/TemplateDijkstra_test.java
   - library/BellmanFord_test.java
+  - library/TemplateRerooting_test.java
   - library/Kruskal_test.java
   - library/Dijkstra_reversed_test.java
   - library/Scc_groups_test.java

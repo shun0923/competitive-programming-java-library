@@ -8,7 +8,7 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':heavy_check_mark:'
@@ -89,6 +89,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSwag.java
     title: library/TemplateDynamicSwag.java
+  - icon: ':x:'
+    path: library/TemplateRerooting.java
+    title: library/TemplateRerooting.java
   - icon: ':heavy_check_mark:'
     path: library/TemplateSegmentTree.java
     title: library/TemplateSegmentTree.java
@@ -365,6 +368,7 @@ data:
   - library/UnionFind.java
   - library/Lca.java
   - library/TemplateDijkstra.java
+  - library/TemplateRerooting.java
   - library/BellmanFord.java
   - library/WarshallFloyd.java
   - library/ExtendedConvolution.java

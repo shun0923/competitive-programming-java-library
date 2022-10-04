@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -45,38 +45,38 @@ data:
     \ long[numNode];\n\t}\n\n\tpublic final long[] cal() { // O(V+E)\n\t\tdfs();\n\
     \t\treturn reroot();\n\t}\n\n\tpublic final long[] dfs() { // O(V+E)\n\t\tint\
     \ dq[] = new int[numNode];\n\t\tint ptr = 0;\n\t\tint route[] = new int[numNode];\n\
-    \t\tint idx = numNode;\n\n\t\tArrays.fill(dp, id);\n\t\tdq[ptr ++] = start;\n\t\
-    \tparents[start] = -1;\n\t\twhile(ptr > 0) {\n\t\t\tint crt = dq[-- ptr];\n\t\t\
-    \troute[-- idx] = crt;\n\t\t\tfor(WeightedEdge e : nodes[crt]) {\n\t\t\t\tif(e.target\
-    \ == parents[crt]) continue;\n\t\t\t\tparents[e.target] = crt;\n\t\t\t\tdq[ptr\
-    \ ++] = e.target;\n\t\t\t}\n\t\t}\n\t\tfor(int crt : route) {\n\t\t\tlong tmp\
-    \ = createNode.apply(crt);\n\t\t\tfor(WeightedEdge e : nodes[crt]) if(e.target\
-    \ != parents[crt]) tmp = merge.apply(tmp, addEdge.apply(e, dp[e.target]));\n\t\
-    \t\tdp[crt] = addRoot.apply(crt, tmp);\n\t\t}\n\t\treturn dp;\n\t}\n\n\tpublic\
-    \ final long[] reroot() { // O(V+E)\n\t\tint dq[] = new int[numNode];\n\t\tlong\
-    \ rootDq[] = new long[numNode];\n\t\tint ptr = 0;\n\t\tint size = 0;\n\n\t\tArrays.fill(ans,\
-    \ id);\n\t\tdq[size ++] = start;\n\t\twhile(ptr < size) {\n\t\t\tint crt = dq[ptr];\n\
-    \t\t\tArrayWeightedNode crtNode = nodes[crt];\n\t\t\tint len = crtNode.size();\n\
-    \n\t\t\tlong dpL[] = new long[len + 1];\n\t\t\tdpL[0] = id;\n\t\t\tfor(int i =\
-    \ 0; i < len; i ++) {\n\t\t\t\tWeightedEdge e = crtNode.get(i);\n\t\t\t\tlong\
-    \ tmp = addEdge.apply(e, e.target == parents[crt] ? rootDq[ptr] : dp[e.target]);\n\
-    \t\t\t\tdpL[i + 1] = merge.apply(dpL[i], tmp);\n\t\t\t}\n\t\t\tlong dpR[] = new\
-    \ long[len + 1];\n\t\t\tdpR[len] = id;\n\t\t\tfor(int i = len - 1; i >= 0; i --)\
-    \ {\n\t\t\t\tWeightedEdge e = crtNode.get(i);\n\t\t\t\tlong tmp = addEdge.apply(e,\
-    \ e.target == parents[crt] ? rootDq[ptr] : dp[e.target]);\n\t\t\t\tdpR[i] = merge.apply(dpR[i\
-    \ + 1], tmp);\n\t\t\t}\n\t\t\tans[crt] = addRoot.apply(crt, dpL[len]);\n\n\t\t\
-    \tint idx = 0;\n\t\t\tfor(WeightedEdge e : crtNode) {\n\t\t\t\tidx ++;\n\t\t\t\
-    \tif(e.target == parents[crt]) continue;\n\t\t\t\tlong tmp = createNode.apply(crt);\n\
-    \t\t\t\ttmp = merge.apply(tmp, dpL[idx - 1]);\n\t\t\t\ttmp = merge.apply(tmp,\
-    \ dpR[idx]);\n\t\t\t\trootDq[size] = addRoot.apply(crt, tmp);\n\t\t\t\tdq[size\
-    \ ++] = e.target;\n\t\t\t}\n\n\t\t\tptr ++;\n\t\t}\n\t\treturn ans;\n\t}\n}"
+    \t\tint idx = numNode;\n\n\t\tdq[ptr ++] = start;\n\t\tparents[start] = -1;\n\t\
+    \twhile(ptr > 0) {\n\t\t\tint crt = dq[-- ptr];\n\t\t\troute[-- idx] = crt;\n\t\
+    \t\tfor(WeightedEdge e : nodes[crt]) {\n\t\t\t\tif(e.target == parents[crt]) continue;\n\
+    \t\t\t\tparents[e.target] = crt;\n\t\t\t\tdq[ptr ++] = e.target;\n\t\t\t}\n\t\t\
+    }\n\t\tfor(int crt : route) {\n\t\t\tlong tmp = createNode.apply(crt);\n\t\t\t\
+    for(WeightedEdge e : nodes[crt]) if(e.target != parents[crt]) tmp = merge.apply(tmp,\
+    \ addEdge.apply(e, dp[e.target]));\n\t\t\tdp[crt] = addRoot.apply(crt, tmp);\n\
+    \t\t}\n\t\treturn dp;\n\t}\n\n\tpublic final long[] reroot() { // O(V+E)\n\t\t\
+    int dq[] = new int[numNode];\n\t\tlong rootDq[] = new long[numNode];\n\t\tint\
+    \ ptr = 0;\n\t\tint size = 0;\n\n\t\tdq[size ++] = start;\n\t\twhile(ptr < size)\
+    \ {\n\t\t\tint crt = dq[ptr];\n\t\t\tArrayWeightedNode crtNode = nodes[crt];\n\
+    \t\t\tint len = crtNode.size();\n\n\t\t\tlong dpL[] = new long[len + 1];\n\t\t\
+    \tdpL[0] = id;\n\t\t\tfor(int i = 0; i < len; i ++) {\n\t\t\t\tWeightedEdge e\
+    \ = crtNode.get(i);\n\t\t\t\tlong tmp = addEdge.apply(e, e.target == parents[crt]\
+    \ ? rootDq[ptr] : dp[e.target]);\n\t\t\t\tdpL[i + 1] = merge.apply(dpL[i], tmp);\n\
+    \t\t\t}\n\t\t\tlong dpR[] = new long[len + 1];\n\t\t\tdpR[len] = id;\n\t\t\tfor(int\
+    \ i = len - 1; i >= 0; i --) {\n\t\t\t\tWeightedEdge e = crtNode.get(i);\n\t\t\
+    \t\tlong tmp = addEdge.apply(e, e.target == parents[crt] ? rootDq[ptr] : dp[e.target]);\n\
+    \t\t\t\tdpR[i] = merge.apply(dpR[i + 1], tmp);\n\t\t\t}\n\t\t\tans[crt] = addRoot.apply(crt,\
+    \ dpL[len]);\n\n\t\t\tint idx = 0;\n\t\t\tfor(WeightedEdge e : crtNode) {\n\t\t\
+    \t\tidx ++;\n\t\t\t\tif(e.target == parents[crt]) continue;\n\t\t\t\tlong tmp\
+    \ = createNode.apply(crt);\n\t\t\t\ttmp = merge.apply(tmp, dpL[idx - 1]);\n\t\t\
+    \t\ttmp = merge.apply(tmp, dpR[idx]);\n\t\t\t\trootDq[size] = addRoot.apply(crt,\
+    \ tmp);\n\t\t\t\tdq[size ++] = e.target;\n\t\t\t}\n\n\t\t\tptr ++;\n\t\t}\n\t\t\
+    return ans;\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/Rerooting.java
   requiredBy: []
-  timestamp: '2022-10-04 19:52:30+09:00'
+  timestamp: '2022-10-04 23:03:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Rerooting_test.java
