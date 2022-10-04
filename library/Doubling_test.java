@@ -2,6 +2,7 @@
 
 package library;
 
+import java.util.*;
 import library.Solver;
 import library.Doubling;
 
