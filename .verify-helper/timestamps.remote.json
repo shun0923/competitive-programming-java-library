@@ -57,6 +57,7 @@
 "library/WarshallFloyd_test.java": "2022-10-04 10:50:43 +0900",
 "library/WaveletMatrix_freq_test.java": "2022-10-04 10:50:43 +0900",
 "library/WaveletMatrix_smallest_test.java": "2022-10-04 10:50:43 +0900",
+"library/WeightedDoubling_test.java": "2022-10-04 19:08:21 +0900",
 "library/WeightedLca_test.java": "2022-10-04 18:33:11 +0900",
 "library/WeightedUnionFind_test.java": "2022-10-04 10:50:43 +0900"
 }
