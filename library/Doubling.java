@@ -37,7 +37,7 @@ final class Doubling {
 		}
 	}
 
-	int get(int x, final long q) { // O(logQ)
+	int cal(int x, final long q) { // O(logQ)
 		SimpleUtil.rangeCheck(x, n);
 		SimpleUtil.nonNegativeCheck(q);
 		for(int k = log - 1; k >= 0; k --) {
