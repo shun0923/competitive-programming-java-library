@@ -8,7 +8,7 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':heavy_check_mark:'
@@ -110,7 +110,7 @@ data:
   - icon: ':warning:'
     path: library/WeightedDoubling.java
     title: library/WeightedDoubling.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedLca.java
     title: library/WeightedLca.java
   - icon: ':heavy_check_mark:'

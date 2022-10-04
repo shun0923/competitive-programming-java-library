@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedLca.java
     title: library/WeightedLca.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://yukicoder.me/problems/no/898
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -31,7 +31,7 @@ data:
     \ library.WeightedLca;\n\npublic class WeightedLca_test extends Solver {\n\tpublic\
     \ static void main(final String[] args) { main(args, new WeightedLca_test());\
     \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tArrayWeightedGraph g =\
-    \ new ArrayWeightedGraph(n, true);\n\t\tfor(int i = 0; i < n - 1; i ++) g.add(ni(),\
+    \ new ArrayWeightedGraph(n, false);\n\t\tfor(int i = 0; i < n - 1; i ++) g.add(ni(),\
     \ ni(), nl());\n\t\tWeightedLca lca = new WeightedLca(g, 0, 0, (cost1, cost2)\
     \ -> cost1 + cost2);\n\t\tint q = ni();\n\t\tfor(int query = 0; query < q; query\
     \ ++) {\n\t\t\tint x[] = ni(3);\n\t\t\tlong ans = 0;\n\t\t\tfor(int i = 0; i <\
@@ -44,8 +44,8 @@ data:
   isVerificationFile: true
   path: library/WeightedLca_test.java
   requiredBy: []
-  timestamp: '2022-10-04 18:11:03+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-04 18:33:11+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/WeightedLca_test.java
 layout: document

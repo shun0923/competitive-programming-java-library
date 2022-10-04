@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -9,12 +9,12 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedLca_test.java
     title: library/WeightedLca_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -39,30 +39,30 @@ data:
     \ start, final WeightedNode[] nodes) { // O(V)\n\t\tArrayWeightedNode edges =\
     \ new ArrayWeightedNode(-1);\n\t\tint stack[] = new int[numNode];\n\t\tint ptr\
     \ = 0;\n\t\tint size = 0;\n\n\t\tArrays.fill(depth, -1);\n\t\tdepth[start] = 0;\n\
-    \t\tdepth[start] = 0;\n\t\tstack[size ++] = 0;\n\t\twhile(ptr != size) {\n\t\t\
-    \tint crt = stack[ptr ++];\n\t\t\tfor(WeightedEdge e : nodes[crt]) {\n\t\t\t\t\
-    if(depth[e.target] == -1) {\n\t\t\t\t\tdepth[e.target] = depth[crt] + 1;\n\t\t\
-    \t\t\tedges.add(e.reverse());\n\t\t\t\t\tstack[size ++] = e.target;\n\t\t\t\t\
-    }\n\t\t\t}\n\t\t}\n\t\treturn edges;\n\t}\n\n\tpublic final WeightedEdge cal(int\
-    \ u, int v) { // O(logV)\n\t\tSimpleUtil.rangeCheck(u, numNode);\n\t\tSimpleUtil.rangeCheck(v,\
-    \ numNode);\n\t\tif(depth[u] > depth[v]) {\n\t\t\tint tmp = u;\n\t\t\tu = v;\n\
-    \t\t\tv = tmp;\n\t\t}\n\t\tlong cost = id;\n\t\tfor(int k = 0; k < db.log; k ++)\
-    \ {\n\t\t\tif((depth[v] - depth[u] & 1 << k) != 0) {\n\t\t\t\tcost = f.applyAsLong(cost,\
-    \ db.val[k][v]);\n\t\t\t\tv = db.next[k][v];\n\t\t\t}\n\t\t}\n\t\tfor(int k =\
-    \ db.log - 1; k >= 0; k --) {\n\t\t\tif(u != v && db.next[k][u] != db.next[k][v])\
-    \ {\n\t\t\t\tcost = f.applyAsLong(cost, db.val[k][u]);\n\t\t\t\tu = db.next[k][u];\n\
-    \t\t\t\tcost = f.applyAsLong(cost, db.val[k][v]);\n\t\t\t\tv = db.next[k][v];\n\
-    \t\t\t}\n\t\t}\n\t\tif(u != v) {\n\t\t\tcost = f.applyAsLong(cost, db.val[0][u]);\n\
-    \t\t\tu = db.next[0][u];\n\t\t\tcost = f.applyAsLong(cost, db.val[0][v]);\n\t\t\
-    \tv = db.next[0][v];\n\t\t}\n\t\treturn new WeightedEdge(-1, u, cost);\n\t}\n}"
+    \t\tstack[size ++] = 0;\n\t\twhile(ptr != size) {\n\t\t\tint crt = stack[ptr ++];\n\
+    \t\t\tfor(WeightedEdge e : nodes[crt]) {\n\t\t\t\tif(depth[e.target] == -1) {\n\
+    \t\t\t\t\tdepth[e.target] = depth[crt] + 1;\n\t\t\t\t\tedges.add(e.reverse());\n\
+    \t\t\t\t\tstack[size ++] = e.target;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn edges;\n\
+    \t}\n\n\tpublic final WeightedEdge cal(int u, int v) { // O(logV)\n\t\tSimpleUtil.rangeCheck(u,\
+    \ numNode);\n\t\tSimpleUtil.rangeCheck(v, numNode);\n\t\tif(depth[u] > depth[v])\
+    \ {\n\t\t\tint tmp = u;\n\t\t\tu = v;\n\t\t\tv = tmp;\n\t\t}\n\t\tlong cost =\
+    \ id;\n\t\tfor(int k = 0; k < db.log; k ++) {\n\t\t\tif((depth[v] - depth[u] &\
+    \ 1 << k) != 0) {\n\t\t\t\tcost = f.applyAsLong(cost, db.val[k][v]);\n\t\t\t\t\
+    v = db.next[k][v];\n\t\t\t}\n\t\t}\n\t\tfor(int k = db.log - 1; k >= 0; k --)\
+    \ {\n\t\t\tif(u != v && db.next[k][u] != db.next[k][v]) {\n\t\t\t\tcost = f.applyAsLong(cost,\
+    \ db.val[k][u]);\n\t\t\t\tu = db.next[k][u];\n\t\t\t\tcost = f.applyAsLong(cost,\
+    \ db.val[k][v]);\n\t\t\t\tv = db.next[k][v];\n\t\t\t}\n\t\t}\n\t\tif(u != v) {\n\
+    \t\t\tcost = f.applyAsLong(cost, db.val[0][u]);\n\t\t\tu = db.next[0][u];\n\t\t\
+    \tcost = f.applyAsLong(cost, db.val[0][v]);\n\t\t\tv = db.next[0][v];\n\t\t}\n\
+    \t\treturn new WeightedEdge(-1, u, cost);\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/WeightedLca.java
   requiredBy: []
-  timestamp: '2022-10-04 18:11:03+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-10-04 18:33:11+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/WeightedLca_test.java
 documentation_of: library/WeightedLca.java
