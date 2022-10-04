@@ -54,7 +54,6 @@ class Rerooting {
 		int route[] = new int[numNode];
 		int idx = numNode;
 
-		Arrays.fill(dp, id);
 		dq[ptr ++] = start;
 		parents[start] = -1;
 		while(ptr > 0) {
@@ -80,7 +79,6 @@ class Rerooting {
 		int ptr = 0;
 		int size = 0;
 
-		Arrays.fill(ans, id);
 		dq[size ++] = start;
 		while(ptr < size) {
 			int crt = dq[ptr];
