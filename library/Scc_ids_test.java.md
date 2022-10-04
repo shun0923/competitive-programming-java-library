@@ -41,7 +41,7 @@ data:
   isVerificationFile: true
   path: library/Scc_ids_test.java
   requiredBy: []
-  timestamp: '2022-10-04 12:04:16+09:00'
+  timestamp: '2022-10-04 15:13:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Scc_ids_test.java

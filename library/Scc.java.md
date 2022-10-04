@@ -32,48 +32,52 @@ data:
     , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.AbstractGraph;\n\nfinal class Scc {\n\tprivate static int low[];\n\t\
-    private static int ord[];\n\tprivate static int ids[];\n\tprivate static int visited[];\n\
-    \tprivate static int ptr;\n\tprivate static int now;\n\tprivate static int numGroup;\n\
-    \n\t// O(V+E)\n\tpublic static final <Edge extends AbstractEdge<Edge>> int[][]\
-    \ calGroups(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return\
-    \ calGroups(g.numNode, g.nodes()); }\n\tpublic static final int[][] calGroups(final\
-    \ int numNode, final AbstractNode<? extends AbstractEdge>[] nodes) {\n\t\tcalIds(numNode,\
-    \ nodes);\n\t\tint len[] = new int[numGroup];\n\t\tfor(int x : ids) len[x] ++;\n\
-    \t\tint groups[][] = new int[numGroup][];\n\t\tfor(int i = 0; i < numGroup; i\
-    \ ++) groups[i] = new int[len[i]];\n\t\tArrays.fill(len, 0);\n\t\tfor(int i =\
-    \ 0; i < numNode; i ++) groups[ids[i]][len[ids[i]] ++] = i;\n\t\treturn groups;\n\
-    \t}\n\tpublic static final <Edge extends AbstractEdge<Edge>> HashUnweightedGraph\
-    \ calGraph(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return\
-    \ calGraph(g.numNode, g.nodes()); }\n\tpublic static final HashUnweightedGraph\
-    \ calGraph(final int numNode, final AbstractNode<? extends AbstractEdge>[] nodes)\
-    \ {\n\t\tcalIds(numNode, nodes);\n\t\tHashUnweightedGraph contracted = new HashUnweightedGraph(numGroup,\
-    \ true);\n\t\tfor(int i = 0; i < numNode; i ++) {\n\t\t\tfor(AbstractEdge e :\
-    \ nodes[i]) {\n\t\t\t\tint s = ids[e.source];\n\t\t\t\tint t = ids[e.target];\n\
-    \t\t\t\tif(s != t) contracted.add(s, t);\n\t\t\t}\n\t\t}\n\t\treturn contracted;\n\
-    \t}\n\tpublic static final <Edge extends AbstractEdge<Edge>> int[] calIds(final\
-    \ AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return calIds(g.numNode,\
-    \ g.nodes()); }\n\tpublic static final int[] calIds(final int numNode, final AbstractNode<?\
-    \ extends AbstractEdge>[] nodes) {\n\t\tlow = new int[numNode];\n\t\tord = new\
-    \ int[numNode];\n\t\tids = new int[numNode];\n\t\tvisited = new int[numNode];\n\
-    \t\tptr = 0;\n\t\tnow = 0;\n\t\tnumGroup = 0;\n\t\tArrays.fill(ord, -1);\n\n\t\
-    \tfor(int i = 0; i < numNode; i ++) if(ord[i] == -1) dfs(i, numNode, nodes);\n\
-    \t\tfor(int i = 0; i < numNode; i ++) ids[i] = numGroup - ids[i] - 1;\n\t\treturn\
-    \ ids;\n\t}\n\n\tprivate static final void dfs(int v, final int numNode, final\
-    \ AbstractNode<? extends AbstractEdge>[] nodes) { // O(V+E)\n\t\tlow[v] = now;\n\
-    \t\tord[v] = now;\n\t\tnow ++;\n\t\tvisited[ptr ++] = v;\n\t\tfor(AbstractEdge\
-    \ e : nodes[v]) {\n\t\t\tif(ord[e.target] == -1) dfs(e.target, numNode, nodes);\n\
-    \t\t\tif(low[v] > low[e.target]) low[v] = low[e.target];\n\t\t}\n\t\t\n\t\tif(low[v]\
-    \ == ord[v]) {\n\t\t\twhile(true) {\n\t\t\t\tint u = visited[-- ptr];\n\t\t\t\t\
-    low[u] = numNode;\n\t\t\t\tord[u] = numNode;\n\t\t\t\tids[u] = numGroup;\n\t\t\
-    \t\tif(u == v) break;\n\t\t\t}\n\t\t\tnumGroup ++;\n\t\t}\n\t}\n}"
+    \ library.AbstractGraph;\n\nfinal class Scc {\n\tprivate static int ids[];\n\t\
+    private static int numGroup;\n\n\t// O(V+E)\n\tpublic static final <Edge extends\
+    \ AbstractEdge<Edge>> int[][] calGroups(final AbstractGraph<? extends AbstractNode<Edge>,\
+    \ Edge> g) { return calGroups(g.numNode, g.numEdge(), g.nodes()); }\n\tpublic\
+    \ static final int[][] calGroups(final int numNode, final int numEdge, final AbstractNode<?\
+    \ extends AbstractEdge>[] nodes) {\n\t\tint ids[] = calIds(numNode, numEdge, nodes);\n\
+    \t\tint len[] = new int[numGroup];\n\t\tfor(int x : ids) len[x] ++;\n\t\tint groups[][]\
+    \ = new int[numGroup][];\n\t\tfor(int i = 0; i < numGroup; i ++) groups[i] = new\
+    \ int[len[i]];\n\t\tArrays.fill(len, 0);\n\t\tfor(int i = 0; i < numNode; i ++)\
+    \ groups[ids[i]][len[ids[i]] ++] = i;\n\t\treturn groups;\n\t}\n\tpublic static\
+    \ final <Edge extends AbstractEdge<Edge>> HashUnweightedGraph calGraph(final AbstractGraph<?\
+    \ extends AbstractNode<Edge>, Edge> g) { return calGraph(g.numNode, g.numEdge(),\
+    \ g.nodes()); }\n\tpublic static final HashUnweightedGraph calGraph(final int\
+    \ numNode, final int numEdge, final AbstractNode<? extends AbstractEdge>[] nodes)\
+    \ {\n\t\tint ids[] = calIds(numNode, numEdge, nodes);\n\t\tHashUnweightedGraph\
+    \ contracted = new HashUnweightedGraph(numGroup, true);\n\t\tfor(int i = 0; i\
+    \ < numNode; i ++) {\n\t\t\tfor(AbstractEdge e : nodes[i]) {\n\t\t\t\tint s =\
+    \ ids[e.source];\n\t\t\t\tint t = ids[e.target];\n\t\t\t\tif(s != t) contracted.add(s,\
+    \ t);\n\t\t\t}\n\t\t}\n\t\treturn contracted;\n\t}\n\tpublic static final <Edge\
+    \ extends AbstractEdge<Edge>> int[] calIds(final AbstractGraph<? extends AbstractNode<Edge>,\
+    \ Edge> g) { return calIds(g.numNode, g.numEdge(), g.nodes()); }\n\tpublic static\
+    \ final int[] calIds(final int numNode, final int numEdge, final AbstractNode<?\
+    \ extends AbstractEdge>[] nodes) {\n\t\tint low[] = new int[numNode];\n\t\tint\
+    \ ids[] = new int[numNode];\n\t\tint visited[] = new int[numNode];\n\t\tint ptr1\
+    \ = 0;\n\t\tint stack[] = new int[numEdge + 1];\n\t\tint ptr2 = 0;\n\t\tint now\
+    \ = 0;\n\t\tint numGroup = 0;\n\t\tArrays.fill(low, -1);\n\t\tfor(int i = 0; i\
+    \ < numNode; i ++) {\n\t\t\tif(low[i] != -1) continue;\n\t\t\tstack[ptr2 ++] =\
+    \ i;\n\t\t\twhile(ptr2 != 0) {\n\t\t\t\tint v = stack[-- ptr2];\n\t\t\t\tif(v\
+    \ >= 0) {\n\t\t\t\t\tif(low[v] != -1) continue;\n\t\t\t\t\tlow[v] = now ++;\n\t\
+    \t\t\t\tvisited[ptr1 ++] = v;\n\t\t\t\t\tstack[ptr2 ++] = - v - 1;\n\t\t\t\t\t\
+    for(AbstractEdge e : nodes[v]) if(low[e.target] == -1) stack[ptr2 ++] = e.target;\n\
+    \t\t\t\t}else {\n\t\t\t\t\tv = - v - 1;\n\t\t\t\t\tboolean root = true;\n\t\t\t\
+    \t\tfor(AbstractEdge e : nodes[v]) if(low[v] > low[e.target]) { low[v] = low[e.target];\
+    \ root = false; }\n\t\t\t\t\tif(root) {\n\t\t\t\t\t\twhile(true) {\n\t\t\t\t\t\
+    \t\tint u = visited[-- ptr1];\n\t\t\t\t\t\t\tlow[u] = numNode;\n\t\t\t\t\t\t\t\
+    ids[u] = numGroup;\n\t\t\t\t\t\t\tif(u == v) break;\n\t\t\t\t\t\t}\n\t\t\t\t\t\
+    \tnumGroup ++;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tfor(int i = 0; i\
+    \ < numNode; i ++) ids[i] = numGroup - ids[i] - 1;\n\t\tScc.ids = ids;\n\t\tScc.numGroup\
+    \ = numGroup;\n\t\treturn ids;\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/Scc.java
   requiredBy: []
-  timestamp: '2022-10-04 12:04:16+09:00'
+  timestamp: '2022-10-04 15:13:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Scc_graph_test.java
