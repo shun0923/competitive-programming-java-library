@@ -23,7 +23,7 @@ final class Doubling {
 		System.arraycopy(edges, 0, next[0], 0, n);
 		init();
 	}
-	public Doubling(final int n, final long max, final AbstractNode<? extends AbstractNode> edges) {
+	public Doubling(final int n, final long max, final AbstractNode<? extends AbstractEdge> edges) {
 		this(n, max);
 		for(AbstractEdge e : edges) next[0][e.source] = e.target;
 		init();
@@ -42,7 +42,7 @@ final class Doubling {
 		SimpleUtil.nonNegativeCheck(q);
 		for(int k = log - 1; k >= 0; k --) {
 			if(x == -1) break;
-			if((q & 1 << k) != 0) x = next[k][x];
+			if((q & 1l << k) != 0) x = next[k][x];
 		}
 		return x;
 	}

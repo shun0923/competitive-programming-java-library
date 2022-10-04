@@ -54,7 +54,7 @@ final class Lca {
 			v = tmp;
 		}
 		for(int k = 0; k < db.log; k ++) {
-			if(((depth[v] - depth[u]) & 1 << k) != 0) v = db.next[k][v];
+			if((depth[v] - depth[u] & 1 << k) != 0) v = db.next[k][v];
 		}
 		for(int k = db.log - 1; k >= 0; k --) {
 			if(u != v && db.next[k][u] != db.next[k][v]) {
