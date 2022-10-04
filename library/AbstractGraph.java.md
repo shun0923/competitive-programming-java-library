@@ -24,6 +24,9 @@ data:
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':heavy_check_mark:'
+    path: library/Rerooting.java
+    title: library/Rerooting.java
+  - icon: ':heavy_check_mark:'
     path: library/Scc.java
     title: library/Scc.java
   - icon: ':heavy_check_mark:'
@@ -75,6 +78,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Lca_test.java
     title: library/Lca_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/Rerooting_test.java
+    title: library/Rerooting_test.java
   - icon: ':heavy_check_mark:'
     path: library/Scc_graph_test.java
     title: library/Scc_graph_test.java
@@ -313,6 +319,7 @@ data:
   - library/WarshallFloyd.java
   - library/Dijkstra.java
   - library/Doubling.java
+  - library/Rerooting.java
   - library/WeightedDoubling.java
   - library/Scc.java
   - library/WeightedUnionFind.java
@@ -330,6 +337,7 @@ data:
   - library/UnionFind_uniteAll_test.java
   - library/WeightedDoubling_test.java
   - library/Dijkstra_forDenseGraph_reversed_test.java
+  - library/Rerooting_test.java
   - library/Dijkstra_test.java
   - library/TemplateDijkstra_test.java
   - library/BellmanFord_test.java

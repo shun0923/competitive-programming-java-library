@@ -109,6 +109,9 @@ data:
     path: library/Permutation_test.java
     title: library/Permutation_test.java
   - icon: ':heavy_check_mark:'
+    path: library/Rerooting_test.java
+    title: library/Rerooting_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Scc_graph_test.java
     title: library/Scc_graph_test.java
   - icon: ':heavy_check_mark:'
@@ -246,6 +249,7 @@ data:
   - library/DynamicSegmentTree_Small_test.java
   - library/DynamicSwag_test.java
   - library/HelloWorld_test.java
+  - library/Rerooting_test.java
   - library/TemplateDynamicSegmentTree_Small_test.java
   - library/Dijkstra_test.java
   - library/TemplateSwag_test.java

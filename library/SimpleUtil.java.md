@@ -63,6 +63,9 @@ data:
     path: library/Permutation.java
     title: library/Permutation.java
   - icon: ':heavy_check_mark:'
+    path: library/Rerooting.java
+    title: library/Rerooting.java
+  - icon: ':heavy_check_mark:'
     path: library/Scc.java
     title: library/Scc.java
   - icon: ':heavy_check_mark:'
@@ -372,6 +375,7 @@ data:
   - library/SparseTable.java
   - library/Doubling.java
   - library/DualSegmentTree.java
+  - library/Rerooting.java
   - library/Swag.java
   - library/Convolution.java
   - library/WeightedDoubling.java

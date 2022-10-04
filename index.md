@@ -67,6 +67,9 @@ data:
       path: library/Permutation.java
       title: library/Permutation.java
     - icon: ':heavy_check_mark:'
+      path: library/Rerooting.java
+      title: library/Rerooting.java
+    - icon: ':heavy_check_mark:'
       path: library/Scc.java
       title: library/Scc.java
     - icon: ':heavy_check_mark:'
@@ -231,6 +234,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Permutation_test.java
       title: library/Permutation_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/Rerooting_test.java
+      title: library/Rerooting_test.java
     - icon: ':heavy_check_mark:'
       path: library/Scc_graph_test.java
       title: library/Scc_graph_test.java
