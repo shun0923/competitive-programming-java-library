@@ -32,7 +32,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateRerooting.java
     title: library/TemplateRerooting.java
   - icon: ':heavy_check_mark:'
@@ -99,7 +99,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra_test.java
     title: library/TemplateDijkstra_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateRerooting_test.java
     title: library/TemplateRerooting_test.java
   - icon: ':heavy_check_mark:'
@@ -117,9 +117,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WeightedLca_test.java
     title: library/WeightedLca_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -232,49 +232,59 @@ data:
     \ extends AbstractNode<UnweightedEdge> { public boolean add(final int source,\
     \ final int target); }\ninterface WeightedNode extends AbstractNode<WeightedEdge>\
     \ { public boolean add(final int source, final int target, final long cost); }\n\
-    interface TemplateNode<T extends Comparable<T>> extends AbstractNode<TemplateEdge<T>>\
-    \ { public boolean add(final int source, final int target, final T cost); }\n\
-    class ArrayUnweightedNode extends ArrayList<UnweightedEdge> implements UnweightedNode\
-    \ {\n\tpublic final int id;\n\tpublic ArrayUnweightedNode(final int id) { this.id\
-    \ = id; }\n\t@Override public final boolean add(final int source, final int target)\
-    \ { return add(new UnweightedEdge(source, target)); }\n}\nclass ArrayWeightedNode\
-    \ extends ArrayList<WeightedEdge> implements WeightedNode {\n\tpublic final int\
-    \ id;\n\tpublic ArrayWeightedNode(final int id) { this.id = id; }\n\t@Override\
-    \ public final boolean add(final int source, final int target, final long cost)\
-    \ { return add(new WeightedEdge(source, target, cost)); }\n}\nclass ArrayTemplateNode<T\
-    \ extends Comparable<T>> extends ArrayList<TemplateEdge<T>> implements TemplateNode<T>\
-    \ {\n\tpublic final int id;\n\tpublic ArrayTemplateNode(final int id) { this.id\
+    interface TemplateNode<T> extends AbstractNode<TemplateEdge<T>> { public boolean\
+    \ add(final int source, final int target, final T cost); }\ninterface ComparableTemplateNode<T\
+    \ extends Comparable<T>> extends AbstractNode<ComparableTemplateEdge<T>> { public\
+    \ boolean add(final int source, final int target, final T cost); }\nclass ArrayUnweightedNode\
+    \ extends ArrayList<UnweightedEdge> implements UnweightedNode {\n\tpublic final\
+    \ int id;\n\tpublic ArrayUnweightedNode(final int id) { this.id = id; }\n\t@Override\
+    \ public final boolean add(final int source, final int target) { return add(new\
+    \ UnweightedEdge(source, target)); }\n}\nclass ArrayWeightedNode extends ArrayList<WeightedEdge>\
+    \ implements WeightedNode {\n\tpublic final int id;\n\tpublic ArrayWeightedNode(final\
+    \ int id) { this.id = id; }\n\t@Override public final boolean add(final int source,\
+    \ final int target, final long cost) { return add(new WeightedEdge(source, target,\
+    \ cost)); }\n}\nclass ArrayTemplateNode<T> extends ArrayList<TemplateEdge<T>>\
+    \ implements TemplateNode<T> {\n\tpublic final int id;\n\tpublic ArrayTemplateNode(final\
+    \ int id) { this.id = id; }\n\t@Override public final boolean add(final int source,\
+    \ final int target, final T cost) { return add(new TemplateEdge<T>(source, target,\
+    \ cost)); }\n}\nclass ArrayComparableTemplateNode<T extends Comparable<T>> extends\
+    \ ArrayList<ComparableTemplateEdge<T>> implements ComparableTemplateNode<T> {\n\
+    \tpublic final int id;\n\tpublic ArrayComparableTemplateNode(final int id) { this.id\
     \ = id; }\n\t@Override public final boolean add(final int source, final int target,\
-    \ final T cost) { return add(new TemplateEdge<T>(source, target, cost)); }\n}\n\
-    class HashUnweightedNode extends HashSet<UnweightedEdge> implements UnweightedNode\
+    \ final T cost) { return add(new ComparableTemplateEdge<T>(source, target, cost));\
+    \ }\n}\nclass HashUnweightedNode extends HashSet<UnweightedEdge> implements UnweightedNode\
     \ {\n\tpublic final int id;\n\tpublic HashUnweightedNode(final int id) { this.id\
     \ = id; }\n\t@Override public final boolean add(final int source, final int target)\
     \ { return add(new UnweightedEdge(source, target)); }\n}\nclass HashWeightedNode\
     \ extends HashSet<WeightedEdge> implements WeightedNode {\n\tpublic final int\
     \ id;\n\tpublic HashWeightedNode(final int id) { this.id = id; }\n\t@Override\
     \ public final boolean add(final int source, final int target, final long cost)\
-    \ { return add(new WeightedEdge(source, target, cost)); }\n}\nclass HashTemplateNode<T\
-    \ extends Comparable<T>> extends HashSet<TemplateEdge<T>> implements TemplateNode<T>\
-    \ {\n\tpublic final int id;\n\tpublic HashTemplateNode(final int id) { this.id\
-    \ = id; }\n\t@Override public final boolean add(final int source, final int target,\
-    \ final T cost) { return add(new TemplateEdge<T>(source, target, cost)); }\n}\n\
-    \nabstract class AbstractEdge<Edge extends AbstractEdge> {\n\tpublic int source,\
-    \ target;\n\tprotected Edge reversed = null;\n\tpublic AbstractEdge(final int\
-    \ source, final int target) { this.source = source; this.target = target; }\n\t\
-    public final Edge reverse() { return reversed == null ? reversed = createReversed()\
-    \ : reversed; }\n\tprotected abstract Edge createReversed();\n\t@Override public\
-    \ abstract String toString();\n\t@Override public final int hashCode() { return\
-    \ Objects.hash(source, target); }\n\t@Override public abstract boolean equals(final\
-    \ Object obj);\n}\nclass UnweightedEdge extends AbstractEdge<UnweightedEdge> implements\
-    \ Comparable<UnweightedEdge> {\n\tpublic UnweightedEdge(final int source, final\
-    \ int target) { super(source, target); }\n\tpublic UnweightedEdge(final int source,\
-    \ final int target, final UnweightedEdge reversed) { this(source, target); this.reversed\
-    \ = reversed; }\n\n\t@Override protected final UnweightedEdge createReversed()\
-    \ { return new UnweightedEdge(target, source, this); }\n\t@Override public final\
-    \ String toString() { return source+\" -> \"+target; }\n\t@Override\n\tpublic\
-    \ final boolean equals(final Object obj) {\n\t\tif(this == obj) return true;\n\
-    \t\tif(obj == null) return false;\n\t\tif(this.getClass() != obj.getClass()) return\
-    \ false;\n\t\tUnweightedEdge that = (UnweightedEdge) obj;\n\t\tif(this.source\
+    \ { return add(new WeightedEdge(source, target, cost)); }\n}\nclass HashTemplateNode<T>\
+    \ extends HashSet<TemplateEdge<T>> implements TemplateNode<T> {\n\tpublic final\
+    \ int id;\n\tpublic HashTemplateNode(final int id) { this.id = id; }\n\t@Override\
+    \ public final boolean add(final int source, final int target, final T cost) {\
+    \ return add(new TemplateEdge<T>(source, target, cost)); }\n}\nclass HashComparableTemplateNode<T\
+    \ extends Comparable<T>> extends HashSet<ComparableTemplateEdge<T>> implements\
+    \ ComparableTemplateNode<T> {\n\tpublic final int id;\n\tpublic HashComparableTemplateNode(final\
+    \ int id) { this.id = id; }\n\t@Override public final boolean add(final int source,\
+    \ final int target, final T cost) { return add(new ComparableTemplateEdge<T>(source,\
+    \ target, cost)); }\n}\n\nabstract class AbstractEdge<Edge extends AbstractEdge>\
+    \ {\n\tpublic int source, target;\n\tprotected Edge reversed = null;\n\tpublic\
+    \ AbstractEdge(final int source, final int target) { this.source = source; this.target\
+    \ = target; }\n\tpublic final Edge reverse() { return reversed == null ? reversed\
+    \ = createReversed() : reversed; }\n\tprotected abstract Edge createReversed();\n\
+    \t@Override public abstract String toString();\n\t@Override public abstract boolean\
+    \ equals(final Object obj);\n}\nclass UnweightedEdge extends AbstractEdge<UnweightedEdge>\
+    \ implements Comparable<UnweightedEdge> {\n\tpublic UnweightedEdge(final int source,\
+    \ final int target) { super(source, target); }\n\tpublic UnweightedEdge(final\
+    \ int source, final int target, final UnweightedEdge reversed) { this(source,\
+    \ target); this.reversed = reversed; }\n\n\t@Override protected final UnweightedEdge\
+    \ createReversed() { return new UnweightedEdge(target, source, this); }\n\t@Override\
+    \ public final String toString() { return source+\" -> \"+target; }\n\t@Override\
+    \ public final int hashCode() { return Objects.hash(source, target); }\n\t@Override\n\
+    \tpublic final boolean equals(final Object obj) {\n\t\tif(this == obj) return\
+    \ true;\n\t\tif(obj == null) return false;\n\t\tif(this.getClass() != obj.getClass())\
+    \ return false;\n\t\tUnweightedEdge that = (UnweightedEdge) obj;\n\t\tif(this.source\
     \ != that.source) return false;\n\t\tif(this.target != that.target) return false;\n\
     \t\treturn true;\n\t}\n\t@Override\n\tpublic final int compareTo(final UnweightedEdge\
     \ that) {\n\t\tint c = Integer.compare(this.source, that.source);\n\t\tif(c ==\
@@ -286,7 +296,8 @@ data:
     \ { this(source, target, cost); this.reversed = reversed; }\n\t@Override protected\
     \ final WeightedEdge createReversed() { return new WeightedEdge(target, source,\
     \ cost, this); }\n\t@Override public final String toString() { return source+\"\
-    \ - \"+cost+\" -> \"+target; }\n\t@Override\n\tpublic final boolean equals(final\
+    \ - \"+cost+\" -> \"+target; }\n\t@Override public final int hashCode() { return\
+    \ Objects.hash(source, target, cost); }\n\t@Override\n\tpublic final boolean equals(final\
     \ Object obj) {\n\t\tif(this == obj) return true;\n\t\tif(obj == null) return\
     \ false;\n\t\tif(this.getClass() != obj.getClass()) return false;\n\t\tWeightedEdge\
     \ that = (WeightedEdge) obj;\n\t\tif(this.source != that.source) return false;\n\
@@ -294,22 +305,38 @@ data:
     \ return false;\n\t\treturn true;\n\t}\n\t@Override\n\tpublic final int compareTo(final\
     \ WeightedEdge that) {\n\t\tint c = Long.compare(this.cost, that.cost);\n\t\t\
     if(c == 0) c = Integer.compare(this.source, that.source);\n\t\tif(c == 0) c =\
-    \ Integer.compare(this.target, that.target);\n\t\treturn c;\n\t}\n}\nclass TemplateEdge<T\
-    \ extends Comparable<T>> extends AbstractEdge<TemplateEdge<T>> implements Comparable<TemplateEdge<T>>\
-    \ {\n\tpublic T cost;\n\tpublic TemplateEdge(final int source, final int target,\
-    \ final T cost) { super(source, target); this.cost = cost; }\n\tpublic TemplateEdge(final\
-    \ int source, final int target, final T cost, final TemplateEdge<T> reversed)\
-    \ { this(source, target, cost); this.reversed = reversed; }\n\n\t@Override protected\
-    \ final TemplateEdge<T> createReversed() { return new TemplateEdge<T>(target,\
-    \ source, cost, this); }\n\t@Override public final String toString() { return\
-    \ source+\" - \"+cost.toString()+\" -> \"+target; }\n\t@Override\n\t@SuppressWarnings(\"\
-    unchecked\")\n\tpublic final boolean equals(final Object obj) {\n\t\tif(this ==\
-    \ obj) return true;\n\t\tif(obj == null) return false;\n\t\tif(this.getClass()\
-    \ != obj.getClass()) return false;\n\t\tTemplateEdge<T> that = (TemplateEdge<T>)\
-    \ obj;\n\t\tif(this.source != that.source) return false;\n\t\tif(this.target !=\
-    \ that.target) return false;\n\t\tif(!this.cost.equals(that.cost)) return false;\n\
-    \t\treturn true;\n\t}\n\t@Override\n\tpublic final int compareTo(final TemplateEdge<T>\
-    \ that) {\n\t\tint c = this.cost.compareTo(that.cost);\n\t\tif(c == 0) c = Integer.compare(this.source,\
+    \ Integer.compare(this.target, that.target);\n\t\treturn c;\n\t}\n}\nclass TemplateEdge<T>\
+    \ extends AbstractEdge<TemplateEdge<T>> {\n\tpublic T cost;\n\tpublic TemplateEdge(final\
+    \ int source, final int target, final T cost) { super(source, target); this.cost\
+    \ = cost; }\n\tpublic TemplateEdge(final int source, final int target, final T\
+    \ cost, final TemplateEdge<T> reversed) { this(source, target, cost); this.reversed\
+    \ = reversed; }\n\n\t@Override protected final TemplateEdge<T> createReversed()\
+    \ { return new TemplateEdge<T>(target, source, cost, this); }\n\t@Override public\
+    \ final String toString() { return source+\" - \"+cost.toString()+\" -> \"+target;\
+    \ }\n\t@Override public final int hashCode() { return Objects.hash(source, target,\
+    \ cost); }\n\t@Override\n\t@SuppressWarnings(\"unchecked\")\n\tpublic final boolean\
+    \ equals(final Object obj) {\n\t\tif(this == obj) return true;\n\t\tif(obj ==\
+    \ null) return false;\n\t\tif(this.getClass() != obj.getClass()) return false;\n\
+    \t\tTemplateEdge<T> that = (TemplateEdge<T>) obj;\n\t\tif(this.source != that.source)\
+    \ return false;\n\t\tif(this.target != that.target) return false;\n\t\tif(!this.cost.equals(that.cost))\
+    \ return false;\n\t\treturn true;\n\t}\n}\nclass ComparableTemplateEdge<T extends\
+    \ Comparable<T>> extends AbstractEdge<ComparableTemplateEdge<T>> implements Comparable<ComparableTemplateEdge<T>>\
+    \ {\n\tpublic T cost;\n\tpublic ComparableTemplateEdge(final int source, final\
+    \ int target, final T cost) { super(source, target); this.cost = cost; }\n\tpublic\
+    \ ComparableTemplateEdge(final int source, final int target, final T cost, final\
+    \ ComparableTemplateEdge<T> reversed) { this(source, target, cost); this.reversed\
+    \ = reversed; }\n\n\t@Override protected final ComparableTemplateEdge<T> createReversed()\
+    \ { return new ComparableTemplateEdge<T>(target, source, cost, this); }\n\t@Override\
+    \ public final String toString() { return source+\" - \"+cost.toString()+\" ->\
+    \ \"+target; }\n\t@Override public final int hashCode() { return Objects.hash(source,\
+    \ target, cost); }\n\t@Override\n\t@SuppressWarnings(\"unchecked\")\n\tpublic\
+    \ final boolean equals(final Object obj) {\n\t\tif(this == obj) return true;\n\
+    \t\tif(obj == null) return false;\n\t\tif(this.getClass() != obj.getClass()) return\
+    \ false;\n\t\tTemplateEdge<T> that = (TemplateEdge<T>) obj;\n\t\tif(this.source\
+    \ != that.source) return false;\n\t\tif(this.target != that.target) return false;\n\
+    \t\tif(!this.cost.equals(that.cost)) return false;\n\t\treturn true;\n\t}\n\t\
+    @Override\n\tpublic final int compareTo(final ComparableTemplateEdge<T> that)\
+    \ {\n\t\tint c = this.cost.compareTo(that.cost);\n\t\tif(c == 0) c = Integer.compare(this.source,\
     \ that.source);\n\t\tif(c == 0) c = Integer.compare(this.target, that.target);\n\
     \t\treturn c;\n\t}\n}"
   dependsOn:
@@ -332,8 +359,8 @@ data:
   - library/WeightedUnionFind.java
   - library/WeightedLca.java
   - library/PathRestoration.java
-  timestamp: '2022-10-03 17:15:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2022-10-04 23:14:38+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java

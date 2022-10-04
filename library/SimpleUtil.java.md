@@ -8,7 +8,7 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':heavy_check_mark:'
@@ -89,7 +89,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSwag.java
     title: library/TemplateDynamicSwag.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateRerooting.java
     title: library/TemplateRerooting.java
   - icon: ':heavy_check_mark:'

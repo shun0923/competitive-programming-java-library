@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':heavy_check_mark:'
@@ -82,7 +82,7 @@ data:
   isVerificationFile: false
   path: library/TemplateDijkstra.java
   requiredBy: []
-  timestamp: '2022-10-03 17:15:22+09:00'
+  timestamp: '2022-10-04 23:14:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/TemplateDijkstra_test.java

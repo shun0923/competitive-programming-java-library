@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -78,7 +78,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -99,7 +99,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateDynamicSwag.java
       title: library/TemplateDynamicSwag.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateRerooting.java
       title: library/TemplateRerooting.java
     - icon: ':heavy_check_mark:'
@@ -282,7 +282,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateDynamicSwag_test.java
       title: library/TemplateDynamicSwag_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateRerooting_test.java
       title: library/TemplateRerooting_test.java
     - icon: ':heavy_check_mark:'

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -61,7 +61,7 @@ data:
   isVerificationFile: false
   path: library/WeightedLca.java
   requiredBy: []
-  timestamp: '2022-10-04 18:33:11+09:00'
+  timestamp: '2022-10-04 23:14:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/WeightedLca_test.java
