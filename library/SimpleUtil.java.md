@@ -8,7 +8,7 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':heavy_check_mark:'
@@ -56,7 +56,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Permutation.java
     title: library/Permutation.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc.java
     title: library/Scc.java
   - icon: ':heavy_check_mark:'
@@ -101,7 +101,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind.java
     title: library/WeightedUnionFind.java
   _extendedVerifiedWith: []

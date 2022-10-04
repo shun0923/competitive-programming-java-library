@@ -17,7 +17,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc.java
     title: library/Scc.java
   - icon: ':heavy_check_mark:'
@@ -29,7 +29,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind.java
     title: library/WeightedUnionFind.java
   _extendedVerifiedWith:
@@ -60,13 +60,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Kruskal_test.java
     title: library/Kruskal_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc_graph_test.java
     title: library/Scc_graph_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc_groups_test.java
     title: library/Scc_groups_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc_ids_test.java
     title: library/Scc_ids_test.java
   - icon: ':heavy_check_mark:'
@@ -84,9 +84,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -294,7 +294,7 @@ data:
   - library/WeightedUnionFind.java
   - library/PathRestoration.java
   timestamp: '2022-10-03 17:15:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java

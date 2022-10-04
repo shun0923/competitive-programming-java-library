@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -60,7 +60,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Permutation.java
       title: library/Permutation.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Scc.java
       title: library/Scc.java
     - icon: ':heavy_check_mark:'
@@ -69,7 +69,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -111,7 +111,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix.java
       title: library/WaveletMatrix.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WeightedUnionFind.java
       title: library/WeightedUnionFind.java
   verificationCategories:
@@ -213,13 +213,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Permutation_test.java
       title: library/Permutation_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Scc_graph_test.java
       title: library/Scc_graph_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Scc_groups_test.java
       title: library/Scc_groups_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Scc_ids_test.java
       title: library/Scc_ids_test.java
     - icon: ':heavy_check_mark:'
@@ -288,7 +288,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix_smallest_test.java
       title: library/WaveletMatrix_smallest_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WeightedUnionFind_test.java
       title: library/WeightedUnionFind_test.java
 layout: toppage

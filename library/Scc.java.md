@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -9,18 +9,18 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc_graph_test.java
     title: library/Scc_graph_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc_groups_test.java
     title: library/Scc_groups_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc_ids_test.java
     title: library/Scc_ids_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -62,20 +62,19 @@ data:
     \ ids;\n\t}\n\n\tprivate static final void dfs(int v, final int numNode, final\
     \ AbstractNode<? extends AbstractEdge>[] nodes) { // O(V+E)\n\t\tlow[v] = now;\n\
     \t\tord[v] = now;\n\t\tnow ++;\n\t\tvisited[ptr ++] = v;\n\t\tfor(AbstractEdge\
-    \ e : nodes[v]) {\n\t\t\tif(ord[e.target] == -1) {\n\t\t\t\tdfs(e.target, numNode,\
-    \ nodes);\n\t\t\t\tif(low[v] > low[e.target]) low[v] = low[e.target];\n\t\t\t\
-    }else if(low[v] > low[e.target]) low[v] = low[e.target];\n\t\t}\n\t\tif(low[v]\
+    \ e : nodes[v]) {\n\t\t\tif(ord[e.target] == -1) dfs(e.target, numNode, nodes);\n\
+    \t\t\tif(low[v] > low[e.target]) low[v] = low[e.target];\n\t\t}\n\t\t\n\t\tif(low[v]\
     \ == ord[v]) {\n\t\t\twhile(true) {\n\t\t\t\tint u = visited[-- ptr];\n\t\t\t\t\
-    ord[u] = numNode;\n\t\t\t\tids[u] = numGroup;\n\t\t\t\tif(u == v) break;\n\t\t\
-    \t}\n\t\t\tnumGroup ++;\n\t\t}\n\t}\n}"
+    low[u] = numNode;\n\t\t\t\tord[u] = numNode;\n\t\t\t\tids[u] = numGroup;\n\t\t\
+    \t\tif(u == v) break;\n\t\t\t}\n\t\t\tnumGroup ++;\n\t\t}\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/Scc.java
   requiredBy: []
-  timestamp: '2022-10-04 11:46:32+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-10-04 12:04:16+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Scc_graph_test.java
   - library/Scc_groups_test.java
