@@ -24,7 +24,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Dijkstra.java
       title: library/Dijkstra.java
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/Doubling.java
       title: library/Doubling.java
     - icon: ':heavy_check_mark:'
@@ -75,7 +75,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -117,7 +117,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix.java
       title: library/WaveletMatrix.java
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/WeightedDoubling.java
       title: library/WeightedDoubling.java
     - icon: ':heavy_check_mark:'
@@ -180,6 +180,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Dijkstra_test.java
       title: library/Dijkstra_test.java
+    - icon: ':x:'
+      path: library/Doubling_test.java
+      title: library/Doubling_test.java
     - icon: ':heavy_check_mark:'
       path: library/DualSegmentTree_test.java
       title: library/DualSegmentTree_test.java
@@ -303,6 +306,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix_smallest_test.java
       title: library/WaveletMatrix_smallest_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/WeightedDoubling_test.java
+      title: library/WeightedDoubling_test.java
     - icon: ':heavy_check_mark:'
       path: library/WeightedLca_test.java
       title: library/WeightedLca_test.java

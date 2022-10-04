@@ -26,7 +26,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/Doubling.java
     title: library/Doubling.java
   - icon: ':heavy_check_mark:'
@@ -107,7 +107,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedDoubling.java
     title: library/WeightedDoubling.java
   - icon: ':heavy_check_mark:'

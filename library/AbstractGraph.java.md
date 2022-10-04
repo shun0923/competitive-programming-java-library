@@ -11,7 +11,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/Doubling.java
     title: library/Doubling.java
   - icon: ':heavy_check_mark:'
@@ -35,7 +35,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedDoubling.java
     title: library/WeightedDoubling.java
   - icon: ':heavy_check_mark:'
@@ -99,6 +99,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/WeightedDoubling_test.java
+    title: library/WeightedDoubling_test.java
   - icon: ':heavy_check_mark:'
     path: library/WeightedLca_test.java
     title: library/WeightedLca_test.java
@@ -325,6 +328,7 @@ data:
   - library/WarshallFloyd_reversed_test.java
   - library/WarshallFloyd_test.java
   - library/UnionFind_uniteAll_test.java
+  - library/WeightedDoubling_test.java
   - library/Dijkstra_forDenseGraph_reversed_test.java
   - library/Dijkstra_test.java
   - library/TemplateDijkstra_test.java

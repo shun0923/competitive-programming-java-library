@@ -57,6 +57,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
+  - icon: ':x:'
+    path: library/Doubling_test.java
+    title: library/Doubling_test.java
   - icon: ':heavy_check_mark:'
     path: library/DualSegmentTree_test.java
     title: library/DualSegmentTree_test.java
@@ -181,14 +184,17 @@ data:
     path: library/WaveletMatrix_smallest_test.java
     title: library/WaveletMatrix_smallest_test.java
   - icon: ':heavy_check_mark:'
+    path: library/WeightedDoubling_test.java
+    title: library/WeightedDoubling_test.java
+  - icon: ':heavy_check_mark:'
     path: library/WeightedLca_test.java
     title: library/WeightedLca_test.java
   - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind_test.java
     title: library/WeightedUnionFind_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -212,7 +218,7 @@ data:
   path: library/Solver.java
   requiredBy: []
   timestamp: '2022-10-04 10:50:43+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/ArbitraryModOperation_test.java
   - library/Dijkstra_path_test.java
@@ -228,6 +234,7 @@ data:
   - library/Mod107ManyCombination_test.java
   - library/UnionFind_uniteAll_test.java
   - library/SegmentTree_Composite_test.java
+  - library/WeightedDoubling_test.java
   - library/TemplateSegmentTree_Composite_test.java
   - library/DynamicSegmentTree_test.java
   - library/Dijkstra_forDenseGraph_reversed_test.java
@@ -243,6 +250,7 @@ data:
   - library/Dijkstra_test.java
   - library/TemplateSwag_test.java
   - library/WaveletMatrix_freq_test.java
+  - library/Doubling_test.java
   - library/TemplateDynamicSwag_test.java
   - library/Mod107Random_test.java
   - library/TemplateDijkstra_test.java

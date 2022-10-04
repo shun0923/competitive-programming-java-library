@@ -8,10 +8,13 @@ data:
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: library/Doubling_test.java
+    title: library/Doubling_test.java
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -46,8 +49,9 @@ data:
   path: library/Doubling.java
   requiredBy: []
   timestamp: '2022-10-04 18:06:03+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - library/Doubling_test.java
 documentation_of: library/Doubling.java
 layout: document
 redirect_from:
