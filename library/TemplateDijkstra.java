@@ -6,7 +6,7 @@ import library.SimpleUtil;
 import library.AbstractGraph;
 import library.PathRestoration;
 
-final class TemplateDijkstra<T extends Comparable<T>> {
+final class TemplateDijkstra<T> {
 	private final class Dist implements Comparable<Dist> {
 		public int target;
 		public T cost;
