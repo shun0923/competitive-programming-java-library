@@ -24,7 +24,7 @@
 "library/FenwickTree_test.java": "2022-10-04 10:50:43 +0900",
 "library/HelloWorld_test.java": "2022-10-04 10:50:43 +0900",
 "library/Kruskal_test.java": "2022-10-04 10:50:43 +0900",
-"library/Lca_test.java": "2022-10-04 18:06:03 +0900",
+"library/Lca_test.java": "2022-10-04 18:33:11 +0900",
 "library/ManyFastIO_test.java": "2022-10-04 10:50:43 +0900",
 "library/Mod107ManyCombination_test.java": "2022-10-04 10:50:43 +0900",
 "library/Mod107Pow_test.java": "2022-10-04 10:50:43 +0900",
@@ -57,5 +57,6 @@
 "library/WarshallFloyd_test.java": "2022-10-04 10:50:43 +0900",
 "library/WaveletMatrix_freq_test.java": "2022-10-04 10:50:43 +0900",
 "library/WaveletMatrix_smallest_test.java": "2022-10-04 10:50:43 +0900",
+"library/WeightedLca_test.java": "2022-10-04 18:33:11 +0900",
 "library/WeightedUnionFind_test.java": "2022-10-04 10:50:43 +0900"
 }
