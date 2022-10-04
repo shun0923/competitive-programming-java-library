@@ -24,6 +24,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Dijkstra.java
       title: library/Dijkstra.java
+    - icon: ':warning:'
+      path: library/Doubling.java
+      title: library/Doubling.java
     - icon: ':heavy_check_mark:'
       path: library/DualSegmentTree.java
       title: library/DualSegmentTree.java
@@ -48,6 +51,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Kruskal.java
       title: library/Kruskal.java
+    - icon: ':heavy_check_mark:'
+      path: library/Lca.java
+      title: library/Lca.java
     - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
@@ -192,6 +198,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Kruskal_test.java
       title: library/Kruskal_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/Lca_test.java
+      title: library/Lca_test.java
     - icon: ':heavy_check_mark:'
       path: library/ManyFastIO_test.java
       title: library/ManyFastIO_test.java

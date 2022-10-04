@@ -82,6 +82,9 @@ data:
     path: library/Kruskal_test.java
     title: library/Kruskal_test.java
   - icon: ':heavy_check_mark:'
+    path: library/Lca_test.java
+    title: library/Lca_test.java
+  - icon: ':heavy_check_mark:'
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
   - icon: ':heavy_check_mark:'
@@ -260,6 +263,7 @@ data:
   - library/Scc_groups_test.java
   - library/Scc_ids_test.java
   - library/TemplateDijkstra_pathEdge_test.java
+  - library/Lca_test.java
   - library/Mod998ManyCombination_test.java
   - library/ArbitraryModRandom_test.java
   - library/Mod107Pow_test.java

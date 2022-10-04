@@ -26,6 +26,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
+  - icon: ':warning:'
+    path: library/Doubling.java
+    title: library/Doubling.java
   - icon: ':heavy_check_mark:'
     path: library/DualSegmentTree.java
     title: library/DualSegmentTree.java
@@ -44,6 +47,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Kruskal.java
     title: library/Kruskal.java
+  - icon: ':heavy_check_mark:'
+    path: library/Lca.java
+    title: library/Lca.java
   - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
@@ -348,6 +354,7 @@ data:
   - library/TemplateSwag.java
   - library/Kruskal.java
   - library/UnionFind.java
+  - library/Lca.java
   - library/TemplateDijkstra.java
   - library/BellmanFord.java
   - library/WarshallFloyd.java
@@ -357,6 +364,7 @@ data:
   - library/Dijkstra.java
   - library/TemplateSegmentTree.java
   - library/SparseTable.java
+  - library/Doubling.java
   - library/DualSegmentTree.java
   - library/Swag.java
   - library/Convolution.java

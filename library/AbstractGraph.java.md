@@ -11,9 +11,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
+  - icon: ':warning:'
+    path: library/Doubling.java
+    title: library/Doubling.java
   - icon: ':heavy_check_mark:'
     path: library/Kruskal.java
     title: library/Kruskal.java
+  - icon: ':heavy_check_mark:'
+    path: library/Lca.java
+    title: library/Lca.java
   - icon: ':heavy_check_mark:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
@@ -60,6 +66,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Kruskal_test.java
     title: library/Kruskal_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/Lca_test.java
+    title: library/Lca_test.java
   - icon: ':heavy_check_mark:'
     path: library/Scc_graph_test.java
     title: library/Scc_graph_test.java
@@ -286,10 +295,12 @@ data:
   requiredBy:
   - library/Kruskal.java
   - library/UnionFind.java
+  - library/Lca.java
   - library/TemplateDijkstra.java
   - library/BellmanFord.java
   - library/WarshallFloyd.java
   - library/Dijkstra.java
+  - library/Doubling.java
   - library/Scc.java
   - library/WeightedUnionFind.java
   - library/PathRestoration.java
@@ -312,6 +323,7 @@ data:
   - library/Scc_groups_test.java
   - library/Scc_ids_test.java
   - library/TemplateDijkstra_pathEdge_test.java
+  - library/Lca_test.java
   - library/Dijkstra_forDenseGraph_test.java
 documentation_of: library/AbstractGraph.java
 layout: document
