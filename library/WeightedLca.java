@@ -1,6 +1,7 @@
 package library;
 
 import java.util.*;
+import java.util.function.*;
 import library.SimpleUtil;
 import library.AbstractGraph;
 
