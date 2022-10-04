@@ -24,7 +24,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Dijkstra.java
       title: library/Dijkstra.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Doubling.java
       title: library/Doubling.java
     - icon: ':heavy_check_mark:'
@@ -75,7 +75,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -180,7 +180,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Dijkstra_test.java
       title: library/Dijkstra_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Doubling_test.java
       title: library/Doubling_test.java
     - icon: ':heavy_check_mark:'

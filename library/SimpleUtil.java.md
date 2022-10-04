@@ -26,7 +26,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Doubling.java
     title: library/Doubling.java
   - icon: ':heavy_check_mark:'

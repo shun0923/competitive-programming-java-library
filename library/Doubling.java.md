@@ -9,12 +9,12 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Doubling_test.java
     title: library/Doubling_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -38,7 +38,7 @@ data:
     \ = e.target;\n\t\tinit();\n\t}\n\tprivate final void init() {\n\t\tfor(int k\
     \ = 0; k + 1 < log; k ++) {\n\t\t\tfor(int v = 0; v < n; v ++) {\n\t\t\t\tif(next[k][v]\
     \ == -1) next[k + 1][v] = -1;\n\t\t\t\telse next[k + 1][v] = next[k][next[k][v]];\n\
-    \t\t\t}\n\t\t}\n\t}\n\n\tint get(int x, final long q) { // O(logQ)\n\t\tSimpleUtil.rangeCheck(x,\
+    \t\t\t}\n\t\t}\n\t}\n\n\tint cal(int x, final long q) { // O(logQ)\n\t\tSimpleUtil.rangeCheck(x,\
     \ n);\n\t\tSimpleUtil.nonNegativeCheck(q);\n\t\tfor(int k = log - 1; k >= 0; k\
     \ --) {\n\t\t\tif(x == -1) break;\n\t\t\tif((q & 1l << k) != 0) x = next[k][x];\n\
     \t\t}\n\t\treturn x;\n\t}\n}"
@@ -48,8 +48,8 @@ data:
   isVerificationFile: false
   path: library/Doubling.java
   requiredBy: []
-  timestamp: '2022-10-04 18:06:03+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-10-04 19:27:54+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Doubling_test.java
 documentation_of: library/Doubling.java
