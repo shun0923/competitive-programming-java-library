@@ -20,7 +20,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Lca.java
     title: library/Lca.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':heavy_check_mark:'
@@ -29,7 +29,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Scc.java
     title: library/Scc.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
   - icon: ':heavy_check_mark:'
@@ -93,10 +93,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Scc_ids_test.java
     title: library/Scc_ids_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra_pathEdge_test.java
     title: library/TemplateDijkstra_pathEdge_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra_test.java
     title: library/TemplateDijkstra_test.java
   - icon: ':heavy_check_mark:'
@@ -117,9 +117,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WeightedLca_test.java
     title: library/WeightedLca_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -170,31 +170,39 @@ data:
     public void update(final WeightedEdge e, final long cost) { remove(e); e.cost\
     \ = cost; add(e); }\n\t@Override public Node edges() { return super.edges(); }\n\
     \t@Override public Node[] nodes() { return super.nodes(); }\n\t@Override public\
-    \ Node[] reverseNodes() { return super.reverseNodes(); }\n}\nabstract class TemplateGraph<T\
-    \ extends Comparable<T>, Node extends TemplateNode<T>> extends AbstractGraph<Node,\
-    \ TemplateEdge<T>> {\n\tpublic TemplateGraph(final int numNode, final boolean\
-    \ directed) { super(numNode, directed); }\n\tpublic void add(final int source,\
-    \ final int target, final T cost) { add(new TemplateEdge<T>(source, target, cost));\
-    \ }\n\tpublic void update(final TemplateEdge<T> e, final T cost) { remove(e);\
-    \ e.cost = cost; add(e); }\n\t@Override public Node edges() { return super.edges();\
-    \ }\n\t@Override public Node[] nodes() { return super.nodes(); }\n\t@Override\
-    \ public Node[] reverseNodes() { return super.reverseNodes(); }\n}\nclass ArrayUnweightedGraph\
-    \ extends UnweightedGraph<ArrayUnweightedNode> {\n\tpublic ArrayUnweightedGraph(final\
-    \ int numNode, final boolean directed) { super(numNode, directed); }\n\t@Override\
-    \ protected final ArrayUnweightedNode createNode(final int id) { return new ArrayUnweightedNode(id);\
-    \ }\n\t@Override protected final ArrayUnweightedNode[] createNodeList(final int\
-    \ size) { return new ArrayUnweightedNode[size]; }\n\t@Override public ArrayUnweightedNode\
-    \ edges() { return super.edges(); }\n\t@Override public ArrayUnweightedNode[]\
-    \ nodes() { return super.nodes(); }\n\t@Override public ArrayUnweightedNode[]\
-    \ reverseNodes() { return super.reverseNodes(); }\n}\nclass ArrayWeightedGraph\
-    \ extends WeightedGraph<ArrayWeightedNode> {\n\tpublic ArrayWeightedGraph(final\
-    \ int numNode, final boolean directed) { super(numNode, directed); }\n\t@Override\
-    \ protected final ArrayWeightedNode createNode(final int id) { return new ArrayWeightedNode(id);\
-    \ }\n\t@Override protected final ArrayWeightedNode[] createNodeList(final int\
-    \ size) { return new ArrayWeightedNode[size]; }\n\t@Override public ArrayWeightedNode\
-    \ edges() { return super.edges(); }\n\t@Override public ArrayWeightedNode[] nodes()\
-    \ { return super.nodes(); }\n\t@Override public ArrayWeightedNode[] reverseNodes()\
-    \ { return super.reverseNodes(); }\n}\nclass ArrayTemplateGraph<T extends Comparable<T>>\
+    \ Node[] reverseNodes() { return super.reverseNodes(); }\n}\nabstract class TemplateGraph<T,\
+    \ Node extends TemplateNode<T>> extends AbstractGraph<Node, TemplateEdge<T>> {\n\
+    \tpublic TemplateGraph(final int numNode, final boolean directed) { super(numNode,\
+    \ directed); }\n\tpublic void add(final int source, final int target, final T\
+    \ cost) { add(new TemplateEdge<T>(source, target, cost)); }\n\tpublic void update(final\
+    \ TemplateEdge<T> e, final T cost) { remove(e); e.cost = cost; add(e); }\n\t@Override\
+    \ public Node edges() { return super.edges(); }\n\t@Override public Node[] nodes()\
+    \ { return super.nodes(); }\n\t@Override public Node[] reverseNodes() { return\
+    \ super.reverseNodes(); }\n}\nabstract class ComparableTemplateGraph<T extends\
+    \ Comparable<T>, Node extends ComparableTemplateNode<T>> extends AbstractGraph<Node,\
+    \ ComparableTemplateEdge<T>> {\n\tpublic ComparableTemplateGraph(final int numNode,\
+    \ final boolean directed) { super(numNode, directed); }\n\tpublic void add(final\
+    \ int source, final int target, final T cost) { add(new ComparableTemplateEdge<T>(source,\
+    \ target, cost)); }\n\tpublic void update(final ComparableTemplateEdge<T> e, final\
+    \ T cost) { remove(e); e.cost = cost; add(e); }\n\t@Override public Node edges()\
+    \ { return super.edges(); }\n\t@Override public Node[] nodes() { return super.nodes();\
+    \ }\n\t@Override public Node[] reverseNodes() { return super.reverseNodes(); }\n\
+    }\nclass ArrayUnweightedGraph extends UnweightedGraph<ArrayUnweightedNode> {\n\
+    \tpublic ArrayUnweightedGraph(final int numNode, final boolean directed) { super(numNode,\
+    \ directed); }\n\t@Override protected final ArrayUnweightedNode createNode(final\
+    \ int id) { return new ArrayUnweightedNode(id); }\n\t@Override protected final\
+    \ ArrayUnweightedNode[] createNodeList(final int size) { return new ArrayUnweightedNode[size];\
+    \ }\n\t@Override public ArrayUnweightedNode edges() { return super.edges(); }\n\
+    \t@Override public ArrayUnweightedNode[] nodes() { return super.nodes(); }\n\t\
+    @Override public ArrayUnweightedNode[] reverseNodes() { return super.reverseNodes();\
+    \ }\n}\nclass ArrayWeightedGraph extends WeightedGraph<ArrayWeightedNode> {\n\t\
+    public ArrayWeightedGraph(final int numNode, final boolean directed) { super(numNode,\
+    \ directed); }\n\t@Override protected final ArrayWeightedNode createNode(final\
+    \ int id) { return new ArrayWeightedNode(id); }\n\t@Override protected final ArrayWeightedNode[]\
+    \ createNodeList(final int size) { return new ArrayWeightedNode[size]; }\n\t@Override\
+    \ public ArrayWeightedNode edges() { return super.edges(); }\n\t@Override public\
+    \ ArrayWeightedNode[] nodes() { return super.nodes(); }\n\t@Override public ArrayWeightedNode[]\
+    \ reverseNodes() { return super.reverseNodes(); }\n}\nclass ArrayTemplateGraph<T>\
     \ extends TemplateGraph<T, ArrayTemplateNode<T>> {\n\tpublic ArrayTemplateGraph(final\
     \ int numNode, final boolean directed) { super(numNode, directed); }\n\t@Override\
     \ protected final ArrayTemplateNode<T> createNode(final int id) { return new ArrayTemplateNode<T>(id);\
@@ -203,30 +211,49 @@ data:
     \ public ArrayTemplateNode<T> edges() { return super.edges(); }\n\t@Override public\
     \ ArrayTemplateNode<T>[] nodes() { return super.nodes(); }\n\t@Override public\
     \ ArrayTemplateNode<T>[] reverseNodes() { return super.reverseNodes(); }\n}\n\
-    class HashUnweightedGraph extends UnweightedGraph<HashUnweightedNode> {\n\tpublic\
-    \ HashUnweightedGraph(final int numNode, final boolean directed) { super(numNode,\
-    \ directed); }\n\t@Override protected final HashUnweightedNode createNode(final\
-    \ int id) { return new HashUnweightedNode(id); }\n\t@Override protected final\
-    \ HashUnweightedNode[] createNodeList(final int size) { return new HashUnweightedNode[size];\
-    \ }\n\t@Override public HashUnweightedNode edges() { return super.edges(); }\n\
-    \t@Override public HashUnweightedNode[] nodes() { return super.nodes(); }\n\t\
-    @Override public HashUnweightedNode[] reverseNodes() { return super.reverseNodes();\
-    \ }\n}\nclass HashWeightedGraph extends WeightedGraph<HashWeightedNode> {\n\t\
-    public HashWeightedGraph(final int numNode, final boolean directed) { super(numNode,\
+    class ArrayComparableTemplateGraph<T extends Comparable<T>> extends ComparableTemplateGraph<T,\
+    \ ArrayComparableTemplateNode<T>> {\n\tpublic ArrayComparableTemplateGraph(final\
+    \ int numNode, final boolean directed) { super(numNode, directed); }\n\t@Override\
+    \ protected final ArrayComparableTemplateNode<T> createNode(final int id) { return\
+    \ new ArrayComparableTemplateNode<T>(id); }\n\t@Override @SuppressWarnings(\"\
+    unchecked\") protected final ArrayComparableTemplateNode<T>[] createNodeList(final\
+    \ int size) { return new ArrayComparableTemplateNode[size]; }\n\t@Override public\
+    \ ArrayComparableTemplateNode<T> edges() { return super.edges(); }\n\t@Override\
+    \ public ArrayComparableTemplateNode<T>[] nodes() { return super.nodes(); }\n\t\
+    @Override public ArrayComparableTemplateNode<T>[] reverseNodes() { return super.reverseNodes();\
+    \ }\n}\nclass HashUnweightedGraph extends UnweightedGraph<HashUnweightedNode>\
+    \ {\n\tpublic HashUnweightedGraph(final int numNode, final boolean directed) {\
+    \ super(numNode, directed); }\n\t@Override protected final HashUnweightedNode\
+    \ createNode(final int id) { return new HashUnweightedNode(id); }\n\t@Override\
+    \ protected final HashUnweightedNode[] createNodeList(final int size) { return\
+    \ new HashUnweightedNode[size]; }\n\t@Override public HashUnweightedNode edges()\
+    \ { return super.edges(); }\n\t@Override public HashUnweightedNode[] nodes() {\
+    \ return super.nodes(); }\n\t@Override public HashUnweightedNode[] reverseNodes()\
+    \ { return super.reverseNodes(); }\n}\nclass HashWeightedGraph extends WeightedGraph<HashWeightedNode>\
+    \ {\n\tpublic HashWeightedGraph(final int numNode, final boolean directed) { super(numNode,\
     \ directed); }\n\t@Override protected final HashWeightedNode createNode(final\
     \ int id) { return new HashWeightedNode(id); }\n\t@Override protected final HashWeightedNode[]\
     \ createNodeList(final int size) { return new HashWeightedNode[size]; }\n\t@Override\
     \ public HashWeightedNode edges() { return super.edges(); }\n\t@Override public\
     \ HashWeightedNode[] nodes() { return super.nodes(); }\n\t@Override public HashWeightedNode[]\
-    \ reverseNodes() { return super.reverseNodes(); }\n}\nclass HashTemplateGraph<T\
-    \ extends Comparable<T>> extends TemplateGraph<T, HashTemplateNode<T>> {\n\tpublic\
-    \ HashTemplateGraph(final int numNode, final boolean directed) { super(numNode,\
-    \ directed); }\n\t@Override protected final HashTemplateNode<T> createNode(final\
-    \ int id) { return new HashTemplateNode<T>(id); }\n\t@Override @SuppressWarnings(\"\
-    unchecked\") protected final HashTemplateNode<T>[] createNodeList(final int size)\
-    \ { return new HashTemplateNode[size]; }\n\t@Override public HashTemplateNode<T>\
-    \ edges() { return super.edges(); }\n\t@Override public HashTemplateNode<T>[]\
-    \ nodes() { return super.nodes(); }\n\t@Override public HashTemplateNode<T>[]\
+    \ reverseNodes() { return super.reverseNodes(); }\n}\nclass HashTemplateGraph<T>\
+    \ extends TemplateGraph<T, HashTemplateNode<T>> {\n\tpublic HashTemplateGraph(final\
+    \ int numNode, final boolean directed) { super(numNode, directed); }\n\t@Override\
+    \ protected final HashTemplateNode<T> createNode(final int id) { return new HashTemplateNode<T>(id);\
+    \ }\n\t@Override @SuppressWarnings(\"unchecked\") protected final HashTemplateNode<T>[]\
+    \ createNodeList(final int size) { return new HashTemplateNode[size]; }\n\t@Override\
+    \ public HashTemplateNode<T> edges() { return super.edges(); }\n\t@Override public\
+    \ HashTemplateNode<T>[] nodes() { return super.nodes(); }\n\t@Override public\
+    \ HashTemplateNode<T>[] reverseNodes() { return super.reverseNodes(); }\n}\nclass\
+    \ HashComparableTemplateGraph<T extends Comparable<T>> extends ComparableTemplateGraph<T,\
+    \ HashComparableTemplateNode<T>> {\n\tpublic HashComparableTemplateGraph(final\
+    \ int numNode, final boolean directed) { super(numNode, directed); }\n\t@Override\
+    \ protected final HashComparableTemplateNode<T> createNode(final int id) { return\
+    \ new HashComparableTemplateNode<T>(id); }\n\t@Override @SuppressWarnings(\"unchecked\"\
+    ) protected final HashComparableTemplateNode<T>[] createNodeList(final int size)\
+    \ { return new HashComparableTemplateNode[size]; }\n\t@Override public HashComparableTemplateNode<T>\
+    \ edges() { return super.edges(); }\n\t@Override public HashComparableTemplateNode<T>[]\
+    \ nodes() { return super.nodes(); }\n\t@Override public HashComparableTemplateNode<T>[]\
     \ reverseNodes() { return super.reverseNodes(); }\n}\n\ninterface AbstractNode<Edge\
     \ extends AbstractEdge<Edge>> extends Collection<Edge> {  }\ninterface UnweightedNode\
     \ extends AbstractNode<UnweightedEdge> { public boolean add(final int source,\
@@ -359,8 +386,8 @@ data:
   - library/WeightedUnionFind.java
   - library/WeightedLca.java
   - library/PathRestoration.java
-  timestamp: '2022-10-04 23:14:38+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2022-10-04 23:36:08+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java
