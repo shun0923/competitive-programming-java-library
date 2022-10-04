@@ -34,7 +34,6 @@ final class WeightedLca {
 
 		Arrays.fill(depth, -1);
 		depth[start] = 0;
-		depth[start] = 0;
 		stack[size ++] = 0;
 		while(ptr != size) {
 			int crt = stack[ptr ++];
