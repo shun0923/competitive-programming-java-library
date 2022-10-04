@@ -63,7 +63,7 @@ final class Scc {
 			if(ord[e.target] == -1) {
 				dfs(e.target, numNode, nodes);
 				if(low[v] > low[e.target]) low[v] = low[e.target];
-			}else if(low[v] > ord[e.target]) low[v] = ord[e.target];
+			}else if(low[v] > low[e.target]) low[v] = low[e.target];
 		}
 		if(low[v] == ord[v]) {
 			while(true) {
