@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -45,18 +45,18 @@ data:
     \t}\n\n\tpublic final int cal(int u, int v) { // O(logV)\n\t\tSimpleUtil.rangeCheck(u,\
     \ numNode);\n\t\tSimpleUtil.rangeCheck(v, numNode);\n\t\tif(depth[u] > depth[v])\
     \ {\n\t\t\tint tmp = u;\n\t\t\tu = v;\n\t\t\tv = tmp;\n\t\t}\n\t\tfor(int k =\
-    \ 0; k < db.log; k ++) {\n\t\t\tif(((depth[v] - depth[u]) & 1 << k) != 0) v =\
-    \ db.next[k][v];\n\t\t}\n\t\tfor(int k = db.log - 1; k >= 0; k --) {\n\t\t\tif(u\
-    \ != v && db.next[k][u] != db.next[k][v]) {\n\t\t\t\tu = db.next[k][u];\n\t\t\t\
-    \tv = db.next[k][v];\n\t\t\t}\n\t\t}\n\t\tif(u != v) {\n\t\t\tu = db.next[0][u];\n\
-    \t\t\tv = db.next[0][v];\n\t\t}\n\t\treturn u;\n\t}\n}"
+    \ 0; k < db.log; k ++) {\n\t\t\tif((depth[v] - depth[u] & 1 << k) != 0) v = db.next[k][v];\n\
+    \t\t}\n\t\tfor(int k = db.log - 1; k >= 0; k --) {\n\t\t\tif(u != v && db.next[k][u]\
+    \ != db.next[k][v]) {\n\t\t\t\tu = db.next[k][u];\n\t\t\t\tv = db.next[k][v];\n\
+    \t\t\t}\n\t\t}\n\t\tif(u != v) {\n\t\t\tu = db.next[0][u];\n\t\t\tv = db.next[0][v];\n\
+    \t\t}\n\t\treturn u;\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/Lca.java
   requiredBy: []
-  timestamp: '2022-10-04 17:06:22+09:00'
+  timestamp: '2022-10-04 18:06:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Lca_test.java

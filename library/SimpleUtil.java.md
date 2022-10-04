@@ -8,7 +8,7 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':heavy_check_mark:'
@@ -107,6 +107,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
+  - icon: ':warning:'
+    path: library/WeightedDoubling.java
+    title: library/WeightedDoubling.java
+  - icon: ':x:'
+    path: library/WeightedLca.java
+    title: library/WeightedLca.java
   - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind.java
     title: library/WeightedUnionFind.java
@@ -368,12 +374,14 @@ data:
   - library/DualSegmentTree.java
   - library/Swag.java
   - library/Convolution.java
+  - library/WeightedDoubling.java
   - library/Scc.java
   - library/Permutation.java
   - library/AbstractGraph.java
   - library/BitVector.java
   - library/WeightedUnionFind.java
   - library/FenwickTree.java
+  - library/WeightedLca.java
   - library/DynamicSwag.java
   - library/TemplateDynamicSegmentTree.java
   - library/CompressedWaveletMatrix.java

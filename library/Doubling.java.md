@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -31,13 +31,13 @@ data:
     \ O(NlogM)\n\tpublic Doubling(final int n, final long max, final int[] edges)\
     \ {\n\t\tthis(n, max);\n\t\tSystem.arraycopy(edges, 0, next[0], 0, n);\n\t\tinit();\n\
     \t}\n\tpublic Doubling(final int n, final long max, final AbstractNode<? extends\
-    \ AbstractNode> edges) {\n\t\tthis(n, max);\n\t\tfor(AbstractEdge e : edges) next[0][e.source]\
+    \ AbstractEdge> edges) {\n\t\tthis(n, max);\n\t\tfor(AbstractEdge e : edges) next[0][e.source]\
     \ = e.target;\n\t\tinit();\n\t}\n\tprivate final void init() {\n\t\tfor(int k\
     \ = 0; k + 1 < log; k ++) {\n\t\t\tfor(int v = 0; v < n; v ++) {\n\t\t\t\tif(next[k][v]\
     \ == -1) next[k + 1][v] = -1;\n\t\t\t\telse next[k + 1][v] = next[k][next[k][v]];\n\
     \t\t\t}\n\t\t}\n\t}\n\n\tint get(int x, final long q) { // O(logQ)\n\t\tSimpleUtil.rangeCheck(x,\
     \ n);\n\t\tSimpleUtil.nonNegativeCheck(q);\n\t\tfor(int k = log - 1; k >= 0; k\
-    \ --) {\n\t\t\tif(x == -1) break;\n\t\t\tif((q & 1 << k) != 0) x = next[k][x];\n\
+    \ --) {\n\t\t\tif(x == -1) break;\n\t\t\tif((q & 1l << k) != 0) x = next[k][x];\n\
     \t\t}\n\t\treturn x;\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
@@ -45,7 +45,7 @@ data:
   isVerificationFile: false
   path: library/Doubling.java
   requiredBy: []
-  timestamp: '2022-10-04 17:06:22+09:00'
+  timestamp: '2022-10-04 18:06:03+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/Doubling.java

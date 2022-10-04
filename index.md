@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -75,7 +75,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -117,6 +117,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix.java
       title: library/WaveletMatrix.java
+    - icon: ':warning:'
+      path: library/WeightedDoubling.java
+      title: library/WeightedDoubling.java
+    - icon: ':x:'
+      path: library/WeightedLca.java
+      title: library/WeightedLca.java
     - icon: ':heavy_check_mark:'
       path: library/WeightedUnionFind.java
       title: library/WeightedUnionFind.java
@@ -297,6 +303,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix_smallest_test.java
       title: library/WaveletMatrix_smallest_test.java
+    - icon: ':x:'
+      path: library/WeightedLca_test.java
+      title: library/WeightedLca_test.java
     - icon: ':heavy_check_mark:'
       path: library/WeightedUnionFind_test.java
       title: library/WeightedUnionFind_test.java

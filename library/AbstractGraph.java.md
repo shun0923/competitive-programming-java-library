@@ -35,6 +35,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
+  - icon: ':warning:'
+    path: library/WeightedDoubling.java
+    title: library/WeightedDoubling.java
+  - icon: ':x:'
+    path: library/WeightedLca.java
+    title: library/WeightedLca.java
   - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind.java
     title: library/WeightedUnionFind.java
@@ -93,9 +99,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: library/WeightedLca_test.java
+    title: library/WeightedLca_test.java
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -301,11 +310,13 @@ data:
   - library/WarshallFloyd.java
   - library/Dijkstra.java
   - library/Doubling.java
+  - library/WeightedDoubling.java
   - library/Scc.java
   - library/WeightedUnionFind.java
+  - library/WeightedLca.java
   - library/PathRestoration.java
   timestamp: '2022-10-03 17:15:22+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java
@@ -324,6 +335,7 @@ data:
   - library/Scc_ids_test.java
   - library/TemplateDijkstra_pathEdge_test.java
   - library/Lca_test.java
+  - library/WeightedLca_test.java
   - library/Dijkstra_forDenseGraph_test.java
 documentation_of: library/AbstractGraph.java
 layout: document
