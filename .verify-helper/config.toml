@@ -1,3 +1,4 @@
 [languages.java]
+execute = "java -Xss1024M {path}"
 bundle = "false"
 list_dependencies = "sed 's/^import \\(.*\\)\\;/\\1\\/java/;t labal;d;:labal y/\\.\\//\\/\\./' {path}"
