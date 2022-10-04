@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSegmentTree.java
     title: library/TemplateDynamicSegmentTree.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -39,7 +39,7 @@ data:
   path: library/TemplateDynamicSegmentTree_Small_test.java
   requiredBy: []
   timestamp: '2022-10-04 10:50:43+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/TemplateDynamicSegmentTree_Small_test.java
 layout: document

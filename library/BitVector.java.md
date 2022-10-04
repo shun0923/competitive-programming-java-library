@@ -5,7 +5,7 @@ data:
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
   _extendedVerifiedWith: []

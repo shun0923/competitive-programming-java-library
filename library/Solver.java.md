@@ -102,79 +102,79 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Permutation_test.java
     title: library/Permutation_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Scc_graph_test.java
     title: library/Scc_graph_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Scc_groups_test.java
     title: library/Scc_groups_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Scc_ids_test.java
     title: library/Scc_ids_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/SegmentTree_Composite_test.java
     title: library/SegmentTree_Composite_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/SegmentTree_test.java
     title: library/SegmentTree_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/SparseTable_test.java
     title: library/SparseTable_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Swag_gcd_test.java
     title: library/Swag_gcd_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Swag_test.java
     title: library/Swag_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra_pathEdge_test.java
     title: library/TemplateDijkstra_pathEdge_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra_test.java
     title: library/TemplateDijkstra_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDualSegmentTree_test.java
     title: library/TemplateDualSegmentTree_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSegmentTree_Small_test.java
     title: library/TemplateDynamicSegmentTree_Small_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSegmentTree_test.java
     title: library/TemplateDynamicSegmentTree_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSwag_test.java
     title: library/TemplateDynamicSwag_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateSegmentTree_Composite_test.java
     title: library/TemplateSegmentTree_Composite_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateSegmentTree_test.java
     title: library/TemplateSegmentTree_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateSparseTable_test.java
     title: library/TemplateSparseTable_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateSwag_gcd_test.java
     title: library/TemplateSwag_gcd_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateSwag_test.java
     title: library/TemplateSwag_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/UnionFind_test.java
     title: library/UnionFind_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/UnionFind_uniteAll_test.java
     title: library/UnionFind_uniteAll_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_reversed_test.java
     title: library/WarshallFloyd_reversed_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix_freq_test.java
     title: library/WaveletMatrix_freq_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix_smallest_test.java
     title: library/WaveletMatrix_smallest_test.java
   - icon: ':x:'

@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Scc.java
     title: library/Scc.java
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/scc
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -41,8 +41,8 @@ data:
   isVerificationFile: true
   path: library/Scc_groups_test.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-10-04 11:46:32+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/Scc_groups_test.java
 layout: document

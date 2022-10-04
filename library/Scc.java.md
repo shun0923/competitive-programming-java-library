@@ -9,18 +9,18 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Scc_graph_test.java
     title: library/Scc_graph_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Scc_groups_test.java
     title: library/Scc_groups_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Scc_ids_test.java
     title: library/Scc_ids_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -64,7 +64,7 @@ data:
     \t\tord[v] = now;\n\t\tnow ++;\n\t\tvisited[ptr ++] = v;\n\t\tfor(AbstractEdge\
     \ e : nodes[v]) {\n\t\t\tif(ord[e.target] == -1) {\n\t\t\t\tdfs(e.target, numNode,\
     \ nodes);\n\t\t\t\tif(low[v] > low[e.target]) low[v] = low[e.target];\n\t\t\t\
-    }else if(low[v] > ord[e.target]) low[v] = ord[e.target];\n\t\t}\n\t\tif(low[v]\
+    }else if(low[v] > low[e.target]) low[v] = low[e.target];\n\t\t}\n\t\tif(low[v]\
     \ == ord[v]) {\n\t\t\twhile(true) {\n\t\t\t\tint u = visited[-- ptr];\n\t\t\t\t\
     ord[u] = numNode;\n\t\t\t\tids[u] = numGroup;\n\t\t\t\tif(u == v) break;\n\t\t\
     \t}\n\t\t\tnumGroup ++;\n\t\t}\n\t}\n}"
@@ -74,8 +74,8 @@ data:
   isVerificationFile: false
   path: library/Scc.java
   requiredBy: []
-  timestamp: '2022-10-04 01:33:26+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-10-04 11:46:32+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Scc_graph_test.java
   - library/Scc_groups_test.java

@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':question:'
