@@ -60,14 +60,14 @@ final class Scc {
 		now ++;
 		visited[ptr ++] = v;
 		for(AbstractEdge e : nodes[v]) {
-			if(ord[e.target] == -1) {
-				dfs(e.target, numNode, nodes);
-				if(low[v] > low[e.target]) low[v] = low[e.target];
-			}else if(low[v] > low[e.target]) low[v] = low[e.target];
+			if(ord[e.target] == -1) dfs(e.target, numNode, nodes);
+			if(low[v] > low[e.target]) low[v] = low[e.target];
 		}
+		
 		if(low[v] == ord[v]) {
 			while(true) {
 				int u = visited[-- ptr];
+				low[u] = numNode;
 				ord[u] = numNode;
 				ids[u] = numGroup;
 				if(u == v) break;
