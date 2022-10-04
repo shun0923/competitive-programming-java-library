@@ -25,12 +25,12 @@ data:
     \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
     , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.AbstractGraph;\n\nfinal class WeightedLca {\n\tprivate final long id;\n\
-    \tprivate final LongBinaryOperator f;\n\tprivate final int numNode;\n\tprivate\
-    \ WeightedDoubling db;\n\tpublic final int depth[];\n\n\t// O(VlogV)\n\tpublic\
-    \ WeightedLca(final int numNode, final WeightedNode[] nodes, final int root, final\
-    \ long id, final LongBinaryOperator f) {\n\t\tSimpleUtil.nonNegativeCheck(numNode);\n\
+  code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
+    \ library.SimpleUtil;\nimport library.AbstractGraph;\n\nfinal class WeightedLca\
+    \ {\n\tprivate final long id;\n\tprivate final LongBinaryOperator f;\n\tprivate\
+    \ final int numNode;\n\tprivate WeightedDoubling db;\n\tpublic final int depth[];\n\
+    \n\t// O(VlogV)\n\tpublic WeightedLca(final int numNode, final WeightedNode[]\
+    \ nodes, final int root, final long id, final LongBinaryOperator f) {\n\t\tSimpleUtil.nonNegativeCheck(numNode);\n\
     \t\tSimpleUtil.rangeCheck(root, numNode);\n\t\tthis.numNode = numNode;\n\t\tthis.id\
     \ = id;\n\t\tthis.f = f;\n\t\tdepth = new int[numNode];\n\t\tdb = new WeightedDoubling(numNode,\
     \ numNode, id, f, bfs(root, nodes));\n\t}\n\tpublic WeightedLca(final WeightedGraph\
@@ -61,7 +61,7 @@ data:
   isVerificationFile: false
   path: library/WeightedLca.java
   requiredBy: []
-  timestamp: '2022-10-04 18:06:13+09:00'
+  timestamp: '2022-10-04 18:11:03+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/WeightedLca_test.java

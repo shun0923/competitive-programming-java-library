@@ -44,7 +44,7 @@ data:
   isVerificationFile: true
   path: library/WeightedLca_test.java
   requiredBy: []
-  timestamp: '2022-10-04 18:06:13+09:00'
+  timestamp: '2022-10-04 18:11:03+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/WeightedLca_test.java
