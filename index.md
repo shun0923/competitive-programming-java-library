@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -60,7 +60,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Pair.java
       title: library/Pair.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/PathRestoration.java
       title: library/PathRestoration.java
     - icon: ':heavy_check_mark:'
@@ -78,7 +78,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -87,7 +87,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Swag.java
       title: library/Swag.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/TemplateDijkstra.java
       title: library/TemplateDijkstra.java
     - icon: ':heavy_check_mark:'
@@ -264,10 +264,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Swag_test.java
       title: library/Swag_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/TemplateDijkstra_pathEdge_test.java
       title: library/TemplateDijkstra_pathEdge_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/TemplateDijkstra_test.java
       title: library/TemplateDijkstra_test.java
     - icon: ':heavy_check_mark:'

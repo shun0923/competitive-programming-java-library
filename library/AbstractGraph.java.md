@@ -20,7 +20,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Lca.java
     title: library/Lca.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':heavy_check_mark:'
@@ -29,7 +29,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Scc.java
     title: library/Scc.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
   - icon: ':heavy_check_mark:'
@@ -93,10 +93,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Scc_ids_test.java
     title: library/Scc_ids_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDijkstra_pathEdge_test.java
     title: library/TemplateDijkstra_pathEdge_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDijkstra_test.java
     title: library/TemplateDijkstra_test.java
   - icon: ':heavy_check_mark:'
@@ -117,9 +117,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WeightedLca_test.java
     title: library/WeightedLca_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -360,7 +360,7 @@ data:
   - library/WeightedLca.java
   - library/PathRestoration.java
   timestamp: '2022-10-04 23:14:38+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':warning:'
@@ -12,15 +12,15 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDijkstra_pathEdge_test.java
     title: library/TemplateDijkstra_pathEdge_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDijkstra_test.java
     title: library/TemplateDijkstra_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -33,24 +33,24 @@ data:
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
     \ library.SimpleUtil;\nimport library.AbstractGraph;\nimport library.PathRestoration;\n\
-    \nfinal class TemplateDijkstra<T extends Comparable<T>> {\n\tprivate final class\
-    \ Dist implements Comparable<Dist> {\n\t\tpublic int target;\n\t\tpublic T cost;\n\
-    \t\tpublic Dist(final int target, final T cost) { this.target = target; this.cost\
-    \ = cost; }\n\t\t@Override public final String toString() { return \" - \"+cost.toString()+\"\
-    \ -> \"+target; }\n\t\t@Override public final int hashCode() { return Objects.hash(target,\
-    \ cost); }\n\t\t@Override\n\t\t@SuppressWarnings(\"unchecked\")\n\t\tpublic final\
-    \ boolean equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\
-    \tif(obj == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return\
-    \ false;\n\t\t\tDist that = (Dist) obj;\n\t\t\tif(this.target != that.target)\
-    \ return false;\n\t\t\tif(this.cost != that.cost) return false;\n\t\t\treturn\
-    \ true;\n\t\t}\n\t\t@Override\n\t\tpublic final int compareTo(final Dist that)\
-    \ {\n\t\t\tint c = cmp.compare(this.cost, that.cost);\n\t\t\tif(c == 0) c = Integer.compare(this.target,\
-    \ that.target);\n\t\t\treturn c;\n\t\t}\n\t}\n\n\tprivate int prv[];\n\tprivate\
-    \ TemplateEdge<T> prvEdge[];\n\tprivate Supplier<T> eSupplier;\n\tprivate T e;\n\
-    \tprivate BinaryOperator<T> f;\n\tprivate Comparator<T> cmp;\n\n\tpublic TemplateDijkstra(final\
-    \ Supplier<T> eSupplier, final BinaryOperator<T> f, final Comparator<T> cmp) {\n\
-    \t\tthis.eSupplier = eSupplier;\n\t\tthis.e = eSupplier.get();\n\t\tthis.f = f;\n\
-    \t\tthis.cmp = cmp;\n\t}\n\n\t// O((E+V)logV)\n\tpublic final <Node extends TemplateNode<T>>\
+    \nfinal class TemplateDijkstra<T> {\n\tprivate final class Dist implements Comparable<Dist>\
+    \ {\n\t\tpublic int target;\n\t\tpublic T cost;\n\t\tpublic Dist(final int target,\
+    \ final T cost) { this.target = target; this.cost = cost; }\n\t\t@Override public\
+    \ final String toString() { return \" - \"+cost.toString()+\" -> \"+target; }\n\
+    \t\t@Override public final int hashCode() { return Objects.hash(target, cost);\
+    \ }\n\t\t@Override\n\t\t@SuppressWarnings(\"unchecked\")\n\t\tpublic final boolean\
+    \ equals(final Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj\
+    \ == null) return false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\
+    \t\t\tDist that = (Dist) obj;\n\t\t\tif(this.target != that.target) return false;\n\
+    \t\t\tif(this.cost != that.cost) return false;\n\t\t\treturn true;\n\t\t}\n\t\t\
+    @Override\n\t\tpublic final int compareTo(final Dist that) {\n\t\t\tint c = cmp.compare(this.cost,\
+    \ that.cost);\n\t\t\tif(c == 0) c = Integer.compare(this.target, that.target);\n\
+    \t\t\treturn c;\n\t\t}\n\t}\n\n\tprivate int prv[];\n\tprivate TemplateEdge<T>\
+    \ prvEdge[];\n\tprivate Supplier<T> eSupplier;\n\tprivate T e;\n\tprivate BinaryOperator<T>\
+    \ f;\n\tprivate Comparator<T> cmp;\n\n\tpublic TemplateDijkstra(final Supplier<T>\
+    \ eSupplier, final BinaryOperator<T> f, final Comparator<T> cmp) {\n\t\tthis.eSupplier\
+    \ = eSupplier;\n\t\tthis.e = eSupplier.get();\n\t\tthis.f = f;\n\t\tthis.cmp =\
+    \ cmp;\n\t}\n\n\t// O((E+V)logV)\n\tpublic final <Node extends TemplateNode<T>>\
     \ ArrayList<T> dist(final TemplateGraph<T, Node> g, final int start) { return\
     \ dist(g, start, false); }\n\tpublic final <Node extends TemplateNode<T>> ArrayList<T>\
     \ dist(final TemplateGraph<T, Node> g, final int start, final boolean memoize)\
@@ -82,8 +82,8 @@ data:
   isVerificationFile: false
   path: library/TemplateDijkstra.java
   requiredBy: []
-  timestamp: '2022-10-04 23:14:38+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-10-04 23:29:37+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/TemplateDijkstra_test.java
   - library/TemplateDijkstra_pathEdge_test.java
