@@ -5,18 +5,13 @@ import library.SimpleUtil;
 import library.AbstractGraph;
 
 final class Scc {
-	private static int low[];
-	private static int ord[];
 	private static int ids[];
-	private static int visited[];
-	private static int ptr;
-	private static int now;
 	private static int numGroup;
 
 	// O(V+E)
-	public static final <Edge extends AbstractEdge<Edge>> int[][] calGroups(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return calGroups(g.numNode, g.nodes()); }
-	public static final int[][] calGroups(final int numNode, final AbstractNode<? extends AbstractEdge>[] nodes) {
-		calIds(numNode, nodes);
+	public static final <Edge extends AbstractEdge<Edge>> int[][] calGroups(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return calGroups(g.numNode, g.numEdge(), g.nodes()); }
+	public static final int[][] calGroups(final int numNode, final int numEdge, final AbstractNode<? extends AbstractEdge>[] nodes) {
+		int ids[] = calIds(numNode, numEdge, nodes);
 		int len[] = new int[numGroup];
 		for(int x : ids) len[x] ++;
 		int groups[][] = new int[numGroup][];
@@ -25,9 +20,9 @@ final class Scc {
 		for(int i = 0; i < numNode; i ++) groups[ids[i]][len[ids[i]] ++] = i;
 		return groups;
 	}
-	public static final <Edge extends AbstractEdge<Edge>> HashUnweightedGraph calGraph(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return calGraph(g.numNode, g.nodes()); }
-	public static final HashUnweightedGraph calGraph(final int numNode, final AbstractNode<? extends AbstractEdge>[] nodes) {
-		calIds(numNode, nodes);
+	public static final <Edge extends AbstractEdge<Edge>> HashUnweightedGraph calGraph(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return calGraph(g.numNode, g.numEdge(), g.nodes()); }
+	public static final HashUnweightedGraph calGraph(final int numNode, final int numEdge, final AbstractNode<? extends AbstractEdge>[] nodes) {
+		int ids[] = calIds(numNode, numEdge, nodes);
 		HashUnweightedGraph contracted = new HashUnweightedGraph(numGroup, true);
 		for(int i = 0; i < numNode; i ++) {
 			for(AbstractEdge e : nodes[i]) {
@@ -38,41 +33,48 @@ final class Scc {
 		}
 		return contracted;
 	}
-	public static final <Edge extends AbstractEdge<Edge>> int[] calIds(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return calIds(g.numNode, g.nodes()); }
-	public static final int[] calIds(final int numNode, final AbstractNode<? extends AbstractEdge>[] nodes) {
-		low = new int[numNode];
-		ord = new int[numNode];
-		ids = new int[numNode];
-		visited = new int[numNode];
-		ptr = 0;
-		now = 0;
-		numGroup = 0;
-		Arrays.fill(ord, -1);
-
-		for(int i = 0; i < numNode; i ++) if(ord[i] == -1) dfs(i, numNode, nodes);
-		for(int i = 0; i < numNode; i ++) ids[i] = numGroup - ids[i] - 1;
-		return ids;
-	}
-
-	private static final void dfs(int v, final int numNode, final AbstractNode<? extends AbstractEdge>[] nodes) { // O(V+E)
-		low[v] = now;
-		ord[v] = now;
-		now ++;
-		visited[ptr ++] = v;
-		for(AbstractEdge e : nodes[v]) {
-			if(ord[e.target] == -1) dfs(e.target, numNode, nodes);
-			if(low[v] > low[e.target]) low[v] = low[e.target];
-		}
-		
-		if(low[v] == ord[v]) {
-			while(true) {
-				int u = visited[-- ptr];
-				low[u] = numNode;
-				ord[u] = numNode;
-				ids[u] = numGroup;
-				if(u == v) break;
+	public static final <Edge extends AbstractEdge<Edge>> int[] calIds(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return calIds(g.numNode, g.numEdge(), g.nodes()); }
+	public static final int[] calIds(final int numNode, final int numEdge, final AbstractNode<? extends AbstractEdge>[] nodes) {
+		int low[] = new int[numNode];
+		int ids[] = new int[numNode];
+		int visited[] = new int[numNode];
+		int ptr1 = 0;
+		int stack[] = new int[numEdge + 1];
+		int ptr2 = 0;
+		int now = 0;
+		int numGroup = 0;
+		Arrays.fill(low, -1);
+		for(int i = 0; i < numNode; i ++) {
+			if(low[i] != -1) continue;
+			stack[ptr2 ++] = i;
+			while(ptr2 != 0) {
+				int v = stack[-- ptr2];
+				if(v >= 0) {
+					if(low[v] != -1) continue;
+					low[v] = now ++;
+					visited[ptr1 ++] = v;
+					stack[ptr2 ++] = - v - 1;
+					for(AbstractEdge e : nodes[v]) if(low[e.target] == -1) stack[ptr2 ++] = e.target;
+				}else {
+					v = - v - 1;
+					boolean root = true;
+					for(AbstractEdge e : nodes[v]) if(low[v] > low[e.target]) { low[v] = low[e.target]; root = false; }
+					if(root) {
+						while(true) {
+							int u = visited[-- ptr1];
+							low[u] = numNode;
+							ids[u] = numGroup;
+							if(u == v) break;
+						}
+						numGroup ++;
+					}
+				}
 			}
-			numGroup ++;
 		}
+
+		for(int i = 0; i < numNode; i ++) ids[i] = numGroup - ids[i] - 1;
+		Scc.ids = ids;
+		Scc.numGroup = numGroup;
+		return ids;
 	}
 }
