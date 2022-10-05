@@ -53,33 +53,33 @@ final class Trie extends ArrayList<TrieNode> { // P=prefix, M=numPrefix
 	}
 
 	// O(min(|S|,|P|))
-	public final boolean search(final String str) { return search(str, false); }
-	public final boolean search(final char[] c) { return search(c, false); }
-	public final boolean search(final int[] a) { return search(a, false); }
-	public final boolean startWith(final String str) { return search(str, true); }
-	public final boolean startWith(final char[] c) { return search(c, true); }
-	public final boolean startWith(final int[] a) { return search(a, true); }
-	public final boolean search(final String str, final int l, final int r) { return search(str, false, l, r); }
-	public final boolean search(final char[] c, final int l, final int r) { return search(c, false, l, r); }
-	public final boolean search(final int[] a, final int l, final int r) { return search(a, false, l, r); }
-	public final boolean startWith(final String str, final int l, final int r) { return search(str, true, l, r); }
-	public final boolean startWith(final char[] c, final int l, final int r) { return search(c, true, l, r); }
-	public final boolean startWith(final int[] a, final int l, final int r) { return search(a, true, l, r); }
-	public final boolean search(final String str, final boolean prefix) { return search(str, prefix, 0, str.length()); }
-	public final boolean search(final char[] c, final boolean prefix) { return search(c, prefix, 0, c.length); }
-	public final boolean search(final int[] a, final boolean prefix) { return search(a, prefix, 0, a.length); }
-	public final boolean search(final String str, final boolean prefix, final int l, final int r) { return search(str.toCharArray(), prefix, l, r); }
-	public final boolean search(final char[] c, final boolean prefix, final int l, final int r) { return search(SimpleUtil.charToInt(c), prefix, l, r); }
-	public final boolean search(final int[] a, final boolean prefix, final int l, final int r) {
+	public final int search(final String str) { return search(str, false); }
+	public final int search(final char[] c) { return search(c, false); }
+	public final int search(final int[] a) { return search(a, false); }
+	public final int startWith(final String str) { return search(str, true); }
+	public final int startWith(final char[] c) { return search(c, true); }
+	public final int startWith(final int[] a) { return search(a, true); }
+	public final int search(final String str, final int l, final int r) { return search(str, false, l, r); }
+	public final int search(final char[] c, final int l, final int r) { return search(c, false, l, r); }
+	public final int search(final int[] a, final int l, final int r) { return search(a, false, l, r); }
+	public final int startWith(final String str, final int l, final int r) { return search(str, true, l, r); }
+	public final int startWith(final char[] c, final int l, final int r) { return search(c, true, l, r); }
+	public final int startWith(final int[] a, final int l, final int r) { return search(a, true, l, r); }
+	public final int search(final String str, final boolean prefix) { return search(str, prefix, 0, str.length()); }
+	public final int search(final char[] c, final boolean prefix) { return search(c, prefix, 0, c.length); }
+	public final int search(final int[] a, final boolean prefix) { return search(a, prefix, 0, a.length); }
+	public final int search(final String str, final boolean prefix, final int l, final int r) { return search(str.toCharArray(), prefix, l, r); }
+	public final int search(final char[] c, final boolean prefix, final int l, final int r) { return search(SimpleUtil.charToInt(c), prefix, l, r); }
+	public final int search(final int[] a, final boolean prefix, final int l, final int r) {
 		SimpleUtil.inclusiveRangeCheck(l, a.length);
 		SimpleUtil.inclusiveRangeCheck(r, a.length);
 		SimpleUtil.assertion(l <= r, "l is larger than r.");
 		int crt = 0;
 		for(int i = l; i < r; i ++) {
 			crt = get(crt).next[a[i]];
-			if(crt == -1) return false;
+			if(crt == -1) return 0;
 		}
-		return prefix || get(crt).accept.size() != 0;
+		return prefix ? get(crt).cnt : get(crt).accept.size();
 	}
 
 	// O(min(|S|,|P|,M))
