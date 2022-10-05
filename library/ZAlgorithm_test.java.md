@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/ZAlgorithm.java
     title: library/ZAlgorithm.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -27,15 +27,15 @@ data:
     \npackage library;\n\nimport library.Solver;\nimport library.ZAlgorithm;\n\npublic\
     \ class ZAlgorithm_test extends Solver {\n\tpublic static void main(final String[]\
     \ args) { main(args, new ZAlgorithm_test()); }\n\n\tpublic void solve() {\n\t\t\
-    prtln(ZAlgolithm.cal(ns()));\n\t}\n}"
+    prtln(ZAlgorithm.cal(ns()));\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/ZAlgorithm.java
   isVerificationFile: true
   path: library/ZAlgorithm_test.java
   requiredBy: []
-  timestamp: '2022-10-05 16:39:43+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-05 16:52:48+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/ZAlgorithm_test.java
 layout: document

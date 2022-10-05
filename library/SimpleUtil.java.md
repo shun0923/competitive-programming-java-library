@@ -140,7 +140,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind.java
     title: library/WeightedUnionFind.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/ZAlgorithm.java
     title: library/ZAlgorithm.java
   _extendedVerifiedWith: []

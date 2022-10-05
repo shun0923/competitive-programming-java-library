@@ -6,12 +6,12 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/ZAlgorithm_test.java
     title: library/ZAlgorithm_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -22,7 +22,7 @@ data:
     \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
     , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport library.SimpleUtil;\n\nfinal class ZAlgolithm\
+  code: "package library;\n\nimport library.SimpleUtil;\n\nfinal class ZAlgorithm\
     \ {\n\t// return the length of the longest list starting from S[i] which is also\
     \ a prefix of S\n\t// O(|S|)\n\tpublic static final int[] cal(String s) { return\
     \ cal(s.toCharArray()); }\n\tpublic static final int[] cal(char[] c) { return\
@@ -38,8 +38,8 @@ data:
   isVerificationFile: false
   path: library/ZAlgorithm.java
   requiredBy: []
-  timestamp: '2022-10-05 16:39:43+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-10-05 16:52:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/ZAlgorithm_test.java
 documentation_of: library/ZAlgorithm.java
