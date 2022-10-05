@@ -8,7 +8,7 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':heavy_check_mark:'
@@ -104,7 +104,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSwag.java
     title: library/TemplateSwag.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TopologicalSort.java
     title: library/TopologicalSort.java
   - icon: ':heavy_check_mark:'

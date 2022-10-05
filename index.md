@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -81,7 +81,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -114,7 +114,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSwag.java
       title: library/TemplateSwag.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TopologicalSort.java
       title: library/TopologicalSort.java
     - icon: ':heavy_check_mark:'
@@ -309,7 +309,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSwag_test.java
       title: library/TemplateSwag_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TopologicalSort_test.java
       title: library/TopologicalSort_test.java
     - icon: ':heavy_check_mark:'
