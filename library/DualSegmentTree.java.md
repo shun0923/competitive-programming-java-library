@@ -53,7 +53,7 @@ data:
   isVerificationFile: false
   path: library/DualSegmentTree.java
   requiredBy: []
-  timestamp: '2022-09-20 17:17:01+09:00'
+  timestamp: '2022-10-05 15:32:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/DualSegmentTree_test.java

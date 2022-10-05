@@ -135,6 +135,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/SparseTable_test.java
     title: library/SparseTable_test.java
+  - icon: ':x:'
+    path: library/SuffixArray_test.java
+    title: library/SuffixArray_test.java
   - icon: ':heavy_check_mark:'
     path: library/Swag_gcd_test.java
     title: library/Swag_gcd_test.java
@@ -259,6 +262,7 @@ data:
   - library/DualSegmentTree_test.java
   - library/FastIO_test.java
   - library/Swag_test.java
+  - library/SuffixArray_test.java
   - library/ManyFastIO_test.java
   - library/DynamicSegmentTree_Small_test.java
   - library/DynamicSwag_test.java

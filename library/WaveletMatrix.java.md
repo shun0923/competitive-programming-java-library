@@ -87,7 +87,7 @@ data:
   path: library/WaveletMatrix.java
   requiredBy:
   - library/CompressedWaveletMatrix.java
-  timestamp: '2022-09-24 13:10:26+09:00'
+  timestamp: '2022-10-05 15:32:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/WaveletMatrix_freq_test.java

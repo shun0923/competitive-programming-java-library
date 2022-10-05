@@ -1078,7 +1078,7 @@ data:
   path: library/Util.java
   requiredBy:
   - library/Solver.java
-  timestamp: '2022-09-21 20:30:17+09:00'
+  timestamp: '2022-10-05 15:32:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/Util.java

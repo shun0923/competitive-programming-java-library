@@ -58,7 +58,7 @@ data:
   isVerificationFile: false
   path: library/Bfs.java
   requiredBy: []
-  timestamp: '2022-10-05 12:54:35+09:00'
+  timestamp: '2022-10-05 15:32:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Bfs_test.java

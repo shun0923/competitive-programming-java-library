@@ -56,7 +56,7 @@ data:
   isVerificationFile: false
   path: library/Swag.java
   requiredBy: []
-  timestamp: '2022-09-21 19:01:13+09:00'
+  timestamp: '2022-10-05 15:32:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Swag_test.java

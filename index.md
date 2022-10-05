@@ -90,6 +90,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/SparseTable.java
       title: library/SparseTable.java
+    - icon: ':x:'
+      path: library/SuffixArray.java
+      title: library/SuffixArray.java
     - icon: ':heavy_check_mark:'
       path: library/Swag.java
       title: library/Swag.java
@@ -273,6 +276,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/SparseTable_test.java
       title: library/SparseTable_test.java
+    - icon: ':x:'
+      path: library/SuffixArray_test.java
+      title: library/SuffixArray_test.java
     - icon: ':heavy_check_mark:'
       path: library/Swag_gcd_test.java
       title: library/Swag_gcd_test.java

@@ -44,7 +44,7 @@ data:
   isVerificationFile: false
   path: library/Permutation.java
   requiredBy: []
-  timestamp: '2022-10-03 14:51:55+09:00'
+  timestamp: '2022-10-05 15:32:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Permutation_test.java

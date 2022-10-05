@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: library/CompressedWaveletMatrix.java
   requiredBy: []
-  timestamp: '2022-09-24 15:48:20+09:00'
+  timestamp: '2022-10-05 15:32:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/CompressedWaveletMatrix_smallest_test.java

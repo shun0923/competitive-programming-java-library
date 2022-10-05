@@ -63,7 +63,7 @@ data:
   path: library/UnionFind.java
   requiredBy:
   - library/Kruskal.java
-  timestamp: '2022-10-04 23:36:08+09:00'
+  timestamp: '2022-10-05 15:32:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/UnionFind_uniteAll_test.java

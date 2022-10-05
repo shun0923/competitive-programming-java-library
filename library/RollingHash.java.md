@@ -34,12 +34,10 @@ data:
     \ midu = mid >>> 30;\n\t\tlong midd = mid & MASK30;\n\t\treturn au * bu * 2 +\
     \ midu + (midd << 31) + ad * bd;\n\t}\n\tprivate static final long mod(final long\
     \ x) { // O(1)\n\t\tlong xu = x >> 61;\n\t\tlong xd = x & MASK61;\n\t\tlong res\
-    \ = xu + xd;\n\t\tif(res >= MODRH) res -= MODRH;\n\t\treturn res;\n\t}\n\n\tprivate\
-    \ static final int[] charToInt(char[] c) {\n\t\tint a[] = new int[c.length];\n\
-    \t\tfor(int i = 0; i < c.length; i ++) a[i] = (int)c[i];\n\t\treturn a;\n\t}\n\
-    \n\t// O(|S|)\n\tpublic RollingHash(String s) { this(s.toCharArray()); }\n\tpublic\
-    \ RollingHash(char[] c) { this(charToInt(c)); }\n\tpublic RollingHash(int[] a)\
-    \ {\n\t\tlen = a.length;\n\t\thash = new long[len + 1];\n\t\tpow = new long[len\
+    \ = xu + xd;\n\t\tif(res >= MODRH) res -= MODRH;\n\t\treturn res;\n\t}\n\n\t//\
+    \ O(|S|)\n\tpublic RollingHash(String s) { this(s.toCharArray()); }\n\tpublic\
+    \ RollingHash(char[] c) { this(SimpleUtil.charToInt(c)); }\n\tpublic RollingHash(int[]\
+    \ a) {\n\t\tlen = a.length;\n\t\thash = new long[len + 1];\n\t\tpow = new long[len\
     \ + 1];\n\t\thash[0] = 0;\n\t\tpow[0] = 1;\n\t\tfor(int i = 0; i < len; i ++)\
     \ {\n\t\t\thash[i + 1] = mod(mul(hash[i], BASE) + a[i]);\n\t\t\tpow[i + 1] = mod(mul(pow[i],\
     \ BASE));\n\t\t}\n\t}\n\n\t// return the hash of S[l,r) // O(1)\n\tpublic final\
@@ -58,7 +56,7 @@ data:
   isVerificationFile: false
   path: library/RollingHash.java
   requiredBy: []
-  timestamp: '2022-10-05 14:57:37+09:00'
+  timestamp: '2022-10-05 15:32:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/RollingHash_test.java

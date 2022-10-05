@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
-    path: library/RollingHash.java
-    title: library/RollingHash.java
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
+  - icon: ':x:'
+    path: library/SuffixArray.java
+    title: library/SuffixArray.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: true
   _pathExtension: java
   _verificationStatusIcon: ':x:'
   attributes:
-    PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
+    PROBLEM: https://judge.yosupo.jp/problem/suffixarray
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
@@ -23,26 +23,24 @@ data:
     \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
     , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/zalgorithm\n\
-    \npackage library;\n\nimport library.Solver;\nimport library.RollingHash;\n\n\
-    public class RollingHash_test extends Solver {\n\tpublic static void main(final\
-    \ String[] args) { main(args, new RollingHash_test()); }\n\n\tpublic void solve()\
-    \ {\n\t\tRollingHash rh = new RollingHash(ns());\n\t\tint lcp[] = new int[rh.len];\n\
-    \t\tfor(int i = 0; i < rh.len; i ++) lcp[i] = RollingHash.lcp(rh, 0, rh, i);\n\
-    \t\tprtln(lcp);\n\t}\n}"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/suffixarray\n\
+    \npackage library;\n\nimport library.Solver;\nimport library.SuffixArray;\n\n\
+    public class SuffixArray_test extends Solver {\n\tpublic static void main(final\
+    \ String[] args) { main(args, new SuffixArray_test()); }\n\n\tpublic void solve()\
+    \ {\n\t\tprtln(SuffixArray.cal(ns()));\n\t}\n}"
   dependsOn:
   - library/Solver.java
-  - library/RollingHash.java
+  - library/SuffixArray.java
   isVerificationFile: true
-  path: library/RollingHash_test.java
+  path: library/SuffixArray_test.java
   requiredBy: []
   timestamp: '2022-10-05 15:32:30+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: library/RollingHash_test.java
+documentation_of: library/SuffixArray_test.java
 layout: document
 redirect_from:
-- /verify/library/RollingHash_test.java
-- /verify/library/RollingHash_test.java.html
-title: library/RollingHash_test.java
+- /verify/library/SuffixArray_test.java
+- /verify/library/SuffixArray_test.java.html
+title: library/SuffixArray_test.java
 ---

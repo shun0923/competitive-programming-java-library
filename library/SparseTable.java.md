@@ -43,7 +43,7 @@ data:
   isVerificationFile: false
   path: library/SparseTable.java
   requiredBy: []
-  timestamp: '2022-09-20 19:18:27+09:00'
+  timestamp: '2022-10-05 15:32:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/SparseTable_test.java
