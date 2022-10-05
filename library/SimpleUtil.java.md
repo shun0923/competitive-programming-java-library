@@ -375,17 +375,11 @@ data:
     \ x) { return x > I_INF / 10; }\n\tpublic static final boolean isMinusINF(final\
     \ int x) { return isPlusINF(- x); }\n\tpublic static final boolean isINF(final\
     \ int x) { return isPlusINF(x) || isMinusINF(x); }\n\n\tpublic static final int[]\
-    \ charToInt(char[] c) {\n\t\tint a[] = new int[c.length];\n\t\tint type[] = new\
-    \ int[c.length];\n\t\tboolean numeric = false;\n\t\tboolean lower = false;\n\t\
-    \tboolean upper = false;\n\t\tfor(int i = 0; i < c.length; i ++) {\n\t\t\tif('0'\
-    \ <= c[i] && c[i] <= '9') { a[i] = c[i] - '0'; type[i] = 0; numeric = true; }\n\
-    \t\t\telse if('a' <= c[i] && c[i] <= 'z') { a[i] = c[i] - 'a'; type[i] = 1; lower\
-    \ = true; }\n\t\t\telse if('A' <= c[i] && c[i] <= 'Z') { a[i] = c[i] - 'A'; type[i]\
-    \ = 2; upper = true; }\n\t\t\telse { a[i] = c[i]; type[i] = 3; }\n\t\t}\n\t\t\
-    if(numeric) for(int i = 0; i < c.length; i ++) if(type[i] > 0) a[i] += 10;\n\t\
-    \tif(lower) for(int i = 0; i < c.length; i ++) if(type[i] > 1) a[i] += 26;\n\t\
-    \tif(upper) for(int i = 0; i < c.length; i ++) if(type[i] > 2) a[i] += 26;\n\t\
-    \treturn a;\n\t}\n}"
+    \ charToInt(char[] c) {\n\t\tint a[] = new int[c.length];\n\t\tfor(int i = 0;\
+    \ i < c.length; i ++) {\n\t\t\tif('a' <= c[i] && c[i] <= 'z') a[i] = c[i] - 'a';\n\
+    \t\t\telse if('A' <= c[i] && c[i] <= 'Z') a[i] = c[i] - 'A' + 26;\n\t\t\telse\
+    \ if('0' <= c[i] && c[i] <= '9') a[i] = c[i] - '0' + 52;\n\t\t\telse a[i] = c[i]\
+    \ + 62;\n\t\t}\n\t\treturn a;\n\t}\n}"
   dependsOn:
   - library/FastInputStream.java
   - library/FastOutputStream.java
@@ -438,7 +432,7 @@ data:
   - library/TemplateSparseTable.java
   - library/PathRestoration.java
   - library/SuffixArray.java
-  timestamp: '2022-10-05 15:32:30+09:00'
+  timestamp: '2022-10-05 20:31:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/SimpleUtil.java

@@ -190,9 +190,6 @@ data:
     path: library/TopologicalSort_test.java
     title: library/TopologicalSort_test.java
   - icon: ':x:'
-    path: library/Trie_size_test.java
-    title: library/Trie_size_test.java
-  - icon: ':x:'
     path: library/Trie_startWith_test.java
     title: library/Trie_startWith_test.java
   - icon: ':heavy_check_mark:'
@@ -302,7 +299,6 @@ data:
   - library/UnionFind_test.java
   - library/TemplateRerooting_test.java
   - library/WaveletMatrix_smallest_test.java
-  - library/Trie_size_test.java
   - library/TemplateSparseTable_test.java
   - library/Convolution107_test.java
   - library/Convolution998_test.java

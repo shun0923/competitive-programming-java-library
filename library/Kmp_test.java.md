@@ -26,15 +26,15 @@ data:
   code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B\n\
     \npackage library;\n\nimport library.Solver;\nimport library.Kmp;\n\npublic class\
     \ Kmp_test extends Solver {\n\tpublic static void main(final String[] args) {\
-    \ main(args, new Kmp_test()); }\n\n\tpublic void solve() {\n\t\tprtlns(Kmp.cal(ns(),\
-    \ ns()));\n\t}\n}"
+    \ main(args, new Kmp_test()); }\n\n\tpublic void solve() {\n\t\tString t = ns();\n\
+    \t\tprtlns(new Kmp(ns()).match(t));\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/Kmp.java
   isVerificationFile: true
   path: library/Kmp_test.java
   requiredBy: []
-  timestamp: '2022-10-05 17:28:00+09:00'
+  timestamp: '2022-10-05 20:31:46+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/Kmp_test.java

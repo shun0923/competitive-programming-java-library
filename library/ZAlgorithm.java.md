@@ -38,7 +38,7 @@ data:
   isVerificationFile: false
   path: library/ZAlgorithm.java
   requiredBy: []
-  timestamp: '2022-10-05 16:52:48+09:00'
+  timestamp: '2022-10-05 20:31:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/ZAlgorithm_test.java

@@ -80,7 +80,7 @@ data:
   path: library/BitVector.java
   requiredBy:
   - library/WaveletMatrix.java
-  timestamp: '2022-10-05 15:32:30+09:00'
+  timestamp: '2022-10-05 20:31:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/BitVector.java

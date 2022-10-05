@@ -343,9 +343,6 @@ data:
       path: library/TopologicalSort_test.java
       title: library/TopologicalSort_test.java
     - icon: ':x:'
-      path: library/Trie_size_test.java
-      title: library/Trie_size_test.java
-    - icon: ':x:'
       path: library/Trie_startWith_test.java
       title: library/Trie_startWith_test.java
     - icon: ':heavy_check_mark:'

@@ -23,30 +23,27 @@ data:
     , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nfinal\
-    \ class Kmp {\n\t// return all the occurrences of P in S\n\t// O(|S|)\n\tpublic\
-    \ static final int[] cal(String s, String p) { return cal(s.toCharArray(), p.toCharArray());\
-    \ }\n\tpublic static final int[] cal(char[] s, char[] p) { return cal(SimpleUtil.charToInt(s),\
-    \ SimpleUtil.charToInt(p)); }\n\tpublic static final int[] cal(int[] s, int[]\
-    \ p) {\n\t\tint sLen = s.length;\n\t\tint pLen = p.length;\n\n\t\tint sIndex =\
-    \ 1;\n\t\tint pIndex = 0;\n\n\t\tint skip[] = new int[pLen + 1];\n\t\tArrays.fill(skip,\
-    \ 0);\n\t\twhile(sIndex < pLen) {\n\t\t\tif(p[sIndex] == p[pIndex]) {\n\t\t\t\t\
-    sIndex ++;\n\t\t\t\tpIndex ++;\n\t\t\t\tskip[sIndex] = pIndex;\n\t\t\t}else if(pIndex\
-    \ == 0) {\n\t\t\t\tsIndex ++;\n\t\t\t\tskip[sIndex] = 0;\n\t\t\t}else {\n\t\t\t\
-    \tpIndex = skip[pIndex];\n\t\t\t}\n\t\t}\n\n\t\tArrayList<Integer> matchIndex\
-    \ = new ArrayList<Integer>();\n\t\tsIndex = 0;\n\t\tpIndex = 0;\n\t\twhile(true)\
-    \ {\n\t\t\twhile(sIndex < sLen && pIndex < pLen && s[sIndex] == p[pIndex]) {\n\
-    \t\t\t\tsIndex ++;\n\t\t\t\tpIndex ++;\n\t\t\t}\n\t\t\tif(pIndex >= pLen) {\n\t\
-    \t\t\tmatchIndex.add(sIndex - pLen);\n\t\t\t\tpIndex = skip[pIndex];\n\t\t\t}else\
-    \ if(pIndex == 0) {\n\t\t\t\tsIndex ++;\n\t\t\t}else {\n\t\t\t\tpIndex = skip[pIndex];\n\
-    \t\t\t}\n\t\t\tif(sIndex >= sLen) break;\n\t\t}\n\n\t\tint matchIndexList[] =\
-    \ new int[matchIndex.size()];\n\t\tfor(int i = 0; i < matchIndex.size(); i ++)\
-    \ matchIndexList[i] = matchIndex.get(i);\n\t\treturn matchIndexList;\n\t}\n}"
+    \ class Kmp {\n\t// O(|S|)\n\tpublic final int a[];\n\tpublic final int kmp[];\n\
+    \tpublic Kmp(String s) { this(s.toCharArray()); }\n\tpublic Kmp(char[] c) { this(SimpleUtil.charToInt(c));\
+    \ }\n\tpublic Kmp(int[] a) {\n\t\tthis.a = a;\n\t\tkmp = new int[a.length + 1];\n\
+    \t\tkmp[0] = -1;\n\t\tint r = -1;\n\t\tfor(int l = 0; l < a.length; l ++) {\n\t\
+    \t\twhile(r != -1 && a[l] != a[r]) r = kmp[r];\n\t\t\tr ++;\n\t\t\tif(l + 1 <\
+    \ a.length && a[l + 1] == a[r]) kmp[l + 1] = kmp[r];\n\t\t\telse kmp[l + 1] =\
+    \ r;\n\t\t}\n\n\t}\n\n\t// return all the occurrences of S in T\n\t// O(|S|+|T|)\n\
+    \tpublic final int[] match(String t) { return match(t.toCharArray()); }\n\tpublic\
+    \ final int[] match(char[] c) { return match(SimpleUtil.charToInt(c)); }\n\tpublic\
+    \ final int[] match(int[] b) {\n\t\tArrayList<Integer> match = new ArrayList<Integer>();\n\
+    \t\tint j = 0;\n\t\tfor(int i = 0; i != b.length; ) {\n\t\t\twhile(i != b.length\
+    \ && j != a.length && b[i] == a[j]) { i ++; j ++; }\n\t\t\tif(j == a.length) match.add(i\
+    \ - j);\n\t\t\tj = kmp[j];\n\t\t\tif(j == -1) { i ++; j ++; }\n\t\t}\n\t\tint\
+    \ matchList[] = new int[match.size()];\n\t\tfor(int i = 0; i < match.size(); i\
+    \ ++) matchList[i] = match.get(i);\n\t\treturn matchList;\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
   isVerificationFile: false
   path: library/Kmp.java
   requiredBy: []
-  timestamp: '2022-10-05 16:52:48+09:00'
+  timestamp: '2022-10-05 20:31:46+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Kmp_test.java

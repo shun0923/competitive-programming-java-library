@@ -69,45 +69,46 @@ data:
     \ = (byte)((int)d + 48);\n\t\t\td -= (int) d;\n\t\t}\n\t}\n\tpublic final void\
     \ print(final String s) { print(s.getBytes()); }\n\tpublic final void print(final\
     \ Object o) { print(o.toString()); }\n\tpublic final void print(final byte[] a)\
-    \ {\n\t\tif(count + a.length > BUF_SIZE) internalFlush();\n\t\tSystem.arraycopy(a,\
-    \ 0, buf, count, a.length);\n\t\tcount += a.length;\n\t}\n\tpublic final void\
-    \ print(final char[] a) {\n\t\tif(count + a.length > BUF_SIZE) internalFlush();\n\
-    \t\tfor(int i = 0; i < a.length; i ++) buf[count + i] = (byte)a[i];\n\t\tcount\
-    \ += a.length;\n\t}\n\tpublic final void println() { print('\\n'); }\n\tpublic\
-    \ final void println(final char c) { print(c); println(); }\n\tpublic final void\
-    \ println(final boolean b) { print(b); println(); }\n\tpublic final void println(final\
-    \ int x) { print(x); println(); }\n\tpublic final void println(final long x) {\
-    \ print(x); println(); }\n\tpublic final void println(final double d) { print(d);\
-    \ println(); }\n\tpublic final void println(final double d, final int precision)\
-    \ { print(d, precision); println(); }\n\tpublic final void println(final String\
-    \ s) { print(s); println(); }\n\tpublic final void println(final Object o) { print(o);\
-    \ println(); }\n\tpublic final void println(final char[] a) { print(a); println();\
-    \ }\n\tpublic final void println(final int[] a) {\n\t\tfor(int i = 0; i < a.length;\
-    \ i ++) {\n\t\t\tprint(a[i]);\n\t\t\tprint(i == a.length - 1 ? '\\n' : ' ');\n\
-    \t\t}\n\t}\n\tpublic final void println(final long[] a) {\n\t\tfor(int i = 0;\
-    \ i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\t\tprint(i == a.length - 1 ? '\\\
-    n' : ' ');\n\t\t}\n\t}\n\tpublic final void println(final double[] a) {\n\t\t\
+    \ {\n\t\tif(count + a.length > BUF_SIZE) internalFlush();\n\t\tif(a.length <=\
+    \ BUF_SIZE) {\n\t\t\tSystem.arraycopy(a, 0, buf, count, a.length);\n\t\t\tcount\
+    \ += a.length;\n\t\t}else {\n\t\t\ttry { out.write(a, 0, a.length); }catch(IOException\
+    \ e) { e.printStackTrace(); }\n\t\t}\n\t}\n\tpublic final void print(final char[]\
+    \ a) {\n\t\tbyte b[] = new byte[a.length];\n\t\tfor(int i = 0; i < a.length; i\
+    \ ++) b[i] = (byte)a[i];\n\t\tprint(b);\n\t}\n\tpublic final void println() {\
+    \ print('\\n'); }\n\tpublic final void println(final char c) { print(c); println();\
+    \ }\n\tpublic final void println(final boolean b) { print(b); println(); }\n\t\
+    public final void println(final int x) { print(x); println(); }\n\tpublic final\
+    \ void println(final long x) { print(x); println(); }\n\tpublic final void println(final\
+    \ double d) { print(d); println(); }\n\tpublic final void println(final double\
+    \ d, final int precision) { print(d, precision); println(); }\n\tpublic final\
+    \ void println(final String s) { print(s); println(); }\n\tpublic final void println(final\
+    \ Object o) { print(o); println(); }\n\tpublic final void println(final char[]\
+    \ a) { print(a); println(); }\n\tpublic final void println(final int[] a) {\n\t\
+    \tfor(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\t\tprint(i == a.length\
+    \ - 1 ? '\\n' : ' ');\n\t\t}\n\t}\n\tpublic final void println(final long[] a)\
+    \ {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\t\tprint(i\
+    \ == a.length - 1 ? '\\n' : ' ');\n\t\t}\n\t}\n\tpublic final void println(final\
+    \ double[] a) {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\
+    \t\t\tprint(i == a.length - 1 ? '\\n' : ' ');\n\t\t}\n\t}\n\tpublic final void\
+    \ println(final double[] a, final int precision) {\n\t\tfor(int i = 0; i < a.length;\
+    \ i ++) {\n\t\t\tprint(a[i], precision);\n\t\t\tprint(i == a.length - 1 ? '\\\
+    n' : ' ');\n\t\t}\n\t}\n\tpublic final void println(final String[] a) {\n\t\t\
     for(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\t\tprint(i == a.length\
-    \ - 1 ? '\\n' : ' ');\n\t\t}\n\t}\n\tpublic final void println(final double[]\
-    \ a, final int precision) {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\t\
-    print(a[i], precision);\n\t\t\tprint(i == a.length - 1 ? '\\n' : ' ');\n\t\t}\n\
-    \t}\n\tpublic final void println(final String[] a) {\n\t\tfor(int i = 0; i < a.length;\
-    \ i ++) {\n\t\t\tprint(a[i]);\n\t\t\tprint(i == a.length - 1 ? '\\n' : ' ');\n\
-    \t\t}\n\t}\n\tpublic final void println(final Object[] a) {\n\t\tfor(int i = 0;\
-    \ i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\t\tprint(i == a.length - 1 ? '\\\
-    n' : ' ');\n\t\t}\n\t}\n\tprivate final void internalFlush() {\n\t\ttry {\n\t\t\
-    \tout.write(buf, 0, count);\n\t\t\tcount = 0;\n\t\t}\n\t\tcatch(IOException e)\
-    \ { e.printStackTrace(); }\n\t}\n\tpublic final void flush() {\n\t\ttry {\n\t\t\
-    \tout.write(buf, 0, count);\n\t\t\tout.flush();\n\t\t\tcount = 0;\n\t\t}\n\t\t\
-    catch(IOException e) { e.printStackTrace(); }\n\t}\n\tpublic final void close()\
-    \ {\n\t\ttry { out.close(); }\n\t\tcatch(IOException e) { e.printStackTrace();\
+    \ - 1 ? '\\n' : ' ');\n\t\t}\n\t}\n\tpublic final void println(final Object[]\
+    \ a) {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\t\tprint(i\
+    \ == a.length - 1 ? '\\n' : ' ');\n\t\t}\n\t}\n\tprivate final void internalFlush()\
+    \ {\n\t\ttry {\n\t\t\tout.write(buf, 0, count);\n\t\t\tcount = 0;\n\t\t}\n\t\t\
+    catch(IOException e) { e.printStackTrace(); }\n\t}\n\tpublic final void flush()\
+    \ {\n\t\ttry {\n\t\t\tout.write(buf, 0, count);\n\t\t\tout.flush();\n\t\t\tcount\
+    \ = 0;\n\t\t}\n\t\tcatch(IOException e) { e.printStackTrace(); }\n\t}\n\tpublic\
+    \ final void close() {\n\t\ttry { out.close(); }\n\t\tcatch(IOException e) { e.printStackTrace();\
     \ }\n\t}\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/FastOutputStream.java
   requiredBy:
   - library/SimpleUtil.java
-  timestamp: '2022-09-16 23:13:20+09:00'
+  timestamp: '2022-10-05 20:31:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/FastIO_test.java

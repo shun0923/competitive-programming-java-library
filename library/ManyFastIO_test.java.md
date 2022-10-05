@@ -39,7 +39,7 @@ data:
   isVerificationFile: true
   path: library/ManyFastIO_test.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
+  timestamp: '2022-10-05 20:31:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/ManyFastIO_test.java
