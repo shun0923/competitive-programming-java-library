@@ -258,7 +258,6 @@ class Util extends SimpleUtil {
 	public static final char intToUpper(final int x) { return (char)(x + 'A'); }
 	public static final char intToLower(final int x) { return (char)(x + 'a'); }
 	public static final char intToNum(final int x) { return (char)(x + '0'); }
-	public static final int[] charToInt(final char[] a) { final int toint[] = new int[a.length]; for(int i = 0; i < a.length; i ++) toint[i] = charToInt(a[i]); return toint; }
 	public static final int[][] charToInt(final char[][] a) { final int toint[][] = new int[a.length][]; for(int i = 0; i < a.length; i ++) toint[i] = charToInt(a[i]); return toint; }
 
 
