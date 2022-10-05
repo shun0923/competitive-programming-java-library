@@ -7,8 +7,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':x:'
-    path: library/Trie_test.java
-    title: library/Trie_test.java
+    path: library/Trie_size_test.java
+    title: library/Trie_size_test.java
+  - icon: ':x:'
+    path: library/Trie_startWith_test.java
+    title: library/Trie_startWith_test.java
   _isVerificationFailed: true
   _pathExtension: java
   _verificationStatusIcon: ':x:'
@@ -124,7 +127,8 @@ data:
   timestamp: '2022-10-05 17:27:22+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - library/Trie_test.java
+  - library/Trie_startWith_test.java
+  - library/Trie_size_test.java
 documentation_of: library/Trie.java
 layout: document
 redirect_from:

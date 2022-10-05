@@ -190,8 +190,11 @@ data:
     path: library/TopologicalSort_test.java
     title: library/TopologicalSort_test.java
   - icon: ':x:'
-    path: library/Trie_test.java
-    title: library/Trie_test.java
+    path: library/Trie_size_test.java
+    title: library/Trie_size_test.java
+  - icon: ':x:'
+    path: library/Trie_startWith_test.java
+    title: library/Trie_startWith_test.java
   - icon: ':heavy_check_mark:'
     path: library/UnionFind_test.java
     title: library/UnionFind_test.java
@@ -274,7 +277,6 @@ data:
   - library/DualSegmentTree_test.java
   - library/FastIO_test.java
   - library/Swag_test.java
-  - library/Trie_test.java
   - library/SuffixArray_test.java
   - library/ManyFastIO_test.java
   - library/ZAlgorithm_test.java
@@ -282,6 +284,7 @@ data:
   - library/DynamicSwag_test.java
   - library/HelloWorld_test.java
   - library/Kmp_test.java
+  - library/Trie_startWith_test.java
   - library/Rerooting_test.java
   - library/TemplateDynamicSegmentTree_Small_test.java
   - library/Dijkstra_test.java
@@ -299,6 +302,7 @@ data:
   - library/UnionFind_test.java
   - library/TemplateRerooting_test.java
   - library/WaveletMatrix_smallest_test.java
+  - library/Trie_size_test.java
   - library/TemplateSparseTable_test.java
   - library/Convolution107_test.java
   - library/Convolution998_test.java
