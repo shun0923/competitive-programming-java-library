@@ -41,6 +41,7 @@
 "library/SegmentTree_Composite_test.java": "2022-10-04 10:50:43 +0900",
 "library/SegmentTree_test.java": "2022-10-04 10:50:43 +0900",
 "library/SparseTable_test.java": "2022-10-04 10:50:43 +0900",
+"library/SuffixArray_test.java": "2022-10-05 15:43:52 +0900",
 "library/Swag_gcd_test.java": "2022-10-04 10:50:43 +0900",
 "library/Swag_test.java": "2022-10-04 10:50:43 +0900",
 "library/TemplateDijkstra_pathEdge_test.java": "2022-10-04 23:36:08 +0900",
