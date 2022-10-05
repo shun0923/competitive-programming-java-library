@@ -13,7 +13,9 @@ public class TopologicalSort_test extends Solver {
 		int n = ni();
 		int m = ni();
 		ArrayUnweightedGraph g = new ArrayUnweightedGraph(n, true);
-		for(int i = 0; i < m; i ++) g.add(ni(), ni());
-		prtlns(TopologicalSort.sort(g));
+		for(int i = 0; i < m; i ++) g.add(n - ni() - 1, n - ni() - 1);
+		int sorted[] = TopologicalSort.sort(g);
+		for(int i = 0; i < n; i ++) sorted[i] = n - sorted[i] - 1;
+		prtlns(sorted);
 	}
 }

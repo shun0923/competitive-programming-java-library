@@ -16,6 +16,7 @@ final class Bfs {
 	public static final int[] dist(UnweightedNode[] nodes, int start, boolean memoize) {
 		int numNode = nodes.length;
 		int dist[] = new int[numNode];
+		Arrays.fill(dist, -1);
 		boolean visited[] = new boolean[numNode];
 		int dq[] = new int[numNode];
 		int ptr = 0;
@@ -28,6 +29,7 @@ final class Bfs {
 
 		dq[size ++] = start;
 		dist[start] = 0;
+		visited[start] = true;
 		while(ptr != size) {
 			int crt = dq[ptr ++];
 			for(UnweightedEdge e : nodes[crt]) {
