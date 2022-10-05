@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://yukicoder.me/problems/no/430
+// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B
 
 package library;
 
@@ -9,10 +9,6 @@ public class Kmp_test extends Solver {
 	public static void main(final String[] args) { main(args, new Kmp_test()); }
 
 	public void solve() {
-		String s = ns();
-		int m = ni();
-		long ans = 0;
-		for(int i = 0; i < m; i ++) ans += Kmp.cal(s, ns()).length;
-		prtln(ans);
+		prtln(Kmp.cal(ns(), ns()));
 	}
 }
