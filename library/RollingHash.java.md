@@ -6,12 +6,12 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/RollingHash_test.java
     title: library/RollingHash_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -50,15 +50,15 @@ data:
     \ rh1.len);\n\t\tSimpleUtil.inclusiveRangeCheck(b, rh2.len);\n\t\tint ok = 0;\n\
     \t\tint ng = Math.min(rh1.len - a, rh2.len - b) + 1;\n\t\twhile(ng - ok != 1)\
     \ {\n\t\t\tint mid = ok + (ng - ok >> 1);\n\t\t\tif(rh1.get(a, a + mid) == rh2.get(b,\
-    \ b + mid))\n\t\t\t\t&& rh1.get(a, a + mid - 1) == rh2.get(b, b + mid - 1)) ok\
+    \ b + mid)\n\t\t\t\t&& rh1.get(a, a + mid - 1) == rh2.get(b, b + mid - 1)) ok\
     \ = mid; else ng = mid;\n\t\t}\n\t\treturn ok;\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
   isVerificationFile: false
   path: library/RollingHash.java
   requiredBy: []
-  timestamp: '2022-10-05 16:02:29+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-10-05 16:06:05+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/RollingHash_test.java
 documentation_of: library/RollingHash.java

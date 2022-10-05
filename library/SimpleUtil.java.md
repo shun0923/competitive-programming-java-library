@@ -68,7 +68,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Rerooting.java
     title: library/Rerooting.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/RollingHash.java
     title: library/RollingHash.java
   - icon: ':heavy_check_mark:'

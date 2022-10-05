@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Bfs.java
     title: library/Bfs.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
