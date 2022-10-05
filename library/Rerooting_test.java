@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
+// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_B
 
 package library;
 
@@ -18,6 +18,6 @@ public class Rerooting_test extends Solver {
 				(e, x) -> e.cost + x,
 				(v, x) -> x,
 				(v) -> 0);
-		prtln(max(rr.cal()));
+		prtlns(rr.cal());
 	}
 }

@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
+// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_B
 
 package library;
 
@@ -20,8 +20,6 @@ public class TemplateRerooting_test extends Solver {
 				(v, x) -> x,
 				(v) -> 0l);
 		rr.cal();
-		long ans = 0;
-		for(int i = 0; i < n; i ++) ans = max(ans, (long)rr.get(i));
-		prtln(ans);
+		for(int i = 0; i < n; i ++) prtln(rr.get(i));
 	}
 }
