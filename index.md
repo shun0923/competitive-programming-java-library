@@ -67,6 +67,9 @@ data:
       path: library/Mod.java
       title: library/Mod.java
     - icon: ':heavy_check_mark:'
+      path: library/MultiSet.java
+      title: library/MultiSet.java
+    - icon: ':heavy_check_mark:'
       path: library/Pair.java
       title: library/Pair.java
     - icon: ':heavy_check_mark:'
@@ -342,6 +345,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TopologicalSort_test.java
       title: library/TopologicalSort_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/TreeMultiSet_test.java
+      title: library/TreeMultiSet_test.java
     - icon: ':heavy_check_mark:'
       path: library/Trie_startWith_test.java
       title: library/Trie_startWith_test.java

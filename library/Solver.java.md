@@ -190,6 +190,9 @@ data:
     path: library/TopologicalSort_test.java
     title: library/TopologicalSort_test.java
   - icon: ':heavy_check_mark:'
+    path: library/TreeMultiSet_test.java
+    title: library/TreeMultiSet_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Trie_startWith_test.java
     title: library/Trie_startWith_test.java
   - icon: ':heavy_check_mark:'
@@ -264,6 +267,7 @@ data:
   - library/WarshallFloyd_test.java
   - library/Mod107ManyCombination_test.java
   - library/UnionFind_uniteAll_test.java
+  - library/TreeMultiSet_test.java
   - library/Bfs_test.java
   - library/SegmentTree_Composite_test.java
   - library/WeightedDoubling_test.java

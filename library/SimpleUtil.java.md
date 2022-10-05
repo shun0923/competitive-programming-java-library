@@ -63,6 +63,9 @@ data:
     path: library/Mod.java
     title: library/Mod.java
   - icon: ':heavy_check_mark:'
+    path: library/MultiSet.java
+    title: library/MultiSet.java
+  - icon: ':heavy_check_mark:'
     path: library/Pair.java
     title: library/Pair.java
   - icon: ':heavy_check_mark:'
@@ -408,6 +411,7 @@ data:
   - library/Kmp.java
   - library/TemplateDynamicSwag.java
   - library/Dijkstra.java
+  - library/MultiSet.java
   - library/Trie.java
   - library/TemplateSegmentTree.java
   - library/SparseTable.java
