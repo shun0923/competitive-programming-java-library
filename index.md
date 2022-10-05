@@ -72,6 +72,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Rerooting.java
       title: library/Rerooting.java
+    - icon: ':x:'
+      path: library/RollingHash.java
+      title: library/RollingHash.java
     - icon: ':heavy_check_mark:'
       path: library/Scc.java
       title: library/Scc.java
@@ -81,7 +84,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -249,6 +252,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Rerooting_test.java
       title: library/Rerooting_test.java
+    - icon: ':x:'
+      path: library/RollingHash_test.java
+      title: library/RollingHash_test.java
     - icon: ':heavy_check_mark:'
       path: library/Scc_graph_test.java
       title: library/Scc_graph_test.java

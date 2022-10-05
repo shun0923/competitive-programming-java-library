@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/ExtendedConvolution.java
-    title: library/ExtendedConvolution.java
+  - icon: ':x:'
+    path: library/RollingHash.java
+    title: library/RollingHash.java
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    PROBLEM: https://judge.yosupo.jp/problem/convolution_mod_1000000007
+    PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
@@ -23,25 +23,26 @@ data:
     \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
     , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/convolution_mod_1000000007\n\
-    \npackage library;\n\nimport library.Solver;\nimport library.ExtendedConvolution;\n\
-    \npublic class Convolution107_test extends Solver {\n\tpublic static void main(final\
-    \ String[] args) { main(args, new Convolution107_test()); }\n\n\tpublic void solve()\
-    \ {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tprtln(Convolution107.cnv.cnv(nl(n),\
-    \ nl(m)));\n\t}\n}"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/zalgorithm\n\
+    \npackage library;\n\nimport library.Solver;\nimport library.RollingHash;\n\n\
+    public class RollingHash_test extends Solver {\n\tpublic static void main(final\
+    \ String[] args) { main(args, new RollingHash_test()); }\n\n\tpublic void solve()\
+    \ {\n\t\tRollingHash rh = new RollingHash(ns());\n\t\tint lcp[] = new int[rh.len];\n\
+    \t\tfor(int i = 0; i < rh.len; i ++) lcp[i] = RollingHash.lcp(rh, 0, rh, i);\n\
+    \t\tprtln(lcp);\n\t}\n}"
   dependsOn:
   - library/Solver.java
-  - library/ExtendedConvolution.java
+  - library/RollingHash.java
   isVerificationFile: true
-  path: library/Convolution107_test.java
+  path: library/RollingHash_test.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-10-05 14:57:37+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: library/Convolution107_test.java
+documentation_of: library/RollingHash_test.java
 layout: document
 redirect_from:
-- /verify/library/Convolution107_test.java
-- /verify/library/Convolution107_test.java.html
-title: library/Convolution107_test.java
+- /verify/library/RollingHash_test.java
+- /verify/library/RollingHash_test.java.html
+title: library/RollingHash_test.java
 ---

@@ -68,6 +68,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Rerooting.java
     title: library/Rerooting.java
+  - icon: ':x:'
+    path: library/RollingHash.java
+    title: library/RollingHash.java
   - icon: ':heavy_check_mark:'
     path: library/Scc.java
     title: library/Scc.java
@@ -368,6 +371,7 @@ data:
   - library/TemplateDualSegmentTree.java
   - library/TopologicalSort.java
   - library/Util.java
+  - library/RollingHash.java
   - library/Mod.java
   - library/Pair.java
   - library/TemplateSwag.java
