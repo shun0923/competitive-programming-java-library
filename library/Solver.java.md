@@ -84,7 +84,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/HelloWorld_test.java
     title: library/HelloWorld_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Kmp_test.java
     title: library/Kmp_test.java
   - icon: ':heavy_check_mark:'

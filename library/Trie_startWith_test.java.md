@@ -27,7 +27,7 @@ data:
     \npackage library;\n\nimport library.Solver;\nimport library.Trie;\n\npublic class\
     \ Trie_startWith_test extends Solver {\n\tpublic static void main(final String[]\
     \ args) { main(args, new Trie_startWith_test()); }\n\n\tpublic void solve() {\n\
-    \t\tString t = ns();\n\t\tTrie trie = new Trie();\n\t\tfor(int i = 0; i < t.length();\
+    \t\tString t = ns();\n\t\tTrie trie = new Trie(62);\n\t\tfor(int i = 0; i < t.length();\
     \ i ++) trie.add(t, i, t.length());\n\t\tint q = ni();\n\t\tfor(int i = 0; i <\
     \ q; i ++) prtln(trie.startWith(ns()) ? 1 : 0);\n\t}\n}"
   dependsOn:
@@ -36,7 +36,7 @@ data:
   isVerificationFile: true
   path: library/Trie_startWith_test.java
   requiredBy: []
-  timestamp: '2022-10-05 17:34:40+09:00'
+  timestamp: '2022-10-05 21:02:04+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/Trie_startWith_test.java

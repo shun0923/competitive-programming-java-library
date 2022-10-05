@@ -47,7 +47,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/FenwickTree.java
     title: library/FenwickTree.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Kmp.java
     title: library/Kmp.java
   - icon: ':heavy_check_mark:'

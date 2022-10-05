@@ -6,12 +6,12 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Kmp_test.java
     title: library/Kmp_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -33,7 +33,7 @@ data:
     \tpublic final int[] match(String t) { return match(t.toCharArray()); }\n\tpublic\
     \ final int[] match(char[] c) { return match(SimpleUtil.charToInt(c)); }\n\tpublic\
     \ final int[] match(int[] b) {\n\t\tArrayList<Integer> match = new ArrayList<Integer>();\n\
-    \t\tint j = 0;\n\t\tfor(int i = 0; i != b.length; ) {\n\t\t\twhile(i != b.length\
+    \t\tint j = 0;\n\t\tfor(int i = 0; i < b.length; ) {\n\t\t\twhile(i != b.length\
     \ && j != a.length && b[i] == a[j]) { i ++; j ++; }\n\t\t\tif(j == a.length) match.add(i\
     \ - j);\n\t\t\tj = kmp[j];\n\t\t\tif(j == -1) { i ++; j ++; }\n\t\t}\n\t\tint\
     \ matchList[] = new int[match.size()];\n\t\tfor(int i = 0; i < match.size(); i\
@@ -43,8 +43,8 @@ data:
   isVerificationFile: false
   path: library/Kmp.java
   requiredBy: []
-  timestamp: '2022-10-05 20:31:46+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-10-05 21:02:04+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Kmp_test.java
 documentation_of: library/Kmp.java
