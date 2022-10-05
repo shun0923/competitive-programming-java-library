@@ -31,8 +31,10 @@ data:
     import library.TopologicalSort;\n\npublic class TopologicalSort_test extends Solver\
     \ {\n\tpublic static void main(final String[] args) { main(args, new TopologicalSort_test());\
     \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tArrayUnweightedGraph\
-    \ g = new ArrayUnweightedGraph(n, true);\n\t\tfor(int i = 0; i < m; i ++) g.add(ni(),\
-    \ ni());\n\t\tprtlns(TopologicalSort.sort(g));\n\t}\n}"
+    \ g = new ArrayUnweightedGraph(n, true);\n\t\tfor(int i = 0; i < m; i ++) g.add(n\
+    \ - ni() - 1, n - ni() - 1);\n\t\tint sorted[] = TopologicalSort.sort(g);\n\t\t\
+    for(int i = 0; i < n; i ++) sorted[i] = n - sorted[i] - 1;\n\t\tprtlns(sorted);\n\
+    \t}\n}"
   dependsOn:
   - library/Solver.java
   - library/AbstractGraph.java
@@ -40,7 +42,7 @@ data:
   isVerificationFile: true
   path: library/TopologicalSort_test.java
   requiredBy: []
-  timestamp: '2022-10-05 11:16:50+09:00'
+  timestamp: '2022-10-05 12:54:35+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/TopologicalSort_test.java

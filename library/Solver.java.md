@@ -27,7 +27,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Bfs_test.java
     title: library/Bfs_test.java
   - icon: ':heavy_check_mark:'
