@@ -64,7 +64,7 @@ final class RollingHash {
 		int ng = Math.min(rh1.len - a, rh2.len - b) + 1;
 		while(ng - ok != 1) {
 			int mid = ok + (ng - ok >> 1);
-			if(rh1.get(a, a + mid) == rh2.get(b, b + mid))
+			if(rh1.get(a, a + mid) == rh2.get(b, b + mid)
 				&& rh1.get(a, a + mid - 1) == rh2.get(b, b + mid - 1)) ok = mid; else ng = mid;
 		}
 		return ok;
