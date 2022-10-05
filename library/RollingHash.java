@@ -31,15 +31,9 @@ final class RollingHash {
 		return res;
 	}
 
-	private static final int[] charToInt(char[] c) {
-		int a[] = new int[c.length];
-		for(int i = 0; i < c.length; i ++) a[i] = (int)c[i];
-		return a;
-	}
-
 	// O(|S|)
 	public RollingHash(String s) { this(s.toCharArray()); }
-	public RollingHash(char[] c) { this(charToInt(c)); }
+	public RollingHash(char[] c) { this(SimpleUtil.charToInt(c)); }
 	public RollingHash(int[] a) {
 		len = a.length;
 		hash = new long[len + 1];
