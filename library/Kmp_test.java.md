@@ -27,14 +27,18 @@ data:
     \npackage library;\n\nimport library.Solver;\nimport library.Kmp;\n\npublic class\
     \ Kmp_test extends Solver {\n\tpublic static void main(final String[] args) {\
     \ main(args, new Kmp_test()); }\n\n\tpublic void solve() {\n\t\tString t = ns();\n\
-    \t\tprtlns(new Kmp(ns()).match(t));\n\t}\n}"
+    \t\tprtlns(new Kmp(StringToInt(ns())).match(StringToInt(t)));\n\t}\n\n\tint[]\
+    \ StringToInt(String s) {\n\t\tint a[] = new int[s.length()];\n\t\tfor(int i =\
+    \ 0; i < s.length(); i ++) {\n\t\t\tint c = s.charAt(i);\n\t\t\tif('0' <= c &&\
+    \ c <= '9') a[i] = c - '0';\n\t\t\telse if('a' <= c && c <= 'z') a[i] = c - 'a'\
+    \ + 10;\n\t\t}\n\t\treturn a;\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/Kmp.java
   isVerificationFile: true
   path: library/Kmp_test.java
   requiredBy: []
-  timestamp: '2022-10-05 21:02:04+09:00'
+  timestamp: '2022-10-05 21:11:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Kmp_test.java

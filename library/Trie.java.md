@@ -121,7 +121,7 @@ data:
   isVerificationFile: false
   path: library/Trie.java
   requiredBy: []
-  timestamp: '2022-10-05 20:31:46+09:00'
+  timestamp: '2022-10-05 21:11:17+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Trie_startWith_test.java

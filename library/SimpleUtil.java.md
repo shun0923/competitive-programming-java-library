@@ -377,9 +377,9 @@ data:
     \ int x) { return isPlusINF(x) || isMinusINF(x); }\n\n\tpublic static final int[]\
     \ charToInt(char[] c) {\n\t\tint a[] = new int[c.length];\n\t\tfor(int i = 0;\
     \ i < c.length; i ++) {\n\t\t\tif('a' <= c[i] && c[i] <= 'z') a[i] = c[i] - 'a';\n\
-    \t\t\telse if('A' <= c[i] && c[i] <= 'Z') a[i] = c[i] - 'A' + 26;\n\t\t\telse\
-    \ if('0' <= c[i] && c[i] <= '9') a[i] = c[i] - '0' + 52;\n\t\t\telse a[i] = c[i]\
-    \ + 62;\n\t\t}\n\t\treturn a;\n\t}\n}"
+    \t\t\telse if('A' <= c[i] && c[i] <= 'Z') a[i] = c[i] - 'A';\n\t\t\telse if('0'\
+    \ <= c[i] && c[i] <= '9') a[i] = c[i] - '0';\n\t\t\telse a[i] = c[i];\n\t\t}\n\
+    \t\treturn a;\n\t}\n}"
   dependsOn:
   - library/FastInputStream.java
   - library/FastOutputStream.java
@@ -432,7 +432,7 @@ data:
   - library/TemplateSparseTable.java
   - library/PathRestoration.java
   - library/SuffixArray.java
-  timestamp: '2022-10-05 20:31:46+09:00'
+  timestamp: '2022-10-05 21:11:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/SimpleUtil.java
