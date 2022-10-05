@@ -11,7 +11,7 @@ public class Trie_startWith_test extends Solver {
 	public void solve() {
 		String t = ns();
 		Trie trie = new Trie();
-		for(int i = 0; i < t.length(); i ++) trie.add(t, i, t.length());
+		for(int i = 0; i < t.length(); i ++) trie.add(t, i, min(i + 10, t.length()));
 		int m = ni();
 		long ans = 0;
 		for(int i = 0; i < m; i ++) ans += trie.startWith(ns());
