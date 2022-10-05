@@ -220,19 +220,12 @@ class SimpleUtil {
 
 	public static final int[] charToInt(char[] c) {
 		int a[] = new int[c.length];
-		int type[] = new int[c.length];
-		boolean numeric = false;
-		boolean lower = false;
-		boolean upper = false;
 		for(int i = 0; i < c.length; i ++) {
-			if('0' <= c[i] && c[i] <= '9') { a[i] = c[i] - '0'; type[i] = 0; numeric = true; }
-			else if('a' <= c[i] && c[i] <= 'z') { a[i] = c[i] - 'a'; type[i] = 1; lower = true; }
-			else if('A' <= c[i] && c[i] <= 'Z') { a[i] = c[i] - 'A'; type[i] = 2; upper = true; }
-			else { a[i] = c[i]; type[i] = 3; }
+			if('a' <= c[i] && c[i] <= 'z') a[i] = c[i] - 'a';
+			else if('A' <= c[i] && c[i] <= 'Z') a[i] = c[i] - 'A' + 26;
+			else if('0' <= c[i] && c[i] <= '9') a[i] = c[i] - '0' + 52;
+			else a[i] = c[i] + 62;
 		}
-		if(numeric) for(int i = 0; i < c.length; i ++) if(type[i] > 0) a[i] += 10;
-		if(lower) for(int i = 0; i < c.length; i ++) if(type[i] > 1) a[i] += 26;
-		if(upper) for(int i = 0; i < c.length; i ++) if(type[i] > 2) a[i] += 26;
 		return a;
 	}
 }

@@ -106,13 +106,17 @@ final class FastOutputStream {
 	public final void print(final Object o) { print(o.toString()); }
 	public final void print(final byte[] a) {
 		if(count + a.length > BUF_SIZE) internalFlush();
-		System.arraycopy(a, 0, buf, count, a.length);
-		count += a.length;
+		if(a.length <= BUF_SIZE) {
+			System.arraycopy(a, 0, buf, count, a.length);
+			count += a.length;
+		}else {
+			try { out.write(a, 0, a.length); }catch(IOException e) { e.printStackTrace(); }
+		}
 	}
 	public final void print(final char[] a) {
-		if(count + a.length > BUF_SIZE) internalFlush();
-		for(int i = 0; i < a.length; i ++) buf[count + i] = (byte)a[i];
-		count += a.length;
+		byte b[] = new byte[a.length];
+		for(int i = 0; i < a.length; i ++) b[i] = (byte)a[i];
+		print(b);
 	}
 	public final void println() { print('\n'); }
 	public final void println(final char c) { print(c); println(); }

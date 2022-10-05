@@ -4,53 +4,40 @@ import java.util.*;
 import library.SimpleUtil;
 
 final class Kmp {
-	// return all the occurrences of P in S
 	// O(|S|)
-	public static final int[] cal(String s, String p) { return cal(s.toCharArray(), p.toCharArray()); }
-	public static final int[] cal(char[] s, char[] p) { return cal(SimpleUtil.charToInt(s), SimpleUtil.charToInt(p)); }
-	public static final int[] cal(int[] s, int[] p) {
-		int sLen = s.length;
-		int pLen = p.length;
-
-		int sIndex = 1;
-		int pIndex = 0;
-
-		int skip[] = new int[pLen + 1];
-		Arrays.fill(skip, 0);
-		while(sIndex < pLen) {
-			if(p[sIndex] == p[pIndex]) {
-				sIndex ++;
-				pIndex ++;
-				skip[sIndex] = pIndex;
-			}else if(pIndex == 0) {
-				sIndex ++;
-				skip[sIndex] = 0;
-			}else {
-				pIndex = skip[pIndex];
-			}
+	public final int a[];
+	public final int kmp[];
+	public Kmp(String s) { this(s.toCharArray()); }
+	public Kmp(char[] c) { this(SimpleUtil.charToInt(c)); }
+	public Kmp(int[] a) {
+		this.a = a;
+		kmp = new int[a.length + 1];
+		kmp[0] = -1;
+		int r = -1;
+		for(int l = 0; l < a.length; l ++) {
+			while(r != -1 && a[l] != a[r]) r = kmp[r];
+			r ++;
+			if(l + 1 < a.length && a[l + 1] == a[r]) kmp[l + 1] = kmp[r];
+			else kmp[l + 1] = r;
 		}
 
-		ArrayList<Integer> matchIndex = new ArrayList<Integer>();
-		sIndex = 0;
-		pIndex = 0;
-		while(true) {
-			while(sIndex < sLen && pIndex < pLen && s[sIndex] == p[pIndex]) {
-				sIndex ++;
-				pIndex ++;
-			}
-			if(pIndex >= pLen) {
-				matchIndex.add(sIndex - pLen);
-				pIndex = skip[pIndex];
-			}else if(pIndex == 0) {
-				sIndex ++;
-			}else {
-				pIndex = skip[pIndex];
-			}
-			if(sIndex >= sLen) break;
-		}
+	}
 
-		int matchIndexList[] = new int[matchIndex.size()];
-		for(int i = 0; i < matchIndex.size(); i ++) matchIndexList[i] = matchIndex.get(i);
-		return matchIndexList;
+	// return all the occurrences of S in T
+	// O(|S|+|T|)
+	public final int[] match(String t) { return match(t.toCharArray()); }
+	public final int[] match(char[] c) { return match(SimpleUtil.charToInt(c)); }
+	public final int[] match(int[] b) {
+		ArrayList<Integer> match = new ArrayList<Integer>();
+		int j = 0;
+		for(int i = 0; i != b.length; ) {
+			while(i != b.length && j != a.length && b[i] == a[j]) { i ++; j ++; }
+			if(j == a.length) match.add(i - j);
+			j = kmp[j];
+			if(j == -1) { i ++; j ++; }
+		}
+		int matchList[] = new int[match.size()];
+		for(int i = 0; i < match.size(); i ++) matchList[i] = match.get(i);
+		return matchList;
 	}
 }
