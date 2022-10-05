@@ -13,7 +13,7 @@ data:
   _pathExtension: java
   _verificationStatusIcon: ':x:'
   attributes:
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
+    PROBLEM: https://yukicoder.me/problems/no/430
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
@@ -23,24 +23,21 @@ data:
     \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
     , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D\n\
-    \npackage library;\n\nimport library.Solver;\nimport library.Trie;\n\npublic class\
+  code: "// verification-helper: PROBLEM https://yukicoder.me/problems/no/430\n\n\
+    package library;\n\nimport library.Solver;\nimport library.Trie;\n\npublic class\
     \ Trie_startWith_test extends Solver {\n\tpublic static void main(final String[]\
     \ args) { main(args, new Trie_startWith_test()); }\n\n\tpublic void solve() {\n\
-    \t\tString t = ns();\n\t\tint a[] = StringToInt(t);\n\t\tTrie trie = new Trie(36);\n\
-    \t\tfor(int i = 0; i < t.length(); i ++) trie.add(a, i, a.length);\n\t\tint q\
-    \ = ni();\n\t\tfor(int i = 0; i < q; i ++) prtln(trie.startWith(StringToInt(ns()))\
-    \ ? 1 : 0);\n\t}\n\n\tint[] StringToInt(String s) {\n\t\tint a[] = new int[s.length()];\n\
-    \t\tfor(int i = 0; i < s.length(); i ++) {\n\t\t\tint c = s.charAt(i);\n\t\t\t\
-    if('0' <= c && c <= '9') a[i] = c - '0';\n\t\t\telse if('a' <= c && c <= 'z')\
-    \ a[i] = c - 'a' + 10;\n\t\t}\n\t\treturn a;\n\t}\n}"
+    \t\tString t = ns();\n\t\tTrie trie = new Trie();\n\t\tfor(int i = 0; i < t.length();\
+    \ i ++) trie.add(t, i, t.length());\n\t\tint m = ni();\n\t\tlong ans = 0;\n\t\t\
+    for(int i = 0; i < m; i ++) ans += trie.startWith(ns());\n\t\tprtln(ans);\n\t\
+    }\n}"
   dependsOn:
   - library/Solver.java
   - library/Trie.java
   isVerificationFile: true
   path: library/Trie_startWith_test.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2022-10-05 21:29:30+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/Trie_startWith_test.java

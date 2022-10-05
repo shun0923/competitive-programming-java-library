@@ -49,36 +49,35 @@ data:
     int next = get(crt).next[a[i]];\n\t\t\tif(next == -1) {\n\t\t\t\tnext = size();\n\
     \t\t\t\tget(crt).next[a[i]] = next;\n\t\t\t\tadd(new TrieNode(charSize));\n\t\t\
     \t}\n\t\t\tcrt = next;\n\t\t\tget(crt).cnt ++;\n\t\t}\n\t\tget(crt).accept.add(id);\n\
-    \t}\n\n\t// O(min(|S|,|P|))\n\tpublic final boolean search(final String str) {\
-    \ return search(str, false); }\n\tpublic final boolean search(final char[] c)\
-    \ { return search(c, false); }\n\tpublic final boolean search(final int[] a) {\
-    \ return search(a, false); }\n\tpublic final boolean startWith(final String str)\
-    \ { return search(str, true); }\n\tpublic final boolean startWith(final char[]\
-    \ c) { return search(c, true); }\n\tpublic final boolean startWith(final int[]\
-    \ a) { return search(a, true); }\n\tpublic final boolean search(final String str,\
-    \ final int l, final int r) { return search(str, false, l, r); }\n\tpublic final\
-    \ boolean search(final char[] c, final int l, final int r) { return search(c,\
-    \ false, l, r); }\n\tpublic final boolean search(final int[] a, final int l, final\
-    \ int r) { return search(a, false, l, r); }\n\tpublic final boolean startWith(final\
-    \ String str, final int l, final int r) { return search(str, true, l, r); }\n\t\
-    public final boolean startWith(final char[] c, final int l, final int r) { return\
-    \ search(c, true, l, r); }\n\tpublic final boolean startWith(final int[] a, final\
-    \ int l, final int r) { return search(a, true, l, r); }\n\tpublic final boolean\
-    \ search(final String str, final boolean prefix) { return search(str, prefix,\
-    \ 0, str.length()); }\n\tpublic final boolean search(final char[] c, final boolean\
-    \ prefix) { return search(c, prefix, 0, c.length); }\n\tpublic final boolean search(final\
-    \ int[] a, final boolean prefix) { return search(a, prefix, 0, a.length); }\n\t\
-    public final boolean search(final String str, final boolean prefix, final int\
+    \t}\n\n\t// O(min(|S|,|P|))\n\tpublic final int search(final String str) { return\
+    \ search(str, false); }\n\tpublic final int search(final char[] c) { return search(c,\
+    \ false); }\n\tpublic final int search(final int[] a) { return search(a, false);\
+    \ }\n\tpublic final int startWith(final String str) { return search(str, true);\
+    \ }\n\tpublic final int startWith(final char[] c) { return search(c, true); }\n\
+    \tpublic final int startWith(final int[] a) { return search(a, true); }\n\tpublic\
+    \ final int search(final String str, final int l, final int r) { return search(str,\
+    \ false, l, r); }\n\tpublic final int search(final char[] c, final int l, final\
+    \ int r) { return search(c, false, l, r); }\n\tpublic final int search(final int[]\
+    \ a, final int l, final int r) { return search(a, false, l, r); }\n\tpublic final\
+    \ int startWith(final String str, final int l, final int r) { return search(str,\
+    \ true, l, r); }\n\tpublic final int startWith(final char[] c, final int l, final\
+    \ int r) { return search(c, true, l, r); }\n\tpublic final int startWith(final\
+    \ int[] a, final int l, final int r) { return search(a, true, l, r); }\n\tpublic\
+    \ final int search(final String str, final boolean prefix) { return search(str,\
+    \ prefix, 0, str.length()); }\n\tpublic final int search(final char[] c, final\
+    \ boolean prefix) { return search(c, prefix, 0, c.length); }\n\tpublic final int\
+    \ search(final int[] a, final boolean prefix) { return search(a, prefix, 0, a.length);\
+    \ }\n\tpublic final int search(final String str, final boolean prefix, final int\
     \ l, final int r) { return search(str.toCharArray(), prefix, l, r); }\n\tpublic\
-    \ final boolean search(final char[] c, final boolean prefix, final int l, final\
-    \ int r) { return search(SimpleUtil.charToInt(c), prefix, l, r); }\n\tpublic final\
-    \ boolean search(final int[] a, final boolean prefix, final int l, final int r)\
-    \ {\n\t\tSimpleUtil.inclusiveRangeCheck(l, a.length);\n\t\tSimpleUtil.inclusiveRangeCheck(r,\
+    \ final int search(final char[] c, final boolean prefix, final int l, final int\
+    \ r) { return search(SimpleUtil.charToInt(c), prefix, l, r); }\n\tpublic final\
+    \ int search(final int[] a, final boolean prefix, final int l, final int r) {\n\
+    \t\tSimpleUtil.inclusiveRangeCheck(l, a.length);\n\t\tSimpleUtil.inclusiveRangeCheck(r,\
     \ a.length);\n\t\tSimpleUtil.assertion(l <= r, \"l is larger than r.\");\n\t\t\
     int crt = 0;\n\t\tfor(int i = l; i < r; i ++) {\n\t\t\tcrt = get(crt).next[a[i]];\n\
-    \t\t\tif(crt == -1) return false;\n\t\t}\n\t\treturn prefix || get(crt).accept.size()\
-    \ != 0;\n\t}\n\n\t// O(min(|S|,|P|,M))\n\tpublic final List<Integer> prefix(final\
-    \ String str) { return prefix(str, 0, str.length()); }\n\tpublic final List<Integer>\
+    \t\t\tif(crt == -1) return 0;\n\t\t}\n\t\treturn prefix ? get(crt).cnt : get(crt).accept.size();\n\
+    \t}\n\n\t// O(min(|S|,|P|,M))\n\tpublic final List<Integer> prefix(final String\
+    \ str) { return prefix(str, 0, str.length()); }\n\tpublic final List<Integer>\
     \ prefix(final char[] c) { return prefix(c, 0, c.length); }\n\tpublic final List<Integer>\
     \ prefix(final int[] a) { return prefix(a, 0, a.length); }\n\tpublic final List<Integer>\
     \ prefix(final String str, final int l, final int r) { return prefix(str.toCharArray(),\
@@ -121,7 +120,7 @@ data:
   isVerificationFile: false
   path: library/Trie.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2022-10-05 21:29:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Trie_startWith_test.java
