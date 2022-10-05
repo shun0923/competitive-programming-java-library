@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Trie.java
     title: library/Trie.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://yukicoder.me/problems/no/430
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -28,17 +28,17 @@ data:
     \ Trie_startWith_test extends Solver {\n\tpublic static void main(final String[]\
     \ args) { main(args, new Trie_startWith_test()); }\n\n\tpublic void solve() {\n\
     \t\tString t = ns();\n\t\tTrie trie = new Trie();\n\t\tfor(int i = 0; i < t.length();\
-    \ i ++) trie.add(t, i, t.length());\n\t\tint m = ni();\n\t\tlong ans = 0;\n\t\t\
-    for(int i = 0; i < m; i ++) ans += trie.startWith(ns());\n\t\tprtln(ans);\n\t\
-    }\n}"
+    \ i ++) trie.add(t, i, min(i + 10, t.length()));\n\t\tint m = ni();\n\t\tlong\
+    \ ans = 0;\n\t\tfor(int i = 0; i < m; i ++) ans += trie.startWith(ns());\n\t\t\
+    prtln(ans);\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/Trie.java
   isVerificationFile: true
   path: library/Trie_startWith_test.java
   requiredBy: []
-  timestamp: '2022-10-05 21:29:30+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-05 21:39:01+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Trie_startWith_test.java
 layout: document

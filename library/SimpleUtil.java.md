@@ -119,7 +119,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TopologicalSort.java
     title: library/TopologicalSort.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Trie.java
     title: library/Trie.java
   - icon: ':heavy_check_mark:'
