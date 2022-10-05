@@ -30,7 +30,7 @@ final class Kmp {
 	public final int[] match(int[] b) {
 		ArrayList<Integer> match = new ArrayList<Integer>();
 		int j = 0;
-		for(int i = 0; i != b.length; ) {
+		for(int i = 0; i < b.length; ) {
 			while(i != b.length && j != a.length && b[i] == a[j]) { i ++; j ++; }
 			if(j == a.length) match.add(i - j);
 			j = kmp[j];
