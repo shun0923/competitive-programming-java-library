@@ -189,6 +189,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TopologicalSort_test.java
     title: library/TopologicalSort_test.java
+  - icon: ':x:'
+    path: library/Trie_test.java
+    title: library/Trie_test.java
   - icon: ':heavy_check_mark:'
     path: library/UnionFind_test.java
     title: library/UnionFind_test.java
@@ -271,6 +274,7 @@ data:
   - library/DualSegmentTree_test.java
   - library/FastIO_test.java
   - library/Swag_test.java
+  - library/Trie_test.java
   - library/SuffixArray_test.java
   - library/ManyFastIO_test.java
   - library/ZAlgorithm_test.java

@@ -129,6 +129,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TopologicalSort.java
       title: library/TopologicalSort.java
+    - icon: ':x:'
+      path: library/Trie.java
+      title: library/Trie.java
     - icon: ':heavy_check_mark:'
       path: library/UnionFind.java
       title: library/UnionFind.java
@@ -339,6 +342,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TopologicalSort_test.java
       title: library/TopologicalSort_test.java
+    - icon: ':x:'
+      path: library/Trie_test.java
+      title: library/Trie_test.java
     - icon: ':heavy_check_mark:'
       path: library/UnionFind_test.java
       title: library/UnionFind_test.java

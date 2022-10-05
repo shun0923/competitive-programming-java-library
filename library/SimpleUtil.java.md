@@ -119,6 +119,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TopologicalSort.java
     title: library/TopologicalSort.java
+  - icon: ':x:'
+    path: library/Trie.java
+    title: library/Trie.java
   - icon: ':heavy_check_mark:'
     path: library/UnionFind.java
     title: library/UnionFind.java
@@ -411,6 +414,7 @@ data:
   - library/Kmp.java
   - library/TemplateDynamicSwag.java
   - library/Dijkstra.java
+  - library/Trie.java
   - library/TemplateSegmentTree.java
   - library/SparseTable.java
   - library/LcpArray.java
