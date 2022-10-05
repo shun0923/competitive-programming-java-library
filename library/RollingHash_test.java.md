@@ -36,7 +36,7 @@ data:
   isVerificationFile: true
   path: library/RollingHash_test.java
   requiredBy: []
-  timestamp: '2022-10-05 15:58:56+09:00'
+  timestamp: '2022-10-05 16:02:29+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/RollingHash_test.java

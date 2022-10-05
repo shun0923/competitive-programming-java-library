@@ -25,7 +25,7 @@ data:
   code: "package library;\n\nimport library.SimpleUtil;\n\nfinal class RollingHash\
     \ {\n\tstatic final long MASK30 = (1l << 30) - 1;\n\tstatic final long MASK31\
     \ = (1l << 31) - 1;\n\tstatic final long MODRH = (1l << 61) - 1;\n\tstatic final\
-    \ long MASK61 = MODRH;\n\tstatic final long POSITIVIZER = MODRH <<< 2;\n\tstatic\
+    \ long MASK61 = MODRH;\n\tstatic final long POSITIVIZER = MODRH << 2;\n\tstatic\
     \ final long BASE = (long) (Math.random() * (MODRH >>> 1)) + (MODRH >>> 1);\n\t\
     private final long hash[];\n\tprivate final long pow[];\n\tpublic final int len;\n\
     \n\tprivate static final long mul(final long a, final long b) { // O(1)\n\t\t\
@@ -49,15 +49,15 @@ data:
     \ int a, RollingHash rh2, int b) { // O(max(|S_1|,|S_2|))\n\t\tSimpleUtil.inclusiveRangeCheck(a,\
     \ rh1.len);\n\t\tSimpleUtil.inclusiveRangeCheck(b, rh2.len);\n\t\tint ok = 0;\n\
     \t\tint ng = Math.min(rh1.len - a, rh2.len - b) + 1;\n\t\twhile(ng - ok != 1)\
-    \ {\n\t\t\tint mid = ok + (ng - ok >> 1);\n\t\t\tif(rh1.get(a, a + mid) == (rh2.get(b,\
-    \ b + mid))\n\t\t\t\t&& rh1.get(a, a + mid - 1) == (rh2.get(b, b + mid - 1)) ok\
+    \ {\n\t\t\tint mid = ok + (ng - ok >> 1);\n\t\t\tif(rh1.get(a, a + mid) == rh2.get(b,\
+    \ b + mid))\n\t\t\t\t&& rh1.get(a, a + mid - 1) == rh2.get(b, b + mid - 1)) ok\
     \ = mid; else ng = mid;\n\t\t}\n\t\treturn ok;\n\t}\n}"
   dependsOn:
   - library/SimpleUtil.java
   isVerificationFile: false
   path: library/RollingHash.java
   requiredBy: []
-  timestamp: '2022-10-05 15:58:56+09:00'
+  timestamp: '2022-10-05 16:02:29+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/RollingHash_test.java
