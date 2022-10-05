@@ -222,9 +222,9 @@ class SimpleUtil {
 		int a[] = new int[c.length];
 		for(int i = 0; i < c.length; i ++) {
 			if('a' <= c[i] && c[i] <= 'z') a[i] = c[i] - 'a';
-			else if('A' <= c[i] && c[i] <= 'Z') a[i] = c[i] - 'A' + 26;
-			else if('0' <= c[i] && c[i] <= '9') a[i] = c[i] - '0' + 52;
-			else a[i] = c[i] + 62;
+			else if('A' <= c[i] && c[i] <= 'Z') a[i] = c[i] - 'A';
+			else if('0' <= c[i] && c[i] <= '9') a[i] = c[i] - '0';
+			else a[i] = c[i];
 		}
 		return a;
 	}
