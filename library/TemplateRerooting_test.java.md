@@ -16,7 +16,7 @@ data:
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_B
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
@@ -26,7 +26,7 @@ data:
     \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
     , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A\n\
+  code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_B\n\
     \npackage library;\n\nimport library.Solver;\nimport library.AbstractGraph;\n\
     import library.TemplateRerooting;\n\npublic class TemplateRerooting_test extends\
     \ Solver {\n\tpublic static void main(final String[] args) { main(args, new TemplateRerooting_test());\
@@ -35,8 +35,7 @@ data:
     \ g.add(ni(), ni(), nl());\n\t\tTemplateRerooting<Long> rr = new TemplateRerooting<>(n,\
     \ g.nodes(), 0,\n\t\t\t\t() -> 0l,\n\t\t\t\t(x1, x2) -> max(x1, x2),\n\t\t\t\t\
     (e, x) -> e.cost + x,\n\t\t\t\t(v, x) -> x,\n\t\t\t\t(v) -> 0l);\n\t\trr.cal();\n\
-    \t\tlong ans = 0;\n\t\tfor(int i = 0; i < n; i ++) ans = max(ans, (long)rr.get(i));\n\
-    \t\tprtln(ans);\n\t}\n}"
+    \t\tfor(int i = 0; i < n; i ++) prtln(rr.get(i));\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/AbstractGraph.java
@@ -44,7 +43,7 @@ data:
   isVerificationFile: true
   path: library/TemplateRerooting_test.java
   requiredBy: []
-  timestamp: '2022-10-04 23:36:08+09:00'
+  timestamp: '2022-10-05 10:53:05+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/TemplateRerooting_test.java
