@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
+  - icon: ':x:'
+    path: library/Bfs.java
+    title: library/Bfs.java
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
@@ -63,6 +66,7 @@ data:
   requiredBy:
   - library/TemplateDijkstra.java
   - library/BellmanFord.java
+  - library/Bfs.java
   - library/WarshallFloyd.java
   - library/Dijkstra.java
   timestamp: '2022-10-04 23:36:08+09:00'

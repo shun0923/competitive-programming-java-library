@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -12,6 +12,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/BellmanFord.java
       title: library/BellmanFord.java
+    - icon: ':x:'
+      path: library/Bfs.java
+      title: library/Bfs.java
     - icon: ':warning:'
       path: library/BitVector.java
       title: library/BitVector.java
@@ -78,7 +81,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -111,6 +114,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSwag.java
       title: library/TemplateSwag.java
+    - icon: ':x:'
+      path: library/TopologicalSort.java
+      title: library/TopologicalSort.java
     - icon: ':heavy_check_mark:'
       path: library/UnionFind.java
       title: library/UnionFind.java
@@ -156,6 +162,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/BellmanFord_test.java
       title: library/BellmanFord_test.java
+    - icon: ':x:'
+      path: library/Bfs_test.java
+      title: library/Bfs_test.java
     - icon: ':heavy_check_mark:'
       path: library/CompressedWaveletMatrix_freq_test.java
       title: library/CompressedWaveletMatrix_freq_test.java
@@ -300,6 +309,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateSwag_test.java
       title: library/TemplateSwag_test.java
+    - icon: ':x:'
+      path: library/TopologicalSort_test.java
+      title: library/TopologicalSort_test.java
     - icon: ':heavy_check_mark:'
       path: library/UnionFind_test.java
       title: library/UnionFind_test.java

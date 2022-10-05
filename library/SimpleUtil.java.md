@@ -8,12 +8,15 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
+  - icon: ':x:'
+    path: library/Bfs.java
+    title: library/Bfs.java
   - icon: ':warning:'
     path: library/BitVector.java
     title: library/BitVector.java
@@ -101,6 +104,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSwag.java
     title: library/TemplateSwag.java
+  - icon: ':x:'
+    path: library/TopologicalSort.java
+    title: library/TopologicalSort.java
   - icon: ':heavy_check_mark:'
     path: library/UnionFind.java
     title: library/UnionFind.java
@@ -360,6 +366,7 @@ data:
   - library/WaveletMatrix.java
   - library/DynamicSegmentTree.java
   - library/TemplateDualSegmentTree.java
+  - library/TopologicalSort.java
   - library/Util.java
   - library/Mod.java
   - library/Pair.java
@@ -370,6 +377,7 @@ data:
   - library/TemplateDijkstra.java
   - library/TemplateRerooting.java
   - library/BellmanFord.java
+  - library/Bfs.java
   - library/WarshallFloyd.java
   - library/ExtendedConvolution.java
   - library/SegmentTree.java
