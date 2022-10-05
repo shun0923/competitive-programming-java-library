@@ -2,7 +2,7 @@ package library;
 
 import library.SimpleUtil;
 
-final class ZAlgolithm {
+final class ZAlgorithm {
 	// return the length of the longest list starting from S[i] which is also a prefix of S
 	// O(|S|)
 	public static final int[] cal(String s) { return cal(s.toCharArray()); }

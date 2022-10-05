@@ -6,9 +6,9 @@ import library.SimpleUtil;
 final class Kmp {
 	// return all the occurrences of P in S
 	// O(|S|)
-	int[] cal(String s, String p) { return cal(s.toCharArray(), p.toCharArray()); }
-	int[] cal(char[] s, char[] p) { return cal(SimpleUtil.charToInt(s), SimpleUtil.charToInt(p)); }
-	int[] cal(int[] s, int[] p) {
+	public static final int[] cal(String s, String p) { return cal(s.toCharArray(), p.toCharArray()); }
+	public static final int[] cal(char[] s, char[] p) { return cal(SimpleUtil.charToInt(s), SimpleUtil.charToInt(p)); }
+	public static final int[] cal(int[] s, int[] p) {
 		int sLen = s.length;
 		int pLen = p.length;
 
@@ -33,7 +33,7 @@ final class Kmp {
 		ArrayList<Integer> matchIndex = new ArrayList<Integer>();
 		sIndex = 0;
 		pIndex = 0;
-		end: while(true) {
+		while(true) {
 			while(sIndex < sLen && pIndex < pLen && s[sIndex] == p[pIndex]) {
 				sIndex ++;
 				pIndex ++;
@@ -41,12 +41,12 @@ final class Kmp {
 			if(pIndex >= pLen) {
 				matchIndex.add(sIndex - pLen);
 				pIndex = skip[pIndex];
-			}else if(pIndex == 0){
+			}else if(pIndex == 0) {
 				sIndex ++;
 			}else {
 				pIndex = skip[pIndex];
 			}
-			if(sIndex >= sLen) break end;
+			if(sIndex >= sLen) break;
 		}
 
 		int matchIndexList[] = new int[matchIndex.size()];
