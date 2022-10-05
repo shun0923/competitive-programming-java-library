@@ -7,7 +7,7 @@ final class RollingHash {
 	static final long MASK31 = (1l << 31) - 1;
 	static final long MODRH = (1l << 61) - 1;
 	static final long MASK61 = MODRH;
-	static final long POSITIVIZER = MODRH <<< 2;
+	static final long POSITIVIZER = MODRH << 2;
 	static final long BASE = (long) (Math.random() * (MODRH >>> 1)) + (MODRH >>> 1);
 	private final long hash[];
 	private final long pow[];
@@ -64,8 +64,8 @@ final class RollingHash {
 		int ng = Math.min(rh1.len - a, rh2.len - b) + 1;
 		while(ng - ok != 1) {
 			int mid = ok + (ng - ok >> 1);
-			if(rh1.get(a, a + mid) == (rh2.get(b, b + mid))
-				&& rh1.get(a, a + mid - 1) == (rh2.get(b, b + mid - 1)) ok = mid; else ng = mid;
+			if(rh1.get(a, a + mid) == rh2.get(b, b + mid))
+				&& rh1.get(a, a + mid - 1) == rh2.get(b, b + mid - 1)) ok = mid; else ng = mid;
 		}
 		return ok;
 	}
