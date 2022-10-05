@@ -6,12 +6,12 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/SuffixArray_test.java
     title: library/SuffixArray_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -22,12 +22,13 @@ data:
     \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
     , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport library.SimpleUtil;\n\nfinal class SuffixArray\
-    \ {\n\tpublic static final int[] cal(String s) { return cal(s.toCharArray());\
-    \ } // O(|S|)\n\tpublic static final int[] cal(char[] c) {\n\t\tint a[] = SimpleUtil.charToInt(c);\n\
-    \t\tint max = 0;\n\t\tfor(int ele : a) if(max < ele) max = ele;\n\t\treturn sais(a,\
-    \ max);\n\t} // O(|S|)\n\tpublic static final int[] cal(int[] a, int max) { return\
-    \ sais(a, max); } // O(|S|+M)\n\tpublic static final int[] cal(int[] a) { // O(NlogN)\n\
+  code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
+    \ library.SimpleUtil;\n\nfinal class SuffixArray {\n\tpublic static final int[]\
+    \ cal(String s) { return cal(s.toCharArray()); } // O(|S|)\n\tpublic static final\
+    \ int[] cal(char[] c) {\n\t\tint a[] = SimpleUtil.charToInt(c);\n\t\tint max =\
+    \ 0;\n\t\tfor(int ele : a) if(max < ele) max = ele;\n\t\treturn sais(a, max);\n\
+    \t} // O(|S|)\n\tpublic static final int[] cal(int[] a, int max) { return sais(a,\
+    \ max); } // O(|S|+M)\n\tpublic static final int[] cal(int[] a) { // O(NlogN)\n\
     \t\tint n = a.length;\n\t\tInteger[] idx = new Integer[n];\n\t\tfor(int i = 0;\
     \ i < n; i++) idx[i] = i;\n\t\tArrays.sort(idx, (l, r) -> Integer.compare(a[l],\
     \ a[r]));\n\t\tint[] a2 = new int[n];\n\t\tint crt = 0;\n\t\ta2[0] = 0;\n\t\t\
@@ -73,8 +74,8 @@ data:
   isVerificationFile: false
   path: library/SuffixArray.java
   requiredBy: []
-  timestamp: '2022-10-05 15:32:30+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-10-05 15:43:52+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/SuffixArray_test.java
 documentation_of: library/SuffixArray.java

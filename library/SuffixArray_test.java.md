@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/SuffixArray.java
     title: library/SuffixArray.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/suffixarray
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -34,8 +34,8 @@ data:
   isVerificationFile: true
   path: library/SuffixArray_test.java
   requiredBy: []
-  timestamp: '2022-10-05 15:32:30+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-05 15:43:52+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/SuffixArray_test.java
 layout: document

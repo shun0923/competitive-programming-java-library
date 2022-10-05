@@ -135,7 +135,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/SparseTable_test.java
     title: library/SparseTable_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/SuffixArray_test.java
     title: library/SuffixArray_test.java
   - icon: ':heavy_check_mark:'
@@ -235,7 +235,7 @@ data:
   isVerificationFile: false
   path: library/Solver.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
+  timestamp: '2022-10-05 15:43:52+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/ArbitraryModOperation_test.java

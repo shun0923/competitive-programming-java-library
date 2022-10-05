@@ -228,12 +228,10 @@ data:
     \ isUpper(c) ? upperToInt(c) + 26 : 52; }\n\tpublic static final char intToUpper(final\
     \ int x) { return (char)(x + 'A'); }\n\tpublic static final char intToLower(final\
     \ int x) { return (char)(x + 'a'); }\n\tpublic static final char intToNum(final\
-    \ int x) { return (char)(x + '0'); }\n\tpublic static final int[] charToInt(final\
-    \ char[] a) { final int toint[] = new int[a.length]; for(int i = 0; i < a.length;\
-    \ i ++) toint[i] = charToInt(a[i]); return toint; }\n\tpublic static final int[][]\
-    \ charToInt(final char[][] a) { final int toint[][] = new int[a.length][]; for(int\
-    \ i = 0; i < a.length; i ++) toint[i] = charToInt(a[i]); return toint; }\n\n\n\
-    \tpublic static final String reverse(final String s) { return (new StringBuilder(s)).reverse().toString();\
+    \ int x) { return (char)(x + '0'); }\n\tpublic static final int[][] charToInt(final\
+    \ char[][] a) { final int toint[][] = new int[a.length][]; for(int i = 0; i <\
+    \ a.length; i ++) toint[i] = charToInt(a[i]); return toint; }\n\n\n\tpublic static\
+    \ final String reverse(final String s) { return (new StringBuilder(s)).reverse().toString();\
     \ }\n\tpublic static final char[] reverse(final char[] a) { for(int i = 0; i <\
     \ a.length / 2; i ++) swap(a, i, a.length - i - 1); return a; }\n\tpublic static\
     \ final boolean[] reverse(final boolean[] a) { for(int i = 0; i < a.length / 2;\
@@ -1078,7 +1076,7 @@ data:
   path: library/Util.java
   requiredBy:
   - library/Solver.java
-  timestamp: '2022-10-05 15:32:30+09:00'
+  timestamp: '2022-10-05 15:43:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/Util.java
