@@ -91,6 +91,9 @@ data:
     path: library/Lca_test.java
     title: library/Lca_test.java
   - icon: ':heavy_check_mark:'
+    path: library/LcpArray_test.java
+    title: library/LcpArray_test.java
+  - icon: ':heavy_check_mark:'
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
   - icon: ':heavy_check_mark:'
@@ -277,6 +280,7 @@ data:
   - library/TemplateDynamicSwag_test.java
   - library/Mod107Random_test.java
   - library/TemplateDijkstra_test.java
+  - library/LcpArray_test.java
   - library/CompressedWaveletMatrix_freq_test.java
   - library/Swag_gcd_test.java
   - library/BellmanFord_test.java

@@ -4,8 +4,14 @@ data:
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/LcpArray.java
+    title: library/LcpArray.java
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: library/LcpArray_test.java
+    title: library/LcpArray_test.java
   - icon: ':heavy_check_mark:'
     path: library/SuffixArray_test.java
     title: library/SuffixArray_test.java
@@ -73,11 +79,13 @@ data:
   - library/SimpleUtil.java
   isVerificationFile: false
   path: library/SuffixArray.java
-  requiredBy: []
+  requiredBy:
+  - library/LcpArray.java
   timestamp: '2022-10-05 15:43:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/SuffixArray_test.java
+  - library/LcpArray_test.java
 documentation_of: library/SuffixArray.java
 layout: document
 redirect_from:

@@ -54,6 +54,9 @@ data:
     path: library/Lca.java
     title: library/Lca.java
   - icon: ':heavy_check_mark:'
+    path: library/LcpArray.java
+    title: library/LcpArray.java
+  - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
   - icon: ':heavy_check_mark:'
@@ -403,6 +406,7 @@ data:
   - library/Dijkstra.java
   - library/TemplateSegmentTree.java
   - library/SparseTable.java
+  - library/LcpArray.java
   - library/Doubling.java
   - library/DualSegmentTree.java
   - library/Rerooting.java

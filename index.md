@@ -58,6 +58,9 @@ data:
       path: library/Lca.java
       title: library/Lca.java
     - icon: ':heavy_check_mark:'
+      path: library/LcpArray.java
+      title: library/LcpArray.java
+    - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
     - icon: ':heavy_check_mark:'
@@ -231,6 +234,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Lca_test.java
       title: library/Lca_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/LcpArray_test.java
+      title: library/LcpArray_test.java
     - icon: ':heavy_check_mark:'
       path: library/ManyFastIO_test.java
       title: library/ManyFastIO_test.java
