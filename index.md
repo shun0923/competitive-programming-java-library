@@ -51,6 +51,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/FenwickTree.java
       title: library/FenwickTree.java
+    - icon: ':x:'
+      path: library/Kmp.java
+      title: library/Kmp.java
     - icon: ':heavy_check_mark:'
       path: library/Kruskal.java
       title: library/Kruskal.java
@@ -87,7 +90,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -147,6 +150,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/WeightedUnionFind.java
       title: library/WeightedUnionFind.java
+    - icon: ':x:'
+      path: library/ZAlgorithm.java
+      title: library/ZAlgorithm.java
   verificationCategories:
   - name: library
     pages:
@@ -228,6 +234,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/HelloWorld_test.java
       title: library/HelloWorld_test.java
+    - icon: ':x:'
+      path: library/Kmp_test.java
+      title: library/Kmp_test.java
     - icon: ':heavy_check_mark:'
       path: library/Kruskal_test.java
       title: library/Kruskal_test.java
@@ -357,5 +366,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/WeightedUnionFind_test.java
       title: library/WeightedUnionFind_test.java
+    - icon: ':x:'
+      path: library/ZAlgorithm_test.java
+      title: library/ZAlgorithm_test.java
 layout: toppage
 ---

@@ -84,6 +84,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/HelloWorld_test.java
     title: library/HelloWorld_test.java
+  - icon: ':x:'
+    path: library/Kmp_test.java
+    title: library/Kmp_test.java
   - icon: ':heavy_check_mark:'
     path: library/Kruskal_test.java
     title: library/Kruskal_test.java
@@ -213,9 +216,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind_test.java
     title: library/WeightedUnionFind_test.java
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: library/ZAlgorithm_test.java
+    title: library/ZAlgorithm_test.java
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -239,7 +245,7 @@ data:
   path: library/Solver.java
   requiredBy: []
   timestamp: '2022-10-05 15:43:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/ArbitraryModOperation_test.java
   - library/Dijkstra_path_test.java
@@ -267,9 +273,11 @@ data:
   - library/Swag_test.java
   - library/SuffixArray_test.java
   - library/ManyFastIO_test.java
+  - library/ZAlgorithm_test.java
   - library/DynamicSegmentTree_Small_test.java
   - library/DynamicSwag_test.java
   - library/HelloWorld_test.java
+  - library/Kmp_test.java
   - library/Rerooting_test.java
   - library/TemplateDynamicSegmentTree_Small_test.java
   - library/Dijkstra_test.java

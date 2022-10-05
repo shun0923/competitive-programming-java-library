@@ -47,6 +47,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/FenwickTree.java
     title: library/FenwickTree.java
+  - icon: ':x:'
+    path: library/Kmp.java
+    title: library/Kmp.java
   - icon: ':heavy_check_mark:'
     path: library/Kruskal.java
     title: library/Kruskal.java
@@ -137,6 +140,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind.java
     title: library/WeightedUnionFind.java
+  - icon: ':x:'
+    path: library/ZAlgorithm.java
+    title: library/ZAlgorithm.java
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: java
@@ -402,6 +408,7 @@ data:
   - library/WarshallFloyd.java
   - library/ExtendedConvolution.java
   - library/SegmentTree.java
+  - library/Kmp.java
   - library/TemplateDynamicSwag.java
   - library/Dijkstra.java
   - library/TemplateSegmentTree.java
@@ -413,6 +420,7 @@ data:
   - library/Swag.java
   - library/Convolution.java
   - library/WeightedDoubling.java
+  - library/ZAlgorithm.java
   - library/Scc.java
   - library/Permutation.java
   - library/AbstractGraph.java
