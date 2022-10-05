@@ -9,6 +9,6 @@ public class Kmp_test extends Solver {
 	public static void main(final String[] args) { main(args, new Kmp_test()); }
 
 	public void solve() {
-		prtln(Kmp.cal(ns(), ns()));
+		prtlns(Kmp.cal(ns(), ns()));
 	}
 }
