@@ -266,7 +266,7 @@ abstract class FpsOperator {
 		if(f.get(0) == 0) {
 			int i = f.lowest();
 			if(n < 0) return null;
-			if(n * i >= l) return zero(l);
+			if(n > (l - 1) / i) return zero(l);
 			return lshift(calPow(rshift(f, i), n, l - (int)n * i), (int)n * i);
 		}
 		if(n < 0) return invEquals(calPow(f, - n, l));
@@ -274,7 +274,9 @@ abstract class FpsOperator {
 	}
 	protected abstract Fps calPow(final Fps f, final long k, final int l);
 	public final Fps powEquals(final Fps f, final long k) { f.a = pow(f, k).a; return f; }
-	public final Fps powShrink(final Fps f, final long k, final int l) { return shrink(pow(f, k, (int)Math.min(l, (f.a.length - 1) * k + 1))); }
+	public final Fps powShrink(final Fps f, final long k, final int l) {
+		return f.a.length == 0 ? zero(0) : shrink(pow(f, k, k > (l - 1) / (f.a.length - 1) ? l : (f.a.length - 1) * (int) k + 1));
+	}
 
 	public final Fps naiveMul(final Fps f, final Fps g) { return naiveMul(f, g, f.a.length + g.a.length - 1); }
 	public final Fps naiveMul(Fps f, Fps g, final int l) {
@@ -322,7 +324,7 @@ abstract class FpsOperator {
 		if(f.get(0) == 0) {
 			int i = f.lowest();
 			if(n < 0) return null;
-			if(n * i >= l) return zero(l);
+			if(n > (l - 1) / i) return zero(l);
 			return lshift(calNaivePow(rshift(f, i), n, l - (int)n * i), (int)n * i);
 		}
 		if(n < 0) return naiveInvEquals(calNaivePow(f, - n, l));
@@ -353,7 +355,7 @@ abstract class FpsOperator {
 		if(f.get(0) == 0) {
 			int i = f.lowest();
 			if(n < 0) return null;
-			if(n * i >= l) return zero(l);
+			if(n > (l - 1) / i) return zero(l);
 			return lshift(binaryPow(rshift(f, i), n, l - (int)n * i), (int)n * i);
 		}
 		if(n < 0) return invEquals(binaryPow(f, - n, l));
