@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
   - icon: ':heavy_check_mark:'
@@ -24,12 +24,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_mul_test.java
     title: library/Fps_mul_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_pow_test.java
     title: library/Fps_pow_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -209,18 +209,19 @@ data:
     \ }\n\tpublic final Fps pow(final Fps f, final long n, final int l) {\n\t\tif(l\
     \ == 0) return zero(0);\n\t\tif(n == 0) return one(l);\n\t\tif(n == 1) return\
     \ resize(f, l);\n\t\tif(n == 2) return mul(f, f, l);\n\t\tif(f.get(0) == 0) {\n\
-    \t\t\tint i = f.lowest();\n\t\t\tif(n < 0) return null;\n\t\t\tif(n * i >= l)\
-    \ return zero(l);\n\t\t\treturn lshift(calPow(rshift(f, i), n, l - (int)n * i),\
-    \ (int)n * i);\n\t\t}\n\t\tif(n < 0) return invEquals(calPow(f, - n, l));\n\t\t\
-    return calPow(f, n, l);\n\t}\n\tprotected abstract Fps calPow(final Fps f, final\
-    \ long k, final int l);\n\tpublic final Fps powEquals(final Fps f, final long\
-    \ k) { f.a = pow(f, k).a; return f; }\n\tpublic final Fps powShrink(final Fps\
-    \ f, final long k, final int l) { return shrink(pow(f, k, (int)Math.min(l, (f.a.length\
-    \ - 1) * k + 1))); }\n\n\tpublic final Fps naiveMul(final Fps f, final Fps g)\
-    \ { return naiveMul(f, g, f.a.length + g.a.length - 1); }\n\tpublic final Fps\
-    \ naiveMul(Fps f, Fps g, final int l) {\n\t\tf = shrink(f, l);\n\t\tg = shrink(g,\
-    \ l);\n\t\tFps h = zero(l);\n\t\tfor(int i = 0; i < l; i ++) {\n\t\t\tlong sum\
-    \ = 0;\n\t\t\tfor(int j = Math.max(0, i - g.a.length + 1), k = i - j, m = Math.min(f.a.length,\
+    \t\t\tint i = f.lowest();\n\t\t\tif(n < 0) return null;\n\t\t\tif(n > (l - 1)\
+    \ / i) return zero(l);\n\t\t\treturn lshift(calPow(rshift(f, i), n, l - (int)n\
+    \ * i), (int)n * i);\n\t\t}\n\t\tif(n < 0) return invEquals(calPow(f, - n, l));\n\
+    \t\treturn calPow(f, n, l);\n\t}\n\tprotected abstract Fps calPow(final Fps f,\
+    \ final long k, final int l);\n\tpublic final Fps powEquals(final Fps f, final\
+    \ long k) { f.a = pow(f, k).a; return f; }\n\tpublic final Fps powShrink(final\
+    \ Fps f, final long k, final int l) {\n\t\treturn f.a.length == 0 ? zero(0) :\
+    \ shrink(pow(f, k, k > (l - 1) / (f.a.length - 1) ? l : (f.a.length - 1) * (int)\
+    \ k + 1));\n\t}\n\n\tpublic final Fps naiveMul(final Fps f, final Fps g) { return\
+    \ naiveMul(f, g, f.a.length + g.a.length - 1); }\n\tpublic final Fps naiveMul(Fps\
+    \ f, Fps g, final int l) {\n\t\tf = shrink(f, l);\n\t\tg = shrink(g, l);\n\t\t\
+    Fps h = zero(l);\n\t\tfor(int i = 0; i < l; i ++) {\n\t\t\tlong sum = 0;\n\t\t\
+    \tfor(int j = Math.max(0, i - g.a.length + 1), k = i - j, m = Math.min(f.a.length,\
     \ i + 1); j < m; j ++, k --) {\n\t\t\t\tsum = md.add(sum, md.mul(f.a[j], g.a[k]));\n\
     \t\t\t}\n\t\t\th.a[i] = sum;\n\t\t}\n\t\treturn h;\n\t}\n\tpublic final Fps naiveMulEquals(final\
     \ Fps f, final Fps g) { f.a = naiveMul(f, g, f.a.length).a; return f; }\n\tpublic\
@@ -242,9 +243,9 @@ data:
     \ naivePow(Fps f, long n, final int l) {\n\t\tif(l == 0) return zero(0);\n\t\t\
     if(n == 0) return one(l);\n\t\tif(n == 1) return resize(f, l);\n\t\tif(n == 2)\
     \ return mul(f, f, l);\n\t\tif(f.get(0) == 0) {\n\t\t\tint i = f.lowest();\n\t\
-    \t\tif(n < 0) return null;\n\t\t\tif(n * i >= l) return zero(l);\n\t\t\treturn\
-    \ lshift(calNaivePow(rshift(f, i), n, l - (int)n * i), (int)n * i);\n\t\t}\n\t\
-    \tif(n < 0) return naiveInvEquals(calNaivePow(f, - n, l));\n\t\treturn calNaivePow(f,\
+    \t\tif(n < 0) return null;\n\t\t\tif(n > (l - 1) / i) return zero(l);\n\t\t\t\
+    return lshift(calNaivePow(rshift(f, i), n, l - (int)n * i), (int)n * i);\n\t\t\
+    }\n\t\tif(n < 0) return naiveInvEquals(calNaivePow(f, - n, l));\n\t\treturn calNaivePow(f,\
     \ n, l);\n\t}\n\tprotected final Fps calNaivePow(Fps f, long n, final int l) {\n\
     \t\tf = shrink(f, l);\n\t\tlong inv[] = md.invs(l);\n\t\tlong div = md.inv(f.a[0]);\n\
     \t\tfor(int i = 0; i < l; i ++) inv[i] = md.mul(inv[i], div);\n\t\tFps g = constant(md.pow(f.a[0],\
@@ -258,8 +259,8 @@ data:
     \ l) {\n\t\tif(l == 0) return zero(0);\n\t\tif(n == 0) return one(l);\n\t\tif(n\
     \ == 1) return resize(f, l);\n\t\tif(n == 2) return mul(f, f, l);\n\t\tif(f.get(0)\
     \ == 0) {\n\t\t\tint i = f.lowest();\n\t\t\tif(n < 0) return null;\n\t\t\tif(n\
-    \ * i >= l) return zero(l);\n\t\t\treturn lshift(binaryPow(rshift(f, i), n, l\
-    \ - (int)n * i), (int)n * i);\n\t\t}\n\t\tif(n < 0) return invEquals(binaryPow(f,\
+    \ > (l - 1) / i) return zero(l);\n\t\t\treturn lshift(binaryPow(rshift(f, i),\
+    \ n, l - (int)n * i), (int)n * i);\n\t\t}\n\t\tif(n < 0) return invEquals(binaryPow(f,\
     \ - n, l));\n\t\tFps g = shrink(f, l);\n\t\tFps h = one(1);\n\t\twhile(true) {\n\
     \t\t\tif((n & 1) != 0) h = mulShrink(h, g, l);\n\t\t\tn >>= 1;\n\t\t\tif(n ==\
     \ 0) return resize(h, l);\n\t\t\tg = mulShrink(g, g, l);\n\t\t}\n\t}\n\tpublic\
@@ -402,8 +403,8 @@ data:
   isVerificationFile: false
   path: library/Fps.java
   requiredBy: []
-  timestamp: '2022-10-29 00:33:53+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2022-10-29 01:10:42+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Fps_log_test.java
   - library/Fps_exp_test.java

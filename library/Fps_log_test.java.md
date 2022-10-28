@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps.java
     title: library/Fps.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -39,7 +39,7 @@ data:
   isVerificationFile: true
   path: library/Fps_log_test.java
   requiredBy: []
-  timestamp: '2022-10-28 21:54:12+09:00'
+  timestamp: '2022-10-29 01:10:42+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Fps_log_test.java
