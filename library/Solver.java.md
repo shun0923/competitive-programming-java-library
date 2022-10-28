@@ -82,8 +82,20 @@ data:
     path: library/FenwickTree_test.java
     title: library/FenwickTree_test.java
   - icon: ':heavy_check_mark:'
+    path: library/Fps_exp_test.java
+    title: library/Fps_exp_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/Fps_inv_test.java
+    title: library/Fps_inv_test.java
+  - icon: ':x:'
+    path: library/Fps_log_test.java
+    title: library/Fps_log_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Fps_mul_test.java
     title: library/Fps_mul_test.java
+  - icon: ':x:'
+    path: library/Fps_pow_test.java
+    title: library/Fps_pow_test.java
   - icon: ':heavy_check_mark:'
     path: library/HelloWorld_test.java
     title: library/HelloWorld_test.java
@@ -228,9 +240,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ZAlgorithm_test.java
     title: library/ZAlgorithm_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -254,7 +266,7 @@ data:
   path: library/Solver.java
   requiredBy: []
   timestamp: '2022-10-05 15:43:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_test.java
   - library/FenwickTree_test.java
@@ -267,6 +279,7 @@ data:
   - library/TemplateRerooting_test.java
   - library/FastIO_test.java
   - library/Mod107ManyCombination_test.java
+  - library/Fps_log_test.java
   - library/DynamicSegmentTree_Small_test.java
   - library/WaveletMatrix_smallest_test.java
   - library/ManyFastIO_test.java
@@ -275,6 +288,7 @@ data:
   - library/Scc_groups_test.java
   - library/ArbitraryModPow_test.java
   - library/Doubling_test.java
+  - library/Fps_exp_test.java
   - library/SegmentTree_Composite_test.java
   - library/BellmanFord_test.java
   - library/Kmp_test.java
@@ -311,6 +325,7 @@ data:
   - library/TreeMultiSet_test.java
   - library/TemplateSegmentTree_test.java
   - library/CompressedWaveletMatrix_smallest_test.java
+  - library/Fps_inv_test.java
   - library/Bfs_test.java
   - library/DualSegmentTree_test.java
   - library/UnionFind_uniteAll_test.java
@@ -326,6 +341,7 @@ data:
   - library/WeightedDoubling_test.java
   - library/Mod107Pow_test.java
   - library/ArbitraryModCombination_test.java
+  - library/Fps_pow_test.java
   - library/WeightedUnionFind_test.java
   - library/SparseTable_test.java
   - library/TemplateDynamicSegmentTree_Small_test.java
