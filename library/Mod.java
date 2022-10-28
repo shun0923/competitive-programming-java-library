@@ -79,8 +79,9 @@ abstract class Mod {
 		return s1;
 	}
 	public final long[] invs(final int n) { // O(N)
-		SimpleUtil.positiveCheck(n);
+		SimpleUtil.nonNegativeCheck(n);
 		long inv[] = new long[n + 1];
+		if(n == 0) return inv;
 		inv[1] = 1;
 		for(int i = 2; i <= n; i ++) inv[i] = mul(inv[(int)(MOD % i)], (MOD - MOD / i));
 		return inv;
