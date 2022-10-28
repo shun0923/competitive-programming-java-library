@@ -46,7 +46,7 @@ data:
   isVerificationFile: true
   path: library/Mod107Random_test.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
+  timestamp: '2022-10-29 00:33:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Mod107Random_test.java

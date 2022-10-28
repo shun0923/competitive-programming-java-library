@@ -84,7 +84,7 @@ data:
   isVerificationFile: false
   path: library/ExtendedConvolution.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2022-10-29 00:33:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Convolution107_test.java

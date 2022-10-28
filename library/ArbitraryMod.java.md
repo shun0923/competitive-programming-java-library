@@ -53,7 +53,7 @@ data:
   isVerificationFile: false
   path: library/ArbitraryMod.java
   requiredBy: []
-  timestamp: '2022-09-20 15:28:33+09:00'
+  timestamp: '2022-10-29 00:33:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/ArbitraryModPow_test.java

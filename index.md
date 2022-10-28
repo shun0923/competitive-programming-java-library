@@ -246,7 +246,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Fps_inv_test.java
       title: library/Fps_inv_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Fps_log_test.java
       title: library/Fps_log_test.java
     - icon: ':heavy_check_mark:'

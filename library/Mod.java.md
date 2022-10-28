@@ -93,83 +93,83 @@ data:
     \t\t\tfinal long u1 = s1 - t1 * tmp;\n\t\t\ts0 = t0;\n\t\t\ts1 = t1;\n\t\t\tt0\
     \ = u0;\n\t\t\tt1 = u1;\n\t\t}\n\t\tif(s0 != 1) throw new ArithmeticException(\"\
     / by zero\");\n\t\tif(s1 < 0) s1 += MOD;\n\t\treturn s1;\n\t}\n\tpublic final\
-    \ long[] invs(final int n) { // O(N)\n\t\tSimpleUtil.positiveCheck(n);\n\t\tlong\
-    \ inv[] = new long[n + 1];\n\t\tinv[1] = 1;\n\t\tfor(int i = 2; i <= n; i ++)\
-    \ inv[i] = mul(inv[(int)(MOD % i)], (MOD - MOD / i));\n\t\treturn inv;\n\t}\n\n\
-    \tprivate long g;\n\tpublic final long primitiveRoot() { // O(1) or O(M^(1/2))\n\
-    \t\tif(MOD == 2) return 1;\n\t\tif(MOD == 167772161) return 3;\n\t\tif(MOD ==\
-    \ 469762049) return 3;\n\t\tif(MOD == 754974721) return 11;\n\t\tif(MOD == 998244353)\
-    \ return 3;\n\t\tif(g != 0) return g;\n\n\t\t// PairLL factor[] = factor(MOD -\
-    \ 1);\n\t\t// outer: for(g = 2; ; g ++) {\n\t\t// \tfor(PairLL p : factor) if(pow(g,\
-    \ (MOD - 1) / p.a) == 1) continue outer;\n\t\t// \treturn g;\n\t\t// }\n\t\treturn\
-    \ 0;\n\t}\n\n\tprivate static final int MAX_FACT1 = 5_000_100;\n\tprivate static\
-    \ final int MAX_FACT2 = 500_100;\n\tprivate static final int MAX_FACT_MAP_SIZE\
-    \ = 100;\n\tprivate long fact[];\n\tprivate long invFact[];\n\tprivate boolean\
-    \ isFactPrepared = false;\n\tprivate final Map<Long, long[]> factMap = new HashMap<>();\n\
-    \tprivate final void prepareFact() {\n\t\tif(isFactPrepared) return;\n\t\tfact\
-    \ = new long[MAX_FACT1];\n\t\tinvFact = new long[MAX_FACT1];\n\t\tfact[0] = 1;\n\
-    \t\tint maxIndex = Math.min(MAX_FACT1, (int)MOD);\n\t\tfor(int i = 1; i < maxIndex;\
-    \ i ++) fact[i] = mul(fact[i - 1], i);\n\t\tinvFact[maxIndex - 1] = inv(fact[maxIndex\
-    \ - 1]);\n\t\tfor(int i = maxIndex - 1; i > 0; i --) invFact[i - 1] = mul(invFact[i],\
-    \ i);\n\n\t\tisFactPrepared = true;\n\t}\n\n\tpublic final long P(final long n,\
-    \ final long r) {\n\t\tif(!isFactPrepared) prepareFact();\n\t\tif(n < 0 || r <\
-    \ 0 || n < r) return 0;\n\t\tif(n < MAX_FACT1 && n < MOD) return mul(fact[(int)n],\
-    \ invFact[(int)(n - r)]);\n\t\tif(!factMap.containsKey(n)) {\n\t\t\tlong largeFact[]\
-    \ = new long[MAX_FACT2];\n\t\t\tfactMap.put(n, largeFact);\n\t\t\tArrays.fill(largeFact,\
-    \ -1);\n\t\t\tlargeFact[0] = 1;\n\t\t}\n\t\tlong largeFact[] = factMap.get(n);\n\
-    \t\tif(r >= MAX_FACT2) {\n\t\t\tlong ans = 1;\n\t\t\tfor(long i = n - r + 1; i\
-    \ <= n; i ++) ans = mul(ans, i);\n\t\t\treturn ans;\n\t\t}else {\n\t\t\tint i\
-    \ = (int)r;\n\t\t\twhile(largeFact[i] < 0) i --;\n\t\t\tfor(; i < r; i ++) largeFact[i\
-    \ + 1] = mul(largeFact[i], n - i);\n\t\t\tif(factMap.size() > MAX_FACT_MAP_SIZE)\
-    \ factMap.remove(n);\n\t\t\treturn largeFact[(int)r];\n\t\t}\n\t}\n\tpublic final\
-    \ long C(long n, long r) {\n\t\tif(!isFactPrepared) prepareFact();\n\t\tif(n <\
-    \ 0) return mod(C(- n + r - 1, - n - 1) * ((r & 1) == 0 ? 1 : -1));\n\t\tif(r\
-    \ < 0 || n < r) return 0;\n\t\tr = Math.min(r, n - r);\n\t\tif(n < MOD) return\
-    \ mul(P(n, r), r < MAX_FACT1 ? invFact[(int)r] : inv(fact((int)r)));\n\n\t\tlong\
-    \ ans = 1;\n\t\twhile(n > 0) {\n\t\t\tfinal long n2 = n / MOD;\n\t\t\tfinal long\
-    \ r2 = r / MOD;\n\t\t\tans = mul(ans, C(n - n2 * MOD, r - r2 * MOD));\n\t\t\t\
-    n = n2;\n\t\t\tr = r2;\n\t\t}\n\t\treturn ans;\n\t}\n\tpublic final long H(final\
-    \ long n, final long r) { return C(n - 1 + r, r); }\n\n\tpublic final long sqrt(long\
-    \ x) {\n\t\tx = mod(x);\n\t\tif(x < 2) return x;\n\t\tlong p = (MOD - 1) >> 1;\n\
-    \t\tif(pow(x, p) != 1) return -1;\n\t\tlong q = MOD - 1;\n\t\tint m = 1;\n\t\t\
-    while(((q >>= 1) & 1) == 0) m ++;\n\t\tlong z = 1;\n\t\twhile(pow(z, p) == 1)\
-    \ z = (long)Math.floor(Math.random() * (MOD - 1)) + 1;\n\t\tlong c = pow(z, q);\n\
-    \t\tlong t = pow(x, q);\n\t\tlong r = pow(x, (q + 1) >> 1);\n\t\tif(t == 0) return\
-    \ 0;\n\t\tm -= 2;\n\t\twhile(t != 1) {\n\t\t\tlong pows[] = new long[m + 1];\n\
-    \t\t\tpows[0] = t;\n\t\t\tfor(int i = 0; i < m; i ++) pows[i + 1] = mul(pows[i],\
-    \ pows[i]);\n\t\t\twhile(pows[m --] == 1) c = mul(c, c);\n\t\t\tr = mul(r, c);\n\
-    \t\t\tc = mul(c, c);\n\t\t\tt = mul(t, c);\n\t\t}\n\t\treturn Math.min(r, MOD\
-    \ - r);\n\t}\n}\nfinal class Mod107 extends Mod {\n\tpublic static final Mod107\
-    \ md = new Mod107();\n\tpublic static final long MOD = 1_000_000_007;\n\tprivate\
-    \ Mod107() { super(MOD); }\n\n\t@Override\n\tpublic final long mod(long x) {\n\
-    \t\tif(0 <= x && x < MOD) return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\
-    \t\treturn (x %= MOD) < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long\
-    \ mul(long x, long y) {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return\
-    \ (x * y) % MOD;\n\t\tx = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\
-    \t}\n}\nfinal class Mod998 extends Mod {\n\tpublic static final Mod998 md = new\
-    \ Mod998();\n\tpublic static final long MOD = 998_244_353;\n\tprivate Mod998()\
-    \ { super(MOD); }\n\n\t@Override\n\tpublic final long mod(long x) {\n\t\tif(0\
-    \ <= x && x < MOD) return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\t\t\
-    return (x %= MOD) < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long\
-    \ x, long y) {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return (x * y)\
-    \ % MOD;\n\t\tx = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\n\
-    final class Mod754974721 extends Mod {\n\tpublic static final Mod754974721 md\
-    \ = new Mod754974721();\n\tpublic static final long MOD = 754_974_721;\n\tprivate\
-    \ Mod754974721() { super(MOD); }\n\n\t@Override\n\tpublic final long mod(long\
+    \ long[] invs(final int n) { // O(N)\n\t\tSimpleUtil.nonNegativeCheck(n);\n\t\t\
+    long inv[] = new long[n + 1];\n\t\tif(n == 0) return inv;\n\t\tinv[1] = 1;\n\t\
+    \tfor(int i = 2; i <= n; i ++) inv[i] = mul(inv[(int)(MOD % i)], (MOD - MOD /\
+    \ i));\n\t\treturn inv;\n\t}\n\n\tprivate long g;\n\tpublic final long primitiveRoot()\
+    \ { // O(1) or O(M^(1/2))\n\t\tif(MOD == 2) return 1;\n\t\tif(MOD == 167772161)\
+    \ return 3;\n\t\tif(MOD == 469762049) return 3;\n\t\tif(MOD == 754974721) return\
+    \ 11;\n\t\tif(MOD == 998244353) return 3;\n\t\tif(g != 0) return g;\n\n\t\t//\
+    \ PairLL factor[] = factor(MOD - 1);\n\t\t// outer: for(g = 2; ; g ++) {\n\t\t\
+    // \tfor(PairLL p : factor) if(pow(g, (MOD - 1) / p.a) == 1) continue outer;\n\
+    \t\t// \treturn g;\n\t\t// }\n\t\treturn 0;\n\t}\n\n\tprivate static final int\
+    \ MAX_FACT1 = 5_000_100;\n\tprivate static final int MAX_FACT2 = 500_100;\n\t\
+    private static final int MAX_FACT_MAP_SIZE = 100;\n\tprivate long fact[];\n\t\
+    private long invFact[];\n\tprivate boolean isFactPrepared = false;\n\tprivate\
+    \ final Map<Long, long[]> factMap = new HashMap<>();\n\tprivate final void prepareFact()\
+    \ {\n\t\tif(isFactPrepared) return;\n\t\tfact = new long[MAX_FACT1];\n\t\tinvFact\
+    \ = new long[MAX_FACT1];\n\t\tfact[0] = 1;\n\t\tint maxIndex = Math.min(MAX_FACT1,\
+    \ (int)MOD);\n\t\tfor(int i = 1; i < maxIndex; i ++) fact[i] = mul(fact[i - 1],\
+    \ i);\n\t\tinvFact[maxIndex - 1] = inv(fact[maxIndex - 1]);\n\t\tfor(int i = maxIndex\
+    \ - 1; i > 0; i --) invFact[i - 1] = mul(invFact[i], i);\n\n\t\tisFactPrepared\
+    \ = true;\n\t}\n\n\tpublic final long P(final long n, final long r) {\n\t\tif(!isFactPrepared)\
+    \ prepareFact();\n\t\tif(n < 0 || r < 0 || n < r) return 0;\n\t\tif(n < MAX_FACT1\
+    \ && n < MOD) return mul(fact[(int)n], invFact[(int)(n - r)]);\n\t\tif(!factMap.containsKey(n))\
+    \ {\n\t\t\tlong largeFact[] = new long[MAX_FACT2];\n\t\t\tfactMap.put(n, largeFact);\n\
+    \t\t\tArrays.fill(largeFact, -1);\n\t\t\tlargeFact[0] = 1;\n\t\t}\n\t\tlong largeFact[]\
+    \ = factMap.get(n);\n\t\tif(r >= MAX_FACT2) {\n\t\t\tlong ans = 1;\n\t\t\tfor(long\
+    \ i = n - r + 1; i <= n; i ++) ans = mul(ans, i);\n\t\t\treturn ans;\n\t\t}else\
+    \ {\n\t\t\tint i = (int)r;\n\t\t\twhile(largeFact[i] < 0) i --;\n\t\t\tfor(; i\
+    \ < r; i ++) largeFact[i + 1] = mul(largeFact[i], n - i);\n\t\t\tif(factMap.size()\
+    \ > MAX_FACT_MAP_SIZE) factMap.remove(n);\n\t\t\treturn largeFact[(int)r];\n\t\
+    \t}\n\t}\n\tpublic final long C(long n, long r) {\n\t\tif(!isFactPrepared) prepareFact();\n\
+    \t\tif(n < 0) return mod(C(- n + r - 1, - n - 1) * ((r & 1) == 0 ? 1 : -1));\n\
+    \t\tif(r < 0 || n < r) return 0;\n\t\tr = Math.min(r, n - r);\n\t\tif(n < MOD)\
+    \ return mul(P(n, r), r < MAX_FACT1 ? invFact[(int)r] : inv(fact((int)r)));\n\n\
+    \t\tlong ans = 1;\n\t\twhile(n > 0) {\n\t\t\tfinal long n2 = n / MOD;\n\t\t\t\
+    final long r2 = r / MOD;\n\t\t\tans = mul(ans, C(n - n2 * MOD, r - r2 * MOD));\n\
+    \t\t\tn = n2;\n\t\t\tr = r2;\n\t\t}\n\t\treturn ans;\n\t}\n\tpublic final long\
+    \ H(final long n, final long r) { return C(n - 1 + r, r); }\n\n\tpublic final\
+    \ long sqrt(long x) {\n\t\tx = mod(x);\n\t\tif(x < 2) return x;\n\t\tlong p =\
+    \ (MOD - 1) >> 1;\n\t\tif(pow(x, p) != 1) return -1;\n\t\tlong q = MOD - 1;\n\t\
+    \tint m = 1;\n\t\twhile(((q >>= 1) & 1) == 0) m ++;\n\t\tlong z = 1;\n\t\twhile(pow(z,\
+    \ p) == 1) z = (long)Math.floor(Math.random() * (MOD - 1)) + 1;\n\t\tlong c =\
+    \ pow(z, q);\n\t\tlong t = pow(x, q);\n\t\tlong r = pow(x, (q + 1) >> 1);\n\t\t\
+    if(t == 0) return 0;\n\t\tm -= 2;\n\t\twhile(t != 1) {\n\t\t\tlong pows[] = new\
+    \ long[m + 1];\n\t\t\tpows[0] = t;\n\t\t\tfor(int i = 0; i < m; i ++) pows[i +\
+    \ 1] = mul(pows[i], pows[i]);\n\t\t\twhile(pows[m --] == 1) c = mul(c, c);\n\t\
+    \t\tr = mul(r, c);\n\t\t\tc = mul(c, c);\n\t\t\tt = mul(t, c);\n\t\t}\n\t\treturn\
+    \ Math.min(r, MOD - r);\n\t}\n}\nfinal class Mod107 extends Mod {\n\tpublic static\
+    \ final Mod107 md = new Mod107();\n\tpublic static final long MOD = 1_000_000_007;\n\
+    \tprivate Mod107() { super(MOD); }\n\n\t@Override\n\tpublic final long mod(long\
     \ x) {\n\t\tif(0 <= x && x < MOD) return x;\n\t\tif(- MOD <= x && x < 0) return\
     \ x + MOD;\n\t\treturn (x %= MOD) < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic\
     \ final long mul(long x, long y) {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y <\
     \ MOD) return (x * y) % MOD;\n\t\tx = mod(x);\n\t\ty = mod(y);\n\t\treturn (x\
-    \ * y) % MOD;\n\t}\n}\nfinal class Mod167772161 extends Mod {\n\tpublic static\
-    \ final Mod167772161 md = new Mod167772161();\n\tpublic static final long MOD\
-    \ = 167_772_161;\n\tprivate Mod167772161() { super(MOD); }\n\n\t@Override\n\t\
+    \ * y) % MOD;\n\t}\n}\nfinal class Mod998 extends Mod {\n\tpublic static final\
+    \ Mod998 md = new Mod998();\n\tpublic static final long MOD = 998_244_353;\n\t\
+    private Mod998() { super(MOD); }\n\n\t@Override\n\tpublic final long mod(long\
+    \ x) {\n\t\tif(0 <= x && x < MOD) return x;\n\t\tif(- MOD <= x && x < 0) return\
+    \ x + MOD;\n\t\treturn (x %= MOD) < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic\
+    \ final long mul(long x, long y) {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y <\
+    \ MOD) return (x * y) % MOD;\n\t\tx = mod(x);\n\t\ty = mod(y);\n\t\treturn (x\
+    \ * y) % MOD;\n\t}\n}\nfinal class Mod754974721 extends Mod {\n\tpublic static\
+    \ final Mod754974721 md = new Mod754974721();\n\tpublic static final long MOD\
+    \ = 754_974_721;\n\tprivate Mod754974721() { super(MOD); }\n\n\t@Override\n\t\
     public final long mod(long x) {\n\t\tif(0 <= x && x < MOD) return x;\n\t\tif(-\
     \ MOD <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD) < 0 ? x + MOD : x;\n\
     \t}\n\t@Override\n\tpublic final long mul(long x, long y) {\n\t\tif(x >= 0 &&\
     \ x < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\tx = mod(x);\n\t\ty\
-    \ = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\nfinal class Mod469762049 extends\
-    \ Mod {\n\tpublic static final Mod469762049 md = new Mod469762049();\n\tpublic\
-    \ static final long MOD = 469_762_049;\n\tprivate Mod469762049() { super(MOD);\
+    \ = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\nfinal class Mod167772161 extends\
+    \ Mod {\n\tpublic static final Mod167772161 md = new Mod167772161();\n\tpublic\
+    \ static final long MOD = 167_772_161;\n\tprivate Mod167772161() { super(MOD);\
+    \ }\n\n\t@Override\n\tpublic final long mod(long x) {\n\t\tif(0 <= x && x < MOD)\
+    \ return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD)\
+    \ < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long x, long y)\
+    \ {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\t\
+    x = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}\nfinal class Mod469762049\
+    \ extends Mod {\n\tpublic static final Mod469762049 md = new Mod469762049();\n\
+    \tpublic static final long MOD = 469_762_049;\n\tprivate Mod469762049() { super(MOD);\
     \ }\n\n\t@Override\n\tpublic final long mod(long x) {\n\t\tif(0 <= x && x < MOD)\
     \ return x;\n\t\tif(- MOD <= x && x < 0) return x + MOD;\n\t\treturn (x %= MOD)\
     \ < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long x, long y)\
@@ -184,7 +184,7 @@ data:
   - library/ExtendedConvolution.java
   - library/ArbitraryMod.java
   - library/Fps.java
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2022-10-29 00:33:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Mod998Random_test.java

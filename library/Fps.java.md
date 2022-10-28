@@ -18,7 +18,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_inv_test.java
     title: library/Fps_inv_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_log_test.java
     title: library/Fps_log_test.java
   - icon: ':heavy_check_mark:'
@@ -402,7 +402,7 @@ data:
   isVerificationFile: false
   path: library/Fps.java
   requiredBy: []
-  timestamp: '2022-10-28 21:47:38+09:00'
+  timestamp: '2022-10-29 00:33:53+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Fps_log_test.java
