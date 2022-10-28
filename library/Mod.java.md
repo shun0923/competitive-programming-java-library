@@ -8,12 +8,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Convolution.java
     title: library/Convolution.java
   - icon: ':heavy_check_mark:'
     path: library/ExtendedConvolution.java
     title: library/ExtendedConvolution.java
+  - icon: ':x:'
+    path: library/Fps.java
+    title: library/Fps.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: library/DynamicSwag_test.java
@@ -46,14 +49,14 @@ data:
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 71, in bundle\n    return subprocess.check_output(shlex.split(command))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
-    , line 420, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout,\
-    \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
-    , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
+    \  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/subprocess.py\"\
+    , line 421, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout,\
+    \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/subprocess.py\"\
+    , line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nabstract\
     \ class Mod {\n\tpublic final long MOD;\n\tpublic Mod(long mod) { MOD = mod; }\n\
@@ -177,20 +180,21 @@ data:
   isVerificationFile: false
   path: library/Mod.java
   requiredBy:
-  - library/ArbitraryMod.java
-  - library/ExtendedConvolution.java
   - library/Convolution.java
+  - library/ExtendedConvolution.java
+  - library/ArbitraryMod.java
+  - library/Fps.java
   timestamp: '2022-10-05 21:11:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - library/Mod998Random_test.java
   - library/Mod107ManyCombination_test.java
   - library/SegmentTree_Composite_test.java
-  - library/TemplateSegmentTree_Composite_test.java
-  - library/Mod998Random_test.java
   - library/DynamicSwag_test.java
-  - library/TemplateDynamicSwag_test.java
   - library/Mod107Random_test.java
+  - library/TemplateDynamicSwag_test.java
   - library/Mod998ManyCombination_test.java
+  - library/TemplateSegmentTree_Composite_test.java
   - library/Mod107Pow_test.java
 documentation_of: library/Mod.java
 layout: document

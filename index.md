@@ -21,7 +21,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/CompressedWaveletMatrix.java
       title: library/CompressedWaveletMatrix.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Convolution.java
       title: library/Convolution.java
     - icon: ':heavy_check_mark:'
@@ -51,6 +51,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/FenwickTree.java
       title: library/FenwickTree.java
+    - icon: ':x:'
+      path: library/Fps.java
+      title: library/Fps.java
     - icon: ':heavy_check_mark:'
       path: library/Kmp.java
       title: library/Kmp.java
@@ -93,7 +96,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -237,6 +240,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/FenwickTree_test.java
       title: library/FenwickTree_test.java
+    - icon: ':x:'
+      path: library/Fps_mul_test.java
+      title: library/Fps_mul_test.java
     - icon: ':heavy_check_mark:'
       path: library/HelloWorld_test.java
       title: library/HelloWorld_test.java

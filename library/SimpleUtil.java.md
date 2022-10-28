@@ -23,7 +23,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/CompressedWaveletMatrix.java
     title: library/CompressedWaveletMatrix.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Convolution.java
     title: library/Convolution.java
   - icon: ':heavy_check_mark:'
@@ -47,6 +47,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/FenwickTree.java
     title: library/FenwickTree.java
+  - icon: ':x:'
+    path: library/Fps.java
+    title: library/Fps.java
   - icon: ':heavy_check_mark:'
     path: library/Kmp.java
     title: library/Kmp.java
@@ -154,14 +157,14 @@ data:
   _pathExtension: java
   _verificationStatusIcon: ':warning:'
   attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 71, in bundle\n    return subprocess.check_output(shlex.split(command))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
-    , line 420, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout,\
-    \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
-    , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
+    \  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/subprocess.py\"\
+    , line 421, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout,\
+    \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/subprocess.py\"\
+    , line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport library.FastInputStream;\nimport library.FastOutputStream;\n\
     \nclass SimpleUtil {\n\tpublic static boolean DEBUG;\n\n\tprivate static final\
@@ -389,53 +392,54 @@ data:
   isVerificationFile: false
   path: library/SimpleUtil.java
   requiredBy:
-  - library/WaveletMatrix.java
-  - library/DynamicSegmentTree.java
-  - library/TemplateDualSegmentTree.java
-  - library/TopologicalSort.java
-  - library/Util.java
-  - library/RollingHash.java
-  - library/Mod.java
-  - library/Pair.java
-  - library/TemplateSwag.java
-  - library/Kruskal.java
-  - library/UnionFind.java
-  - library/Lca.java
-  - library/TemplateDijkstra.java
-  - library/TemplateRerooting.java
-  - library/BellmanFord.java
   - library/Bfs.java
-  - library/WarshallFloyd.java
-  - library/ExtendedConvolution.java
-  - library/SegmentTree.java
+  - library/Lca.java
+  - library/TemplateSwag.java
+  - library/TemplateDijkstra.java
   - library/Kmp.java
-  - library/TemplateDynamicSwag.java
-  - library/Dijkstra.java
-  - library/MultiSet.java
-  - library/Trie.java
-  - library/TemplateSegmentTree.java
-  - library/SparseTable.java
-  - library/LcpArray.java
-  - library/Doubling.java
-  - library/DualSegmentTree.java
-  - library/Rerooting.java
-  - library/Swag.java
-  - library/Convolution.java
+  - library/WarshallFloyd.java
   - library/WeightedDoubling.java
-  - library/ZAlgorithm.java
-  - library/Scc.java
-  - library/Permutation.java
-  - library/AbstractGraph.java
-  - library/BitVector.java
-  - library/WeightedUnionFind.java
+  - library/Doubling.java
+  - library/LcpArray.java
+  - library/Rerooting.java
+  - library/RollingHash.java
+  - library/TemplateRerooting.java
+  - library/WaveletMatrix.java
+  - library/Convolution.java
+  - library/Util.java
   - library/FenwickTree.java
-  - library/WeightedLca.java
-  - library/DynamicSwag.java
-  - library/TemplateDynamicSegmentTree.java
-  - library/CompressedWaveletMatrix.java
-  - library/TemplateSparseTable.java
+  - library/Swag.java
+  - library/MultiSet.java
+  - library/ExtendedConvolution.java
+  - library/Pair.java
   - library/PathRestoration.java
+  - library/TemplateDynamicSegmentTree.java
+  - library/TemplateDynamicSwag.java
+  - library/SparseTable.java
+  - library/Trie.java
+  - library/TopologicalSort.java
+  - library/Kruskal.java
+  - library/TemplateSegmentTree.java
+  - library/AbstractGraph.java
+  - library/WeightedUnionFind.java
+  - library/CompressedWaveletMatrix.java
+  - library/ZAlgorithm.java
+  - library/BitVector.java
+  - library/WeightedLca.java
+  - library/DynamicSegmentTree.java
+  - library/Mod.java
+  - library/Scc.java
+  - library/SegmentTree.java
+  - library/Dijkstra.java
+  - library/Permutation.java
+  - library/TemplateSparseTable.java
+  - library/UnionFind.java
+  - library/Fps.java
   - library/SuffixArray.java
+  - library/TemplateDualSegmentTree.java
+  - library/DualSegmentTree.java
+  - library/DynamicSwag.java
+  - library/BellmanFord.java
   timestamp: '2022-10-05 21:11:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

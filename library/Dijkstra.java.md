@@ -34,14 +34,14 @@ data:
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 71, in bundle\n    return subprocess.check_output(shlex.split(command))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
-    , line 420, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout,\
-    \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.7/x64/lib/python3.10/subprocess.py\"\
-    , line 524, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
+    \  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/subprocess.py\"\
+    , line 421, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout,\
+    \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/subprocess.py\"\
+    , line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
     \ library.AbstractGraph;\nimport library.PathRestoration;\n\nfinal class Dijkstra\
@@ -109,12 +109,12 @@ data:
   timestamp: '2022-10-05 21:11:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - library/Dijkstra_path_test.java
-  - library/Dijkstra_pathEdge_test.java
-  - library/Dijkstra_forDenseGraph_reversed_test.java
   - library/Dijkstra_test.java
   - library/Dijkstra_reversed_test.java
+  - library/Dijkstra_path_test.java
   - library/Dijkstra_forDenseGraph_test.java
+  - library/Dijkstra_pathEdge_test.java
+  - library/Dijkstra_forDenseGraph_reversed_test.java
 documentation_of: library/Dijkstra.java
 layout: document
 redirect_from:
