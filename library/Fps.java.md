@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
   - icon: ':heavy_check_mark:'
@@ -12,12 +12,12 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_mul_test.java
     title: library/Fps_mul_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -28,85 +28,85 @@ data:
     \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/subprocess.py\"\
     , line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.Mod;\nimport library.Convolution;\n\nclass CnvFpsOperator extends FpsOperator\
-    \ {\n\tConvolution cnv;\n\tCnvFpsOperator(Convolution cnv) { super(cnv.md); this.cnv\
-    \ = cnv; }\n\n\tpublic final Fps butterfly(final Fps f) { return butterfly(f,\
-    \ f.a.length); }\n\tpublic final Fps butterfly(final Fps f, int l) { return butterflyEquals(resize(f,\
-    \ l)); }\n\tpublic final Fps butterflyEquals(final Fps f) { cnv.butterfly(f.a);\
-    \ return f; }\n\tpublic final Fps butterflyInv(final Fps f) { return butterflyInv(f,\
-    \ f.a.length); }\n\tpublic final Fps butterflyInv(final Fps f, int l) { return\
-    \ butterflyInvEquals(resize(f, l)); }\n\tpublic final Fps butterflyInvEquals(final\
-    \ Fps f) { cnv.butterflyInv(f.a); return f; }\n\n\tpublic final Fps mul(final\
-    \ Fps f, final Fps g, final int l) { return new Fps(this, cnv.cnv(f.a, g.a, l));\
-    \ }\n\tpublic final Fps inv(final Fps f, final int l) {\n\t\tif(f.get(0) == 0)\
-    \ return null;\n\t\tif(l == 0) return zero(0);\n\t\tint m = 1;\n\t\tFps g = zero(l);\n\
-    \t\tg.a[0] = md.inv(f.a[0]);\n\t\tlong inv4 = md.inv(4);\n\t\tlong div = md.mod(-1);\n\
-    \t\twhile(m < l) {\n\t\t\tm <<= 1;\n\t\t\tFps f1 = butterfly(f, m);\n\t\t\tFps\
-    \ g1 = butterfly(g, m);\n\t\t\tmulElemwiseEquals(f1, g1);\n\t\t\tbutterflyInvEquals(f1);\n\
-    \t\t\tm >>= 1;\n\t\t\trshiftEquals(f1, m);\n\t\t\tbutterflyEquals(f1);\n\t\t\t\
-    mulElemwiseEquals(f1, g1);\n\t\t\tbutterflyInvEquals(f1);\n\t\t\tdiv = md.mul(div,\
-    \ inv4);\n\t\t\tf1 = resize(f1, Math.min(l - m, m));\n\t\t\tmulEquals(f1, div);\n\
-    \t\t\tSystem.arraycopy(f1.a, 0, g.a, m, f1.a.length);\n\t\t\tm <<= 1;\n\t\t}\n\
-    \t\treturn g;\n\t}\n\tpublic final Fps div(final Fps f, final Fps g, final int\
-    \ l) { return mul(f, inv(g, l), l); }\n\tprotected final Fps calPow(final Fps\
-    \ f, final long n, final int l) {\n\t\treturn mulEquals(expEquals(mulEquals(log(div(f,\
-    \ f.a[0]), l), n)), md.pow(f.a[0], n));\n\t}\n\tpublic final Fps exp(Fps f, final\
-    \ int l) {\n\t\tif(f.get(0) != 0) return null;\n\t\tif(l == 0) return zero(0);\n\
-    \t\tint size = 1;\n\t\tFps h = one(l);\n\t\tFps diff = diff(f);\n\t\tFps inv =\
-    \ one(l << 1);\n\t\tFps btfInv = zero(0);\n\t\tlong inv4 = md.inv(4);\n\t\tlong\
-    \ invLen2 = md.mod(-1);\n\t\tlong inv2 = md.inv(2);\n\t\tlong invLen = 1;\n\t\t\
-    while(size < l) {\n\t\t\tFps btf = resize(h, size << 1);\n\t\t\tbutterflyEquals(btf);\n\
-    \n\t\t\tif(size > 1) {\n\t\t\t\tFps g = mulElemwise(btf, btfInv, size);\n\t\t\t\
-    \tbutterflyInvEquals(g);\n\t\t\t\tsize >>= 1;\n\t\t\t\trshiftEquals(g, size);\n\
-    \t\t\t\tbutterflyEquals(g);\n\t\t\t\tmulElemwiseEquals(g, btfInv);\n\t\t\t\tbutterflyInvEquals(g);\n\
-    \t\t\t\tinvLen2 = md.mul(invLen2, inv4);\n\t\t\t\tmulEquals(g, invLen2);\n\t\t\
-    \t\tSystem.arraycopy(g.a, 0, inv.a, size, size);\n\t\t\t\tsize <<= 1;\n\t\t\t\
-    }\n\n\t\t\tFps t = diff(h, size);\n\t\t\t{\n\t\t\t\tFps r = resize(diff, size);\n\
-    \t\t\t\tr.a[size - 1] = 0;\n\t\t\t\tbutterflyEquals(r);\n\t\t\t\tmulElemwiseEquals(r,\
-    \ btf);\n\t\t\t\tbutterflyInvEquals(r);\n\t\t\t\tmulEquals(r, - invLen);\n\t\t\
-    \t\taddEquals(r, t);\n\t\t\t\tt = lshift(r, 1, size);\n\t\t\t\tt.a[0] = r.a[size\
-    \ - 1];\n\t\t\t}\n\t\t\tsize <<= 1;\n\n\t\t\tt = butterfly(resize(t, size));\n\
-    \t\t\tbtfInv = butterfly(resize(inv, size));\n\t\t\tmulElemwiseEquals(t, btfInv);\n\
-    \t\t\tbutterflyInvEquals(t);\n\t\t\tsize >>= 1;\n\t\t\tinvLen = md.mul(invLen,\
-    \ inv2);\n\t\t\tmulEquals(t, invLen);\n\n\t\t\tt = rshift(integ(lshift(resize(t,\
-    \ size), size - 1)), size);\n\t\t\tFps v = zero(size << 1);\n\t\t\tif(size < f.a.length)\
-    \ System.arraycopy(f.a, size, v.a, 0, Math.min(f.a.length - size, size));\n\t\t\
-    \tsubEquals(v, t);\n\n\t\t\tbutterflyEquals(v);\n\t\t\tmulElemwiseEquals(v, btf);\n\
-    \t\t\tbutterflyInvEquals(v);\n\t\t\tv = resize(v, Math.min(size, l - size));\n\
-    \t\t\tmulEquals(v, invLen);\n\t\t\tSystem.arraycopy(v.a, 0, h.a, size, v.a.length);\n\
-    \t\t\tsize <<= 1;\n\t\t}\n\t\treturn h;\n\t}\n\tpublic final Fps calSqrt(final\
-    \ Fps f, final int l) {\n\t\treturn calNaiveSqrt(f, l);\n\t}\n}\n\nclass NaiveFpsOperator\
-    \ extends FpsOperator {\n\tNaiveFpsOperator(Mod md) { super(md); }\n\tpublic final\
-    \ Fps mul(final Fps f, final Fps g, final int l) { return naiveMul(f, g, l); }\n\
-    \tpublic final Fps inv(final Fps f, final int l) { return naiveInv(f, l); }\n\t\
-    public final Fps div(final Fps f, final Fps g, final int l) { return naiveDiv(f,\
-    \ g, l); }\n\tprotected final Fps calPow(final Fps f, final long n, final int\
-    \ l) { return calNaivePow(f, n, l); }\n\tpublic final Fps exp(final Fps f, final\
-    \ int l) { return naiveExp(f, l); }\n\tprotected final Fps calSqrt(final Fps f,\
-    \ final int l) { return calNaiveSqrt(f, l); }\n}\n\nabstract class FpsOperator\
-    \ {\n\tpublic final Mod md;\n\n\tFpsOperator(Mod md) { this.md = md; }\n\n\tpublic\
-    \ final Fps zero(final int l) { return new Fps(this, l); }\n\tpublic final Fps\
-    \ one(final int l) { return setEquals(new Fps(this, l), 0, 1); }\n\tpublic final\
-    \ Fps constant(final long c, final int l) { return setEquals(new Fps(this, l),\
-    \ 0, c); }\n\n\tpublic final long eval(final Fps f, final long x) {\n\t\tlong\
-    \ ans = 0;\n\t\tlong pow = 1;\n\t\tfor(int i = 0; i < f.a.length; i ++) {\n\t\t\
-    \tans = md.add(ans, md.mul(f.a[i], pow));\n\t\t\tpow = md.mul(pow, x);\n\t\t}\n\
-    \t\treturn ans;\n\t}\n\n\tpublic final Fps resize(final Fps f, final int l) {\
-    \ return new Fps(f, l); }\n\tpublic final Fps resizeEquals(final Fps f, final\
-    \ int l) { f.a = resize(f, l).a; return f; }\n\tpublic final Fps shrink(final\
-    \ Fps f) {\n\t\tfor(int i = f.a.length - 1; i >= 0; i --) if(f.a[i] != 0) return\
-    \ resize(f, i + 1);\n\t\treturn zero(0);\n\t}\n\tpublic final Fps shrink(final\
-    \ Fps f, final int l) { return shrink(l > f.a.length ? f : resize(f, l)); }\n\t\
-    public final Fps lshift(final Fps f, final int k) { return lshift(f, k, Math.max(0,\
-    \ f.a.length + k)); }\n\tpublic final Fps lshift(final Fps f, final int k, final\
-    \ int l) {\n\t\tif(k < 0) return rshift(f, - k, l);\n\t\tFps g = zero(l);\n\t\t\
-    if(l > k) System.arraycopy(f.a, 0, g.a, k, Math.min(f.a.length, l - k));\n\t\t\
-    return g;\n\t}\n\tpublic final Fps lshiftEquals(final Fps f, final int k) { f.a\
-    \ = lshift(f, k, f.a.length).a; return f; }\n\tpublic final Fps rshift(final Fps\
-    \ f, final int k) { return rshift(f, k, Math.max(0, f.a.length - k)); }\n\tpublic\
-    \ final Fps rshift(final Fps f, final int k, final int l) {\n\t\tif(k < 0) return\
-    \ lshift(f, - k, l);\n\t\tFps g = zero(l);\n\t\tif(f.a.length > k) System.arraycopy(f.a,\
+  code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
+    \ library.SimpleUtil;\nimport library.Mod;\nimport library.Convolution;\n\nclass\
+    \ CnvFpsOperator extends FpsOperator {\n\tConvolution cnv;\n\tCnvFpsOperator(Convolution\
+    \ cnv) { super(cnv.md); this.cnv = cnv; }\n\n\tpublic final Fps butterfly(final\
+    \ Fps f) { return butterfly(f, f.a.length); }\n\tpublic final Fps butterfly(final\
+    \ Fps f, int l) { return butterflyEquals(resize(f, l)); }\n\tpublic final Fps\
+    \ butterflyEquals(final Fps f) { cnv.butterfly(f.a); return f; }\n\tpublic final\
+    \ Fps butterflyInv(final Fps f) { return butterflyInv(f, f.a.length); }\n\tpublic\
+    \ final Fps butterflyInv(final Fps f, int l) { return butterflyInvEquals(resize(f,\
+    \ l)); }\n\tpublic final Fps butterflyInvEquals(final Fps f) { cnv.butterflyInv(f.a);\
+    \ return f; }\n\n\tpublic final Fps mul(final Fps f, final Fps g, final int l)\
+    \ { return new Fps(this, cnv.cnv(f.a, g.a, l)); }\n\tpublic final Fps inv(final\
+    \ Fps f, final int l) {\n\t\tif(f.get(0) == 0) return null;\n\t\tif(l == 0) return\
+    \ zero(0);\n\t\tint m = 1;\n\t\tFps g = zero(l);\n\t\tg.a[0] = md.inv(f.a[0]);\n\
+    \t\tlong inv4 = md.inv(4);\n\t\tlong div = md.mod(-1);\n\t\twhile(m < l) {\n\t\
+    \t\tm <<= 1;\n\t\t\tFps f1 = butterfly(f, m);\n\t\t\tFps g1 = butterfly(g, m);\n\
+    \t\t\tmulElemwiseEquals(f1, g1);\n\t\t\tbutterflyInvEquals(f1);\n\t\t\tm >>= 1;\n\
+    \t\t\trshiftEquals(f1, m);\n\t\t\tbutterflyEquals(f1);\n\t\t\tmulElemwiseEquals(f1,\
+    \ g1);\n\t\t\tbutterflyInvEquals(f1);\n\t\t\tdiv = md.mul(div, inv4);\n\t\t\t\
+    f1 = resize(f1, Math.min(l - m, m));\n\t\t\tmulEquals(f1, div);\n\t\t\tSystem.arraycopy(f1.a,\
+    \ 0, g.a, m, f1.a.length);\n\t\t\tm <<= 1;\n\t\t}\n\t\treturn g;\n\t}\n\tpublic\
+    \ final Fps div(final Fps f, final Fps g, final int l) { return mul(f, inv(g,\
+    \ l), l); }\n\tprotected final Fps calPow(final Fps f, final long n, final int\
+    \ l) {\n\t\treturn mulEquals(expEquals(mulEquals(log(div(f, f.a[0]), l), n)),\
+    \ md.pow(f.a[0], n));\n\t}\n\tpublic final Fps exp(Fps f, final int l) {\n\t\t\
+    if(f.get(0) != 0) return null;\n\t\tif(l == 0) return zero(0);\n\t\tint size =\
+    \ 1;\n\t\tFps h = one(l);\n\t\tFps diff = diff(f);\n\t\tFps inv = one(l << 1);\n\
+    \t\tFps btfInv = zero(0);\n\t\tlong inv4 = md.inv(4);\n\t\tlong invLen2 = md.mod(-1);\n\
+    \t\tlong inv2 = md.inv(2);\n\t\tlong invLen = 1;\n\t\twhile(size < l) {\n\t\t\t\
+    Fps btf = resize(h, size << 1);\n\t\t\tbutterflyEquals(btf);\n\n\t\t\tif(size\
+    \ > 1) {\n\t\t\t\tFps g = mulElemwise(btf, btfInv, size);\n\t\t\t\tbutterflyInvEquals(g);\n\
+    \t\t\t\tsize >>= 1;\n\t\t\t\trshiftEquals(g, size);\n\t\t\t\tbutterflyEquals(g);\n\
+    \t\t\t\tmulElemwiseEquals(g, btfInv);\n\t\t\t\tbutterflyInvEquals(g);\n\t\t\t\t\
+    invLen2 = md.mul(invLen2, inv4);\n\t\t\t\tmulEquals(g, invLen2);\n\t\t\t\tSystem.arraycopy(g.a,\
+    \ 0, inv.a, size, size);\n\t\t\t\tsize <<= 1;\n\t\t\t}\n\n\t\t\tFps t = diff(h,\
+    \ size);\n\t\t\t{\n\t\t\t\tFps r = resize(diff, size);\n\t\t\t\tr.a[size - 1]\
+    \ = 0;\n\t\t\t\tbutterflyEquals(r);\n\t\t\t\tmulElemwiseEquals(r, btf);\n\t\t\t\
+    \tbutterflyInvEquals(r);\n\t\t\t\tmulEquals(r, - invLen);\n\t\t\t\taddEquals(r,\
+    \ t);\n\t\t\t\tt = lshift(r, 1, size);\n\t\t\t\tt.a[0] = r.a[size - 1];\n\t\t\t\
+    }\n\t\t\tsize <<= 1;\n\n\t\t\tt = butterfly(resize(t, size));\n\t\t\tbtfInv =\
+    \ butterfly(resize(inv, size));\n\t\t\tmulElemwiseEquals(t, btfInv);\n\t\t\tbutterflyInvEquals(t);\n\
+    \t\t\tsize >>= 1;\n\t\t\tinvLen = md.mul(invLen, inv2);\n\t\t\tmulEquals(t, invLen);\n\
+    \n\t\t\tt = rshift(integ(lshift(resize(t, size), size - 1)), size);\n\t\t\tFps\
+    \ v = zero(size << 1);\n\t\t\tif(size < f.a.length) System.arraycopy(f.a, size,\
+    \ v.a, 0, Math.min(f.a.length - size, size));\n\t\t\tsubEquals(v, t);\n\n\t\t\t\
+    butterflyEquals(v);\n\t\t\tmulElemwiseEquals(v, btf);\n\t\t\tbutterflyInvEquals(v);\n\
+    \t\t\tv = resize(v, Math.min(size, l - size));\n\t\t\tmulEquals(v, invLen);\n\t\
+    \t\tSystem.arraycopy(v.a, 0, h.a, size, v.a.length);\n\t\t\tsize <<= 1;\n\t\t\
+    }\n\t\treturn h;\n\t}\n\tpublic final Fps calSqrt(final Fps f, final int l) {\n\
+    \t\treturn calNaiveSqrt(f, l);\n\t}\n}\n\nclass NaiveFpsOperator extends FpsOperator\
+    \ {\n\tNaiveFpsOperator(Mod md) { super(md); }\n\tpublic final Fps mul(final Fps\
+    \ f, final Fps g, final int l) { return naiveMul(f, g, l); }\n\tpublic final Fps\
+    \ inv(final Fps f, final int l) { return naiveInv(f, l); }\n\tpublic final Fps\
+    \ div(final Fps f, final Fps g, final int l) { return naiveDiv(f, g, l); }\n\t\
+    protected final Fps calPow(final Fps f, final long n, final int l) { return calNaivePow(f,\
+    \ n, l); }\n\tpublic final Fps exp(final Fps f, final int l) { return naiveExp(f,\
+    \ l); }\n\tprotected final Fps calSqrt(final Fps f, final int l) { return calNaiveSqrt(f,\
+    \ l); }\n}\n\nabstract class FpsOperator {\n\tpublic final Mod md;\n\n\tFpsOperator(Mod\
+    \ md) { this.md = md; }\n\n\tpublic final Fps zero(final int l) { return new Fps(this,\
+    \ l); }\n\tpublic final Fps one(final int l) { return setEquals(new Fps(this,\
+    \ l), 0, 1); }\n\tpublic final Fps constant(final long c, final int l) { return\
+    \ setEquals(new Fps(this, l), 0, c); }\n\n\tpublic final long eval(final Fps f,\
+    \ final long x) {\n\t\tlong ans = 0;\n\t\tlong pow = 1;\n\t\tfor(int i = 0; i\
+    \ < f.a.length; i ++) {\n\t\t\tans = md.add(ans, md.mul(f.a[i], pow));\n\t\t\t\
+    pow = md.mul(pow, x);\n\t\t}\n\t\treturn ans;\n\t}\n\n\tpublic final Fps resize(final\
+    \ Fps f, final int l) { return new Fps(f, l); }\n\tpublic final Fps resizeEquals(final\
+    \ Fps f, final int l) { f.a = resize(f, l).a; return f; }\n\tpublic final Fps\
+    \ shrink(final Fps f) {\n\t\tfor(int i = f.a.length - 1; i >= 0; i --) if(f.a[i]\
+    \ != 0) return resize(f, i + 1);\n\t\treturn zero(0);\n\t}\n\tpublic final Fps\
+    \ shrink(final Fps f, final int l) { return shrink(l > f.a.length ? f : resize(f,\
+    \ l)); }\n\tpublic final Fps lshift(final Fps f, final int k) { return lshift(f,\
+    \ k, Math.max(0, f.a.length + k)); }\n\tpublic final Fps lshift(final Fps f, final\
+    \ int k, final int l) {\n\t\tif(k < 0) return rshift(f, - k, l);\n\t\tFps g =\
+    \ zero(l);\n\t\tif(l > k) System.arraycopy(f.a, 0, g.a, k, Math.min(f.a.length,\
+    \ l - k));\n\t\treturn g;\n\t}\n\tpublic final Fps lshiftEquals(final Fps f, final\
+    \ int k) { f.a = lshift(f, k, f.a.length).a; return f; }\n\tpublic final Fps rshift(final\
+    \ Fps f, final int k) { return rshift(f, k, Math.max(0, f.a.length - k)); }\n\t\
+    public final Fps rshift(final Fps f, final int k, final int l) {\n\t\tif(k < 0)\
+    \ return lshift(f, - k, l);\n\t\tFps g = zero(l);\n\t\tif(f.a.length > k) System.arraycopy(f.a,\
     \ k, g.a, 0, Math.min(f.a.length - k, l));\n\t\treturn g;\n\t}\n\tpublic final\
     \ Fps rshiftEquals(final Fps f, final int k) { f.a = rshift(f, k, f.a.length).a;\
     \ return f; }\n\tpublic final Fps reverse(final Fps f) { return reverseEquals(new\
@@ -390,8 +390,8 @@ data:
   isVerificationFile: false
   path: library/Fps.java
   requiredBy: []
-  timestamp: '2022-10-28 21:45:21+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-10-28 21:47:38+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Fps_mul_test.java
 documentation_of: library/Fps.java
