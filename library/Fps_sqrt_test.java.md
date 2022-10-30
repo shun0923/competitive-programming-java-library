@@ -2,18 +2,21 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: library/Convolution.java
+    title: library/Convolution.java
+  - icon: ':question:'
+    path: library/Fps.java
+    title: library/Fps.java
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':heavy_check_mark:'
-    path: library/SuffixArray.java
-    title: library/SuffixArray.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    PROBLEM: https://judge.yosupo.jp/problem/suffixarray
+    PROBLEM: https://judge.yosupo.jp/problem/sqrt_of_formal_power_series
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
@@ -23,24 +26,27 @@ data:
     \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/subprocess.py\"\
     , line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/suffixarray\n\
-    \npackage library;\n\nimport library.Solver;\nimport library.SuffixArray;\n\n\
-    public class SuffixArray_test extends Solver {\n\tpublic static void main(final\
-    \ String[] args) { main(args, new SuffixArray_test()); }\n\n\tpublic void solve()\
-    \ {\n\t\tprtln(SuffixArray.cal(ns()));\n\t}\n}"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/sqrt_of_formal_power_series\n\
+    \npackage library;\n\nimport library.Solver;\nimport library.Fps;\nimport library.Convolution;\n\
+    \npublic class Fps_sqrt_test extends Solver {\n\tpublic static void main(final\
+    \ String[] args) { main(args, new Fps_sqrt_test()); }\n\n\tpublic void solve()\
+    \ {\n\t\tFpsOperator op = new CnvFpsOperator(Convolution998.cnv);\n\t\tint n =\
+    \ ni();\n\t\tFps f = new Fps(op, nl(n));\n\t\tFps g = op.sqrt(f);\n\t\tif(g ==\
+    \ null) prtln(-1); else prtln(g.get());\n\t}\n}"
   dependsOn:
   - library/Solver.java
-  - library/SuffixArray.java
+  - library/Fps.java
+  - library/Convolution.java
   isVerificationFile: true
-  path: library/SuffixArray_test.java
+  path: library/Fps_sqrt_test.java
   requiredBy: []
-  timestamp: '2022-10-05 15:43:52+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-10-30 18:28:39+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: library/SuffixArray_test.java
+documentation_of: library/Fps_sqrt_test.java
 layout: document
 redirect_from:
-- /verify/library/SuffixArray_test.java
-- /verify/library/SuffixArray_test.java.html
-title: library/SuffixArray_test.java
+- /verify/library/Fps_sqrt_test.java
+- /verify/library/Fps_sqrt_test.java.html
+title: library/Fps_sqrt_test.java
 ---
