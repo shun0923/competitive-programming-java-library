@@ -131,38 +131,44 @@ final class FastOutputStream {
 	public final void println(final int[] a) {
 		for(int i = 0; i < a.length; i ++) {
 			print(a[i]);
-			print(i == a.length - 1 ? '\n' : ' ');
+			if(i != a.length - 1) print(' ');
 		}
+		println();
 	}
 	public final void println(final long[] a) {
 		for(int i = 0; i < a.length; i ++) {
 			print(a[i]);
-			print(i == a.length - 1 ? '\n' : ' ');
+			if(i != a.length - 1) print(' ');
 		}
+		println();
 	}
 	public final void println(final double[] a) {
 		for(int i = 0; i < a.length; i ++) {
 			print(a[i]);
-			print(i == a.length - 1 ? '\n' : ' ');
+			if(i != a.length - 1) print(' ');
 		}
+		println();
 	}
 	public final void println(final double[] a, final int precision) {
 		for(int i = 0; i < a.length; i ++) {
 			print(a[i], precision);
-			print(i == a.length - 1 ? '\n' : ' ');
+			if(i != a.length - 1) print(' ');
 		}
+		println();
 	}
 	public final void println(final String[] a) {
 		for(int i = 0; i < a.length; i ++) {
 			print(a[i]);
-			print(i == a.length - 1 ? '\n' : ' ');
+			if(i != a.length - 1) print(' ');
 		}
+		println();
 	}
 	public final void println(final Object[] a) {
 		for(int i = 0; i < a.length; i ++) {
 			print(a[i]);
-			print(i == a.length - 1 ? '\n' : ' ');
+			if(i != a.length - 1) print(' ');
 		}
+		println();
 	}
 	private final void internalFlush() {
 		try {

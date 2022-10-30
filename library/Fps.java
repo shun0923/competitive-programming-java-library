@@ -282,10 +282,10 @@ abstract class FpsOperator {
 		return f;
 	}
 
-	public final Fps mul(final Fps f, final Fps g) { return mul(f, g, f.a.length + g.a.length - 1); }
+	public final Fps mul(final Fps f, final Fps g) { return mul(f, g, Math.max(0, f.a.length + g.a.length - 1)); }
 	public abstract Fps mul(final Fps f, final Fps g, final int l);
 	public final Fps mulEquals(final Fps f, final Fps g) { f.a = mul(f, g, f.a.length).a; return f; }
-	public final Fps mulShrink(final Fps f, final Fps g, final int l) { return shrink(mul(f, g, Math.min(l, f.a.length + g.a.length - 1))); }
+	public final Fps mulShrink(final Fps f, final Fps g, final int l) { return shrink(mul(f, g, Math.min(l, Math.max(0, f.a.length + g.a.length - 1)))); }
 	public final Fps inv(final Fps f) { return inv(f, f.a.length); }
 	public abstract Fps inv(final Fps f, final int l);
 	public final Fps invEquals(final Fps f) { f.a = inv(f, f.a.length).a; return f; }
@@ -322,7 +322,7 @@ abstract class FpsOperator {
 		return f.a.length == 0 ? zero(0) : shrink(pow(f, k, k > (l - 1) / (f.a.length - 1) ? l : (f.a.length - 1) * (int) k + 1));
 	}
 
-	public final Fps naiveMul(final Fps f, final Fps g) { return naiveMul(f, g, f.a.length + g.a.length - 1); }
+	public final Fps naiveMul(final Fps f, final Fps g) { return naiveMul(f, g, Math.max(0, f.a.length + g.a.length - 1)); }
 	public final Fps naiveMul(Fps f, Fps g, final int l) {
 		f = shrink(f, l);
 		g = shrink(g, l);
@@ -337,7 +337,7 @@ abstract class FpsOperator {
 		return h;
 	}
 	public final Fps naiveMulEquals(final Fps f, final Fps g) { f.a = naiveMul(f, g, f.a.length).a; return f; }
-	public final Fps naiveMulShrink(final Fps f, final Fps g, final int l) { return shrink(naiveMul(f, g, Math.min(l, f.a.length + g.a.length - 1))); }
+	public final Fps naiveMulShrink(final Fps f, final Fps g, final int l) { return shrink(naiveMul(f, g, Math.min(l, Math.max(0, f.a.length + g.a.length - 1)))); }
 	public final Fps naiveInv(final Fps f) { return naiveInv(f, f.a.length); }
 	public final Fps naiveInv(final Fps f, final int l) { return naiveDiv(one(1), f, l); }
 	public final Fps naiveInvEquals(final Fps f) { f.a = naiveInv(f).a; return f; }
