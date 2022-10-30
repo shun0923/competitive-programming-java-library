@@ -38,7 +38,7 @@ data:
   isVerificationFile: true
   path: library/FastIO_test.java
   requiredBy: []
-  timestamp: '2022-10-05 20:31:46+09:00'
+  timestamp: '2022-10-30 18:59:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/FastIO_test.java

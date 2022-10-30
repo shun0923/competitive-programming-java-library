@@ -84,31 +84,31 @@ data:
     \ void println(final String s) { print(s); println(); }\n\tpublic final void println(final\
     \ Object o) { print(o); println(); }\n\tpublic final void println(final char[]\
     \ a) { print(a); println(); }\n\tpublic final void println(final int[] a) {\n\t\
-    \tfor(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\t\tprint(i == a.length\
-    \ - 1 ? '\\n' : ' ');\n\t\t}\n\t}\n\tpublic final void println(final long[] a)\
-    \ {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\t\tprint(i\
-    \ == a.length - 1 ? '\\n' : ' ');\n\t\t}\n\t}\n\tpublic final void println(final\
-    \ double[] a) {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\
-    \t\t\tprint(i == a.length - 1 ? '\\n' : ' ');\n\t\t}\n\t}\n\tpublic final void\
-    \ println(final double[] a, final int precision) {\n\t\tfor(int i = 0; i < a.length;\
-    \ i ++) {\n\t\t\tprint(a[i], precision);\n\t\t\tprint(i == a.length - 1 ? '\\\
-    n' : ' ');\n\t\t}\n\t}\n\tpublic final void println(final String[] a) {\n\t\t\
-    for(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\t\tprint(i == a.length\
-    \ - 1 ? '\\n' : ' ');\n\t\t}\n\t}\n\tpublic final void println(final Object[]\
-    \ a) {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\t\tprint(i\
-    \ == a.length - 1 ? '\\n' : ' ');\n\t\t}\n\t}\n\tprivate final void internalFlush()\
-    \ {\n\t\ttry {\n\t\t\tout.write(buf, 0, count);\n\t\t\tcount = 0;\n\t\t}\n\t\t\
-    catch(IOException e) { e.printStackTrace(); }\n\t}\n\tpublic final void flush()\
-    \ {\n\t\ttry {\n\t\t\tout.write(buf, 0, count);\n\t\t\tout.flush();\n\t\t\tcount\
-    \ = 0;\n\t\t}\n\t\tcatch(IOException e) { e.printStackTrace(); }\n\t}\n\tpublic\
-    \ final void close() {\n\t\ttry { out.close(); }\n\t\tcatch(IOException e) { e.printStackTrace();\
-    \ }\n\t}\n}"
+    \tfor(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\t\tif(i != a.length\
+    \ - 1) print(' ');\n\t\t}\n\t\tprintln();\n\t}\n\tpublic final void println(final\
+    \ long[] a) {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\
+    \t\tif(i != a.length - 1) print(' ');\n\t\t}\n\t\tprintln();\n\t}\n\tpublic final\
+    \ void println(final double[] a) {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\
+    \t\t\tprint(a[i]);\n\t\t\tif(i != a.length - 1) print(' ');\n\t\t}\n\t\tprintln();\n\
+    \t}\n\tpublic final void println(final double[] a, final int precision) {\n\t\t\
+    for(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i], precision);\n\t\t\tif(i\
+    \ != a.length - 1) print(' ');\n\t\t}\n\t\tprintln();\n\t}\n\tpublic final void\
+    \ println(final String[] a) {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\t\
+    print(a[i]);\n\t\t\tif(i != a.length - 1) print(' ');\n\t\t}\n\t\tprintln();\n\
+    \t}\n\tpublic final void println(final Object[] a) {\n\t\tfor(int i = 0; i < a.length;\
+    \ i ++) {\n\t\t\tprint(a[i]);\n\t\t\tif(i != a.length - 1) print(' ');\n\t\t}\n\
+    \t\tprintln();\n\t}\n\tprivate final void internalFlush() {\n\t\ttry {\n\t\t\t\
+    out.write(buf, 0, count);\n\t\t\tcount = 0;\n\t\t}\n\t\tcatch(IOException e) {\
+    \ e.printStackTrace(); }\n\t}\n\tpublic final void flush() {\n\t\ttry {\n\t\t\t\
+    out.write(buf, 0, count);\n\t\t\tout.flush();\n\t\t\tcount = 0;\n\t\t}\n\t\tcatch(IOException\
+    \ e) { e.printStackTrace(); }\n\t}\n\tpublic final void close() {\n\t\ttry { out.close();\
+    \ }\n\t\tcatch(IOException e) { e.printStackTrace(); }\n\t}\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/FastOutputStream.java
   requiredBy:
   - library/SimpleUtil.java
-  timestamp: '2022-10-05 20:31:46+09:00'
+  timestamp: '2022-10-30 18:59:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/FastIO_test.java

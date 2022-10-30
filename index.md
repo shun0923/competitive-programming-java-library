@@ -241,8 +241,14 @@ data:
       path: library/FenwickTree_test.java
       title: library/FenwickTree_test.java
     - icon: ':x:'
+      path: library/Fps_addComposite_test.java
+      title: library/Fps_addComposite_test.java
+    - icon: ':heavy_check_mark:'
       path: library/Fps_composite_test.java
       title: library/Fps_composite_test.java
+    - icon: ':x:'
+      path: library/Fps_divfloor_mod_test.java
+      title: library/Fps_divfloor_mod_test.java
     - icon: ':heavy_check_mark:'
       path: library/Fps_exp_test.java
       title: library/Fps_exp_test.java

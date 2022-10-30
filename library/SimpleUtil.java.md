@@ -440,7 +440,7 @@ data:
   - library/DualSegmentTree.java
   - library/DynamicSwag.java
   - library/BellmanFord.java
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2022-10-30 18:59:49+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/SimpleUtil.java

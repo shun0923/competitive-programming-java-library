@@ -13,8 +13,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':x:'
+    path: library/Fps_addComposite_test.java
+    title: library/Fps_addComposite_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Fps_composite_test.java
     title: library/Fps_composite_test.java
+  - icon: ':x:'
+    path: library/Fps_divfloor_mod_test.java
+    title: library/Fps_divfloor_mod_test.java
   - icon: ':heavy_check_mark:'
     path: library/Fps_exp_test.java
     title: library/Fps_exp_test.java
@@ -206,67 +212,67 @@ data:
     \ }\n\tpublic final Fps mulElemwiseEquals(final Fps f, final Fps g) {\n\t\tfor(int\
     \ i = 0, l = Math.min(f.a.length, g.a.length); i < l; i ++) mulEquals(f, i, g.a[i]);\n\
     \t\tfor(int i = g.a.length; i < f.a.length; i ++) f.a[i] = 0;\n\t\treturn f;\n\
-    \t}\n\n\tpublic final Fps mul(final Fps f, final Fps g) { return mul(f, g, f.a.length\
-    \ + g.a.length - 1); }\n\tpublic abstract Fps mul(final Fps f, final Fps g, final\
-    \ int l);\n\tpublic final Fps mulEquals(final Fps f, final Fps g) { f.a = mul(f,\
-    \ g, f.a.length).a; return f; }\n\tpublic final Fps mulShrink(final Fps f, final\
-    \ Fps g, final int l) { return shrink(mul(f, g, Math.min(l, f.a.length + g.a.length\
-    \ - 1))); }\n\tpublic final Fps inv(final Fps f) { return inv(f, f.a.length);\
-    \ }\n\tpublic abstract Fps inv(final Fps f, final int l);\n\tpublic final Fps\
-    \ invEquals(final Fps f) { f.a = inv(f, f.a.length).a; return f; }\n\tpublic final\
-    \ Fps div(final Fps f, final Fps g) { return div(f, g, f.a.length); }\n\tpublic\
-    \ abstract Fps div(final Fps f, final Fps g, final int l);\n\tpublic final Fps\
-    \ divEquals(final Fps f, final Fps g) { f.a = div(f, g).a; return f; }\n\tpublic\
-    \ final Fps divfloor(final Fps f, final Fps g) { return divfloor(f, g, Math.max(0,\
-    \ f.a.length - g.a.length + 1)); }\n\tpublic final Fps divfloor(final Fps f, final\
-    \ Fps g, final int l) {\n\t\treturn resize(reverse(div(reverse(f), reverse(g),\
-    \ Math.max(0, f.a.length - g.a.length + 1))), l);\n\t}\n\tpublic final Fps divfloorEquals(final\
-    \ Fps f, final Fps g) { f.a = divfloor(f, g, f.a.length).a; return f; }\n\tpublic\
-    \ final Fps mod(final Fps f, final Fps g) { return mod(f, g, Math.min(f.a.length,\
-    \ g.a.length - 1)); }\n\tpublic final Fps mod(final Fps f, final Fps g, final\
-    \ int l) { return sub(f, mulShrink(divfloor(f, g), g, l), l); }\n\tpublic final\
-    \ Fps modEquals(final Fps f, final Fps g) { f.a = mod(f, g, f.a.length).a; return\
-    \ f; }\n\tpublic final Fps modShrink(final Fps f, final Fps g, final int l) {\
-    \ return shrink(mod(f, g, Math.min(l, Math.min(f.a.length, g.a.length - 1))));\
-    \ }\n\tpublic final Fps pow(final Fps f, final long k) { return pow(f, k, f.a.length);\
-    \ }\n\tpublic final Fps pow(final Fps f, final long n, final int l) {\n\t\tif(l\
-    \ == 0) return zero(0);\n\t\tif(n == 0) return one(l);\n\t\tif(n == 1) return\
-    \ resize(f, l);\n\t\tif(n == 2) return mul(f, f, l);\n\t\tif(f.get(0) == 0) {\n\
-    \t\t\tint i = f.lowest();\n\t\t\tif(n < 0) return null;\n\t\t\tif(n > (l - 1)\
-    \ / i) return zero(l);\n\t\t\treturn lshift(calPow(rshift(f, i), n, l - (int)n\
-    \ * i), (int)n * i);\n\t\t}\n\t\tif(n < 0) return invEquals(calPow(f, - n, l));\n\
-    \t\treturn calPow(f, n, l);\n\t}\n\tprotected abstract Fps calPow(final Fps f,\
-    \ final long k, final int l);\n\tpublic final Fps powEquals(final Fps f, final\
-    \ long k) { f.a = pow(f, k).a; return f; }\n\tpublic final Fps powShrink(final\
+    \t}\n\n\tpublic final Fps mul(final Fps f, final Fps g) { return mul(f, g, Math.max(0,\
+    \ f.a.length + g.a.length - 1)); }\n\tpublic abstract Fps mul(final Fps f, final\
+    \ Fps g, final int l);\n\tpublic final Fps mulEquals(final Fps f, final Fps g)\
+    \ { f.a = mul(f, g, f.a.length).a; return f; }\n\tpublic final Fps mulShrink(final\
+    \ Fps f, final Fps g, final int l) { return shrink(mul(f, g, Math.min(l, Math.max(0,\
+    \ f.a.length + g.a.length - 1)))); }\n\tpublic final Fps inv(final Fps f) { return\
+    \ inv(f, f.a.length); }\n\tpublic abstract Fps inv(final Fps f, final int l);\n\
+    \tpublic final Fps invEquals(final Fps f) { f.a = inv(f, f.a.length).a; return\
+    \ f; }\n\tpublic final Fps div(final Fps f, final Fps g) { return div(f, g, f.a.length);\
+    \ }\n\tpublic abstract Fps div(final Fps f, final Fps g, final int l);\n\tpublic\
+    \ final Fps divEquals(final Fps f, final Fps g) { f.a = div(f, g).a; return f;\
+    \ }\n\tpublic final Fps divfloor(final Fps f, final Fps g) { return divfloor(f,\
+    \ g, Math.max(0, f.a.length - g.a.length + 1)); }\n\tpublic final Fps divfloor(final\
+    \ Fps f, final Fps g, final int l) {\n\t\treturn resize(reverse(div(reverse(f),\
+    \ reverse(g), Math.max(0, f.a.length - g.a.length + 1))), l);\n\t}\n\tpublic final\
+    \ Fps divfloorEquals(final Fps f, final Fps g) { f.a = divfloor(f, g, f.a.length).a;\
+    \ return f; }\n\tpublic final Fps mod(final Fps f, final Fps g) { return mod(f,\
+    \ g, Math.min(f.a.length, g.a.length - 1)); }\n\tpublic final Fps mod(final Fps\
+    \ f, final Fps g, final int l) { return sub(f, mulShrink(divfloor(f, g), g, l),\
+    \ l); }\n\tpublic final Fps modEquals(final Fps f, final Fps g) { f.a = mod(f,\
+    \ g, f.a.length).a; return f; }\n\tpublic final Fps modShrink(final Fps f, final\
+    \ Fps g, final int l) { return shrink(mod(f, g, Math.min(l, Math.min(f.a.length,\
+    \ g.a.length - 1)))); }\n\tpublic final Fps pow(final Fps f, final long k) { return\
+    \ pow(f, k, f.a.length); }\n\tpublic final Fps pow(final Fps f, final long n,\
+    \ final int l) {\n\t\tif(l == 0) return zero(0);\n\t\tif(n == 0) return one(l);\n\
+    \t\tif(n == 1) return resize(f, l);\n\t\tif(n == 2) return mul(f, f, l);\n\t\t\
+    if(f.get(0) == 0) {\n\t\t\tint i = f.lowest();\n\t\t\tif(n < 0) return null;\n\
+    \t\t\tif(n > (l - 1) / i) return zero(l);\n\t\t\treturn lshift(calPow(rshift(f,\
+    \ i), n, l - (int)n * i), (int)n * i);\n\t\t}\n\t\tif(n < 0) return invEquals(calPow(f,\
+    \ - n, l));\n\t\treturn calPow(f, n, l);\n\t}\n\tprotected abstract Fps calPow(final\
+    \ Fps f, final long k, final int l);\n\tpublic final Fps powEquals(final Fps f,\
+    \ final long k) { f.a = pow(f, k).a; return f; }\n\tpublic final Fps powShrink(final\
     \ Fps f, final long k, final int l) {\n\t\treturn f.a.length == 0 ? zero(0) :\
     \ shrink(pow(f, k, k > (l - 1) / (f.a.length - 1) ? l : (f.a.length - 1) * (int)\
     \ k + 1));\n\t}\n\n\tpublic final Fps naiveMul(final Fps f, final Fps g) { return\
-    \ naiveMul(f, g, f.a.length + g.a.length - 1); }\n\tpublic final Fps naiveMul(Fps\
-    \ f, Fps g, final int l) {\n\t\tf = shrink(f, l);\n\t\tg = shrink(g, l);\n\t\t\
-    Fps h = zero(l);\n\t\tfor(int i = 0; i < l; i ++) {\n\t\t\tlong sum = 0;\n\t\t\
-    \tfor(int j = Math.max(0, i - g.a.length + 1), k = i - j, m = Math.min(f.a.length,\
+    \ naiveMul(f, g, Math.max(0, f.a.length + g.a.length - 1)); }\n\tpublic final\
+    \ Fps naiveMul(Fps f, Fps g, final int l) {\n\t\tf = shrink(f, l);\n\t\tg = shrink(g,\
+    \ l);\n\t\tFps h = zero(l);\n\t\tfor(int i = 0; i < l; i ++) {\n\t\t\tlong sum\
+    \ = 0;\n\t\t\tfor(int j = Math.max(0, i - g.a.length + 1), k = i - j, m = Math.min(f.a.length,\
     \ i + 1); j < m; j ++, k --) {\n\t\t\t\tsum = md.add(sum, md.mul(f.a[j], g.a[k]));\n\
     \t\t\t}\n\t\t\th.a[i] = sum;\n\t\t}\n\t\treturn h;\n\t}\n\tpublic final Fps naiveMulEquals(final\
     \ Fps f, final Fps g) { f.a = naiveMul(f, g, f.a.length).a; return f; }\n\tpublic\
     \ final Fps naiveMulShrink(final Fps f, final Fps g, final int l) { return shrink(naiveMul(f,\
-    \ g, Math.min(l, f.a.length + g.a.length - 1))); }\n\tpublic final Fps naiveInv(final\
-    \ Fps f) { return naiveInv(f, f.a.length); }\n\tpublic final Fps naiveInv(final\
-    \ Fps f, final int l) { return naiveDiv(one(1), f, l); }\n\tpublic final Fps naiveInvEquals(final\
-    \ Fps f) { f.a = naiveInv(f).a; return f; }\n\tpublic final Fps naiveDiv(final\
-    \ Fps f, final Fps g) { return naiveDiv(f, g, f.a.length); }\n\tpublic final Fps\
-    \ naiveDiv(Fps f, Fps g, final int l) {\n\t\tif(g.get(0) == 0) return null;\n\t\
-    \tif(l == 0) return zero(0);\n\t\tf = shrink(f, l);\n\t\tg = shrink(g, l);\n\t\
-    \tFps h = resize(f, l);\n\t\tlong div = md.inv(g.a[0]);\n\t\tfor(int i = 0; i\
-    \ < l; i ++) {\n\t\t\tlong sum = 0;\n\t\t\tfor(int j = Math.max(0, i - g.a.length\
-    \ + 1), k = i - j; k > 0; j ++, k --) {\n\t\t\t\tsum = md.add(sum, md.mul(h.a[j],\
-    \ g.a[k]));\n\t\t\t}\n\t\t\th.a[i] = md.mul(md.sub(h.a[i], sum), div);\n\t\t}\n\
-    \t\treturn h;\n\t}\n\tpublic final Fps naiveDivEquals(final Fps f, final Fps g)\
-    \ { f.a = naiveDiv(f, g).a; return f; }\n\tpublic final Fps naivePow(final Fps\
-    \ f, final long n) { return naivePow(f, n, f.a.length); }\n\tpublic final Fps\
-    \ naivePow(Fps f, long n, final int l) {\n\t\tif(l == 0) return zero(0);\n\t\t\
-    if(n == 0) return one(l);\n\t\tif(n == 1) return resize(f, l);\n\t\tif(n == 2)\
-    \ return mul(f, f, l);\n\t\tif(f.get(0) == 0) {\n\t\t\tint i = f.lowest();\n\t\
-    \t\tif(n < 0) return null;\n\t\t\tif(n > (l - 1) / i) return zero(l);\n\t\t\t\
+    \ g, Math.min(l, Math.max(0, f.a.length + g.a.length - 1)))); }\n\tpublic final\
+    \ Fps naiveInv(final Fps f) { return naiveInv(f, f.a.length); }\n\tpublic final\
+    \ Fps naiveInv(final Fps f, final int l) { return naiveDiv(one(1), f, l); }\n\t\
+    public final Fps naiveInvEquals(final Fps f) { f.a = naiveInv(f).a; return f;\
+    \ }\n\tpublic final Fps naiveDiv(final Fps f, final Fps g) { return naiveDiv(f,\
+    \ g, f.a.length); }\n\tpublic final Fps naiveDiv(Fps f, Fps g, final int l) {\n\
+    \t\tif(g.get(0) == 0) return null;\n\t\tif(l == 0) return zero(0);\n\t\tf = shrink(f,\
+    \ l);\n\t\tg = shrink(g, l);\n\t\tFps h = resize(f, l);\n\t\tlong div = md.inv(g.a[0]);\n\
+    \t\tfor(int i = 0; i < l; i ++) {\n\t\t\tlong sum = 0;\n\t\t\tfor(int j = Math.max(0,\
+    \ i - g.a.length + 1), k = i - j; k > 0; j ++, k --) {\n\t\t\t\tsum = md.add(sum,\
+    \ md.mul(h.a[j], g.a[k]));\n\t\t\t}\n\t\t\th.a[i] = md.mul(md.sub(h.a[i], sum),\
+    \ div);\n\t\t}\n\t\treturn h;\n\t}\n\tpublic final Fps naiveDivEquals(final Fps\
+    \ f, final Fps g) { f.a = naiveDiv(f, g).a; return f; }\n\tpublic final Fps naivePow(final\
+    \ Fps f, final long n) { return naivePow(f, n, f.a.length); }\n\tpublic final\
+    \ Fps naivePow(Fps f, long n, final int l) {\n\t\tif(l == 0) return zero(0);\n\
+    \t\tif(n == 0) return one(l);\n\t\tif(n == 1) return resize(f, l);\n\t\tif(n ==\
+    \ 2) return mul(f, f, l);\n\t\tif(f.get(0) == 0) {\n\t\t\tint i = f.lowest();\n\
+    \t\t\tif(n < 0) return null;\n\t\t\tif(n > (l - 1) / i) return zero(l);\n\t\t\t\
     return lshift(calNaivePow(rshift(f, i), n, l - (int)n * i), (int)n * i);\n\t\t\
     }\n\t\tif(n < 0) return naiveInvEquals(calNaivePow(f, - n, l));\n\t\treturn calNaivePow(f,\
     \ n, l);\n\t}\n\tprotected final Fps calNaivePow(Fps f, long n, final int l) {\n\
@@ -426,12 +432,14 @@ data:
   isVerificationFile: false
   path: library/Fps.java
   requiredBy: []
-  timestamp: '2022-10-30 18:38:58+09:00'
+  timestamp: '2022-10-30 18:59:49+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Fps_log_test.java
+  - library/Fps_divfloor_mod_test.java
   - library/Fps_sqrt_test.java
   - library/Fps_exp_test.java
+  - library/Fps_addComposite_test.java
   - library/Fps_composite_test.java
   - library/Fps_inv_test.java
   - library/Fps_mul_test.java

@@ -19,8 +19,14 @@ data:
     path: library/Convolution998_test.java
     title: library/Convolution998_test.java
   - icon: ':x:'
+    path: library/Fps_addComposite_test.java
+    title: library/Fps_addComposite_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Fps_composite_test.java
     title: library/Fps_composite_test.java
+  - icon: ':x:'
+    path: library/Fps_divfloor_mod_test.java
+    title: library/Fps_divfloor_mod_test.java
   - icon: ':heavy_check_mark:'
     path: library/Fps_exp_test.java
     title: library/Fps_exp_test.java
@@ -274,8 +280,10 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Fps_log_test.java
+  - library/Fps_divfloor_mod_test.java
   - library/Fps_sqrt_test.java
   - library/Fps_exp_test.java
+  - library/Fps_addComposite_test.java
   - library/Fps_composite_test.java
   - library/Fps_inv_test.java
   - library/Convolution998_test.java
