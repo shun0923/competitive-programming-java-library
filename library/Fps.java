@@ -467,9 +467,10 @@ abstract class FpsOperator {
 			int i = f.lowest();
 			if(i == f.a.length) return zero(l);
 			if((i & 1) != 0) return null;
-			if(i << 1 >= l) return zero(l);
-			Fps g = calSqrt(rshift(f, i), l - (i >> 1));
-			return g == null ? null : lshift(g, i >> 1);
+			i >>= 1;
+			if(i >= l) return zero(l);
+			Fps g = calSqrt(rshift(f, i << 1), l - i);
+			return g == null ? null : lshift(g, i);
 		}
 		return calSqrt(f, l);
 	}
