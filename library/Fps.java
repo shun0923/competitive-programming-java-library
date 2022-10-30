@@ -585,6 +585,7 @@ abstract class FpsOperator {
 	public final Fps addComposite(final Fps f, final long c) { return addComposite(f, c, f.a.length); }
 	public final Fps addComposite(final Fps f, final long c, final int l) {
 		Fps h = shrink(f, l);
+		if(h.a.length == 0) return zero(l);
 		for(int i = 0; i < h.a.length; i ++) mulEquals(h, i, md.fact(i));
 		reverseEquals(h);
 		Fps g = one(h.a.length);

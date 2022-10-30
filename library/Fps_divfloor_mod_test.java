@@ -16,7 +16,7 @@ public class Fps_divfloor_mod_test extends Solver {
 		Fps f = new Fps(op, nl(n));
 		Fps g = new Fps(op, nl(m));
 		Fps q = op.divfloor(f, g);
-		Fps r = op.mod(f, g);
+		Fps r = op.modShrink(f, g);
 		prtln(q.size(), r.size());
 		prtln(q.get());
 		prtln(r.get());
