@@ -534,6 +534,14 @@ abstract class FpsOperator {
 	public final Fps geomPartialSeries(final Fps f, final int n) { return geomPartialSeries(f, n, f.a.length); }
 	public final Fps geomPartialSeries(final Fps f, final int n, final int l) { return div(sub(powShrink(f, n, l), 0, 1), sub(f, 0, 1), l); }
 	public final Fps geomPartialSeriesEquals(final Fps f, final int n) { f.a = geomPartialSeries(f, n).a; return f; }
+	// f <- f/(1-x)=f+f*x+f*x^2+f*x^3+...=sum_{k=0}^inf f*x^k
+	Fps geomSeriesX(final Fps f) { return geomSeriesX(f, f.a.length); }
+	Fps geomSeriesX(final Fps f, final int l) { return divSparseEquals(resize(f, l), 1, -1); }
+	Fps geomSeriesXEquals(final Fps f) { f.a = geomSeriesX(f).a; return f; }
+	// f <- f*(1-x^n)/(1-x)=f+f*x+f*x^2+...+f*x^(n-1)=sum_{k=0}^{n-1} f*x^k
+	Fps geomPartialSeriesX(final Fps f, final int n) { return geomPartialSeriesX(f, n, f.a.length); }
+	Fps geomPartialSeriesX(final Fps f, final int n, final int l) { return mulSparseEquals(geomSeriesX(f, l), n, -1); }
+	Fps geomPartialSeriesXEquals(final Fps f, final int n) { f.a = geomPartialSeriesX(f, n).a; return f; }
 
 	// return f(g)
 	public final Fps composite(final Fps f, final Fps g) { return composite(f, g, f.a.length); }
