@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps.java
     title: library/Fps.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/division_of_polynomials
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -32,8 +32,8 @@ data:
     \ String[] args) { main(args, new Fps_divfloor_mod_test()); }\n\n\tpublic void\
     \ solve() {\n\t\tFpsOperator op = new CnvFpsOperator(Convolution998.cnv);\n\t\t\
     int n = ni();\n\t\tint m = ni();\n\t\tFps f = new Fps(op, nl(n));\n\t\tFps g =\
-    \ new Fps(op, nl(m));\n\t\tFps q = op.divfloor(f, g);\n\t\tFps r = op.modShrink(f,\
-    \ g);\n\t\tprtln(q.size(), r.size());\n\t\tprtln(q.get());\n\t\tprtln(r.get());\n\
+    \ new Fps(op, nl(m));\n\t\tFps q = op.divfloor(f, g);\n\t\tFps r = op.shrink(op.mod(f,\
+    \ g));\n\t\tprtln(q.size(), r.size());\n\t\tprtln(q.get());\n\t\tprtln(r.get());\n\
     \t}\n}"
   dependsOn:
   - library/Solver.java
@@ -42,8 +42,8 @@ data:
   isVerificationFile: true
   path: library/Fps_divfloor_mod_test.java
   requiredBy: []
-  timestamp: '2022-10-30 19:16:28+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-30 19:27:10+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Fps_divfloor_mod_test.java
 layout: document

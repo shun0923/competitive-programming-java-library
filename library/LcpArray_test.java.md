@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/LcpArray.java
     title: library/LcpArray.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
   - icon: ':heavy_check_mark:'
