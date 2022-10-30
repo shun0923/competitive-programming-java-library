@@ -12,6 +12,9 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: library/Fps_composite_test.java
+    title: library/Fps_composite_test.java
   - icon: ':heavy_check_mark:'
     path: library/Fps_exp_test.java
     title: library/Fps_exp_test.java
@@ -27,7 +30,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_pow_test.java
     title: library/Fps_pow_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
   _isVerificationFailed: true
@@ -315,9 +318,9 @@ data:
     \tpublic final Fps sqrt(final Fps f) { return sqrt(f, f.a.length); }\n\tpublic\
     \ final Fps sqrt(final Fps f, final int l) {\n\t\tif(l == 0) return zero(0);\n\
     \t\tif(f.get(0) == 0) {\n\t\t\tint i = f.lowest();\n\t\t\tif(i == f.a.length)\
-    \ return zero(l);\n\t\t\tif((i & 1) != 0) return null;\n\t\t\tif(i << 1 >= l)\
-    \ return zero(l);\n\t\t\tFps g = calSqrt(rshift(f, i), l - (i >> 1));\n\t\t\t\
-    return g == null ? null : lshift(g, i >> 1);\n\t\t}\n\t\treturn calSqrt(f, l);\n\
+    \ return zero(l);\n\t\t\tif((i & 1) != 0) return null;\n\t\t\ti >>= 1;\n\t\t\t\
+    if(i >= l) return zero(l);\n\t\t\tFps g = calSqrt(rshift(f, i << 1), l - i);\n\
+    \t\t\treturn g == null ? null : lshift(g, i);\n\t\t}\n\t\treturn calSqrt(f, l);\n\
     \t}\n\tprotected abstract Fps calSqrt(final Fps f, final int l);\n\tpublic final\
     \ Fps sqrtEquals(final Fps f) { f.a = sqrt(f).a; return f; }\n\n\tpublic final\
     \ Fps naiveExp(final Fps f) { return naiveExp(f, f.a.length); }\n\tpublic final\
@@ -423,12 +426,13 @@ data:
   isVerificationFile: false
   path: library/Fps.java
   requiredBy: []
-  timestamp: '2022-10-30 18:28:39+09:00'
+  timestamp: '2022-10-30 18:38:58+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Fps_log_test.java
   - library/Fps_sqrt_test.java
   - library/Fps_exp_test.java
+  - library/Fps_composite_test.java
   - library/Fps_inv_test.java
   - library/Fps_mul_test.java
   - library/Fps_pow_test.java

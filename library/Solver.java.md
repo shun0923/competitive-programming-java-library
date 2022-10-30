@@ -81,6 +81,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/FenwickTree_test.java
     title: library/FenwickTree_test.java
+  - icon: ':x:'
+    path: library/Fps_composite_test.java
+    title: library/Fps_composite_test.java
   - icon: ':heavy_check_mark:'
     path: library/Fps_exp_test.java
     title: library/Fps_exp_test.java
@@ -96,7 +99,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_pow_test.java
     title: library/Fps_pow_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
   - icon: ':heavy_check_mark:'
@@ -326,6 +329,7 @@ data:
   - library/Dijkstra_forDenseGraph_reversed_test.java
   - library/RollingHash_test.java
   - library/WarshallFloyd_reversed_test.java
+  - library/Fps_composite_test.java
   - library/TreeMultiSet_test.java
   - library/TemplateSegmentTree_test.java
   - library/CompressedWaveletMatrix_smallest_test.java

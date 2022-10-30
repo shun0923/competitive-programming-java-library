@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Convolution998_test.java
     title: library/Convolution998_test.java
+  - icon: ':x:'
+    path: library/Fps_composite_test.java
+    title: library/Fps_composite_test.java
   - icon: ':heavy_check_mark:'
     path: library/Fps_exp_test.java
     title: library/Fps_exp_test.java
@@ -33,7 +36,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_pow_test.java
     title: library/Fps_pow_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
   _isVerificationFailed: true
@@ -273,6 +276,7 @@ data:
   - library/Fps_log_test.java
   - library/Fps_sqrt_test.java
   - library/Fps_exp_test.java
+  - library/Fps_composite_test.java
   - library/Fps_inv_test.java
   - library/Convolution998_test.java
   - library/Fps_mul_test.java

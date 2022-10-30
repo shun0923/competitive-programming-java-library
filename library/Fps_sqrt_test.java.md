@@ -12,9 +12,9 @@ data:
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/sqrt_of_formal_power_series
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -40,8 +40,8 @@ data:
   isVerificationFile: true
   path: library/Fps_sqrt_test.java
   requiredBy: []
-  timestamp: '2022-10-30 18:28:39+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-30 18:38:58+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Fps_sqrt_test.java
 layout: document
