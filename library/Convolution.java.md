@@ -18,7 +18,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Convolution998_test.java
     title: library/Convolution998_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_addComposite_test.java
     title: library/Fps_addComposite_test.java
   - icon: ':heavy_check_mark:'

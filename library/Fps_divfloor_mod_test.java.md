@@ -32,9 +32,9 @@ data:
     \ String[] args) { main(args, new Fps_divfloor_mod_test()); }\n\n\tpublic void\
     \ solve() {\n\t\tFpsOperator op = new CnvFpsOperator(Convolution998.cnv);\n\t\t\
     int n = ni();\n\t\tint m = ni();\n\t\tFps f = new Fps(op, nl(n));\n\t\tFps g =\
-    \ new Fps(op, nl(m));\n\t\tFps q = op.divfloor(f, g);\n\t\tFps r = op.mod(f, g);\n\
-    \t\tprtln(q.size(), r.size());\n\t\tprtln(q.get());\n\t\tprtln(r.get());\n\t}\n\
-    }"
+    \ new Fps(op, nl(m));\n\t\tFps q = op.divfloor(f, g);\n\t\tFps r = op.modShrink(f,\
+    \ g);\n\t\tprtln(q.size(), r.size());\n\t\tprtln(q.get());\n\t\tprtln(r.get());\n\
+    \t}\n}"
   dependsOn:
   - library/Solver.java
   - library/Fps.java
@@ -42,7 +42,7 @@ data:
   isVerificationFile: true
   path: library/Fps_divfloor_mod_test.java
   requiredBy: []
-  timestamp: '2022-10-30 18:59:49+09:00'
+  timestamp: '2022-10-30 19:16:28+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/Fps_divfloor_mod_test.java

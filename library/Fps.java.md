@@ -12,7 +12,7 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_addComposite_test.java
     title: library/Fps_addComposite_test.java
   - icon: ':heavy_check_mark:'
@@ -360,28 +360,37 @@ data:
     \ n) { return geomPartialSeries(f, n, f.a.length); }\n\tpublic final Fps geomPartialSeries(final\
     \ Fps f, final int n, final int l) { return div(sub(powShrink(f, n, l), 0, 1),\
     \ sub(f, 0, 1), l); }\n\tpublic final Fps geomPartialSeriesEquals(final Fps f,\
-    \ final int n) { f.a = geomPartialSeries(f, n).a; return f; }\n\n\t// return f(g)\n\
-    \tpublic final Fps composite(final Fps f, final Fps g) { return composite(f, g,\
-    \ f.a.length); }\n\tpublic final Fps composite(Fps f, Fps g, final int l) {\n\t\
-    \tif(l == 0) return zero(0);\n\t\tf = shrink(f);\n\t\tg = shrink(g);\n\t\tif(f.a.length\
-    \ == 0) return zero(l);\n\t\tif(g.a.length == 0) return constant(f.a[0], l);\n\
-    \t\tif(l == 1 || g.a.length == 1) return constant(eval(f, g.a[0]), l);\n\n\t\t\
-    int l2 = (int)Math.min(l, (long)(f.a.length - 1) * (g.a.length - 1) + 1);\n\t\t\
-    int m = Math.max((int)Math.ceil(Math.sqrt(l2)), 2);\n\t\twhile(l2 > m * m) m ++;\n\
-    \t\tFps pow[] = new Fps[m + 1];\n\t\tpow[0] = one(1);\n\t\tfor(int i = 1; i <=\
-    \ m; i ++) pow[i] = mulShrink(pow[i - 1], g, l);\n\n\t\tFps pow2[] = new Fps[m];\n\
-    \t\tpow2[0] = one(1);\n\t\tfor(int i = 1; i < m; i ++) pow2[i] = mulShrink(pow2[i\
-    \ - 1], pow[m], l);\n\n\t\tFps fg[] = new Fps[m];\n\t\tfor(int i = 0; i < m; i\
-    \ ++) {\n\t\t\tfg[i] = zero(l);\n\t\t\tfor(int j = 0; j < l; j ++) {\n\t\t\t\t\
-    long sum = 0;\n\t\t\t\tfor(int k = 0, k2 = i * m, m2 = Math.min((i + 1) * m, f.a.length);\
-    \ k2 < m2; k ++, k2 ++) {\n\t\t\t\t\tif(j < pow[k].a.length) sum = md.add(sum,\
-    \ md.mul(f.a[k2], pow[k].a[j]));\n\t\t\t\t}\n\t\t\t\tfg[i].a[j] = sum;\n\t\t\t\
-    }\n\t\t}\n\n\t\tFps h = zero(l);\n\t\tfor(int i = 0; i < m; i ++) addEquals(h,\
-    \ mulShrink(fg[i], pow2[i], l));\n\t\treturn h;\n\t}\n\tpublic final Fps compositeEquals(final\
-    \ Fps f, final Fps g) { f.a = composite(f, g).a; return f; }\n\t// return f(x+c)\n\
-    \tpublic final Fps addComposite(final Fps f, final long c) { return addComposite(f,\
-    \ c, f.a.length); }\n\tpublic final Fps addComposite(final Fps f, final long c,\
-    \ final int l) {\n\t\tFps h = shrink(f, l);\n\t\tfor(int i = 0; i < h.a.length;\
+    \ final int n) { f.a = geomPartialSeries(f, n).a; return f; }\n\t// f <- f/(1-x)=f+f*x+f*x^2+f*x^3+...=sum_{k=0}^inf\
+    \ f*x^k\n\tFps geomSeriesX(final Fps f) { return geomSeriesX(f, f.a.length); }\n\
+    \tFps geomSeriesX(final Fps f, final int l) { return divSparseEquals(resize(f,\
+    \ l), 1, -1); }\n\tFps geomSeriesXEquals(final Fps f) { f.a = geomSeriesX(f).a;\
+    \ return f; }\n\t// f <- f*(1-x^n)/(1-x)=f+f*x+f*x^2+...+f*x^(n-1)=sum_{k=0}^{n-1}\
+    \ f*x^k\n\tFps geomPartialSeriesX(final Fps f, final int n) { return geomPartialSeriesX(f,\
+    \ n, f.a.length); }\n\tFps geomPartialSeriesX(final Fps f, final int n, final\
+    \ int l) { return mulSparseEquals(geomSeriesX(f, l), n, -1); }\n\tFps geomPartialSeriesXEquals(final\
+    \ Fps f, final int n) { f.a = geomPartialSeriesX(f, n).a; return f; }\n\n\t//\
+    \ return f(g)\n\tpublic final Fps composite(final Fps f, final Fps g) { return\
+    \ composite(f, g, f.a.length); }\n\tpublic final Fps composite(Fps f, Fps g, final\
+    \ int l) {\n\t\tif(l == 0) return zero(0);\n\t\tf = shrink(f);\n\t\tg = shrink(g);\n\
+    \t\tif(f.a.length == 0) return zero(l);\n\t\tif(g.a.length == 0) return constant(f.a[0],\
+    \ l);\n\t\tif(l == 1 || g.a.length == 1) return constant(eval(f, g.a[0]), l);\n\
+    \n\t\tint l2 = (int)Math.min(l, (long)(f.a.length - 1) * (g.a.length - 1) + 1);\n\
+    \t\tint m = Math.max((int)Math.ceil(Math.sqrt(l2)), 2);\n\t\twhile(l2 > m * m)\
+    \ m ++;\n\t\tFps pow[] = new Fps[m + 1];\n\t\tpow[0] = one(1);\n\t\tfor(int i\
+    \ = 1; i <= m; i ++) pow[i] = mulShrink(pow[i - 1], g, l);\n\n\t\tFps pow2[] =\
+    \ new Fps[m];\n\t\tpow2[0] = one(1);\n\t\tfor(int i = 1; i < m; i ++) pow2[i]\
+    \ = mulShrink(pow2[i - 1], pow[m], l);\n\n\t\tFps fg[] = new Fps[m];\n\t\tfor(int\
+    \ i = 0; i < m; i ++) {\n\t\t\tfg[i] = zero(l);\n\t\t\tfor(int j = 0; j < l; j\
+    \ ++) {\n\t\t\t\tlong sum = 0;\n\t\t\t\tfor(int k = 0, k2 = i * m, m2 = Math.min((i\
+    \ + 1) * m, f.a.length); k2 < m2; k ++, k2 ++) {\n\t\t\t\t\tif(j < pow[k].a.length)\
+    \ sum = md.add(sum, md.mul(f.a[k2], pow[k].a[j]));\n\t\t\t\t}\n\t\t\t\tfg[i].a[j]\
+    \ = sum;\n\t\t\t}\n\t\t}\n\n\t\tFps h = zero(l);\n\t\tfor(int i = 0; i < m; i\
+    \ ++) addEquals(h, mulShrink(fg[i], pow2[i], l));\n\t\treturn h;\n\t}\n\tpublic\
+    \ final Fps compositeEquals(final Fps f, final Fps g) { f.a = composite(f, g).a;\
+    \ return f; }\n\t// return f(x+c)\n\tpublic final Fps addComposite(final Fps f,\
+    \ final long c) { return addComposite(f, c, f.a.length); }\n\tpublic final Fps\
+    \ addComposite(final Fps f, final long c, final int l) {\n\t\tFps h = shrink(f,\
+    \ l);\n\t\tif(h.a.length == 0) return zero(l);\n\t\tfor(int i = 0; i < h.a.length;\
     \ i ++) mulEquals(h, i, md.fact(i));\n\t\treverseEquals(h);\n\t\tFps g = one(h.a.length);\n\
     \t\tfor(int i = 1; i < g.a.length; i ++) g.a[i] = md.div(md.mul(g.a[i - 1], c),\
     \ i);\n\t\treverseEquals(mulEquals(h, g));\n\t\tfor(int i = 0; i < h.a.length;\
@@ -432,7 +441,7 @@ data:
   isVerificationFile: false
   path: library/Fps.java
   requiredBy: []
-  timestamp: '2022-10-30 18:59:49+09:00'
+  timestamp: '2022-10-30 19:16:28+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Fps_log_test.java

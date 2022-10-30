@@ -12,9 +12,9 @@ data:
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/polynomial_taylor_shift
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -40,8 +40,8 @@ data:
   isVerificationFile: true
   path: library/Fps_addComposite_test.java
   requiredBy: []
-  timestamp: '2022-10-30 18:59:49+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-30 19:16:28+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Fps_addComposite_test.java
 layout: document
