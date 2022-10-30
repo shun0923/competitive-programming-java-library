@@ -116,8 +116,52 @@ class CnvFpsOperator extends FpsOperator {
 		}
 		return h;
 	}
-	public final Fps calSqrt(final Fps f, final int l) {
-		return calNaiveSqrt(f, l);
+	protected final Fps calSqrt(final Fps f, final int l) {
+		long sqrt = md.sqrt(f.a[0]);
+		if(sqrt == -1) return null;
+		int size = 1;
+		Fps h = constant(sqrt, l);
+		Fps inv = constant(md.inv(sqrt), l << 1);
+		Fps btfInv = zero(0);
+		long inv4 = md.inv(4);
+		long invLen2 = md.mod(-1);
+		long inv2 = md.inv(2);
+		long invLen = inv2;
+		while(size < l) {
+			Fps btf = resize(h, size << 1);
+			butterflyEquals(btf);
+
+			if(size > 1) {
+				Fps g = mulElemwise(btf, btfInv);
+				butterflyInvEquals(g);
+				size >>= 1;
+				rshiftEquals(g, size);
+				butterflyEquals(g);
+				mulElemwiseEquals(g, btfInv);
+				butterflyInvEquals(g);
+				invLen2 = md.mul(invLen2, inv4);
+				mulEquals(g, invLen2);
+				System.arraycopy(g.a, 0, inv.a, size, size);
+				size <<= 1;
+			}
+
+			Fps t = mulElemwise(btf, btf);
+			butterflyInvEquals(t);
+			mulEquals(t, - invLen);
+			rshiftEquals(t, size);
+			for(int i = 0, m = Math.min(size, f.a.length - size); i < m; i ++) addEquals(t, i, f.a[i + size]);
+
+			butterflyEquals(t);
+			btfInv = butterfly(resize(inv, size << 1));
+			mulElemwiseEquals(t, btfInv);
+			butterflyInvEquals(t);
+			t = resize(t, Math.min(size, l - size));
+			invLen = md.mul(invLen, inv2);
+			mulEquals(t, invLen);
+			System.arraycopy(t.a, 0, h.a, size, t.a.length);
+			size <<= 1;
+		}
+		return h;
 	}
 }
 
