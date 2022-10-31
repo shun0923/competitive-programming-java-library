@@ -595,12 +595,15 @@ abstract class FpsOperator {
 	public final Fps addComposite(final Fps f, final long c, final int l) {
 		Fps h = shrink(f, l);
 		if(h.a.length == 0) return zero(l);
-		for(int i = 0; i < h.a.length; i ++) mulEquals(h, i, md.fact(i));
+		long fact = 1;
+		for(int i = 0; i < h.a.length; i ++) { mulEquals(h, i, fact); fact = md.mul(fact, i + 1); }
 		reverseEquals(h);
+		long inv[] = md.invs(h.a.length);
 		Fps g = one(h.a.length);
-		for(int i = 1; i < g.a.length; i ++) g.a[i] = md.div(md.mul(g.a[i - 1], c), i);
+		for(int i = 1; i < g.a.length; i ++) g.a[i] = md.mul(g.a[i - 1], c, inv[i]);
 		reverseEquals(mulEquals(h, g));
-		for(int i = 0; i < h.a.length; i ++) mulEquals(h, i, md.invFact(i));
+		long div = 1;
+		for(int i = 0; i < h.a.length; i ++) { mulEquals(h, i, div); div = md.mul(div, inv[i + 1]); }
 		return resize(h, l);
 	}
 	public final Fps addCompositeEquals(final Fps f, final long c) { f.a = addComposite(f, c).a; return f; }
