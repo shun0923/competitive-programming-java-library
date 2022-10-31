@@ -6,13 +6,14 @@ import library.SimpleUtil;
 import library.Mod;
 import library.Convolution;
 
-class CnvFpsOperator extends FpsOperator {
+class CnvFpsOperator extends FpsOperator { // M(N)=NlogN
 	Convolution cnv;
 	static final int NAIVE_INV_THRESHOLD = 256;
 	static final int NAIVE_EXP_THRESHOLD = 160;
 	static final int NAIVE_SQRT_THRESHOLD = 100;
 	CnvFpsOperator(Convolution cnv) { super(cnv.md); this.cnv = cnv; }
 
+	// O(M(L))
 	public final Fps butterfly(final Fps f) { return butterfly(f, f.a.length); }
 	public final Fps butterfly(final Fps f, int l) { return butterflyEquals(resize(f, l)); }
 	public final Fps butterflyEquals(final Fps f) { cnv.butterfly(f.a); return f; }
@@ -20,6 +21,7 @@ class CnvFpsOperator extends FpsOperator {
 	public final Fps butterflyInv(final Fps f, int l) { return butterflyInvEquals(resize(f, l)); }
 	public final Fps butterflyInvEquals(final Fps f) { cnv.butterflyInv(f.a); return f; }
 
+	// O(M(L))
 	public final Fps mul(final Fps f, final Fps g, final int l) { return new Fps(this, cnv.cnv(f.a, g.a, l)); }
 	public final Fps inv(Fps f, final int l) {
 		if(l <= NAIVE_INV_THRESHOLD) return naiveInv(f, l);
@@ -174,8 +176,9 @@ class CnvFpsOperator extends FpsOperator {
 	}
 }
 
-class NaiveFpsOperator extends FpsOperator {
+class NaiveFpsOperator extends FpsOperator { // M(N)=N^2
 	NaiveFpsOperator(Mod md) { super(md); }
+	// O(M(L))
 	public final Fps mul(final Fps f, final Fps g, final int l) { return naiveMul(f, g, l); }
 	public final Fps inv(final Fps f, final int l) { return naiveInv(f, l); }
 	public final Fps div(final Fps f, final Fps g, final int l) { return naiveDiv(f, g, l); }
@@ -189,6 +192,7 @@ abstract class FpsOperator {
 
 	FpsOperator(Mod md) { this.md = md; }
 
+	// O(L)
 	public final Fps zero(final int l) { return new Fps(this, l); }
 	public final Fps one(final int l) { return setEquals(new Fps(this, l), 0, 1); }
 	public final Fps constant(final long c, final int l) { return setEquals(new Fps(this, l), 0, c); }
@@ -242,9 +246,9 @@ abstract class FpsOperator {
 		return f;
 	}
 
-	public final Fps op(final Fps f, final int i, final LongUnaryOperator operator) { return op(f, i, operator, Math.max(f.a.length, i + 1)); }
-	public final Fps op(final Fps f, final int i, final LongUnaryOperator operator, final int l) { return opEquals(resize(f, l), i, operator); }
-	public final Fps opEquals(final Fps f, final int i, final LongUnaryOperator operator) { f.a[i] = md.mod(operator.applyAsLong(f.a[i])); return f; }
+	public final Fps op(final Fps f, final int i, final LongUnaryOperator op) { return op(f, i, op, Math.max(f.a.length, i + 1)); }
+	public final Fps op(final Fps f, final int i, final LongUnaryOperator op, final int l) { return opEquals(resize(f, l), i, op); }
+	public final Fps opEquals(final Fps f, final int i, final LongUnaryOperator op) { f.a[i] = md.mod(op.applyAsLong(f.a[i])); return f; }
 	public final Fps set(final Fps f, final int i, final long x) { return set(f, i, x, Math.max(f.a.length, i + 1)); }
 	public final Fps set(final Fps f, final int i, final long x, final int l) { return setEquals(resize(f, l), i, x); }
 	public final Fps setEquals(final Fps f, final int i, final long x) { f.a[i] = md.mod(x); return f; }
@@ -261,9 +265,9 @@ abstract class FpsOperator {
 	public final Fps div(final Fps f, final int i, final long x, final int l) { return divEquals(resize(f, l), i, x); }
 	public final Fps divEquals(final Fps f, final int i, final long x) { f.a[i] = md.div(f.a[i], x); return f; }
 
-	public final Fps op(final Fps f, final LongUnaryOperator operator) { return op(f, operator, f.a.length); }
-	public final Fps op(final Fps f, final LongUnaryOperator operator, final int l) { return opEquals(resize(f, l), operator); }
-	public final Fps opEquals(final Fps f, final LongUnaryOperator operator) { for(int i = 0; i < f.a.length; i ++) opEquals(f, i, operator); return f; }
+	public final Fps op(final Fps f, final LongUnaryOperator op) { return op(f, op, f.a.length); }
+	public final Fps op(final Fps f, final LongUnaryOperator op, final int l) { return opEquals(resize(f, l), op); }
+	public final Fps opEquals(final Fps f, final LongUnaryOperator op) { for(int i = 0; i < f.a.length; i ++) opEquals(f, i, op); return f; }
 	public final Fps mul(final Fps f, final long x) { return mul(f, x, f.a.length); }
 	public final Fps mul(final Fps f, final long x, final int l) { return mulEquals(resize(f, l), x); }
 	public final Fps mulEquals(final Fps f, final long x) { for(int i = 0; i < f.a.length; i ++) f.a[i] = md.mul(f.a[i], x); return f; }
@@ -291,6 +295,7 @@ abstract class FpsOperator {
 		return f;
 	}
 
+	// O(M(L))
 	public final Fps mul(final Fps f, final Fps g) { return mul(f, g, Math.max(0, f.a.length + g.a.length - 1)); }
 	public abstract Fps mul(final Fps f, final Fps g, final int l);
 	public final Fps mulEquals(final Fps f, final Fps g) { f.a = mul(f, g, f.a.length).a; return f; }
@@ -310,7 +315,7 @@ abstract class FpsOperator {
 	public final Fps mod(final Fps f, final Fps g, final int l) { return sub(f, mulShrink(divfloor(f, g), g, l), l); }
 	public final Fps modEquals(final Fps f, final Fps g) { f.a = mod(f, g, f.a.length).a; return f; }
 	public final Fps modShrink(final Fps f, final Fps g, final int l) { return shrink(mod(f, g, Math.min(l, Math.min(f.a.length, g.a.length - 1)))); }
-	public final Fps pow(final Fps f, final long n) { return pow(f, n, f.a.length); }
+	public final Fps pow(final Fps f, final long k) { return pow(f, k, f.a.length); }
 	public final Fps pow(final Fps f, final long n, final int l) {
 		if(l == 0) return zero(0);
 		if(n == 0) return one(l);
@@ -325,12 +330,13 @@ abstract class FpsOperator {
 		if(n < 0) return invEquals(calPow(f, - n, l));
 		return calPow(f, n, l);
 	}
-	protected abstract Fps calPow(final Fps f, final long n, final int l);
-	public final Fps powEquals(final Fps f, final long n) { f.a = pow(f, n).a; return f; }
-	public final Fps powShrink(final Fps f, final long n, final int l) {
-		return f.a.length == 0 ? zero(0) : shrink(pow(f, n, n > (l - 1) / (f.a.length - 1) ? l : (f.a.length - 1) * (int) n + 1));
+	protected abstract Fps calPow(final Fps f, final long k, final int l);
+	public final Fps powEquals(final Fps f, final long k) { f.a = pow(f, k).a; return f; }
+	public final Fps powShrink(final Fps f, final long k, final int l) {
+		return f.a.length == 0 ? zero(0) : shrink(pow(f, k, k > (l - 1) / (f.a.length - 1) ? l : (f.a.length - 1) * (int) k + 1));
 	}
 
+	// O(L^2)
 	public final Fps naiveMul(final Fps f, final Fps g) { return naiveMul(f, g, Math.max(0, f.a.length + g.a.length - 1)); }
 	public final Fps naiveMul(Fps f, Fps g, final int l) {
 		f = shrink(f, l);
@@ -399,6 +405,7 @@ abstract class FpsOperator {
 		return g;
 	}
 	public final Fps naivePowEquals(final Fps f, final long n) { f.a = naivePow(f, n).a; return f; }
+	// O(M(L)logN)
 	public final Fps binaryPow(final Fps f, final long n) { return binaryPow(f, n, f.a.length); }
 	public final Fps binaryPow(final Fps f, long n, final int l) {
 		if(l == 0) return zero(0);
@@ -423,7 +430,8 @@ abstract class FpsOperator {
 	}
 	public final Fps binaryPowEquals(final Fps f, final long n) { f.a = binaryPow(f, n).a; return f; }
 
-	// f<-f*(1+cx^d) // O(N)
+	// O(L)
+	// f<-f*(1+cx^d)
 	public final Fps mulSparseEquals(final Fps f, final int d, long c) {
 		if(c == 1) for(int i = f.a.length - 1; i >= d; i --) addEquals(f, i, f.a[i - d]);
 		else if(c == -1) for(int i = f.a.length - 1; i >= d; i --) subEquals(f, i, f.a[i - d]);
@@ -433,7 +441,7 @@ abstract class FpsOperator {
 		}
 		return f;
 	}
-	// f<-f/(1+cx^d) // O(N)
+	// f<-f/(1+cx^d)
 	public final Fps divSparseEquals(final Fps f, final int d, long c) {
 		if(c == 1) for(int i = d; i < f.a.length; i ++) subEquals(f, i, f.a[i - d]);
 		else if(c == -1) for(int i = d; i < f.a.length; i ++) addEquals(f, i, f.a[i - d]);
@@ -460,6 +468,7 @@ abstract class FpsOperator {
 		return g;
 	}
 	public final Fps integEquals(final Fps f) { f.a = integ(f, f.a.length).a; return f; }
+	// O(M(L))
 	public final Fps log(final Fps f) { return log(f, f.a.length); }
 	public final Fps log(final Fps f, final int l) {
 		if(f.get(0) != 1) return null;
@@ -486,6 +495,7 @@ abstract class FpsOperator {
 	protected abstract Fps calSqrt(final Fps f, final int l);
 	public final Fps sqrtEquals(final Fps f) { f.a = sqrt(f).a; return f; }
 
+	// O(L^2)
 	public final Fps naiveExp(final Fps f) { return naiveExp(f, f.a.length); }
 	public final Fps naiveExp(Fps f, final int l) {
 		if(f.get(0) != 0) return null;
@@ -535,6 +545,7 @@ abstract class FpsOperator {
 	}
 	public final Fps naiveSqrtEquals(final Fps f) { f.a = naiveSqrt(f).a; return f; }
 
+	// O(M(L))
 	// f <- 1/(1-f)=1+f+f^2+f^3+...=sum_{k=0}^inf f^k = 1/(1-f)
 	public final Fps geomSeries(final Fps f) { return geomSeries(f, f.a.length); }
 	public final Fps geomSeries(final Fps f, final int l) { return inv(add(negate(f), 0, 1), l); }
@@ -552,6 +563,7 @@ abstract class FpsOperator {
 	Fps geomPartialSeriesX(final Fps f, final int n, final int l) { return mulSparseEquals(geomSeriesX(f, l), n, -1); }
 	Fps geomPartialSeriesXEquals(final Fps f, final int n) { f.a = geomPartialSeriesX(f, n).a; return f; }
 
+	//O(L^(1/2)M(L)+L^2)
 	// return f(g)
 	public final Fps composite(final Fps f, final Fps g) { return composite(f, g, f.a.length); }
 	public final Fps composite(Fps f, Fps g, final int l) {
@@ -590,6 +602,7 @@ abstract class FpsOperator {
 		return h;
 	}
 	public final Fps compositeEquals(final Fps f, final Fps g) { f.a = composite(f, g).a; return f; }
+	// O(M(L))
 	// return f(x+c)
 	public final Fps addComposite(final Fps f, final long c) { return addComposite(f, c, f.a.length); }
 	public final Fps addComposite(final Fps f, final long c, final int l) {
@@ -607,8 +620,8 @@ abstract class FpsOperator {
 		return resize(h, l);
 	}
 	public final Fps addCompositeEquals(final Fps f, final long c) { f.a = addComposite(f, c).a; return f; }
+	// O(L)
 	// return f(cx)
-	// O(N)
 	public final Fps mulComposite(final Fps f, final long c) { return mulComposite(f, c, f.a.length); }
 	public final Fps mulComposite(final Fps f, final long c, final int l) { return mulCompositeEquals(resize(f, l), c); }
 	public final Fps mulCompositeEquals(final Fps f, final long c) {
@@ -616,8 +629,8 @@ abstract class FpsOperator {
 		for(int i = 0; i < f.a.length; i ++) { mulEquals(f, i, pow); pow = md.mul(pow, c); }
 		return f;
 	}
+	// O(L/d)
 	// return f(x^d)
-	// O(N/d)
 	public final Fps powComposite(final Fps f, final int d) { return powComposite(f, d, Math.max(0, f.a.length * d - d + 1)); }
 	public final Fps powComposite(final Fps f, final int d, final int l) {
 		SimpleUtil.nonNegativeCheck(d);
@@ -627,6 +640,7 @@ abstract class FpsOperator {
 		return g;
 	}
 	public final Fps powCompositeEquals(final Fps f, final int d) { f.a = powComposite(f, d).a; return f; }
+	// O(L)
 	// return f(1+cx^d)
 	public final Fps sparseComposite(final Fps f, final int d, final long c) { return sparseComposite(f, d, c, Math.max(0, f.a.length * d - d + 1)); }
 	public final Fps sparseComposite(final Fps f, final int d, final long c, final int l) { return powCompositeEquals(mulCompositeEquals(addComposite(f, 1, l), c), d); }
@@ -637,6 +651,7 @@ class Fps implements Comparable<Fps> {
 	private final FpsOperator op;
 	public long a[];
 
+	// O(L)
 	Fps(final FpsOperator op, final int l) { SimpleUtil.nonNegativeCheck(l); this.op = op; a = new long[l]; }
 	Fps(final FpsOperator op, final int l, final long x) { this(op, l); Arrays.fill(a, op.md.mod(x)); }
 	Fps(final FpsOperator op, final long[] a, final int l) { this(op, l); System.arraycopy(a, 0, this.a, 0, Math.min(a.length, l)); }
@@ -646,10 +661,12 @@ class Fps implements Comparable<Fps> {
 	Fps(final Fps g, final int l) { this(g.op, g.a, l); }
 	Fps(final Fps g) { this(g.op, g.a); }
 
+	// O(1)
 	public int size() { return a.length; }
 	public long[] get() { return a; }
 	public long get(final int i) { return i < a.length ? a[i] : 0; }
 
+	// O(L)
 	public int lowest() { for(int i = 0; i < a.length; i ++) if(a[i] != 0) return i; return a.length; }
 
 	@Override public String toString() { return Arrays.toString(a); }
@@ -666,6 +683,7 @@ class Fps implements Comparable<Fps> {
 	@Override
 	public int compareTo(final Fps that) { return Arrays.compare(a, that.a); }
 
+	// O(L)
 	public final Fps resize(final int l) { return op.resizeEquals(this, l); }
 	public final Fps lshift(final int k) { return op.lshiftEquals(this, k); }
 	public final Fps rshift(final int k) { return op.rshiftEquals(this, k); }
@@ -683,32 +701,43 @@ class Fps implements Comparable<Fps> {
 	public final Fps add(final Fps g) { return op.addEquals(this, g); }
 	public final Fps sub(final Fps g) { return op.subEquals(this, g); }
 	public final Fps mulElemwise(final Fps g) { return op.mulElemwiseEquals(this, g); }
+	// O(M(L))
 	public final Fps mul(final Fps g) { return op.mulEquals(this, g); }
 	public final Fps inv() { return op.invEquals(this); }
 	public final Fps div(final Fps g) { return op.divEquals(this, g); }
 	public final Fps divfloor(final Fps g) { return op.divfloorEquals(this, g); }
 	public final Fps mod(final Fps g) { return op.modEquals(this, g); }
 	public final Fps pow(final long n) { return op.powEquals(this, n); }
+	// O(L^2)
 	public final Fps naiveMul(final Fps g) { return op.naiveMulEquals(this, g); }
 	public final Fps naiveInv() { return op.naiveInvEquals(this); }
 	public final Fps naiveDiv(final Fps g) { return op.naiveDivEquals(this, g); }
 	public final Fps naivePow(final long n) { return op.naivePowEquals(this, n); }
+	// O(M(L)logN)
 	public final Fps binaryPow(final long n) { return op.binaryPowEquals(this, n); }
+	// O(L)
 	public final Fps mulSparse(final int d, final long c) { return op.mulSparseEquals(this, d, c); }
 	public final Fps divSparse(final int d, final long c) { return op.divSparseEquals(this, d, c); }
 	public final Fps diff() { return op.diffEquals(this); }
 	public final Fps integ() { return op.integEquals(this); }
+	// O(M(L))
 	public final Fps log() { return op.logEquals(this); }
 	public final Fps exp() { return op.expEquals(this); }
 	public final Fps sqrt() { return op.sqrtEquals(this); }
+	// O(L^2)
 	public final Fps naiveExp() { return op.naiveExpEquals(this); }
 	public final Fps naiveSqrt() { return op.naiveSqrtEquals(this); }
+	// O(M(L))
 	public final Fps geomSeries() { return op.geomSeriesEquals(this); }
 	public final Fps geomPartialSeries(final int n) { return op.geomPartialSeriesEquals(this, n); }
 	public final Fps geomSeriesX() { return op.geomSeriesXEquals(this); }
 	public final Fps geomPartialSeriesX(final int n) { return op.geomPartialSeriesXEquals(this, n); }
+	// O(L^(1/2)M(L)+L^2)
 	public final Fps composite(final Fps g) { return op.compositeEquals(this, g); }
+	// O(L)
 	public final Fps addComposite(final long c) { return op.addCompositeEquals(this, c); }
+	// O(L/d)
 	public final Fps mulComposite(final int d) { return op.mulCompositeEquals(this, d); }
+	// O(L)
 	public final Fps sparseComposite(final int d, final long c) { return op.sparseCompositeEquals(this, d, c); }
 }
