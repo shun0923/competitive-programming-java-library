@@ -5,8 +5,8 @@ package library;
 import library.Solver;
 import library.ArbitraryMod;
 
-public class ArbitraryModCombination_test extends Solver {
-	public static void main(final String[] args) { main(args, new ArbitraryModCombination_test()); }
+public class ArbitraryMod_combination_test extends Solver {
+	public static void main(final String[] args) { main(args, new ArbitraryMod_combination_test()); }
 
 	public void solve() {
 		Mod md = new ArbitraryMod(100_000_007);

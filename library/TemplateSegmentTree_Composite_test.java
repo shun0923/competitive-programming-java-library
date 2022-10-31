@@ -7,8 +7,8 @@ import library.Pair;
 import library.Mod;
 import library.TemplateSegmentTree;
 
-public class TemplateSegmentTree_Composite_test extends Solver {
-	public static void main(final String[] args) { main(args, new TemplateSegmentTree_Composite_test()); }
+public class TemplateSegmentTree_composite_test extends Solver {
+	public static void main(final String[] args) { main(args, new TemplateSegmentTree_composite_test()); }
 
 	public void solve() {
 		Mod md = Mod998.md;

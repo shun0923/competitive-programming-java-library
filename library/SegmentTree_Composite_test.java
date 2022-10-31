@@ -6,8 +6,8 @@ import library.Solver;
 import library.Mod;
 import library.SegmentTree;
 
-public class SegmentTree_Composite_test extends Solver {
-	public static void main(final String[] args) { main(args, new SegmentTree_Composite_test()); }
+public class SegmentTree_composite_test extends Solver {
+	public static void main(final String[] args) { main(args, new SegmentTree_composite_test()); }
 
 	public void solve() {
 		long mask = (1 << 31) - 1;

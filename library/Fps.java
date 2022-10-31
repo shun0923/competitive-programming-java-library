@@ -52,14 +52,17 @@ class CnvFpsOperator extends FpsOperator { // M(N)=NlogN
 		}
 		return g;
 	}
-	public final Fps div(final Fps f, final Fps g, final int l) { return mul(f, inv(g, l), l); }
+	public final Fps div(final Fps f, final Fps g, final int l) {
+		Fps h = inv(g, l);
+		return h == null ? null : mul(f, h, l);
+	}
 	protected final Fps calPow(final Fps f, final long n, final int l) {
 		return mulEquals(expEquals(mulEquals(log(div(f, f.a[0]), l), n)), md.pow(f.a[0], n));
 	}
 	public final Fps exp(Fps f, final int l) {
 		if(l <= NAIVE_EXP_THRESHOLD) return naiveExp(f, l);
-		if(f.get(0) != 0) return null;
 		if(l == 0) return zero(0);
+		if(f.get(0) != 0) return null;
 		f = shrink(f, l);
 		int size = 1;
 		Fps h = one(l);
@@ -317,7 +320,7 @@ abstract class FpsOperator {
 	public final Fps modShrink(final Fps f, final Fps g, final int l) { return shrink(mod(f, g, Math.min(l, Math.min(f.a.length, g.a.length - 1)))); }
 	public final Fps pow(final Fps f, final long k) { return pow(f, k, f.a.length); }
 	public final Fps pow(final Fps f, final long n, final int l) {
-		if(l == 0) return zero(0);
+		if(l == 0) return n < 0 ? null : zero(0);
 		if(n == 0) return one(l);
 		if(n == 1) return resize(f, l);
 		if(n == 2) return mul(f, f, l);
@@ -339,6 +342,7 @@ abstract class FpsOperator {
 	// O(L^2)
 	public final Fps naiveMul(final Fps f, final Fps g) { return naiveMul(f, g, Math.max(0, f.a.length + g.a.length - 1)); }
 	public final Fps naiveMul(Fps f, Fps g, final int l) {
+		if(l == 0) return zero(0);
 		f = shrink(f, l);
 		g = shrink(g, l);
 		Fps h = zero(l);
@@ -376,7 +380,7 @@ abstract class FpsOperator {
 	public final Fps naiveDivEquals(final Fps f, final Fps g) { f.a = naiveDiv(f, g).a; return f; }
 	public final Fps naivePow(final Fps f, final long n) { return naivePow(f, n, f.a.length); }
 	public final Fps naivePow(Fps f, long n, final int l) {
-		if(l == 0) return zero(0);
+		if(l == 0) return n < 0 ? null : zero(0);
 		if(n == 0) return one(l);
 		if(n == 1) return resize(f, l);
 		if(n == 2) return mul(f, f, l);
@@ -398,7 +402,7 @@ abstract class FpsOperator {
 		for(int i = 1; i < l; i ++) {
 			long sum = 0;
 			for(int j = 1, k = i - 1, m = Math.min(i, f.a.length - 1); j <= m; j ++, k --) {
-				sum = md.add(sum, md.mul((n + 1) * j - i, f.a[j], g.a[k]));
+				sum = md.add(sum, md.mul(md.mul(n + 1, j) - i, f.a[j], g.a[k]));
 			}
 			g.a[i] = md.mul(sum, inv[i]);
 		}
@@ -408,7 +412,7 @@ abstract class FpsOperator {
 	// O(M(L)logN)
 	public final Fps binaryPow(final Fps f, final long n) { return binaryPow(f, n, f.a.length); }
 	public final Fps binaryPow(final Fps f, long n, final int l) {
-		if(l == 0) return zero(0);
+		if(l == 0) return n < 0 ? null : zero(0);
 		if(n == 0) return one(l);
 		if(n == 1) return resize(f, l);
 		if(n == 2) return mul(f, f, l);
@@ -454,6 +458,7 @@ abstract class FpsOperator {
 
 	public final Fps diff(final Fps f) { return diff(f, Math.max(0, f.a.length - 1)); }
 	public final Fps diff(final Fps f, final int l) {
+		if(l == 0) return zero(0);
 		Fps g = zero(l);
 		for(int i = 1, m = Math.min(l + 1, f.a.length); i < m; i ++) g.a[i - 1] = md.mul(f.a[i], i);
 		return g;
@@ -498,6 +503,7 @@ abstract class FpsOperator {
 	// O(L^2)
 	public final Fps naiveExp(final Fps f) { return naiveExp(f, f.a.length); }
 	public final Fps naiveExp(Fps f, final int l) {
+		if(l == 0) return zero(0);
 		if(f.get(0) != 0) return null;
 		long inv[] = md.invs(l);
 		f = shrink(f);
@@ -606,6 +612,7 @@ abstract class FpsOperator {
 	// return f(x+c)
 	public final Fps addComposite(final Fps f, final long c) { return addComposite(f, c, f.a.length); }
 	public final Fps addComposite(final Fps f, final long c, final int l) {
+		if(l == 0) return zero(0);
 		Fps h = shrink(f, l);
 		if(h.a.length == 0) return zero(l);
 		long fact = 1;
@@ -634,6 +641,7 @@ abstract class FpsOperator {
 	public final Fps powComposite(final Fps f, final int d) { return powComposite(f, d, Math.max(0, f.a.length * d - d + 1)); }
 	public final Fps powComposite(final Fps f, final int d, final int l) {
 		SimpleUtil.nonNegativeCheck(d);
+		if(l == 0) return zero(0);
 		if(d == 0) return constant(eval(f, 1), f.a.length);
 		Fps g = zero(l);
 		for(int i = 0, j = 0, m = Math.min(f.a.length, l / d + 1); i < m; i ++, j += d) g.a[j] = f.a[i];

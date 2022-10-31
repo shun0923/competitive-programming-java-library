@@ -6,8 +6,8 @@ import java.util.*;
 import library.Solver;
 import library.Mod;
 
-public class Mod107Random_test extends Solver {
-	public static void main(final String[] args) { main(args, new Mod107Random_test()); }
+public class Mod107_random_test extends Solver {
+	public static void main(final String[] args) { main(args, new Mod107_random_test()); }
 
 	public void solve() {
 		Random rnd = new Random(0);

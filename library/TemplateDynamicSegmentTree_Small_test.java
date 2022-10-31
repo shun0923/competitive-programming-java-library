@@ -5,8 +5,8 @@ package library;
 import library.Solver;
 import library.TemplateDynamicSegmentTree;
 
-public class TemplateDynamicSegmentTree_Small_test extends Solver {
-	public static void main(final String[] args) { main(args, new TemplateDynamicSegmentTree_Small_test()); }
+public class TemplateDynamicSegmentTree_small_test extends Solver {
+	public static void main(final String[] args) { main(args, new TemplateDynamicSegmentTree_small_test()); }
 
 	public void solve() {
 		int n = ni();

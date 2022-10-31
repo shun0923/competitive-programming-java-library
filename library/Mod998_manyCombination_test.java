@@ -5,8 +5,8 @@ package library;
 import library.Solver;
 import library.Mod;
 
-public class Mod998ManyCombination_test extends Solver {
-	public static void main(final String[] args) { main(args, new Mod998ManyCombination_test()); }
+public class Mod998_manyCombination_test extends Solver {
+	public static void main(final String[] args) { main(args, new Mod998_manyCombination_test()); }
 
 	public void solve() {
 		Mod md = Mod998.md;
