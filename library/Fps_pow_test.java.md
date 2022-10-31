@@ -40,7 +40,7 @@ data:
   isVerificationFile: true
   path: library/Fps_pow_test.java
   requiredBy: []
-  timestamp: '2022-10-30 19:16:28+09:00'
+  timestamp: '2022-10-31 11:15:37+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Fps_pow_test.java
