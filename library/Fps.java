@@ -8,6 +8,9 @@ import library.Convolution;
 
 class CnvFpsOperator extends FpsOperator {
 	Convolution cnv;
+	static final int NAIVE_INV_THRESHOLD = 256;
+	static final int NAIVE_EXP_THRESHOLD = 160;
+	static final int NAIVE_SQRT_THRESHOLD = 100;
 	CnvFpsOperator(Convolution cnv) { super(cnv.md); this.cnv = cnv; }
 
 	public final Fps butterfly(final Fps f) { return butterfly(f, f.a.length); }
@@ -18,9 +21,11 @@ class CnvFpsOperator extends FpsOperator {
 	public final Fps butterflyInvEquals(final Fps f) { cnv.butterflyInv(f.a); return f; }
 
 	public final Fps mul(final Fps f, final Fps g, final int l) { return new Fps(this, cnv.cnv(f.a, g.a, l)); }
-	public final Fps inv(final Fps f, final int l) {
+	public final Fps inv(Fps f, final int l) {
+		if(l <= NAIVE_INV_THRESHOLD) return naiveInv(f, l);
 		if(f.get(0) == 0) return null;
 		if(l == 0) return zero(0);
+		f = shrink(f, l);
 		int m = 1;
 		Fps g = zero(l);
 		g.a[0] = md.inv(f.a[0]);
@@ -50,8 +55,10 @@ class CnvFpsOperator extends FpsOperator {
 		return mulEquals(expEquals(mulEquals(log(div(f, f.a[0]), l), n)), md.pow(f.a[0], n));
 	}
 	public final Fps exp(Fps f, final int l) {
+		if(l <= NAIVE_EXP_THRESHOLD) return naiveExp(f, l);
 		if(f.get(0) != 0) return null;
 		if(l == 0) return zero(0);
+		f = shrink(f, l);
 		int size = 1;
 		Fps h = one(l);
 		Fps diff = diff(f);
@@ -116,9 +123,11 @@ class CnvFpsOperator extends FpsOperator {
 		}
 		return h;
 	}
-	protected final Fps calSqrt(final Fps f, final int l) {
+	protected final Fps calSqrt(Fps f, final int l) {
+		if(l <= NAIVE_SQRT_THRESHOLD) return calNaiveSqrt(f, l);
 		long sqrt = md.sqrt(f.a[0]);
 		if(sqrt == -1) return null;
+		f = shrink(f, l);
 		int size = 1;
 		Fps h = constant(sqrt, l);
 		Fps inv = constant(md.inv(sqrt), l << 1);
