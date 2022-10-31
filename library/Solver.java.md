@@ -12,7 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod_operation_test.java
     title: library/ArbitraryMod_operation_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod_pow_test.java
     title: library/ArbitraryMod_pow_test.java
   - icon: ':heavy_check_mark:'
@@ -138,10 +138,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Mod107_random_test.java
     title: library/Mod107_random_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod998_manyCombination_test.java
     title: library/Mod998_manyCombination_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod998_random_test.java
     title: library/Mod998_random_test.java
   - icon: ':heavy_check_mark:'

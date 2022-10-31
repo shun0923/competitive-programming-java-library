@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
   - icon: ':question:'
@@ -9,9 +9,9 @@ data:
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -25,8 +25,8 @@ data:
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\n\
     \npackage library;\n\nimport library.Solver;\nimport library.ArbitraryMod;\n\n\
-    public class ArbitraryModPow_test extends Solver {\n\tpublic static void main(final\
-    \ String[] args) { main(args, new ArbitraryModPow_test()); }\n\n\tpublic void\
+    public class ArbitraryMod_pow_test extends Solver {\n\tpublic static void main(final\
+    \ String[] args) { main(args, new ArbitraryMod_pow_test()); }\n\n\tpublic void\
     \ solve() {\n\t\tprtln(new ArbitraryMod(1_000_000_007).pow(nl(), nl()));\n\t}\n\
     }"
   dependsOn:
@@ -35,8 +35,8 @@ data:
   isVerificationFile: true
   path: library/ArbitraryMod_pow_test.java
   requiredBy: []
-  timestamp: '2022-10-31 15:25:53+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-31 15:37:50+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/ArbitraryMod_pow_test.java
 layout: document
