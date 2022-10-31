@@ -66,9 +66,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/DualSegmentTree_test.java
     title: library/DualSegmentTree_test.java
-  - icon: ':x:'
-    path: library/DynamicSegmentTree_Small_test.java
-    title: library/DynamicSegmentTree_Small_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/DynamicSegmentTree_small_test.java
+    title: library/DynamicSegmentTree_small_test.java
   - icon: ':heavy_check_mark:'
     path: library/DynamicSegmentTree_test.java
     title: library/DynamicSegmentTree_test.java
@@ -162,9 +162,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Scc_ids_test.java
     title: library/Scc_ids_test.java
-  - icon: ':x:'
-    path: library/SegmentTree_Composite_test.java
-    title: library/SegmentTree_Composite_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/SegmentTree_composite_test.java
+    title: library/SegmentTree_composite_test.java
   - icon: ':heavy_check_mark:'
     path: library/SegmentTree_test.java
     title: library/SegmentTree_test.java
@@ -189,9 +189,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateDualSegmentTree_test.java
     title: library/TemplateDualSegmentTree_test.java
-  - icon: ':x:'
-    path: library/TemplateDynamicSegmentTree_Small_test.java
-    title: library/TemplateDynamicSegmentTree_Small_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/TemplateDynamicSegmentTree_small_test.java
+    title: library/TemplateDynamicSegmentTree_small_test.java
   - icon: ':heavy_check_mark:'
     path: library/TemplateDynamicSegmentTree_test.java
     title: library/TemplateDynamicSegmentTree_test.java
@@ -201,9 +201,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateRerooting_test.java
     title: library/TemplateRerooting_test.java
-  - icon: ':x:'
-    path: library/TemplateSegmentTree_Composite_test.java
-    title: library/TemplateSegmentTree_Composite_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/TemplateSegmentTree_composite_test.java
+    title: library/TemplateSegmentTree_composite_test.java
   - icon: ':heavy_check_mark:'
     path: library/TemplateSegmentTree_test.java
     title: library/TemplateSegmentTree_test.java
@@ -255,9 +255,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ZAlgorithm_test.java
     title: library/ZAlgorithm_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -281,11 +281,12 @@ data:
   path: library/Solver.java
   requiredBy: []
   timestamp: '2022-10-05 15:43:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Dijkstra_test.java
   - library/FenwickTree_test.java
   - library/Kruskal_test.java
+  - library/SegmentTree_composite_test.java
   - library/Lca_test.java
   - library/SuffixArray_test.java
   - library/Scc_graph_test.java
@@ -294,7 +295,6 @@ data:
   - library/FastIO_test.java
   - library/ArbitraryMod_sqrt_test.java
   - library/Fps_log_test.java
-  - library/DynamicSegmentTree_Small_test.java
   - library/WaveletMatrix_smallest_test.java
   - library/Fps_divfloor_mod_test.java
   - library/ManyFastIO_test.java
@@ -306,20 +306,22 @@ data:
   - library/Fps_sqrt_test.java
   - library/Doubling_test.java
   - library/Fps_exp_test.java
-  - library/SegmentTree_Composite_test.java
   - library/BellmanFord_test.java
   - library/Kmp_test.java
+  - library/TemplateSegmentTree_composite_test.java
   - library/Dijkstra_reversed_test.java
   - library/DynamicSwag_test.java
   - library/TemplateDijkstra_pathEdge_test.java
   - library/Swag_test.java
   - library/ArbitraryMod_combination_test.java
   - library/TopologicalSort_test.java
+  - library/DynamicSegmentTree_small_test.java
   - library/Fps_addComposite_test.java
   - library/WeightedLca_test.java
   - library/TemplateDynamicSwag_test.java
   - library/Dijkstra_path_test.java
   - library/WaveletMatrix_freq_test.java
+  - library/TemplateDynamicSegmentTree_small_test.java
   - library/UnionFind_test.java
   - library/CompressedWaveletMatrix_freq_test.java
   - library/Convolution107_test.java
@@ -355,7 +357,6 @@ data:
   - library/TemplateDualSegmentTree_test.java
   - library/DynamicSegmentTree_test.java
   - library/Fps_mul_test.java
-  - library/TemplateSegmentTree_Composite_test.java
   - library/Trie_startWith_test.java
   - library/TemplateSparseTable_test.java
   - library/WarshallFloyd_test.java
@@ -364,7 +365,6 @@ data:
   - library/Fps_pow_test.java
   - library/WeightedUnionFind_test.java
   - library/SparseTable_test.java
-  - library/TemplateDynamicSegmentTree_Small_test.java
   - library/Swag_gcd_test.java
 documentation_of: library/Solver.java
 layout: document

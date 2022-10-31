@@ -33,7 +33,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/DualSegmentTree.java
       title: library/DualSegmentTree.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/DynamicSegmentTree.java
       title: library/DynamicSegmentTree.java
     - icon: ':heavy_check_mark:'
@@ -66,13 +66,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/LcpArray.java
       title: library/LcpArray.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
     - icon: ':heavy_check_mark:'
       path: library/MultiSet.java
       title: library/MultiSet.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Pair.java
       title: library/Pair.java
     - icon: ':heavy_check_mark:'
@@ -90,13 +90,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Scc.java
       title: library/Scc.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/SegmentTree.java
       title: library/SegmentTree.java
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -114,7 +114,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateDualSegmentTree.java
       title: library/TemplateDualSegmentTree.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateDynamicSegmentTree.java
       title: library/TemplateDynamicSegmentTree.java
     - icon: ':heavy_check_mark:'
@@ -123,7 +123,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateRerooting.java
       title: library/TemplateRerooting.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSegmentTree.java
       title: library/TemplateSegmentTree.java
     - icon: ':heavy_check_mark:'
@@ -225,9 +225,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/DualSegmentTree_test.java
       title: library/DualSegmentTree_test.java
-    - icon: ':x:'
-      path: library/DynamicSegmentTree_Small_test.java
-      title: library/DynamicSegmentTree_Small_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/DynamicSegmentTree_small_test.java
+      title: library/DynamicSegmentTree_small_test.java
     - icon: ':heavy_check_mark:'
       path: library/DynamicSegmentTree_test.java
       title: library/DynamicSegmentTree_test.java
@@ -321,9 +321,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Scc_ids_test.java
       title: library/Scc_ids_test.java
-    - icon: ':x:'
-      path: library/SegmentTree_Composite_test.java
-      title: library/SegmentTree_Composite_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/SegmentTree_composite_test.java
+      title: library/SegmentTree_composite_test.java
     - icon: ':heavy_check_mark:'
       path: library/SegmentTree_test.java
       title: library/SegmentTree_test.java
@@ -348,9 +348,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateDualSegmentTree_test.java
       title: library/TemplateDualSegmentTree_test.java
-    - icon: ':x:'
-      path: library/TemplateDynamicSegmentTree_Small_test.java
-      title: library/TemplateDynamicSegmentTree_Small_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/TemplateDynamicSegmentTree_small_test.java
+      title: library/TemplateDynamicSegmentTree_small_test.java
     - icon: ':heavy_check_mark:'
       path: library/TemplateDynamicSegmentTree_test.java
       title: library/TemplateDynamicSegmentTree_test.java
@@ -360,9 +360,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/TemplateRerooting_test.java
       title: library/TemplateRerooting_test.java
-    - icon: ':x:'
-      path: library/TemplateSegmentTree_Composite_test.java
-      title: library/TemplateSegmentTree_Composite_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/TemplateSegmentTree_composite_test.java
+      title: library/TemplateSegmentTree_composite_test.java
     - icon: ':heavy_check_mark:'
       path: library/TemplateSegmentTree_test.java
       title: library/TemplateSegmentTree_test.java

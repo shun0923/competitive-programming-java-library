@@ -6,15 +6,15 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: library/DynamicSegmentTree_Small_test.java
-    title: library/DynamicSegmentTree_Small_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/DynamicSegmentTree_small_test.java
+    title: library/DynamicSegmentTree_small_test.java
   - icon: ':heavy_check_mark:'
     path: library/DynamicSegmentTree_test.java
     title: library/DynamicSegmentTree_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -58,9 +58,9 @@ data:
   path: library/DynamicSegmentTree.java
   requiredBy: []
   timestamp: '2022-10-05 21:11:17+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - library/DynamicSegmentTree_Small_test.java
+  - library/DynamicSegmentTree_small_test.java
   - library/DynamicSegmentTree_test.java
 documentation_of: library/DynamicSegmentTree.java
 layout: document

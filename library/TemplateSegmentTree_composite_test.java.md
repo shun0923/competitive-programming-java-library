@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Pair.java
     title: library/Pair.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateSegmentTree.java
     title: library/TemplateSegmentTree.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -47,15 +47,15 @@ data:
   - library/Mod.java
   - library/TemplateSegmentTree.java
   isVerificationFile: true
-  path: library/TemplateSegmentTree_Composite_test.java
+  path: library/TemplateSegmentTree_composite_test.java
   requiredBy: []
-  timestamp: '2022-10-31 15:25:53+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-31 15:56:08+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: library/TemplateSegmentTree_Composite_test.java
+documentation_of: library/TemplateSegmentTree_composite_test.java
 layout: document
 redirect_from:
-- /verify/library/TemplateSegmentTree_Composite_test.java
-- /verify/library/TemplateSegmentTree_Composite_test.java.html
-title: library/TemplateSegmentTree_Composite_test.java
+- /verify/library/TemplateSegmentTree_composite_test.java
+- /verify/library/TemplateSegmentTree_composite_test.java.html
+title: library/TemplateSegmentTree_composite_test.java
 ---

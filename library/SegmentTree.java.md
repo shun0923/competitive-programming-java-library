@@ -6,15 +6,15 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: library/SegmentTree_Composite_test.java
-    title: library/SegmentTree_Composite_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/SegmentTree_composite_test.java
+    title: library/SegmentTree_composite_test.java
   - icon: ':heavy_check_mark:'
     path: library/SegmentTree_test.java
     title: library/SegmentTree_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -79,10 +79,10 @@ data:
   path: library/SegmentTree.java
   requiredBy: []
   timestamp: '2022-10-05 21:11:17+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - library/SegmentTree_composite_test.java
   - library/SegmentTree_test.java
-  - library/SegmentTree_Composite_test.java
 documentation_of: library/SegmentTree.java
 layout: document
 redirect_from:
