@@ -11,7 +11,7 @@ public class Fps_random_test extends Solver {
 	public static void main(final String[] args) { main(args, new Fps_random_test()); }
 
 	public void solve() {
-		Random rnd = new Random(0);
+		Random rnd = new Random();
 		FpsOperator op = new CnvFpsOperator(Convolution998.cnv);
 		for(int i = 0; i < 100; i ++) {
 			checkMul(op, randomFps(op, rnd, rnd.nextInt(5000)), randomFps(op, rnd, rnd.nextInt(5000)));

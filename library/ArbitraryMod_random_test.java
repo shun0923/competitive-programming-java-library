@@ -10,7 +10,7 @@ public class ArbitraryMod_random_test extends Solver {
 	public static void main(final String[] args) { main(args, new ArbitraryMod_random_test()); }
 
 	public void solve() {
-		Random rnd = new Random(0);
+		Random rnd = new Random();
 		for(int i = 0; i < 10000000; i ++) checkAdd(rnd.nextInt(), rnd.nextInt(), rnd.nextInt(Integer.MAX_VALUE - 1) + 1);
 		for(int i = 0; i < 10000000; i ++) checkMul(rnd.nextInt(), rnd.nextInt(), rnd.nextInt(Integer.MAX_VALUE - 1) + 1);
 		for(int i = 0; i < 10000000; i ++) checkDiv(rnd.nextInt(), rnd.nextInt(), 998_244_353);
