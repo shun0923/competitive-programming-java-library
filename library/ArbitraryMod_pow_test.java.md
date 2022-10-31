@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -33,15 +33,15 @@ data:
   - library/Solver.java
   - library/ArbitraryMod.java
   isVerificationFile: true
-  path: library/ArbitraryModPow_test.java
+  path: library/ArbitraryMod_pow_test.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-10-31 15:25:53+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: library/ArbitraryModPow_test.java
+documentation_of: library/ArbitraryMod_pow_test.java
 layout: document
 redirect_from:
-- /verify/library/ArbitraryModPow_test.java
-- /verify/library/ArbitraryModPow_test.java.html
-title: library/ArbitraryModPow_test.java
+- /verify/library/ArbitraryMod_pow_test.java
+- /verify/library/ArbitraryMod_pow_test.java.html
+title: library/ArbitraryMod_pow_test.java
 ---

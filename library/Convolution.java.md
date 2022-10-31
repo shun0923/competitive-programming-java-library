@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
   - icon: ':warning:'
@@ -42,6 +42,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_pow_test.java
     title: library/Fps_pow_test.java
+  - icon: ':heavy_check_mark:'
+    path: library/Fps_random_test.java
+    title: library/Fps_random_test.java
   - icon: ':heavy_check_mark:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
@@ -281,6 +284,7 @@ data:
   verifiedWith:
   - library/Fps_log_test.java
   - library/Fps_divfloor_mod_test.java
+  - library/Fps_random_test.java
   - library/Fps_sqrt_test.java
   - library/Fps_exp_test.java
   - library/Fps_addComposite_test.java

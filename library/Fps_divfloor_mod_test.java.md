@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps.java
     title: library/Fps.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -42,7 +42,7 @@ data:
   isVerificationFile: true
   path: library/Fps_divfloor_mod_test.java
   requiredBy: []
-  timestamp: '2022-10-31 13:58:39+09:00'
+  timestamp: '2022-10-31 15:25:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Fps_divfloor_mod_test.java

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -25,8 +25,8 @@ data:
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\n\
     \npackage library;\n\nimport java.util.*;\nimport library.Solver;\nimport library.Mod;\n\
-    \npublic class Mod107Random_test extends Solver {\n\tpublic static void main(final\
-    \ String[] args) { main(args, new Mod107Random_test()); }\n\n\tpublic void solve()\
+    \npublic class Mod107_random_test extends Solver {\n\tpublic static void main(final\
+    \ String[] args) { main(args, new Mod107_random_test()); }\n\n\tpublic void solve()\
     \ {\n\t\tRandom rnd = new Random(0);\n\t\tfor(int i = 0; i < 10000000; i ++) checkAdd(rnd.nextInt(),\
     \ rnd.nextInt());\n\t\tfor(int i = 0; i < 10000000; i ++) checkMul(rnd.nextInt(),\
     \ rnd.nextInt());\n\t\tfor(int i = 0; i < 10000000; i ++) checkDiv(rnd.nextInt(),\
@@ -44,15 +44,15 @@ data:
   - library/Solver.java
   - library/Mod.java
   isVerificationFile: true
-  path: library/Mod107Random_test.java
+  path: library/Mod107_random_test.java
   requiredBy: []
-  timestamp: '2022-10-29 00:33:53+09:00'
+  timestamp: '2022-10-31 15:25:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: library/Mod107Random_test.java
+documentation_of: library/Mod107_random_test.java
 layout: document
 redirect_from:
-- /verify/library/Mod107Random_test.java
-- /verify/library/Mod107Random_test.java.html
-title: library/Mod107Random_test.java
+- /verify/library/Mod107_random_test.java
+- /verify/library/Mod107_random_test.java.html
+title: library/Mod107_random_test.java
 ---

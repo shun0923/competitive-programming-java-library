@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -25,8 +25,8 @@ data:
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/sqrt_mod\n\
     \npackage library;\n\nimport library.Solver;\nimport library.ArbitraryMod;\n\n\
-    public class ArbitraryModSqrt_test extends Solver {\n\tpublic static void main(final\
-    \ String[] args) { main(args, new ArbitraryModSqrt_test()); }\n\n\tpublic void\
+    public class ArbitraryMod_sqrt_test extends Solver {\n\tpublic static void main(final\
+    \ String[] args) { main(args, new ArbitraryMod_sqrt_test()); }\n\n\tpublic void\
     \ solve() {\n\t\tint t = ni();\n\t\tfor(int i = 0; i < t; i ++) {\n\t\t\tlong\
     \ y = nl();\n\t\t\tlong p = nl();\n\t\t\tprtln(new ArbitraryMod(p).sqrt(y));\n\
     \t\t}\n\t}\n}"
@@ -34,15 +34,15 @@ data:
   - library/Solver.java
   - library/ArbitraryMod.java
   isVerificationFile: true
-  path: library/ArbitraryModSqrt_test.java
+  path: library/ArbitraryMod_sqrt_test.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
+  timestamp: '2022-10-31 15:25:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: library/ArbitraryModSqrt_test.java
+documentation_of: library/ArbitraryMod_sqrt_test.java
 layout: document
 redirect_from:
-- /verify/library/ArbitraryModSqrt_test.java
-- /verify/library/ArbitraryModSqrt_test.java.html
-title: library/ArbitraryModSqrt_test.java
+- /verify/library/ArbitraryMod_sqrt_test.java
+- /verify/library/ArbitraryMod_sqrt_test.java.html
+title: library/ArbitraryMod_sqrt_test.java
 ---

@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/SegmentTree.java
     title: library/SegmentTree.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -28,8 +28,8 @@ data:
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/point_set_range_composite\n\
     \npackage library;\n\nimport library.Solver;\nimport library.Mod;\nimport library.SegmentTree;\n\
-    \npublic class SegmentTree_Composite_test extends Solver {\n\tpublic static void\
-    \ main(final String[] args) { main(args, new SegmentTree_Composite_test()); }\n\
+    \npublic class SegmentTree_composite_test extends Solver {\n\tpublic static void\
+    \ main(final String[] args) { main(args, new SegmentTree_composite_test()); }\n\
     \n\tpublic void solve() {\n\t\tlong mask = (1 << 31) - 1;\n\t\tMod md = Mod998.md;\n\
     \t\tint n = ni();\n\t\tint q = ni();\n\t\tlong f[] = new long[n];\n\t\tfor(int\
     \ i = 0; i < n; i ++) f[i] = nl() << 31 | nl();\n\t\tSegmentTree st = new SegmentTree(f,\n\
@@ -45,8 +45,8 @@ data:
   isVerificationFile: true
   path: library/SegmentTree_Composite_test.java
   requiredBy: []
-  timestamp: '2022-10-29 00:33:53+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-10-31 15:25:53+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/SegmentTree_Composite_test.java
 layout: document

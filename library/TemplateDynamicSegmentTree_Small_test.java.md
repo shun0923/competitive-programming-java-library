@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/TemplateDynamicSegmentTree.java
     title: library/TemplateDynamicSegmentTree.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -25,8 +25,8 @@ data:
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/point_add_range_sum\n\
     \npackage library;\n\nimport library.Solver;\nimport library.TemplateDynamicSegmentTree;\n\
-    \npublic class TemplateDynamicSegmentTree_Small_test extends Solver {\n\tpublic\
-    \ static void main(final String[] args) { main(args, new TemplateDynamicSegmentTree_Small_test());\
+    \npublic class TemplateDynamicSegmentTree_small_test extends Solver {\n\tpublic\
+    \ static void main(final String[] args) { main(args, new TemplateDynamicSegmentTree_small_test());\
     \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tint q = ni();\n\t\tTemplateDynamicSegmentTree<Long>\
     \ st = new TemplateDynamicSegmentTree<>(n,\n\t\t\t\t() -> 0l, (ele1, ele2) ->\
     \ ele1 + ele2);\n\t\tfor(int i = 0; i < n; i ++) st.set(i, nl());\n\t\tfor(int\
@@ -38,8 +38,8 @@ data:
   isVerificationFile: true
   path: library/TemplateDynamicSegmentTree_Small_test.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-10-31 15:25:53+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/TemplateDynamicSegmentTree_Small_test.java
 layout: document

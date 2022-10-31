@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModCombination_test.java
-    title: library/ArbitraryModCombination_test.java
+    path: library/ArbitraryMod_combination_test.java
+    title: library/ArbitraryMod_combination_test.java
   - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModOperation_test.java
-    title: library/ArbitraryModOperation_test.java
+    path: library/ArbitraryMod_operation_test.java
+    title: library/ArbitraryMod_operation_test.java
+  - icon: ':x:'
+    path: library/ArbitraryMod_pow_test.java
+    title: library/ArbitraryMod_pow_test.java
   - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModPow_test.java
-    title: library/ArbitraryModPow_test.java
+    path: library/ArbitraryMod_random_test.java
+    title: library/ArbitraryMod_random_test.java
   - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModRandom_test.java
-    title: library/ArbitraryModRandom_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModSqrt_test.java
-    title: library/ArbitraryModSqrt_test.java
-  _isVerificationFailed: false
+    path: library/ArbitraryMod_sqrt_test.java
+    title: library/ArbitraryMod_sqrt_test.java
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -54,13 +54,13 @@ data:
   path: library/ArbitraryMod.java
   requiredBy: []
   timestamp: '2022-10-29 00:33:53+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - library/ArbitraryModPow_test.java
-  - library/ArbitraryModOperation_test.java
-  - library/ArbitraryModSqrt_test.java
-  - library/ArbitraryModRandom_test.java
-  - library/ArbitraryModCombination_test.java
+  - library/ArbitraryMod_sqrt_test.java
+  - library/ArbitraryMod_random_test.java
+  - library/ArbitraryMod_combination_test.java
+  - library/ArbitraryMod_pow_test.java
+  - library/ArbitraryMod_operation_test.java
 documentation_of: library/ArbitraryMod.java
 layout: document
 redirect_from:

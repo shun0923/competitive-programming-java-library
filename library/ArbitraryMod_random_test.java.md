@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -25,8 +25,8 @@ data:
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\n\
     \npackage library;\n\nimport java.util.*;\nimport library.Solver;\nimport library.ArbitraryMod;\n\
-    \npublic class ArbitraryModRandom_test extends Solver {\n\tpublic static void\
-    \ main(final String[] args) { main(args, new ArbitraryModRandom_test()); }\n\n\
+    \npublic class ArbitraryMod_random_test extends Solver {\n\tpublic static void\
+    \ main(final String[] args) { main(args, new ArbitraryMod_random_test()); }\n\n\
     \tpublic void solve() {\n\t\tRandom rnd = new Random(0);\n\t\tfor(int i = 0; i\
     \ < 10000000; i ++) checkAdd(rnd.nextInt(), rnd.nextInt(), rnd.nextInt(Integer.MAX_VALUE\
     \ - 1) + 1);\n\t\tfor(int i = 0; i < 10000000; i ++) checkMul(rnd.nextInt(), rnd.nextInt(),\
@@ -47,15 +47,15 @@ data:
   - library/Solver.java
   - library/ArbitraryMod.java
   isVerificationFile: true
-  path: library/ArbitraryModRandom_test.java
+  path: library/ArbitraryMod_random_test.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
+  timestamp: '2022-10-31 15:25:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: library/ArbitraryModRandom_test.java
+documentation_of: library/ArbitraryMod_random_test.java
 layout: document
 redirect_from:
-- /verify/library/ArbitraryModRandom_test.java
-- /verify/library/ArbitraryModRandom_test.java.html
-title: library/ArbitraryModRandom_test.java
+- /verify/library/ArbitraryMod_random_test.java
+- /verify/library/ArbitraryMod_random_test.java.html
+title: library/ArbitraryMod_random_test.java
 ---

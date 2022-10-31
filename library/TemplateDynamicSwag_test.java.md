@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Pair.java
     title: library/Pair.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   - icon: ':heavy_check_mark:'

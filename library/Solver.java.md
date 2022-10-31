@@ -7,20 +7,20 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModCombination_test.java
-    title: library/ArbitraryModCombination_test.java
+    path: library/ArbitraryMod_combination_test.java
+    title: library/ArbitraryMod_combination_test.java
   - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModOperation_test.java
-    title: library/ArbitraryModOperation_test.java
+    path: library/ArbitraryMod_operation_test.java
+    title: library/ArbitraryMod_operation_test.java
+  - icon: ':x:'
+    path: library/ArbitraryMod_pow_test.java
+    title: library/ArbitraryMod_pow_test.java
   - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModPow_test.java
-    title: library/ArbitraryModPow_test.java
+    path: library/ArbitraryMod_random_test.java
+    title: library/ArbitraryMod_random_test.java
   - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModRandom_test.java
-    title: library/ArbitraryModRandom_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/ArbitraryModSqrt_test.java
-    title: library/ArbitraryModSqrt_test.java
+    path: library/ArbitraryMod_sqrt_test.java
+    title: library/ArbitraryMod_sqrt_test.java
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord_reversed_test.java
     title: library/BellmanFord_reversed_test.java
@@ -66,7 +66,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/DualSegmentTree_test.java
     title: library/DualSegmentTree_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/DynamicSegmentTree_Small_test.java
     title: library/DynamicSegmentTree_Small_test.java
   - icon: ':heavy_check_mark:'
@@ -106,6 +106,9 @@ data:
     path: library/Fps_pow_test.java
     title: library/Fps_pow_test.java
   - icon: ':heavy_check_mark:'
+    path: library/Fps_random_test.java
+    title: library/Fps_random_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
   - icon: ':heavy_check_mark:'
@@ -127,20 +130,20 @@ data:
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
   - icon: ':heavy_check_mark:'
-    path: library/Mod107ManyCombination_test.java
-    title: library/Mod107ManyCombination_test.java
+    path: library/Mod107_manyCombination_test.java
+    title: library/Mod107_manyCombination_test.java
   - icon: ':heavy_check_mark:'
-    path: library/Mod107Pow_test.java
-    title: library/Mod107Pow_test.java
+    path: library/Mod107_pow_test.java
+    title: library/Mod107_pow_test.java
   - icon: ':heavy_check_mark:'
-    path: library/Mod107Random_test.java
-    title: library/Mod107Random_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod998ManyCombination_test.java
-    title: library/Mod998ManyCombination_test.java
-  - icon: ':heavy_check_mark:'
-    path: library/Mod998Random_test.java
-    title: library/Mod998Random_test.java
+    path: library/Mod107_random_test.java
+    title: library/Mod107_random_test.java
+  - icon: ':x:'
+    path: library/Mod998_manyCombination_test.java
+    title: library/Mod998_manyCombination_test.java
+  - icon: ':x:'
+    path: library/Mod998_random_test.java
+    title: library/Mod998_random_test.java
   - icon: ':heavy_check_mark:'
     path: library/Permutation_test.java
     title: library/Permutation_test.java
@@ -159,7 +162,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Scc_ids_test.java
     title: library/Scc_ids_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/SegmentTree_Composite_test.java
     title: library/SegmentTree_Composite_test.java
   - icon: ':heavy_check_mark:'
@@ -186,7 +189,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateDualSegmentTree_test.java
     title: library/TemplateDualSegmentTree_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDynamicSegmentTree_Small_test.java
     title: library/TemplateDynamicSegmentTree_Small_test.java
   - icon: ':heavy_check_mark:'
@@ -198,7 +201,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateRerooting_test.java
     title: library/TemplateRerooting_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateSegmentTree_Composite_test.java
     title: library/TemplateSegmentTree_Composite_test.java
   - icon: ':heavy_check_mark:'
@@ -252,9 +255,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ZAlgorithm_test.java
     title: library/ZAlgorithm_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -278,29 +281,29 @@ data:
   path: library/Solver.java
   requiredBy: []
   timestamp: '2022-10-05 15:43:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_test.java
   - library/FenwickTree_test.java
   - library/Kruskal_test.java
   - library/Lca_test.java
-  - library/Mod998Random_test.java
   - library/SuffixArray_test.java
   - library/Scc_graph_test.java
   - library/SegmentTree_test.java
   - library/TemplateRerooting_test.java
   - library/FastIO_test.java
-  - library/Mod107ManyCombination_test.java
+  - library/ArbitraryMod_sqrt_test.java
   - library/Fps_log_test.java
   - library/DynamicSegmentTree_Small_test.java
   - library/WaveletMatrix_smallest_test.java
   - library/Fps_divfloor_mod_test.java
   - library/ManyFastIO_test.java
   - library/ZAlgorithm_test.java
+  - library/Fps_random_test.java
+  - library/ArbitraryMod_random_test.java
   - library/TemplateDijkstra_test.java
   - library/Scc_groups_test.java
   - library/Fps_sqrt_test.java
-  - library/ArbitraryModPow_test.java
   - library/Doubling_test.java
   - library/Fps_exp_test.java
   - library/SegmentTree_Composite_test.java
@@ -308,9 +311,9 @@ data:
   - library/Kmp_test.java
   - library/Dijkstra_reversed_test.java
   - library/DynamicSwag_test.java
-  - library/Mod107Random_test.java
   - library/TemplateDijkstra_pathEdge_test.java
   - library/Swag_test.java
+  - library/ArbitraryMod_combination_test.java
   - library/TopologicalSort_test.java
   - library/Fps_addComposite_test.java
   - library/WeightedLca_test.java
@@ -319,27 +322,29 @@ data:
   - library/WaveletMatrix_freq_test.java
   - library/UnionFind_test.java
   - library/CompressedWaveletMatrix_freq_test.java
-  - library/ArbitraryModOperation_test.java
   - library/Convolution107_test.java
+  - library/Mod107_pow_test.java
   - library/TemplateDynamicSegmentTree_test.java
-  - library/ArbitraryModSqrt_test.java
   - library/Rerooting_test.java
-  - library/ArbitraryModRandom_test.java
+  - library/Mod107_random_test.java
   - library/Dijkstra_forDenseGraph_test.java
+  - library/Mod998_manyCombination_test.java
   - library/Scc_ids_test.java
   - library/LcpArray_test.java
-  - library/Mod998ManyCombination_test.java
   - library/TemplateSwag_gcd_test.java
   - library/Dijkstra_pathEdge_test.java
   - library/BellmanFord_reversed_test.java
   - library/HelloWorld_test.java
   - library/TemplateSwag_test.java
   - library/Dijkstra_forDenseGraph_reversed_test.java
+  - library/ArbitraryMod_pow_test.java
   - library/RollingHash_test.java
+  - library/Mod998_random_test.java
   - library/WarshallFloyd_reversed_test.java
   - library/Fps_composite_test.java
   - library/TreeMultiSet_test.java
   - library/TemplateSegmentTree_test.java
+  - library/Mod107_manyCombination_test.java
   - library/CompressedWaveletMatrix_smallest_test.java
   - library/Fps_inv_test.java
   - library/Bfs_test.java
@@ -355,8 +360,7 @@ data:
   - library/TemplateSparseTable_test.java
   - library/WarshallFloyd_test.java
   - library/WeightedDoubling_test.java
-  - library/Mod107Pow_test.java
-  - library/ArbitraryModCombination_test.java
+  - library/ArbitraryMod_operation_test.java
   - library/Fps_pow_test.java
   - library/WeightedUnionFind_test.java
   - library/SparseTable_test.java

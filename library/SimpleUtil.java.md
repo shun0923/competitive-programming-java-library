@@ -35,7 +35,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/DualSegmentTree.java
     title: library/DualSegmentTree.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/DynamicSegmentTree.java
     title: library/DynamicSegmentTree.java
   - icon: ':heavy_check_mark:'
@@ -62,13 +62,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/LcpArray.java
     title: library/LcpArray.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
   - icon: ':heavy_check_mark:'
     path: library/MultiSet.java
     title: library/MultiSet.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Pair.java
     title: library/Pair.java
   - icon: ':heavy_check_mark:'
@@ -86,7 +86,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Scc.java
     title: library/Scc.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/SegmentTree.java
     title: library/SegmentTree.java
   - icon: ':heavy_check_mark:'
@@ -104,7 +104,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateDualSegmentTree.java
     title: library/TemplateDualSegmentTree.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/TemplateDynamicSegmentTree.java
     title: library/TemplateDynamicSegmentTree.java
   - icon: ':heavy_check_mark:'
@@ -113,7 +113,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateRerooting.java
     title: library/TemplateRerooting.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/TemplateSegmentTree.java
     title: library/TemplateSegmentTree.java
   - icon: ':heavy_check_mark:'

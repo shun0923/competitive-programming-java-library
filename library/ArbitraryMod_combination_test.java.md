@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -25,8 +25,8 @@ data:
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1501\n\
     \npackage library;\n\nimport library.Solver;\nimport library.ArbitraryMod;\n\n\
-    public class ArbitraryModCombination_test extends Solver {\n\tpublic static void\
-    \ main(final String[] args) { main(args, new ArbitraryModCombination_test());\
+    public class ArbitraryMod_combination_test extends Solver {\n\tpublic static void\
+    \ main(final String[] args) { main(args, new ArbitraryMod_combination_test());\
     \ }\n\n\tpublic void solve() {\n\t\tMod md = new ArbitraryMod(100_000_007);\n\t\
     \tint r = ni();\n\t\tint c = ni();\n\t\tint a1 = ni();\n\t\tint a2 = ni();\n\t\
     \tint b1 = ni();\n\t\tint b2 = ni();\n\t\tint x = Math.min(Math.abs(a1 - b1),\
@@ -37,15 +37,15 @@ data:
   - library/Solver.java
   - library/ArbitraryMod.java
   isVerificationFile: true
-  path: library/ArbitraryModCombination_test.java
+  path: library/ArbitraryMod_combination_test.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
+  timestamp: '2022-10-31 15:25:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: library/ArbitraryModCombination_test.java
+documentation_of: library/ArbitraryMod_combination_test.java
 layout: document
 redirect_from:
-- /verify/library/ArbitraryModCombination_test.java
-- /verify/library/ArbitraryModCombination_test.java.html
-title: library/ArbitraryModCombination_test.java
+- /verify/library/ArbitraryMod_combination_test.java
+- /verify/library/ArbitraryMod_combination_test.java.html
+title: library/ArbitraryMod_combination_test.java
 ---

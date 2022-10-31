@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -13,7 +13,7 @@ data:
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    PROBLEM: https://yukicoder.me/problems/no/1186
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
@@ -23,27 +23,24 @@ data:
     \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/subprocess.py\"\
     , line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "// verification-helper: PROBLEM https://yukicoder.me/problems/no/1186\n\n\
-    package library;\n\nimport library.Solver;\nimport library.Mod;\n\npublic class\
-    \ Mod998ManyCombination_test extends Solver {\n\tpublic static void main(final\
-    \ String[] args) { main(args, new Mod998ManyCombination_test()); }\n\n\tpublic\
-    \ void solve() {\n\t\tMod md = Mod998.md;\n\t\tint n = ni();\n\t\tint m = ni();\n\
-    \t\tif(n == 1) prtln(1);\n\t\telse {\n\t\t\tlong ans = 0;\n\t\t\tfor(int x = 0;\
-    \ x <= m / n; x ++) {\n\t\t\t\tans = md.add(ans, md.H(x + 1, m - x * n));\n\t\t\
-    \t}\n\t\t\tprtln(ans);\n\t\t}\n\t}\n}"
+  code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_B\n\
+    \npackage library;\n\nimport library.Solver;\nimport library.Mod;\n\npublic class\
+    \ Mod107_pow_test extends Solver {\n\tpublic static void main(final String[] args)\
+    \ { main(args, new Mod107_pow_test()); }\n\n\tpublic void solve() {\n\t\tprtln(Mod107.md.pow(nl(),\
+    \ nl()));\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/Mod.java
   isVerificationFile: true
-  path: library/Mod998ManyCombination_test.java
+  path: library/Mod107_pow_test.java
   requiredBy: []
-  timestamp: '2022-10-29 00:33:53+09:00'
+  timestamp: '2022-10-31 15:25:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: library/Mod998ManyCombination_test.java
+documentation_of: library/Mod107_pow_test.java
 layout: document
 redirect_from:
-- /verify/library/Mod998ManyCombination_test.java
-- /verify/library/Mod998ManyCombination_test.java.html
-title: library/Mod998ManyCombination_test.java
+- /verify/library/Mod107_pow_test.java
+- /verify/library/Mod107_pow_test.java.html
+title: library/Mod107_pow_test.java
 ---
