@@ -30,7 +30,7 @@ data:
     \npackage library;\n\nimport java.util.*;\nimport library.Solver;\nimport library.Fps;\n\
     import library.Convolution;\n\npublic class Fps_random_test extends Solver {\n\
     \tpublic static void main(final String[] args) { main(args, new Fps_random_test());\
-    \ }\n\n\tpublic void solve() {\n\t\tRandom rnd = new Random(0);\n\t\tFpsOperator\
+    \ }\n\n\tpublic void solve() {\n\t\tRandom rnd = new Random();\n\t\tFpsOperator\
     \ op = new CnvFpsOperator(Convolution998.cnv);\n\t\tfor(int i = 0; i < 100; i\
     \ ++) {\n\t\t\tcheckMul(op, randomFps(op, rnd, rnd.nextInt(5000)), randomFps(op,\
     \ rnd, rnd.nextInt(5000)));\n\t\t\tcheckInv(op, randomFps(op, rnd, rnd.nextInt(5000)));\n\
@@ -62,7 +62,7 @@ data:
   isVerificationFile: true
   path: library/Fps_random_test.java
   requiredBy: []
-  timestamp: '2022-10-31 15:25:53+09:00'
+  timestamp: '2022-10-31 15:43:25+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Fps_random_test.java

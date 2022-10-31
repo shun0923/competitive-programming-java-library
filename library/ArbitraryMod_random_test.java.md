@@ -27,7 +27,7 @@ data:
     \npackage library;\n\nimport java.util.*;\nimport library.Solver;\nimport library.ArbitraryMod;\n\
     \npublic class ArbitraryMod_random_test extends Solver {\n\tpublic static void\
     \ main(final String[] args) { main(args, new ArbitraryMod_random_test()); }\n\n\
-    \tpublic void solve() {\n\t\tRandom rnd = new Random(0);\n\t\tfor(int i = 0; i\
+    \tpublic void solve() {\n\t\tRandom rnd = new Random();\n\t\tfor(int i = 0; i\
     \ < 10000000; i ++) checkAdd(rnd.nextInt(), rnd.nextInt(), rnd.nextInt(Integer.MAX_VALUE\
     \ - 1) + 1);\n\t\tfor(int i = 0; i < 10000000; i ++) checkMul(rnd.nextInt(), rnd.nextInt(),\
     \ rnd.nextInt(Integer.MAX_VALUE - 1) + 1);\n\t\tfor(int i = 0; i < 10000000; i\
@@ -49,7 +49,7 @@ data:
   isVerificationFile: true
   path: library/ArbitraryMod_random_test.java
   requiredBy: []
-  timestamp: '2022-10-31 15:25:53+09:00'
+  timestamp: '2022-10-31 15:43:25+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/ArbitraryMod_random_test.java
