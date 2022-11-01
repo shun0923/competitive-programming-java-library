@@ -197,8 +197,30 @@ abstract class FpsOperator {
 
 	// O(L)
 	public final Fps zero(final int l) { return new Fps(this, l); }
-	public final Fps one(final int l) { return setEquals(new Fps(this, l), 0, 1); }
-	public final Fps constant(final long c, final int l) { return setEquals(new Fps(this, l), 0, c); }
+	public final Fps one(final int l) { return setEquals(zero(l), 0, 1); }
+	public final Fps constant(final long c, final int l) { return setEquals(zero(l), 0, c); }
+	public final Fps sparse(final int d, final long c, final int l) { return addEquals(one(l), d, c); } // 1+cx^d
+	public final Fps combi(final int d, final long c, final int n, final int l) { // (1+cx^d)^k
+		if(l == 0) return zero(l);
+		if(n == 1) return one(l);
+		Fps f = zero(l);
+		long pow = 1;
+		long mul = md.pow(c, d);
+		for(int i = 0, j = 0; j < l; i ++, j += d) {
+			f.a[j] = md.mul(md.C(n, i), pow);
+			pow = md.mul(pow, mul);
+		}
+		return f;
+	}
+	public final long eval(final Fps f, final long x) {
+		long ans = 0;
+		long pow = 1;
+		for(int i = 0; i < f.a.length; i ++) {
+			ans = md.add(ans, md.mul(f.a[i], pow));
+			pow = md.mul(pow, x);
+		}
+		return ans;
+	}
 
 	public final long eval(final Fps f, final long x) {
 		long ans = 0;
@@ -337,6 +359,15 @@ abstract class FpsOperator {
 	public final Fps powEquals(final Fps f, final long k) { f.a = pow(f, k).a; return f; }
 	public final Fps powShrink(final Fps f, final long k, final int l) {
 		return f.a.length == 0 ? zero(0) : shrink(pow(f, k, k > (l - 1) / (f.a.length - 1) ? l : (f.a.length - 1) * (int) k + 1));
+	}
+
+	// O(M(L)logN)
+	public final Fps mul(final Fps[] fs, final int l) {
+		if(fs.length == 0) return one(l);
+		Deque<Fps> dq = new ArrayDeque<>();
+		for(Fps f : fs) dq.add(f);
+		while(dq.size() != 1) dq.addLast(mulShrink(dq.removeFirst(), dq.removeFirst(), l));
+		return resize(dq.removeFirst(), l);
 	}
 
 	// O(L^2)
@@ -689,7 +720,7 @@ class Fps implements Comparable<Fps> {
 		return true;
 	}
 	@Override
-	public int compareTo(final Fps that) { return Arrays.compare(a, that.a); }
+	public int compareTo(final Fps that) { return Integer.compare(a.length, that.a.length); }
 
 	// O(L)
 	public final Fps resize(final int l) { return op.resizeEquals(this, l); }
