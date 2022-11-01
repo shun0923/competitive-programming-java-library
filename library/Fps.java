@@ -212,15 +212,6 @@ abstract class FpsOperator {
 		}
 		return f;
 	}
-	public final long eval(final Fps f, final long x) {
-		long ans = 0;
-		long pow = 1;
-		for(int i = 0; i < f.a.length; i ++) {
-			ans = md.add(ans, md.mul(f.a[i], pow));
-			pow = md.mul(pow, x);
-		}
-		return ans;
-	}
 
 	public final long eval(final Fps f, final long x) {
 		long ans = 0;
