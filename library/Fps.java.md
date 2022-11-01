@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
   - icon: ':heavy_check_mark:'
@@ -12,39 +12,39 @@ data:
     title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_addComposite_test.java
     title: library/Fps_addComposite_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_composite_test.java
     title: library/Fps_composite_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_divfloor_mod_test.java
     title: library/Fps_divfloor_mod_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_exp_test.java
     title: library/Fps_exp_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_inv_test.java
     title: library/Fps_inv_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_log_test.java
     title: library/Fps_log_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_mul_test.java
     title: library/Fps_mul_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_pow_test.java
     title: library/Fps_pow_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_random_test.java
     title: library/Fps_random_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -145,10 +145,7 @@ data:
     \ 0) return zero(l);\n\t\tif(n == 1) return one(l);\n\t\tFps f = zero(l);\n\t\t\
     long pow = 1;\n\t\tlong mul = md.pow(c, d);\n\t\tfor(int i = 0, j = 0; j < l;\
     \ i ++, j += d) {\n\t\t\tf.a[j] = md.mul(md.C(n, i), pow);\n\t\t\tpow = md.mul(pow,\
-    \ mul);\n\t\t}\n\t\treturn f;\n\t}\n\tpublic final long eval(final Fps f, final\
-    \ long x) {\n\t\tlong ans = 0;\n\t\tlong pow = 1;\n\t\tfor(int i = 0; i < f.a.length;\
-    \ i ++) {\n\t\t\tans = md.add(ans, md.mul(f.a[i], pow));\n\t\t\tpow = md.mul(pow,\
-    \ x);\n\t\t}\n\t\treturn ans;\n\t}\n\n\tpublic final long eval(final Fps f, final\
+    \ mul);\n\t\t}\n\t\treturn f;\n\t}\n\n\tpublic final long eval(final Fps f, final\
     \ long x) {\n\t\tlong ans = 0;\n\t\tlong pow = 1;\n\t\tfor(int i = 0; i < f.a.length;\
     \ i ++) {\n\t\t\tans = md.add(ans, md.mul(f.a[i], pow));\n\t\t\tpow = md.mul(pow,\
     \ x);\n\t\t}\n\t\treturn ans;\n\t}\n\n\tpublic final Fps resize(final Fps f, final\
@@ -515,8 +512,8 @@ data:
   isVerificationFile: false
   path: library/Fps.java
   requiredBy: []
-  timestamp: '2022-11-01 12:07:23+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-11-01 12:48:35+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Fps_log_test.java
   - library/Fps_divfloor_mod_test.java
