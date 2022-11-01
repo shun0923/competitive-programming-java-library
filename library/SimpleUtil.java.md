@@ -23,7 +23,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/CompressedWaveletMatrix.java
     title: library/CompressedWaveletMatrix.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Convolution.java
     title: library/Convolution.java
   - icon: ':heavy_check_mark:'
@@ -47,7 +47,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/FenwickTree.java
     title: library/FenwickTree.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Fps.java
     title: library/Fps.java
   - icon: ':heavy_check_mark:'

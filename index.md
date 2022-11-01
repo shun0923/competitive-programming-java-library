@@ -21,7 +21,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/CompressedWaveletMatrix.java
       title: library/CompressedWaveletMatrix.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Convolution.java
       title: library/Convolution.java
     - icon: ':heavy_check_mark:'
@@ -51,7 +51,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/FenwickTree.java
       title: library/FenwickTree.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Fps.java
       title: library/Fps.java
     - icon: ':heavy_check_mark:'
@@ -96,7 +96,7 @@ data:
     - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':heavy_check_mark:'
@@ -240,34 +240,34 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/FenwickTree_test.java
       title: library/FenwickTree_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Fps_addComposite_test.java
       title: library/Fps_addComposite_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Fps_composite_test.java
       title: library/Fps_composite_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Fps_divfloor_mod_test.java
       title: library/Fps_divfloor_mod_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Fps_exp_test.java
       title: library/Fps_exp_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Fps_inv_test.java
       title: library/Fps_inv_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Fps_log_test.java
       title: library/Fps_log_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Fps_mul_test.java
       title: library/Fps_mul_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Fps_pow_test.java
       title: library/Fps_pow_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Fps_random_test.java
       title: library/Fps_random_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Fps_sqrt_test.java
       title: library/Fps_sqrt_test.java
     - icon: ':heavy_check_mark:'
