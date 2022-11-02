@@ -6,6 +6,32 @@ import library.Util;
 import library.Mod;
 
 class ExtendedMath {
+	long[] slideMin(long[] array, int len) { // O(N) N=len
+		SimpleUtil.nonNegativeCheck(len);
+		Deque<Integer> s = new ArrayDeque<>();
+		long slideMin[] = new long[array.length - len + 1];
+		for(int i = 0; i < array.length; i ++) {
+			while(!s.isEmpty() && array[s.getLast()] >= array[i]) s.removeLast();
+			s.addLast(i);
+			while(!s.isEmpty() && s.getFirst() + len <= i) s.removeFirst();
+			slideMin[Math.max(0, i - len + 1)] = array[s.getFirst()];
+		}
+		return slideMin;
+	}
+	// O(NlogN)
+	int[] lis(long[] a) { return lis(a, true); }
+	int[] lis(long[] a, boolean increasing) {
+		int len = a.length;
+		long increase[] = new long[len];
+		Arrays.fill(increase, increasing ? SimpleUtil.INF : - SimpleUtil.INF);
+		int lis[] = new int[len];
+		for(int i = 0; i < len; i ++) {
+			lis[i] = Util.cntBS(increase, a[i], increasing, !increasing, false) + 1;
+			increase[lis[i] - 1] = a[i];
+		}
+		return lis;
+	}
+
 	private static final int signum(long x) { return x == 0 ? 0 : x > 0 ? 1 : -1; }
 	public static final int quadrant[][] = {{6, 5, 4}, {7, 0, 3}, {8, 1, 2}};
 	public static final int quadrant2[][] = {{0, 8, 7}, {1, 4, 6}, {2, 3, 5}};
