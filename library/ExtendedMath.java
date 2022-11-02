@@ -3,6 +3,7 @@ package library;
 import java.util.*;
 import library.SimpleUtil;
 import library.Util;
+import library.Pair;
 import library.Mod;
 
 class ExtendedMath {
