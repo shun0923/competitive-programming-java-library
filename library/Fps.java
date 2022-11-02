@@ -20,6 +20,9 @@ class CnvFpsOperator extends FpsOperator { // M(N)=NlogN
 	public final Fps butterflyInv(final Fps f) { return butterflyInv(f, f.a.length); }
 	public final Fps butterflyInv(final Fps f, int l) { return butterflyInvEquals(resize(f, l)); }
 	public final Fps butterflyInvEquals(final Fps f) { cnv.butterflyInv(f.a); return f; }
+	public final Fps doubling(final Fps f) { return doubling(f, f.a.length); }
+	public final Fps doubling(final Fps f, int l) { return doublingEquals(resize(f, l)); }
+	public final Fps doublingEquals(final Fps f) { cnv.doubling(f.a); return f; }
 
 	// O(M(L))
 	public final Fps mul(final Fps f, final Fps g, final int l) { return new Fps(this, cnv.cnv(f.a, g.a, l)); }

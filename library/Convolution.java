@@ -148,7 +148,7 @@ class Convolution { // M=MOD
 		final long b2[] = new long[len << 1];
 		System.arraycopy(b, 0, b2, len, len);
 		System.arraycopy(a, 0, b2, 0, len);
-		return b;
+		return b2;
 	}
 }
 final class Convolution998 extends Convolution { // M=MOD
