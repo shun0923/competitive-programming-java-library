@@ -7,7 +7,10 @@ data:
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/TwoSat.java
+    title: library/TwoSat.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: library/Scc_graph_test.java
@@ -76,7 +79,8 @@ data:
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/Scc.java
-  requiredBy: []
+  requiredBy:
+  - library/TwoSat.java
   timestamp: '2022-10-05 21:11:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

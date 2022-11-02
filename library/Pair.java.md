@@ -5,6 +5,9 @@ data:
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/ExtendedMath.java
+    title: library/ExtendedMath.java
   - icon: ':heavy_check_mark:'
     path: library/Swag.java
     title: library/Swag.java
@@ -166,6 +169,7 @@ data:
   requiredBy:
   - library/TemplateSwag.java
   - library/Swag.java
+  - library/ExtendedMath.java
   timestamp: '2022-10-05 21:11:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

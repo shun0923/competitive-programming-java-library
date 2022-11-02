@@ -95,6 +95,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/SegmentTree.java
     title: library/SegmentTree.java
+  - icon: ':warning:'
+    path: library/Select.java
+    title: library/Select.java
   - icon: ':heavy_check_mark:'
     path: library/SparseTable.java
     title: library/SparseTable.java
@@ -134,6 +137,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Trie.java
     title: library/Trie.java
+  - icon: ':warning:'
+    path: library/TwoSat.java
+    title: library/TwoSat.java
   - icon: ':heavy_check_mark:'
     path: library/UnionFind.java
     title: library/UnionFind.java
@@ -399,6 +405,7 @@ data:
   path: library/SimpleUtil.java
   requiredBy:
   - library/Bfs.java
+  - library/Select.java
   - library/Lca.java
   - library/TemplateSwag.java
   - library/TemplateDijkstra.java
@@ -440,6 +447,7 @@ data:
   - library/Permutation.java
   - library/TemplateSparseTable.java
   - library/ExtendedMath.java
+  - library/TwoSat.java
   - library/UnionFind.java
   - library/Fps.java
   - library/SuffixArray.java

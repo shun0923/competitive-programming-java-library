@@ -4,6 +4,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
+  - icon: ':heavy_check_mark:'
+    path: library/Pair.java
+    title: library/Pair.java
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
@@ -26,9 +29,9 @@ data:
     , line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.Util;\nimport library.Mod;\n\nclass ExtendedMath {\n\tlong[] slideMin(long[]\
-    \ array, int len) { // O(N) N=len\n\t\tSimpleUtil.nonNegativeCheck(len);\n\t\t\
-    Deque<Integer> s = new ArrayDeque<>();\n\t\tlong slideMin[] = new long[array.length\
+    \ library.Util;\nimport library.Pair;\nimport library.Mod;\n\nclass ExtendedMath\
+    \ {\n\tlong[] slideMin(long[] array, int len) { // O(N) N=len\n\t\tSimpleUtil.nonNegativeCheck(len);\n\
+    \t\tDeque<Integer> s = new ArrayDeque<>();\n\t\tlong slideMin[] = new long[array.length\
     \ - len + 1];\n\t\tfor(int i = 0; i < array.length; i ++) {\n\t\t\twhile(!s.isEmpty()\
     \ && array[s.getLast()] >= array[i]) s.removeLast();\n\t\t\ts.addLast(i);\n\t\t\
     \twhile(!s.isEmpty() && s.getFirst() + len <= i) s.removeFirst();\n\t\t\tslideMin[Math.max(0,\
@@ -172,11 +175,12 @@ data:
   dependsOn:
   - library/SimpleUtil.java
   - library/Util.java
+  - library/Pair.java
   - library/Mod.java
   isVerificationFile: false
   path: library/ExtendedMath.java
   requiredBy: []
-  timestamp: '2022-11-02 12:49:39+09:00'
+  timestamp: '2022-11-02 13:06:34+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/ExtendedMath.java

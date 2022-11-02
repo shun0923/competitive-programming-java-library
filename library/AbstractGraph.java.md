@@ -41,6 +41,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TopologicalSort.java
     title: library/TopologicalSort.java
+  - icon: ':warning:'
+    path: library/TwoSat.java
+    title: library/TwoSat.java
   - icon: ':heavy_check_mark:'
     path: library/UnionFind.java
     title: library/UnionFind.java
@@ -398,6 +401,7 @@ data:
   - library/WeightedLca.java
   - library/Scc.java
   - library/Dijkstra.java
+  - library/TwoSat.java
   - library/UnionFind.java
   - library/BellmanFord.java
   timestamp: '2022-10-05 21:11:17+09:00'

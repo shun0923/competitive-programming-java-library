@@ -75,6 +75,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/LcpArray.java
       title: library/LcpArray.java
+    - icon: ':warning:'
+      path: library/Mo.java
+      title: library/Mo.java
     - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
@@ -103,11 +106,17 @@ data:
       path: library/SegmentTree.java
       title: library/SegmentTree.java
     - icon: ':warning:'
+      path: library/Select.java
+      title: library/Select.java
+    - icon: ':warning:'
       path: library/SimpleUtil.java
       title: library/SimpleUtil.java
     - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java
+    - icon: ':warning:'
+      path: library/Sort.java
+      title: library/Sort.java
     - icon: ':heavy_check_mark:'
       path: library/SparseTable.java
       title: library/SparseTable.java
@@ -147,6 +156,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Trie.java
       title: library/Trie.java
+    - icon: ':warning:'
+      path: library/TwoSat.java
+      title: library/TwoSat.java
     - icon: ':heavy_check_mark:'
       path: library/UnionFind.java
       title: library/UnionFind.java
