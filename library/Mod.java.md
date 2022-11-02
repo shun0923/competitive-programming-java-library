@@ -14,9 +14,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ExtendedConvolution.java
     title: library/ExtendedConvolution.java
+  - icon: ':warning:'
+    path: library/ExtendedMath.java
+    title: library/ExtendedMath.java
   - icon: ':heavy_check_mark:'
     path: library/Fps.java
     title: library/Fps.java
+  - icon: ':warning:'
+    path: library/Kitamasa.java
+    title: library/Kitamasa.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: library/DynamicSwag_test.java
@@ -182,7 +188,9 @@ data:
   requiredBy:
   - library/Convolution.java
   - library/ExtendedConvolution.java
+  - library/Kitamasa.java
   - library/ArbitraryMod.java
+  - library/ExtendedMath.java
   - library/Fps.java
   timestamp: '2022-10-29 00:33:53+09:00'
   verificationStatus: LIBRARY_ALL_AC

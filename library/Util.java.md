@@ -5,6 +5,9 @@ data:
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
   _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/ExtendedMath.java
+    title: library/ExtendedMath.java
   - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
@@ -1076,6 +1079,7 @@ data:
   path: library/Util.java
   requiredBy:
   - library/Solver.java
+  - library/ExtendedMath.java
   timestamp: '2022-10-05 21:11:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

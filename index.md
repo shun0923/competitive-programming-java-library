@@ -42,6 +42,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ExtendedConvolution.java
       title: library/ExtendedConvolution.java
+    - icon: ':warning:'
+      path: library/ExtendedMath.java
+      title: library/ExtendedMath.java
     - icon: ':heavy_check_mark:'
       path: library/FastInputStream.java
       title: library/FastInputStream.java
@@ -51,6 +54,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/FenwickTree.java
       title: library/FenwickTree.java
+    - icon: ':warning:'
+      path: library/FftConvolution.java
+      title: library/FftConvolution.java
     - icon: ':heavy_check_mark:'
       path: library/Fps.java
       title: library/Fps.java

@@ -44,9 +44,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ExtendedConvolution.java
     title: library/ExtendedConvolution.java
+  - icon: ':warning:'
+    path: library/ExtendedMath.java
+    title: library/ExtendedMath.java
   - icon: ':heavy_check_mark:'
     path: library/FenwickTree.java
     title: library/FenwickTree.java
+  - icon: ':warning:'
+    path: library/FftConvolution.java
+    title: library/FftConvolution.java
   - icon: ':heavy_check_mark:'
     path: library/Fps.java
     title: library/Fps.java
@@ -433,11 +439,13 @@ data:
   - library/Dijkstra.java
   - library/Permutation.java
   - library/TemplateSparseTable.java
+  - library/ExtendedMath.java
   - library/UnionFind.java
   - library/Fps.java
   - library/SuffixArray.java
   - library/TemplateDualSegmentTree.java
   - library/DualSegmentTree.java
+  - library/FftConvolution.java
   - library/DynamicSwag.java
   - library/BellmanFord.java
   timestamp: '2022-10-30 18:59:49+09:00'
