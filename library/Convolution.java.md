@@ -14,6 +14,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps.java
     title: library/Fps.java
+  - icon: ':warning:'
+    path: library/Kitamasa.java
+    title: library/Kitamasa.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: library/Convolution998_test.java
@@ -118,7 +121,7 @@ data:
     \ / (len << 1));\n\t\tfor(int i = 0; i < len; i ++) {\n\t\t\tb[i] = md.mul(b[i],\
     \ invLen, r);\n\t\t\tr = md.mul(r, zeta);\n\t\t}\n\n\t\tbutterfly(b);\n\t\tfinal\
     \ long b2[] = new long[len << 1];\n\t\tSystem.arraycopy(b, 0, b2, len, len);\n\
-    \t\tSystem.arraycopy(a, 0, b2, 0, len);\n\t\treturn b;\n\t}\n}\nfinal class Convolution998\
+    \t\tSystem.arraycopy(a, 0, b2, 0, len);\n\t\treturn b2;\n\t}\n}\nfinal class Convolution998\
     \ extends Convolution { // M=MOD\n\tpublic static final Convolution998 cnv = new\
     \ Convolution998();\n\tpublic Convolution998() { super(Mod998.md); }\n\n\tpublic\
     \ final long[] butterfly(final long[] a) { // O(NlogN)\n\t\tfinal int n = a.length;\n\
@@ -278,8 +281,9 @@ data:
   path: library/Convolution.java
   requiredBy:
   - library/ExtendedConvolution.java
+  - library/Kitamasa.java
   - library/Fps.java
-  timestamp: '2022-10-29 00:33:53+09:00'
+  timestamp: '2022-11-02 11:19:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Fps_log_test.java

@@ -54,6 +54,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Fps.java
       title: library/Fps.java
+    - icon: ':warning:'
+      path: library/Kitamasa.java
+      title: library/Kitamasa.java
     - icon: ':heavy_check_mark:'
       path: library/Kmp.java
       title: library/Kmp.java

@@ -10,7 +10,10 @@ data:
   - icon: ':warning:'
     path: library/SimpleUtil.java
     title: library/SimpleUtil.java
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/Kitamasa.java
+    title: library/Kitamasa.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: library/Fps_addComposite_test.java
@@ -67,6 +70,9 @@ data:
     \ }\n\tpublic final Fps butterflyInv(final Fps f) { return butterflyInv(f, f.a.length);\
     \ }\n\tpublic final Fps butterflyInv(final Fps f, int l) { return butterflyInvEquals(resize(f,\
     \ l)); }\n\tpublic final Fps butterflyInvEquals(final Fps f) { cnv.butterflyInv(f.a);\
+    \ return f; }\n\tpublic final Fps doubling(final Fps f) { return doubling(f, f.a.length);\
+    \ }\n\tpublic final Fps doubling(final Fps f, int l) { return doublingEquals(resize(f,\
+    \ l)); }\n\tpublic final Fps doublingEquals(final Fps f) { cnv.doubling(f.a);\
     \ return f; }\n\n\t// O(M(L))\n\tpublic final Fps mul(final Fps f, final Fps g,\
     \ final int l) { return new Fps(this, cnv.cnv(f.a, g.a, l)); }\n\tpublic final\
     \ Fps inv(Fps f, final int l) {\n\t\tif(l <= NAIVE_INV_THRESHOLD) return naiveInv(f,\
@@ -511,8 +517,9 @@ data:
   - library/Convolution.java
   isVerificationFile: false
   path: library/Fps.java
-  requiredBy: []
-  timestamp: '2022-11-01 12:48:35+09:00'
+  requiredBy:
+  - library/Kitamasa.java
+  timestamp: '2022-11-02 11:19:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Fps_log_test.java
