@@ -7,7 +7,18 @@ import library.Pair;
 import library.Mod;
 
 class ExtendedMath {
-	long[] slideMin(long[] array, int len) { // O(N) N=len
+	public static final int functional(int[] next, int x, long q) { // O(N)
+		long visited[] = new long[next.length];
+		Arrays.fill(visited, -1);
+		visited[x] = 0;
+		for(long i = 1; i <= q; i ++) {
+			x = next[x];
+			if(visited[x] >= 0 && q >= next.length + i) q = (q - i) % (i - visited[x]) + i;
+			else visited[x] = i;
+		}
+		return x;
+	}
+	public static final long[] slideMin(long[] array, int len) { // O(N) N=len
 		SimpleUtil.nonNegativeCheck(len);
 		Deque<Integer> s = new ArrayDeque<>();
 		long slideMin[] = new long[array.length - len + 1];
@@ -20,8 +31,8 @@ class ExtendedMath {
 		return slideMin;
 	}
 	// O(NlogN)
-	int[] lis(long[] a) { return lis(a, true); }
-	int[] lis(long[] a, boolean increasing) {
+	public static final int[] lis(long[] a) { return lis(a, true); }
+	public static final int[] lis(long[] a, boolean increasing) {
 		int len = a.length;
 		long increase[] = new long[len];
 		Arrays.fill(increase, increasing ? SimpleUtil.INF : - SimpleUtil.INF);
