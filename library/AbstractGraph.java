@@ -64,7 +64,7 @@ abstract class AbstractGraph<Node extends AbstractNode<Edge>, Edge extends Abstr
 abstract class ListGraph<Node extends ListNode<Edge>, Edge extends AbstractEdge<Edge>> extends AbstractGraph<Node, Edge> {
 	public ListGraph(final int numNode, final boolean directed) { super(numNode, directed); }
 }
-class UnweightedListGraph extends ListGraph<UnweightedListNode, UnweightedEdge> {
+final class UnweightedListGraph extends ListGraph<UnweightedListNode, UnweightedEdge> {
 	public UnweightedListGraph(final int numNode, final boolean directed) { super(numNode, directed); }
 	@Override protected final UnweightedListNode createNode(final int id) { return new UnweightedListNode(id); }
 	@Override protected final UnweightedListNode[] createNodes(final int size) { return new UnweightedListNode[size]; }
@@ -73,7 +73,7 @@ class UnweightedListGraph extends ListGraph<UnweightedListNode, UnweightedEdge> 
 	@Override public UnweightedListNode[] nodes() { return super.nodes(); }
 	@Override public UnweightedListNode[] reverseNodes() { return super.reverseNodes(); }
 }
-class WeightedListGraph extends ListGraph<WeightedListNode, WeightedEdge> {
+final class WeightedListGraph extends ListGraph<WeightedListNode, WeightedEdge> {
 	public WeightedListGraph(final int numNode, final boolean directed) { super(numNode, directed); }
 	@Override protected final WeightedListNode createNode(final int id) { return new WeightedListNode(id); }
 	@Override protected final WeightedListNode[] createNodes(final int size) { return new WeightedListNode[size]; }
@@ -82,7 +82,7 @@ class WeightedListGraph extends ListGraph<WeightedListNode, WeightedEdge> {
 	@Override public WeightedListNode[] nodes() { return super.nodes(); }
 	@Override public WeightedListNode[] reverseNodes() { return super.reverseNodes(); }
 }
-class TemplateListGraph<T> extends ListGraph<TemplateListNode<T>, TemplateEdge<T>> {
+final class TemplateListGraph<T> extends ListGraph<TemplateListNode<T>, TemplateEdge<T>> {
 	public TemplateListGraph(final int numNode, final boolean directed) { super(numNode, directed); }
 	@Override protected final TemplateListNode<T> createNode(final int id) { return new TemplateListNode<T>(id); }
 	@Override @SuppressWarnings("unchecked") protected final TemplateListNode<T>[] createNodes(final int size) { return new TemplateListNode[size]; }
@@ -91,7 +91,7 @@ class TemplateListGraph<T> extends ListGraph<TemplateListNode<T>, TemplateEdge<T
 	@Override public TemplateListNode<T>[] nodes() { return super.nodes(); }
 	@Override public TemplateListNode<T>[] reverseNodes() { return super.reverseNodes(); }
 }
-class ComparableTemplateListGraph<T extends Comparable<T>> extends ListGraph<ComparableTemplateListNode<T>, ComparableTemplateEdge<T>> {
+final class ComparableTemplateListGraph<T extends Comparable<T>> extends ListGraph<ComparableTemplateListNode<T>, ComparableTemplateEdge<T>> {
 	public ComparableTemplateListGraph(final int numNode, final boolean directed) { super(numNode, directed); }
 	@Override protected final ComparableTemplateListNode<T> createNode(final int id) { return new ComparableTemplateListNode<T>(id); }
 	@Override @SuppressWarnings("unchecked") protected final ComparableTemplateListNode<T>[] createNodes(final int size) { return new ComparableTemplateListNode[size]; }
@@ -103,7 +103,7 @@ class ComparableTemplateListGraph<T extends Comparable<T>> extends ListGraph<Com
 abstract class SetGraph<Node extends SetNode<Edge>, Edge extends AbstractEdge<Edge>> extends AbstractGraph<Node, Edge> {
 	public SetGraph(final int numNode, final boolean directed) { super(numNode, directed); }
 }
-class UnweightedSetGraph extends SetGraph<UnweightedSetNode, UnweightedEdge> {
+final class UnweightedSetGraph extends SetGraph<UnweightedSetNode, UnweightedEdge> {
 	public UnweightedSetGraph(final int numNode, final boolean directed) { super(numNode, directed); }
 	@Override protected final UnweightedSetNode createNode(final int id) { return new UnweightedSetNode(id); }
 	@Override protected final UnweightedSetNode[] createNodes(final int size) { return new UnweightedSetNode[size]; }
@@ -112,7 +112,7 @@ class UnweightedSetGraph extends SetGraph<UnweightedSetNode, UnweightedEdge> {
 	@Override public UnweightedSetNode[] nodes() { return super.nodes(); }
 	@Override public UnweightedSetNode[] reverseNodes() { return super.reverseNodes(); }
 }
-class WeightedSetGraph extends SetGraph<WeightedSetNode, WeightedEdge> {
+final class WeightedSetGraph extends SetGraph<WeightedSetNode, WeightedEdge> {
 	public WeightedSetGraph(final int numNode, final boolean directed) { super(numNode, directed); }
 	@Override protected final WeightedSetNode createNode(final int id) { return new WeightedSetNode(id); }
 	@Override protected final WeightedSetNode[] createNodes(final int size) { return new WeightedSetNode[size]; }
@@ -121,7 +121,7 @@ class WeightedSetGraph extends SetGraph<WeightedSetNode, WeightedEdge> {
 	@Override public WeightedSetNode[] nodes() { return super.nodes(); }
 	@Override public WeightedSetNode[] reverseNodes() { return super.reverseNodes(); }
 }
-class TemplateSetGraph<T> extends SetGraph<TemplateSetNode<T>, TemplateEdge<T>> {
+final class TemplateSetGraph<T> extends SetGraph<TemplateSetNode<T>, TemplateEdge<T>> {
 	public TemplateSetGraph(final int numNode, final boolean directed) { super(numNode, directed); }
 	@Override protected final TemplateSetNode<T> createNode(final int id) { return new TemplateSetNode<T>(id); }
 	@Override @SuppressWarnings("unchecked") protected final TemplateSetNode<T>[] createNodes(final int size) { return new TemplateSetNode[size]; }
@@ -130,7 +130,7 @@ class TemplateSetGraph<T> extends SetGraph<TemplateSetNode<T>, TemplateEdge<T>> 
 	@Override public TemplateSetNode<T>[] nodes() { return super.nodes(); }
 	@Override public TemplateSetNode<T>[] reverseNodes() { return super.reverseNodes(); }
 }
-class ComparableTemplateSetGraph<T extends Comparable<T>> extends SetGraph<ComparableTemplateSetNode<T>, ComparableTemplateEdge<T>> {
+final class ComparableTemplateSetGraph<T extends Comparable<T>> extends SetGraph<ComparableTemplateSetNode<T>, ComparableTemplateEdge<T>> {
 	public ComparableTemplateSetGraph(final int numNode, final boolean directed) { super(numNode, directed); }
 	@Override protected final ComparableTemplateSetNode<T> createNode(final int id) { return new ComparableTemplateSetNode<T>(id); }
 	@Override @SuppressWarnings("unchecked") protected final ComparableTemplateSetNode<T>[] createNodes(final int size) { return new ComparableTemplateSetNode[size]; }
@@ -153,35 +153,35 @@ interface UnweightedNode extends AbstractNode<UnweightedEdge> { public boolean a
 interface WeightedNode extends AbstractNode<WeightedEdge> { public boolean add(final int source, final int target, final long cost); }
 interface TemplateNode<T> extends AbstractNode<TemplateEdge<T>> { public boolean add(final int source, final int target, final T cost); }
 interface ComparableTemplateNode<T extends Comparable<T>> extends AbstractNode<ComparableTemplateEdge<T>> { public boolean add(final int source, final int target, final T cost); }
-class UnweightedListNode extends ListNode<UnweightedEdge> implements UnweightedNode {
+final class UnweightedListNode extends ListNode<UnweightedEdge> implements UnweightedNode {
 	public UnweightedListNode(final int id) { super(id); }
 	@Override public final boolean add(final int source, final int target) { return add(new UnweightedEdge(source, target)); }
 }
-class WeightedListNode extends ListNode<WeightedEdge> implements WeightedNode {
+final class WeightedListNode extends ListNode<WeightedEdge> implements WeightedNode {
 	public WeightedListNode(final int id) { super(id); }
 	@Override public final boolean add(final int source, final int target, final long cost) { return add(new WeightedEdge(source, target, cost)); }
 }
-class TemplateListNode<T> extends ListNode<TemplateEdge<T>> implements TemplateNode<T> {
+final class TemplateListNode<T> extends ListNode<TemplateEdge<T>> implements TemplateNode<T> {
 	public TemplateListNode(final int id) { super(id); }
 	@Override public final boolean add(final int source, final int target, final T cost) { return add(new TemplateEdge<T>(source, target, cost)); }
 }
-class ComparableTemplateListNode<T extends Comparable<T>> extends ListNode<ComparableTemplateEdge<T>> implements ComparableTemplateNode<T> {
+final class ComparableTemplateListNode<T extends Comparable<T>> extends ListNode<ComparableTemplateEdge<T>> implements ComparableTemplateNode<T> {
 	public ComparableTemplateListNode(final int id) { super(id); }
 	@Override public final boolean add(final int source, final int target, final T cost) { return add(new ComparableTemplateEdge<T>(source, target, cost)); }
 }
-class UnweightedSetNode extends SetNode<UnweightedEdge> implements UnweightedNode {
+final class UnweightedSetNode extends SetNode<UnweightedEdge> implements UnweightedNode {
 	public UnweightedSetNode(final int id) { super(id); }
 	@Override public final boolean add(final int source, final int target) { return add(new UnweightedEdge(source, target)); }
 }
-class WeightedSetNode extends SetNode<WeightedEdge> implements WeightedNode {
+final class WeightedSetNode extends SetNode<WeightedEdge> implements WeightedNode {
 	public WeightedSetNode(final int id) { super(id); }
 	@Override public final boolean add(final int source, final int target, final long cost) { return add(new WeightedEdge(source, target, cost)); }
 }
-class TemplateSetNode<T> extends SetNode<TemplateEdge<T>> implements TemplateNode<T> {
+final class TemplateSetNode<T> extends SetNode<TemplateEdge<T>> implements TemplateNode<T> {
 	public TemplateSetNode(final int id) { super(id); }
 	@Override public final boolean add(final int source, final int target, final T cost) { return add(new TemplateEdge<T>(source, target, cost)); }
 }
-class ComparableTemplateSetNode<T extends Comparable<T>> extends SetNode<ComparableTemplateEdge<T>> implements ComparableTemplateNode<T> {
+final class ComparableTemplateSetNode<T extends Comparable<T>> extends SetNode<ComparableTemplateEdge<T>> implements ComparableTemplateNode<T> {
 	public ComparableTemplateSetNode(final int id) { super(id); }
 	@Override public final boolean add(final int source, final int target, final T cost) { return add(new ComparableTemplateEdge<T>(source, target, cost)); }
 }
@@ -195,7 +195,7 @@ abstract class AbstractEdge<Edge extends AbstractEdge> {
 	@Override public abstract String toString();
 	@Override public abstract boolean equals(final Object obj);
 }
-class UnweightedEdge extends AbstractEdge<UnweightedEdge> implements Comparable<UnweightedEdge> {
+final class UnweightedEdge extends AbstractEdge<UnweightedEdge> implements Comparable<UnweightedEdge> {
 	public UnweightedEdge(final int source, final int target) { super(source, target); }
 	public UnweightedEdge(final int source, final int target, final UnweightedEdge reversed) { this(source, target); this.reversed = reversed; }
 
@@ -219,7 +219,7 @@ class UnweightedEdge extends AbstractEdge<UnweightedEdge> implements Comparable<
 		return c;
 	}
 }
-class WeightedEdge extends AbstractEdge<WeightedEdge> implements Comparable<WeightedEdge> {
+final class WeightedEdge extends AbstractEdge<WeightedEdge> implements Comparable<WeightedEdge> {
 	public long cost;
 	public WeightedEdge(final int source, final int target, final long cost) { super(source, target); this.cost = cost; }
 	public WeightedEdge(final int source, final int target, final long cost, final WeightedEdge reversed) { this(source, target, cost); this.reversed = reversed; }
@@ -245,7 +245,7 @@ class WeightedEdge extends AbstractEdge<WeightedEdge> implements Comparable<Weig
 		return c;
 	}
 }
-class TemplateEdge<T> extends AbstractEdge<TemplateEdge<T>> {
+final class TemplateEdge<T> extends AbstractEdge<TemplateEdge<T>> {
 	public T cost;
 	public TemplateEdge(final int source, final int target, final T cost) { super(source, target); this.cost = cost; }
 	public TemplateEdge(final int source, final int target, final T cost, final TemplateEdge<T> reversed) { this(source, target, cost); this.reversed = reversed; }
@@ -266,7 +266,7 @@ class TemplateEdge<T> extends AbstractEdge<TemplateEdge<T>> {
 		return true;
 	}
 }
-class ComparableTemplateEdge<T extends Comparable<T>> extends AbstractEdge<ComparableTemplateEdge<T>> implements Comparable<ComparableTemplateEdge<T>> {
+final class ComparableTemplateEdge<T extends Comparable<T>> extends AbstractEdge<ComparableTemplateEdge<T>> implements Comparable<ComparableTemplateEdge<T>> {
 	public T cost;
 	public ComparableTemplateEdge(final int source, final int target, final T cost) { super(source, target); this.cost = cost; }
 	public ComparableTemplateEdge(final int source, final int target, final T cost, final ComparableTemplateEdge<T> reversed) { this(source, target, cost); this.reversed = reversed; }

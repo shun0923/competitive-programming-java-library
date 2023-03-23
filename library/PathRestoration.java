@@ -15,8 +15,10 @@ final class PathRestoration {
 		for(int i = 0, j = path.length - 1; i < path.length; i ++, j --) path[i] = pathList.get(j);
 		return path;
 	}
-	public static final <Edge extends AbstractEdge<Edge>> Node pathEdge(final List<Edge> pathEdge, final int[] prv, final Edge[] prvEdge, final int start, final int goal) {
+	@SuppressWarnings("unchecked")
+	public static final <Edge extends AbstractEdge<Edge>> List<Edge> pathEdge(final int[] prv, final Edge[] prvEdge, final int start, final int goal) {
 		int path[] = path(prv, start, goal);
+		List<Edge> pathEdge = new ArrayList<Edge>();
 		for(int i = 1; i < path.length; i ++) pathEdge.add(prvEdge[path[i]]);
 		return pathEdge;
 	}

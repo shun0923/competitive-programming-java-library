@@ -32,13 +32,14 @@ final class Dijkstra {
 
 	// O((E+V)logV)
 	public static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[] dist(final Graph g, final int start) { return dist(g, start, null, null); }
+	public static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[] dist(final Graph g, final int start, final int[] prv) { return dist(g, start, prv, null); }
 	public static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[] dist(final Graph g, final int start, final int[] prv, final WeightedEdge[] prvEdge) { return dist(g.numNode, g.nodes(), start, prv, prvEdge); }
 	public static final long[] dist(final int numNode, final WeightedNode[] nodes, final int start) { return dist(numNode, nodes, start, null, null); }
+	public static final long[] dist(final int numNode, final WeightedNode[] nodes, final int[] prv, final int start) { return dist(numNode, nodes, start, prv, null); }
 	public static final long[] dist(final int numNode, final WeightedNode[] nodes, final int start, final int[] prv, final WeightedEdge[] prvEdge) {
 		FastIO.rangeCheck(start, numNode);
 		long dist[] = new long[numNode];
-		boolean memoize = prv != null;
-		if(memoize) Arrays.fill(prv, -1);
+		if(prv != null) Arrays.fill(prv, -1);
 		Queue<Dist> q = new PriorityQueue<>();
 
 		Arrays.fill(dist, FastIO.INF);
@@ -52,10 +53,8 @@ final class Dijkstra {
 				if(dist[e.target] > updated) {
 					dist[e.target] = updated;
 					q.add(new Dist(e.target, updated));
-					if(memoize) {
-						prv[e.target] = e.source;
-						prvEdge[e.target] = e;
-					}
+					if(prv != null) prv[e.target] = e.source;
+					if(prvEdge != null) prvEdge[e.target] = e;
 				}
 			}
 		}
@@ -64,14 +63,15 @@ final class Dijkstra {
 
 	// O(V^2)
 	public static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[] distForDenseGraph(final Graph g, final int start) { return distForDenseGraph(g, start, null, null); }
-	public static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[] distForDenseGraph(final Graph g, final int start, int[] prv, WeightedEdge[] prvEdge) { return distForDenseGraph(g.numNode, g.nodes(), start, prv, prvEdge); }
+	public static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[] distForDenseGraph(final Graph g, final int start, final int[] prv) { return distForDenseGraph(g, start, prv, null); }
+	public static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[] distForDenseGraph(final Graph g, final int start, final int[] prv, final WeightedEdge[] prvEdge) { return distForDenseGraph(g.numNode, g.nodes(), start, prv, prvEdge); }
 	public static final long[] distForDenseGraph(final int numNode, final WeightedNode[] nodes, final int start) { return distForDenseGraph(numNode, nodes, start, null, null); }
+	public static final long[] distForDenseGraph(final int numNode, final WeightedNode[] nodes, final int start, final int[] prv) { return distForDenseGraph(numNode, nodes, start, prv, null); }
 	public static final long[] distForDenseGraph(final int numNode, final WeightedNode[] nodes, final int start, final int[] prv, final WeightedEdge[] prvEdge) {
 		FastIO.rangeCheck(start, numNode);
 		long dist[] = new long[numNode];
 		boolean visited[] = new boolean[numNode];
-		boolean memoize = prv != null;
-		if(memoize) Arrays.fill(prv, -1);
+		if(prv != null) Arrays.fill(prv, -1);
 
 		Arrays.fill(dist, FastIO.INF);
 		dist[start] = 0;
@@ -91,10 +91,8 @@ final class Dijkstra {
 				long updated = dist[e.source] + e.cost;
 				if(dist[e.target] > updated) {
 					dist[e.target] = updated;
-					if(memoize) {
-						prv[e.target] = e.source;
-						prvEdge[e.target] = e;
-					}
+					if(prv != null) prv[e.target] = e.source;
+					if(prvEdge != null) prvEdge[e.target] = e;
 				}
 			}
 		}

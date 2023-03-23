@@ -15,12 +15,14 @@ public class Dijkstra_pathEdge_test extends Solver {
 		int m = ni();
 		int s = ni();
 		int t = ni();
-		ArrayWeightedGraph g = new ArrayWeightedGraph(n, true);
+		var g = new WeightedListGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
-		long x = Dijkstra.dist(g, s, true)[t];
+		int prv[] = new int[n];
+		WeightedEdge prvEdge[] = new WeightedEdge[n];
+		long x = Dijkstra.dist(g, s, prv, prvEdge)[t];
 		if(isINF(x)) prtln(-1);
 		else {
-			ArrayWeightedNode path = Dijkstra.pathEdge(s, t);
+			var path = PathRestoration.pathEdge(prv, prvEdge, s, t);
 			prtln(x, path.size());
 			for(WeightedEdge e : path) prtln(e.source, e.target);
 		}

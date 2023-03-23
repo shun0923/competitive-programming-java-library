@@ -15,12 +15,13 @@ public class Dijkstra_path_test extends Solver {
 		int m = ni();
 		int s = ni();
 		int t = ni();
-		ArrayWeightedGraph g = new ArrayWeightedGraph(n, true);
+		var g = new WeightedListGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
-		long x = Dijkstra.dist(g, s, true)[t];
+		int prv[] = new int[n];
+		long x = Dijkstra.dist(g, s, prv)[t];
 		if(isINF(x)) prtln(-1);
 		else {
-			int path[] = Dijkstra.path(s, t);
+			int path[] = PathRestoration.path(prv, s, t);
 			prtln(x, path.length - 1);
 			for(int i = 0; i < path.length - 1; i ++) prtln(path[i], path[i + 1]);
 		}

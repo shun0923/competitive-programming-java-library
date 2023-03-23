@@ -11,7 +11,7 @@ public class Dijkstra_forDenseGraph_test extends Solver {
 
 	public void solve() {
 		int n = ni();
-		ArrayWeightedGraph g = new ArrayWeightedGraph(n, true);
+		var g = new WeightedListGraph(n, true);
 		for(int i = 0; i < n; i ++) {
 			int u = ni();
 			int k = ni();

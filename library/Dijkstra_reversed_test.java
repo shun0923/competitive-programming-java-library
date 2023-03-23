@@ -17,7 +17,7 @@ public class Dijkstra_reversed_test extends Solver {
 			int g1 = ni() - 1;
 			int g2 = ni() - 1;
 			if(n == 0) return;
-			var g = new ArrayWeightedGraph(n, true);
+			var g = new WeightedListGraph(n, true);
 			for(int i = 0; i < m; i ++) g.add(ni() - 1, ni() - 1, nl());
 			long distS[] = Dijkstra.dist(g, s);
 			long distG1[] = Dijkstra.dist(g.numNode, g.reverseNodes(), g1);
