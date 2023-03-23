@@ -43,7 +43,7 @@ data:
   isVerificationFile: true
   path: library/Kruskal_test.java
   requiredBy: []
-  timestamp: '2023-03-24 00:57:03+09:00'
+  timestamp: '2023-03-24 01:50:05+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/Kruskal_test.java

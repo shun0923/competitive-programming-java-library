@@ -81,7 +81,7 @@ data:
   isVerificationFile: false
   path: library/TemplateDijkstra.java
   requiredBy: []
-  timestamp: '2023-03-24 01:29:03+09:00'
+  timestamp: '2023-03-24 01:50:05+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/TemplateDijkstra_test.java

@@ -216,7 +216,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TemplateSwag_test.java
     title: library/TemplateSwag_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TopologicalSort_test.java
     title: library/TopologicalSort_test.java
   - icon: ':heavy_check_mark:'

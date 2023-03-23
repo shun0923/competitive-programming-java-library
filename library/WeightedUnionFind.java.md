@@ -65,7 +65,7 @@ data:
   isVerificationFile: false
   path: library/WeightedUnionFind.java
   requiredBy: []
-  timestamp: '2023-03-24 00:57:03+09:00'
+  timestamp: '2023-03-24 01:50:05+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/WeightedUnionFind_test.java

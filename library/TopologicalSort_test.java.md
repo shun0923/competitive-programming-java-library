@@ -7,14 +7,14 @@ data:
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TopologicalSort.java
     title: library/TopologicalSort.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://yukicoder.me/problems/no/468
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -33,8 +33,8 @@ data:
     package library;\n\nimport library.Solver;\nimport library.AbstractGraph;\nimport\
     \ library.TopologicalSort;\n\npublic class TopologicalSort_test extends Solver\
     \ {\n\tpublic static void main(final String[] args) { main(args, new TopologicalSort_test());\
-    \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tArrayWeightedGraph\
-    \ g = new ArrayWeightedGraph(n, true);\n\t\tfor(int i = 0; i < m; i ++) g.add(ni(),\
+    \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tvar\
+    \ g = new WeightedListGraph(n, true);\n\t\tfor(int i = 0; i < m; i ++) g.add(ni(),\
     \ ni(), nl());\n\t\tlong dist1[] = cal(n, g.nodes(), g.edges());\n\t\tlong dist2[]\
     \ = cal(n, g.reverseNodes(), g.reverseEdges());\n\t\tfor(int i = 0; i < n; i ++)\
     \ dist2[i] = dist1[0] - dist2[i];\n\t\tint cnt = 0;\n\t\tfor(int i = 0; i < n;\
@@ -51,8 +51,8 @@ data:
   isVerificationFile: true
   path: library/TopologicalSort_test.java
   requiredBy: []
-  timestamp: '2023-03-24 00:57:03+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-03-24 01:50:11+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/TopologicalSort_test.java
 layout: document

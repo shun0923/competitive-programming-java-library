@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: library/Bfs_test.java
   requiredBy: []
-  timestamp: '2023-03-24 01:05:34+09:00'
+  timestamp: '2023-03-24 01:50:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Bfs_test.java
