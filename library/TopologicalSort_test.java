@@ -12,7 +12,7 @@ public class TopologicalSort_test extends Solver {
 	public void solve() {
 		int n = ni();
 		int m = ni();
-		ArrayWeightedGraph g = new ArrayWeightedGraph(n, true);
+		var g = new WeightedListGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
 		long dist1[] = cal(n, g.nodes(), g.edges());
 		long dist2[] = cal(n, g.reverseNodes(), g.reverseEdges());
