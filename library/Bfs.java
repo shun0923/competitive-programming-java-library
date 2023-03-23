@@ -6,14 +6,11 @@ import library.AbstractGraph;
 import library.PathRestoration;
 
 final class Bfs {
-	private static int prv[];
-	private static UnweightedEdge prvEdge[];
-
 	// O(V)
-	public static final int[] dist(UnweightedGraph g, int start) { return dist(g, start, false); }
-	public static final int[] dist(UnweightedGraph g, int start, boolean memoize) { return dist(g.nodes(), start, memoize); }
-	public static final int[] dist(UnweightedNode[] nodes, int start) { return dist(nodes, start, false); }
-	public static final int[] dist(UnweightedNode[] nodes, int start, boolean memoize) {
+	public static final <Graph extends AbstractGraph<Node, Edge>, Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> int[] dist(Graph g, int start) { return dist(g, start, null, null); }
+	public static final <Graph extends AbstractGraph<Node, Edge>, Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> int[] dist(Graph g, int start, int[] prv, Edge[] prvEdge) { return dist(g.nodes(), start, prv, prvEdge); }
+	public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>int[] dist(Node[] nodes, int start) { return dist(nodes, start, null, null); }
+	public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> int[] dist(Node[] nodes, int start, int[] prv, Edge[] prvEdge) {
 		int numNode = nodes.length;
 		int dist[] = new int[numNode];
 		Arrays.fill(dist, -1);
@@ -21,18 +18,15 @@ final class Bfs {
 		int dq[] = new int[numNode];
 		int ptr = 0;
 		int size = 0;
-		if(memoize) {
-			prv = new int[numNode];
-			Arrays.fill(prv, -1);
-			prvEdge = new UnweightedEdge[numNode];
-		}
+		boolean memoize = prv != null;
+		if(memoize) Arrays.fill(prv, -1);
 
 		dq[size ++] = start;
 		dist[start] = 0;
 		visited[start] = true;
 		while(ptr != size) {
 			int crt = dq[ptr ++];
-			for(UnweightedEdge e : nodes[crt]) {
+			for(Edge e : nodes[crt]) {
 				if(!visited[e.target]) {
 					dist[e.target] = dist[e.source] + 1;
 					visited[e.target] = true;
@@ -46,6 +40,4 @@ final class Bfs {
 		}
 		return dist;
 	}
-	public static final int[] path(final int start, final int goal) { return PathRestoration.path(prv, start, goal); }
-	public static final ArrayUnweightedNode pathEdge(final int start, final int goal) { return PathRestoration.pathEdge(new ArrayUnweightedNode(-1), prv, prvEdge, start, goal); }
 }

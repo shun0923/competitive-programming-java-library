@@ -11,7 +11,7 @@ public class Bfs_test extends Solver {
 
 	public void solve() {
 		int n = ni();
-		ArrayUnweightedGraph g = new ArrayUnweightedGraph(n, true);
+		UnweightedListGraph g = new UnweightedListGraph(n, true);
 		for(int i = 0; i < n; i ++) {
 			int source = ni() - 1;
 			int k = ni();
