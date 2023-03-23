@@ -5,7 +5,7 @@ data:
     path: library/FastIO.java
     title: library/FastIO.java
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
   - icon: ':heavy_check_mark:'
@@ -63,7 +63,7 @@ data:
     path: library/WeightedUnionFind.java
     title: library/WeightedUnionFind.java
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/BellmanFord_reversed_test.java
     title: library/BellmanFord_reversed_test.java
   - icon: ':x:'

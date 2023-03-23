@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
   - icon: ':question:'
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: library/BellmanFord_test.java
   requiredBy: []
-  timestamp: '2023-03-24 00:57:03+09:00'
+  timestamp: '2023-03-24 01:05:34+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/BellmanFord_test.java

@@ -52,7 +52,7 @@ data:
   isVerificationFile: true
   path: library/Dijkstra_pathEdge_test.java
   requiredBy: []
-  timestamp: '2023-03-24 00:57:03+09:00'
+  timestamp: '2023-03-24 01:05:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Dijkstra_pathEdge_test.java

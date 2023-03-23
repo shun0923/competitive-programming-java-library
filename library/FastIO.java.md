@@ -11,7 +11,7 @@ data:
   - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
   - icon: ':heavy_check_mark:'

@@ -7,9 +7,6 @@ data:
   - icon: ':warning:'
     path: library/FastIO.java
     title: library/FastIO.java
-  - icon: ':question:'
-    path: library/PathRestoration.java
-    title: library/PathRestoration.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -47,34 +44,34 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\nimport library.AbstractGraph;\n\
-    import library.PathRestoration;\n\nfinal class Dijkstra {\n\tprivate static final\
-    \ class Dist implements Comparable<Dist> {\n\t\tpublic int target;\n\t\tpublic\
-    \ long cost;\n\t\tpublic Dist(final int target, final long cost) { this.target\
-    \ = target; this.cost = cost; }\n\t\t@Override public final String toString()\
-    \ { return \" - \"+cost+\" -> \"+target; }\n\t\t@Override public final int hashCode()\
-    \ { return Long.hashCode(target); }\n\t\t@Override\n\t\tpublic final boolean equals(final\
-    \ Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj == null) return\
-    \ false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\t\t\tDist\
-    \ that = (Dist) obj;\n\t\t\tif(this.target != that.target) return false;\n\t\t\
-    \tif(this.cost != that.cost) return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override\n\
-    \t\tpublic final int compareTo(final Dist that) {\n\t\t\tint c = Long.compare(this.cost,\
-    \ that.cost);\n\t\t\tif(c == 0) c = Integer.compare(this.target, that.target);\n\
-    \t\t\treturn c;\n\t\t}\n\t}\n\n\t// O((E+V)logV)\n\tpublic static final <Graph\
-    \ extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[]\
-    \ dist(final Graph g, final int start) { return dist(g, start, null, null); }\n\
-    \tpublic static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends\
-    \ WeightedNode> long[] dist(final Graph g, final int start, final int[] prv) {\
-    \ return dist(g, start, prv, null); }\n\tpublic static final <Graph extends AbstractGraph<Node,\
+    \nfinal class Dijkstra {\n\tprivate static final class Dist implements Comparable<Dist>\
+    \ {\n\t\tpublic int target;\n\t\tpublic long cost;\n\t\tpublic Dist(final int\
+    \ target, final long cost) { this.target = target; this.cost = cost; }\n\t\t@Override\
+    \ public final String toString() { return \" - \"+cost+\" -> \"+target; }\n\t\t\
+    @Override public final int hashCode() { return Long.hashCode(target); }\n\t\t\
+    @Override\n\t\tpublic final boolean equals(final Object obj) {\n\t\t\tif(this\
+    \ == obj) return true;\n\t\t\tif(obj == null) return false;\n\t\t\tif(this.getClass()\
+    \ != obj.getClass()) return false;\n\t\t\tDist that = (Dist) obj;\n\t\t\tif(this.target\
+    \ != that.target) return false;\n\t\t\tif(this.cost != that.cost) return false;\n\
+    \t\t\treturn true;\n\t\t}\n\t\t@Override\n\t\tpublic final int compareTo(final\
+    \ Dist that) {\n\t\t\tint c = Long.compare(this.cost, that.cost);\n\t\t\tif(c\
+    \ == 0) c = Integer.compare(this.target, that.target);\n\t\t\treturn c;\n\t\t\
+    }\n\t}\n\n\t// O((E+V)logV)\n\tpublic static final <Graph extends AbstractGraph<Node,\
     \ WeightedEdge>, Node extends WeightedNode> long[] dist(final Graph g, final int\
-    \ start, final int[] prv, final WeightedEdge[] prvEdge) { return dist(g.numNode,\
-    \ g.nodes(), start, prv, prvEdge); }\n\tpublic static final long[] dist(final\
-    \ int numNode, final WeightedNode[] nodes, final int start) { return dist(numNode,\
-    \ nodes, start, null, null); }\n\tpublic static final long[] dist(final int numNode,\
-    \ final WeightedNode[] nodes, final int[] prv, final int start) { return dist(numNode,\
-    \ nodes, start, prv, null); }\n\tpublic static final long[] dist(final int numNode,\
-    \ final WeightedNode[] nodes, final int start, final int[] prv, final WeightedEdge[]\
-    \ prvEdge) {\n\t\tFastIO.rangeCheck(start, numNode);\n\t\tlong dist[] = new long[numNode];\n\
-    \t\tif(prv != null) Arrays.fill(prv, -1);\n\t\tQueue<Dist> q = new PriorityQueue<>();\n\
+    \ start) { return dist(g, start, null, null); }\n\tpublic static final <Graph\
+    \ extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[]\
+    \ dist(final Graph g, final int start, final int[] prv) { return dist(g, start,\
+    \ prv, null); }\n\tpublic static final <Graph extends AbstractGraph<Node, WeightedEdge>,\
+    \ Node extends WeightedNode> long[] dist(final Graph g, final int start, final\
+    \ int[] prv, final WeightedEdge[] prvEdge) { return dist(g.numNode, g.nodes(),\
+    \ start, prv, prvEdge); }\n\tpublic static final long[] dist(final int numNode,\
+    \ final WeightedNode[] nodes, final int start) { return dist(numNode, nodes, start,\
+    \ null, null); }\n\tpublic static final long[] dist(final int numNode, final WeightedNode[]\
+    \ nodes, final int[] prv, final int start) { return dist(numNode, nodes, start,\
+    \ prv, null); }\n\tpublic static final long[] dist(final int numNode, final WeightedNode[]\
+    \ nodes, final int start, final int[] prv, final WeightedEdge[] prvEdge) {\n\t\
+    \tFastIO.rangeCheck(start, numNode);\n\t\tlong dist[] = new long[numNode];\n\t\
+    \tif(prv != null) Arrays.fill(prv, -1);\n\t\tQueue<Dist> q = new PriorityQueue<>();\n\
     \n\t\tArrays.fill(dist, FastIO.INF);\n\t\tdist[start] = 0;\n\t\tq.add(new Dist(start,\
     \ dist[start]));\n\t\twhile(!q.isEmpty()) {\n\t\t\tDist crt = q.poll();\n\t\t\t\
     if(dist[crt.target] < crt.cost) continue;\n\t\t\tfor(WeightedEdge e : nodes[crt.target])\
@@ -112,11 +109,10 @@ data:
   dependsOn:
   - library/FastIO.java
   - library/AbstractGraph.java
-  - library/PathRestoration.java
   isVerificationFile: false
   path: library/Dijkstra.java
   requiredBy: []
-  timestamp: '2023-03-24 00:57:03+09:00'
+  timestamp: '2023-03-24 01:05:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Dijkstra_path_test.java

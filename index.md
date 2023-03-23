@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryMod.java
       title: library/ArbitraryMod.java
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/BellmanFord.java
       title: library/BellmanFord.java
     - icon: ':heavy_check_mark:'
@@ -204,7 +204,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryMod_sqrt_test.java
       title: library/ArbitraryMod_sqrt_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/BellmanFord_reversed_test.java
       title: library/BellmanFord_reversed_test.java
     - icon: ':x:'

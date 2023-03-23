@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod_sqrt_test.java
     title: library/ArbitraryMod_sqrt_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/BellmanFord_reversed_test.java
     title: library/BellmanFord_reversed_test.java
   - icon: ':x:'

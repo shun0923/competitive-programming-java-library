@@ -9,15 +9,6 @@ data:
     title: library/FastIO.java
   _extendedRequiredBy:
   - icon: ':x:'
-    path: library/BellmanFord.java
-    title: library/BellmanFord.java
-  - icon: ':heavy_check_mark:'
-    path: library/Bfs.java
-    title: library/Bfs.java
-  - icon: ':heavy_check_mark:'
-    path: library/Dijkstra.java
-    title: library/Dijkstra.java
-  - icon: ':x:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
   - icon: ':x:'
@@ -56,11 +47,11 @@ data:
     \t\tpathList.add(goal);\n\t\twhile(goal != start) pathList.add(goal = prv[goal]);\n\
     \t\tfinal int path[] = new int[pathList.size()];\n\t\tfor(int i = 0, j = path.length\
     \ - 1; i < path.length; i ++, j --) path[i] = pathList.get(j);\n\t\treturn path;\n\
-    \t}\n\t@SuppressWarnings(\"unchecked\")\n\tpublic static final <Edge extends AbstractEdge<Edge>>\
-    \ List<Edge> pathEdge(final int[] prv, final Edge[] prvEdge, final int start,\
-    \ final int goal) {\n\t\tint path[] = path(prv, start, goal);\n\t\tList<Edge>\
-    \ pathEdge = new ArrayList<Edge>();\n\t\tfor(int i = 1; i < path.length; i ++)\
-    \ pathEdge.add(prvEdge[path[i]]);\n\t\treturn pathEdge;\n\t}\n}"
+    \t}\n\tpublic static final <Edge extends AbstractEdge<Edge>> List<Edge> pathEdge(final\
+    \ int[] prv, final Edge[] prvEdge, final int start, final int goal) {\n\t\tint\
+    \ path[] = path(prv, start, goal);\n\t\tList<Edge> pathEdge = new ArrayList<Edge>();\n\
+    \t\tfor(int i = 1; i < path.length; i ++) pathEdge.add(prvEdge[path[i]]);\n\t\t\
+    return pathEdge;\n\t}\n}"
   dependsOn:
   - library/FastIO.java
   - library/AbstractGraph.java
@@ -68,11 +59,8 @@ data:
   path: library/PathRestoration.java
   requiredBy:
   - library/TemplateDijkstra.java
-  - library/BellmanFord.java
-  - library/Dijkstra.java
-  - library/Bfs.java
   - library/WarshallFloyd.java
-  timestamp: '2023-03-24 00:57:03+09:00'
+  timestamp: '2023-03-24 01:05:34+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
