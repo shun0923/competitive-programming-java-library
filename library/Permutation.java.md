@@ -1,14 +1,17 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Permutation_test.java
     title: library/Permutation_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -22,9 +25,9 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nclass\
+  code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\n\nclass\
     \ Permutation implements Iterator<int[]>, Iterable<int[]> { // N=next.length\n\
-    \tprivate int next[];\n\n\t// O(N)\n\tpublic Permutation(int n) {\n\t\tSimpleUtil.nonNegativeCheck(n);\n\
+    \tprivate int next[];\n\n\t// O(N)\n\tpublic Permutation(int n) {\n\t\tFastIO.nonNegativeCheck(n);\n\
     \t\tnext = new int[n];\n\t\tfor(int i = 0; i < n; i ++) next[i] = i;\n\t}\n\t\
     public Permutation(int[] a) {\n\t\tnext = a.clone();\n\t}\n\n\t@Override\n\tpublic\
     \ final boolean hasNext() { return next != null; } // O(1)\n\n\t@Override\n\t\
@@ -39,12 +42,13 @@ data:
     \ p;\n\t\tint r = a.length;\n\t\twhile(++ l < -- r) swap(a, l, r);\n\t\treturn\
     \ a;\n\t}\n\n\tprivate static final void swap(int[] a, int l, int r) {\n\t\tint\
     \ tmp = a[l];\n\t\ta[l] = a[r];\n\t\ta[r] = tmp;\n\t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/FastIO.java
   isVerificationFile: false
   path: library/Permutation.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Permutation_test.java
 documentation_of: library/Permutation.java

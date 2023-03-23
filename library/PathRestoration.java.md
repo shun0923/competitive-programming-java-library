@@ -1,9 +1,12 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
@@ -14,10 +17,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
   _extendedVerifiedWith:
@@ -27,12 +30,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDijkstra_pathEdge_test.java
     title: library/TemplateDijkstra_pathEdge_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -46,19 +49,20 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.AbstractGraph;\n\nfinal class PathRestoration {\n\tpublic static final\
-    \ int[] path(final int[] prv, final int start, int goal) { // O(V)\n\t\tSimpleUtil.rangeCheck(start,\
-    \ prv.length);\n\t\tSimpleUtil.rangeCheck(goal, prv.length);\n\t\tfinal Deque<Integer>\
-    \ pathList = new ArrayDeque<>();\n\t\tpathList.addLast(goal);\n\t\twhile(goal\
-    \ != start) pathList.addLast(goal = prv[goal]);\n\t\tfinal int path[] = new int[pathList.size()];\n\
-    \t\tfor(int i = 0; i < path.length; i ++) path[i] = pathList.removeLast();\n\t\
-    \treturn path;\n\t}\n\tpublic static final <Node extends AbstractNode<Edge>, Edge\
-    \ extends AbstractEdge<Edge>> Node pathEdge(Node pathEdge, final int[] prv, final\
-    \ Edge[] prvEdge, final int start, final int goal) {\n\t\tfinal int path[] = path(prv,\
-    \ start, goal);\n\t\tfor(int i = 1; i < path.length; i ++) pathEdge.add(prvEdge[path[i]]);\n\
-    \t\treturn pathEdge;\n\t}\n}"
+  code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\nimport library.AbstractGraph;\n\
+    \nfinal class PathRestoration {\n\tpublic static final int[] path(final int[]\
+    \ prv, final int start, int goal) { // O(V)\n\t\tFastIO.rangeCheck(start, prv.length);\n\
+    \t\tFastIO.rangeCheck(goal, prv.length);\n\t\tfinal Deque<Integer> pathList =\
+    \ new ArrayDeque<>();\n\t\tpathList.addLast(goal);\n\t\twhile(goal != start) pathList.addLast(goal\
+    \ = prv[goal]);\n\t\tfinal int path[] = new int[pathList.size()];\n\t\tfor(int\
+    \ i = 0; i < path.length; i ++) path[i] = pathList.removeLast();\n\t\treturn path;\n\
+    \t}\n\tpublic static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>\
+    \ Node pathEdge(Node pathEdge, final int[] prv, final Edge[] prvEdge, final int\
+    \ start, final int goal) {\n\t\tfinal int path[] = path(prv, start, goal);\n\t\
+    \tfor(int i = 1; i < path.length; i ++) pathEdge.add(prvEdge[path[i]]);\n\t\t\
+    return pathEdge;\n\t}\n}"
   dependsOn:
+  - library/FastIO.java
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/PathRestoration.java
@@ -68,8 +72,8 @@ data:
   - library/Dijkstra.java
   - library/Bfs.java
   - library/WarshallFloyd.java
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java

@@ -1,9 +1,12 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -25,29 +28,30 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.AbstractGraph;\n\nfinal class Doubling {\n\tpublic final int n;\n\t\
-    public final int log;\n\tpublic final int next[][];\n\n\tprivate Doubling(final\
-    \ int n, final long max) { // O(1)\n\t\tSimpleUtil.nonNegativeCheck(n);\n\t\t\
-    SimpleUtil.nonNegativeCheck(max);\n\t\tthis.n = n;\n\t\tlog = Long.numberOfTrailingZeros(Long.highestOneBit(max))\
-    \ + 1;\n\t\tnext = new int[log][n];\n\t\tArrays.fill(next[0], -1);\n\t}\n\t//\
-    \ O(NlogM)\n\tpublic Doubling(final int n, final long max, final int[] edges)\
-    \ {\n\t\tthis(n, max);\n\t\tSystem.arraycopy(edges, 0, next[0], 0, n);\n\t\tinit();\n\
-    \t}\n\tpublic Doubling(final int n, final long max, final AbstractNode<? extends\
-    \ AbstractEdge> edges) {\n\t\tthis(n, max);\n\t\tfor(AbstractEdge e : edges) next[0][e.source]\
+  code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\nimport library.AbstractGraph;\n\
+    \nfinal class Doubling {\n\tpublic final int n;\n\tpublic final int log;\n\tpublic\
+    \ final int next[][];\n\n\tprivate Doubling(final int n, final long max) { //\
+    \ O(1)\n\t\tFastIO.nonNegativeCheck(n);\n\t\tFastIO.nonNegativeCheck(max);\n\t\
+    \tthis.n = n;\n\t\tlog = Long.numberOfTrailingZeros(Long.highestOneBit(max)) +\
+    \ 1;\n\t\tnext = new int[log][n];\n\t\tArrays.fill(next[0], -1);\n\t}\n\t// O(NlogM)\n\
+    \tpublic Doubling(final int n, final long max, final int[] edges) {\n\t\tthis(n,\
+    \ max);\n\t\tSystem.arraycopy(edges, 0, next[0], 0, n);\n\t\tinit();\n\t}\n\t\
+    public Doubling(final int n, final long max, final AbstractNode<? extends AbstractEdge>\
+    \ edges) {\n\t\tthis(n, max);\n\t\tfor(AbstractEdge e : edges) next[0][e.source]\
     \ = e.target;\n\t\tinit();\n\t}\n\tprivate final void init() {\n\t\tfor(int k\
     \ = 0; k + 1 < log; k ++) {\n\t\t\tfor(int v = 0; v < n; v ++) {\n\t\t\t\tif(next[k][v]\
     \ == -1) next[k + 1][v] = -1;\n\t\t\t\telse next[k + 1][v] = next[k][next[k][v]];\n\
-    \t\t\t}\n\t\t}\n\t}\n\n\tint cal(int x, final long q) { // O(logQ)\n\t\tSimpleUtil.rangeCheck(x,\
-    \ n);\n\t\tSimpleUtil.nonNegativeCheck(q);\n\t\tfor(int k = log - 1; k >= 0; k\
-    \ --) {\n\t\t\tif(x == -1) break;\n\t\t\tif((q & 1l << k) != 0) x = next[k][x];\n\
-    \t\t}\n\t\treturn x;\n\t}\n}"
+    \t\t\t}\n\t\t}\n\t}\n\n\tint cal(int x, final long q) { // O(logQ)\n\t\tFastIO.rangeCheck(x,\
+    \ n);\n\t\tFastIO.nonNegativeCheck(q);\n\t\tfor(int k = log - 1; k >= 0; k --)\
+    \ {\n\t\t\tif(x == -1) break;\n\t\t\tif((q & 1l << k) != 0) x = next[k][x];\n\t\
+    \t}\n\t\treturn x;\n\t}\n}"
   dependsOn:
+  - library/FastIO.java
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/Doubling.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Doubling_test.java

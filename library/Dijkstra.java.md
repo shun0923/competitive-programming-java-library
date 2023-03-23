@@ -1,10 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   _extendedRequiredBy: []
@@ -43,31 +46,31 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.AbstractGraph;\nimport library.PathRestoration;\n\nfinal class Dijkstra\
-    \ {\n\tprivate static final class Dist implements Comparable<Dist> {\n\t\tpublic\
-    \ int target;\n\t\tpublic long cost;\n\t\tpublic Dist(final int target, final\
-    \ long cost) { this.target = target; this.cost = cost; }\n\t\t@Override public\
-    \ final String toString() { return \" - \"+cost+\" -> \"+target; }\n\t\t@Override\
-    \ public final int hashCode() { return Long.hashCode(target); }\n\t\t@Override\n\
-    \t\tpublic final boolean equals(final Object obj) {\n\t\t\tif(this == obj) return\
-    \ true;\n\t\t\tif(obj == null) return false;\n\t\t\tif(this.getClass() != obj.getClass())\
-    \ return false;\n\t\t\tDist that = (Dist) obj;\n\t\t\tif(this.target != that.target)\
-    \ return false;\n\t\t\tif(this.cost != that.cost) return false;\n\t\t\treturn\
-    \ true;\n\t\t}\n\t\t@Override\n\t\tpublic final int compareTo(final Dist that)\
-    \ {\n\t\t\tint c = Long.compare(this.cost, that.cost);\n\t\t\tif(c == 0) c = Integer.compare(this.target,\
-    \ that.target);\n\t\t\treturn c;\n\t\t}\n\t}\n\n\tprivate static int prv[];\n\t\
-    private static WeightedEdge prvEdge[];\n\n\t// O((E+V)logV)\n\tpublic static final\
-    \ long[] dist(final WeightedGraph g, final int start) { return dist(g, start,\
-    \ false); }\n\tpublic static final long[] dist(final WeightedGraph g, final int\
-    \ start, final boolean memoize) { return dist(g.numNode, g.nodes(), start, memoize);\
-    \ }\n\tpublic static final long[] dist(final int numNode, final WeightedNode[]\
-    \ nodes, final int start) { return dist(numNode, nodes, start, false); }\n\tpublic\
-    \ static final long[] dist(final int numNode, final WeightedNode[] nodes, final\
-    \ int start, final boolean memoize) {\n\t\tSimpleUtil.rangeCheck(start, numNode);\n\
-    \t\tfinal long dist[] = new long[numNode];\n\t\tif(memoize) {\n\t\t\tprv = new\
-    \ int[numNode];\n\t\t\tArrays.fill(prv, -1);\n\t\t\tprvEdge = new WeightedEdge[numNode];\n\
-    \t\t}\n\t\tQueue<Dist> q = new PriorityQueue<>();\n\n\t\tArrays.fill(dist, SimpleUtil.INF);\n\
+  code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\nimport library.AbstractGraph;\n\
+    import library.PathRestoration;\n\nfinal class Dijkstra {\n\tprivate static final\
+    \ class Dist implements Comparable<Dist> {\n\t\tpublic int target;\n\t\tpublic\
+    \ long cost;\n\t\tpublic Dist(final int target, final long cost) { this.target\
+    \ = target; this.cost = cost; }\n\t\t@Override public final String toString()\
+    \ { return \" - \"+cost+\" -> \"+target; }\n\t\t@Override public final int hashCode()\
+    \ { return Long.hashCode(target); }\n\t\t@Override\n\t\tpublic final boolean equals(final\
+    \ Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj == null) return\
+    \ false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\t\t\tDist\
+    \ that = (Dist) obj;\n\t\t\tif(this.target != that.target) return false;\n\t\t\
+    \tif(this.cost != that.cost) return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override\n\
+    \t\tpublic final int compareTo(final Dist that) {\n\t\t\tint c = Long.compare(this.cost,\
+    \ that.cost);\n\t\t\tif(c == 0) c = Integer.compare(this.target, that.target);\n\
+    \t\t\treturn c;\n\t\t}\n\t}\n\n\tprivate static int prv[];\n\tprivate static WeightedEdge\
+    \ prvEdge[];\n\n\t// O((E+V)logV)\n\tpublic static final long[] dist(final WeightedGraph\
+    \ g, final int start) { return dist(g, start, false); }\n\tpublic static final\
+    \ long[] dist(final WeightedGraph g, final int start, final boolean memoize) {\
+    \ return dist(g.numNode, g.nodes(), start, memoize); }\n\tpublic static final\
+    \ long[] dist(final int numNode, final WeightedNode[] nodes, final int start)\
+    \ { return dist(numNode, nodes, start, false); }\n\tpublic static final long[]\
+    \ dist(final int numNode, final WeightedNode[] nodes, final int start, final boolean\
+    \ memoize) {\n\t\tFastIO.rangeCheck(start, numNode);\n\t\tfinal long dist[] =\
+    \ new long[numNode];\n\t\tif(memoize) {\n\t\t\tprv = new int[numNode];\n\t\t\t\
+    Arrays.fill(prv, -1);\n\t\t\tprvEdge = new WeightedEdge[numNode];\n\t\t}\n\t\t\
+    Queue<Dist> q = new PriorityQueue<>();\n\n\t\tArrays.fill(dist, FastIO.INF);\n\
     \t\tdist[start] = 0;\n\t\tq.add(new Dist(start, dist[start]));\n\t\twhile(!q.isEmpty())\
     \ {\n\t\t\tDist crt = q.poll();\n\t\t\tif(dist[crt.target] < crt.cost) continue;\n\
     \t\t\tfor(WeightedEdge e : nodes[crt.target]) {\n\t\t\t\tlong updated = dist[e.source]\
@@ -82,12 +85,12 @@ data:
     \ static final long[] distForDenseGraph(final int numNode, final WeightedNode[]\
     \ nodes, final int start) { return distForDenseGraph(numNode, nodes, start, false);\
     \ }\n\tpublic static final long[] distForDenseGraph(final int numNode, final WeightedNode[]\
-    \ nodes, final int start, final boolean memoize) {\n\t\tSimpleUtil.rangeCheck(start,\
+    \ nodes, final int start, final boolean memoize) {\n\t\tFastIO.rangeCheck(start,\
     \ numNode);\n\t\tfinal long dist[] = new long[numNode];\n\t\tfinal boolean visited[]\
     \ = new boolean[numNode];\n\t\tif(memoize) {\n\t\t\tprv = new int[numNode];\n\t\
     \t\tArrays.fill(prv, -1);\n\t\t\tprvEdge = new WeightedEdge[numNode];\n\t\t}\n\
-    \n\t\tArrays.fill(dist, SimpleUtil.INF);\n\t\tdist[start] = 0;\n\t\tint idx =\
-    \ start;\n\t\tint cnt = 0;\n\t\twhile(cnt < numNode) {\n\t\t\tlong minCost = SimpleUtil.INF;\n\
+    \n\t\tArrays.fill(dist, FastIO.INF);\n\t\tdist[start] = 0;\n\t\tint idx = start;\n\
+    \t\tint cnt = 0;\n\t\twhile(cnt < numNode) {\n\t\t\tlong minCost = FastIO.INF;\n\
     \t\t\tfor(int i = 0; i < numNode; i ++) {\n\t\t\t\tif(!visited[i] && dist[i] <\
     \ minCost) {\n\t\t\t\t\tidx = i;\n\t\t\t\t\tminCost = dist[i];\n\t\t\t\t}\n\t\t\
     \t}\n\t\t\tvisited[idx] = true;\n\t\t\tcnt ++;\n\t\t\tfor(WeightedEdge e : nodes[idx])\
@@ -100,12 +103,13 @@ data:
     \ start, final int goal) { return PathRestoration.pathEdge(new ArrayWeightedNode(-1),\
     \ prv, prvEdge, start, goal); }\n}"
   dependsOn:
+  - library/FastIO.java
   - library/AbstractGraph.java
   - library/PathRestoration.java
   isVerificationFile: false
   path: library/Dijkstra.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Dijkstra_path_test.java

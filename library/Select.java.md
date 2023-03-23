@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,7 +22,7 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nclass\
+  code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\n\nclass\
     \ QuickSelect {\n\t// O(N)\n\t// return k-th(0-indexed) smallest\n\tpublic static\
     \ final long selectWithRandom(long[] a, int k) {\n\t\twhile(true) {\n\t\t\tlong\
     \ pivot = a[(int)Math.floor(Math.random() * a.length)];\n\t\t\tint small = 0;\n\
@@ -32,7 +35,7 @@ data:
     \ a2[idx ++] = crt;\n\t\t\t\ta = a2;\n\t\t\t\tk -= small + equal;\n\t\t\t}else\
     \ {\n\t\t\t\treturn pivot;\n\t\t\t}\n\t\t}\n\t}\n\tpublic static final long select(final\
     \ long[] a, final int k) { return select(a, k, 0, a.length); }\n\tpublic static\
-    \ final long select(final long[] a, final int k, int start, int end) {\n\t\tSimpleUtil.assertion(start\
+    \ final long select(final long[] a, final int k, int start, int end) {\n\t\tFastIO.assertion(start\
     \ <= k && k < end);\n\t\tif(end - start == 1) return a[start];\n\t\tif(end - start\
     \ <= 10) {\n\t\t\tArrays.sort(a, start, end);\n\t\t\treturn a[k];\n\t\t}\n\t\t\
     while(true) {\n\t\t\tlong pivot = pivot(a, start, end);\n\t\t\tint l = start;\n\
@@ -48,11 +51,12 @@ data:
     \ med.length >> 1);\n\t}\n\tprivate static final long med5(final long[] a, final\
     \ int start, final int end) {\n\t\treturn select(a, (end + start) >> 1, start,\
     \ end);\n\t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/FastIO.java
   isVerificationFile: false
   path: library/Select.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/Select.java

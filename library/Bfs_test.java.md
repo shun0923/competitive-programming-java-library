@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':heavy_check_mark:'
     path: library/Bfs.java
     title: library/Bfs.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: library/Bfs_test.java
   requiredBy: []
-  timestamp: '2022-10-05 12:54:35+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Bfs_test.java

@@ -1,17 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateRerooting_test.java
     title: library/TemplateRerooting_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -26,7 +29,7 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
-    \ library.SimpleUtil;\nimport library.AbstractGraph;\n\nclass TemplateRerooting<T>\
+    \ library.FastIO;\nimport library.AbstractGraph;\n\nclass TemplateRerooting<T>\
     \ {\n\t@FunctionalInterface\n\tinterface MergeOperator<T> { T apply(T x1, T x2);\
     \ }\n\tinterface AddEdgeOperator<T> { T apply(TemplateEdge<T> e, T x); }\n\tinterface\
     \ AddRootOperator<T> { T apply(int v, T x); }\n\tinterface CreateNodeOperator<T>\
@@ -45,13 +48,13 @@ data:
     \ (T[]) new Object[numNode];\n\t\tans = (T[]) new Object[numNode];\n\t\tfor(int\
     \ i = 0; i < numNode; i ++) dp[i] = eSupplier.get();\n\t}\n\n\tpublic final void\
     \ cal() { // O(V+E)\n\t\tdfs();\n\t\treroot();\n\t}\n\tpublic final T getDp(int\
-    \ i) { SimpleUtil.rangeCheck(i, numNode); return dp[i]; } // O(1)\n\tpublic final\
-    \ T get(int i) { SimpleUtil.rangeCheck(i, numNode); return ans[i]; } // O(1)\n\
-    \n\tpublic final void dfs() { // O(V+E)\n\t\tint dq[] = new int[numNode];\n\t\t\
-    int ptr = 0;\n\t\tint route[] = new int[numNode];\n\t\tint idx = numNode;\n\n\t\
-    \tdq[ptr ++] = start;\n\t\tparents[start] = -1;\n\t\twhile(ptr > 0) {\n\t\t\t\
-    int crt = dq[-- ptr];\n\t\t\troute[-- idx] = crt;\n\t\t\tfor(TemplateEdge<T> e\
-    \ : nodes[crt]) {\n\t\t\t\tif(e.target == parents[crt]) continue;\n\t\t\t\tparents[e.target]\
+    \ i) { FastIO.rangeCheck(i, numNode); return dp[i]; } // O(1)\n\tpublic final\
+    \ T get(int i) { FastIO.rangeCheck(i, numNode); return ans[i]; } // O(1)\n\n\t\
+    public final void dfs() { // O(V+E)\n\t\tint dq[] = new int[numNode];\n\t\tint\
+    \ ptr = 0;\n\t\tint route[] = new int[numNode];\n\t\tint idx = numNode;\n\n\t\t\
+    dq[ptr ++] = start;\n\t\tparents[start] = -1;\n\t\twhile(ptr > 0) {\n\t\t\tint\
+    \ crt = dq[-- ptr];\n\t\t\troute[-- idx] = crt;\n\t\t\tfor(TemplateEdge<T> e :\
+    \ nodes[crt]) {\n\t\t\t\tif(e.target == parents[crt]) continue;\n\t\t\t\tparents[e.target]\
     \ = crt;\n\t\t\t\tdq[ptr ++] = e.target;\n\t\t\t}\n\t\t}\n\t\tfor(int crt : route)\
     \ {\n\t\t\tT tmp = createNode.apply(crt);\n\t\t\tfor(TemplateEdge<T> e : nodes[crt])\
     \ if(e.target != parents[crt]) tmp = merge.apply(tmp, addEdge.apply(e, dp[e.target]));\n\
@@ -75,12 +78,13 @@ data:
     \ tmp);\n\t\t\t\tdq[size ++] = e.target;\n\t\t\t}\n\n\t\t\tptr ++;\n\t\t}\n\t\
     }\n}"
   dependsOn:
+  - library/FastIO.java
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/TemplateRerooting.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/TemplateRerooting_test.java
 documentation_of: library/TemplateRerooting.java

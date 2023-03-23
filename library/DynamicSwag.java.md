@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -23,9 +26,9 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
-    \ library.SimpleUtil;\n\nclass DynamicSwag {\n\tlong e;\n\tLongBinaryOperator\
-    \ f;\n\n\tDeque<Long> frontVal = new ArrayDeque<>();\n\tlong front;\n\tDeque<Long>\
-    \ back = new ArrayDeque<>();\n\n\t// O(1)\n\tDynamicSwag(long e, LongBinaryOperator\
+    \ library.FastIO;\n\nclass DynamicSwag {\n\tlong e;\n\tLongBinaryOperator f;\n\
+    \n\tDeque<Long> frontVal = new ArrayDeque<>();\n\tlong front;\n\tDeque<Long> back\
+    \ = new ArrayDeque<>();\n\n\t// O(1)\n\tDynamicSwag(long e, LongBinaryOperator\
     \ f) {\n\t\tthis.e = e;\n\t\tthis.f = f;\n\t\tfront = e;\n\t}\n\n\t// O(1)\n\t\
     long fold() { return back.isEmpty() ? front : f.applyAsLong(back.getLast(), front);\
     \ }\n\t// O(1)\n\tvoid push(long x) {\n\t\tfrontVal.addLast(x);\n\t\tfront = f.applyAsLong(front,\
@@ -33,11 +36,12 @@ data:
     \tlong tmp = e;\n\t\t\twhile(!frontVal.isEmpty()) {\n\t\t\t\ttmp = f.applyAsLong(frontVal.removeLast(),\
     \ tmp);\n\t\t\t\tback.addLast(tmp);\n\t\t\t}\n\t\t\tfront = e;\n\t\t}\n\t\tback.removeLast();\n\
     \t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/FastIO.java
   isVerificationFile: false
   path: library/DynamicSwag.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/DynamicSwag_test.java

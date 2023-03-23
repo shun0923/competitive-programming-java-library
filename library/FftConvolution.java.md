@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,8 +22,8 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport library.SimpleUtil;\n\nclass FftConvolution {\n\
-    \tpublic static final double[][] butterfly(double[][] f, boolean inv){ // O(NlogN)\n\
+  code: "package library;\n\nimport library.FastIO;\n\nclass FftConvolution {\n\t\
+    public static final double[][] butterfly(double[][] f, boolean inv){ // O(NlogN)\n\
     \t\tint n = f.length;\n\t\tif(n <= 1) return f;\n\t\tint bit = 0;\n\t\tint digit\
     \ = 0;\n\t\tint n2 = n;\n\t\twhile(n2 > 1) { n2 /= 2; digit ++; }\n\t\tfor(int\
     \ i = 1; i < n; i ++) {\n\t\t\tfor(int j = digit - 1; j >= 0; j --) {\n\t\t\t\t\
@@ -43,9 +46,9 @@ data:
     \ = b;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn f;\n\t}\n\n\t// O((N_1+N_2)log(N_1+N_2))\n\
     \tpublic static final long[] cnv(final long[] a, final long[] b) { return cnv(a,\
     \ b, Math.max(0, a.length + b.length - 1)); }\n\tpublic static final long[] cnv(final\
-    \ long[] a, final long[] b, final int l) {\n\t\tSimpleUtil.nonNegativeCheck(l);\n\
-    \t\tif(a.length == 0 || b.length == 0) return new long[l];\n\t\tint len = 1;\n\
-    \t\twhile(len < a.length + b.length - 1) len <<= 1;\n\t\tdouble g[][] = new double[len][2];\n\
+    \ long[] a, final long[] b, final int l) {\n\t\tFastIO.nonNegativeCheck(l);\n\t\
+    \tif(a.length == 0 || b.length == 0) return new long[l];\n\t\tint len = 1;\n\t\
+    \twhile(len < a.length + b.length - 1) len <<= 1;\n\t\tdouble g[][] = new double[len][2];\n\
     \t\tdouble h[][] = new double[len][2];\n\t\tfor(int i = 0; i < a.length; i ++)\
     \ {\n\t\t\tg[i][0] = a[i];\n\t\t\tg[i][1] = 0;\n\t\t}\n\t\tfor(int i = 0; i <\
     \ b.length; i ++) {\n\t\t\th[i][0] = b[i];\n\t\t\th[i][1] = 0;\n\t\t}\n\t\tg =\
@@ -55,11 +58,12 @@ data:
     \tf = butterfly(f, true);\n\t\tlong ans[] = new long[l];\n\t\tfor(int i = 0; i\
     \ < l; i ++) {\n\t\t\tans[i] = Math.round(f[i][0] / len);\n\t\t}\n\t\treturn ans;\n\
     \t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/FastIO.java
   isVerificationFile: false
   path: library/FftConvolution.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/FftConvolution.java

@@ -1,8 +1,11 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
   _extendedVerifiedWith: []
@@ -22,7 +25,7 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport library.SimpleUtil;\n\nclass BitVector {\n\tfinal\
+  code: "package library;\n\nimport library.FastIO;\n\nclass BitVector {\n\tfinal\
     \ int lg = 5;\n\tfinal int bitSize = 1 << lg;\n\tfinal int mask = bitSize - 1;\n\
     \tfinal int n;\n\tfinal int len;\n\tint bit[];\n\tint sum[];\n\tint head0[];\n\
     \tint head1[];\n\tint pos0[];\n\tint pos1[];\n\n\t// O(1)\n\tBitVector(int n)\
@@ -50,11 +53,11 @@ data:
     \t}\n\t\t}\n\t}\n\n\tStringBuilder sb = new StringBuilder();\n\t// O(N)\n\t@Override\
     \ public String toString() {\n\t\tsb.setLength(0);\n\t\tfor(int i = 0; i < n;\
     \ i ++) sb.append(get(i) ? \"#\" : \":\");\n\t\treturn sb.toString();\n\t}\n\n\
-    \t// O(1)\n\tfinal boolean get(int k) { SimpleUtil.rangeCheck(k, n); return (bit[k\
+    \t// O(1)\n\tfinal boolean get(int k) { FastIO.rangeCheck(k, n); return (bit[k\
     \ >> lg] >> (k & mask) & 1) != 0; }\n\n\t// O(1)\n\tfinal void set(int k) { set(true,\
-    \ k); }\n\tfinal void set(boolean b, int k) { SimpleUtil.rangeCheck(k, n); if(b)\
-    \ bit[k >> lg] |= 1 << (k & mask); else bit[k >> lg] &= ~(1 << (k & mask)); }\n\
-    \n\t// O(loglogN)\n\t// count b in [0, k)\n\tfinal int rank(int k) { SimpleUtil.inclusiveRangeCheck(k,\
+    \ k); }\n\tfinal void set(boolean b, int k) { FastIO.rangeCheck(k, n); if(b) bit[k\
+    \ >> lg] |= 1 << (k & mask); else bit[k >> lg] &= ~(1 << (k & mask)); }\n\n\t\
+    // O(loglogN)\n\t// count b in [0, k)\n\tfinal int rank(int k) { FastIO.inclusiveRangeCheck(k,\
     \ n); return sum[k >> lg] + Integer.bitCount(bit[k >> lg] & ((1 << (k & mask))\
     \ - 1)); }\n\tfinal int rank(boolean b, int k) { return b ? rank(k) : k - rank(k);\
     \ }\n\n\t// O(loglogN)\n\t// position of k-th occurrence of b\n\tfinal int select(int\
@@ -74,12 +77,13 @@ data:
     \ 128) >> 5;\n\t\tk -= c4 & ((c4 - k) >> 7);\n\t\tc2 = c2 >> idx & 0x3;\n\t\t\
     idx |= ((c2 - k) & 128) >> 6;\n\t\tk -= c2 & ((c2 - k) >> 7);\n\t\tidx |= (((c\
     \ >> idx & 0x1) - k) & 128) >> 7;\n\t\treturn idx;\n\t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/FastIO.java
   isVerificationFile: false
   path: library/BitVector.java
   requiredBy:
   - library/WaveletMatrix.java
-  timestamp: '2023-03-23 19:02:13+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/BitVector.java

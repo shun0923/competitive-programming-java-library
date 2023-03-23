@@ -1,14 +1,17 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDynamicSwag_test.java
     title: library/TemplateDynamicSwag_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -23,7 +26,7 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
-    \ library.SimpleUtil;\n\nclass TemplateDynamicSwag<T> {\n\tSupplier<T> eSupplier;\n\
+    \ library.FastIO;\n\nclass TemplateDynamicSwag<T> {\n\tSupplier<T> eSupplier;\n\
     \tBinaryOperator<T> f;\n\n\tDeque<T> frontVal = new ArrayDeque<>();\n\tT front;\n\
     \tDeque<T> back = new ArrayDeque<>();\n\n\t// O(1)\n\tTemplateDynamicSwag(Supplier<T>\
     \ eSupplier, BinaryOperator<T> f) {\n\t\tthis.eSupplier = eSupplier;\n\t\tthis.f\
@@ -34,12 +37,13 @@ data:
     \twhile(!frontVal.isEmpty()) {\n\t\t\t\ttmp = f.apply(frontVal.removeLast(), tmp);\n\
     \t\t\t\tback.addLast(tmp);\n\t\t\t}\n\t\t\tfront = eSupplier.get();\n\t\t}\n\t\
     \tback.removeLast();\n\t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/FastIO.java
   isVerificationFile: false
   path: library/TemplateDynamicSwag.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/TemplateDynamicSwag_test.java
 documentation_of: library/TemplateDynamicSwag.java

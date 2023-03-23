@@ -1,26 +1,29 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy:
   - icon: ':warning:'
     path: library/ExtendedMath.java
     title: library/ExtendedMath.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Swag.java
     title: library/Swag.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateSwag.java
     title: library/TemplateSwag.java
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDynamicSwag_test.java
     title: library/TemplateDynamicSwag_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateSegmentTree_composite_test.java
     title: library/TemplateSegmentTree_composite_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -34,43 +37,42 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nclass\
-    \ Pair extends SimpleUtil {\n\t// Pair\n\tpublic static final II npii() { return\
-    \ new II(ni(), ni()); }\n\tpublic static final II[] npii(final int n) { final\
-    \ II a[] = new II[n]; for(int i = 0; i < n; i ++) a[i] = npii(); return a; }\n\
-    \tpublic static final IL npil() { return new IL(ni(), nl()); }\n\tpublic static\
-    \ final IL[] npil(final int n) { final IL a[] = new IL[n]; for(int i = 0; i <\
-    \ n; i ++) a[i] = npil(); return a; }\n\tpublic static final LI npli() { return\
-    \ new LI(nl(), ni()); }\n\tpublic static final LI[] npli(final int n) { final\
-    \ LI a[] = new LI[n]; for(int i = 0; i < n; i ++) a[i] = npli(); return a; }\n\
-    \tpublic static final LL npll() { return new LL(nl(), nl()); }\n\tpublic static\
-    \ final LL[] npll(final int n) { final LL a[] = new LL[n]; for(int i = 0; i <\
-    \ n; i ++) a[i] = npll(); return a; }\n\tpublic static final ID npid() { return\
-    \ new ID(ni(), nd()); }\n\tpublic static final ID[] npid(final int n) { final\
-    \ ID a[] = new ID[n]; for(int i = 0; i < n; i ++) a[i] = npid(); return a; }\n\
-    \tpublic static final LD npld() { return new LD(nl(), nd()); }\n\tpublic static\
-    \ final LD[] npld(final int n) { final LD a[] = new LD[n]; for(int i = 0; i <\
-    \ n; i ++) a[i] = npld(); return a; }\n\tpublic static final DI npdi() { return\
-    \ new DI(nd(), ni()); }\n\tpublic static final DI[] npdi(final int n) { final\
-    \ DI a[] = new DI[n]; for(int i = 0; i < n; i ++) a[i] = npdi(); return a; }\n\
-    \tpublic static final DL npdl() { return new DL(nd(), nl()); }\n\tpublic static\
-    \ final DL[] npdl(final int n) { final DL a[] = new DL[n]; for(int i = 0; i <\
-    \ n; i ++) a[i] = npdl(); return a; }\n\tpublic static final DD npdd() { return\
-    \ new DD(nd(), nd()); }\n\tpublic static final DD[] npdd(final int n) { final\
-    \ DD a[] = new DD[n]; for(int i = 0; i < n; i ++) a[i] = npdd(); return a; }\n\
-    \tpublic static final class TT<T extends Comparable<? super T>, U extends Comparable<?\
-    \ super U>> implements Comparable<TT<T, U>> {\n\t\tpublic T a; public U b;\n\t\
-    \tpublic TT() { }\n\t\tpublic TT(final T a, final U b) { this.a = a; this.b =\
-    \ b; }\n\n\t\t@Override public final String toString() { return \"(\"+a.toString()+\"\
-    , \"+b.toString()+\")\"; }\n\t\t@Override public final int hashCode() { return\
-    \ Objects.hash(a, b); }\n\t\t@Override\n\t\tpublic final boolean equals(final\
-    \ Object obj) {\n\t\t\tif(this == obj) return true;\n\t\t\tif(obj == null) return\
-    \ false;\n\t\t\tif(this.getClass() != obj.getClass()) return false;\n\t\t\tTT\
-    \ that = (TT) obj;\n\t\t\tif(this.a.getClass() != that.a.getClass()) return false;\n\
-    \t\t\tif(this.b.getClass() != that.b.getClass()) return false;\n\t\t\tif(!this.a.equals(that.a))\
-    \ return false;\n\t\t\tif(!this.b.equals(that.b)) return false;\n\t\t\treturn\
-    \ true;\n\t\t}\n\t\t@Override public final int compareTo(final TT<T, U> that)\
-    \ { int c = (this.a).compareTo(that.a); if(c == 0) c = (this.b).compareTo(that.b);\
+  code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\n\nclass\
+    \ Pair extends FastIO {\n\t// Pair\n\tpublic static final II npii() { return new\
+    \ II(ni(), ni()); }\n\tpublic static final II[] npii(final int n) { final II a[]\
+    \ = new II[n]; for(int i = 0; i < n; i ++) a[i] = npii(); return a; }\n\tpublic\
+    \ static final IL npil() { return new IL(ni(), nl()); }\n\tpublic static final\
+    \ IL[] npil(final int n) { final IL a[] = new IL[n]; for(int i = 0; i < n; i ++)\
+    \ a[i] = npil(); return a; }\n\tpublic static final LI npli() { return new LI(nl(),\
+    \ ni()); }\n\tpublic static final LI[] npli(final int n) { final LI a[] = new\
+    \ LI[n]; for(int i = 0; i < n; i ++) a[i] = npli(); return a; }\n\tpublic static\
+    \ final LL npll() { return new LL(nl(), nl()); }\n\tpublic static final LL[] npll(final\
+    \ int n) { final LL a[] = new LL[n]; for(int i = 0; i < n; i ++) a[i] = npll();\
+    \ return a; }\n\tpublic static final ID npid() { return new ID(ni(), nd()); }\n\
+    \tpublic static final ID[] npid(final int n) { final ID a[] = new ID[n]; for(int\
+    \ i = 0; i < n; i ++) a[i] = npid(); return a; }\n\tpublic static final LD npld()\
+    \ { return new LD(nl(), nd()); }\n\tpublic static final LD[] npld(final int n)\
+    \ { final LD a[] = new LD[n]; for(int i = 0; i < n; i ++) a[i] = npld(); return\
+    \ a; }\n\tpublic static final DI npdi() { return new DI(nd(), ni()); }\n\tpublic\
+    \ static final DI[] npdi(final int n) { final DI a[] = new DI[n]; for(int i =\
+    \ 0; i < n; i ++) a[i] = npdi(); return a; }\n\tpublic static final DL npdl()\
+    \ { return new DL(nd(), nl()); }\n\tpublic static final DL[] npdl(final int n)\
+    \ { final DL a[] = new DL[n]; for(int i = 0; i < n; i ++) a[i] = npdl(); return\
+    \ a; }\n\tpublic static final DD npdd() { return new DD(nd(), nd()); }\n\tpublic\
+    \ static final DD[] npdd(final int n) { final DD a[] = new DD[n]; for(int i =\
+    \ 0; i < n; i ++) a[i] = npdd(); return a; }\n\tpublic static final class TT<T\
+    \ extends Comparable<? super T>, U extends Comparable<? super U>> implements Comparable<TT<T,\
+    \ U>> {\n\t\tpublic T a; public U b;\n\t\tpublic TT() { }\n\t\tpublic TT(final\
+    \ T a, final U b) { this.a = a; this.b = b; }\n\n\t\t@Override public final String\
+    \ toString() { return \"(\"+a.toString()+\", \"+b.toString()+\")\"; }\n\t\t@Override\
+    \ public final int hashCode() { return Objects.hash(a, b); }\n\t\t@Override\n\t\
+    \tpublic final boolean equals(final Object obj) {\n\t\t\tif(this == obj) return\
+    \ true;\n\t\t\tif(obj == null) return false;\n\t\t\tif(this.getClass() != obj.getClass())\
+    \ return false;\n\t\t\tTT that = (TT) obj;\n\t\t\tif(this.a.getClass() != that.a.getClass())\
+    \ return false;\n\t\t\tif(this.b.getClass() != that.b.getClass()) return false;\n\
+    \t\t\tif(!this.a.equals(that.a)) return false;\n\t\t\tif(!this.b.equals(that.b))\
+    \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
+    \ TT<T, U> that) { int c = (this.a).compareTo(that.a); if(c == 0) c = (this.b).compareTo(that.b);\
     \ return c; }\n\t}\n\tpublic static final class II implements Comparable<II> {\n\
     \t\tpublic int a; public int b;\n\t\tpublic II() { }\n\t\tpublic II(final int\
     \ a, final int b) { this.a = a; this.b = b; }\n\t\t@Override public final String\
@@ -162,15 +164,16 @@ data:
     \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
     \ DD that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
     \ that.b); return c; }\n\t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/FastIO.java
   isVerificationFile: false
   path: library/Pair.java
   requiredBy:
   - library/TemplateSwag.java
   - library/Swag.java
   - library/ExtendedMath.java
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/TemplateDynamicSwag_test.java
   - library/TemplateSegmentTree_composite_test.java

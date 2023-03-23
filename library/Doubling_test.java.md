@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Doubling.java
     title: library/Doubling.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -48,7 +48,7 @@ data:
   isVerificationFile: true
   path: library/Doubling_test.java
   requiredBy: []
-  timestamp: '2022-10-04 19:27:54+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Doubling_test.java

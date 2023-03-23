@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
@@ -17,46 +20,46 @@ data:
   - icon: ':warning:'
     path: library/EulerTour.java
     title: library/EulerTour.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Kruskal.java
     title: library/Kruskal.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Lca.java
     title: library/Lca.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Rerooting.java
     title: library/Rerooting.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Scc.java
     title: library/Scc.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateRerooting.java
     title: library/TemplateRerooting.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TopologicalSort.java
     title: library/TopologicalSort.java
   - icon: ':warning:'
     path: library/TwoSat.java
     title: library/TwoSat.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/UnionFind.java
     title: library/UnionFind.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WeightedDoubling.java
     title: library/WeightedDoubling.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WeightedLca.java
     title: library/WeightedLca.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WeightedUnionFind.java
     title: library/WeightedUnionFind.java
   _extendedVerifiedWith:
@@ -87,54 +90,54 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Kruskal_test.java
     title: library/Kruskal_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Lca_test.java
     title: library/Lca_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Rerooting_test.java
     title: library/Rerooting_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Scc_graph_test.java
     title: library/Scc_graph_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Scc_groups_test.java
     title: library/Scc_groups_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Scc_ids_test.java
     title: library/Scc_ids_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDijkstra_pathEdge_test.java
     title: library/TemplateDijkstra_pathEdge_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDijkstra_test.java
     title: library/TemplateDijkstra_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateRerooting_test.java
     title: library/TemplateRerooting_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TopologicalSort_test.java
     title: library/TopologicalSort_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/UnionFind_uniteAll_test.java
     title: library/UnionFind_uniteAll_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WarshallFloyd_reversed_test.java
     title: library/WarshallFloyd_reversed_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WeightedDoubling_test.java
     title: library/WeightedDoubling_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WeightedLca_test.java
     title: library/WeightedLca_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -148,13 +151,13 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nabstract\
+  code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\n\nabstract\
     \ class AbstractGraph<Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>\
     \ {\n\tpublic int numNode;\n\tpublic boolean directed;\n\tprivate Node edges;\n\
     \tprivate Node nodes[];\n\tprivate Node reversedEdges;\n\tprivate Node reversedNodes[];\n\
     \n\tprotected abstract Node createNode(final int id);\n\tprotected abstract Node[]\
     \ createNodeList(final int size);\n\n\tpublic AbstractGraph(final int numNode,\
-    \ final boolean directed) {\n\t\tSimpleUtil.nonNegativeCheck(numNode);\n\t\tthis.numNode\
+    \ final boolean directed) {\n\t\tFastIO.nonNegativeCheck(numNode);\n\t\tthis.numNode\
     \ = numNode;\n\t\tthis.directed = directed;\n\t\tedges = createNode(-1);\n\t\t\
     nodes = createNodeList(numNode);\n\t\tfor(int i = 0; i < numNode; i ++) nodes[i]\
     \ = createNode(i);\n\t}\n\n\tpublic final int numEdge() { return edges.size();\
@@ -384,7 +387,8 @@ data:
     \ {\n\t\tint c = this.cost.compareTo(that.cost);\n\t\tif(c == 0) c = Integer.compare(this.source,\
     \ that.source);\n\t\tif(c == 0) c = Integer.compare(this.target, that.target);\n\
     \t\treturn c;\n\t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/FastIO.java
   isVerificationFile: false
   path: library/AbstractGraph.java
   requiredBy:
@@ -407,8 +411,8 @@ data:
   - library/UnionFind.java
   - library/Rerooting.java
   - library/TemplateRerooting.java
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Bfs_test.java
   - library/Dijkstra_path_test.java

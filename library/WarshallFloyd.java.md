@@ -1,23 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WarshallFloyd_reversed_test.java
     title: library/WarshallFloyd_reversed_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -31,19 +34,19 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
-    \ library.AbstractGraph;\nimport library.PathRestoration;\n\nfinal class WarshallFloyd\
-    \ {\n\tprivate static int prv[][];\n\tprivate static WeightedEdge prvEdge[][];\n\
-    \t// O(V^3)\n\tpublic static final long[][] dist(final WeightedGraph g) { return\
-    \ dist(g, false); }\n\tpublic static final long[][] dist(final WeightedGraph g,\
-    \ final boolean memoize) { return dist(g.numNode, g.directed, g.edges(), memoize);\
-    \ }\n\tpublic static final long[][] dist(final int numNode, final boolean directed,\
-    \ final WeightedNode edges) { return dist(numNode, directed, edges, false); }\n\
-    \tpublic static final long[][] dist(final int numNode, final boolean directed,\
-    \ final WeightedNode edges, final boolean memoize) {\n\t\tfinal long dist[][]\
-    \ = new long[numNode][numNode];\n\t\tif(memoize) {\n\t\t\tprv = new int[numNode][numNode];\n\
-    \t\t\tfor(int[] ele : prv) Arrays.fill(ele, -1);\n\t\t\tprvEdge = new WeightedEdge[numNode][numNode];\n\
-    \t\t}\n\n\t\tfor(long[] ele : dist) Arrays.fill(ele, SimpleUtil.INF);\n\t\tfor(int\
+  code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\nimport library.AbstractGraph;\n\
+    import library.PathRestoration;\n\nfinal class WarshallFloyd {\n\tprivate static\
+    \ int prv[][];\n\tprivate static WeightedEdge prvEdge[][];\n\t// O(V^3)\n\tpublic\
+    \ static final long[][] dist(final WeightedGraph g) { return dist(g, false); }\n\
+    \tpublic static final long[][] dist(final WeightedGraph g, final boolean memoize)\
+    \ { return dist(g.numNode, g.directed, g.edges(), memoize); }\n\tpublic static\
+    \ final long[][] dist(final int numNode, final boolean directed, final WeightedNode\
+    \ edges) { return dist(numNode, directed, edges, false); }\n\tpublic static final\
+    \ long[][] dist(final int numNode, final boolean directed, final WeightedNode\
+    \ edges, final boolean memoize) {\n\t\tfinal long dist[][] = new long[numNode][numNode];\n\
+    \t\tif(memoize) {\n\t\t\tprv = new int[numNode][numNode];\n\t\t\tfor(int[] ele\
+    \ : prv) Arrays.fill(ele, -1);\n\t\t\tprvEdge = new WeightedEdge[numNode][numNode];\n\
+    \t\t}\n\n\t\tfor(long[] ele : dist) Arrays.fill(ele, FastIO.INF);\n\t\tfor(int\
     \ i = 0; i < numNode; i ++) dist[i][i] = 0;\n\t\tfor(WeightedEdge e : edges) updateDist(dist,\
     \ e, memoize);\n\t\tif(!directed) for(WeightedEdge e : edges) updateDist(dist,\
     \ e.reverse(), memoize);\n\t\tfor(int k = 0; k < numNode; k ++) {\n\t\t\tfor(int\
@@ -61,13 +64,14 @@ data:
     \ { return PathRestoration.pathEdge(new ArrayWeightedNode(-1), prv[start], prvEdge[start],\
     \ start, goal); }\n}"
   dependsOn:
+  - library/FastIO.java
   - library/AbstractGraph.java
   - library/PathRestoration.java
   isVerificationFile: false
   path: library/WarshallFloyd.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/WarshallFloyd_reversed_test.java
   - library/WarshallFloyd_test.java

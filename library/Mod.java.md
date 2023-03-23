@@ -1,11 +1,14 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Convolution.java
     title: library/Convolution.java
   - icon: ':heavy_check_mark:'
@@ -14,7 +17,7 @@ data:
   - icon: ':warning:'
     path: library/ExtendedMath.java
     title: library/ExtendedMath.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Fps.java
     title: library/Fps.java
   - icon: ':warning:'
@@ -24,33 +27,33 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/DynamicSwag_test.java
     title: library/DynamicSwag_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod107_manyCombination_test.java
     title: library/Mod107_manyCombination_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod107_pow_test.java
     title: library/Mod107_pow_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod107_random_test.java
     title: library/Mod107_random_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod998_manyCombination_test.java
     title: library/Mod998_manyCombination_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Mod998_random_test.java
     title: library/Mod998_random_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/SegmentTree_composite_test.java
     title: library/SegmentTree_composite_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDynamicSwag_test.java
     title: library/TemplateDynamicSwag_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateSegmentTree_composite_test.java
     title: library/TemplateSegmentTree_composite_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -64,7 +67,7 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nabstract\
+  code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\n\nabstract\
     \ class Mod {\n\tpublic final long MOD;\n\tpublic Mod(long mod) { MOD = mod; }\n\
     \n\tpublic abstract long mod(long x);\n\tpublic final long[] mod(final long[]\
     \ a) { for(int i = 0; i < a.length; i ++) a[i] = mod(a[i]); return a; }\n\tpublic\
@@ -75,19 +78,19 @@ data:
     \ : x; }\n\tpublic final long sum(final long... x) { long sum = 0; for(long ele\
     \ : x) sum = add(sum, ele); return sum; }\n\tpublic long sub(long x, final long\
     \ y) { return (x -= y) < - MOD || x >= MOD ? mod(x) : x < 0 ? x + MOD : x; }\n\
-    \tpublic final long pow(long x, long y) {\n\t\tSimpleUtil.nonNegativeCheck(y);\n\
-    \t\tx = mod(x);\n\t\tlong ans = 1;\n\t\tfor(; y > 0; y >>= 1) {\n\t\t\tif((y &\
-    \ 1) != 0) ans = mul(ans, x);\n\t\t\tx = mul(x, x);\n\t\t}\n\t\treturn ans;\n\t\
-    }\n\tpublic abstract long mul(long x, long y);\n\tpublic final long mul(final\
-    \ long... x) { long ans = 1; for(long ele : x) ans = mul(ans, ele); return ans;\
-    \ }\n\tpublic final long div(final long x, final long y) { return mul(x, inv(y));\
-    \ }\n\n\tpublic final long[] pows(long x, final int n) {\n\t\tx = mod(x);\n\t\t\
-    long pow[] = new long[n + 1];\n\t\tpow[0] = 1;\n\t\tfor(int i = 0; i < n; i ++)\
-    \ pow[i + 1] = mul(pow[i], x);\n\t\treturn pow;\n\t}\n\tpublic final long fact(final\
-    \ int n) {\n\t\tSimpleUtil.nonNegativeCheck(n);\n\t\tprepareFact();\n\t\tif(n\
-    \ < MAX_FACT1) return fact[n];\n\t\telse {\n\t\t\tlong ans = fact[MAX_FACT1 -\
-    \ 1];\n\t\t\tfor(int i = MAX_FACT1; i <= n; i ++) ans = mul(ans, i);\n\t\t\treturn\
-    \ ans;\n\t\t}\n\t}\n\tpublic final long invFact(final int n) {\n\t\tSimpleUtil.nonNegativeCheck(n);\n\
+    \tpublic final long pow(long x, long y) {\n\t\tFastIO.nonNegativeCheck(y);\n\t\
+    \tx = mod(x);\n\t\tlong ans = 1;\n\t\tfor(; y > 0; y >>= 1) {\n\t\t\tif((y & 1)\
+    \ != 0) ans = mul(ans, x);\n\t\t\tx = mul(x, x);\n\t\t}\n\t\treturn ans;\n\t}\n\
+    \tpublic abstract long mul(long x, long y);\n\tpublic final long mul(final long...\
+    \ x) { long ans = 1; for(long ele : x) ans = mul(ans, ele); return ans; }\n\t\
+    public final long div(final long x, final long y) { return mul(x, inv(y)); }\n\
+    \n\tpublic final long[] pows(long x, final int n) {\n\t\tx = mod(x);\n\t\tlong\
+    \ pow[] = new long[n + 1];\n\t\tpow[0] = 1;\n\t\tfor(int i = 0; i < n; i ++) pow[i\
+    \ + 1] = mul(pow[i], x);\n\t\treturn pow;\n\t}\n\tpublic final long fact(final\
+    \ int n) {\n\t\tFastIO.nonNegativeCheck(n);\n\t\tprepareFact();\n\t\tif(n < MAX_FACT1)\
+    \ return fact[n];\n\t\telse {\n\t\t\tlong ans = fact[MAX_FACT1 - 1];\n\t\t\tfor(int\
+    \ i = MAX_FACT1; i <= n; i ++) ans = mul(ans, i);\n\t\t\treturn ans;\n\t\t}\n\t\
+    }\n\tpublic final long invFact(final int n) {\n\t\tFastIO.nonNegativeCheck(n);\n\
     \t\tprepareFact();\n\t\tif(n < MAX_FACT1) return invFact[n];\n\t\telse return\
     \ inv(fact(n));\n\t}\n\n\tprivate static final int MAX_INV_SIZE = 100_100;\n\t\
     private final Map<Long, Long> invMap = new HashMap<>();\n\tpublic final long inv(long\
@@ -99,10 +102,10 @@ data:
     \t\t\tfinal long u1 = s1 - t1 * tmp;\n\t\t\ts0 = t0;\n\t\t\ts1 = t1;\n\t\t\tt0\
     \ = u0;\n\t\t\tt1 = u1;\n\t\t}\n\t\tif(s0 != 1) throw new ArithmeticException(\"\
     / by zero\");\n\t\tif(s1 < 0) s1 += MOD;\n\t\treturn s1;\n\t}\n\tpublic final\
-    \ long[] invs(final int n) { // O(N)\n\t\tSimpleUtil.nonNegativeCheck(n);\n\t\t\
-    long inv[] = new long[n + 1];\n\t\tif(n == 0) return inv;\n\t\tinv[1] = 1;\n\t\
-    \tfor(int i = 2; i <= n; i ++) inv[i] = mul(inv[(int)(MOD % i)], (MOD - MOD /\
-    \ i));\n\t\treturn inv;\n\t}\n\n\tprivate long g;\n\tpublic final long primitiveRoot()\
+    \ long[] invs(final int n) { // O(N)\n\t\tFastIO.nonNegativeCheck(n);\n\t\tlong\
+    \ inv[] = new long[n + 1];\n\t\tif(n == 0) return inv;\n\t\tinv[1] = 1;\n\t\t\
+    for(int i = 2; i <= n; i ++) inv[i] = mul(inv[(int)(MOD % i)], (MOD - MOD / i));\n\
+    \t\treturn inv;\n\t}\n\n\tprivate long g;\n\tpublic final long primitiveRoot()\
     \ { // O(1) or O(M^(1/2))\n\t\tif(MOD == 2) return 1;\n\t\tif(MOD == 167772161)\
     \ return 3;\n\t\tif(MOD == 469762049) return 3;\n\t\tif(MOD == 754974721) return\
     \ 11;\n\t\tif(MOD == 998244353) return 3;\n\t\tif(g != 0) return g;\n\n\t\t//\
@@ -181,7 +184,8 @@ data:
     \ < 0 ? x + MOD : x;\n\t}\n\t@Override\n\tpublic final long mul(long x, long y)\
     \ {\n\t\tif(x >= 0 && x < MOD && y >= 0 && y < MOD) return (x * y) % MOD;\n\t\t\
     x = mod(x);\n\t\ty = mod(y);\n\t\treturn (x * y) % MOD;\n\t}\n}"
-  dependsOn: []
+  dependsOn:
+  - library/FastIO.java
   isVerificationFile: false
   path: library/Mod.java
   requiredBy:
@@ -191,8 +195,8 @@ data:
   - library/Fps.java
   - library/ExtendedMath.java
   - library/Convolution.java
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/TemplateDynamicSwag_test.java
   - library/Mod107_manyCombination_test.java

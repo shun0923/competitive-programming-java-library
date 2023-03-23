@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
   _extendedRequiredBy: []
@@ -56,7 +56,7 @@ data:
   isVerificationFile: false
   path: library/ArbitraryMod.java
   requiredBy: []
-  timestamp: '2022-10-29 00:33:53+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/ArbitraryMod_sqrt_test.java

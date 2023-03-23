@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/WeightedUnionFind.java
     title: library/WeightedUnionFind.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -40,8 +40,8 @@ data:
   isVerificationFile: true
   path: library/WeightedUnionFind_test.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/WeightedUnionFind_test.java
 layout: document

@@ -1,14 +1,17 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDualSegmentTree_test.java
     title: library/TemplateDualSegmentTree_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -22,7 +25,7 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.function.*;\nimport library.SimpleUtil;\n\
+  code: "package library;\n\nimport java.util.function.*;\nimport library.FastIO;\n\
     \nclass TemplateDualSegmentTree<T> {\n\t@FunctionalInterface\n\tinterface BinaryConsumer<T>\
     \ extends BiConsumer<T, T> {  }\n\n\tSupplier<T> e2Supplier;\n\tT e2;\n\tBinaryConsumer<T>\
     \ g;\n\n\tint n;\n\tint height;\n\tT lazy[];\n\tint rangeL[];\n\tint rangeR[];\n\
@@ -32,7 +35,7 @@ data:
     \ e2Supplier, BinaryConsumer<T> g) {\n\t\tthis(len, e2Supplier, g);\n\t\tfor(int\
     \ i = 0; i < len; i ++) lazy[i + n] = xSupplier.get();\n\t}\n\t@SuppressWarnings(\"\
     unchecked\")\n\tTemplateDualSegmentTree(int len, Supplier<T> e2Supplier, BinaryConsumer<T>\
-    \ g) {\n\t\tSimpleUtil.nonNegativeCheck(len);\n\t\tthis.e2Supplier = e2Supplier;\n\
+    \ g) {\n\t\tFastIO.nonNegativeCheck(len);\n\t\tthis.e2Supplier = e2Supplier;\n\
     \t\tthis.e2 = e2Supplier.get();\n\t\tthis.g = g;\n\t\tn = 1;\n\t\theight = 0;\n\
     \t\twhile(n < len) { n <<= 1; height ++; }\n\t\tlazy = (T[]) new Object[n << 1];\n\
     \t\tfor(int i = 0; i < lazy.length; i ++) lazy[i] = e2Supplier.get();\n\t\trangeL\
@@ -42,21 +45,22 @@ data:
     \ }\n\t}\n\n\tvoid eval(int k) { // O(1)\n\t\tif(!lazy[k].equals(e2)) {\n\t\t\t\
     if(k < n) {\n\t\t\t\tg.accept(lazy[k << 1], lazy[k]);\n\t\t\t\tg.accept(lazy[(k\
     \ << 1) + 1], lazy[k]);\n\t\t\t\tlazy[k] = e2Supplier.get();\n\t\t\t}\n\t\t}\n\
-    \t}\n\n\tvoid update(int l, int r, T val) { // O(logN)\n\t\tSimpleUtil.inclusiveRangeCheck(l,\
-    \ n);\n\t\tSimpleUtil.inclusiveRangeCheck(r, n);\n\t\tSimpleUtil.assertion(l <=\
-    \ r, \"l is larger than r.\");\n\t\tl += n; r += n - 1;\n\t\tfor(int i = height;\
-    \ i > 0; i --) { eval(l >> i); eval(r >> i); }\n\t\tr ++;\n\t\twhile(l < r) {\n\
-    \t\t\tif((l & 1) != 0) { g.accept(lazy[l], val); eval(l); l ++; }\n\t\t\tif((r\
-    \ & 1) != 0) { r --; g.accept(lazy[r], val); eval(r); }\n\t\t\tl >>= 1; r >>=\
-    \ 1;\n\t\t}\n\t}\n\n\tT get(int j) { // O(logN)\n\t\tSimpleUtil.inclusiveRangeCheck(j,\
-    \ n);\n\t\tj += n;\n\t\tfor(int i = height; i > 0; i --) eval(j >> i);\n\t\treturn\
-    \ lazy[j];\n\t}\n}"
-  dependsOn: []
+    \t}\n\n\tvoid update(int l, int r, T val) { // O(logN)\n\t\tFastIO.inclusiveRangeCheck(l,\
+    \ n);\n\t\tFastIO.inclusiveRangeCheck(r, n);\n\t\tFastIO.assertion(l <= r, \"\
+    l is larger than r.\");\n\t\tl += n; r += n - 1;\n\t\tfor(int i = height; i >\
+    \ 0; i --) { eval(l >> i); eval(r >> i); }\n\t\tr ++;\n\t\twhile(l < r) {\n\t\t\
+    \tif((l & 1) != 0) { g.accept(lazy[l], val); eval(l); l ++; }\n\t\t\tif((r & 1)\
+    \ != 0) { r --; g.accept(lazy[r], val); eval(r); }\n\t\t\tl >>= 1; r >>= 1;\n\t\
+    \t}\n\t}\n\n\tT get(int j) { // O(logN)\n\t\tFastIO.inclusiveRangeCheck(j, n);\n\
+    \t\tj += n;\n\t\tfor(int i = height; i > 0; i --) eval(j >> i);\n\t\treturn lazy[j];\n\
+    \t}\n}"
+  dependsOn:
+  - library/FastIO.java
   isVerificationFile: false
   path: library/TemplateDualSegmentTree.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/TemplateDualSegmentTree_test.java
 documentation_of: library/TemplateDualSegmentTree.java

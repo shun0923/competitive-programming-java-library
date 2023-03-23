@@ -1,10 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
+  - icon: ':x:'
     path: library/Scc.java
     title: library/Scc.java
   _extendedRequiredBy: []
@@ -25,12 +28,12 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport library.SimpleUtil;\nimport library.AbstractGraph;\n\
+  code: "package library;\n\nimport library.FastIO;\nimport library.AbstractGraph;\n\
     import library.Scc;\n\nclass TwoSat extends ArrayUnweightedGraph {\n\tprivate\
     \ final int n;\n\tprivate final boolean ans[];\n\n\t// O(V)\n\tTwoSat(int n, boolean\
     \ directed) { super(n * 2, directed); this.n = n; ans = new boolean[n]; }\n\t\
     TwoSat(int n) { this(n, true); }\n\n\t// O(1)\n\tpublic final void addClause(int\
-    \ i, boolean f, int j, boolean g) {\n\t\tSimpleUtil.rangeCheck(i, n);\n\t\tSimpleUtil.rangeCheck(j,\
+    \ i, boolean f, int j, boolean g) {\n\t\tFastIO.rangeCheck(i, n);\n\t\tFastIO.rangeCheck(j,\
     \ n);\n\t\tadd((i << 1) + (f ? 0 : 1), (j << 1) + (g ? 1 : 0));\n\t\tadd((j <<\
     \ 1) + (g ? 0 : 1), (i << 1) + (f ? 1 : 0));\n\t}\n\tpublic final void addImplication(int\
     \ i, boolean f, int j, boolean g) { addClause(i, !f, j, g); }\n\tpublic final\
@@ -40,12 +43,13 @@ data:
     \ false;\n\t\t\tans[i] = id[i << 1] < id[(i << 1) | 1];\n\t\t}\n\t\treturn true;\n\
     \t}\n\tpublic final boolean[] cal() { satisfiable(); return ans; }\n}"
   dependsOn:
+  - library/FastIO.java
   - library/AbstractGraph.java
   - library/Scc.java
   isVerificationFile: false
   path: library/TwoSat.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/TwoSat.java

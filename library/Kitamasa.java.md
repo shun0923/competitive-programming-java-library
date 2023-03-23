@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Convolution.java
     title: library/Convolution.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Fps.java
     title: library/Fps.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
   _extendedRequiredBy: []
@@ -71,7 +71,7 @@ data:
   isVerificationFile: false
   path: library/Kitamasa.java
   requiredBy: []
-  timestamp: '2022-11-02 11:31:02+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/Kitamasa.java

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   _extendedRequiredBy: []
@@ -41,7 +41,7 @@ data:
   isVerificationFile: false
   path: library/EulerTour.java
   requiredBy: []
-  timestamp: '2023-03-23 18:55:37+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/EulerTour.java

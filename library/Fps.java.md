@@ -1,10 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Convolution.java
     title: library/Convolution.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
   _extendedRequiredBy:
@@ -27,24 +30,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_inv_test.java
     title: library/Fps_inv_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Fps_log_test.java
     title: library/Fps_log_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Fps_mul_test.java
     title: library/Fps_mul_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Fps_pow_test.java
     title: library/Fps_pow_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Fps_random_test.java
     title: library/Fps_random_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -59,16 +62,16 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
-    \ library.SimpleUtil;\nimport library.Mod;\nimport library.Convolution;\n\nclass\
-    \ CnvFpsOperator extends FpsOperator { // M(N)=NlogN\n\tConvolution cnv;\n\tstatic\
-    \ final int NAIVE_INV_THRESHOLD = 256;\n\tstatic final int NAIVE_EXP_THRESHOLD\
-    \ = 160;\n\tstatic final int NAIVE_SQRT_THRESHOLD = 100;\n\tCnvFpsOperator(Convolution\
-    \ cnv) { super(cnv.md); this.cnv = cnv; }\n\n\t// O(M(L))\n\tpublic final Fps\
-    \ butterfly(final Fps f) { return butterfly(f, f.a.length); }\n\tpublic final\
-    \ Fps butterfly(final Fps f, int l) { return butterflyEquals(resize(f, l)); }\n\
-    \tpublic final Fps butterflyEquals(final Fps f) { cnv.butterfly(f.a); return f;\
-    \ }\n\tpublic final Fps butterflyInv(final Fps f) { return butterflyInv(f, f.a.length);\
-    \ }\n\tpublic final Fps butterflyInv(final Fps f, int l) { return butterflyInvEquals(resize(f,\
+    \ library.FastIO;\nimport library.Mod;\nimport library.Convolution;\n\nclass CnvFpsOperator\
+    \ extends FpsOperator { // M(N)=NlogN\n\tConvolution cnv;\n\tstatic final int\
+    \ NAIVE_INV_THRESHOLD = 256;\n\tstatic final int NAIVE_EXP_THRESHOLD = 160;\n\t\
+    static final int NAIVE_SQRT_THRESHOLD = 100;\n\tCnvFpsOperator(Convolution cnv)\
+    \ { super(cnv.md); this.cnv = cnv; }\n\n\t// O(M(L))\n\tpublic final Fps butterfly(final\
+    \ Fps f) { return butterfly(f, f.a.length); }\n\tpublic final Fps butterfly(final\
+    \ Fps f, int l) { return butterflyEquals(resize(f, l)); }\n\tpublic final Fps\
+    \ butterflyEquals(final Fps f) { cnv.butterfly(f.a); return f; }\n\tpublic final\
+    \ Fps butterflyInv(final Fps f) { return butterflyInv(f, f.a.length); }\n\tpublic\
+    \ final Fps butterflyInv(final Fps f, int l) { return butterflyInvEquals(resize(f,\
     \ l)); }\n\tpublic final Fps butterflyInvEquals(final Fps f) { cnv.butterflyInv(f.a);\
     \ return f; }\n\tpublic final Fps doubling(final Fps f) { return doubling(f, f.a.length);\
     \ }\n\tpublic final Fps doubling(final Fps f, int l) { return doublingEquals(resize(f,\
@@ -434,8 +437,8 @@ data:
     \ i, pow); pow = md.mul(pow, c); }\n\t\treturn f;\n\t}\n\t// O(L/d)\n\t// return\
     \ f(x^d)\n\tpublic final Fps powComposite(final Fps f, final int d) { return powComposite(f,\
     \ d, Math.max(0, f.a.length * d - d + 1)); }\n\tpublic final Fps powComposite(final\
-    \ Fps f, final int d, final int l) {\n\t\tSimpleUtil.nonNegativeCheck(d);\n\t\t\
-    if(l == 0) return zero(0);\n\t\tif(d == 0) return constant(eval(f, 1), f.a.length);\n\
+    \ Fps f, final int d, final int l) {\n\t\tFastIO.nonNegativeCheck(d);\n\t\tif(l\
+    \ == 0) return zero(0);\n\t\tif(d == 0) return constant(eval(f, 1), f.a.length);\n\
     \t\tFps g = zero(l);\n\t\tfor(int i = 0, j = 0, m = Math.min(f.a.length, l / d\
     \ + 1); i < m; i ++, j += d) g.a[j] = f.a[i];\n\t\treturn g;\n\t}\n\tpublic final\
     \ Fps powCompositeEquals(final Fps f, final int d) { f.a = powComposite(f, d).a;\
@@ -446,7 +449,7 @@ data:
     \ 1, l), c), d); }\n\tpublic final Fps sparseCompositeEquals(final Fps f, final\
     \ int d, final long c) { f.a = sparseComposite(f, d, c).a; return f; }\n}\n\n\
     class Fps implements Comparable<Fps> {\n\tprivate final FpsOperator op;\n\tpublic\
-    \ long a[];\n\n\t// O(L)\n\tFps(final FpsOperator op, final int l) { SimpleUtil.nonNegativeCheck(l);\
+    \ long a[];\n\n\t// O(L)\n\tFps(final FpsOperator op, final int l) { FastIO.nonNegativeCheck(l);\
     \ this.op = op; a = new long[l]; }\n\tFps(final FpsOperator op, final int l, final\
     \ long x) { this(op, l); Arrays.fill(a, op.md.mod(x)); }\n\tFps(final FpsOperator\
     \ op, final long[] a, final int l) { this(op, l); System.arraycopy(a, 0, this.a,\
@@ -512,14 +515,15 @@ data:
     // O(L)\n\tpublic final Fps sparseComposite(final int d, final long c) { return\
     \ op.sparseCompositeEquals(this, d, c); }\n}"
   dependsOn:
+  - library/FastIO.java
   - library/Mod.java
   - library/Convolution.java
   isVerificationFile: false
   path: library/Fps.java
   requiredBy:
   - library/Kitamasa.java
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Fps_mul_test.java
   - library/Fps_log_test.java

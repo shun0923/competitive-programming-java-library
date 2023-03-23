@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/CompressedWaveletMatrix.java
     title: library/CompressedWaveletMatrix.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -41,7 +41,7 @@ data:
   isVerificationFile: true
   path: library/CompressedWaveletMatrix_freq_test.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/CompressedWaveletMatrix_freq_test.java

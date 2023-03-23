@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/DualSegmentTree.java
     title: library/DualSegmentTree.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -40,7 +40,7 @@ data:
   isVerificationFile: true
   path: library/DualSegmentTree_test.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
+  timestamp: '2023-03-23 19:06:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/DualSegmentTree_test.java

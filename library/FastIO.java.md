@@ -8,9 +8,162 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
+  - icon: ':question:'
+    path: library/AbstractGraph.java
+    title: library/AbstractGraph.java
+  - icon: ':heavy_check_mark:'
+    path: library/BellmanFord.java
+    title: library/BellmanFord.java
+  - icon: ':heavy_check_mark:'
+    path: library/Bfs.java
+    title: library/Bfs.java
+  - icon: ':warning:'
+    path: library/BitVector.java
+    title: library/BitVector.java
+  - icon: ':heavy_check_mark:'
+    path: library/CompressedWaveletMatrix.java
+    title: library/CompressedWaveletMatrix.java
+  - icon: ':question:'
+    path: library/Convolution.java
+    title: library/Convolution.java
+  - icon: ':heavy_check_mark:'
+    path: library/Dijkstra.java
+    title: library/Dijkstra.java
+  - icon: ':heavy_check_mark:'
+    path: library/Doubling.java
+    title: library/Doubling.java
+  - icon: ':heavy_check_mark:'
+    path: library/DualSegmentTree.java
+    title: library/DualSegmentTree.java
+  - icon: ':heavy_check_mark:'
+    path: library/DynamicSegmentTree.java
+    title: library/DynamicSegmentTree.java
+  - icon: ':heavy_check_mark:'
+    path: library/DynamicSwag.java
+    title: library/DynamicSwag.java
+  - icon: ':heavy_check_mark:'
+    path: library/ExtendedConvolution.java
+    title: library/ExtendedConvolution.java
+  - icon: ':warning:'
+    path: library/ExtendedMath.java
+    title: library/ExtendedMath.java
+  - icon: ':heavy_check_mark:'
+    path: library/FenwickTree.java
+    title: library/FenwickTree.java
+  - icon: ':warning:'
+    path: library/FftConvolution.java
+    title: library/FftConvolution.java
+  - icon: ':question:'
+    path: library/Fps.java
+    title: library/Fps.java
+  - icon: ':x:'
+    path: library/Kmp.java
+    title: library/Kmp.java
+  - icon: ':x:'
+    path: library/Kruskal.java
+    title: library/Kruskal.java
+  - icon: ':x:'
+    path: library/Lca.java
+    title: library/Lca.java
+  - icon: ':x:'
+    path: library/LcpArray.java
+    title: library/LcpArray.java
+  - icon: ':question:'
+    path: library/Mod.java
+    title: library/Mod.java
+  - icon: ':x:'
+    path: library/MultiSet.java
+    title: library/MultiSet.java
+  - icon: ':x:'
+    path: library/Pair.java
+    title: library/Pair.java
+  - icon: ':question:'
+    path: library/PathRestoration.java
+    title: library/PathRestoration.java
+  - icon: ':x:'
+    path: library/Permutation.java
+    title: library/Permutation.java
+  - icon: ':x:'
+    path: library/Rerooting.java
+    title: library/Rerooting.java
+  - icon: ':x:'
+    path: library/RollingHash.java
+    title: library/RollingHash.java
+  - icon: ':x:'
+    path: library/Scc.java
+    title: library/Scc.java
+  - icon: ':x:'
+    path: library/SegmentTree.java
+    title: library/SegmentTree.java
+  - icon: ':warning:'
+    path: library/Select.java
+    title: library/Select.java
+  - icon: ':x:'
+    path: library/SparseTable.java
+    title: library/SparseTable.java
+  - icon: ':x:'
+    path: library/SuffixArray.java
+    title: library/SuffixArray.java
+  - icon: ':x:'
+    path: library/Swag.java
+    title: library/Swag.java
+  - icon: ':x:'
+    path: library/TemplateDijkstra.java
+    title: library/TemplateDijkstra.java
+  - icon: ':x:'
+    path: library/TemplateDualSegmentTree.java
+    title: library/TemplateDualSegmentTree.java
+  - icon: ':x:'
+    path: library/TemplateDynamicSegmentTree.java
+    title: library/TemplateDynamicSegmentTree.java
+  - icon: ':x:'
+    path: library/TemplateDynamicSwag.java
+    title: library/TemplateDynamicSwag.java
+  - icon: ':x:'
+    path: library/TemplateRerooting.java
+    title: library/TemplateRerooting.java
+  - icon: ':x:'
+    path: library/TemplateSegmentTree.java
+    title: library/TemplateSegmentTree.java
+  - icon: ':x:'
+    path: library/TemplateSparseTable.java
+    title: library/TemplateSparseTable.java
+  - icon: ':x:'
+    path: library/TemplateSwag.java
+    title: library/TemplateSwag.java
+  - icon: ':x:'
+    path: library/TopologicalSort.java
+    title: library/TopologicalSort.java
+  - icon: ':x:'
+    path: library/Trie.java
+    title: library/Trie.java
+  - icon: ':warning:'
+    path: library/TwoSat.java
+    title: library/TwoSat.java
+  - icon: ':x:'
+    path: library/UnionFind.java
+    title: library/UnionFind.java
   - icon: ':warning:'
     path: library/Util.java
     title: library/Util.java
+  - icon: ':x:'
+    path: library/WarshallFloyd.java
+    title: library/WarshallFloyd.java
+  - icon: ':x:'
+    path: library/WaveletMatrix.java
+    title: library/WaveletMatrix.java
+  - icon: ':x:'
+    path: library/WeightedDoubling.java
+    title: library/WeightedDoubling.java
+  - icon: ':x:'
+    path: library/WeightedLca.java
+    title: library/WeightedLca.java
+  - icon: ':x:'
+    path: library/WeightedUnionFind.java
+    title: library/WeightedUnionFind.java
+  - icon: ':x:'
+    path: library/ZAlgorithm.java
+    title: library/ZAlgorithm.java
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: java
@@ -256,7 +409,58 @@ data:
   isVerificationFile: false
   path: library/FastIO.java
   requiredBy:
+  - library/ExtendedConvolution.java
+  - library/TemplateSwag.java
+  - library/LcpArray.java
+  - library/Kruskal.java
+  - library/DynamicSwag.java
+  - library/TemplateDynamicSegmentTree.java
+  - library/MultiSet.java
+  - library/SuffixArray.java
+  - library/Select.java
+  - library/Swag.java
+  - library/TemplateDijkstra.java
+  - library/BellmanFord.java
+  - library/Trie.java
+  - library/Mod.java
+  - library/SegmentTree.java
+  - library/FenwickTree.java
+  - library/TopologicalSort.java
+  - library/WeightedDoubling.java
+  - library/AbstractGraph.java
+  - library/ZAlgorithm.java
+  - library/TemplateDualSegmentTree.java
+  - library/Dijkstra.java
+  - library/SparseTable.java
+  - library/PathRestoration.java
+  - library/CompressedWaveletMatrix.java
   - library/Util.java
+  - library/WeightedLca.java
+  - library/Fps.java
+  - library/TemplateSegmentTree.java
+  - library/Lca.java
+  - library/Pair.java
+  - library/Kmp.java
+  - library/TwoSat.java
+  - library/RollingHash.java
+  - library/Scc.java
+  - library/WeightedUnionFind.java
+  - library/FftConvolution.java
+  - library/DynamicSegmentTree.java
+  - library/Bfs.java
+  - library/Doubling.java
+  - library/ExtendedMath.java
+  - library/DualSegmentTree.java
+  - library/WarshallFloyd.java
+  - library/WaveletMatrix.java
+  - library/UnionFind.java
+  - library/BitVector.java
+  - library/Rerooting.java
+  - library/Convolution.java
+  - library/TemplateDynamicSwag.java
+  - library/TemplateRerooting.java
+  - library/TemplateSparseTable.java
+  - library/Permutation.java
   timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

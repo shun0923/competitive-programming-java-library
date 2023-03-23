@@ -1,14 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
+  - icon: ':question:'
     path: library/Mod.java
     title: library/Mod.java
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/ExtendedConvolution.java
     title: library/ExtendedConvolution.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Fps.java
     title: library/Fps.java
   - icon: ':warning:'
@@ -33,24 +36,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_inv_test.java
     title: library/Fps_inv_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Fps_log_test.java
     title: library/Fps_log_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Fps_mul_test.java
     title: library/Fps_mul_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Fps_pow_test.java
     title: library/Fps_pow_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Fps_random_test.java
     title: library/Fps_random_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -64,7 +67,7 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport library.SimpleUtil;\nimport library.Mod;\n\nclass\
+  code: "package library;\n\nimport library.FastIO;\nimport library.Mod;\n\nclass\
     \ Convolution { // M=MOD\n\tpublic Mod md;\n\tprivate long g;\n\tstatic final\
     \ int SIZE = 30;\n\tprotected final long sumE[] = new long[SIZE];\n\tprotected\
     \ final long sumIE[] = new long[SIZE];\n\tstatic final int NAIVE_THRESHOLD = 512;\n\
@@ -97,8 +100,8 @@ data:
     \ s)]);\n\t\t\t}\n\t\t}\n\t\treturn a;\n\t}\n\n\t// O((N_1+N_2)log(N_1+N_2))\n\
     \tpublic final long[] cnv(final long[] a, final long[] b) { return cnv(a, b, Math.max(0,\
     \ a.length + b.length - 1)); }\n\tpublic long[] cnv(final long[] a, final long[]\
-    \ b, final int l) {\n\t\tSimpleUtil.nonNegativeCheck(l);\n\t\tif(a.length == 0\
-    \ || b.length == 0) return new long[l];\n\n\t\tint len = 1;\n\t\twhile(len < a.length\
+    \ b, final int l) {\n\t\tFastIO.nonNegativeCheck(l);\n\t\tif(a.length == 0 ||\
+    \ b.length == 0) return new long[l];\n\n\t\tint len = 1;\n\t\twhile(len < a.length\
     \ + b.length - 1) len <<= 1;\n\t\tif(len <= NAIVE_THRESHOLD) return naiveCnv(a,\
     \ b, l);\n\n\t\tfinal long g[] = new long[len];\n\t\tSystem.arraycopy(a, 0, g,\
     \ 0, a.length);\n\t\tfinal long h[] = new long[len];\n\t\tSystem.arraycopy(b,\
@@ -110,7 +113,7 @@ data:
     \ f2;\n\t}\n\n\t// O(N_1N_2)\n\tpublic final long[] naiveCnv(final long[] a, final\
     \ long[] b) {\n\t\treturn naiveCnv(a, b, Math.max(0, a.length + b.length - 1));\n\
     \t}\n\tpublic long[] naiveCnv(final long[] a, final long[] b, final int l) {\n\
-    \t\tSimpleUtil.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return\
+    \t\tFastIO.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return\
     \ new long[l];\n\n\t\tfinal long f[] = new long[l];\n\t\tfor(int i = 0; i < a.length;\
     \ i ++) {\n\t\t\tfor(int j = 0; j < b.length && i + j < l; j ++) {\n\t\t\t\tf[i\
     \ + j] = md.add(f[i + j], md.mul(a[i], b[j]));\n\t\t\t}\n\t\t}\n\t\treturn f;\n\
@@ -144,19 +147,19 @@ data:
     \ * tmp % 998_244_353;\n\t\t\t\t}\n\t\t\t\ttmp = tmp * sumIE[Integer.numberOfTrailingZeros(~\
     \ s)] % 998_244_353;\n\t\t\t}\n\t\t}\n\t\treturn a;\n\t}\n\n\t// O((N_1+N_2)log(N_1+N_2))\n\
     \tpublic final long[] cnv(final long[] a, final long[] b, final int l) {\n\t\t\
-    SimpleUtil.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return\
-    \ new long[l];\n\n\t\tint len = 1;\n\t\twhile(len < a.length + b.length - 1) len\
-    \ <<= 1;\n\t\tif(len <= NAIVE_THRESHOLD) return naiveCnv(a, b, l);\n\n\t\tfinal\
-    \ long g[] = new long[len];\n\t\tSystem.arraycopy(a, 0, g, 0, a.length);\n\t\t\
-    final long h[] = new long[len];\n\t\tSystem.arraycopy(b, 0, h, 0, b.length);\n\
-    \n\t\tbutterfly(g);\n\t\tbutterfly(h);\n\n\t\tfinal long f[] = new long[len];\n\
-    \t\tfor(int i = 0; i < len; i ++) f[i] = g[i] * h[i] % 998_244_353;\n\t\tbutterflyInv(f);\n\
+    FastIO.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return new\
+    \ long[l];\n\n\t\tint len = 1;\n\t\twhile(len < a.length + b.length - 1) len <<=\
+    \ 1;\n\t\tif(len <= NAIVE_THRESHOLD) return naiveCnv(a, b, l);\n\n\t\tfinal long\
+    \ g[] = new long[len];\n\t\tSystem.arraycopy(a, 0, g, 0, a.length);\n\t\tfinal\
+    \ long h[] = new long[len];\n\t\tSystem.arraycopy(b, 0, h, 0, b.length);\n\n\t\
+    \tbutterfly(g);\n\t\tbutterfly(h);\n\n\t\tfinal long f[] = new long[len];\n\t\t\
+    for(int i = 0; i < len; i ++) f[i] = g[i] * h[i] % 998_244_353;\n\t\tbutterflyInv(f);\n\
     \t\tfinal long f2[] = new long[l];\n\t\tSystem.arraycopy(f, 0, f2, 0, Math.min(l,\
     \ len));\n\n\t\tfinal long invLen = md.inv(len);\n\t\tfor(int i = 0; i < Math.min(l,\
     \ len); i ++) f2[i] = f2[i] * invLen % 998_244_353;\n\t\treturn f2;\n\t}\n\n\t\
     public final long[] naiveCnv(final long[] a, final long[] b, final int l) {\n\t\
-    \tSimpleUtil.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return\
-    \ new long[l];\n\n\t\tfinal long f[] = new long[l];\n\t\tfor(int i = 0; i < a.length;\
+    \tFastIO.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return new\
+    \ long[l];\n\n\t\tfinal long f[] = new long[l];\n\t\tfor(int i = 0; i < a.length;\
     \ i ++) {\n\t\t\tfor(int j = 0; j < b.length && i + j < l; j ++) {\n\t\t\t\tf[i\
     \ + j] = (f[i + j] + a[i] * b[j]) % 998_244_353;\n\t\t\t}\n\t\t}\n\t\treturn f;\n\
     \t}\n}\nfinal class Convolution754974721 extends Convolution { // M=MOD\n\tpublic\
@@ -182,19 +185,19 @@ data:
     \ * tmp % 754_974_721;\n\t\t\t\t}\n\t\t\t\ttmp = tmp * sumIE[Integer.numberOfTrailingZeros(~\
     \ s)] % 754_974_721;\n\t\t\t}\n\t\t}\n\t\treturn a;\n\t}\n\n\t// O((N_1+N_2)log(N_1+N_2))\n\
     \tpublic final long[] cnv(final long[] a, final long[] b, final int l) {\n\t\t\
-    SimpleUtil.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return\
-    \ new long[l];\n\n\t\tint len = 1;\n\t\twhile(len < a.length + b.length - 1) len\
-    \ <<= 1;\n\t\tif(len <= NAIVE_THRESHOLD) return naiveCnv(a, b, l);\n\n\t\tfinal\
-    \ long g[] = new long[len];\n\t\tSystem.arraycopy(a, 0, g, 0, a.length);\n\t\t\
-    final long h[] = new long[len];\n\t\tSystem.arraycopy(b, 0, h, 0, b.length);\n\
-    \n\t\tbutterfly(g);\n\t\tbutterfly(h);\n\n\t\tlong f[] = new long[len];\n\t\t\
-    for(int i = 0; i < len; i ++) f[i] = g[i] * h[i] % 754_974_721;\n\t\tbutterflyInv(f);\n\
+    FastIO.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return new\
+    \ long[l];\n\n\t\tint len = 1;\n\t\twhile(len < a.length + b.length - 1) len <<=\
+    \ 1;\n\t\tif(len <= NAIVE_THRESHOLD) return naiveCnv(a, b, l);\n\n\t\tfinal long\
+    \ g[] = new long[len];\n\t\tSystem.arraycopy(a, 0, g, 0, a.length);\n\t\tfinal\
+    \ long h[] = new long[len];\n\t\tSystem.arraycopy(b, 0, h, 0, b.length);\n\n\t\
+    \tbutterfly(g);\n\t\tbutterfly(h);\n\n\t\tlong f[] = new long[len];\n\t\tfor(int\
+    \ i = 0; i < len; i ++) f[i] = g[i] * h[i] % 754_974_721;\n\t\tbutterflyInv(f);\n\
     \t\tfinal long f2[] = new long[l];\n\t\tSystem.arraycopy(f, 0, f2, 0, Math.min(l,\
     \ len));\n\n\t\tfinal long invLen = md.inv(len);\n\t\tfor(int i = 0; i < Math.min(l,\
     \ len); i ++) f2[i] = f2[i] * invLen % 754_974_721;\n\t\treturn f2;\n\t}\n\n\t\
     public final long[] naiveCnv(final long[] a, final long[] b, final int l) {\n\t\
-    \tSimpleUtil.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return\
-    \ new long[l];\n\n\t\tfinal long f[] = new long[l];\n\t\tfor(int i = 0; i < a.length;\
+    \tFastIO.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return new\
+    \ long[l];\n\n\t\tfinal long f[] = new long[l];\n\t\tfor(int i = 0; i < a.length;\
     \ i ++) {\n\t\t\tfor(int j = 0; j < b.length && i + j < l; j ++) {\n\t\t\t\tf[i\
     \ + j] = (f[i + j] + a[i] * b[j]) % 754_974_721;\n\t\t\t}\n\t\t}\n\t\treturn f;\n\
     \t}\n}\nfinal class Convolution167772161 extends Convolution { // M=MOD\n\tpublic\
@@ -220,19 +223,19 @@ data:
     \ * tmp % 167_772_161;\n\t\t\t\t}\n\t\t\t\ttmp = tmp * sumIE[Integer.numberOfTrailingZeros(~\
     \ s)] % 167_772_161;\n\t\t\t}\n\t\t}\n\t\treturn a;\n\t}\n\n\t// O((N_1+N_2)log(N_1+N_2))\n\
     \tpublic final long[] cnv(final long[] a, final long[] b, final int l) {\n\t\t\
-    SimpleUtil.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return\
-    \ new long[l];\n\n\t\tint len = 1;\n\t\twhile(len < a.length + b.length - 1) len\
-    \ <<= 1;\n\t\tif(len <= NAIVE_THRESHOLD) return naiveCnv(a, b, l);\n\n\t\tfinal\
-    \ long g[] = new long[len];\n\t\tSystem.arraycopy(a, 0, g, 0, a.length);\n\t\t\
-    final long h[] = new long[len];\n\t\tSystem.arraycopy(b, 0, h, 0, b.length);\n\
-    \n\t\tbutterfly(g);\n\t\tbutterfly(h);\n\n\t\tlong f[] = new long[len];\n\t\t\
-    for(int i = 0; i < len; i ++) f[i] = g[i] * h[i] % 167_772_161;\n\t\tbutterflyInv(f);\n\
+    FastIO.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return new\
+    \ long[l];\n\n\t\tint len = 1;\n\t\twhile(len < a.length + b.length - 1) len <<=\
+    \ 1;\n\t\tif(len <= NAIVE_THRESHOLD) return naiveCnv(a, b, l);\n\n\t\tfinal long\
+    \ g[] = new long[len];\n\t\tSystem.arraycopy(a, 0, g, 0, a.length);\n\t\tfinal\
+    \ long h[] = new long[len];\n\t\tSystem.arraycopy(b, 0, h, 0, b.length);\n\n\t\
+    \tbutterfly(g);\n\t\tbutterfly(h);\n\n\t\tlong f[] = new long[len];\n\t\tfor(int\
+    \ i = 0; i < len; i ++) f[i] = g[i] * h[i] % 167_772_161;\n\t\tbutterflyInv(f);\n\
     \t\tfinal long f2[] = new long[l];\n\t\tSystem.arraycopy(f, 0, f2, 0, Math.min(l,\
     \ len));\n\n\t\tfinal long invLen = md.inv(len);\n\t\tfor(int i = 0; i < Math.min(l,\
     \ len); i ++) f2[i] = f2[i] * invLen % 167_772_161;\n\t\treturn f2;\n\t}\n\n\t\
     public final long[] naiveCnv(final long[] a, final long[] b, final int l) {\n\t\
-    \tSimpleUtil.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return\
-    \ new long[l];\n\n\t\tfinal long f[] = new long[l];\n\t\tfor(int i = 0; i < a.length;\
+    \tFastIO.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return new\
+    \ long[l];\n\n\t\tfinal long f[] = new long[l];\n\t\tfor(int i = 0; i < a.length;\
     \ i ++) {\n\t\t\tfor(int j = 0; j < b.length && i + j < l; j ++) {\n\t\t\t\tf[i\
     \ + j] = (f[i + j] + a[i] * b[j]) % 167_772_161;\n\t\t\t}\n\t\t}\n\t\treturn f;\n\
     \t}\n}\nfinal class Convolution469762049 extends Convolution { // M=MOD\n\tpublic\
@@ -258,23 +261,24 @@ data:
     \ * tmp % 469_762_049;\n\t\t\t\t}\n\t\t\t\ttmp = tmp * sumIE[Integer.numberOfTrailingZeros(~\
     \ s)] % 469_762_049;\n\t\t\t}\n\t\t}\n\t\treturn a;\n\t}\n\n\t// O((N_1+N_2)log(N_1+N_2))\n\
     \tpublic final long[] cnv(final long[] a, final long[] b, final int l) {\n\t\t\
-    SimpleUtil.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return\
-    \ new long[l];\n\n\t\tint len = 1;\n\t\twhile(len < a.length + b.length - 1) len\
-    \ <<= 1;\n\t\tif(len <= NAIVE_THRESHOLD) return naiveCnv(a, b, l);\n\n\t\tfinal\
-    \ long g[] = new long[len];\n\t\tSystem.arraycopy(a, 0, g, 0, a.length);\n\t\t\
-    final long h[] = new long[len];\n\t\tSystem.arraycopy(b, 0, h, 0, b.length);\n\
-    \n\t\tbutterfly(g);\n\t\tbutterfly(h);\n\n\t\tlong f[] = new long[len];\n\t\t\
-    for(int i = 0; i < len; i ++) f[i] = g[i] * h[i] % 469_762_049;\n\t\tbutterflyInv(f);\n\
+    FastIO.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return new\
+    \ long[l];\n\n\t\tint len = 1;\n\t\twhile(len < a.length + b.length - 1) len <<=\
+    \ 1;\n\t\tif(len <= NAIVE_THRESHOLD) return naiveCnv(a, b, l);\n\n\t\tfinal long\
+    \ g[] = new long[len];\n\t\tSystem.arraycopy(a, 0, g, 0, a.length);\n\t\tfinal\
+    \ long h[] = new long[len];\n\t\tSystem.arraycopy(b, 0, h, 0, b.length);\n\n\t\
+    \tbutterfly(g);\n\t\tbutterfly(h);\n\n\t\tlong f[] = new long[len];\n\t\tfor(int\
+    \ i = 0; i < len; i ++) f[i] = g[i] * h[i] % 469_762_049;\n\t\tbutterflyInv(f);\n\
     \t\tfinal long f2[] = new long[l];\n\t\tSystem.arraycopy(f, 0, f2, 0, Math.min(l,\
     \ len));\n\n\t\tfinal long invLen = md.inv(len);\n\t\tfor(int i = 0; i < Math.min(l,\
     \ len); i ++) f2[i] = f2[i] * invLen % 469_762_049;\n\t\treturn f2;\n\t}\n\n\t\
     public final long[] naiveCnv(final long[] a, final long[] b, final int l) {\n\t\
-    \tSimpleUtil.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return\
-    \ new long[l];\n\n\t\tfinal long f[] = new long[l];\n\t\tfor(int i = 0; i < a.length;\
+    \tFastIO.nonNegativeCheck(l);\n\t\tif(a.length == 0 || b.length == 0) return new\
+    \ long[l];\n\n\t\tfinal long f[] = new long[l];\n\t\tfor(int i = 0; i < a.length;\
     \ i ++) {\n\t\t\tfor(int j = 0; j < b.length && i + j < l; j ++) {\n\t\t\t\tf[i\
     \ + j] = (f[i + j] + a[i] * b[j]) % 469_762_049;\n\t\t\t}\n\t\t}\n\t\treturn f;\n\
     \t}\n}"
   dependsOn:
+  - library/FastIO.java
   - library/Mod.java
   isVerificationFile: false
   path: library/Convolution.java
@@ -282,8 +286,8 @@ data:
   - library/ExtendedConvolution.java
   - library/Kitamasa.java
   - library/Fps.java
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Fps_mul_test.java
   - library/Fps_log_test.java

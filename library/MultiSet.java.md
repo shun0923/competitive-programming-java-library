@@ -1,14 +1,17 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TreeMultiSet_test.java
     title: library/TreeMultiSet_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -22,7 +25,7 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\n\nclass\
+  code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\n\nclass\
     \ MultiSet<K> extends HashMap<K, Long> {\n\tlong cnt = 0;\n\tpublic final Long\
     \ add(K key) { return update(key, 1); }\n\tpublic final Long erase(K key) { return\
     \ update(key, -1); }\n\tpublic final Long update(K key, long value) {\n\t\tcnt\
@@ -55,12 +58,13 @@ data:
     \ { K last = last(); erase(last); return last; }\n\tpublic final K removeLast()\
     \ { K last = last(); remove(last); return last; }\n\n\tprivate static final long\
     \ convert(Long value) { return value == null ? 0 : value; }\n}"
-  dependsOn: []
+  dependsOn:
+  - library/FastIO.java
   isVerificationFile: false
   path: library/MultiSet.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/TreeMultiSet_test.java
 documentation_of: library/MultiSet.java

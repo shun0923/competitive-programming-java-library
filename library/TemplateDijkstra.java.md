@@ -1,23 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
+    path: library/FastIO.java
+    title: library/FastIO.java
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDijkstra_pathEdge_test.java
     title: library/TemplateDijkstra_pathEdge_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/TemplateDijkstra_test.java
     title: library/TemplateDijkstra_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -32,7 +35,7 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
-    \ library.SimpleUtil;\nimport library.AbstractGraph;\nimport library.PathRestoration;\n\
+    \ library.FastIO;\nimport library.AbstractGraph;\nimport library.PathRestoration;\n\
     \nfinal class TemplateDijkstra<T> {\n\tprivate final class Dist implements Comparable<Dist>\
     \ {\n\t\tpublic int target;\n\t\tpublic T cost;\n\t\tpublic Dist(final int target,\
     \ final T cost) { this.target = target; this.cost = cost; }\n\t\t@Override public\
@@ -58,11 +61,11 @@ data:
     \ dist(final int numNode, final TemplateNode<T>[] nodes, final int start) { return\
     \ dist(numNode, nodes, start, false); }\n\t@SuppressWarnings(\"unchecked\")\n\t\
     public final ArrayList<T> dist(final int numNode, final TemplateNode<T>[] nodes,\
-    \ final int start, final boolean memoize) {\n\t\tSimpleUtil.rangeCheck(start,\
-    \ numNode);\n\t\tfinal ArrayList<T> dist = new ArrayList<>(numNode);\n\t\tif(memoize)\
-    \ {\n\t\t\tprv = new int[numNode];\n\t\t\tArrays.fill(prv, -1);\n\t\t\tprvEdge\
-    \ = new TemplateEdge[numNode];\n\t\t}\n\t\tQueue<Dist> q = new PriorityQueue<>();\n\
-    \n\t\tfor(int i = 0; i < numNode; i ++) dist.add(null);\n\t\tdist.set(start, eSupplier.get());\n\
+    \ final int start, final boolean memoize) {\n\t\tFastIO.rangeCheck(start, numNode);\n\
+    \t\tfinal ArrayList<T> dist = new ArrayList<>(numNode);\n\t\tif(memoize) {\n\t\
+    \t\tprv = new int[numNode];\n\t\t\tArrays.fill(prv, -1);\n\t\t\tprvEdge = new\
+    \ TemplateEdge[numNode];\n\t\t}\n\t\tQueue<Dist> q = new PriorityQueue<>();\n\n\
+    \t\tfor(int i = 0; i < numNode; i ++) dist.add(null);\n\t\tdist.set(start, eSupplier.get());\n\
     \t\tq.add(new Dist(start, dist.get(start)));\n\t\twhile(!q.isEmpty()) {\n\t\t\t\
     Dist crt = q.poll();\n\t\t\tif(cmp.compare(dist.get(crt.target), crt.cost) < 0)\
     \ continue;\n\t\t\tT tmp = dist.get(crt.target);\n\t\t\tfor(TemplateEdge<T> e\
@@ -76,13 +79,14 @@ data:
     \ pathEdge(final int start, final int goal) { return PathRestoration.pathEdge(new\
     \ ArrayTemplateNode<T>(-1), prv, prvEdge, start, goal); }\n}"
   dependsOn:
+  - library/FastIO.java
   - library/AbstractGraph.java
   - library/PathRestoration.java
   isVerificationFile: false
   path: library/TemplateDijkstra.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 19:06:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/TemplateDijkstra_pathEdge_test.java
   - library/TemplateDijkstra_test.java
