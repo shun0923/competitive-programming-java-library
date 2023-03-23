@@ -12,7 +12,7 @@ public class WarshallFloyd_test extends Solver {
 	public void solve() {
 		int n = ni();
 		int m = ni();
-		ArrayWeightedGraph g = new ArrayWeightedGraph(n, true);
+		var g = new WeightedListGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
 		long dist[][] = WarshallFloyd.dist(g);
 		for(int i = 0; i < n; i ++) if(dist[i][i] < 0) { prtln("NEGATIVE CYCLE"); return; }

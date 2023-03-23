@@ -13,7 +13,7 @@ public class BellmanFord_test extends Solver {
 		int n = ni();
 		int m = ni();
 		int r = ni();
-		ArrayWeightedGraph g = new ArrayWeightedGraph(n, true);
+		var g = new WeightedListGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
 		long dist[] = BellmanFord.dist(g, r);
 		if(isINF(min(dist))) prtln("NEGATIVE CYCLE");
