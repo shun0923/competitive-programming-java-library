@@ -5,7 +5,7 @@ data:
     path: library/FastIO.java
     title: library/FastIO.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
   - icon: ':heavy_check_mark:'
@@ -35,7 +35,7 @@ data:
   - icon: ':x:'
     path: library/Scc.java
     title: library/Scc.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
   - icon: ':x:'
@@ -50,7 +50,7 @@ data:
   - icon: ':question:'
     path: library/UnionFind.java
     title: library/UnionFind.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
   - icon: ':x:'
@@ -66,7 +66,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord_reversed_test.java
     title: library/BellmanFord_reversed_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
   - icon: ':heavy_check_mark:'
@@ -109,9 +109,9 @@ data:
     path: library/Scc_ids_test.java
     title: library/Scc_ids_test.java
   - icon: ':x:'
-    path: library/TemplateDijkstra_pathEdge_test.java
-    title: library/TemplateDijkstra_pathEdge_test.java
-  - icon: ':x:'
+    path: library/TemplateDijkstra_path_test.java
+    title: library/TemplateDijkstra_path_test.java
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra_test.java
     title: library/TemplateDijkstra_test.java
   - icon: ':x:'
@@ -123,10 +123,10 @@ data:
   - icon: ':x:'
     path: library/UnionFind_uniteAll_test.java
     title: library/UnionFind_uniteAll_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_reversed_test.java
     title: library/WarshallFloyd_reversed_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
   - icon: ':x:'
@@ -407,7 +407,6 @@ data:
   - library/Dijkstra_pathEdge_test.java
   - library/BellmanFord_test.java
   - library/Dijkstra_reversed_test.java
-  - library/TemplateDijkstra_pathEdge_test.java
   - library/Scc_graph_test.java
   - library/TopologicalSort_test.java
   - library/Dijkstra_test.java
@@ -426,6 +425,7 @@ data:
   - library/Scc_groups_test.java
   - library/BellmanFord_reversed_test.java
   - library/Dijkstra_forDenseGraph_test.java
+  - library/TemplateDijkstra_path_test.java
 documentation_of: library/AbstractGraph.java
 layout: document
 redirect_from:

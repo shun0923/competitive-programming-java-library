@@ -24,7 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord_reversed_test.java
     title: library/BellmanFord_reversed_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
   - icon: ':heavy_check_mark:'
@@ -181,9 +181,9 @@ data:
     path: library/Swag_test.java
     title: library/Swag_test.java
   - icon: ':x:'
-    path: library/TemplateDijkstra_pathEdge_test.java
-    title: library/TemplateDijkstra_pathEdge_test.java
-  - icon: ':x:'
+    path: library/TemplateDijkstra_path_test.java
+    title: library/TemplateDijkstra_path_test.java
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra_test.java
     title: library/TemplateDijkstra_test.java
   - icon: ':heavy_check_mark:'
@@ -231,10 +231,10 @@ data:
   - icon: ':x:'
     path: library/UnionFind_uniteAll_test.java
     title: library/UnionFind_uniteAll_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_reversed_test.java
     title: library/WarshallFloyd_reversed_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
   - icon: ':heavy_check_mark:'
@@ -307,7 +307,6 @@ data:
   - library/Convolution107_test.java
   - library/TemplateSegmentTree_test.java
   - library/Dijkstra_reversed_test.java
-  - library/TemplateDijkstra_pathEdge_test.java
   - library/ManyFastIO_test.java
   - library/Scc_graph_test.java
   - library/SuffixArray_test.java
@@ -365,6 +364,7 @@ data:
   - library/Doubling_test.java
   - library/BellmanFord_reversed_test.java
   - library/Dijkstra_forDenseGraph_test.java
+  - library/TemplateDijkstra_path_test.java
   - library/TemplateSwag_test.java
   - library/Mod998_manyCombination_test.java
   - library/DynamicSegmentTree_small_test.java

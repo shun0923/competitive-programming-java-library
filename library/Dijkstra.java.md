@@ -56,40 +56,39 @@ data:
     \t\t\treturn true;\n\t\t}\n\t\t@Override\n\t\tpublic final int compareTo(final\
     \ Dist that) {\n\t\t\tint c = Long.compare(this.cost, that.cost);\n\t\t\tif(c\
     \ == 0) c = Integer.compare(this.target, that.target);\n\t\t\treturn c;\n\t\t\
-    }\n\t}\n\n\t// O((E+V)logV)\n\tpublic static final <Graph extends AbstractGraph<Node,\
-    \ WeightedEdge>, Node extends WeightedNode> long[] dist(final Graph g, final int\
-    \ start) { return dist(g, start, null, null); }\n\tpublic static final <Graph\
-    \ extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[]\
-    \ dist(final Graph g, final int start, final int[] prv) { return dist(g, start,\
-    \ prv, null); }\n\tpublic static final <Graph extends AbstractGraph<Node, WeightedEdge>,\
-    \ Node extends WeightedNode> long[] dist(final Graph g, final int start, final\
-    \ int[] prv, final WeightedEdge[] prvEdge) { return dist(g.numNode, g.nodes(),\
-    \ start, prv, prvEdge); }\n\tpublic static final long[] dist(final int numNode,\
-    \ final WeightedNode[] nodes, final int start) { return dist(numNode, nodes, start,\
-    \ null, null); }\n\tpublic static final long[] dist(final int numNode, final WeightedNode[]\
-    \ nodes, final int[] prv, final int start) { return dist(numNode, nodes, start,\
-    \ prv, null); }\n\tpublic static final long[] dist(final int numNode, final WeightedNode[]\
-    \ nodes, final int start, final int[] prv, final WeightedEdge[] prvEdge) {\n\t\
-    \tFastIO.rangeCheck(start, numNode);\n\t\tlong dist[] = new long[numNode];\n\t\
-    \tif(prv != null) Arrays.fill(prv, -1);\n\t\tQueue<Dist> q = new PriorityQueue<>();\n\
-    \n\t\tArrays.fill(dist, FastIO.INF);\n\t\tdist[start] = 0;\n\t\tq.add(new Dist(start,\
-    \ dist[start]));\n\t\twhile(!q.isEmpty()) {\n\t\t\tDist crt = q.poll();\n\t\t\t\
-    if(dist[crt.target] < crt.cost) continue;\n\t\t\tfor(WeightedEdge e : nodes[crt.target])\
-    \ {\n\t\t\t\tlong updated = dist[e.source] + e.cost;\n\t\t\t\tif(dist[e.target]\
-    \ > updated) {\n\t\t\t\t\tdist[e.target] = updated;\n\t\t\t\t\tq.add(new Dist(e.target,\
-    \ updated));\n\t\t\t\t\tif(prv != null) prv[e.target] = e.source;\n\t\t\t\t\t\
-    if(prvEdge != null) prvEdge[e.target] = e;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn\
-    \ dist;\n\t}\n\n\t// O(V^2)\n\tpublic static final <Graph extends AbstractGraph<Node,\
-    \ WeightedEdge>, Node extends WeightedNode> long[] distForDenseGraph(final Graph\
-    \ g, final int start) { return distForDenseGraph(g, start, null, null); }\n\t\
-    public static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends\
-    \ WeightedNode> long[] distForDenseGraph(final Graph g, final int start, final\
-    \ int[] prv) { return distForDenseGraph(g, start, prv, null); }\n\tpublic static\
-    \ final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode>\
-    \ long[] distForDenseGraph(final Graph g, final int start, final int[] prv, final\
-    \ WeightedEdge[] prvEdge) { return distForDenseGraph(g.numNode, g.nodes(), start,\
-    \ prv, prvEdge); }\n\tpublic static final long[] distForDenseGraph(final int numNode,\
-    \ final WeightedNode[] nodes, final int start) { return distForDenseGraph(numNode,\
+    }\n\t}\n\n\t// O((E+V)logV)\n\tpublic static final <Graph extends AbstractGraph<?\
+    \ extends WeightedNode, WeightedEdge>> long[] dist(final Graph g, final int start)\
+    \ { return dist(g, start, null, null); }\n\tpublic static final <Graph extends\
+    \ AbstractGraph<? extends WeightedNode, WeightedEdge>> long[] dist(final Graph\
+    \ g, final int start, final int[] prv) { return dist(g, start, prv, null); }\n\
+    \tpublic static final <Graph extends AbstractGraph<? extends WeightedNode, WeightedEdge>>\
+    \ long[] dist(final Graph g, final int start, final int[] prv, final WeightedEdge[]\
+    \ prvEdge) { return dist(g.numNode, g.nodes(), start, prv, prvEdge); }\n\tpublic\
+    \ static final long[] dist(final int numNode, final WeightedNode[] nodes, final\
+    \ int start) { return dist(numNode, nodes, start, null, null); }\n\tpublic static\
+    \ final long[] dist(final int numNode, final WeightedNode[] nodes, final int start,\
+    \ final int[] prv) { return dist(numNode, nodes, start, prv, null); }\n\tpublic\
+    \ static final long[] dist(final int numNode, final WeightedNode[] nodes, final\
+    \ int start, final int[] prv, final WeightedEdge[] prvEdge) {\n\t\tFastIO.rangeCheck(start,\
+    \ numNode);\n\t\tlong dist[] = new long[numNode];\n\t\tif(prv != null) Arrays.fill(prv,\
+    \ -1);\n\t\tQueue<Dist> q = new PriorityQueue<>();\n\n\t\tArrays.fill(dist, FastIO.INF);\n\
+    \t\tdist[start] = 0;\n\t\tq.add(new Dist(start, dist[start]));\n\t\twhile(!q.isEmpty())\
+    \ {\n\t\t\tDist crt = q.poll();\n\t\t\tif(dist[crt.target] < crt.cost) continue;\n\
+    \t\t\tfor(WeightedEdge e : nodes[crt.target]) {\n\t\t\t\tlong updated = dist[e.source]\
+    \ + e.cost;\n\t\t\t\tif(dist[e.target] > updated) {\n\t\t\t\t\tdist[e.target]\
+    \ = updated;\n\t\t\t\t\tq.add(new Dist(e.target, updated));\n\t\t\t\t\tif(prv\
+    \ != null) prv[e.target] = e.source;\n\t\t\t\t\tif(prvEdge != null) prvEdge[e.target]\
+    \ = e;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n\n\t// O(V^2)\n\tpublic\
+    \ static final <Graph extends AbstractGraph<? extends WeightedNode, WeightedEdge>>\
+    \ long[] distForDenseGraph(final Graph g, final int start) { return distForDenseGraph(g,\
+    \ start, null, null); }\n\tpublic static final <Graph extends AbstractGraph<?\
+    \ extends WeightedNode, WeightedEdge>> long[] distForDenseGraph(final Graph g,\
+    \ final int start, final int[] prv) { return distForDenseGraph(g, start, prv,\
+    \ null); }\n\tpublic static final <Graph extends AbstractGraph<? extends WeightedNode,\
+    \ WeightedEdge>> long[] distForDenseGraph(final Graph g, final int start, final\
+    \ int[] prv, final WeightedEdge[] prvEdge) { return distForDenseGraph(g.numNode,\
+    \ g.nodes(), start, prv, prvEdge); }\n\tpublic static final long[] distForDenseGraph(final\
+    \ int numNode, final WeightedNode[] nodes, final int start) { return distForDenseGraph(numNode,\
     \ nodes, start, null, null); }\n\tpublic static final long[] distForDenseGraph(final\
     \ int numNode, final WeightedNode[] nodes, final int start, final int[] prv) {\
     \ return distForDenseGraph(numNode, nodes, start, prv, null); }\n\tpublic static\
@@ -112,7 +111,7 @@ data:
   isVerificationFile: false
   path: library/Dijkstra.java
   requiredBy: []
-  timestamp: '2023-03-24 01:05:34+09:00'
+  timestamp: '2023-03-24 01:16:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Dijkstra_path_test.java

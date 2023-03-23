@@ -7,13 +7,7 @@ data:
   - icon: ':warning:'
     path: library/FastIO.java
     title: library/FastIO.java
-  _extendedRequiredBy:
-  - icon: ':x:'
-    path: library/TemplateDijkstra.java
-    title: library/TemplateDijkstra.java
-  - icon: ':x:'
-    path: library/WarshallFloyd.java
-    title: library/WarshallFloyd.java
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra_pathEdge_test.java
@@ -22,8 +16,8 @@ data:
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
   - icon: ':x:'
-    path: library/TemplateDijkstra_pathEdge_test.java
-    title: library/TemplateDijkstra_pathEdge_test.java
+    path: library/TemplateDijkstra_path_test.java
+    title: library/TemplateDijkstra_path_test.java
   _isVerificationFailed: true
   _pathExtension: java
   _verificationStatusIcon: ':question:'
@@ -49,7 +43,7 @@ data:
     \ - 1; i < path.length; i ++, j --) path[i] = pathList.get(j);\n\t\treturn path;\n\
     \t}\n\tpublic static final <Edge extends AbstractEdge<Edge>> List<Edge> pathEdge(final\
     \ int[] prv, final Edge[] prvEdge, final int start, final int goal) {\n\t\tint\
-    \ path[] = path(prv, start, goal);\n\t\tList<Edge> pathEdge = new ArrayList<Edge>();\n\
+    \ path[] = path(prv, start, goal);\n\t\tList<Edge> pathEdge = new ArrayList<>(path.length);\n\
     \t\tfor(int i = 1; i < path.length; i ++) pathEdge.add(prvEdge[path[i]]);\n\t\t\
     return pathEdge;\n\t}\n}"
   dependsOn:
@@ -57,15 +51,13 @@ data:
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/PathRestoration.java
-  requiredBy:
-  - library/TemplateDijkstra.java
-  - library/WarshallFloyd.java
-  timestamp: '2023-03-24 01:05:34+09:00'
+  requiredBy: []
+  timestamp: '2023-03-24 01:29:03+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java
-  - library/TemplateDijkstra_pathEdge_test.java
+  - library/TemplateDijkstra_path_test.java
 documentation_of: library/PathRestoration.java
 layout: document
 redirect_from:

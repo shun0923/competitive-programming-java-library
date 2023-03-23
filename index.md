@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryMod.java
       title: library/ArbitraryMod.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/BellmanFord.java
       title: library/BellmanFord.java
     - icon: ':heavy_check_mark:'
@@ -129,7 +129,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Swag.java
       title: library/Swag.java
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/TemplateDijkstra.java
       title: library/TemplateDijkstra.java
     - icon: ':heavy_check_mark:'
@@ -168,7 +168,7 @@ data:
     - icon: ':warning:'
       path: library/Util.java
       title: library/Util.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WarshallFloyd.java
       title: library/WarshallFloyd.java
     - icon: ':heavy_check_mark:'
@@ -207,7 +207,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/BellmanFord_reversed_test.java
       title: library/BellmanFord_reversed_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/BellmanFord_test.java
       title: library/BellmanFord_test.java
     - icon: ':heavy_check_mark:'
@@ -364,9 +364,9 @@ data:
       path: library/Swag_test.java
       title: library/Swag_test.java
     - icon: ':x:'
-      path: library/TemplateDijkstra_pathEdge_test.java
-      title: library/TemplateDijkstra_pathEdge_test.java
-    - icon: ':x:'
+      path: library/TemplateDijkstra_path_test.java
+      title: library/TemplateDijkstra_path_test.java
+    - icon: ':heavy_check_mark:'
       path: library/TemplateDijkstra_test.java
       title: library/TemplateDijkstra_test.java
     - icon: ':heavy_check_mark:'
@@ -414,10 +414,10 @@ data:
     - icon: ':x:'
       path: library/UnionFind_uniteAll_test.java
       title: library/UnionFind_uniteAll_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WarshallFloyd_reversed_test.java
       title: library/WarshallFloyd_reversed_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WarshallFloyd_test.java
       title: library/WarshallFloyd_test.java
     - icon: ':heavy_check_mark:'

@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
   - icon: ':question:'
@@ -49,7 +49,7 @@ data:
   isVerificationFile: true
   path: library/BellmanFord_reversed_test.java
   requiredBy: []
-  timestamp: '2023-03-24 01:05:34+09:00'
+  timestamp: '2023-03-24 01:16:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/BellmanFord_reversed_test.java

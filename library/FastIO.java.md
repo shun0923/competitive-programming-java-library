@@ -11,7 +11,7 @@ data:
   - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
   - icon: ':heavy_check_mark:'
@@ -107,7 +107,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Swag.java
     title: library/Swag.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
   - icon: ':heavy_check_mark:'
@@ -146,7 +146,7 @@ data:
   - icon: ':warning:'
     path: library/Util.java
     title: library/Util.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
   - icon: ':heavy_check_mark:'

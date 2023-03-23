@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
   _extendedRequiredBy: []
@@ -38,28 +38,28 @@ data:
     \ TemplateDijkstra_pathEdge_test extends Solver {\n\tpublic static void main(final\
     \ String[] args) { main(args, new TemplateDijkstra_pathEdge_test()); }\n\n\tpublic\
     \ void solve() {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tint s = ni();\n\t\t\
-    int t = ni();\n\t\tArrayTemplateGraph<Long> g = new ArrayTemplateGraph<>(n, true);\n\
-    \t\tfor(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());\n\t\tTemplateDijkstra<Long>\
-    \ djk = new TemplateDijkstra<>(() -> 0l, (dist, cost) -> dist + cost,\n\t\t\t\
-    Comparator.comparing((ele) -> ele));\n\t\tLong x = djk.dist(g, s, true).get(t);\n\
-    \t\tif(x == null) prtln(-1);\n\t\telse {\n\t\t\tint path[] = djk.path(s, t);\n\
-    \t\t\tprtln(x, path.length - 1);\n\t\t\tfor(int i = 0; i < path.length - 1; i\
-    \ ++) prtln(path[i], path[i + 1]);\n\t\t}\n\t}\n}"
+    int t = ni();\n\t\tvar g = new TemplateListGraph<Long>(n, true);\n\t\tfor(int\
+    \ i = 0; i < m; i ++) g.add(ni(), ni(), nl());\n\t\tTemplateDijkstra<Long> djk\
+    \ = new TemplateDijkstra<>(() -> 0l, (dist, cost) -> dist + cost,\n\t\t\tComparator.comparing((ele)\
+    \ -> ele));\n\t\tint prv[] = new int[n];\n\t\tLong x = djk.dist(g, s, prv).get(t);\n\
+    \t\tif(x == null) prtln(-1);\n\t\telse {\n\t\t\tint path[] = PathRestoration.path(prv,\
+    \ s, t);\n\t\t\tprtln(x, path.length - 1);\n\t\t\tfor(int i = 0; i < path.length\
+    \ - 1; i ++) prtln(path[i], path[i + 1]);\n\t\t}\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/AbstractGraph.java
   - library/PathRestoration.java
   - library/TemplateDijkstra.java
   isVerificationFile: true
-  path: library/TemplateDijkstra_pathEdge_test.java
+  path: library/TemplateDijkstra_path_test.java
   requiredBy: []
-  timestamp: '2023-03-24 01:05:34+09:00'
+  timestamp: '2023-03-24 01:29:03+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: library/TemplateDijkstra_pathEdge_test.java
+documentation_of: library/TemplateDijkstra_path_test.java
 layout: document
 redirect_from:
-- /verify/library/TemplateDijkstra_pathEdge_test.java
-- /verify/library/TemplateDijkstra_pathEdge_test.java.html
-title: library/TemplateDijkstra_pathEdge_test.java
+- /verify/library/TemplateDijkstra_path_test.java
+- /verify/library/TemplateDijkstra_path_test.java.html
+title: library/TemplateDijkstra_path_test.java
 ---
