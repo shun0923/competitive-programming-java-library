@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -11,7 +11,7 @@ data:
   - icon: ':x:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Bfs.java
     title: library/Bfs.java
   - icon: ':x:'
@@ -56,10 +56,10 @@ data:
     \t\tpathList.add(goal);\n\t\twhile(goal != start) pathList.add(goal = prv[goal]);\n\
     \t\tfinal int path[] = new int[pathList.size()];\n\t\tfor(int i = 0, j = path.length\
     \ - 1; i < path.length; i ++, j --) path[i] = pathList.get(j);\n\t\treturn path;\n\
-    \t}\n\tpublic static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>\
-    \ Node pathEdge(Node pathEdge, final int[] prv, final Edge[] prvEdge, final int\
-    \ start, final int goal) {\n\t\tint path[] = path(prv, start, goal);\n\t\tfor(int\
-    \ i = 1; i < path.length; i ++) pathEdge.add(prvEdge[path[i]]);\n\t\treturn pathEdge;\n\
+    \t}\n\tpublic static final <Edge extends AbstractEdge<Edge>> Node pathEdge(final\
+    \ List<Edge> pathEdge, final int[] prv, final Edge[] prvEdge, final int start,\
+    \ final int goal) {\n\t\tint path[] = path(prv, start, goal);\n\t\tfor(int i =\
+    \ 1; i < path.length; i ++) pathEdge.add(prvEdge[path[i]]);\n\t\treturn pathEdge;\n\
     \t}\n}"
   dependsOn:
   - library/FastIO.java
@@ -72,7 +72,7 @@ data:
   - library/Dijkstra.java
   - library/Bfs.java
   - library/WarshallFloyd.java
-  timestamp: '2023-03-24 00:14:38+09:00'
+  timestamp: '2023-03-24 00:38:44+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Dijkstra_path_test.java

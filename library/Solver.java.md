@@ -27,7 +27,7 @@ data:
   - icon: ':x:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Bfs_test.java
     title: library/Bfs_test.java
   - icon: ':heavy_check_mark:'
@@ -225,7 +225,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Trie_startWith_test.java
     title: library/Trie_startWith_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/UnionFind_test.java
     title: library/UnionFind_test.java
   - icon: ':x:'
@@ -237,10 +237,10 @@ data:
   - icon: ':x:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix_freq_test.java
     title: library/WaveletMatrix_freq_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix_smallest_test.java
     title: library/WaveletMatrix_smallest_test.java
   - icon: ':x:'
@@ -249,10 +249,10 @@ data:
   - icon: ':x:'
     path: library/WeightedLca_test.java
     title: library/WeightedLca_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind_test.java
     title: library/WeightedUnionFind_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/ZAlgorithm_test.java
     title: library/ZAlgorithm_test.java
   _isVerificationFailed: true

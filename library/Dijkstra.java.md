@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -59,37 +59,39 @@ data:
     \tif(this.cost != that.cost) return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override\n\
     \t\tpublic final int compareTo(final Dist that) {\n\t\t\tint c = Long.compare(this.cost,\
     \ that.cost);\n\t\t\tif(c == 0) c = Integer.compare(this.target, that.target);\n\
-    \t\t\treturn c;\n\t\t}\n\t}\n\n\tprivate static int prv[];\n\tprivate static WeightedEdge\
-    \ prvEdge[];\n\n\t// O((E+V)logV)\n\tpublic static final long[] dist(final WeightedGraph\
-    \ g, final int start) { return dist(g, start, false); }\n\tpublic static final\
-    \ long[] dist(final WeightedGraph g, final int start, final boolean memoize) {\
-    \ return dist(g.numNode, g.nodes(), start, memoize); }\n\tpublic static final\
-    \ long[] dist(final int numNode, final WeightedNode[] nodes, final int start)\
-    \ { return dist(numNode, nodes, start, false); }\n\tpublic static final long[]\
-    \ dist(final int numNode, final WeightedNode[] nodes, final int start, final boolean\
-    \ memoize) {\n\t\tFastIO.rangeCheck(start, numNode);\n\t\tfinal long dist[] =\
-    \ new long[numNode];\n\t\tif(memoize) {\n\t\t\tprv = new int[numNode];\n\t\t\t\
-    Arrays.fill(prv, -1);\n\t\t\tprvEdge = new WeightedEdge[numNode];\n\t\t}\n\t\t\
-    Queue<Dist> q = new PriorityQueue<>();\n\n\t\tArrays.fill(dist, FastIO.INF);\n\
-    \t\tdist[start] = 0;\n\t\tq.add(new Dist(start, dist[start]));\n\t\twhile(!q.isEmpty())\
-    \ {\n\t\t\tDist crt = q.poll();\n\t\t\tif(dist[crt.target] < crt.cost) continue;\n\
-    \t\t\tfor(WeightedEdge e : nodes[crt.target]) {\n\t\t\t\tlong updated = dist[e.source]\
-    \ + e.cost;\n\t\t\t\tif(dist[e.target] > updated) {\n\t\t\t\t\tdist[e.target]\
-    \ = updated;\n\t\t\t\t\tq.add(new Dist(e.target, updated));\n\t\t\t\t\tif(memoize)\
-    \ {\n\t\t\t\t\t\tprv[e.target] = e.source;\n\t\t\t\t\t\tprvEdge[e.target] = e;\n\
-    \t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n\n\t// O(V^2)\n\
-    \tpublic static final long[] distForDenseGraph(final WeightedGraph g, final int\
-    \ start) { return distForDenseGraph(g, start, false); }\n\tpublic static final\
-    \ long[] distForDenseGraph(final WeightedGraph g, final int start, boolean memoize)\
-    \ { return distForDenseGraph(g.numNode, g.nodes(), start, memoize); }\n\tpublic\
-    \ static final long[] distForDenseGraph(final int numNode, final WeightedNode[]\
-    \ nodes, final int start) { return distForDenseGraph(numNode, nodes, start, false);\
-    \ }\n\tpublic static final long[] distForDenseGraph(final int numNode, final WeightedNode[]\
-    \ nodes, final int start, final boolean memoize) {\n\t\tFastIO.rangeCheck(start,\
-    \ numNode);\n\t\tfinal long dist[] = new long[numNode];\n\t\tfinal boolean visited[]\
-    \ = new boolean[numNode];\n\t\tif(memoize) {\n\t\t\tprv = new int[numNode];\n\t\
-    \t\tArrays.fill(prv, -1);\n\t\t\tprvEdge = new WeightedEdge[numNode];\n\t\t}\n\
-    \n\t\tArrays.fill(dist, FastIO.INF);\n\t\tdist[start] = 0;\n\t\tint idx = start;\n\
+    \t\t\treturn c;\n\t\t}\n\t}\n\n\t// O((E+V)logV)\n\tpublic static final <Graph\
+    \ extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[]\
+    \ dist(final Graph g, final int start) { return dist(g, start, null, null); }\n\
+    \tpublic static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends\
+    \ WeightedNode> long[] dist(final Graph g, final int start, final int[] prv, final\
+    \ WeightedEdge[] prvEdge) { return dist(g.numNode, g.nodes(), start, prv, prvEdge);\
+    \ }\n\tpublic static final long[] dist(final int numNode, final WeightedNode[]\
+    \ nodes, final int start) { return dist(numNode, nodes, start, null, null); }\n\
+    \tpublic static final long[] dist(final int numNode, final WeightedNode[] nodes,\
+    \ final int start, final int[] prv, final WeightedEdge[] prvEdge) {\n\t\tFastIO.rangeCheck(start,\
+    \ numNode);\n\t\tlong dist[] = new long[numNode];\n\t\tboolean memoize = prv !=\
+    \ null;\n\t\tif(memoize) Arrays.fill(prv, -1);\n\t\tQueue<Dist> q = new PriorityQueue<>();\n\
+    \n\t\tArrays.fill(dist, FastIO.INF);\n\t\tdist[start] = 0;\n\t\tq.add(new Dist(start,\
+    \ dist[start]));\n\t\twhile(!q.isEmpty()) {\n\t\t\tDist crt = q.poll();\n\t\t\t\
+    if(dist[crt.target] < crt.cost) continue;\n\t\t\tfor(WeightedEdge e : nodes[crt.target])\
+    \ {\n\t\t\t\tlong updated = dist[e.source] + e.cost;\n\t\t\t\tif(dist[e.target]\
+    \ > updated) {\n\t\t\t\t\tdist[e.target] = updated;\n\t\t\t\t\tq.add(new Dist(e.target,\
+    \ updated));\n\t\t\t\t\tif(memoize) {\n\t\t\t\t\t\tprv[e.target] = e.source;\n\
+    \t\t\t\t\t\tprvEdge[e.target] = e;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\
+    \treturn dist;\n\t}\n\n\t// O(V^2)\n\tpublic static final <Graph extends AbstractGraph<Node,\
+    \ WeightedEdge>, Node extends WeightedNode> long[] distForDenseGraph(final Graph\
+    \ g, final int start) { return distForDenseGraph(g, start, null, null); }\n\t\
+    public static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends\
+    \ WeightedNode> long[] distForDenseGraph(final Graph g, final int start, int[]\
+    \ prv, WeightedEdge[] prvEdge) { return distForDenseGraph(g.numNode, g.nodes(),\
+    \ start, prv, prvEdge); }\n\tpublic static final long[] distForDenseGraph(final\
+    \ int numNode, final WeightedNode[] nodes, final int start) { return distForDenseGraph(numNode,\
+    \ nodes, start, null, null); }\n\tpublic static final long[] distForDenseGraph(final\
+    \ int numNode, final WeightedNode[] nodes, final int start, final int[] prv, final\
+    \ WeightedEdge[] prvEdge) {\n\t\tFastIO.rangeCheck(start, numNode);\n\t\tlong\
+    \ dist[] = new long[numNode];\n\t\tboolean visited[] = new boolean[numNode];\n\
+    \t\tboolean memoize = prv != null;\n\t\tif(memoize) Arrays.fill(prv, -1);\n\n\t\
+    \tArrays.fill(dist, FastIO.INF);\n\t\tdist[start] = 0;\n\t\tint idx = start;\n\
     \t\tint cnt = 0;\n\t\twhile(cnt < numNode) {\n\t\t\tlong minCost = FastIO.INF;\n\
     \t\t\tfor(int i = 0; i < numNode; i ++) {\n\t\t\t\tif(!visited[i] && dist[i] <\
     \ minCost) {\n\t\t\t\t\tidx = i;\n\t\t\t\t\tminCost = dist[i];\n\t\t\t\t}\n\t\t\
@@ -97,11 +99,7 @@ data:
     \ {\n\t\t\t\tlong updated = dist[e.source] + e.cost;\n\t\t\t\tif(dist[e.target]\
     \ > updated) {\n\t\t\t\t\tdist[e.target] = updated;\n\t\t\t\t\tif(memoize) {\n\
     \t\t\t\t\t\tprv[e.target] = e.source;\n\t\t\t\t\t\tprvEdge[e.target] = e;\n\t\t\
-    \t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n\n\tpublic static final\
-    \ int[] path(final int start, final int goal) { return PathRestoration.path(prv,\
-    \ start, goal); }\n\tpublic static final ArrayWeightedNode pathEdge(final int\
-    \ start, final int goal) { return PathRestoration.pathEdge(new ArrayWeightedNode(-1),\
-    \ prv, prvEdge, start, goal); }\n}"
+    \t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n}"
   dependsOn:
   - library/FastIO.java
   - library/AbstractGraph.java
@@ -109,7 +107,7 @@ data:
   isVerificationFile: false
   path: library/Dijkstra.java
   requiredBy: []
-  timestamp: '2023-03-24 00:14:38+09:00'
+  timestamp: '2023-03-24 00:38:44+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Dijkstra_path_test.java

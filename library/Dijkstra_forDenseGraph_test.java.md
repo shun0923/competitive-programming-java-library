@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':x:'
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: library/Dijkstra_forDenseGraph_test.java
   requiredBy: []
-  timestamp: '2023-03-23 23:34:20+09:00'
+  timestamp: '2023-03-24 00:38:44+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/Dijkstra_forDenseGraph_test.java

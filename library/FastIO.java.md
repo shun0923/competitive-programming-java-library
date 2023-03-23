@@ -8,13 +8,13 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':x:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Bfs.java
     title: library/Bfs.java
   - icon: ':warning:'
@@ -140,7 +140,7 @@ data:
   - icon: ':warning:'
     path: library/TwoSat.java
     title: library/TwoSat.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/UnionFind.java
     title: library/UnionFind.java
   - icon: ':warning:'
@@ -149,7 +149,7 @@ data:
   - icon: ':x:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
   - icon: ':x:'
@@ -158,10 +158,10 @@ data:
   - icon: ':x:'
     path: library/WeightedLca.java
     title: library/WeightedLca.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind.java
     title: library/WeightedUnionFind.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/ZAlgorithm.java
     title: library/ZAlgorithm.java
   _extendedVerifiedWith: []

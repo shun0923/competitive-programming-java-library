@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
     path: library/FastIO.java
     title: library/FastIO.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/UnionFind.java
     title: library/UnionFind.java
   _extendedRequiredBy: []

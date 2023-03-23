@@ -8,7 +8,7 @@ data:
   - icon: ':x:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Bfs.java
     title: library/Bfs.java
   - icon: ':x:'
@@ -47,7 +47,7 @@ data:
   - icon: ':warning:'
     path: library/TwoSat.java
     title: library/TwoSat.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/UnionFind.java
     title: library/UnionFind.java
   - icon: ':x:'
@@ -59,7 +59,7 @@ data:
   - icon: ':x:'
     path: library/WeightedLca.java
     title: library/WeightedLca.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedUnionFind.java
     title: library/WeightedUnionFind.java
   _extendedVerifiedWith:
@@ -69,7 +69,7 @@ data:
   - icon: ':x:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Bfs_test.java
     title: library/Bfs_test.java
   - icon: ':x:'
@@ -137,7 +137,7 @@ data:
     title: library/WeightedLca_test.java
   _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -400,7 +400,7 @@ data:
   - library/Rerooting.java
   - library/TemplateRerooting.java
   timestamp: '2023-03-23 23:34:20+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Bfs_test.java
   - library/Dijkstra_path_test.java

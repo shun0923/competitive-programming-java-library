@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: library/FastIO.java
     title: library/FastIO.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
   _extendedRequiredBy: []

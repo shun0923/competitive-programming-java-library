@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':question:'
+    - icon: ':x:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -12,7 +12,7 @@ data:
     - icon: ':x:'
       path: library/BellmanFord.java
       title: library/BellmanFord.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Bfs.java
       title: library/Bfs.java
     - icon: ':warning:'
@@ -162,7 +162,7 @@ data:
     - icon: ':warning:'
       path: library/TwoSat.java
       title: library/TwoSat.java
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/UnionFind.java
       title: library/UnionFind.java
     - icon: ':warning:'
@@ -171,7 +171,7 @@ data:
     - icon: ':x:'
       path: library/WarshallFloyd.java
       title: library/WarshallFloyd.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix.java
       title: library/WaveletMatrix.java
     - icon: ':x:'
@@ -180,10 +180,10 @@ data:
     - icon: ':x:'
       path: library/WeightedLca.java
       title: library/WeightedLca.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WeightedUnionFind.java
       title: library/WeightedUnionFind.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/ZAlgorithm.java
       title: library/ZAlgorithm.java
   verificationCategories:
@@ -210,7 +210,7 @@ data:
     - icon: ':x:'
       path: library/BellmanFord_test.java
       title: library/BellmanFord_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Bfs_test.java
       title: library/Bfs_test.java
     - icon: ':heavy_check_mark:'
@@ -408,7 +408,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Trie_startWith_test.java
       title: library/Trie_startWith_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/UnionFind_test.java
       title: library/UnionFind_test.java
     - icon: ':x:'
@@ -420,10 +420,10 @@ data:
     - icon: ':x:'
       path: library/WarshallFloyd_test.java
       title: library/WarshallFloyd_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix_freq_test.java
       title: library/WaveletMatrix_freq_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix_smallest_test.java
       title: library/WaveletMatrix_smallest_test.java
     - icon: ':x:'
@@ -432,10 +432,10 @@ data:
     - icon: ':x:'
       path: library/WeightedLca_test.java
       title: library/WeightedLca_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/WeightedUnionFind_test.java
       title: library/WeightedUnionFind_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/ZAlgorithm_test.java
       title: library/ZAlgorithm_test.java
 layout: toppage

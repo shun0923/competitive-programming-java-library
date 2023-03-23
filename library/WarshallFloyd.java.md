@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -70,7 +70,7 @@ data:
   isVerificationFile: false
   path: library/WarshallFloyd.java
   requiredBy: []
-  timestamp: '2023-03-24 00:14:38+09:00'
+  timestamp: '2023-03-24 00:38:44+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/WarshallFloyd_reversed_test.java
