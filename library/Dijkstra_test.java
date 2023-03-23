@@ -13,7 +13,7 @@ public class Dijkstra_test extends Solver {
 		int n = ni();
 		int m = ni();
 		int r = ni();
-		ArrayWeightedGraph g = new ArrayWeightedGraph(n, true);
+		WeightedListGraph g = new WeightedListGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
 		for(long ele : Dijkstra.dist(g, r)) prtln(isINF(ele) ? "INF" : ele);
 	}

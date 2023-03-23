@@ -30,21 +30,15 @@ final class Dijkstra {
 		}
 	}
 
-	private static int prv[];
-	private static WeightedEdge prvEdge[];
-
 	// O((E+V)logV)
-	public static final long[] dist(final WeightedGraph g, final int start) { return dist(g, start, false); }
-	public static final long[] dist(final WeightedGraph g, final int start, final boolean memoize) { return dist(g.numNode, g.nodes(), start, memoize); }
-	public static final long[] dist(final int numNode, final WeightedNode[] nodes, final int start) { return dist(numNode, nodes, start, false); }
-	public static final long[] dist(final int numNode, final WeightedNode[] nodes, final int start, final boolean memoize) {
+	public static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[] dist(final Graph g, final int start) { return dist(g, start, null, null); }
+	public static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[] dist(final Graph g, final int start, final int[] prv, final WeightedEdge[] prvEdge) { return dist(g.numNode, g.nodes(), start, prv, prvEdge); }
+	public static final long[] dist(final int numNode, final WeightedNode[] nodes, final int start) { return dist(numNode, nodes, start, null, null); }
+	public static final long[] dist(final int numNode, final WeightedNode[] nodes, final int start, final int[] prv, final WeightedEdge[] prvEdge) {
 		FastIO.rangeCheck(start, numNode);
-		final long dist[] = new long[numNode];
-		if(memoize) {
-			prv = new int[numNode];
-			Arrays.fill(prv, -1);
-			prvEdge = new WeightedEdge[numNode];
-		}
+		long dist[] = new long[numNode];
+		boolean memoize = prv != null;
+		if(memoize) Arrays.fill(prv, -1);
 		Queue<Dist> q = new PriorityQueue<>();
 
 		Arrays.fill(dist, FastIO.INF);
@@ -69,18 +63,15 @@ final class Dijkstra {
 	}
 
 	// O(V^2)
-	public static final long[] distForDenseGraph(final WeightedGraph g, final int start) { return distForDenseGraph(g, start, false); }
-	public static final long[] distForDenseGraph(final WeightedGraph g, final int start, boolean memoize) { return distForDenseGraph(g.numNode, g.nodes(), start, memoize); }
-	public static final long[] distForDenseGraph(final int numNode, final WeightedNode[] nodes, final int start) { return distForDenseGraph(numNode, nodes, start, false); }
-	public static final long[] distForDenseGraph(final int numNode, final WeightedNode[] nodes, final int start, final boolean memoize) {
+	public static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[] distForDenseGraph(final Graph g, final int start) { return distForDenseGraph(g, start, null, null); }
+	public static final <Graph extends AbstractGraph<Node, WeightedEdge>, Node extends WeightedNode> long[] distForDenseGraph(final Graph g, final int start, int[] prv, WeightedEdge[] prvEdge) { return distForDenseGraph(g.numNode, g.nodes(), start, prv, prvEdge); }
+	public static final long[] distForDenseGraph(final int numNode, final WeightedNode[] nodes, final int start) { return distForDenseGraph(numNode, nodes, start, null, null); }
+	public static final long[] distForDenseGraph(final int numNode, final WeightedNode[] nodes, final int start, final int[] prv, final WeightedEdge[] prvEdge) {
 		FastIO.rangeCheck(start, numNode);
-		final long dist[] = new long[numNode];
-		final boolean visited[] = new boolean[numNode];
-		if(memoize) {
-			prv = new int[numNode];
-			Arrays.fill(prv, -1);
-			prvEdge = new WeightedEdge[numNode];
-		}
+		long dist[] = new long[numNode];
+		boolean visited[] = new boolean[numNode];
+		boolean memoize = prv != null;
+		if(memoize) Arrays.fill(prv, -1);
 
 		Arrays.fill(dist, FastIO.INF);
 		dist[start] = 0;
@@ -109,7 +100,4 @@ final class Dijkstra {
 		}
 		return dist;
 	}
-
-	public static final int[] path(final int start, final int goal) { return PathRestoration.path(prv, start, goal); }
-	public static final ArrayWeightedNode pathEdge(final int start, final int goal) { return PathRestoration.pathEdge(new ArrayWeightedNode(-1), prv, prvEdge, start, goal); }
 }

@@ -7,10 +7,10 @@ import library.PathRestoration;
 
 final class Bfs {
 	// O(V)
-	public static final <Graph extends AbstractGraph<Node, Edge>, Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> int[] dist(Graph g, int start) { return dist(g, start, null, null); }
-	public static final <Graph extends AbstractGraph<Node, Edge>, Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> int[] dist(Graph g, int start, int[] prv, Edge[] prvEdge) { return dist(g.nodes(), start, prv, prvEdge); }
-	public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>int[] dist(Node[] nodes, int start) { return dist(nodes, start, null, null); }
-	public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> int[] dist(Node[] nodes, int start, int[] prv, Edge[] prvEdge) {
+	public static final <Graph extends AbstractGraph<Node, Edge>, Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> int[] dist(final Graph g, final int start) { return dist(g, start, null, null); }
+	public static final <Graph extends AbstractGraph<Node, Edge>, Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> int[] dist(final Graph g, final int start, final int[] prv, final Edge[] prvEdge) { return dist(g.nodes(), start, prv, prvEdge); }
+	public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>int[] dist(final Node[] nodes, final int start) { return dist(nodes, start, null, null); }
+	public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> int[] dist(final Node[] nodes, final int start, final int[] prv, final Edge[] prvEdge) {
 		int numNode = nodes.length;
 		int dist[] = new int[numNode];
 		Arrays.fill(dist, -1);
