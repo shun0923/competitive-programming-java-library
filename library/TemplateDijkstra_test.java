@@ -14,7 +14,7 @@ public class TemplateDijkstra_test extends Solver {
 		int n = ni();
 		int m = ni();
 		int r = ni();
-		ArrayTemplateGraph<Long> g = new ArrayTemplateGraph<>(n, true);
+		var g = new TemplateListGraph<Long>(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
 		TemplateDijkstra<Long> djk = new TemplateDijkstra<>(() -> 0l, (dist, cost) -> dist + cost,
 			Comparator.comparing((ele) -> ele));

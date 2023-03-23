@@ -4,7 +4,6 @@ import java.util.*;
 import java.util.function.*;
 import library.FastIO;
 import library.AbstractGraph;
-import library.PathRestoration;
 
 final class TemplateDijkstra<T> {
 	private final class Dist implements Comparable<Dist> {
@@ -32,8 +31,6 @@ final class TemplateDijkstra<T> {
 		}
 	}
 
-	private int prv[];
-	private TemplateEdge<T> prvEdge[];
 	private Supplier<T> eSupplier;
 	private T e;
 	private BinaryOperator<T> f;
@@ -47,18 +44,15 @@ final class TemplateDijkstra<T> {
 	}
 
 	// O((E+V)logV)
-	public final <Node extends TemplateNode<T>> ArrayList<T> dist(final TemplateGraph<T, Node> g, final int start) { return dist(g, start, false); }
-	public final <Node extends TemplateNode<T>> ArrayList<T> dist(final TemplateGraph<T, Node> g, final int start, final boolean memoize) { return dist(g.numNode, g.nodes(), start, memoize); }
-	public final ArrayList<T> dist(final int numNode, final TemplateNode<T>[] nodes, final int start) { return dist(numNode, nodes, start, false); }
-	@SuppressWarnings("unchecked")
-	public final ArrayList<T> dist(final int numNode, final TemplateNode<T>[] nodes, final int start, final boolean memoize) {
+	public final <Graph extends AbstractGraph<? extends TemplateNode<T>, TemplateEdge<T>>> ArrayList<T> dist(final Graph g, final int start) { return dist(g, start, null, null); }
+	public final <Graph extends AbstractGraph<? extends TemplateNode<T>, TemplateEdge<T>>> ArrayList<T> dist(final Graph g, final int start, final int[] prv) { return dist(g, start, prv, null); }
+	public final <Graph extends AbstractGraph<? extends TemplateNode<T>, TemplateEdge<T>>> ArrayList<T> dist(final Graph g, final int start, final int[] prv, final TemplateEdge<T>[] prvEdge) { return dist(g.numNode, g.nodes(), start, prv, prvEdge); }
+	public final ArrayList<T> dist(final int numNode, final TemplateNode<T>[] nodes, final int start) { return dist(numNode, nodes, start, null, null); }
+	public final ArrayList<T> dist(final int numNode, final TemplateNode<T>[] nodes, final int start, final int[] prv) { return dist(numNode, nodes, start, prv, null); }
+	public final ArrayList<T> dist(final int numNode, final TemplateNode<T>[] nodes, final int start, final int[] prv, final TemplateEdge<T>[] prvEdge) {
 		FastIO.rangeCheck(start, numNode);
 		final ArrayList<T> dist = new ArrayList<>(numNode);
-		if(memoize) {
-			prv = new int[numNode];
-			Arrays.fill(prv, -1);
-			prvEdge = new TemplateEdge[numNode];
-		}
+		if(prv != null) Arrays.fill(prv, -1);
 		Queue<Dist> q = new PriorityQueue<>();
 
 		for(int i = 0; i < numNode; i ++) dist.add(null);
@@ -73,16 +67,11 @@ final class TemplateDijkstra<T> {
 				if(dist.get(e.target) == null || cmp.compare(dist.get(e.target), updated) > 0) {
 					dist.set(e.target, updated);
 					q.add(new Dist(e.target, updated));
-					if(memoize) {
-						prv[e.target] = e.source;
-						prvEdge[e.target] = e;
-					}
+					if(prv != null) prv[e.target] = e.source;
+					if(prvEdge != null) prvEdge[e.target] = e;
 				}
 			}
 		}
 		return dist;
 	}
-
-	public final int[] path(final int start, final int goal) { return PathRestoration.path(prv, start, goal); }
-	public final ArrayTemplateNode<T> pathEdge(final int start, final int goal) { return PathRestoration.pathEdge(new ArrayTemplateNode<T>(-1), prv, prvEdge, start, goal); }
 }

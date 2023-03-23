@@ -17,7 +17,7 @@ final class PathRestoration {
 	}
 	public static final <Edge extends AbstractEdge<Edge>> List<Edge> pathEdge(final int[] prv, final Edge[] prvEdge, final int start, final int goal) {
 		int path[] = path(prv, start, goal);
-		List<Edge> pathEdge = new ArrayList<Edge>();
+		List<Edge> pathEdge = new ArrayList<>(path.length);
 		for(int i = 1; i < path.length; i ++) pathEdge.add(prvEdge[path[i]]);
 		return pathEdge;
 	}
