@@ -2,9 +2,9 @@ package library;
 
 import java.util.*;
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 
-class Util extends SimpleUtil {
+class Util extends FastIO {
 	public static final int min(final int a, final int b) { return Math.min(a, b); }
 	public static final long min(final long a, final long b) { return Math.min(a, b); }
 	public static final double min(final double a, final double b) { return Math.min(a, b); }

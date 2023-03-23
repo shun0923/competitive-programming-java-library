@@ -3,7 +3,7 @@ package library;
 import library.FastInputStream;
 import library.FastOutputStream;
 
-class SimpleUtil {
+class FastIO {
 	public static boolean DEBUG;
 
 	private static final FastInputStream in = new FastInputStream(System.in);
@@ -11,15 +11,21 @@ class SimpleUtil {
 	public static final String[] nline(final int n) { final String a[] = new String[n]; for(int i = 0; i < n; i ++) a[i] = nline(); return a; }
 	public static final char nc() { return in.nextChar(); }
 	public static final char[] nc(int n) {
-		final String str = nline();
-		if(n < 0) n = str.length();
-		final char a[] = new char[n];
-		for(int i = 0; i < n; i ++) a[i] = str.charAt(i);
-		return a;
+		if(n >= 0) {
+			final char a[] = new char[n];
+			for(int i = 0; i < n; i ++) a[i] = nc();
+			return a;
+		}else {
+			final String str = ns();
+			n = str.length();
+			final char a[] = new char[n];
+			for(int i = 0; i < n; i ++) a[i] = str.charAt(i);
+			return a;
+		}
 	}
 	public static final char[][] nc(final int n, final int m) { final char a[][] = new char[n][m]; for(int i = 0; i < n; i ++) a[i] = nc(m); return a; }
 	public static final boolean[] nb(int n, final char t) {
-		final char c[] = nc(-1);
+		final char c[] = nc(n);
 		if(n < 0) n = c.length;
 		final boolean a[] = new boolean[n];
 		for(int i = 0; i < n; i ++) a[i] = c[i] == t;
@@ -202,24 +208,14 @@ class SimpleUtil {
 	public static final void exit(final String[][] a) { prtln(a); exit(); }
 	public static final void exit(final Object[][] a) { prtln(a); exit(); }
 
-
 	public static final char booleanToChar(final boolean b) { return b ? '#' : '.'; }
 	public static final char[] booleanToChar(final boolean... a) {
 		final char c[] = new char[a.length];
 		for(int i = 0; i < a.length; i ++) c[i] = booleanToChar(a[i]);
 		return c;
 	}
-	public static final long INF = (long)4e18;
-	public static final boolean isPlusINF(final long x) { return x > INF / 10; }
-	public static final boolean isMinusINF(final long x) { return isPlusINF(- x); }
-	public static final boolean isINF(final long x) { return isPlusINF(x) || isMinusINF(x); }
-	public static final int I_INF = (int)1e9 + 1000;
-	public static final boolean isPlusINF(final int x) { return x > I_INF / 10; }
-	public static final boolean isMinusINF(final int x) { return isPlusINF(- x); }
-	public static final boolean isINF(final int x) { return isPlusINF(x) || isMinusINF(x); }
-
 	public static final int[] charToInt(char[] c) {
-		int a[] = new int[c.length];
+		final int a[] = new int[c.length];
 		for(int i = 0; i < c.length; i ++) {
 			if('a' <= c[i] && c[i] <= 'z') a[i] = c[i] - 'a';
 			else if('A' <= c[i] && c[i] <= 'Z') a[i] = c[i] - 'A';
@@ -228,4 +224,13 @@ class SimpleUtil {
 		}
 		return a;
 	}
+
+	public static final long INF = (long)4e18;
+	public static final boolean isPlusINF(final long x) { return x > INF / 10; }
+	public static final boolean isMinusINF(final long x) { return isPlusINF(- x); }
+	public static final boolean isINF(final long x) { return isPlusINF(x) || isMinusINF(x); }
+	public static final int I_INF = (int)1e9 + 1000;
+	public static final boolean isPlusINF(final int x) { return x > I_INF / 10; }
+	public static final boolean isMinusINF(final int x) { return isPlusINF(- x); }
+	public static final boolean isINF(final int x) { return isPlusINF(x) || isMinusINF(x); }
 }
