@@ -7,9 +7,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -81,13 +78,12 @@ data:
     \ INV3 % MOD3; if(v2 < 0) v2 += MOD3;\n\t\t\tf[i] = (f1[i] + MOD1 * v1 + M1M2MOD\
     \ * v2) % 1_000_000_007;\n\t\t}\n\t\treturn f;\n\t}\n}"
   dependsOn:
-  - library/SimpleUtil.java
   - library/Mod.java
   - library/Convolution.java
   isVerificationFile: false
   path: library/ExtendedConvolution.java
   requiredBy: []
-  timestamp: '2022-11-02 11:19:06+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Convolution107_test.java

@@ -8,9 +8,6 @@ data:
     path: library/Pair.java
     title: library/Pair.java
   - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
-  - icon: ':warning:'
     path: library/Util.java
     title: library/Util.java
   _extendedRequiredBy: []
@@ -182,14 +179,13 @@ data:
     \ + md[j].mul(coffs[j], v));\n\t\t\t\tcoffs[j] = md[j].mul(coffs[j], p[i].b);\n\
     \t\t\t}\n\t\t}\n\t\treturn constants[p.length - 1];\n\t}\n}"
   dependsOn:
-  - library/SimpleUtil.java
   - library/Util.java
   - library/Pair.java
   - library/Mod.java
   isVerificationFile: false
   path: library/ExtendedMath.java
   requiredBy: []
-  timestamp: '2023-03-23 18:55:37+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/ExtendedMath.java

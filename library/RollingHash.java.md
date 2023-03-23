@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -55,12 +52,11 @@ data:
     \ {\n\t\t\tint mid = ok + (ng - ok >> 1);\n\t\t\tif(rh1.get(a, a + mid) == rh2.get(b,\
     \ b + mid)\n\t\t\t\t&& rh1.get(a, a + mid - 1) == rh2.get(b, b + mid - 1)) ok\
     \ = mid; else ng = mid;\n\t\t}\n\t\treturn ok;\n\t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/RollingHash.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/RollingHash_test.java

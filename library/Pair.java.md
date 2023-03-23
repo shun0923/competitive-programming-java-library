@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
     path: library/ExtendedMath.java
@@ -165,15 +162,14 @@ data:
     \ return false;\n\t\t\treturn true;\n\t\t}\n\t\t@Override public final int compareTo(final\
     \ DD that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
     \ that.b); return c; }\n\t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/Pair.java
   requiredBy:
   - library/TemplateSwag.java
   - library/Swag.java
   - library/ExtendedMath.java
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/TemplateDynamicSwag_test.java

@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/Kruskal.java
@@ -60,13 +57,12 @@ data:
     \ = root(i);\n\t\t\tgroups.putIfAbsent(root, new HashSet<>());\n\t\t\tgroups.get(root).add(i);\n\
     \t\t}\n\t\treturn groups;\n\t}\n}"
   dependsOn:
-  - library/SimpleUtil.java
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/UnionFind.java
   requiredBy:
   - library/Kruskal.java
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/UnionFind_uniteAll_test.java

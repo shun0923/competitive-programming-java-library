@@ -283,7 +283,7 @@ data:
   isVerificationFile: false
   path: library/Solver.java
   requiredBy: []
-  timestamp: '2022-10-05 15:43:52+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/TemplateDualSegmentTree_test.java

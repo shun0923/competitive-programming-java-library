@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Pair.java
     title: library/Pair.java
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -54,12 +51,11 @@ data:
     \t\t\tl ++;\n\t\t}\n\t\treturn back.isEmpty() ? front : f.applyAsLong(back.getLast(),\
     \ front);\n\t}\n}"
   dependsOn:
-  - library/SimpleUtil.java
   - library/Pair.java
   isVerificationFile: false
   path: library/Swag.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Swag_test.java

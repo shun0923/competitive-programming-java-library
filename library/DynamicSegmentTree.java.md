@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -55,12 +52,11 @@ data:
     \ == null || r0 <= l || r <= l0) return e;\n\t\tif(l0 <= l && r <= r0) return\
     \ t.val;\n\t\tlong mid = (l + r) >> 1;\n\t\treturn f.applyAsLong(find(t.l, l,\
     \ mid, l0, r0), find(t.r, mid, r, l0, r0));\n\t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/DynamicSegmentTree.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/DynamicSegmentTree_test.java

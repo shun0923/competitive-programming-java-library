@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -41,12 +38,11 @@ data:
     \ - j);\n\t\t\tj = kmp[j];\n\t\t\tif(j == -1) { i ++; j ++; }\n\t\t}\n\t\tint\
     \ matchList[] = new int[match.size()];\n\t\tfor(int i = 0; i < match.size(); i\
     \ ++) matchList[i] = match.get(i);\n\t\treturn matchList;\n\t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/Kmp.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Kmp_test.java

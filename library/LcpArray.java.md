@@ -1,9 +1,6 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
   - icon: ':heavy_check_mark:'
     path: library/SuffixArray.java
     title: library/SuffixArray.java
@@ -43,12 +40,11 @@ data:
     \ + h]) break;\n\t\t\t}\n\t\t\tlcp[rnk[i] - 1] = h;\n\t\t}\n\t\treturn lcp;\n\t\
     }\n}"
   dependsOn:
-  - library/SimpleUtil.java
   - library/SuffixArray.java
   isVerificationFile: false
   path: library/LcpArray.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/LcpArray_test.java

@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -37,12 +34,11 @@ data:
     \twhile(!frontVal.isEmpty()) {\n\t\t\t\ttmp = f.apply(frontVal.removeLast(), tmp);\n\
     \t\t\t\tback.addLast(tmp);\n\t\t\t}\n\t\t\tfront = eSupplier.get();\n\t\t}\n\t\
     \tback.removeLast();\n\t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/TemplateDynamicSwag.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/TemplateDynamicSwag_test.java

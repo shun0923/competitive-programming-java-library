@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -36,12 +33,11 @@ data:
     \ }\n\t\t\tint k = 1;\n\t\t\twhile(i + k < len && k + match[k] < j) { match[i\
     \ + k] = match[k]; k ++; }\n\t\t\ti += k;\n\t\t\tj -= k;\n\t\t}\n\t\treturn match;\n\
     \t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/ZAlgorithm.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/ZAlgorithm_test.java

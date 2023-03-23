@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/ExtendedConvolution.java
@@ -278,7 +275,6 @@ data:
     \ + j] = (f[i + j] + a[i] * b[j]) % 469_762_049;\n\t\t\t}\n\t\t}\n\t\treturn f;\n\
     \t}\n}"
   dependsOn:
-  - library/SimpleUtil.java
   - library/Mod.java
   isVerificationFile: false
   path: library/Convolution.java
@@ -286,7 +282,7 @@ data:
   - library/ExtendedConvolution.java
   - library/Kitamasa.java
   - library/Fps.java
-  timestamp: '2022-11-02 11:19:06+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Fps_mul_test.java

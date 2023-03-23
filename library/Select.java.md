@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -51,12 +48,11 @@ data:
     \ med.length >> 1);\n\t}\n\tprivate static final long med5(final long[] a, final\
     \ int start, final int end) {\n\t\treturn select(a, (end + start) >> 1, start,\
     \ end);\n\t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/Select.java
   requiredBy: []
-  timestamp: '2022-11-02 13:03:31+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/Select.java

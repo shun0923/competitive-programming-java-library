@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -58,12 +55,11 @@ data:
     \tf = butterfly(f, true);\n\t\tlong ans[] = new long[l];\n\t\tfor(int i = 0; i\
     \ < l; i ++) {\n\t\t\tans[i] = Math.round(f[i][0] / len);\n\t\t}\n\t\treturn ans;\n\
     \t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/FftConvolution.java
   requiredBy: []
-  timestamp: '2022-11-02 11:30:56+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/FftConvolution.java

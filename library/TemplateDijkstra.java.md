@@ -7,9 +7,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -79,13 +76,12 @@ data:
     \ pathEdge(final int start, final int goal) { return PathRestoration.pathEdge(new\
     \ ArrayTemplateNode<T>(-1), prv, prvEdge, start, goal); }\n}"
   dependsOn:
-  - library/SimpleUtil.java
   - library/AbstractGraph.java
   - library/PathRestoration.java
   isVerificationFile: false
   path: library/TemplateDijkstra.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/TemplateDijkstra_pathEdge_test.java

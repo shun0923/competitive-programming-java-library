@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -76,12 +73,11 @@ data:
     \ {\n\t\t\t\tcrt = tmp;\n\t\t\t\tr = rangeL[idx --];\n\t\t\t\tif((idx & 1) !=\
     \ 0) idx >>= 1;\n\t\t\t}else idx = (idx << 1) + 1;\n\t\t}\n\t\treturn r <= l ?\
     \ l : r;\n\t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/SegmentTree.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/SegmentTree_test.java

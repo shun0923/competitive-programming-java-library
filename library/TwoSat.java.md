@@ -7,9 +7,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Scc.java
     title: library/Scc.java
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -43,13 +40,12 @@ data:
     \ false;\n\t\t\tans[i] = id[i << 1] < id[(i << 1) | 1];\n\t\t}\n\t\treturn true;\n\
     \t}\n\tpublic final boolean[] cal() { satisfiable(); return ans; }\n}"
   dependsOn:
-  - library/SimpleUtil.java
   - library/AbstractGraph.java
   - library/Scc.java
   isVerificationFile: false
   path: library/TwoSat.java
   requiredBy: []
-  timestamp: '2022-11-02 13:30:52+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/TwoSat.java

@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/LcpArray.java
@@ -78,13 +75,12 @@ data:
     \t\t\t\trecS[lmsMap[sortedLms[i]]] = recUpper;\n\t\t\t}\n\n\t\t\tint[] recSA =\
     \ sais(recS, recUpper);\n\n\t\t\tfor(int i = 0; i < m; i ++) sortedLms[i] = lms[recSA[i]];\n\
     \t\t\tinduce.accept(sortedLms);\n\t\t}\n\n\t\treturn sa;\n\t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/SuffixArray.java
   requiredBy:
   - library/LcpArray.java
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/SuffixArray_test.java

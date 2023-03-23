@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -58,12 +55,11 @@ data:
     \ { K last = last(); erase(last); return last; }\n\tpublic final K removeLast()\
     \ { K last = last(); remove(last); return last; }\n\n\tprivate static final long\
     \ convert(Long value) { return value == null ? 0 : value; }\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/MultiSet.java
   requiredBy: []
-  timestamp: '2022-10-05 22:12:54+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/TreeMultiSet_test.java

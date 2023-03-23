@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -51,12 +48,11 @@ data:
     \ }\n\t\t\tl >>= 1; r >>= 1;\n\t\t}\n\t}\n\n\tlong get(int j) { // O(logN)\n\t\
     \tSimpleUtil.inclusiveRangeCheck(j, n);\n\t\tj += n;\n\t\tfor(int i = height;\
     \ i > 0; i --) eval(j >> i);\n\t\treturn lazy[j];\n\t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/DualSegmentTree.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/DualSegmentTree_test.java

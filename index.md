@@ -48,6 +48,9 @@ data:
     - icon: ':warning:'
       path: library/ExtendedMath.java
       title: library/ExtendedMath.java
+    - icon: ':warning:'
+      path: library/FastIO.java
+      title: library/FastIO.java
     - icon: ':heavy_check_mark:'
       path: library/FastInputStream.java
       title: library/FastInputStream.java
@@ -111,9 +114,6 @@ data:
     - icon: ':warning:'
       path: library/Select.java
       title: library/Select.java
-    - icon: ':warning:'
-      path: library/SimpleUtil.java
-      title: library/SimpleUtil.java
     - icon: ':heavy_check_mark:'
       path: library/Solver.java
       title: library/Solver.java

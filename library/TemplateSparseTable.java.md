@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -42,12 +39,11 @@ data:
     SimpleUtil.assertion(l <= r, \"l is larger than r.\");\n\t\tint log = Long.numberOfTrailingZeros(Integer.highestOneBit(l\
     \ ^ r));\n\t\treturn l == r ? get(l) : f.apply(table[log][l], table[log][r]);\n\
     \t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/TemplateSparseTable.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/TemplateSparseTable_test.java

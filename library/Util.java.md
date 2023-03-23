@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedRequiredBy:
   - icon: ':warning:'
     path: library/ExtendedMath.java
@@ -29,18 +29,18 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
-    \ library.SimpleUtil;\n\nclass Util extends SimpleUtil {\n\tpublic static final\
-    \ int min(final int a, final int b) { return Math.min(a, b); }\n\tpublic static\
-    \ final long min(final long a, final long b) { return Math.min(a, b); }\n\tpublic\
-    \ static final double min(final double a, final double b) { return Math.min(a,\
-    \ b); }\n\tpublic static final <T extends Comparable<T>> T min(final T a, final\
-    \ T b) { return a.compareTo(b) <= 0 ? a : b; }\n\tpublic static final int min(final\
-    \ int... x) { int min = x[0]; for(int val : x) min = min(min, val); return min;\
-    \ }\n\tpublic static final long min(final long... x) { long min = x[0]; for(long\
-    \ val : x) min = min(min, val); return min; }\n\tpublic static final double min(final\
-    \ double... x) { double min = x[0]; for(double val : x) min = min(min, val); return\
-    \ min; }\n\tpublic static final int max(final int a, final int b) { return Math.max(a,\
-    \ b); }\n\tpublic static final long max(final long a, final long b) { return Math.max(a,\
+    \ library.FastIO;\n\nclass Util extends FastIO {\n\tpublic static final int min(final\
+    \ int a, final int b) { return Math.min(a, b); }\n\tpublic static final long min(final\
+    \ long a, final long b) { return Math.min(a, b); }\n\tpublic static final double\
+    \ min(final double a, final double b) { return Math.min(a, b); }\n\tpublic static\
+    \ final <T extends Comparable<T>> T min(final T a, final T b) { return a.compareTo(b)\
+    \ <= 0 ? a : b; }\n\tpublic static final int min(final int... x) { int min = x[0];\
+    \ for(int val : x) min = min(min, val); return min; }\n\tpublic static final long\
+    \ min(final long... x) { long min = x[0]; for(long val : x) min = min(min, val);\
+    \ return min; }\n\tpublic static final double min(final double... x) { double\
+    \ min = x[0]; for(double val : x) min = min(min, val); return min; }\n\tpublic\
+    \ static final int max(final int a, final int b) { return Math.max(a, b); }\n\t\
+    public static final long max(final long a, final long b) { return Math.max(a,\
     \ b); }\n\tpublic static final double max(final double a, final double b) { return\
     \ Math.max(a, b); }\n\tpublic static final <T extends Comparable<T>> T max(final\
     \ T a, final T b) { return a.compareTo(b) >= 0 ? a : b; }\n\tpublic static final\
@@ -1077,13 +1077,13 @@ data:
     \ that) { int c = Double.compare(this.a, that.a); if(c == 0) c = Double.compare(this.b,\
     \ that.b); if(c == 0) c = Double.compare(this.c, that.c); return c; }\n\t}\n}"
   dependsOn:
-  - library/SimpleUtil.java
+  - library/FastIO.java
   isVerificationFile: false
   path: library/Util.java
   requiredBy:
   - library/Solver.java
   - library/ExtendedMath.java
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/Util.java

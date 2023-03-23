@@ -3,8 +3,8 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+    path: library/FastIO.java
+    title: library/FastIO.java
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: library/FastIO_test.java
@@ -88,7 +88,7 @@ data:
   isVerificationFile: false
   path: library/FastInputStream.java
   requiredBy:
-  - library/SimpleUtil.java
+  - library/FastIO.java
   timestamp: '2022-10-03 15:04:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

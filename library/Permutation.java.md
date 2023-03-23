@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -42,12 +39,11 @@ data:
     \ p;\n\t\tint r = a.length;\n\t\twhile(++ l < -- r) swap(a, l, r);\n\t\treturn\
     \ a;\n\t}\n\n\tprivate static final void swap(int[] a, int l, int r) {\n\t\tint\
     \ tmp = a[l];\n\t\ta[l] = a[r];\n\t\ta[r] = tmp;\n\t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/Permutation.java
   requiredBy: []
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Permutation_test.java

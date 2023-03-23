@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
@@ -77,13 +74,12 @@ data:
     \ 128) >> 5;\n\t\tk -= c4 & ((c4 - k) >> 7);\n\t\tc2 = c2 >> idx & 0x3;\n\t\t\
     idx |= ((c2 - k) & 128) >> 6;\n\t\tk -= c2 & ((c2 - k) >> 7);\n\t\tidx |= (((c\
     \ >> idx & 0x1) - k) & 128) >> 7;\n\t\treturn idx;\n\t}\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/BitVector.java
   requiredBy:
   - library/WaveletMatrix.java
-  timestamp: '2022-10-05 21:11:17+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/BitVector.java

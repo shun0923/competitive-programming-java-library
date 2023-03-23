@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':warning:'
-    path: library/SimpleUtil.java
-    title: library/SimpleUtil.java
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -118,12 +115,11 @@ data:
     \t\t\tif(i == r) break;\n\t\t\tcrt = get(crt).next[a[i]];\n\t\t\tif(crt != -1)\
     \ break;\n\t\t}\n\t\treturn ans;\n\t}\n\n\tpublic final int count() { return get(0).cnt;\
     \ } // O(1)\n}"
-  dependsOn:
-  - library/SimpleUtil.java
+  dependsOn: []
   isVerificationFile: false
   path: library/Trie.java
   requiredBy: []
-  timestamp: '2022-10-05 21:29:30+09:00'
+  timestamp: '2023-03-23 19:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Trie_startWith_test.java
