@@ -21,13 +21,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod_sqrt_test.java
     title: library/ArbitraryMod_sqrt_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/BellmanFord_reversed_test.java
     title: library/BellmanFord_reversed_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Bfs_test.java
     title: library/Bfs_test.java
   - icon: ':heavy_check_mark:'
@@ -42,22 +42,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Convolution998_test.java
     title: library/Convolution998_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_forDenseGraph_reversed_test.java
     title: library/Dijkstra_forDenseGraph_reversed_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_forDenseGraph_test.java
     title: library/Dijkstra_forDenseGraph_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_reversed_test.java
     title: library/Dijkstra_reversed_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
   - icon: ':heavy_check_mark:'
@@ -96,25 +96,25 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_inv_test.java
     title: library/Fps_inv_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_log_test.java
     title: library/Fps_log_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_mul_test.java
     title: library/Fps_mul_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_pow_test.java
     title: library/Fps_pow_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_random_test.java
     title: library/Fps_random_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
   - icon: ':heavy_check_mark:'
     path: library/HelloWorld_test.java
     title: library/HelloWorld_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Kmp_test.java
     title: library/Kmp_test.java
   - icon: ':x:'
@@ -123,34 +123,34 @@ data:
   - icon: ':x:'
     path: library/Lca_test.java
     title: library/Lca_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/LcpArray_test.java
     title: library/LcpArray_test.java
   - icon: ':heavy_check_mark:'
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod107_manyCombination_test.java
     title: library/Mod107_manyCombination_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod107_pow_test.java
     title: library/Mod107_pow_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod107_random_test.java
     title: library/Mod107_random_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod998_manyCombination_test.java
     title: library/Mod998_manyCombination_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod998_random_test.java
     title: library/Mod998_random_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Permutation_test.java
     title: library/Permutation_test.java
   - icon: ':x:'
     path: library/Rerooting_test.java
     title: library/Rerooting_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/RollingHash_test.java
     title: library/RollingHash_test.java
   - icon: ':x:'

@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/SuffixArray.java
     title: library/SuffixArray.java
   _extendedRequiredBy: []

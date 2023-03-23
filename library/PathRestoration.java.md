@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
     path: library/FastIO.java
     title: library/FastIO.java
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Bfs.java
     title: library/Bfs.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
   - icon: ':x:'
@@ -24,10 +24,10 @@ data:
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
   - icon: ':x:'
@@ -35,7 +35,7 @@ data:
     title: library/TemplateDijkstra_pathEdge_test.java
   _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -72,8 +72,8 @@ data:
   - library/Dijkstra.java
   - library/Bfs.java
   - library/WarshallFloyd.java
-  timestamp: '2023-03-23 19:06:36+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-03-23 23:34:20+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java

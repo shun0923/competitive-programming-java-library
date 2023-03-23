@@ -5,11 +5,11 @@ data:
     path: library/FastIO.java
     title: library/FastIO.java
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/LcpArray.java
     title: library/LcpArray.java
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/LcpArray_test.java
     title: library/LcpArray_test.java
   - icon: ':x:'
@@ -17,7 +17,7 @@ data:
     title: library/SuffixArray_test.java
   _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -85,7 +85,7 @@ data:
   requiredBy:
   - library/LcpArray.java
   timestamp: '2023-03-23 19:06:36+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/SuffixArray_test.java
   - library/LcpArray_test.java

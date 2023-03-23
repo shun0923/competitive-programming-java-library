@@ -11,7 +11,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ExtendedConvolution.java
     title: library/ExtendedConvolution.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps.java
     title: library/Fps.java
   - icon: ':warning:'
@@ -36,24 +36,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_inv_test.java
     title: library/Fps_inv_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_log_test.java
     title: library/Fps_log_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_mul_test.java
     title: library/Fps_mul_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_pow_test.java
     title: library/Fps_pow_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_random_test.java
     title: library/Fps_random_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -287,7 +287,7 @@ data:
   - library/Kitamasa.java
   - library/Fps.java
   timestamp: '2023-03-23 19:06:36+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Fps_mul_test.java
   - library/Fps_log_test.java

@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
     path: library/FastIO.java
     title: library/FastIO.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/BellmanFord_reversed_test.java
     title: library/BellmanFord_reversed_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -66,8 +66,8 @@ data:
   isVerificationFile: false
   path: library/BellmanFord.java
   requiredBy: []
-  timestamp: '2023-03-23 19:06:36+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-23 23:34:20+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/BellmanFord_test.java
   - library/BellmanFord_reversed_test.java

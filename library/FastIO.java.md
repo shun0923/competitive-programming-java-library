@@ -8,13 +8,13 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Bfs.java
     title: library/Bfs.java
   - icon: ':warning:'
@@ -23,10 +23,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/CompressedWaveletMatrix.java
     title: library/CompressedWaveletMatrix.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
   - icon: ':heavy_check_mark:'
@@ -53,10 +53,10 @@ data:
   - icon: ':warning:'
     path: library/FftConvolution.java
     title: library/FftConvolution.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps.java
     title: library/Fps.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Kmp.java
     title: library/Kmp.java
   - icon: ':x:'
@@ -65,7 +65,7 @@ data:
   - icon: ':x:'
     path: library/Lca.java
     title: library/Lca.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/LcpArray.java
     title: library/LcpArray.java
   - icon: ':question:'
@@ -77,16 +77,16 @@ data:
   - icon: ':x:'
     path: library/Pair.java
     title: library/Pair.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Permutation.java
     title: library/Permutation.java
   - icon: ':x:'
     path: library/Rerooting.java
     title: library/Rerooting.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/RollingHash.java
     title: library/RollingHash.java
   - icon: ':x:'
@@ -101,7 +101,7 @@ data:
   - icon: ':x:'
     path: library/SparseTable.java
     title: library/SparseTable.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/SuffixArray.java
     title: library/SuffixArray.java
   - icon: ':x:'

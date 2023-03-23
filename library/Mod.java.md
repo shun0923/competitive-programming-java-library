@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ArbitraryMod.java
     title: library/ArbitraryMod.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
   - icon: ':heavy_check_mark:'
@@ -17,7 +17,7 @@ data:
   - icon: ':warning:'
     path: library/ExtendedMath.java
     title: library/ExtendedMath.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Fps.java
     title: library/Fps.java
   - icon: ':warning:'
@@ -27,19 +27,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/DynamicSwag_test.java
     title: library/DynamicSwag_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod107_manyCombination_test.java
     title: library/Mod107_manyCombination_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod107_pow_test.java
     title: library/Mod107_pow_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod107_random_test.java
     title: library/Mod107_random_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod998_manyCombination_test.java
     title: library/Mod998_manyCombination_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod998_random_test.java
     title: library/Mod998_random_test.java
   - icon: ':x:'

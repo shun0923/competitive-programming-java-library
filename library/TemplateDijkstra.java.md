@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
     path: library/FastIO.java
     title: library/FastIO.java
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   _extendedRequiredBy: []
@@ -85,7 +85,7 @@ data:
   isVerificationFile: false
   path: library/TemplateDijkstra.java
   requiredBy: []
-  timestamp: '2023-03-23 19:06:36+09:00'
+  timestamp: '2023-03-23 23:34:20+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/TemplateDijkstra_pathEdge_test.java
