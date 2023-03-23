@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Bfs.java
     title: library/Bfs.java
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -33,7 +33,7 @@ data:
     \npackage library;\n\nimport library.Solver;\nimport library.AbstractGraph;\n\
     import library.Bfs;\n\npublic class Bfs_test extends Solver {\n\tpublic static\
     \ void main(final String[] args) { main(args, new Bfs_test()); }\n\n\tpublic void\
-    \ solve() {\n\t\tint n = ni();\n\t\tArrayUnweightedGraph g = new ArrayUnweightedGraph(n,\
+    \ solve() {\n\t\tint n = ni();\n\t\tUnweightedListGraph g = new UnweightedListGraph(n,\
     \ true);\n\t\tfor(int i = 0; i < n; i ++) {\n\t\t\tint source = ni() - 1;\n\t\t\
     \tint k = ni();\n\t\t\tfor(int j = 0; j < k; j ++) g.add(source, ni() - 1);\n\t\
     \t}\n\t\tint dist[] = Bfs.dist(g, 0);\n\t\tfor(int i = 0; i < n; i ++) prtln(i\
@@ -45,8 +45,8 @@ data:
   isVerificationFile: true
   path: library/Bfs_test.java
   requiredBy: []
-  timestamp: '2023-03-23 23:34:20+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-03-24 00:14:38+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Bfs_test.java
 layout: document

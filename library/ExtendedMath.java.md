@@ -4,10 +4,10 @@ data:
   - icon: ':warning:'
     path: library/FastIO.java
     title: library/FastIO.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Pair.java
     title: library/Pair.java
   - icon: ':warning:'

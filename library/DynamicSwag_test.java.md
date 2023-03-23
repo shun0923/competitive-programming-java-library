@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/DynamicSwag.java
     title: library/DynamicSwag.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
   - icon: ':question:'

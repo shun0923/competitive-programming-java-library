@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: library/FastIO.java
     title: library/FastIO.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/SuffixArray.java
     title: library/SuffixArray.java
   _extendedRequiredBy: []

@@ -12,12 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/LcpArray_test.java
     title: library/LcpArray_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/SuffixArray_test.java
     title: library/SuffixArray_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -85,7 +85,7 @@ data:
   requiredBy:
   - library/LcpArray.java
   timestamp: '2023-03-23 19:06:36+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/SuffixArray_test.java
   - library/LcpArray_test.java

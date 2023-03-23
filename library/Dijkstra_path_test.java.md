@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':x:'
@@ -51,7 +51,7 @@ data:
   isVerificationFile: true
   path: library/Dijkstra_path_test.java
   requiredBy: []
-  timestamp: '2023-03-23 23:34:20+09:00'
+  timestamp: '2023-03-24 00:14:38+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/Dijkstra_path_test.java

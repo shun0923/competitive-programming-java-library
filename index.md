@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -12,7 +12,7 @@ data:
     - icon: ':x:'
       path: library/BellmanFord.java
       title: library/BellmanFord.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Bfs.java
       title: library/Bfs.java
     - icon: ':warning:'
@@ -84,13 +84,13 @@ data:
     - icon: ':warning:'
       path: library/Mo.java
       title: library/Mo.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/Mod.java
       title: library/Mod.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/MultiSet.java
       title: library/MultiSet.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Pair.java
       title: library/Pair.java
     - icon: ':x:'
@@ -108,7 +108,7 @@ data:
     - icon: ':x:'
       path: library/Scc.java
       title: library/Scc.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/SegmentTree.java
       title: library/SegmentTree.java
     - icon: ':warning:'
@@ -120,43 +120,43 @@ data:
     - icon: ':warning:'
       path: library/Sort.java
       title: library/Sort.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/SparseTable.java
       title: library/SparseTable.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/SuffixArray.java
       title: library/SuffixArray.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Swag.java
       title: library/Swag.java
     - icon: ':x:'
       path: library/TemplateDijkstra.java
       title: library/TemplateDijkstra.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateDualSegmentTree.java
       title: library/TemplateDualSegmentTree.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateDynamicSegmentTree.java
       title: library/TemplateDynamicSegmentTree.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateDynamicSwag.java
       title: library/TemplateDynamicSwag.java
     - icon: ':x:'
       path: library/TemplateRerooting.java
       title: library/TemplateRerooting.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSegmentTree.java
       title: library/TemplateSegmentTree.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSparseTable.java
       title: library/TemplateSparseTable.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSwag.java
       title: library/TemplateSwag.java
     - icon: ':x:'
       path: library/TopologicalSort.java
       title: library/TopologicalSort.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Trie.java
       title: library/Trie.java
     - icon: ':warning:'
@@ -210,7 +210,7 @@ data:
     - icon: ':x:'
       path: library/BellmanFord_test.java
       title: library/BellmanFord_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Bfs_test.java
       title: library/Bfs_test.java
     - icon: ':heavy_check_mark:'
@@ -345,22 +345,22 @@ data:
     - icon: ':x:'
       path: library/Scc_ids_test.java
       title: library/Scc_ids_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/SegmentTree_composite_test.java
       title: library/SegmentTree_composite_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/SegmentTree_test.java
       title: library/SegmentTree_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/SparseTable_test.java
       title: library/SparseTable_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/SuffixArray_test.java
       title: library/SuffixArray_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Swag_gcd_test.java
       title: library/Swag_gcd_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Swag_test.java
       title: library/Swag_test.java
     - icon: ':x:'
@@ -369,43 +369,43 @@ data:
     - icon: ':x:'
       path: library/TemplateDijkstra_test.java
       title: library/TemplateDijkstra_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateDualSegmentTree_test.java
       title: library/TemplateDualSegmentTree_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateDynamicSegmentTree_small_test.java
       title: library/TemplateDynamicSegmentTree_small_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateDynamicSegmentTree_test.java
       title: library/TemplateDynamicSegmentTree_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateDynamicSwag_test.java
       title: library/TemplateDynamicSwag_test.java
     - icon: ':x:'
       path: library/TemplateRerooting_test.java
       title: library/TemplateRerooting_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSegmentTree_composite_test.java
       title: library/TemplateSegmentTree_composite_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSegmentTree_test.java
       title: library/TemplateSegmentTree_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSparseTable_test.java
       title: library/TemplateSparseTable_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSwag_gcd_test.java
       title: library/TemplateSwag_gcd_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateSwag_test.java
       title: library/TemplateSwag_test.java
     - icon: ':x:'
       path: library/TopologicalSort_test.java
       title: library/TopologicalSort_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TreeMultiSet_test.java
       title: library/TreeMultiSet_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Trie_startWith_test.java
       title: library/Trie_startWith_test.java
     - icon: ':x:'

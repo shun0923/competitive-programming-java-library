@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -12,12 +12,12 @@ data:
     title: library/PathRestoration.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Bfs_test.java
     title: library/Bfs_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -32,27 +32,26 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\nimport library.AbstractGraph;\n\
-    import library.PathRestoration;\n\nfinal class Bfs {\n\tprivate static int prv[];\n\
-    \tprivate static UnweightedEdge prvEdge[];\n\n\t// O(V)\n\tpublic static final\
-    \ int[] dist(UnweightedGraph g, int start) { return dist(g, start, false); }\n\
-    \tpublic static final int[] dist(UnweightedGraph g, int start, boolean memoize)\
-    \ { return dist(g.nodes(), start, memoize); }\n\tpublic static final int[] dist(UnweightedNode[]\
-    \ nodes, int start) { return dist(nodes, start, false); }\n\tpublic static final\
-    \ int[] dist(UnweightedNode[] nodes, int start, boolean memoize) {\n\t\tint numNode\
-    \ = nodes.length;\n\t\tint dist[] = new int[numNode];\n\t\tArrays.fill(dist, -1);\n\
-    \t\tboolean visited[] = new boolean[numNode];\n\t\tint dq[] = new int[numNode];\n\
-    \t\tint ptr = 0;\n\t\tint size = 0;\n\t\tif(memoize) {\n\t\t\tprv = new int[numNode];\n\
-    \t\t\tArrays.fill(prv, -1);\n\t\t\tprvEdge = new UnweightedEdge[numNode];\n\t\t\
-    }\n\n\t\tdq[size ++] = start;\n\t\tdist[start] = 0;\n\t\tvisited[start] = true;\n\
-    \t\twhile(ptr != size) {\n\t\t\tint crt = dq[ptr ++];\n\t\t\tfor(UnweightedEdge\
-    \ e : nodes[crt]) {\n\t\t\t\tif(!visited[e.target]) {\n\t\t\t\t\tdist[e.target]\
-    \ = dist[e.source] + 1;\n\t\t\t\t\tvisited[e.target] = true;\n\t\t\t\t\tdq[size\
-    \ ++] = e.target;\n\t\t\t\t\tif(memoize) {\n\t\t\t\t\t\tprv[e.target] = e.source;\n\
-    \t\t\t\t\t\tprvEdge[e.target] = e;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\
-    \treturn dist;\n\t}\n\tpublic static final int[] path(final int start, final int\
-    \ goal) { return PathRestoration.path(prv, start, goal); }\n\tpublic static final\
-    \ ArrayUnweightedNode pathEdge(final int start, final int goal) { return PathRestoration.pathEdge(new\
-    \ ArrayUnweightedNode(-1), prv, prvEdge, start, goal); }\n}"
+    import library.PathRestoration;\n\nfinal class Bfs {\n\t// O(V)\n\tpublic static\
+    \ final <Graph extends AbstractGraph<Node, Edge>, Node extends AbstractNode<Edge>,\
+    \ Edge extends AbstractEdge<Edge>> int[] dist(Graph g, int start) { return dist(g,\
+    \ start, null, null); }\n\tpublic static final <Graph extends AbstractGraph<Node,\
+    \ Edge>, Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> int[]\
+    \ dist(Graph g, int start, int[] prv, Edge[] prvEdge) { return dist(g.nodes(),\
+    \ start, prv, prvEdge); }\n\tpublic static final <Node extends AbstractNode<Edge>,\
+    \ Edge extends AbstractEdge<Edge>>int[] dist(Node[] nodes, int start) { return\
+    \ dist(nodes, start, null, null); }\n\tpublic static final <Node extends AbstractNode<Edge>,\
+    \ Edge extends AbstractEdge<Edge>> int[] dist(Node[] nodes, int start, int[] prv,\
+    \ Edge[] prvEdge) {\n\t\tint numNode = nodes.length;\n\t\tint dist[] = new int[numNode];\n\
+    \t\tArrays.fill(dist, -1);\n\t\tboolean visited[] = new boolean[numNode];\n\t\t\
+    int dq[] = new int[numNode];\n\t\tint ptr = 0;\n\t\tint size = 0;\n\t\tboolean\
+    \ memoize = prv != null;\n\t\tif(memoize) Arrays.fill(prv, -1);\n\n\t\tdq[size\
+    \ ++] = start;\n\t\tdist[start] = 0;\n\t\tvisited[start] = true;\n\t\twhile(ptr\
+    \ != size) {\n\t\t\tint crt = dq[ptr ++];\n\t\t\tfor(Edge e : nodes[crt]) {\n\t\
+    \t\t\tif(!visited[e.target]) {\n\t\t\t\t\tdist[e.target] = dist[e.source] + 1;\n\
+    \t\t\t\t\tvisited[e.target] = true;\n\t\t\t\t\tdq[size ++] = e.target;\n\t\t\t\
+    \t\tif(memoize) {\n\t\t\t\t\t\tprv[e.target] = e.source;\n\t\t\t\t\t\tprvEdge[e.target]\
+    \ = e;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n}"
   dependsOn:
   - library/FastIO.java
   - library/AbstractGraph.java
@@ -60,8 +59,8 @@ data:
   isVerificationFile: false
   path: library/Bfs.java
   requiredBy: []
-  timestamp: '2023-03-23 23:34:20+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-03-24 00:14:38+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Bfs_test.java
 documentation_of: library/Bfs.java

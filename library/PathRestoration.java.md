@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -11,7 +11,7 @@ data:
   - icon: ':x:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Bfs.java
     title: library/Bfs.java
   - icon: ':x:'
@@ -52,15 +52,15 @@ data:
   code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\nimport library.AbstractGraph;\n\
     \nfinal class PathRestoration {\n\tpublic static final int[] path(final int[]\
     \ prv, final int start, int goal) { // O(V)\n\t\tFastIO.rangeCheck(start, prv.length);\n\
-    \t\tFastIO.rangeCheck(goal, prv.length);\n\t\tfinal Deque<Integer> pathList =\
-    \ new ArrayDeque<>();\n\t\tpathList.addLast(goal);\n\t\twhile(goal != start) pathList.addLast(goal\
-    \ = prv[goal]);\n\t\tfinal int path[] = new int[pathList.size()];\n\t\tfor(int\
-    \ i = 0; i < path.length; i ++) path[i] = pathList.removeLast();\n\t\treturn path;\n\
+    \t\tFastIO.rangeCheck(goal, prv.length);\n\t\tList<Integer> pathList = new ArrayList<>();\n\
+    \t\tpathList.add(goal);\n\t\twhile(goal != start) pathList.add(goal = prv[goal]);\n\
+    \t\tfinal int path[] = new int[pathList.size()];\n\t\tfor(int i = 0, j = path.length\
+    \ - 1; i < path.length; i ++, j --) path[i] = pathList.get(j);\n\t\treturn path;\n\
     \t}\n\tpublic static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>\
     \ Node pathEdge(Node pathEdge, final int[] prv, final Edge[] prvEdge, final int\
-    \ start, final int goal) {\n\t\tfinal int path[] = path(prv, start, goal);\n\t\
-    \tfor(int i = 1; i < path.length; i ++) pathEdge.add(prvEdge[path[i]]);\n\t\t\
-    return pathEdge;\n\t}\n}"
+    \ start, final int goal) {\n\t\tint path[] = path(prv, start, goal);\n\t\tfor(int\
+    \ i = 1; i < path.length; i ++) pathEdge.add(prvEdge[path[i]]);\n\t\treturn pathEdge;\n\
+    \t}\n}"
   dependsOn:
   - library/FastIO.java
   - library/AbstractGraph.java
@@ -72,7 +72,7 @@ data:
   - library/Dijkstra.java
   - library/Bfs.java
   - library/WarshallFloyd.java
-  timestamp: '2023-03-23 23:34:20+09:00'
+  timestamp: '2023-03-24 00:14:38+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
