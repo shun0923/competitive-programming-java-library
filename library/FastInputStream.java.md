@@ -16,14 +16,17 @@ data:
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
+    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 71, in bundle\n    return subprocess.check_output(shlex.split(command))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/subprocess.py\"\
-    , line 421, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout,\
-    \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/subprocess.py\"\
-    , line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
+    \           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
+    , line 466, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout,\
+    \ check=True,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
+    , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport java.io.*;\n\nfinal class\
     \ FastInputStream {\n\tprivate static final int BUF_SIZE = 1 << 14;\n\tprivate\
@@ -89,8 +92,8 @@ data:
   timestamp: '2022-10-03 15:04:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - library/FastIO_test.java
   - library/ManyFastIO_test.java
+  - library/FastIO_test.java
 documentation_of: library/FastInputStream.java
 layout: document
 redirect_from:

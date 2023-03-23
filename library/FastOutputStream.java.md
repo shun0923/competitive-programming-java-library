@@ -16,14 +16,17 @@ data:
   _pathExtension: java
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
+    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 71, in bundle\n    return subprocess.check_output(shlex.split(command))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/subprocess.py\"\
-    , line 421, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout,\
-    \ check=True,\n  File \"/opt/hostedtoolcache/Python/3.10.8/x64/lib/python3.10/subprocess.py\"\
-    , line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
+    \           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
+    , line 466, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout,\
+    \ check=True,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
+    , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.io.*;\n\nfinal class FastOutputStream {\n\
     \tprivate static final int BUF_SIZE = 1 << 13;\n\tprivate final byte buf[] = new\
@@ -34,7 +37,7 @@ data:
     \ static final byte LONG_MIN_BYTES[] = {45, 57, 50, 50, 51, 51, 55, 50, 48, 51,\n\
     \t\t\t\t\t\t\t\t\t\t\t\t54, 56, 53, 52, 55, 55, 53, 56, 48, 56};\n\tprivate static\
     \ final int TOKEN_SIZE = 20;\n\tprivate final byte tokenBuf[] = new byte[TOKEN_SIZE];\n\
-    \tprivate static final int PRECISION = 10;\n\tpublic FastOutputStream(OutputStream\
+    \tprivate static final int PRECISION = 16;\n\tpublic FastOutputStream(OutputStream\
     \ out) {\n\t\tthis.out = out;\n\t}\n\tpublic final void print() {  }\n\tpublic\
     \ final void write(final byte b) {\n\t\tif(count == BUF_SIZE) internalFlush();\n\
     \t\tbuf[count ++] = b;\n\t}\n\tpublic final void print(final char c) { write((byte)\
@@ -49,7 +52,7 @@ data:
     return;\n\t\t}\n\t\tif(x == 0) {\n\t\t\tbuf[count ++] = 48;\n\t\t\treturn;\n\t\
     \t}\n\t\tif(x < 0) {\n\t\t\tbuf[count ++] = 45;\n\t\t\tx = - x;\n\t\t}\n\t\tint\
     \ tokenCount = 11;\n\t\twhile(x > 0) {\n\t\t\tfinal int y = x / 10;\n\t\t\ttokenBuf[--\
-    \ tokenCount] = (byte) (x - (y << 3) - (y << 1) + 48);\n\t\t\tx = y;\n\t\t}\n\t\
+    \ tokenCount] = (byte)(x - (y << 3) - (y << 1) + 48);\n\t\t\tx = y;\n\t\t}\n\t\
     \tSystem.arraycopy(tokenBuf, tokenCount, buf, count, 11 - tokenCount);\n\t\tcount\
     \ += 11 - tokenCount;\n\t}\n\tpublic final void print(long x) {\n\t\tif(count\
     \ + 20 > BUF_SIZE) internalFlush();\n\t\tif(x == Long.MIN_VALUE) {\n\t\t\tSystem.arraycopy(LONG_MIN_BYTES,\
@@ -57,7 +60,7 @@ data:
     \t\t\treturn;\n\t\t}\n\t\tif(x == 0) {\n\t\t\tbuf[count ++] = 48;\n\t\t\treturn;\n\
     \t\t}\n\t\tif(x < 0) {\n\t\t\tbuf[count ++] = 45;\n\t\t\tx = - x;\n\t\t}\n\t\t\
     int tokenCount = 20;\n\t\twhile(x > 0) {\n\t\t\tfinal long y = x / 10;\n\t\t\t\
-    tokenBuf[-- tokenCount] = (byte) (x - (y << 3) - (y << 1) + 48);\n\t\t\tx = y;\n\
+    tokenBuf[-- tokenCount] = (byte)(x - (y << 3) - (y << 1) + 48);\n\t\t\tx = y;\n\
     \t\t}\n\t\tSystem.arraycopy(tokenBuf, tokenCount, buf, count, 20 - tokenCount);\n\
     \t\tcount += 20 - tokenCount;\n\t}\n\tpublic final void print(final double d)\
     \ { print(d, PRECISION); }\n\tpublic final void print(double d, final int precision)\
@@ -66,7 +69,7 @@ data:
     \tprint((long)d);\n\t\tif(precision == 0) return;\n\t\tif(count + precision +\
     \ 1 > BUF_SIZE) internalFlush();\n\t\tbuf[count ++] = 46;\n\t\td -= (long)d;\n\
     \t\tfor(int i = 0; i < precision; i ++) {\n\t\t\td *= 10;\n\t\t\tbuf[count ++]\
-    \ = (byte)((int)d + 48);\n\t\t\td -= (int) d;\n\t\t}\n\t}\n\tpublic final void\
+    \ = (byte)((int)d + 48);\n\t\t\td -= (int)d;\n\t\t}\n\t}\n\tpublic final void\
     \ print(final String s) { print(s.getBytes()); }\n\tpublic final void print(final\
     \ Object o) { print(o.toString()); }\n\tpublic final void print(final byte[] a)\
     \ {\n\t\tif(count + a.length > BUF_SIZE) internalFlush();\n\t\tif(a.length <=\
@@ -84,35 +87,34 @@ data:
     \ void println(final String s) { print(s); println(); }\n\tpublic final void println(final\
     \ Object o) { print(o); println(); }\n\tpublic final void println(final char[]\
     \ a) { print(a); println(); }\n\tpublic final void println(final int[] a) {\n\t\
-    \tfor(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\t\tif(i != a.length\
-    \ - 1) print(' ');\n\t\t}\n\t\tprintln();\n\t}\n\tpublic final void println(final\
-    \ long[] a) {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i]);\n\t\
-    \t\tif(i != a.length - 1) print(' ');\n\t\t}\n\t\tprintln();\n\t}\n\tpublic final\
-    \ void println(final double[] a) {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\
-    \t\t\tprint(a[i]);\n\t\t\tif(i != a.length - 1) print(' ');\n\t\t}\n\t\tprintln();\n\
-    \t}\n\tpublic final void println(final double[] a, final int precision) {\n\t\t\
-    for(int i = 0; i < a.length; i ++) {\n\t\t\tprint(a[i], precision);\n\t\t\tif(i\
-    \ != a.length - 1) print(' ');\n\t\t}\n\t\tprintln();\n\t}\n\tpublic final void\
-    \ println(final String[] a) {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\t\
-    print(a[i]);\n\t\t\tif(i != a.length - 1) print(' ');\n\t\t}\n\t\tprintln();\n\
+    \tfor(int i = 0; i < a.length; i ++) {\n\t\t\tif(i != 0) print(' ');\n\t\t\tprint(a[i]);\n\
+    \t\t}\n\t\tprintln();\n\t}\n\tpublic final void println(final long[] a) {\n\t\t\
+    for(int i = 0; i < a.length; i ++) {\n\t\t\tif(i != 0) print(' ');\n\t\t\tprint(a[i]);\n\
+    \t\t}\n\t\tprintln();\n\t}\n\tpublic final void println(final double[] a) {\n\t\
+    \tfor(int i = 0; i < a.length; i ++) {\n\t\t\tif(i != 0) print(' ');\n\t\t\tprint(a[i]);\n\
+    \t\t}\n\t\tprintln();\n\t}\n\tpublic final void println(final double[] a, final\
+    \ int precision) {\n\t\tfor(int i = 0; i < a.length; i ++) {\n\t\t\tif(i != 0)\
+    \ print(' ');\n\t\t\tprint(a[i], precision);\n\t\t}\n\t\tprintln();\n\t}\n\tpublic\
+    \ final void println(final String[] a) {\n\t\tfor(int i = 0; i < a.length; i ++)\
+    \ {\n\t\t\tif(i != 0) print(' ');\n\t\t\tprint(a[i]);\n\t\t}\n\t\tprintln();\n\
     \t}\n\tpublic final void println(final Object[] a) {\n\t\tfor(int i = 0; i < a.length;\
-    \ i ++) {\n\t\t\tprint(a[i]);\n\t\t\tif(i != a.length - 1) print(' ');\n\t\t}\n\
-    \t\tprintln();\n\t}\n\tprivate final void internalFlush() {\n\t\ttry {\n\t\t\t\
-    out.write(buf, 0, count);\n\t\t\tcount = 0;\n\t\t}\n\t\tcatch(IOException e) {\
-    \ e.printStackTrace(); }\n\t}\n\tpublic final void flush() {\n\t\ttry {\n\t\t\t\
-    out.write(buf, 0, count);\n\t\t\tout.flush();\n\t\t\tcount = 0;\n\t\t}\n\t\tcatch(IOException\
-    \ e) { e.printStackTrace(); }\n\t}\n\tpublic final void close() {\n\t\ttry { out.close();\
-    \ }\n\t\tcatch(IOException e) { e.printStackTrace(); }\n\t}\n}"
+    \ i ++) {\n\t\t\tif(i != 0) print(' ');\n\t\t\tprint(a[i]);\n\t\t}\n\t\tprintln();\n\
+    \t}\n\tprivate final void internalFlush() {\n\t\ttry {\n\t\t\tout.write(buf, 0,\
+    \ count);\n\t\t\tcount = 0;\n\t\t}\n\t\tcatch(IOException e) { e.printStackTrace();\
+    \ }\n\t}\n\tpublic final void flush() {\n\t\ttry {\n\t\t\tout.write(buf, 0, count);\n\
+    \t\t\tout.flush();\n\t\t\tcount = 0;\n\t\t}\n\t\tcatch(IOException e) { e.printStackTrace();\
+    \ }\n\t}\n\tpublic final void close() {\n\t\ttry { out.close(); }\n\t\tcatch(IOException\
+    \ e) { e.printStackTrace(); }\n\t}\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/FastOutputStream.java
   requiredBy:
   - library/SimpleUtil.java
-  timestamp: '2022-10-30 18:59:49+09:00'
+  timestamp: '2023-03-23 18:53:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - library/FastIO_test.java
   - library/ManyFastIO_test.java
+  - library/FastIO_test.java
 documentation_of: library/FastOutputStream.java
 layout: document
 redirect_from:
