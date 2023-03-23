@@ -14,7 +14,7 @@ final class FastOutputStream {
 												54, 56, 53, 52, 55, 55, 53, 56, 48, 56};
 	private static final int TOKEN_SIZE = 20;
 	private final byte tokenBuf[] = new byte[TOKEN_SIZE];
-	private static final int PRECISION = 10;
+	private static final int PRECISION = 16;
 	public FastOutputStream(OutputStream out) {
 		this.out = out;
 	}
@@ -53,7 +53,7 @@ final class FastOutputStream {
 		int tokenCount = 11;
 		while(x > 0) {
 			final int y = x / 10;
-			tokenBuf[-- tokenCount] = (byte) (x - (y << 3) - (y << 1) + 48);
+			tokenBuf[-- tokenCount] = (byte)(x - (y << 3) - (y << 1) + 48);
 			x = y;
 		}
 		System.arraycopy(tokenBuf, tokenCount, buf, count, 11 - tokenCount);
@@ -77,7 +77,7 @@ final class FastOutputStream {
 		int tokenCount = 20;
 		while(x > 0) {
 			final long y = x / 10;
-			tokenBuf[-- tokenCount] = (byte) (x - (y << 3) - (y << 1) + 48);
+			tokenBuf[-- tokenCount] = (byte)(x - (y << 3) - (y << 1) + 48);
 			x = y;
 		}
 		System.arraycopy(tokenBuf, tokenCount, buf, count, 20 - tokenCount);
@@ -99,7 +99,7 @@ final class FastOutputStream {
 		for(int i = 0; i < precision; i ++) {
 			d *= 10;
 			buf[count ++] = (byte)((int)d + 48);
-			d -= (int) d;
+			d -= (int)d;
 		}
 	}
 	public final void print(final String s) { print(s.getBytes()); }
@@ -130,43 +130,43 @@ final class FastOutputStream {
 	public final void println(final char[] a) { print(a); println(); }
 	public final void println(final int[] a) {
 		for(int i = 0; i < a.length; i ++) {
+			if(i != 0) print(' ');
 			print(a[i]);
-			if(i != a.length - 1) print(' ');
 		}
 		println();
 	}
 	public final void println(final long[] a) {
 		for(int i = 0; i < a.length; i ++) {
+			if(i != 0) print(' ');
 			print(a[i]);
-			if(i != a.length - 1) print(' ');
 		}
 		println();
 	}
 	public final void println(final double[] a) {
 		for(int i = 0; i < a.length; i ++) {
+			if(i != 0) print(' ');
 			print(a[i]);
-			if(i != a.length - 1) print(' ');
 		}
 		println();
 	}
 	public final void println(final double[] a, final int precision) {
 		for(int i = 0; i < a.length; i ++) {
+			if(i != 0) print(' ');
 			print(a[i], precision);
-			if(i != a.length - 1) print(' ');
 		}
 		println();
 	}
 	public final void println(final String[] a) {
 		for(int i = 0; i < a.length; i ++) {
+			if(i != 0) print(' ');
 			print(a[i]);
-			if(i != a.length - 1) print(' ');
 		}
 		println();
 	}
 	public final void println(final Object[] a) {
 		for(int i = 0; i < a.length; i ++) {
+			if(i != 0) print(' ');
 			print(a[i]);
-			if(i != a.length - 1) print(' ');
 		}
 		println();
 	}
