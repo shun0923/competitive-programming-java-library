@@ -33,25 +33,31 @@ data:
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport library.SimpleUtil;\nimport\
     \ library.Util;\nimport library.Pair;\nimport library.Mod;\n\nclass ExtendedMath\
-    \ {\n\tlong[] slideMin(long[] array, int len) { // O(N) N=len\n\t\tSimpleUtil.nonNegativeCheck(len);\n\
+    \ {\n\tpublic static final int functional(int[] next, int x, long q) { // O(N)\n\
+    \t\tlong visited[] = new long[next.length];\n\t\tArrays.fill(visited, -1);\n\t\
+    \tvisited[x] = 0;\n\t\tfor(long i = 1; i <= q; i ++) {\n\t\t\tx = next[x];\n\t\
+    \t\tif(visited[x] >= 0 && q >= next.length + i) q = (q - i) % (i - visited[x])\
+    \ + i;\n\t\t\telse visited[x] = i;\n\t\t}\n\t\treturn x;\n\t}\n\tpublic static\
+    \ final long[] slideMin(long[] array, int len) { // O(N) N=len\n\t\tSimpleUtil.nonNegativeCheck(len);\n\
     \t\tDeque<Integer> s = new ArrayDeque<>();\n\t\tlong slideMin[] = new long[array.length\
     \ - len + 1];\n\t\tfor(int i = 0; i < array.length; i ++) {\n\t\t\twhile(!s.isEmpty()\
     \ && array[s.getLast()] >= array[i]) s.removeLast();\n\t\t\ts.addLast(i);\n\t\t\
     \twhile(!s.isEmpty() && s.getFirst() + len <= i) s.removeFirst();\n\t\t\tslideMin[Math.max(0,\
     \ i - len + 1)] = array[s.getFirst()];\n\t\t}\n\t\treturn slideMin;\n\t}\n\t//\
-    \ O(NlogN)\n\tint[] lis(long[] a) { return lis(a, true); }\n\tint[] lis(long[]\
-    \ a, boolean increasing) {\n\t\tint len = a.length;\n\t\tlong increase[] = new\
-    \ long[len];\n\t\tArrays.fill(increase, increasing ? SimpleUtil.INF : - SimpleUtil.INF);\n\
-    \t\tint lis[] = new int[len];\n\t\tfor(int i = 0; i < len; i ++) {\n\t\t\tlis[i]\
-    \ = Util.cntBS(increase, a[i], increasing, !increasing, false) + 1;\n\t\t\tincrease[lis[i]\
-    \ - 1] = a[i];\n\t\t}\n\t\treturn lis;\n\t}\n\n\tprivate static final int signum(long\
-    \ x) { return x == 0 ? 0 : x > 0 ? 1 : -1; }\n\tpublic static final int quadrant[][]\
-    \ = {{6, 5, 4}, {7, 0, 3}, {8, 1, 2}};\n\tpublic static final int quadrant2[][]\
-    \ = {{0, 8, 7}, {1, 4, 6}, {2, 3, 5}};\n\tpublic static final Comparator<long[]>\
-    \ argC = (sort1, sort2) -> {\n\t\tint c = Integer.compare(quadrant[signum(sort1[0])\
-    \ + 1][signum(sort1[1]) + 1],\n\t\t\t\t\t\t\t\tquadrant[signum(sort2[0]) + 1][signum(sort2[1])\
-    \ + 1]);\n\t\tif(c == 0) c = Long.compare(sort1[1] * sort2[0], sort1[0] * sort2[1]);\n\
-    \t\tif(c == 0) c = Long.compare(Math.abs(sort1[0]) + Math.abs(sort2[1]), Math.abs(sort2[0])\
+    \ O(NlogN)\n\tpublic static final int[] lis(long[] a) { return lis(a, true); }\n\
+    \tpublic static final int[] lis(long[] a, boolean increasing) {\n\t\tint len =\
+    \ a.length;\n\t\tlong increase[] = new long[len];\n\t\tArrays.fill(increase, increasing\
+    \ ? SimpleUtil.INF : - SimpleUtil.INF);\n\t\tint lis[] = new int[len];\n\t\tfor(int\
+    \ i = 0; i < len; i ++) {\n\t\t\tlis[i] = Util.cntBS(increase, a[i], increasing,\
+    \ !increasing, false) + 1;\n\t\t\tincrease[lis[i] - 1] = a[i];\n\t\t}\n\t\treturn\
+    \ lis;\n\t}\n\n\tprivate static final int signum(long x) { return x == 0 ? 0 :\
+    \ x > 0 ? 1 : -1; }\n\tpublic static final int quadrant[][] = {{6, 5, 4}, {7,\
+    \ 0, 3}, {8, 1, 2}};\n\tpublic static final int quadrant2[][] = {{0, 8, 7}, {1,\
+    \ 4, 6}, {2, 3, 5}};\n\tpublic static final Comparator<long[]> argC = (sort1,\
+    \ sort2) -> {\n\t\tint c = Integer.compare(quadrant[signum(sort1[0]) + 1][signum(sort1[1])\
+    \ + 1],\n\t\t\t\t\t\t\t\tquadrant[signum(sort2[0]) + 1][signum(sort2[1]) + 1]);\n\
+    \t\tif(c == 0) c = Long.compare(sort1[1] * sort2[0], sort1[0] * sort2[1]);\n\t\
+    \tif(c == 0) c = Long.compare(Math.abs(sort1[0]) + Math.abs(sort2[1]), Math.abs(sort2[0])\
     \ + Math.abs(sort2[1]));\n\t\treturn c;\n\t};\n\tpublic static final Comparator<long[]>\
     \ argC2 = (sort1, sort2) -> {\n\t\tint c = Integer.compare(quadrant2[signum(sort1[0])\
     \ + 1][signum(sort1[1]) + 1],\n\t\t\t\t\t\t\t\tquadrant2[signum(sort2[0]) + 1][signum(sort2[1])\
@@ -183,7 +189,7 @@ data:
   isVerificationFile: false
   path: library/ExtendedMath.java
   requiredBy: []
-  timestamp: '2022-11-02 13:06:34+09:00'
+  timestamp: '2023-03-23 18:55:37+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/ExtendedMath.java

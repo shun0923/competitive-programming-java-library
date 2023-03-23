@@ -17,6 +17,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Doubling.java
     title: library/Doubling.java
+  - icon: ':warning:'
+    path: library/EulerTour.java
+    title: library/EulerTour.java
   - icon: ':heavy_check_mark:'
     path: library/Kruskal.java
     title: library/Kruskal.java
@@ -404,6 +407,7 @@ data:
   - library/Bfs.java
   - library/Doubling.java
   - library/WarshallFloyd.java
+  - library/EulerTour.java
   - library/UnionFind.java
   - library/Rerooting.java
   - library/TemplateRerooting.java

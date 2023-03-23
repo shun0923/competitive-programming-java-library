@@ -39,6 +39,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/DynamicSwag.java
       title: library/DynamicSwag.java
+    - icon: ':warning:'
+      path: library/EulerTour.java
+      title: library/EulerTour.java
     - icon: ':heavy_check_mark:'
       path: library/ExtendedConvolution.java
       title: library/ExtendedConvolution.java
