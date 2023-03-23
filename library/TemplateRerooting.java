@@ -2,7 +2,7 @@ package library;
 
 import java.util.*;
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.AbstractGraph;
 
 class TemplateRerooting<T> {
@@ -49,8 +49,8 @@ class TemplateRerooting<T> {
 		dfs();
 		reroot();
 	}
-	public final T getDp(int i) { SimpleUtil.rangeCheck(i, numNode); return dp[i]; } // O(1)
-	public final T get(int i) { SimpleUtil.rangeCheck(i, numNode); return ans[i]; } // O(1)
+	public final T getDp(int i) { FastIO.rangeCheck(i, numNode); return dp[i]; } // O(1)
+	public final T get(int i) { FastIO.rangeCheck(i, numNode); return ans[i]; } // O(1)
 
 	public final void dfs() { // O(V+E)
 		int dq[] = new int[numNode];

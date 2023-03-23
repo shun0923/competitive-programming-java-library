@@ -2,12 +2,12 @@ package library;
 
 import java.util.*;
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 
 final class SuffixArray {
 	public static final int[] cal(String s) { return cal(s.toCharArray()); } // O(|S|)
 	public static final int[] cal(char[] c) {
-		int a[] = SimpleUtil.charToInt(c);
+		int a[] = FastIO.charToInt(c);
 		int max = 0;
 		for(int ele : a) if(max < ele) max = ele;
 		return sais(a, max);
@@ -29,7 +29,7 @@ final class SuffixArray {
 	}
 
 	public static final int[] sais(int[] s, int max) { // O(|S|+M)
-		SimpleUtil.nonNegativeCheck(max);
+		FastIO.nonNegativeCheck(max);
 		int n = s.length;
 		if(n == 0) return new int[0];
 		if(n == 1) return new int[]{0};

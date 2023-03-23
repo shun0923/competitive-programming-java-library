@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.AbstractGraph;
 import library.PathRestoration;
 
@@ -38,7 +38,7 @@ final class Dijkstra {
 	public static final long[] dist(final WeightedGraph g, final int start, final boolean memoize) { return dist(g.numNode, g.nodes(), start, memoize); }
 	public static final long[] dist(final int numNode, final WeightedNode[] nodes, final int start) { return dist(numNode, nodes, start, false); }
 	public static final long[] dist(final int numNode, final WeightedNode[] nodes, final int start, final boolean memoize) {
-		SimpleUtil.rangeCheck(start, numNode);
+		FastIO.rangeCheck(start, numNode);
 		final long dist[] = new long[numNode];
 		if(memoize) {
 			prv = new int[numNode];
@@ -47,7 +47,7 @@ final class Dijkstra {
 		}
 		Queue<Dist> q = new PriorityQueue<>();
 
-		Arrays.fill(dist, SimpleUtil.INF);
+		Arrays.fill(dist, FastIO.INF);
 		dist[start] = 0;
 		q.add(new Dist(start, dist[start]));
 		while(!q.isEmpty()) {
@@ -73,7 +73,7 @@ final class Dijkstra {
 	public static final long[] distForDenseGraph(final WeightedGraph g, final int start, boolean memoize) { return distForDenseGraph(g.numNode, g.nodes(), start, memoize); }
 	public static final long[] distForDenseGraph(final int numNode, final WeightedNode[] nodes, final int start) { return distForDenseGraph(numNode, nodes, start, false); }
 	public static final long[] distForDenseGraph(final int numNode, final WeightedNode[] nodes, final int start, final boolean memoize) {
-		SimpleUtil.rangeCheck(start, numNode);
+		FastIO.rangeCheck(start, numNode);
 		final long dist[] = new long[numNode];
 		final boolean visited[] = new boolean[numNode];
 		if(memoize) {
@@ -82,12 +82,12 @@ final class Dijkstra {
 			prvEdge = new WeightedEdge[numNode];
 		}
 
-		Arrays.fill(dist, SimpleUtil.INF);
+		Arrays.fill(dist, FastIO.INF);
 		dist[start] = 0;
 		int idx = start;
 		int cnt = 0;
 		while(cnt < numNode) {
-			long minCost = SimpleUtil.INF;
+			long minCost = FastIO.INF;
 			for(int i = 0; i < numNode; i ++) {
 				if(!visited[i] && dist[i] < minCost) {
 					idx = i;

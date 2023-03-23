@@ -2,7 +2,7 @@ package library;
 
 import java.util.*;
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.AbstractGraph;
 
 final class WeightedDoubling {
@@ -14,8 +14,8 @@ final class WeightedDoubling {
 	public final long val[][];
 
 	private WeightedDoubling(final int n, final long max, final long id, final LongBinaryOperator f) { // O(1)
-		SimpleUtil.nonNegativeCheck(n);
-		SimpleUtil.nonNegativeCheck(max);
+		FastIO.nonNegativeCheck(n);
+		FastIO.nonNegativeCheck(max);
 		this.id = id;
 		this.f = f;
 		this.n = n;
@@ -48,8 +48,8 @@ final class WeightedDoubling {
 	}
 
 	WeightedEdge cal(int x, final long q) { // O(logQ)
-		SimpleUtil.rangeCheck(x, n);
-		SimpleUtil.nonNegativeCheck(q);
+		FastIO.rangeCheck(x, n);
+		FastIO.nonNegativeCheck(q);
 		WeightedEdge e = new WeightedEdge(x, x, id);
 		for(int k = log - 1; k >= 0; k --) {
 			if(e.target == -1) { e.cost = id; break; }
@@ -62,7 +62,7 @@ final class WeightedDoubling {
 	}
 
 	long bisect(int x, long q) { // O(logM)
-		SimpleUtil.rangeCheck(x, n);
+		FastIO.rangeCheck(x, n);
 		long ans = 0;
 		WeightedEdge e = new WeightedEdge(x, x, id);
 		for(int k = log - 1; k >= 0; k --) {

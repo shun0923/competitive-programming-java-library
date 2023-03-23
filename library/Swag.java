@@ -2,7 +2,7 @@ package library;
 
 import java.util.*;
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.Pair;
 
 class Swag {
@@ -49,9 +49,9 @@ class Swag {
 	// return fold [i, j)
 	long fold(Pair.II p) { return fold(p.a, p.b); }
 	long fold(int i, int j) {
-		SimpleUtil.rangeCheck(i, n);
-		SimpleUtil.inclusiveRangeCheck(j, n);
-		SimpleUtil.assertion(i >= l && j >= r);
+		FastIO.rangeCheck(i, n);
+		FastIO.inclusiveRangeCheck(j, n);
+		FastIO.assertion(i >= l && j >= r);
 		while(r < j) front = f.applyAsLong(front, val[r ++]);
 		while(l < i) {
 			if(back.isEmpty()) {

@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.AbstractGraph;
 
 final class Doubling {
@@ -10,8 +10,8 @@ final class Doubling {
 	public final int next[][];
 
 	private Doubling(final int n, final long max) { // O(1)
-		SimpleUtil.nonNegativeCheck(n);
-		SimpleUtil.nonNegativeCheck(max);
+		FastIO.nonNegativeCheck(n);
+		FastIO.nonNegativeCheck(max);
 		this.n = n;
 		log = Long.numberOfTrailingZeros(Long.highestOneBit(max)) + 1;
 		next = new int[log][n];
@@ -38,8 +38,8 @@ final class Doubling {
 	}
 
 	int cal(int x, final long q) { // O(logQ)
-		SimpleUtil.rangeCheck(x, n);
-		SimpleUtil.nonNegativeCheck(q);
+		FastIO.rangeCheck(x, n);
+		FastIO.nonNegativeCheck(q);
 		for(int k = log - 1; k >= 0; k --) {
 			if(x == -1) break;
 			if((q & 1l << k) != 0) x = next[k][x];

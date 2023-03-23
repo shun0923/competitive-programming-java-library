@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.AbstractGraph;
 import library.PathRestoration;
 
@@ -20,7 +20,7 @@ final class WarshallFloyd {
 			prvEdge = new WeightedEdge[numNode][numNode];
 		}
 
-		for(long[] ele : dist) Arrays.fill(ele, SimpleUtil.INF);
+		for(long[] ele : dist) Arrays.fill(ele, FastIO.INF);
 		for(int i = 0; i < numNode; i ++) dist[i][i] = 0;
 		for(WeightedEdge e : edges) updateDist(dist, e, memoize);
 		if(!directed) for(WeightedEdge e : edges) updateDist(dist, e.reverse(), memoize);

@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.SuffixArray;
 
 final class LcpArray {
@@ -10,7 +10,7 @@ final class LcpArray {
 	public static final int[] cal(char[] c) { return cal(c, SuffixArray.cal(c)); }
 	public static final int[] cal(int[] a) { return cal(a, SuffixArray.cal(a)); }
 	public static final int[] cal(String s, int[] sa) { return cal(s.toCharArray(), sa); }
-	public static final int[] cal(char[] c, int[] sa) { return cal(SimpleUtil.charToInt(c), sa); }
+	public static final int[] cal(char[] c, int[] sa) { return cal(FastIO.charToInt(c), sa); }
 	public static final int[] cal(int[] a, int[] sa) {
 		int n = a.length;
 		int rnk[] = new int[n];

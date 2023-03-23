@@ -2,7 +2,7 @@ package library;
 
 import java.util.*;
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.AbstractGraph;
 import library.PathRestoration;
 
@@ -52,7 +52,7 @@ final class TemplateDijkstra<T> {
 	public final ArrayList<T> dist(final int numNode, final TemplateNode<T>[] nodes, final int start) { return dist(numNode, nodes, start, false); }
 	@SuppressWarnings("unchecked")
 	public final ArrayList<T> dist(final int numNode, final TemplateNode<T>[] nodes, final int start, final boolean memoize) {
-		SimpleUtil.rangeCheck(start, numNode);
+		FastIO.rangeCheck(start, numNode);
 		final ArrayList<T> dist = new ArrayList<>(numNode);
 		if(memoize) {
 			prv = new int[numNode];

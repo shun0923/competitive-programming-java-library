@@ -2,7 +2,7 @@ package library;
 
 import java.util.*;
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 
 final class TrieNode {
 	public final int next[];
@@ -32,11 +32,11 @@ final class Trie extends ArrayList<TrieNode> { // P=prefix, M=numPrefix
 	public final void add(final char[] c, final int l, final int r) { add(c, get(0).cnt, l, r); }
 	public final void add(final int[] a, final int l, final int r) { add(a, get(0).cnt, l, r); }
 	public final void add(final String str, final int id, final int l, final int r) { add(str.toCharArray(), id, l, r); }
-	public final void add(final char[] c, final int id, final int l, final int r) { add(SimpleUtil.charToInt(c), id, l, r); }
+	public final void add(final char[] c, final int id, final int l, final int r) { add(FastIO.charToInt(c), id, l, r); }
 	public final void add(final int[] a, final int id, final int l, final int r) {
-		SimpleUtil.inclusiveRangeCheck(l, a.length);
-		SimpleUtil.inclusiveRangeCheck(r, a.length);
-		SimpleUtil.assertion(l <= r, "l is larger than r.");
+		FastIO.inclusiveRangeCheck(l, a.length);
+		FastIO.inclusiveRangeCheck(r, a.length);
+		FastIO.assertion(l <= r, "l is larger than r.");
 		int crt = 0;
 		get(crt).cnt ++;
 		for(int i = l; i < r; i ++) {
@@ -69,11 +69,11 @@ final class Trie extends ArrayList<TrieNode> { // P=prefix, M=numPrefix
 	public final int search(final char[] c, final boolean prefix) { return search(c, prefix, 0, c.length); }
 	public final int search(final int[] a, final boolean prefix) { return search(a, prefix, 0, a.length); }
 	public final int search(final String str, final boolean prefix, final int l, final int r) { return search(str.toCharArray(), prefix, l, r); }
-	public final int search(final char[] c, final boolean prefix, final int l, final int r) { return search(SimpleUtil.charToInt(c), prefix, l, r); }
+	public final int search(final char[] c, final boolean prefix, final int l, final int r) { return search(FastIO.charToInt(c), prefix, l, r); }
 	public final int search(final int[] a, final boolean prefix, final int l, final int r) {
-		SimpleUtil.inclusiveRangeCheck(l, a.length);
-		SimpleUtil.inclusiveRangeCheck(r, a.length);
-		SimpleUtil.assertion(l <= r, "l is larger than r.");
+		FastIO.inclusiveRangeCheck(l, a.length);
+		FastIO.inclusiveRangeCheck(r, a.length);
+		FastIO.assertion(l <= r, "l is larger than r.");
 		int crt = 0;
 		for(int i = l; i < r; i ++) {
 			crt = get(crt).next[a[i]];
@@ -87,11 +87,11 @@ final class Trie extends ArrayList<TrieNode> { // P=prefix, M=numPrefix
 	public final List<Integer> prefix(final char[] c) { return prefix(c, 0, c.length); }
 	public final List<Integer> prefix(final int[] a) { return prefix(a, 0, a.length); }
 	public final List<Integer> prefix(final String str, final int l, final int r) { return prefix(str.toCharArray(), l, r); }
-	public final List<Integer> prefix(final char[] c, final int l, final int r) { return prefix(SimpleUtil.charToInt(c), l, r); }
+	public final List<Integer> prefix(final char[] c, final int l, final int r) { return prefix(FastIO.charToInt(c), l, r); }
 	public final List<Integer> prefix(final int[] a, final int l, final int r) {
-		SimpleUtil.inclusiveRangeCheck(l, a.length);
-		SimpleUtil.inclusiveRangeCheck(r, a.length);
-		SimpleUtil.assertion(l <= r, "l is larger than r.");
+		FastIO.inclusiveRangeCheck(l, a.length);
+		FastIO.inclusiveRangeCheck(r, a.length);
+		FastIO.assertion(l <= r, "l is larger than r.");
 		List<Integer> prefix = new ArrayList<Integer>();
 		int crt = 0;
 		for(int i = l; i <= r; i ++) {
@@ -108,7 +108,7 @@ final class Trie extends ArrayList<TrieNode> { // P=prefix, M=numPrefix
 	public final void query(final char[] c, final IntConsumer f) { query(c, f, 0, c.length); }
 	public final void query(final int[] a, final IntConsumer f) { query(a, f, 0, a.length); }
 	public final void query(final String str, final IntConsumer f, final int l, final int r) { query(str.toCharArray(), f, l, r); }
-	public final void query(final char[] c, final IntConsumer f, final int l, final int r) { query(SimpleUtil.charToInt(c), f, l, r); }
+	public final void query(final char[] c, final IntConsumer f, final int l, final int r) { query(FastIO.charToInt(c), f, l, r); }
 	public final void query(final int[] a, final IntConsumer f, final int l, final int r) {
 		int crt = 0;
 		for(int i = l; i <= r; i ++) {
@@ -123,7 +123,7 @@ final class Trie extends ArrayList<TrieNode> { // P=prefix, M=numPrefix
 	public final long query(final char[] c, final long e, final LongBinaryOperator f) { return query(c, e, f, 0, c.length); }
 	public final long query(final int[] a, final long e, final LongBinaryOperator f) { return query(a, e, f, 0, a.length); }
 	public final long query(final String str, final long e, final LongBinaryOperator f, final int l, final int r) { return query(str.toCharArray(), e, f, l, r); }
-	public final long query(final char[] c, final long e, final LongBinaryOperator f, final int l, final int r) { return query(SimpleUtil.charToInt(c), e, f, l, r); }
+	public final long query(final char[] c, final long e, final LongBinaryOperator f, final int l, final int r) { return query(FastIO.charToInt(c), e, f, l, r); }
 	public final long query(final int[] a, final long e, final LongBinaryOperator f, final int l, final int r) {
 		int crt = 0;
 		long ans = e;

@@ -2,7 +2,7 @@ package library;
 
 import java.util.*;
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 
 class SegmentTree {
 	private long e;
@@ -25,7 +25,7 @@ class SegmentTree {
 		for(int i = n - 1; i > 0; i --) nodes[i] = f.applyAsLong(nodes[i << 1], nodes[(i << 1) + 1]);
 	}
 	public SegmentTree(int len, long e, LongBinaryOperator f) {
-		SimpleUtil.nonNegativeCheck(len);
+		FastIO.nonNegativeCheck(len);
 		this.e = e;
 		this.f = f;
 		n = 1;
@@ -46,7 +46,7 @@ class SegmentTree {
 
 	// O(logN)
 	public void set(int i, long val) {
-		SimpleUtil.rangeCheck(i, n);
+		FastIO.rangeCheck(i, n);
 		i += n;
 		nodes[i] = val;
 		while(i > 1) {
@@ -56,12 +56,12 @@ class SegmentTree {
 	}
 	public void update(int i, long val) { set(i, f.applyAsLong(nodes[i + n], val)); }
 
-	public long get(int i) { SimpleUtil.rangeCheck(i, n); return nodes[i + n]; } // O(1)
+	public long get(int i) { FastIO.rangeCheck(i, n); return nodes[i + n]; } // O(1)
 
 	public long find(int l, int r) { // O(logN)
-		SimpleUtil.inclusiveRangeCheck(l, n);
-		SimpleUtil.inclusiveRangeCheck(r, n);
-		SimpleUtil.assertion(l <= r, "l is larger than r.");
+		FastIO.inclusiveRangeCheck(l, n);
+		FastIO.inclusiveRangeCheck(r, n);
+		FastIO.assertion(l <= r, "l is larger than r.");
 		l += n; r += n;
 		long xL = e;
 		long xR = e;
@@ -77,9 +77,9 @@ class SegmentTree {
 	public int findLeftmost(LongPredicate check) { return findLeftmost(0, check); }
 	public int findLeftmost(int l, LongPredicate check) { return findLeftmost(l, n, check); }
 	public int findLeftmost(int l, int r, LongPredicate check){
-		SimpleUtil.inclusiveRangeCheck(l, n);
-		SimpleUtil.inclusiveRangeCheck(r, n);
-		SimpleUtil.assertion(l <= r, "l is larger than r.");
+		FastIO.inclusiveRangeCheck(l, n);
+		FastIO.inclusiveRangeCheck(r, n);
+		FastIO.assertion(l <= r, "l is larger than r.");
 		long crt = e;
 		int idx;
 		for(idx = l + n; idx < n << 1 && l < r; ) {
@@ -96,9 +96,9 @@ class SegmentTree {
 	public int findRightmost(LongPredicate check) { return findRightmost(n, check); }
 	public int findRightmost(int r, LongPredicate check) { return findRightmost(0, r, check); }
 	public int findRightmost(int l, int r, LongPredicate check) {
-		SimpleUtil.inclusiveRangeCheck(l, n);
-		SimpleUtil.inclusiveRangeCheck(r, n);
-		SimpleUtil.assertion(l <= r, "l is larger than r.");
+		FastIO.inclusiveRangeCheck(l, n);
+		FastIO.inclusiveRangeCheck(r, n);
+		FastIO.assertion(l <= r, "l is larger than r.");
 		long crt = e;
 		int idx;
 		for(idx = r + n - 1; idx < n << 1 && r > l; ) {

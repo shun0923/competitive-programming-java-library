@@ -1,6 +1,6 @@
 package library;
 
-import library.SimpleUtil;
+import library.FastIO;
 import library.AbstractGraph;
 import library.Scc;
 
@@ -14,8 +14,8 @@ class TwoSat extends ArrayUnweightedGraph {
 
 	// O(1)
 	public final void addClause(int i, boolean f, int j, boolean g) {
-		SimpleUtil.rangeCheck(i, n);
-		SimpleUtil.rangeCheck(j, n);
+		FastIO.rangeCheck(i, n);
+		FastIO.rangeCheck(j, n);
 		add((i << 1) + (f ? 0 : 1), (j << 1) + (g ? 1 : 0));
 		add((j << 1) + (g ? 0 : 1), (i << 1) + (f ? 1 : 0));
 	}

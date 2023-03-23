@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.WaveletMatrix;
 
 class CompressedWaveletMatrix {

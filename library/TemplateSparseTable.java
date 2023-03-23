@@ -1,7 +1,7 @@
 package library;
 
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 
 class TemplateSparseTable<T> {
 	BinaryOperator<T> f;
@@ -31,13 +31,13 @@ class TemplateSparseTable<T> {
 		}
 	}
 
-	T get(int i) { SimpleUtil.rangeCheck(i, n); return table[0][i]; } // O(1)
+	T get(int i) { FastIO.rangeCheck(i, n); return table[0][i]; } // O(1)
 
 	T find(int l, int r) { // O(1)
 		r --;
-		SimpleUtil.rangeCheck(l, n);
-		SimpleUtil.rangeCheck(r, n);
-		SimpleUtil.assertion(l <= r, "l is larger than r.");
+		FastIO.rangeCheck(l, n);
+		FastIO.rangeCheck(r, n);
+		FastIO.assertion(l <= r, "l is larger than r.");
 		int log = Long.numberOfTrailingZeros(Integer.highestOneBit(l ^ r));
 		return l == r ? get(l) : f.apply(table[log][l], table[log][r]);
 	}

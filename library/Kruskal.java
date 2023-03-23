@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.AbstractGraph;
 import library.UnionFind;
 
@@ -14,7 +14,7 @@ class Kruskal {
 		uf = new UnionFind(numNode);
 		used.clear();
 		Queue<WeightedEdge> pq = new PriorityQueue<WeightedEdge>();
-		for(WeightedEdge e : edges) if(!SimpleUtil.isINF(e.cost)) pq.add(e);
+		for(WeightedEdge e : edges) if(!FastIO.isINF(e.cost)) pq.add(e);
 
 		long cost = 0;
 		while(!pq.isEmpty()) {

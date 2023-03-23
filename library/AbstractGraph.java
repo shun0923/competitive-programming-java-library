@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 
 abstract class AbstractGraph<Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> {
 	public int numNode;
@@ -15,7 +15,7 @@ abstract class AbstractGraph<Node extends AbstractNode<Edge>, Edge extends Abstr
 	protected abstract Node[] createNodeList(final int size);
 
 	public AbstractGraph(final int numNode, final boolean directed) {
-		SimpleUtil.nonNegativeCheck(numNode);
+		FastIO.nonNegativeCheck(numNode);
 		this.numNode = numNode;
 		this.directed = directed;
 		edges = createNode(-1);

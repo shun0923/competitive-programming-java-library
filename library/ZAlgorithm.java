@@ -1,12 +1,12 @@
 package library;
 
-import library.SimpleUtil;
+import library.FastIO;
 
 final class ZAlgorithm {
 	// return the length of the longest list starting from S[i] which is also a prefix of S
 	// O(|S|)
 	public static final int[] cal(String s) { return cal(s.toCharArray()); }
-	public static final int[] cal(char[] c) { return cal(SimpleUtil.charToInt(c)); }
+	public static final int[] cal(char[] c) { return cal(FastIO.charToInt(c)); }
 	public static final int[] cal(int[] a) {
 		int len = a.length;
 		int match[] = new int[len];

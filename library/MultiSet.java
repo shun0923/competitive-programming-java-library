@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 
 class MultiSet<K> extends HashMap<K, Long> {
 	long cnt = 0;

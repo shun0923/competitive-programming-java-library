@@ -1,6 +1,6 @@
 package library;
 
-import library.SimpleUtil;
+import library.FastIO;
 import library.BitVector;
 
 class WaveletMatrix {
@@ -35,7 +35,7 @@ class WaveletMatrix {
 
 	// a_i
 	final int get(int k) {
-		SimpleUtil.rangeCheck(k, n);
+		FastIO.rangeCheck(k, n);
 		int val = 0;
 		for(int i = bitSize - 1; i >= 0; i --) {
 			boolean b = mat[i].get(k);
@@ -49,9 +49,9 @@ class WaveletMatrix {
 	final int rank(int x, int k) { return rank(x, 0, k); }
 	// count x in [l, r)
 	final int rank(int x, int l, int r) {
-		SimpleUtil.inclusiveRangeCheck(l, n);
-		SimpleUtil.inclusiveRangeCheck(r, n);
-		SimpleUtil.assertion(l <= r);
+		FastIO.inclusiveRangeCheck(l, n);
+		FastIO.inclusiveRangeCheck(r, n);
+		FastIO.assertion(l <= r);
 		if(x < 0 || x >= max) return 0;
 		for(int i = bitSize - 1; i >= 0; i --) {
 			boolean b = (x >> i & 1) != 0;
@@ -63,7 +63,7 @@ class WaveletMatrix {
 
 	// position of k-th occurrence of x
 	final int select(int x, int k) {
-		SimpleUtil.nonNegativeCheck(k);
+		FastIO.nonNegativeCheck(k);
 		if(x < 0 || x >= max) return n;
 		int l[] = new int[bitSize + 1];
 		int l2[] = new int[bitSize + 1];
@@ -84,10 +84,10 @@ class WaveletMatrix {
 
 	// k-th smallest in [l, r)
 	final int smallest(int l, int r, int k) {
-		SimpleUtil.nonNegativeCheck(k);
-		SimpleUtil.rangeCheck(l, n);
-		SimpleUtil.inclusiveRangeCheck(r, n);
-		SimpleUtil.assertion(k < r - l);
+		FastIO.nonNegativeCheck(k);
+		FastIO.rangeCheck(l, n);
+		FastIO.inclusiveRangeCheck(r, n);
+		FastIO.assertion(k < r - l);
 		int val = 0;
 		for(int i = bitSize - 1; i >= 0; i --) {
 			int l2 = mat[i].rank(false, l);
@@ -109,9 +109,9 @@ class WaveletMatrix {
 
 	// count [0, x) in [l, r)
 	final int lessFreq(int x, int l, int r) {
-		SimpleUtil.inclusiveRangeCheck(l, n);
-		SimpleUtil.inclusiveRangeCheck(r, n);
-		SimpleUtil.assertion(l <= r);
+		FastIO.inclusiveRangeCheck(l, n);
+		FastIO.inclusiveRangeCheck(r, n);
+		FastIO.assertion(l <= r);
 		if(x < 0) return 0;
 		if(x >= max) return r - l;
 		int cnt = 0;

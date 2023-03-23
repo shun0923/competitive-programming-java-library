@@ -1,6 +1,6 @@
 package library;
 
-import library.SimpleUtil;
+import library.FastIO;
 
 class FftConvolution {
 	public static final double[][] butterfly(double[][] f, boolean inv){ // O(NlogN)
@@ -58,7 +58,7 @@ class FftConvolution {
 	// O((N_1+N_2)log(N_1+N_2))
 	public static final long[] cnv(final long[] a, final long[] b) { return cnv(a, b, Math.max(0, a.length + b.length - 1)); }
 	public static final long[] cnv(final long[] a, final long[] b, final int l) {
-		SimpleUtil.nonNegativeCheck(l);
+		FastIO.nonNegativeCheck(l);
 		if(a.length == 0 || b.length == 0) return new long[l];
 		int len = 1;
 		while(len < a.length + b.length - 1) len <<= 1;

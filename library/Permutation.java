@@ -1,14 +1,14 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 
 class Permutation implements Iterator<int[]>, Iterable<int[]> { // N=next.length
 	private int next[];
 
 	// O(N)
 	public Permutation(int n) {
-		SimpleUtil.nonNegativeCheck(n);
+		FastIO.nonNegativeCheck(n);
 		next = new int[n];
 		for(int i = 0; i < n; i ++) next[i] = i;
 	}

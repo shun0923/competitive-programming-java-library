@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 
 class QuickSelect {
 	// O(N)
@@ -35,7 +35,7 @@ class QuickSelect {
 	}
 	public static final long select(final long[] a, final int k) { return select(a, k, 0, a.length); }
 	public static final long select(final long[] a, final int k, int start, int end) {
-		SimpleUtil.assertion(start <= k && k < end);
+		FastIO.assertion(start <= k && k < end);
 		if(end - start == 1) return a[start];
 		if(end - start <= 10) {
 			Arrays.sort(a, start, end);

@@ -1,6 +1,6 @@
 package library;
 
-import library.SimpleUtil;
+import library.FastIO;
 
 class BitVector {
 	final int lg = 5;
@@ -79,15 +79,15 @@ class BitVector {
 	}
 
 	// O(1)
-	final boolean get(int k) { SimpleUtil.rangeCheck(k, n); return (bit[k >> lg] >> (k & mask) & 1) != 0; }
+	final boolean get(int k) { FastIO.rangeCheck(k, n); return (bit[k >> lg] >> (k & mask) & 1) != 0; }
 
 	// O(1)
 	final void set(int k) { set(true, k); }
-	final void set(boolean b, int k) { SimpleUtil.rangeCheck(k, n); if(b) bit[k >> lg] |= 1 << (k & mask); else bit[k >> lg] &= ~(1 << (k & mask)); }
+	final void set(boolean b, int k) { FastIO.rangeCheck(k, n); if(b) bit[k >> lg] |= 1 << (k & mask); else bit[k >> lg] &= ~(1 << (k & mask)); }
 
 	// O(loglogN)
 	// count b in [0, k)
-	final int rank(int k) { SimpleUtil.inclusiveRangeCheck(k, n); return sum[k >> lg] + Integer.bitCount(bit[k >> lg] & ((1 << (k & mask)) - 1)); }
+	final int rank(int k) { FastIO.inclusiveRangeCheck(k, n); return sum[k >> lg] + Integer.bitCount(bit[k >> lg] & ((1 << (k & mask)) - 1)); }
 	final int rank(boolean b, int k) { return b ? rank(k) : k - rank(k); }
 
 	// O(loglogN)

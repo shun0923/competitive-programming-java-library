@@ -2,7 +2,7 @@ package library;
 
 import java.util.*;
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.Mod;
 import library.Convolution;
 
@@ -665,7 +665,7 @@ abstract class FpsOperator {
 	// return f(x^d)
 	public final Fps powComposite(final Fps f, final int d) { return powComposite(f, d, Math.max(0, f.a.length * d - d + 1)); }
 	public final Fps powComposite(final Fps f, final int d, final int l) {
-		SimpleUtil.nonNegativeCheck(d);
+		FastIO.nonNegativeCheck(d);
 		if(l == 0) return zero(0);
 		if(d == 0) return constant(eval(f, 1), f.a.length);
 		Fps g = zero(l);
@@ -685,7 +685,7 @@ class Fps implements Comparable<Fps> {
 	public long a[];
 
 	// O(L)
-	Fps(final FpsOperator op, final int l) { SimpleUtil.nonNegativeCheck(l); this.op = op; a = new long[l]; }
+	Fps(final FpsOperator op, final int l) { FastIO.nonNegativeCheck(l); this.op = op; a = new long[l]; }
 	Fps(final FpsOperator op, final int l, final long x) { this(op, l); Arrays.fill(a, op.md.mod(x)); }
 	Fps(final FpsOperator op, final long[] a, final int l) { this(op, l); System.arraycopy(a, 0, this.a, 0, Math.min(a.length, l)); }
 	Fps(final FpsOperator op, final long[] a) { this(op, a, a.length); }

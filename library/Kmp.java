@@ -1,14 +1,14 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 
 final class Kmp {
 	// O(|S|)
 	public final int a[];
 	public final int kmp[];
 	public Kmp(String s) { this(s.toCharArray()); }
-	public Kmp(char[] c) { this(SimpleUtil.charToInt(c)); }
+	public Kmp(char[] c) { this(FastIO.charToInt(c)); }
 	public Kmp(int[] a) {
 		this.a = a;
 		kmp = new int[a.length + 1];
@@ -26,7 +26,7 @@ final class Kmp {
 	// return all the occurrences of S in T
 	// O(|S|+|T|)
 	public final int[] match(String t) { return match(t.toCharArray()); }
-	public final int[] match(char[] c) { return match(SimpleUtil.charToInt(c)); }
+	public final int[] match(char[] c) { return match(FastIO.charToInt(c)); }
 	public final int[] match(int[] b) {
 		ArrayList<Integer> match = new ArrayList<Integer>();
 		int j = 0;

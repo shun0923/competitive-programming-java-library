@@ -1,13 +1,13 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.AbstractGraph;
 
 final class PathRestoration {
 	public static final int[] path(final int[] prv, final int start, int goal) { // O(V)
-		SimpleUtil.rangeCheck(start, prv.length);
-		SimpleUtil.rangeCheck(goal, prv.length);
+		FastIO.rangeCheck(start, prv.length);
+		FastIO.rangeCheck(goal, prv.length);
 		final Deque<Integer> pathList = new ArrayDeque<>();
 		pathList.addLast(goal);
 		while(goal != start) pathList.addLast(goal = prv[goal]);

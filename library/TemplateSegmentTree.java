@@ -1,7 +1,7 @@
 package library;
 
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 
 class TemplateSegmentTree<T> {
 	private Supplier<T> eSupplier;
@@ -26,7 +26,7 @@ class TemplateSegmentTree<T> {
 	}
 	@SuppressWarnings("unchecked")
 	public TemplateSegmentTree(int len, Supplier<T> eSupplier, BinaryOperator<T> f) {
-		SimpleUtil.nonNegativeCheck(len);
+		FastIO.nonNegativeCheck(len);
 		this.eSupplier = eSupplier;
 		this.e = eSupplier.get();
 		this.f = f;
@@ -45,7 +45,7 @@ class TemplateSegmentTree<T> {
 
 	// O(logN)
 	public void set(int i, T val) {
-		SimpleUtil.rangeCheck(i, n);
+		FastIO.rangeCheck(i, n);
 		i += n;
 		nodes[i] = val;
 		while(i > 1) {
@@ -58,9 +58,9 @@ class TemplateSegmentTree<T> {
 	public T get(int i) { return nodes[i + n]; } // O(1)
 
 	public T find(int l, int r) { // O(logN)
-		SimpleUtil.inclusiveRangeCheck(l, n);
-		SimpleUtil.inclusiveRangeCheck(r, n);
-		SimpleUtil.assertion(l <= r, "l is larger than r.");
+		FastIO.inclusiveRangeCheck(l, n);
+		FastIO.inclusiveRangeCheck(r, n);
+		FastIO.assertion(l <= r, "l is larger than r.");
 		l += n; r += n;
 		T xL = eSupplier.get();
 		T xR = eSupplier.get();
@@ -76,9 +76,9 @@ class TemplateSegmentTree<T> {
 	public int findLeftmost(Predicate<T> check) { return findLeftmost(0, check); }
 	public int findLeftmost(int l, Predicate<T> check) { return findLeftmost(l, n, check); }
 	public int findLeftmost(int l, int r, Predicate<T> check) {
-		SimpleUtil.inclusiveRangeCheck(l, n);
-		SimpleUtil.inclusiveRangeCheck(r, n);
-		SimpleUtil.assertion(l <= r, "l is larger than r.");
+		FastIO.inclusiveRangeCheck(l, n);
+		FastIO.inclusiveRangeCheck(r, n);
+		FastIO.assertion(l <= r, "l is larger than r.");
 		T crt = eSupplier.get();
 		int idx;
 		for(idx = l + n; idx < n << 1 && l < r; ){
@@ -95,9 +95,9 @@ class TemplateSegmentTree<T> {
 	public int findRightmost(Predicate<T> check) { return findRightmost(n, check); }
 	public int findRightmost(int r, Predicate<T> check) { return findRightmost(0, r, check); }
 	public int findRightmost(int l, int r, Predicate<T> check) {
-		SimpleUtil.inclusiveRangeCheck(l, n);
-		SimpleUtil.inclusiveRangeCheck(r, n);
-		SimpleUtil.assertion(l <= r, "l is larger than r.");
+		FastIO.inclusiveRangeCheck(l, n);
+		FastIO.inclusiveRangeCheck(r, n);
+		FastIO.assertion(l <= r, "l is larger than r.");
 		T crt = eSupplier.get();
 		int idx;
 		for(idx = r + n - 1; idx < n << 1 && r > l; ){

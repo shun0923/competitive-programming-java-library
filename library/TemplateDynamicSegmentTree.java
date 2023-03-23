@@ -1,7 +1,7 @@
 package library;
 
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 
 class TemplateDynamicSegmentTree<T> {
 	class NodeST {
@@ -21,14 +21,14 @@ class TemplateDynamicSegmentTree<T> {
 
 	// O(1)
 	TemplateDynamicSegmentTree(long len, Supplier<T> eSupplier, BinaryOperator<T> f) {
-		SimpleUtil.nonNegativeCheck(len);
+		FastIO.nonNegativeCheck(len);
 		this.n = len; this.eSupplier = eSupplier; this.e = eSupplier.get(); this.f = f;
 		root = new NodeST();
 	}
 
 	// O(logN)
-	void set(long i, T val) { SimpleUtil.rangeCheck(i, n); update(i, val, false); }
-	void update(long i, T val) { SimpleUtil.rangeCheck(i, n); update(i, val, true); }
+	void set(long i, T val) { FastIO.rangeCheck(i, n); update(i, val, false); }
+	void update(long i, T val) { FastIO.rangeCheck(i, n); update(i, val, true); }
 	void update(long i, T val, boolean update) { update(root, 0, n, i, val, update); }
 	NodeST update(NodeST t, long l, long r, long i, T val, boolean update) {
 		if(t == null) t = new NodeST();
@@ -43,7 +43,7 @@ class TemplateDynamicSegmentTree<T> {
 	}
 
 	// O(logN)
-	T get(long i) { SimpleUtil.rangeCheck(i, n); return get(root, 0, n, i); }
+	T get(long i) { FastIO.rangeCheck(i, n); return get(root, 0, n, i); }
 	T get(NodeST t, long l, long r, long i) {
 		if(t == null) return e;
 		if(r - l == 1) return t.val;
@@ -51,9 +51,9 @@ class TemplateDynamicSegmentTree<T> {
 		return i < mid ? get(t.l, l, mid, i) : get(t.r, mid, r, i);
 	}
 	T find(long l0, long r0) {
-		SimpleUtil.inclusiveRangeCheck(l0, n);
-		SimpleUtil.inclusiveRangeCheck(r0, n);
-		SimpleUtil.assertion(l0 <= r0, "l is larger than r.");
+		FastIO.inclusiveRangeCheck(l0, n);
+		FastIO.inclusiveRangeCheck(r0, n);
+		FastIO.assertion(l0 <= r0, "l is larger than r.");
 		return find(root, 0, n, l0, r0);
 	}
 	T find(NodeST t, long l, long r, long l0, long r0) {

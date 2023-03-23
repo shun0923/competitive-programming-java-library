@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.AbstractGraph;
 
 final class Lca {
@@ -11,8 +11,8 @@ final class Lca {
 
 	// O(VlogV)
 	public Lca(final int numNode, final AbstractNode<? extends AbstractEdge>[] nodes, final int root) {
-		SimpleUtil.nonNegativeCheck(numNode);
-		SimpleUtil.rangeCheck(root, numNode);
+		FastIO.nonNegativeCheck(numNode);
+		FastIO.rangeCheck(root, numNode);
 		this.numNode = numNode;
 		depth = new int[numNode];
 		db = new Doubling(numNode, numNode, bfs(root, nodes));
@@ -46,8 +46,8 @@ final class Lca {
 	}
 
 	public final int cal(int u, int v) { // O(logV)
-		SimpleUtil.rangeCheck(u, numNode);
-		SimpleUtil.rangeCheck(v, numNode);
+		FastIO.rangeCheck(u, numNode);
+		FastIO.rangeCheck(v, numNode);
 		if(depth[u] > depth[v]) {
 			int tmp = u;
 			u = v;

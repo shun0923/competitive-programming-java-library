@@ -2,7 +2,7 @@ package library;
 
 import java.util.*;
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.AbstractGraph;
 
 final class WeightedLca {
@@ -14,8 +14,8 @@ final class WeightedLca {
 
 	// O(VlogV)
 	public WeightedLca(final int numNode, final WeightedNode[] nodes, final int root, final long id, final LongBinaryOperator f) {
-		SimpleUtil.nonNegativeCheck(numNode);
-		SimpleUtil.rangeCheck(root, numNode);
+		FastIO.nonNegativeCheck(numNode);
+		FastIO.rangeCheck(root, numNode);
 		this.numNode = numNode;
 		this.id = id;
 		this.f = f;
@@ -49,8 +49,8 @@ final class WeightedLca {
 	}
 
 	public final WeightedEdge cal(int u, int v) { // O(logV)
-		SimpleUtil.rangeCheck(u, numNode);
-		SimpleUtil.rangeCheck(v, numNode);
+		FastIO.rangeCheck(u, numNode);
+		FastIO.rangeCheck(v, numNode);
 		if(depth[u] > depth[v]) {
 			int tmp = u;
 			u = v;

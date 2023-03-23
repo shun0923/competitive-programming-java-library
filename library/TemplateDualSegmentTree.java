@@ -1,7 +1,7 @@
 package library;
 
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 
 class TemplateDualSegmentTree<T> {
 	@FunctionalInterface
@@ -28,7 +28,7 @@ class TemplateDualSegmentTree<T> {
 	}
 	@SuppressWarnings("unchecked")
 	TemplateDualSegmentTree(int len, Supplier<T> e2Supplier, BinaryConsumer<T> g) {
-		SimpleUtil.nonNegativeCheck(len);
+		FastIO.nonNegativeCheck(len);
 		this.e2Supplier = e2Supplier;
 		this.e2 = e2Supplier.get();
 		this.g = g;
@@ -54,9 +54,9 @@ class TemplateDualSegmentTree<T> {
 	}
 
 	void update(int l, int r, T val) { // O(logN)
-		SimpleUtil.inclusiveRangeCheck(l, n);
-		SimpleUtil.inclusiveRangeCheck(r, n);
-		SimpleUtil.assertion(l <= r, "l is larger than r.");
+		FastIO.inclusiveRangeCheck(l, n);
+		FastIO.inclusiveRangeCheck(r, n);
+		FastIO.assertion(l <= r, "l is larger than r.");
 		l += n; r += n - 1;
 		for(int i = height; i > 0; i --) { eval(l >> i); eval(r >> i); }
 		r ++;
@@ -68,7 +68,7 @@ class TemplateDualSegmentTree<T> {
 	}
 
 	T get(int j) { // O(logN)
-		SimpleUtil.inclusiveRangeCheck(j, n);
+		FastIO.inclusiveRangeCheck(j, n);
 		j += n;
 		for(int i = height; i > 0; i --) eval(j >> i);
 		return lazy[j];

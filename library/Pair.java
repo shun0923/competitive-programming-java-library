@@ -1,9 +1,9 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 
-class Pair extends SimpleUtil {
+class Pair extends FastIO {
 	// Pair
 	public static final II npii() { return new II(ni(), ni()); }
 	public static final II[] npii(final int n) { final II a[] = new II[n]; for(int i = 0; i < n; i ++) a[i] = npii(); return a; }

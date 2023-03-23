@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.Util;
 import library.Pair;
 import library.Mod;
@@ -19,7 +19,7 @@ class ExtendedMath {
 		return x;
 	}
 	public static final long[] slideMin(long[] array, int len) { // O(N) N=len
-		SimpleUtil.nonNegativeCheck(len);
+		FastIO.nonNegativeCheck(len);
 		Deque<Integer> s = new ArrayDeque<>();
 		long slideMin[] = new long[array.length - len + 1];
 		for(int i = 0; i < array.length; i ++) {
@@ -35,7 +35,7 @@ class ExtendedMath {
 	public static final int[] lis(long[] a, boolean increasing) {
 		int len = a.length;
 		long increase[] = new long[len];
-		Arrays.fill(increase, increasing ? SimpleUtil.INF : - SimpleUtil.INF);
+		Arrays.fill(increase, increasing ? FastIO.INF : - FastIO.INF);
 		int lis[] = new int[len];
 		for(int i = 0; i < len; i ++) {
 			lis[i] = Util.cntBS(increase, a[i], increasing, !increasing, false) + 1;
@@ -83,7 +83,7 @@ class ExtendedMath {
 		return mul;
 	}
 	public static final long[][] pow(final Mod md, final long[][] mat, long y) { // O(N^3logY)
-		SimpleUtil.nonNegativeCheck(y);
+		FastIO.nonNegativeCheck(y);
 		int num = mat.length;
 		long[][] ans = new long[num][num];
 		for(int i = 0; i < num; i ++) ans[i][i] = 1;
@@ -98,10 +98,10 @@ class ExtendedMath {
 
 	// sum in [0,n) of floor((ai+b)/m)
 	public static final long floorSum(final long n, final long m, long a, long b) { // O(log(N+M+A+B))
-		SimpleUtil.nonNegativeCheck(n);
-		SimpleUtil.positiveCheck(m);
-		SimpleUtil.nonNegativeCheck(a);
-		SimpleUtil.nonNegativeCheck(b);
+		FastIO.nonNegativeCheck(n);
+		FastIO.positiveCheck(m);
+		FastIO.nonNegativeCheck(a);
+		FastIO.nonNegativeCheck(b);
 		long ans = 0;
 		if(a >= m) {
 			ans += (n - 1) * n * (a / m) / 2;
@@ -125,7 +125,7 @@ class ExtendedMath {
 		md.mod(mat);
 		int row = mat.length;
 		int col = mat[0].length;
-		for(int r = 0; r < row; r ++) SimpleUtil.assertion(mat[r].length == col);
+		for(int r = 0; r < row; r ++) FastIO.assertion(mat[r].length == col);
 		int rank = 0;
 		for(int c = 0; c < col; c ++) {
 			if(isExtended && c == col - 1) continue;
@@ -156,8 +156,8 @@ class ExtendedMath {
 	public static final int linearEquation(final Mod md, final long[][] a, final long[] b, final long[] ans) {
 		int row = a.length;
 		int col = a[0].length;
-		for(int r = 0; r < row; r ++) SimpleUtil.assertion(a[r].length == col);
-		SimpleUtil.assertion(b.length == row);
+		for(int r = 0; r < row; r ++) FastIO.assertion(a[r].length == col);
+		FastIO.assertion(b.length == row);
 	
 		long mat[][] = new long[row][col + 1];
 		for(int r = 0; r < row; r ++) {
@@ -176,8 +176,8 @@ class ExtendedMath {
 		int row;
 		int col;
 		BitMatrix(int row, int col) {
-			SimpleUtil.nonNegativeCheck(row);
-			SimpleUtil.nonNegativeCheck(col);
+			FastIO.nonNegativeCheck(row);
+			FastIO.nonNegativeCheck(col);
 			this.row = row;
 			this.col = col;
 			for(int r = 0; r < row; r ++) add(new BitSet(col));
@@ -214,8 +214,8 @@ class ExtendedMath {
 	public static final int bitLinearEquation(final boolean[][] a, final boolean[] b, final boolean[] ans) {
 		int row = a.length;
 		int col = a[0].length;
-		for(int r = 0; r < row; r ++) SimpleUtil.assertion(a[r].length == col);
-		SimpleUtil.assertion(b.length == row);
+		for(int r = 0; r < row; r ++) FastIO.assertion(a[r].length == col);
+		FastIO.assertion(b.length == row);
 	
 		BitMatrix mat = new BitMatrix(row, col + 1);
 		for(int r = 0; r < row; r ++) {
@@ -246,7 +246,7 @@ class ExtendedMath {
 
 	// return (g,x) s.t. ax%mod=g=gcd(a,mod) && x>=0
 	public static final Pair.LL invGcd(long a, long mod) { // O(loglcm(a,mod))
-		SimpleUtil.positiveCheck(mod, "mod");
+		FastIO.positiveCheck(mod, "mod");
 		Pair.LL s = new Pair.LL(mod, 0);
 		Pair.LL t = new Pair.LL(a, 1);
 		while(t.a > 0) {
@@ -272,7 +272,7 @@ class ExtendedMath {
 	}
 	// return (x, lcm(p.b)) s.t. x%p.b=p.a && x>=0 if exists otherwise null
 	public static final Pair.LL chineseRem(Pair.LL[] p) { // O(Nloglcm(ps.a))
-		for(Pair.LL ele : p) SimpleUtil.positiveCheck(ele.b);
+		for(Pair.LL ele : p) FastIO.positiveCheck(ele.b);
 		int num = p.length;
 		Pair.LL ans = new Pair.LL(0, 1);
 		for(Pair.LL crt : p) {
@@ -283,8 +283,8 @@ class ExtendedMath {
 	}
 	// return (x,lcm(p1.b,p2.b)) s.t. x%p1.b=p1.a && x%p2.b=p2.a && x>=0 if exists otherwise null
 	public static final Pair.LL chineseRem(Pair.LL p1, Pair.LL p2) { // O(loglcm(p1.a,p2.a))
-		SimpleUtil.positiveCheck(p1.b);
-		SimpleUtil.positiveCheck(p2.b);
+		FastIO.positiveCheck(p1.b);
+		FastIO.positiveCheck(p2.b);
 		Util.TupleLLL ans = extGcd(p1.b, p2.b);
 		p1.a = new ArbitraryMod(p1.b).mod(p1.a);
 		p2.a = new ArbitraryMod(p2.b).mod(p2.a);
@@ -297,8 +297,8 @@ class ExtendedMath {
 	// requirement: p.b is prime
 	// return x%mod s.t. x%p.b=p.a && x>=0
 	public static final long garner(Pair.LL[] p, long mod) { // O(N^2+Nlogmax(p.a)))
-		SimpleUtil.positiveCheck(mod, "mod");
-		for(Pair.LL ele : p) SimpleUtil.positiveCheck(ele.b);
+		FastIO.positiveCheck(mod, "mod");
+		for(Pair.LL ele : p) FastIO.positiveCheck(ele.b);
 		Pair.LL p2[] = new Pair.LL[p.length + 1];
 		for(int i = 0; i < p.length; i ++) p2[i] = p[i];
 		p = p2;

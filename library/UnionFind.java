@@ -1,7 +1,7 @@
 package library;
 
 import java.util.*;
-import library.SimpleUtil;
+import library.FastIO;
 import library.AbstractGraph;
 
 class UnionFind { // N=numNode
@@ -10,7 +10,7 @@ class UnionFind { // N=numNode
 	public int numGroups;
 
 	public UnionFind(final int n) { // O(N)
-		SimpleUtil.nonNegativeCheck(n);
+		FastIO.nonNegativeCheck(n);
 		this.n = n;
 		nodes = new int[n];
 		numGroups = n;
@@ -21,8 +21,8 @@ class UnionFind { // N=numNode
 	public final void uniteAll(final AbstractEdge[] edges) { for(AbstractEdge e : edges) unite(e); } // O(a(N)M)
 	public final boolean unite(final AbstractEdge e) { return unite(e.source, e.target); }
 	public final boolean unite(final int x, final int y) { // O(a(N))
-		SimpleUtil.rangeCheck(x, n);
-		SimpleUtil.rangeCheck(y, n);
+		FastIO.rangeCheck(x, n);
+		FastIO.rangeCheck(y, n);
 		int xRoot = root(x);
 		int yRoot = root(y);
 		if(xRoot == yRoot) return true;
@@ -37,15 +37,15 @@ class UnionFind { // N=numNode
 		return false;
 	}
 
-	public final int size(final int i) { SimpleUtil.rangeCheck(i, n); return - nodes[root(i)]; } // O(a(N))
+	public final int size(final int i) { FastIO.rangeCheck(i, n); return - nodes[root(i)]; } // O(a(N))
 
 	public final int root(final int i) { // O(a(N))
-		SimpleUtil.rangeCheck(i, n);
+		FastIO.rangeCheck(i, n);
 		if(nodes[i] < 0) return i;
 		return nodes[i] = root(nodes[i]);
 	}
 
-	public final boolean same(final int x, final int y) { SimpleUtil.rangeCheck(x, n); SimpleUtil.rangeCheck(y, n); return root(x) == root(y); } // O(a(N))
+	public final boolean same(final int x, final int y) { FastIO.rangeCheck(x, n); FastIO.rangeCheck(y, n); return root(x) == root(y); } // O(a(N))
 
 	public final HashMap<Integer, HashSet<Integer>> groups() { // O(N)
 		HashMap<Integer, HashSet<Integer>> groups = new HashMap<>();

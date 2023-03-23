@@ -1,6 +1,6 @@
 package library;
 
-import library.SimpleUtil;
+import library.FastIO;
 import library.Mod;
 import library.Convolution;
 
@@ -32,7 +32,7 @@ final class ArbitraryConvolution extends ExtendedConvolution {
 	// O((N_1+N_2)log(N_1+N_2))
 	@Override
 	public final long[] cnv(final long[] a, final long[] b, final int l) {
-		SimpleUtil.nonNegativeCheck(l);
+		FastIO.nonNegativeCheck(l);
 		final long M1M2MOD = md.mod(MOD1 * MOD2);
 
 		if(a.length == 0 || b.length == 0) return new long[l];
@@ -53,7 +53,7 @@ final class LongConvolution extends ExtendedConvolution {
 	public static final LongConvolution cnv = new LongConvolution();
 	@Override
 	public final long[] cnv(final long[] a, final long[] b, final int l) {
-		SimpleUtil.nonNegativeCheck(l);
+		FastIO.nonNegativeCheck(l);
 		if(a.length == 0 || b.length == 0) return new long[l];
 
 		long f1[] = cnv1.cnv(a, b);
@@ -80,7 +80,7 @@ final class Convolution107 extends ExtendedConvolution {
 	private static final long M1M2MOD = MOD1 * MOD2 % 1_000_000_007;
 	@Override
 	public final long[] cnv(final long[] a, final long[] b, final int l) {
-		SimpleUtil.nonNegativeCheck(l);
+		FastIO.nonNegativeCheck(l);
 
 		if(a.length == 0 || b.length == 0) return new long[l];
 

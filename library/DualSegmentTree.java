@@ -2,7 +2,7 @@ package library;
 
 import java.util.*;
 import java.util.function.*;
-import library.SimpleUtil;
+import library.FastIO;
 
 class DualSegmentTree {
 	long e2;
@@ -21,11 +21,11 @@ class DualSegmentTree {
 	}
 	DualSegmentTree(int len, long x, long e2, LongBinaryOperator g) {
 		this(len, e2, g);
-		SimpleUtil.nonNegativeCheck(len);
+		FastIO.nonNegativeCheck(len);
 		Arrays.fill(lazy, n, n + len, x);
 	}
 	DualSegmentTree(int len, long e2, LongBinaryOperator g) {
-		SimpleUtil.nonNegativeCheck(len);
+		FastIO.nonNegativeCheck(len);
 		this.e2 = e2;
 		this.g = g;
 		n = 1;
@@ -50,9 +50,9 @@ class DualSegmentTree {
 	}
 
 	void update(int l, int r, long val) { // O(logN)
-		SimpleUtil.inclusiveRangeCheck(l, n);
-		SimpleUtil.inclusiveRangeCheck(r, n);
-		SimpleUtil.assertion(l <= r, "l is larger than r.");
+		FastIO.inclusiveRangeCheck(l, n);
+		FastIO.inclusiveRangeCheck(r, n);
+		FastIO.assertion(l <= r, "l is larger than r.");
 		l += n; r += n - 1;
 		for(int i = height; i > 0; i --) { eval(l >> i); eval(r >> i); }
 		r ++;
@@ -64,7 +64,7 @@ class DualSegmentTree {
 	}
 
 	long get(int j) { // O(logN)
-		SimpleUtil.inclusiveRangeCheck(j, n);
+		FastIO.inclusiveRangeCheck(j, n);
 		j += n;
 		for(int i = height; i > 0; i --) eval(j >> i);
 		return lazy[j];
