@@ -27,7 +27,7 @@ data:
   - icon: ':x:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Bfs_test.java
     title: library/Bfs_test.java
   - icon: ':heavy_check_mark:'
@@ -42,22 +42,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Convolution998_test.java
     title: library/Convolution998_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_forDenseGraph_reversed_test.java
     title: library/Dijkstra_forDenseGraph_reversed_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_forDenseGraph_test.java
     title: library/Dijkstra_forDenseGraph_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_reversed_test.java
     title: library/Dijkstra_reversed_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
   - icon: ':heavy_check_mark:'

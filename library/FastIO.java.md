@@ -8,13 +8,13 @@ data:
     path: library/FastOutputStream.java
     title: library/FastOutputStream.java
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':x:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Bfs.java
     title: library/Bfs.java
   - icon: ':warning:'
@@ -26,7 +26,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Convolution.java
     title: library/Convolution.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
   - icon: ':heavy_check_mark:'
@@ -77,7 +77,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Pair.java
     title: library/Pair.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':heavy_check_mark:'

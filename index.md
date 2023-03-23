@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
     - icon: ':heavy_check_mark:'
@@ -12,7 +12,7 @@ data:
     - icon: ':x:'
       path: library/BellmanFord.java
       title: library/BellmanFord.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Bfs.java
       title: library/Bfs.java
     - icon: ':warning:'
@@ -24,7 +24,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Convolution.java
       title: library/Convolution.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra.java
       title: library/Dijkstra.java
     - icon: ':heavy_check_mark:'
@@ -93,7 +93,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Pair.java
       title: library/Pair.java
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/PathRestoration.java
       title: library/PathRestoration.java
     - icon: ':heavy_check_mark:'
@@ -210,7 +210,7 @@ data:
     - icon: ':x:'
       path: library/BellmanFord_test.java
       title: library/BellmanFord_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Bfs_test.java
       title: library/Bfs_test.java
     - icon: ':heavy_check_mark:'
@@ -225,22 +225,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Convolution998_test.java
       title: library/Convolution998_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra_forDenseGraph_reversed_test.java
       title: library/Dijkstra_forDenseGraph_reversed_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra_forDenseGraph_test.java
       title: library/Dijkstra_forDenseGraph_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra_pathEdge_test.java
       title: library/Dijkstra_pathEdge_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra_path_test.java
       title: library/Dijkstra_path_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra_reversed_test.java
       title: library/Dijkstra_reversed_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Dijkstra_test.java
       title: library/Dijkstra_test.java
     - icon: ':heavy_check_mark:'

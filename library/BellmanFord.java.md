@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
     path: library/FastIO.java
     title: library/FastIO.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   _extendedRequiredBy: []
@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: library/BellmanFord.java
   requiredBy: []
-  timestamp: '2023-03-24 00:38:44+09:00'
+  timestamp: '2023-03-24 00:57:03+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/BellmanFord_test.java

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -11,10 +11,10 @@ data:
   - icon: ':x:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Bfs.java
     title: library/Bfs.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
   - icon: ':x:'
@@ -24,10 +24,10 @@ data:
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_pathEdge_test.java
     title: library/Dijkstra_pathEdge_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra_path_test.java
     title: library/Dijkstra_path_test.java
   - icon: ':x:'
@@ -35,7 +35,7 @@ data:
     title: library/TemplateDijkstra_pathEdge_test.java
   _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -56,11 +56,11 @@ data:
     \t\tpathList.add(goal);\n\t\twhile(goal != start) pathList.add(goal = prv[goal]);\n\
     \t\tfinal int path[] = new int[pathList.size()];\n\t\tfor(int i = 0, j = path.length\
     \ - 1; i < path.length; i ++, j --) path[i] = pathList.get(j);\n\t\treturn path;\n\
-    \t}\n\tpublic static final <Edge extends AbstractEdge<Edge>> Node pathEdge(final\
-    \ List<Edge> pathEdge, final int[] prv, final Edge[] prvEdge, final int start,\
-    \ final int goal) {\n\t\tint path[] = path(prv, start, goal);\n\t\tfor(int i =\
-    \ 1; i < path.length; i ++) pathEdge.add(prvEdge[path[i]]);\n\t\treturn pathEdge;\n\
-    \t}\n}"
+    \t}\n\t@SuppressWarnings(\"unchecked\")\n\tpublic static final <Edge extends AbstractEdge<Edge>>\
+    \ List<Edge> pathEdge(final int[] prv, final Edge[] prvEdge, final int start,\
+    \ final int goal) {\n\t\tint path[] = path(prv, start, goal);\n\t\tList<Edge>\
+    \ pathEdge = new ArrayList<Edge>();\n\t\tfor(int i = 1; i < path.length; i ++)\
+    \ pathEdge.add(prvEdge[path[i]]);\n\t\treturn pathEdge;\n\t}\n}"
   dependsOn:
   - library/FastIO.java
   - library/AbstractGraph.java
@@ -72,8 +72,8 @@ data:
   - library/Dijkstra.java
   - library/Bfs.java
   - library/WarshallFloyd.java
-  timestamp: '2023-03-24 00:38:44+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-03-24 00:57:03+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Dijkstra_path_test.java
   - library/Dijkstra_pathEdge_test.java

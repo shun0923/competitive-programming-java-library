@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Bfs.java
     title: library/Bfs.java
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -45,8 +45,8 @@ data:
   isVerificationFile: true
   path: library/Bfs_test.java
   requiredBy: []
-  timestamp: '2023-03-24 00:38:44+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-03-24 00:57:03+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Bfs_test.java
 layout: document

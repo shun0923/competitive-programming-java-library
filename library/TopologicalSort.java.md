@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -47,7 +47,7 @@ data:
   isVerificationFile: false
   path: library/TopologicalSort.java
   requiredBy: []
-  timestamp: '2023-03-23 23:34:20+09:00'
+  timestamp: '2023-03-24 00:57:03+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/TopologicalSort_test.java

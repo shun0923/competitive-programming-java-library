@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
     path: library/FastIO.java
     title: library/FastIO.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Bfs_test.java
     title: library/Bfs_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -37,22 +37,27 @@ data:
     \ Edge extends AbstractEdge<Edge>> int[] dist(final Graph g, final int start)\
     \ { return dist(g, start, null, null); }\n\tpublic static final <Graph extends\
     \ AbstractGraph<Node, Edge>, Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>\
-    \ int[] dist(final Graph g, final int start, final int[] prv, final Edge[] prvEdge)\
+    \ int[] dist(final Graph g, final int start, final int[] prv) { return dist(g,\
+    \ start, prv, null); }\n\tpublic static final <Graph extends AbstractGraph<Node,\
+    \ Edge>, Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> int[]\
+    \ dist(final Graph g, final int start, final int[] prv, final Edge[] prvEdge)\
     \ { return dist(g.nodes(), start, prv, prvEdge); }\n\tpublic static final <Node\
     \ extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>int[] dist(final\
     \ Node[] nodes, final int start) { return dist(nodes, start, null, null); }\n\t\
-    public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>\
-    \ int[] dist(final Node[] nodes, final int start, final int[] prv, final Edge[]\
-    \ prvEdge) {\n\t\tint numNode = nodes.length;\n\t\tint dist[] = new int[numNode];\n\
-    \t\tArrays.fill(dist, -1);\n\t\tboolean visited[] = new boolean[numNode];\n\t\t\
-    int dq[] = new int[numNode];\n\t\tint ptr = 0;\n\t\tint size = 0;\n\t\tboolean\
-    \ memoize = prv != null;\n\t\tif(memoize) Arrays.fill(prv, -1);\n\n\t\tdq[size\
-    \ ++] = start;\n\t\tdist[start] = 0;\n\t\tvisited[start] = true;\n\t\twhile(ptr\
-    \ != size) {\n\t\t\tint crt = dq[ptr ++];\n\t\t\tfor(Edge e : nodes[crt]) {\n\t\
-    \t\t\tif(!visited[e.target]) {\n\t\t\t\t\tdist[e.target] = dist[e.source] + 1;\n\
+    public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>int[]\
+    \ dist(final Node[] nodes, final int start, final int[] prv) { return dist(nodes,\
+    \ start, prv, null); }\n\tpublic static final <Node extends AbstractNode<Edge>,\
+    \ Edge extends AbstractEdge<Edge>> int[] dist(final Node[] nodes, final int start,\
+    \ final int[] prv, final Edge[] prvEdge) {\n\t\tint numNode = nodes.length;\n\t\
+    \tint dist[] = new int[numNode];\n\t\tArrays.fill(dist, -1);\n\t\tboolean visited[]\
+    \ = new boolean[numNode];\n\t\tint dq[] = new int[numNode];\n\t\tint ptr = 0;\n\
+    \t\tint size = 0;\n\t\tif(prv != null) Arrays.fill(prv, -1);\n\n\t\tdq[size ++]\
+    \ = start;\n\t\tdist[start] = 0;\n\t\tvisited[start] = true;\n\t\twhile(ptr !=\
+    \ size) {\n\t\t\tint crt = dq[ptr ++];\n\t\t\tfor(Edge e : nodes[crt]) {\n\t\t\
+    \t\tif(!visited[e.target]) {\n\t\t\t\t\tdist[e.target] = dist[e.source] + 1;\n\
     \t\t\t\t\tvisited[e.target] = true;\n\t\t\t\t\tdq[size ++] = e.target;\n\t\t\t\
-    \t\tif(memoize) {\n\t\t\t\t\t\tprv[e.target] = e.source;\n\t\t\t\t\t\tprvEdge[e.target]\
-    \ = e;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n}"
+    \t\tif(prv != null) prv[e.target] = e.source;\n\t\t\t\t\tif(prvEdge != null) prvEdge[e.target]\
+    \ = e;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n}"
   dependsOn:
   - library/FastIO.java
   - library/AbstractGraph.java
@@ -60,8 +65,8 @@ data:
   isVerificationFile: false
   path: library/Bfs.java
   requiredBy: []
-  timestamp: '2023-03-24 00:38:44+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-03-24 00:57:03+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Bfs_test.java
 documentation_of: library/Bfs.java

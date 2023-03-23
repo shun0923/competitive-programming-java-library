@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':question:'
@@ -53,7 +53,7 @@ data:
   isVerificationFile: true
   path: library/TemplateDijkstra_pathEdge_test.java
   requiredBy: []
-  timestamp: '2023-03-24 00:38:44+09:00'
+  timestamp: '2023-03-24 00:57:03+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/TemplateDijkstra_pathEdge_test.java

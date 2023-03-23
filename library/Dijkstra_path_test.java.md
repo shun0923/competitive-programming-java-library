@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Dijkstra.java
     title: library/Dijkstra.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':question:'
@@ -15,9 +15,9 @@ data:
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/shortest_path
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -37,12 +37,12 @@ data:
     import library.Dijkstra;\nimport library.PathRestoration;\n\npublic class Dijkstra_path_test\
     \ extends Solver {\n\tpublic static void main(final String[] args) { main(args,\
     \ new Dijkstra_path_test()); }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\
-    \t\tint m = ni();\n\t\tint s = ni();\n\t\tint t = ni();\n\t\tArrayWeightedGraph\
-    \ g = new ArrayWeightedGraph(n, true);\n\t\tfor(int i = 0; i < m; i ++) g.add(ni(),\
-    \ ni(), nl());\n\t\tlong x = Dijkstra.dist(g, s, true)[t];\n\t\tif(isINF(x)) prtln(-1);\n\
-    \t\telse {\n\t\t\tint path[] = Dijkstra.path(s, t);\n\t\t\tprtln(x, path.length\
-    \ - 1);\n\t\t\tfor(int i = 0; i < path.length - 1; i ++) prtln(path[i], path[i\
-    \ + 1]);\n\t\t}\n\t}\n}"
+    \t\tint m = ni();\n\t\tint s = ni();\n\t\tint t = ni();\n\t\tvar g = new WeightedListGraph(n,\
+    \ true);\n\t\tfor(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());\n\t\tint prv[]\
+    \ = new int[n];\n\t\tlong x = Dijkstra.dist(g, s, prv)[t];\n\t\tif(isINF(x)) prtln(-1);\n\
+    \t\telse {\n\t\t\tint path[] = PathRestoration.path(prv, s, t);\n\t\t\tprtln(x,\
+    \ path.length - 1);\n\t\t\tfor(int i = 0; i < path.length - 1; i ++) prtln(path[i],\
+    \ path[i + 1]);\n\t\t}\n\t}\n}"
   dependsOn:
   - library/Solver.java
   - library/AbstractGraph.java
@@ -51,8 +51,8 @@ data:
   isVerificationFile: true
   path: library/Dijkstra_path_test.java
   requiredBy: []
-  timestamp: '2023-03-24 00:38:44+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-03-24 00:57:03+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Dijkstra_path_test.java
 layout: document
