@@ -8,7 +8,7 @@ data:
   - icon: ':warning:'
     path: library/ExtendedMath.java
     title: library/ExtendedMath.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedVerifiedWith: []

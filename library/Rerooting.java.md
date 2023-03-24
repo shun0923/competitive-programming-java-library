@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -9,12 +9,12 @@ data:
     title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Rerooting_test.java
     title: library/Rerooting_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -41,7 +41,7 @@ data:
     \ ans[];\n\n\n\t// O(V)\n\tpublic Rerooting(final WeightedListGraph g, final int\
     \ start, final long id,\n\t\t\tfinal MergeOperator merge, final AddEdgeOperator\
     \ addEdge, final AddRootOperator addRoot, final CreateNodeOperator createNode)\
-    \ {\n\t\tthis(g.numNode, g.nodes(), start, merge, addEdge, addRoot, createNode);\n\
+    \ {\n\t\tthis(g.numNode, g.nodes(), start, id, merge, addEdge, addRoot, createNode);\n\
     \t}\n\tpublic Rerooting(final int numNode, final WeightedListNode[] nodes, final\
     \ int start, final long id,\n\t\t\tfinal MergeOperator merge, final AddEdgeOperator\
     \ addEdge, final AddRootOperator addRoot, final CreateNodeOperator createNode)\
@@ -82,8 +82,8 @@ data:
   isVerificationFile: false
   path: library/Rerooting.java
   requiredBy: []
-  timestamp: '2023-03-25 01:16:43+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-03-25 01:37:24+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Rerooting_test.java
 documentation_of: library/Rerooting.java

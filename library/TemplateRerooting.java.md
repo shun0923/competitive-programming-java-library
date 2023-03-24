@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
   - icon: ':warning:'
@@ -9,12 +9,12 @@ data:
     title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateRerooting_test.java
     title: library/TemplateRerooting_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -41,8 +41,8 @@ data:
     \ final T ans[];\n\n\t// O(V)\n\tpublic TemplateRerooting(TemplateListGraph<T>\
     \ g, int start, Supplier<T> eSupplier,\n\t\t\tMergeOperator<T> merge, AddEdgeOperator<T>\
     \ addEdge, AddRootOperator<T> addRoot, CreateNodeOperator<T> createNode) {\n\t\
-    \tthis(g.numNode, g.nodes(), start, merge, addEdge, addRoot, createNode);\n\t\
-    }\n\t@SuppressWarnings(\"unchecked\")\n\tpublic TemplateRerooting(int numNode,\
+    \tthis(g.numNode, g.nodes(), start, eSupplier, merge, addEdge, addRoot, createNode);\n\
+    \t}\n\t@SuppressWarnings(\"unchecked\")\n\tpublic TemplateRerooting(int numNode,\
     \ TemplateListNode<T>[] nodes, int start, Supplier<T> eSupplier,\n\t\t\tMergeOperator<T>\
     \ merge, AddEdgeOperator<T> addEdge, AddRootOperator<T> addRoot, CreateNodeOperator<T>\
     \ createNode) {\n\t\tthis.numNode = numNode;\n\t\tthis.nodes = nodes;\n\t\tthis.start\
@@ -86,8 +86,8 @@ data:
   isVerificationFile: false
   path: library/TemplateRerooting.java
   requiredBy: []
-  timestamp: '2023-03-25 01:16:43+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-03-25 01:37:24+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/TemplateRerooting_test.java
 documentation_of: library/TemplateRerooting.java
