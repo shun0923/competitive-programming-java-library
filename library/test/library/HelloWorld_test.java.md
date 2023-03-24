@@ -24,22 +24,21 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\n\
-    \npackage library.test;\n\nimport library.Solver;\n\npublic class HelloWorld_test\
-    \ extends Solver {\n\tpublic static void main(final String[] args) { main(args,\
-    \ new HelloWorld_test()); }\n\n\tpublic void solve() {\n\t\tprtln(\"Hello World\"\
-    );\n\t}\n}"
+    \npackage library;\n\nimport library.Solver;\n\npublic class HelloWorld_test extends\
+    \ Solver {\n\tpublic static void main(final String[] args) { main(args, new HelloWorld_test());\
+    \ }\n\n\tpublic void solve() {\n\t\tprtln(\"Hello World\");\n\t}\n}"
   dependsOn:
   - library/Solver.java
   isVerificationFile: true
-  path: library/test/HelloWorld_test.java
+  path: library/test/library/HelloWorld_test.java
   requiredBy: []
-  timestamp: '2023-03-25 01:44:34+09:00'
+  timestamp: '2023-03-25 02:05:42+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: library/test/HelloWorld_test.java
+documentation_of: library/test/library/HelloWorld_test.java
 layout: document
 redirect_from:
-- /verify/library/test/HelloWorld_test.java
-- /verify/library/test/HelloWorld_test.java.html
-title: library/test/HelloWorld_test.java
+- /verify/library/test/library/HelloWorld_test.java
+- /verify/library/test/library/HelloWorld_test.java.html
+title: library/test/library/HelloWorld_test.java
 ---

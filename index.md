@@ -441,10 +441,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ZAlgorithm_test.java
       title: library/ZAlgorithm_test.java
-  - name: library/test
+  - name: library/test/library
     pages:
     - icon: ':x:'
-      path: library/test/HelloWorld_test.java
-      title: library/test/HelloWorld_test.java
+      path: library/test/library/HelloWorld_test.java
+      title: library/test/library/HelloWorld_test.java
 layout: toppage
 ---

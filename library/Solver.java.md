@@ -256,8 +256,8 @@ data:
     path: library/ZAlgorithm_test.java
     title: library/ZAlgorithm_test.java
   - icon: ':x:'
-    path: library/test/HelloWorld_test.java
-    title: library/test/HelloWorld_test.java
+    path: library/test/library/HelloWorld_test.java
+    title: library/test/library/HelloWorld_test.java
   _isVerificationFailed: true
   _pathExtension: java
   _verificationStatusIcon: ':question:'
@@ -342,7 +342,7 @@ data:
   - library/Swag_gcd_test.java
   - library/FastIO_test.java
   - library/FenwickTree_test.java
-  - library/test/HelloWorld_test.java
+  - library/test/library/HelloWorld_test.java
   - library/DynamicSegmentTree_test.java
   - library/Fps_composite_test.java
   - library/Scc_ids_test.java

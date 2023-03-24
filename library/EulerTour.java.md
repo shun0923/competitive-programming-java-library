@@ -26,14 +26,14 @@ data:
     class EulerTour {\n\tpublic static int tour[];\n\tpublic static int pos[][];\n\
     \n\tpublic static final <Edge extends AbstractEdge<Edge>> void cal(final AbstractGraph<?\
     \ extends AbstractNode<Edge>, Edge> g, final int start) { cal(g.numNode, g.nodes(),\
-    \ start); }\n\tpublic static final void cal(final int numNode, final AbstractNode<?\
-    \ extends AbstractEdge>[] nodes, int start) { // O(V)\n\t\ttour = new int[numNode\
-    \ * 2];\n\t\tpos = new int[numNode][2];\n\t\tint index = 0;\n\n\t\tDeque<Integer>\
-    \ s = new ArrayDeque<>();\n\t\tboolean visited[] = new boolean[numNode];\n\n\t\
-    \ts.addFirst(start);\n\n\t\twhile(!s.isEmpty()) {\n\t\t\tint crt = s.removeFirst();\n\
+    \ start); }\n\tpublic static final <Edge extends AbstractEdge<Edge>> void cal(final\
+    \ int numNode, final AbstractNode<Edge>[] nodes, int start) { // O(V)\n\t\ttour\
+    \ = new int[numNode * 2];\n\t\tpos = new int[numNode][2];\n\t\tint index = 0;\n\
+    \n\t\tDeque<Integer> s = new ArrayDeque<>();\n\t\tboolean visited[] = new boolean[numNode];\n\
+    \n\t\ts.addFirst(start);\n\n\t\twhile(!s.isEmpty()) {\n\t\t\tint crt = s.removeFirst();\n\
     \t\t\tif(visited[crt]) {\n\t\t\t\tpos[crt][1] = index;\n\t\t\t\ttour[index ++]\
     \ = crt;\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tvisited[crt] = true;\n\t\t\tpos[crt][0]\
-    \ = index;\n\t\t\ttour[index ++] = crt;\n\t\t\ts.addFirst(crt);\n\t\t\tfor(AbstractEdge\
+    \ = index;\n\t\t\ttour[index ++] = crt;\n\t\t\ts.addFirst(crt);\n\t\t\tfor(Edge\
     \ e : nodes[crt]) {\n\t\t\t\tif(!visited[e.target]) {\n\t\t\t\t\ts.addFirst(e.target);\n\
     \t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
   dependsOn:
@@ -41,7 +41,7 @@ data:
   isVerificationFile: false
   path: library/EulerTour.java
   requiredBy: []
-  timestamp: '2023-03-25 00:12:54+09:00'
+  timestamp: '2023-03-25 02:05:42+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/EulerTour.java
