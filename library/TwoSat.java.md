@@ -29,8 +29,8 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport library.FastIO;\nimport library.AbstractGraph;\n\
-    import library.Scc;\n\nclass TwoSat extends ArrayUnweightedGraph {\n\tprivate\
-    \ final int n;\n\tprivate final boolean ans[];\n\n\t// O(V)\n\tTwoSat(int n, boolean\
+    import library.Scc;\n\nclass TwoSat extends UnweightedListGraph {\n\tprivate final\
+    \ int n;\n\tprivate final boolean ans[];\n\n\t// O(V)\n\tTwoSat(int n, boolean\
     \ directed) { super(n * 2, directed); this.n = n; ans = new boolean[n]; }\n\t\
     TwoSat(int n) { this(n, true); }\n\n\t// O(1)\n\tpublic final void addClause(int\
     \ i, boolean f, int j, boolean g) {\n\t\tFastIO.rangeCheck(i, n);\n\t\tFastIO.rangeCheck(j,\
@@ -49,7 +49,7 @@ data:
   isVerificationFile: false
   path: library/TwoSat.java
   requiredBy: []
-  timestamp: '2023-03-25 01:16:43+09:00'
+  timestamp: '2023-03-25 01:41:47+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/TwoSat.java

@@ -111,7 +111,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/HelloWorld_test.java
     title: library/HelloWorld_test.java
   - icon: ':heavy_check_mark:'
@@ -258,9 +258,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ZAlgorithm_test.java
     title: library/ZAlgorithm_test.java
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/HelloWorld_test.java
+    title: test/HelloWorld_test.java
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -287,7 +290,7 @@ data:
   path: library/Solver.java
   requiredBy: []
   timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/TemplateDualSegmentTree_test.java
   - library/Permutation_test.java
@@ -373,6 +376,7 @@ data:
   - library/Mod998_manyCombination_test.java
   - library/DynamicSegmentTree_small_test.java
   - library/Kmp_test.java
+  - test/HelloWorld_test.java
 documentation_of: library/Solver.java
 layout: document
 redirect_from:

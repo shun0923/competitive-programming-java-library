@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -24,7 +24,7 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\n\
-    \npackage library;\n\nimport library.Solver;\n\npublic class HelloWorld_test extends\
+    \npackage test;\n\nimport library.Solver;\n\npublic class HelloWorld_test extends\
     \ Solver {\n\tpublic static void main(final String[] args) { main(args, new HelloWorld_test());\
     \ }\n\n\tpublic void solve() {\n\t\tprtln(\"Hello World\");\n\t}\n}"
   dependsOn:
@@ -32,8 +32,8 @@ data:
   isVerificationFile: true
   path: library/HelloWorld_test.java
   requiredBy: []
-  timestamp: '2022-10-04 10:50:43+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-25 01:41:47+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/HelloWorld_test.java
 layout: document

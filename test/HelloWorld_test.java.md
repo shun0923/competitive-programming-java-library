@@ -4,16 +4,13 @@ data:
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':heavy_check_mark:'
-    path: library/UnionFind.java
-    title: library/UnionFind.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    PROBLEM: https://judge.yosupo.jp/problem/unionfind
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -26,26 +23,22 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/unionfind\n\
-    \npackage library;\n\nimport library.Solver;\nimport library.UnionFind;\n\npublic\
-    \ class UnionFind_test extends Solver {\n\tpublic static void main(final String[]\
-    \ args) { main(args, new UnionFind_test()); }\n\n\tpublic void solve() {\n\t\t\
-    int n = ni();\n\t\tint q = ni();\n\t\tUnionFind uf = new UnionFind(n);\n\t\tfor(int\
-    \ i = 0; i < q; i ++) {\n\t\t\tif(ni() == 0) uf.unite(ni(), ni());\n\t\t\telse\
-    \ prtln(uf.same(ni(), ni()) ? 1 : 0);\n\t\t}\n\t}\n}"
+  code: "// verification-helper: PROBLEM https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A\n\
+    \npackage test;\n\nimport library.Solver;\n\npublic class HelloWorld_test extends\
+    \ Solver {\n\tpublic static void main(final String[] args) { main(args, new HelloWorld_test());\
+    \ }\n\n\tpublic void solve() {\n\t\tprtln(\"Hello World\");\n\t}\n}"
   dependsOn:
   - library/Solver.java
-  - library/UnionFind.java
   isVerificationFile: true
-  path: library/UnionFind_test.java
+  path: test/HelloWorld_test.java
   requiredBy: []
-  timestamp: '2023-03-25 00:03:53+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-25 01:41:47+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: library/UnionFind_test.java
+documentation_of: test/HelloWorld_test.java
 layout: document
 redirect_from:
-- /verify/library/UnionFind_test.java
-- /verify/library/UnionFind_test.java.html
-title: library/UnionFind_test.java
+- /verify/test/HelloWorld_test.java
+- /verify/test/HelloWorld_test.java.html
+title: test/HelloWorld_test.java
 ---

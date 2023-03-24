@@ -114,7 +114,7 @@ data:
     - icon: ':warning:'
       path: library/Select.java
       title: library/Select.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':warning:'
@@ -297,7 +297,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Fps_sqrt_test.java
       title: library/Fps_sqrt_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/HelloWorld_test.java
       title: library/HelloWorld_test.java
     - icon: ':heavy_check_mark:'
@@ -444,5 +444,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ZAlgorithm_test.java
       title: library/ZAlgorithm_test.java
+  - name: test
+    pages:
+    - icon: ':x:'
+      path: test/HelloWorld_test.java
+      title: test/HelloWorld_test.java
 layout: toppage
 ---
