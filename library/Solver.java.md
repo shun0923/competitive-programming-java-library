@@ -111,9 +111,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
-  - icon: ':x:'
-    path: library/HelloWorld_test.java
-    title: library/HelloWorld_test.java
   - icon: ':heavy_check_mark:'
     path: library/Kmp_test.java
     title: library/Kmp_test.java
@@ -259,8 +256,8 @@ data:
     path: library/ZAlgorithm_test.java
     title: library/ZAlgorithm_test.java
   - icon: ':x:'
-    path: test/HelloWorld_test.java
-    title: test/HelloWorld_test.java
+    path: library/test/HelloWorld_test.java
+    title: library/test/HelloWorld_test.java
   _isVerificationFailed: true
   _pathExtension: java
   _verificationStatusIcon: ':question:'
@@ -345,6 +342,7 @@ data:
   - library/Swag_gcd_test.java
   - library/FastIO_test.java
   - library/FenwickTree_test.java
+  - library/test/HelloWorld_test.java
   - library/DynamicSegmentTree_test.java
   - library/Fps_composite_test.java
   - library/Scc_ids_test.java
@@ -366,7 +364,6 @@ data:
   - library/Fps_pow_test.java
   - library/Scc_groups_test.java
   - library/TemplateSwag_gcd_test.java
-  - library/HelloWorld_test.java
   - library/Doubling_test.java
   - library/BellmanFord_reversed_test.java
   - library/Dijkstra_forDenseGraph_test.java
@@ -376,7 +373,6 @@ data:
   - library/Mod998_manyCombination_test.java
   - library/DynamicSegmentTree_small_test.java
   - library/Kmp_test.java
-  - test/HelloWorld_test.java
 documentation_of: library/Solver.java
 layout: document
 redirect_from:
