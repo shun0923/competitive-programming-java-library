@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -30,15 +30,15 @@ data:
   dependsOn:
   - library/Solver.java
   isVerificationFile: true
-  path: library/test/library/HelloWorld_test.java
+  path: library/HelloWorld_test.java
   requiredBy: []
-  timestamp: '2023-03-25 02:05:42+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-03-25 02:19:59+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: library/test/library/HelloWorld_test.java
+documentation_of: library/HelloWorld_test.java
 layout: document
 redirect_from:
-- /verify/library/test/library/HelloWorld_test.java
-- /verify/library/test/library/HelloWorld_test.java.html
-title: library/test/library/HelloWorld_test.java
+- /verify/library/HelloWorld_test.java
+- /verify/library/HelloWorld_test.java.html
+title: library/HelloWorld_test.java
 ---
