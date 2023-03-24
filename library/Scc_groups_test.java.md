@@ -44,7 +44,7 @@ data:
   isVerificationFile: true
   path: library/Scc_groups_test.java
   requiredBy: []
-  timestamp: '2023-03-24 01:50:05+09:00'
+  timestamp: '2023-03-25 00:12:54+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/Scc_groups_test.java

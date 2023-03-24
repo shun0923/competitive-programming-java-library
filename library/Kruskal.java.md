@@ -49,7 +49,7 @@ data:
   isVerificationFile: false
   path: library/Kruskal.java
   requiredBy: []
-  timestamp: '2023-03-25 00:03:53+09:00'
+  timestamp: '2023-03-25 00:12:54+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Kruskal_test.java

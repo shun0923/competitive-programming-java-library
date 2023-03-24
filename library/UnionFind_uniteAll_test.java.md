@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: library/UnionFind_uniteAll_test.java
   requiredBy: []
-  timestamp: '2023-03-25 00:03:53+09:00'
+  timestamp: '2023-03-25 00:12:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/UnionFind_uniteAll_test.java

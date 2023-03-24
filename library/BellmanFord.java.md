@@ -32,24 +32,23 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\nimport library.AbstractGraph;\n\
-    \n\nfinal class BellmanFord {\n\t// O(VE)\n\tpublic static final <Graph extends\
-    \ AbstractGraph<? extends WeightedNode, WeightedEdge>> long[] dist(final Graph\
-    \ g, final int start) { return dist(g, start, null, null); }\n\tpublic static\
-    \ final <Graph extends AbstractGraph<? extends WeightedNode, WeightedEdge>> long[]\
-    \ dist(final Graph g, final int start, final int[] prv) { return dist(g, start,\
-    \ prv, null); }\n\tpublic static final <Graph extends AbstractGraph<? extends\
-    \ WeightedNode, WeightedEdge>> long[] dist(final Graph g, final int start, final\
-    \ int[] prv, final WeightedEdge[] prvEdge) { return dist(g.numNode, g.edges(),\
-    \ start, prv, prvEdge); }\n\tpublic static final long[] dist(final int numNode,\
-    \ final WeightedNode edges, final int start) { return dist(numNode, edges, start,\
-    \ null, null); }\n\tpublic static final long[] dist(final int numNode, final WeightedNode\
-    \ edges, final int start, final int[] prv) { return dist(numNode, edges, start,\
-    \ prv, null); }\n\tpublic static final long[] dist(final int numNode, final WeightedNode\
-    \ edges, final int start, final int[] prv, final WeightedEdge[] prvEdge) {\n\t\
-    \tFastIO.rangeCheck(start, numNode);\n\t\tlong dist[] = new long[numNode];\n\t\
-    \tif(prv != null) Arrays.fill(prv, -1);\n\n\t\tArrays.fill(dist, FastIO.INF);\n\
-    \t\tdist[start] = 0;\n\t\tfor(int i = 0; i < numNode - 1; i ++) {\n\t\t\tfor(WeightedEdge\
-    \ e : edges) {\n\t\t\t\tlong updated = dist[e.source] + e.cost;\n\t\t\t\tif(!FastIO.isPlusINF(dist[e.source])\
+    \n\nfinal class BellmanFord {\n\t// O(VE)\n\tpublic static final long[] dist(final\
+    \ AbstractGraph<? extends WeightedNode, WeightedEdge> g, final int start) { return\
+    \ dist(g, start, null, null); }\n\tpublic static final long[] dist(final AbstractGraph<?\
+    \ extends WeightedNode, WeightedEdge> g, final int start, final int[] prv) { return\
+    \ dist(g, start, prv, null); }\n\tpublic static final long[] dist(final AbstractGraph<?\
+    \ extends WeightedNode, WeightedEdge> g, final int start, final int[] prv, final\
+    \ WeightedEdge[] prvEdge) { return dist(g.numNode, g.edges(), start, prv, prvEdge);\
+    \ }\n\tpublic static final long[] dist(final int numNode, final WeightedNode edges,\
+    \ final int start) { return dist(numNode, edges, start, null, null); }\n\tpublic\
+    \ static final long[] dist(final int numNode, final WeightedNode edges, final\
+    \ int start, final int[] prv) { return dist(numNode, edges, start, prv, null);\
+    \ }\n\tpublic static final long[] dist(final int numNode, final WeightedNode edges,\
+    \ final int start, final int[] prv, final WeightedEdge[] prvEdge) {\n\t\tFastIO.rangeCheck(start,\
+    \ numNode);\n\t\tlong dist[] = new long[numNode];\n\t\tif(prv != null) Arrays.fill(prv,\
+    \ -1);\n\n\t\tArrays.fill(dist, FastIO.INF);\n\t\tdist[start] = 0;\n\t\tfor(int\
+    \ i = 0; i < numNode - 1; i ++) {\n\t\t\tfor(WeightedEdge e : edges) {\n\t\t\t\
+    \tlong updated = dist[e.source] + e.cost;\n\t\t\t\tif(!FastIO.isPlusINF(dist[e.source])\
     \ && dist[e.target] > updated) {\n\t\t\t\t\tdist[e.target] = updated;\n\t\t\t\t\
     \tif(prv != null) prv[e.target] = e.source;\n\t\t\t\t\tif(prvEdge != null) prvEdge[e.target]\
     \ = e;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tfor(int i = 0; i < numNode; i ++) {\n\t\
@@ -62,7 +61,7 @@ data:
   isVerificationFile: false
   path: library/BellmanFord.java
   requiredBy: []
-  timestamp: '2023-03-24 01:50:05+09:00'
+  timestamp: '2023-03-25 00:12:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/BellmanFord_test.java

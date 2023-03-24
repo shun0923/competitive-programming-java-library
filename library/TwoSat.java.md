@@ -49,7 +49,7 @@ data:
   isVerificationFile: false
   path: library/TwoSat.java
   requiredBy: []
-  timestamp: '2023-03-24 01:50:05+09:00'
+  timestamp: '2023-03-25 00:12:54+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/TwoSat.java

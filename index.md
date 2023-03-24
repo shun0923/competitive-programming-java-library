@@ -12,7 +12,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/BellmanFord.java
       title: library/BellmanFord.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Bfs.java
       title: library/Bfs.java
     - icon: ':warning:'
@@ -210,7 +210,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/BellmanFord_test.java
       title: library/BellmanFord_test.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/Bfs_test.java
       title: library/Bfs_test.java
     - icon: ':heavy_check_mark:'

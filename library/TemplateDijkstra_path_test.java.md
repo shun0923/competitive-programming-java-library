@@ -53,7 +53,7 @@ data:
   isVerificationFile: true
   path: library/TemplateDijkstra_path_test.java
   requiredBy: []
-  timestamp: '2023-03-25 00:03:53+09:00'
+  timestamp: '2023-03-25 00:12:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/TemplateDijkstra_path_test.java

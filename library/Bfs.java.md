@@ -9,12 +9,12 @@ data:
     title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Bfs_test.java
     title: library/Bfs_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -29,39 +29,37 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\nimport library.AbstractGraph;\n\
-    \nfinal class Bfs {\n\t// O(V)\n\tpublic static final <Graph extends AbstractGraph<?\
-    \ extends AbstractNode<Edge>, Edge>, Edge extends AbstractEdge<Edge>> int[] dist(final\
-    \ Graph g, final int start) { return dist(g, start, null, null); }\n\tpublic static\
-    \ final <Graph extends AbstractGraph<? extends AbstractNode<Edge>, Edge>, Edge\
-    \ extends AbstractEdge<Edge>> int[] dist(final Graph g, final int start, final\
-    \ int[] prv) { return dist(g, start, prv, null); }\n\tpublic static final <Graph\
-    \ extends AbstractGraph<? extends AbstractNode<Edge>, Edge>, Edge extends AbstractEdge<Edge>>\
-    \ int[] dist(final Graph g, final int start, final int[] prv, final Edge[] prvEdge)\
-    \ { return dist(g.nodes(), start, prv, prvEdge); }\n\tpublic static final <Node\
-    \ extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>int[] dist(final\
-    \ Node[] nodes, final int start) { return dist(nodes, start, null, null); }\n\t\
-    public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>int[]\
-    \ dist(final Node[] nodes, final int start, final int[] prv) { return dist(nodes,\
-    \ start, prv, null); }\n\tpublic static final <Node extends AbstractNode<Edge>,\
-    \ Edge extends AbstractEdge<Edge>> int[] dist(final Node[] nodes, final int start,\
-    \ final int[] prv, final Edge[] prvEdge) {\n\t\tint numNode = nodes.length;\n\t\
-    \tint dist[] = new int[numNode];\n\t\tArrays.fill(dist, -1);\n\t\tboolean visited[]\
-    \ = new boolean[numNode];\n\t\tint dq[] = new int[numNode];\n\t\tint ptr = 0;\n\
-    \t\tint size = 0;\n\t\tif(prv != null) Arrays.fill(prv, -1);\n\n\t\tdq[size ++]\
-    \ = start;\n\t\tdist[start] = 0;\n\t\tvisited[start] = true;\n\t\twhile(ptr !=\
-    \ size) {\n\t\t\tint crt = dq[ptr ++];\n\t\t\tfor(Edge e : nodes[crt]) {\n\t\t\
-    \t\tif(!visited[e.target]) {\n\t\t\t\t\tdist[e.target] = dist[e.source] + 1;\n\
-    \t\t\t\t\tvisited[e.target] = true;\n\t\t\t\t\tdq[size ++] = e.target;\n\t\t\t\
-    \t\tif(prv != null) prv[e.target] = e.source;\n\t\t\t\t\tif(prvEdge != null) prvEdge[e.target]\
-    \ = e;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n}"
+    \nfinal class Bfs {\n\t// O(V)\n\tpublic static final <Edge extends AbstractEdge<Edge>>\
+    \ int[] dist(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g, final\
+    \ int start) { return dist(g, start, null, null); }\n\tpublic static final <Edge\
+    \ extends AbstractEdge<Edge>> int[] dist(final AbstractGraph<? extends AbstractNode<Edge>,\
+    \ Edge> g, final int start, final int[] prv) { return dist(g, start, prv, null);\
+    \ }\n\tpublic static final <Edge extends AbstractEdge<Edge>> int[] dist(final\
+    \ AbstractGraph<? extends AbstractNode<Edge>, Edge> g, final int start, final\
+    \ int[] prv, final Edge[] prvEdge) { return dist(g.nodes(), start, prv, prvEdge);\
+    \ }\n\tpublic static final <Edge extends AbstractEdge<Edge>>int[] dist(final AbstractNode<Edge>[]\
+    \ nodes, final int start) { return dist(nodes, start, null, null); }\n\tpublic\
+    \ static final <Edge extends AbstractEdge<Edge>>int[] dist(final AbstractNode<Edge>[]\
+    \ nodes, final int start, final int[] prv) { return dist(nodes, start, prv, null);\
+    \ }\n\tpublic static final <Edge extends AbstractEdge<Edge>> int[] dist(final\
+    \ Node[] nodes, final int start, final int[] prv, final Edge[] prvEdge) {\n\t\t\
+    int numNode = nodes.length;\n\t\tint dist[] = new int[numNode];\n\t\tArrays.fill(dist,\
+    \ -1);\n\t\tboolean visited[] = new boolean[numNode];\n\t\tint dq[] = new int[numNode];\n\
+    \t\tint ptr = 0;\n\t\tint size = 0;\n\t\tif(prv != null) Arrays.fill(prv, -1);\n\
+    \n\t\tdq[size ++] = start;\n\t\tdist[start] = 0;\n\t\tvisited[start] = true;\n\
+    \t\twhile(ptr != size) {\n\t\t\tint crt = dq[ptr ++];\n\t\t\tfor(Edge e : nodes[crt])\
+    \ {\n\t\t\t\tif(!visited[e.target]) {\n\t\t\t\t\tdist[e.target] = dist[e.source]\
+    \ + 1;\n\t\t\t\t\tvisited[e.target] = true;\n\t\t\t\t\tdq[size ++] = e.target;\n\
+    \t\t\t\t\tif(prv != null) prv[e.target] = e.source;\n\t\t\t\t\tif(prvEdge != null)\
+    \ prvEdge[e.target] = e;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn dist;\n\t}\n}"
   dependsOn:
   - library/FastIO.java
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/Bfs.java
   requiredBy: []
-  timestamp: '2023-03-24 01:50:11+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-03-25 00:12:54+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Bfs_test.java
 documentation_of: library/Bfs.java

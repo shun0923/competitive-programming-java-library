@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Bfs.java
     title: library/Bfs.java
   - icon: ':heavy_check_mark:'
@@ -69,7 +69,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/Bfs_test.java
     title: library/Bfs_test.java
   - icon: ':heavy_check_mark:'
@@ -169,7 +169,8 @@ data:
     \tfor(int i = 0; i < numNode; i ++) reversedNodes[i] = createNode(i);\n\t\t\t\
     for(Edge e : edges) reversedNodes[e.target].add(e.reverse());\n\t\t}\n\t\treturn\
     \ reversedNodes;\n\t}\n\n\tpublic final void addAll(final Collection<? extends\
-    \ Edge> edges) { for(Edge e : edges) add(e); }\n\tpublic final void add(final\
+    \ Edge> edges) { for(Edge e : edges) add(e); }\n\tpublic final void addAll(final\
+    \ Edge[] edges) { for(Edge e : edges) add(e); }\n\tpublic final void add(final\
     \ Edge e) {\n\t\tedges.add(e);\n\t\tnodes[e.source].add(e);\n\t\tif(reversedEdges\
     \ != null) reversedEdges.add(e.reverse());\n\t\tif(reversedNodes != null) reversedNodes[e.target].add(e.reverse());\n\
     \t\tif(!directed) nodes[e.target].add(e.reverse());\n\t}\n\n\tpublic final void\
@@ -347,7 +348,7 @@ data:
   - library/UnionFind.java
   - library/Rerooting.java
   - library/TemplateRerooting.java
-  timestamp: '2023-03-24 01:50:05+09:00'
+  timestamp: '2023-03-25 00:12:54+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/Bfs_test.java
