@@ -29,7 +29,7 @@ final class TemplateRerooting<T> {
 	// O(V)
 	public TemplateRerooting(TemplateListGraph<T> g, int start, Supplier<T> eSupplier,
 			MergeOperator<T> merge, AddEdgeOperator<T> addEdge, AddRootOperator<T> addRoot, CreateNodeOperator<T> createNode) {
-		this(g.numNode, g.nodes(), start, merge, addEdge, addRoot, createNode);
+		this(g.numNode, g.nodes(), start, eSupplier, merge, addEdge, addRoot, createNode);
 	}
 	@SuppressWarnings("unchecked")
 	public TemplateRerooting(int numNode, TemplateListNode<T>[] nodes, int start, Supplier<T> eSupplier,

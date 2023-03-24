@@ -30,7 +30,7 @@ final class Rerooting {
 	// O(V)
 	public Rerooting(final WeightedListGraph g, final int start, final long id,
 			final MergeOperator merge, final AddEdgeOperator addEdge, final AddRootOperator addRoot, final CreateNodeOperator createNode) {
-		this(g.numNode, g.nodes(), start, merge, addEdge, addRoot, createNode);
+		this(g.numNode, g.nodes(), start, id, merge, addEdge, addRoot, createNode);
 	}
 	public Rerooting(final int numNode, final WeightedListNode[] nodes, final int start, final long id,
 			final MergeOperator merge, final AddEdgeOperator addEdge, final AddRootOperator addRoot, final CreateNodeOperator createNode) {
