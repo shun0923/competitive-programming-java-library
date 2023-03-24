@@ -11,13 +11,13 @@ public class Bfs_test extends Solver {
 
 	public void solve() {
 		int n = ni();
-		var g = new UnweightedListGraph(n, true);
+		var g = new WeightedListGraph(n, true);
 		for(int i = 0; i < n; i ++) {
 			int source = ni() - 1;
 			int k = ni();
-			for(int j = 0; j < k; j ++) g.add(source, ni() - 1);
+			for(int j = 0; j < k; j ++) g.add(source, ni() - 1, 1);
 		}
-		int dist[] = Bfs.dist(g, 0);
+		long dist[] = Bfs.dist(g, 0);
 		for(int i = 0; i < n; i ++) prtln(i + 1, dist[i]);
 	}
 }
