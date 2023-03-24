@@ -8,7 +8,7 @@ class EulerTour {
 	public static int pos[][];
 
 	public static final <Edge extends AbstractEdge<Edge>> void cal(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g, final int start) { cal(g.numNode, g.nodes(), start); }
-	public static final void cal(final int numNode, final AbstractNode<? extends AbstractEdge>[] nodes, int start) { // O(V)
+	public static final <Edge extends AbstractEdge<Edge>> void cal(final int numNode, final AbstractNode<Edge>[] nodes, int start) { // O(V)
 		tour = new int[numNode * 2];
 		pos = new int[numNode][2];
 		int index = 0;
@@ -29,7 +29,7 @@ class EulerTour {
 			pos[crt][0] = index;
 			tour[index ++] = crt;
 			s.addFirst(crt);
-			for(AbstractEdge e : nodes[crt]) {
+			for(Edge e : nodes[crt]) {
 				if(!visited[e.target]) {
 					s.addFirst(e.target);
 				}
