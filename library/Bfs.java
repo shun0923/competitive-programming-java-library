@@ -6,12 +6,12 @@ import library.AbstractGraph;
 
 final class Bfs {
 	// O(V)
-	public static final <Graph extends AbstractGraph<? extends AbstractNode<Edge>, Edge>, Edge extends AbstractEdge<Edge>> int[] dist(final Graph g, final int start) { return dist(g, start, null, null); }
-	public static final <Graph extends AbstractGraph<? extends AbstractNode<Edge>, Edge>, Edge extends AbstractEdge<Edge>> int[] dist(final Graph g, final int start, final int[] prv) { return dist(g, start, prv, null); }
-	public static final <Graph extends AbstractGraph<? extends AbstractNode<Edge>, Edge>, Edge extends AbstractEdge<Edge>> int[] dist(final Graph g, final int start, final int[] prv, final Edge[] prvEdge) { return dist(g.nodes(), start, prv, prvEdge); }
-	public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>int[] dist(final Node[] nodes, final int start) { return dist(nodes, start, null, null); }
-	public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>>int[] dist(final Node[] nodes, final int start, final int[] prv) { return dist(nodes, start, prv, null); }
-	public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> int[] dist(final Node[] nodes, final int start, final int[] prv, final Edge[] prvEdge) {
+	public static final <Edge extends AbstractEdge<Edge>> int[] dist(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g, final int start) { return dist(g, start, null, null); }
+	public static final <Edge extends AbstractEdge<Edge>> int[] dist(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g, final int start, final int[] prv) { return dist(g, start, prv, null); }
+	public static final <Edge extends AbstractEdge<Edge>> int[] dist(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g, final int start, final int[] prv, final Edge[] prvEdge) { return dist(g.nodes(), start, prv, prvEdge); }
+	public static final <Edge extends AbstractEdge<Edge>>int[] dist(final AbstractNode<Edge>[] nodes, final int start) { return dist(nodes, start, null, null); }
+	public static final <Edge extends AbstractEdge<Edge>>int[] dist(final AbstractNode<Edge>[] nodes, final int start, final int[] prv) { return dist(nodes, start, prv, null); }
+	public static final <Edge extends AbstractEdge<Edge>> int[] dist(final Node[] nodes, final int start, final int[] prv, final Edge[] prvEdge) {
 		int numNode = nodes.length;
 		int dist[] = new int[numNode];
 		Arrays.fill(dist, -1);

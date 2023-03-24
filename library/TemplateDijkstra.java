@@ -44,9 +44,9 @@ final class TemplateDijkstra<T> {
 	}
 
 	// O((E+V)logV)
-	public final <Graph extends AbstractGraph<? extends TemplateNode<T>, TemplateEdge<T>>> ArrayList<T> dist(final Graph g, final int start) { return dist(g, start, null, null); }
-	public final <Graph extends AbstractGraph<? extends TemplateNode<T>, TemplateEdge<T>>> ArrayList<T> dist(final Graph g, final int start, final int[] prv) { return dist(g, start, prv, null); }
-	public final <Graph extends AbstractGraph<? extends TemplateNode<T>, TemplateEdge<T>>> ArrayList<T> dist(final Graph g, final int start, final int[] prv, final TemplateEdge<T>[] prvEdge) { return dist(g.numNode, g.nodes(), start, prv, prvEdge); }
+	public final ArrayList<T> dist(final AbstractGraph<? extends TemplateNode<T>, TemplateEdge<T>> g, final int start) { return dist(g, start, null, null); }
+	public final ArrayList<T> dist(final AbstractGraph<? extends TemplateNode<T>, TemplateEdge<T>> g, final int start, final int[] prv) { return dist(g, start, prv, null); }
+	public final ArrayList<T> dist(final AbstractGraph<? extends TemplateNode<T>, TemplateEdge<T>> g, final int start, final int[] prv, final TemplateEdge<T>[] prvEdge) { return dist(g.numNode, g.nodes(), start, prv, prvEdge); }
 	public final ArrayList<T> dist(final int numNode, final TemplateNode<T>[] nodes, final int start) { return dist(numNode, nodes, start, null, null); }
 	public final ArrayList<T> dist(final int numNode, final TemplateNode<T>[] nodes, final int start, final int[] prv) { return dist(numNode, nodes, start, prv, null); }
 	public final ArrayList<T> dist(final int numNode, final TemplateNode<T>[] nodes, final int start, final int[] prv, final TemplateEdge<T>[] prvEdge) {

@@ -43,6 +43,7 @@ abstract class AbstractGraph<Node extends AbstractNode<Edge>, Edge extends Abstr
 	}
 
 	public final void addAll(final Collection<? extends Edge> edges) { for(Edge e : edges) add(e); }
+	public final void addAll(final Edge[] edges) { for(Edge e : edges) add(e); }
 	public final void add(final Edge e) {
 		edges.add(e);
 		nodes[e.source].add(e);

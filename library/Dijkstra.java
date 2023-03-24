@@ -30,9 +30,9 @@ final class Dijkstra {
 	}
 
 	// O((E+V)logV)
-	public static final <Graph extends AbstractGraph<? extends WeightedNode, WeightedEdge>> long[] dist(final Graph g, final int start) { return dist(g, start, null, null); }
-	public static final <Graph extends AbstractGraph<? extends WeightedNode, WeightedEdge>> long[] dist(final Graph g, final int start, final int[] prv) { return dist(g, start, prv, null); }
-	public static final <Graph extends AbstractGraph<? extends WeightedNode, WeightedEdge>> long[] dist(final Graph g, final int start, final int[] prv, final WeightedEdge[] prvEdge) { return dist(g.numNode, g.nodes(), start, prv, prvEdge); }
+	public static final long[] dist(final AbstractGraph<? extends WeightedNode, WeightedEdge> g, final int start) { return dist(g, start, null, null); }
+	public static final long[] dist(final AbstractGraph<? extends WeightedNode, WeightedEdge> g, final int start, final int[] prv) { return dist(g, start, prv, null); }
+	public static final long[] dist(final AbstractGraph<? extends WeightedNode, WeightedEdge> g, final int start, final int[] prv, final WeightedEdge[] prvEdge) { return dist(g.numNode, g.nodes(), start, prv, prvEdge); }
 	public static final long[] dist(final int numNode, final WeightedNode[] nodes, final int start) { return dist(numNode, nodes, start, null, null); }
 	public static final long[] dist(final int numNode, final WeightedNode[] nodes, final int start, final int[] prv) { return dist(numNode, nodes, start, prv, null); }
 	public static final long[] dist(final int numNode, final WeightedNode[] nodes, final int start, final int[] prv, final WeightedEdge[] prvEdge) {
@@ -61,9 +61,9 @@ final class Dijkstra {
 	}
 
 	// O(V^2)
-	public static final <Graph extends AbstractGraph<? extends WeightedNode, WeightedEdge>> long[] distForDenseGraph(final Graph g, final int start) { return distForDenseGraph(g, start, null, null); }
-	public static final <Graph extends AbstractGraph<? extends WeightedNode, WeightedEdge>> long[] distForDenseGraph(final Graph g, final int start, final int[] prv) { return distForDenseGraph(g, start, prv, null); }
-	public static final <Graph extends AbstractGraph<? extends WeightedNode, WeightedEdge>> long[] distForDenseGraph(final Graph g, final int start, final int[] prv, final WeightedEdge[] prvEdge) { return distForDenseGraph(g.numNode, g.nodes(), start, prv, prvEdge); }
+	public static final long[] distForDenseGraph(final AbstractGraph<? extends WeightedNode, WeightedEdge> g, final int start) { return distForDenseGraph(g, start, null, null); }
+	public static final long[] distForDenseGraph(final AbstractGraph<? extends WeightedNode, WeightedEdge> g, final int start, int[] prv) { return distForDenseGraph(g, start, prv, null); }
+	public static final long[] distForDenseGraph(final AbstractGraph<? extends WeightedNode, WeightedEdge> g, final int start, int[] prv, WeightedEdge[] prvEdge) { return distForDenseGraph(g.numNode, g.nodes(), start, prv, prvEdge); }
 	public static final long[] distForDenseGraph(final int numNode, final WeightedNode[] nodes, final int start) { return distForDenseGraph(numNode, nodes, start, null, null); }
 	public static final long[] distForDenseGraph(final int numNode, final WeightedNode[] nodes, final int start, final int[] prv) { return distForDenseGraph(numNode, nodes, start, prv, null); }
 	public static final long[] distForDenseGraph(final int numNode, final WeightedNode[] nodes, final int start, final int[] prv, final WeightedEdge[] prvEdge) {

@@ -6,8 +6,8 @@ import library.AbstractGraph;
 
 final class TopologicalSort {
 	// O(E+V)
-	public static final <Graph extends AbstractGraph<? extends AbstractNode<Edge>, Edge>, Edge extends AbstractEdge<Edge>> int[] sort(Graph g) { return sort(g.nodes(), g.edges()); }
-	public static final <Node extends AbstractNode<Edge>, Edge extends AbstractEdge<Edge>> int[] sort(Node[] nodes, Node edges) {
+	public static final <Edge extends AbstractEdge<Edge>> int[] sort(AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return sort(g.nodes(), g.edges()); }
+	public static final <Edge extends AbstractEdge<Edge>> int[] sort(AbstractNode<Edge>[] nodes, AbstractNode<Edge> edges) {
 		int numNode = nodes.length;
 		int dq[] = new int[numNode];
 		int ptr = 0;
