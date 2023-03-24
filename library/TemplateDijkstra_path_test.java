@@ -8,8 +8,8 @@ import library.AbstractGraph;
 import library.PathRestoration;
 import library.TemplateDijkstra;
 
-public class TemplateDijkstra_pathEdge_test extends Solver {
-	public static void main(final String[] args) { main(args, new TemplateDijkstra_pathEdge_test()); }
+public class TemplateDijkstra_path_test extends Solver {
+	public static void main(final String[] args) { main(args, new TemplateDijkstra_path_test()); }
 
 	public void solve() {
 		int n = ni();

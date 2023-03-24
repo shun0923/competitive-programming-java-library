@@ -12,7 +12,7 @@ public class UnionFind_uniteAll_test extends Solver {
 	public void solve() {
 		int n = ni();
 		int m = ni();
-		ArrayUnweightedNode edges = new ArrayUnweightedNode(-1);
+		var edges = new UnweightedListNode(-1);
 		for(int i = 0; i < m; i ++) edges.add(ni(), ni());
 		UnionFind uf = new UnionFind(n);
 		uf.uniteAll(edges);

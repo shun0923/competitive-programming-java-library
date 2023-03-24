@@ -17,7 +17,7 @@ class UnionFind { // N=numNode
 		Arrays.fill(nodes, -1);
 	}
 
-	public final void uniteAll(final AbstractNode<? extends AbstractEdge> edges) { for(AbstractEdge e : edges) unite(e); } // O(a(N)M)
+	public final void uniteAll(final Collection<? extends AbstractEdge> edges) { for(AbstractEdge e : edges) unite(e); } // O(a(N)M)
 	public final void uniteAll(final AbstractEdge[] edges) { for(AbstractEdge e : edges) unite(e); } // O(a(N)M)
 	public final boolean unite(final AbstractEdge e) { return unite(e.source, e.target); }
 	public final boolean unite(final int x, final int y) { // O(a(N))
