@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Bfs.java
     title: library/Bfs.java
   - icon: ':heavy_check_mark:'
@@ -53,6 +53,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd.java
     title: library/WarshallFloyd.java
+  - icon: ':warning:'
+    path: library/WeightedBfs.java
+    title: library/WeightedBfs.java
   - icon: ':x:'
     path: library/WeightedDoubling.java
     title: library/WeightedDoubling.java
@@ -69,7 +72,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Bfs_test.java
     title: library/Bfs_test.java
   - icon: ':heavy_check_mark:'
@@ -129,6 +132,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WarshallFloyd_test.java
     title: library/WarshallFloyd_test.java
+  - icon: ':x:'
+    path: library/WeightedBfs_test.java
+    title: library/WeightedBfs_test.java
   - icon: ':x:'
     path: library/WeightedDoubling_test.java
     title: library/WeightedDoubling_test.java
@@ -334,6 +340,7 @@ data:
   - library/BellmanFord.java
   - library/TopologicalSort.java
   - library/WeightedDoubling.java
+  - library/WeightedBfs.java
   - library/Dijkstra.java
   - library/PathRestoration.java
   - library/WeightedLca.java
@@ -374,6 +381,7 @@ data:
   - library/Scc_groups_test.java
   - library/BellmanFord_reversed_test.java
   - library/Dijkstra_forDenseGraph_test.java
+  - library/WeightedBfs_test.java
   - library/TemplateDijkstra_path_test.java
 documentation_of: library/AbstractGraph.java
 layout: document

@@ -12,7 +12,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/BellmanFord.java
       title: library/BellmanFord.java
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/Bfs.java
       title: library/Bfs.java
     - icon: ':warning:'
@@ -174,6 +174,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix.java
       title: library/WaveletMatrix.java
+    - icon: ':warning:'
+      path: library/WeightedBfs.java
+      title: library/WeightedBfs.java
     - icon: ':x:'
       path: library/WeightedDoubling.java
       title: library/WeightedDoubling.java
@@ -210,7 +213,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/BellmanFord_test.java
       title: library/BellmanFord_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Bfs_test.java
       title: library/Bfs_test.java
     - icon: ':heavy_check_mark:'
@@ -426,6 +429,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/WaveletMatrix_smallest_test.java
       title: library/WaveletMatrix_smallest_test.java
+    - icon: ':x:'
+      path: library/WeightedBfs_test.java
+      title: library/WeightedBfs_test.java
     - icon: ':x:'
       path: library/WeightedDoubling_test.java
       title: library/WeightedDoubling_test.java

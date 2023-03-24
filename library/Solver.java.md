@@ -27,7 +27,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord_test.java
     title: library/BellmanFord_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Bfs_test.java
     title: library/Bfs_test.java
   - icon: ':heavy_check_mark:'
@@ -244,6 +244,9 @@ data:
     path: library/WaveletMatrix_smallest_test.java
     title: library/WaveletMatrix_smallest_test.java
   - icon: ':x:'
+    path: library/WeightedBfs_test.java
+    title: library/WeightedBfs_test.java
+  - icon: ':x:'
     path: library/WeightedDoubling_test.java
     title: library/WeightedDoubling_test.java
   - icon: ':x:'
@@ -364,6 +367,7 @@ data:
   - library/Doubling_test.java
   - library/BellmanFord_reversed_test.java
   - library/Dijkstra_forDenseGraph_test.java
+  - library/WeightedBfs_test.java
   - library/TemplateDijkstra_path_test.java
   - library/TemplateSwag_test.java
   - library/Mod998_manyCombination_test.java

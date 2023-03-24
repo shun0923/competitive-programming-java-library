@@ -14,7 +14,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/Bfs.java
     title: library/Bfs.java
   - icon: ':warning:'
@@ -152,6 +152,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix.java
     title: library/WaveletMatrix.java
+  - icon: ':warning:'
+    path: library/WeightedBfs.java
+    title: library/WeightedBfs.java
   - icon: ':x:'
     path: library/WeightedDoubling.java
     title: library/WeightedDoubling.java
@@ -427,6 +430,7 @@ data:
   - library/FenwickTree.java
   - library/TopologicalSort.java
   - library/WeightedDoubling.java
+  - library/WeightedBfs.java
   - library/AbstractGraph.java
   - library/ZAlgorithm.java
   - library/TemplateDualSegmentTree.java
