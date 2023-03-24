@@ -4,7 +4,7 @@ package library;
 
 import library.Solver;
 import library.AbstractGraph;
-import library.Bfs;
+import library.WeightedBfs;
 
 public class WeightedBfs_test extends Solver {
 	public static void main(final String[] args) { main(args, new WeightedBfs_test()); }
@@ -17,7 +17,7 @@ public class WeightedBfs_test extends Solver {
 			int k = ni();
 			for(int j = 0; j < k; j ++) g.add(source, ni() - 1, 1);
 		}
-		long dist[] = Bfs.dist(g, 0);
+		long dist[] = WeightedBfs.dist(g, 0);
 		for(int i = 0; i < n; i ++) prtln(i + 1, dist[i]);
 	}
 }

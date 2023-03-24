@@ -25,7 +25,7 @@ final class WeightedDoubling {
 		Arrays.fill(next[0], -1);
 	}
 	// O(NlogM)
-	public WeightedDoubling(final int n, final long max, final long id, final LongBinaryOperator f, final WeightedNode edges) {
+	public WeightedDoubling(final int n, final long max, final long id, final LongBinaryOperator f, final Collection<WeightedEdge> edges) {
 		this(n, max, id, f);
 		for(WeightedEdge e : edges) {
 			next[0][e.source] = e.target;

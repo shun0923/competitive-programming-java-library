@@ -19,7 +19,7 @@ class WeightedUnionFind { // N=numNode
 		Arrays.fill(nodes, -1);
 	}
 
-	public final void uniteAll(final WeightedNode edges) { for(WeightedEdge e : edges) unite(e); } // O(a(N)M)
+	public final void uniteAll(final Collection<WeightedEdge> edges) { for(WeightedEdge e : edges) unite(e); } // O(a(N)M)
 	public final void uniteAll(final WeightedEdge[] edges) { for(WeightedEdge e : edges) unite(e); } // O(a(N)M)
 	public final boolean unite(final WeightedEdge e) { return unite(e.source, e.target, e.cost); }
 	public final boolean unite(final int x, final int y, long w) { // O(a(N))

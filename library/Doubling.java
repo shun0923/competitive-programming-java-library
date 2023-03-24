@@ -23,9 +23,9 @@ final class Doubling {
 		System.arraycopy(edges, 0, next[0], 0, n);
 		init();
 	}
-	public Doubling(final int n, final long max, final AbstractNode<? extends AbstractEdge> edges) {
+	public <Edge extends AbstractEdge<Edge>> Doubling(final int n, final long max, final AbstractNode<Edge> edges) {
 		this(n, max);
-		for(AbstractEdge e : edges) next[0][e.source] = e.target;
+		for(Edge e : edges) next[0][e.source] = e.target;
 		init();
 	}
 	private final void init() {

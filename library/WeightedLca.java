@@ -13,6 +13,9 @@ final class WeightedLca {
 	public final int depth[];
 
 	// O(VlogV)
+	public WeightedLca(final AbstractGraph<? extends WeightedNode, WeightedEdge> g, final int root, final long id, final LongBinaryOperator f) {
+		this(g.numNode, g.nodes(), root, id, f);
+	}
 	public WeightedLca(final int numNode, final WeightedNode[] nodes, final int root, final long id, final LongBinaryOperator f) {
 		FastIO.nonNegativeCheck(numNode);
 		FastIO.rangeCheck(root, numNode);
@@ -22,12 +25,9 @@ final class WeightedLca {
 		depth = new int[numNode];
 		db = new WeightedDoubling(numNode, numNode, id, f, bfs(root, nodes));
 	}
-	public WeightedLca(final WeightedGraph g, final int root, final long id, final LongBinaryOperator f) {
-		this(g.numNode, g.nodes(), root, id, f);
-	}
 
 	private final WeightedNode bfs(final int start, final WeightedNode[] nodes) { // O(V)
-		ArrayWeightedNode edges = new ArrayWeightedNode(-1);
+		WeightedListNode edges = new WeightedListNode(-1);
 		int stack[] = new int[numNode];
 		int ptr = 0;
 		int size = 0;

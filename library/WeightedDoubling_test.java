@@ -11,7 +11,7 @@ public class WeightedDoubling_test extends Solver {
 
 	public void solve() {
 		int n = ni();
-		ArrayWeightedNode edges = new ArrayWeightedNode(-1);
+		var edges = new WeightedListNode(-1);
 		for(int i = 0; i < n; i ++) {
 			int target = i + ni();
 			edges.add(i, target % n, target / n);

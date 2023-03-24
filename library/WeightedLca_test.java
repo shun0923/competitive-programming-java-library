@@ -11,7 +11,7 @@ public class WeightedLca_test extends Solver {
 
 	public void solve() {
 		int n = ni();
-		ArrayWeightedGraph g = new ArrayWeightedGraph(n, false);
+		var g = new WeightedListGraph(n, false);
 		for(int i = 0; i < n - 1; i ++) g.add(ni(), ni(), nl());
 		WeightedLca lca = new WeightedLca(g, 0, 0, (cost1, cost2) -> cost1 + cost2);
 		int q = ni();
