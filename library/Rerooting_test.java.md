@@ -33,11 +33,11 @@ data:
     \npackage library;\n\nimport library.Solver;\nimport library.AbstractGraph;\n\
     import library.Rerooting;\n\npublic class Rerooting_test extends Solver {\n\t\
     public static void main(final String[] args) { main(args, new Rerooting_test());\
-    \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tArrayWeightedGraph g =\
-    \ new ArrayWeightedGraph(n, false);\n\t\tfor(int i = 0; i < n - 1; i ++) g.add(ni(),\
-    \ ni(), nl());\n\t\tRerooting rr = new Rerooting(n, g.nodes(), 0, 0,\n\t\t\t\t\
-    (x1, x2) -> max(x1, x2),\n\t\t\t\t(e, x) -> e.cost + x,\n\t\t\t\t(v, x) -> x,\n\
-    \t\t\t\t(v) -> 0);\n\t\tprtlns(rr.cal());\n\t}\n}"
+    \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tvar g = new WeightedListGraph(n,\
+    \ false);\n\t\tfor(int i = 0; i < n - 1; i ++) g.add(ni(), ni(), nl());\n\t\t\
+    Rerooting rr = new Rerooting(g, 0, 0,\n\t\t\t\t(x1, x2) -> max(x1, x2),\n\t\t\t\
+    \t(e, x) -> e.cost + x,\n\t\t\t\t(v, x) -> x,\n\t\t\t\t(v) -> 0);\n\t\tprtlns(rr.cal());\n\
+    \t}\n}"
   dependsOn:
   - library/Solver.java
   - library/AbstractGraph.java
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: library/Rerooting_test.java
   requiredBy: []
-  timestamp: '2023-03-25 00:12:54+09:00'
+  timestamp: '2023-03-25 01:16:43+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/Rerooting_test.java

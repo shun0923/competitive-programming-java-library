@@ -33,12 +33,12 @@ data:
     \npackage library;\n\nimport library.Solver;\nimport library.AbstractGraph;\n\
     import library.TemplateRerooting;\n\npublic class TemplateRerooting_test extends\
     \ Solver {\n\tpublic static void main(final String[] args) { main(args, new TemplateRerooting_test());\
-    \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tArrayTemplateGraph<Long>\
-    \ g = new ArrayTemplateGraph<>(n, false);\n\t\tfor(int i = 0; i < n - 1; i ++)\
-    \ g.add(ni(), ni(), nl());\n\t\tTemplateRerooting<Long> rr = new TemplateRerooting<>(n,\
-    \ g.nodes(), 0,\n\t\t\t\t() -> 0l,\n\t\t\t\t(x1, x2) -> max(x1, x2),\n\t\t\t\t\
-    (e, x) -> e.cost + x,\n\t\t\t\t(v, x) -> x,\n\t\t\t\t(v) -> 0l);\n\t\trr.cal();\n\
-    \t\tfor(int i = 0; i < n; i ++) prtln(rr.get(i));\n\t}\n}"
+    \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tvar g = new TemplateListGraph<Long>(n,\
+    \ false);\n\t\tfor(int i = 0; i < n - 1; i ++) g.add(ni(), ni(), nl());\n\t\t\
+    TemplateRerooting<Long> rr = new TemplateRerooting<>(g, 0,\n\t\t\t\t() -> 0l,\n\
+    \t\t\t\t(x1, x2) -> max(x1, x2),\n\t\t\t\t(e, x) -> e.cost + x,\n\t\t\t\t(v, x)\
+    \ -> x,\n\t\t\t\t(v) -> 0l);\n\t\trr.cal();\n\t\tfor(int i = 0; i < n; i ++) prtln(rr.get(i));\n\
+    \t}\n}"
   dependsOn:
   - library/Solver.java
   - library/AbstractGraph.java
@@ -46,7 +46,7 @@ data:
   isVerificationFile: true
   path: library/TemplateRerooting_test.java
   requiredBy: []
-  timestamp: '2023-03-25 00:12:54+09:00'
+  timestamp: '2023-03-25 01:16:43+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/TemplateRerooting_test.java

@@ -29,23 +29,27 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport java.util.function.*;\nimport\
-    \ library.FastIO;\nimport library.AbstractGraph;\n\nclass Rerooting {\n\t@FunctionalInterface\n\
-    \tinterface MergeOperator { long apply(long x1, long x2); }\n\tinterface AddEdgeOperator\
-    \ { long apply(WeightedEdge e, long x); }\n\tinterface AddRootOperator { long\
-    \ apply(int v, long x); }\n\tinterface CreateNodeOperator { long apply(int v);\
-    \ }\n\n\tprivate final int numNode;\n\tprivate final ArrayWeightedNode nodes[];\n\
-    \tprivate final int start;\n\n\tprivate final long id;\n\tprivate final MergeOperator\
-    \ merge;\n\tprivate final AddEdgeOperator addEdge;\n\tprivate final AddRootOperator\
-    \ addRoot;\n\tprivate final CreateNodeOperator createNode;\n\n\tprivate final\
-    \ int parents[];\n\tpublic final long dp[];\n\tpublic final long ans[];\n\n\n\t\
-    public Rerooting(final int numNode, final ArrayWeightedNode[] nodes, final int\
-    \ start, final long id,\n\t\tfinal MergeOperator merge, final AddEdgeOperator\
+    \ library.FastIO;\nimport library.AbstractGraph;\n\nfinal class Rerooting {\n\t\
+    @FunctionalInterface\n\tinterface MergeOperator { long apply(long x1, long x2);\
+    \ }\n\tinterface AddEdgeOperator { long apply(WeightedEdge e, long x); }\n\tinterface\
+    \ AddRootOperator { long apply(int v, long x); }\n\tinterface CreateNodeOperator\
+    \ { long apply(int v); }\n\n\tprivate final int numNode;\n\tprivate final WeightedListNode\
+    \ nodes[];\n\tprivate final int start;\n\n\tprivate final long id;\n\tprivate\
+    \ final MergeOperator merge;\n\tprivate final AddEdgeOperator addEdge;\n\tprivate\
+    \ final AddRootOperator addRoot;\n\tprivate final CreateNodeOperator createNode;\n\
+    \n\tprivate final int parents[];\n\tpublic final long dp[];\n\tpublic final long\
+    \ ans[];\n\n\n\t// O(V)\n\tpublic Rerooting(final WeightedListGraph g, final int\
+    \ start, final long id,\n\t\t\tfinal MergeOperator merge, final AddEdgeOperator\
     \ addEdge, final AddRootOperator addRoot, final CreateNodeOperator createNode)\
-    \ { // O(V)\n\t\tthis.numNode = numNode;\n\t\tthis.nodes = nodes;\n\t\tthis.start\
-    \ = start;\n\t\tthis.id = id;\n\t\tthis.merge = merge;\n\t\tthis.addEdge = addEdge;\n\
-    \t\tthis.addRoot = addRoot;\n\t\tthis.createNode = createNode;\n\n\t\tparents\
-    \ = new int[numNode];\n\t\tdp = new long[numNode];\n\t\tans = new long[numNode];\n\
-    \t}\n\n\tpublic final long[] cal() { // O(V+E)\n\t\tdfs();\n\t\treturn reroot();\n\
+    \ {\n\t\tthis(g.numNode, g.nodes(), start, merge, addEdge, addRoot, createNode);\n\
+    \t}\n\tpublic Rerooting(final int numNode, final WeightedListNode[] nodes, final\
+    \ int start, final long id,\n\t\t\tfinal MergeOperator merge, final AddEdgeOperator\
+    \ addEdge, final AddRootOperator addRoot, final CreateNodeOperator createNode)\
+    \ {\n\t\tthis.numNode = numNode;\n\t\tthis.nodes = nodes;\n\t\tthis.start = start;\n\
+    \t\tthis.id = id;\n\t\tthis.merge = merge;\n\t\tthis.addEdge = addEdge;\n\t\t\
+    this.addRoot = addRoot;\n\t\tthis.createNode = createNode;\n\n\t\tparents = new\
+    \ int[numNode];\n\t\tdp = new long[numNode];\n\t\tans = new long[numNode];\n\t\
+    }\n\n\tpublic final long[] cal() { // O(V+E)\n\t\tdfs();\n\t\treturn reroot();\n\
     \t}\n\n\tpublic final long[] dfs() { // O(V+E)\n\t\tint dq[] = new int[numNode];\n\
     \t\tint ptr = 0;\n\t\tint route[] = new int[numNode];\n\t\tint idx = numNode;\n\
     \n\t\tdq[ptr ++] = start;\n\t\tparents[start] = -1;\n\t\twhile(ptr > 0) {\n\t\t\
@@ -57,7 +61,7 @@ data:
     \t\t\tdp[crt] = addRoot.apply(crt, tmp);\n\t\t}\n\t\treturn dp;\n\t}\n\n\tpublic\
     \ final long[] reroot() { // O(V+E)\n\t\tint dq[] = new int[numNode];\n\t\tlong\
     \ rootDq[] = new long[numNode];\n\t\tint ptr = 0;\n\t\tint size = 0;\n\n\t\tdq[size\
-    \ ++] = start;\n\t\twhile(ptr < size) {\n\t\t\tint crt = dq[ptr];\n\t\t\tArrayWeightedNode\
+    \ ++] = start;\n\t\twhile(ptr < size) {\n\t\t\tint crt = dq[ptr];\n\t\t\tWeightedListNode\
     \ crtNode = nodes[crt];\n\t\t\tint len = crtNode.size();\n\n\t\t\tlong dpL[] =\
     \ new long[len + 1];\n\t\t\tdpL[0] = id;\n\t\t\tfor(int i = 0; i < len; i ++)\
     \ {\n\t\t\t\tWeightedEdge e = crtNode.get(i);\n\t\t\t\tlong tmp = addEdge.apply(e,\
@@ -78,7 +82,7 @@ data:
   isVerificationFile: false
   path: library/Rerooting.java
   requiredBy: []
-  timestamp: '2023-03-25 00:12:54+09:00'
+  timestamp: '2023-03-25 01:16:43+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Rerooting_test.java

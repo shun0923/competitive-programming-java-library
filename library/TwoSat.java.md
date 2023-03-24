@@ -7,7 +7,7 @@ data:
   - icon: ':warning:'
     path: library/FastIO.java
     title: library/FastIO.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc.java
     title: library/Scc.java
   _extendedRequiredBy: []
@@ -49,7 +49,7 @@ data:
   isVerificationFile: false
   path: library/TwoSat.java
   requiredBy: []
-  timestamp: '2023-03-25 00:12:54+09:00'
+  timestamp: '2023-03-25 01:16:43+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/TwoSat.java

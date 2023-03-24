@@ -20,10 +20,10 @@ data:
   - icon: ':warning:'
     path: library/EulerTour.java
     title: library/EulerTour.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Kruskal.java
     title: library/Kruskal.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Lca.java
     title: library/Lca.java
   - icon: ':heavy_check_mark:'
@@ -32,7 +32,7 @@ data:
   - icon: ':x:'
     path: library/Rerooting.java
     title: library/Rerooting.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc.java
     title: library/Scc.java
   - icon: ':heavy_check_mark:'
@@ -93,22 +93,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Dijkstra_test.java
     title: library/Dijkstra_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Kruskal_test.java
     title: library/Kruskal_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Lca_test.java
     title: library/Lca_test.java
   - icon: ':x:'
     path: library/Rerooting_test.java
     title: library/Rerooting_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc_graph_test.java
     title: library/Scc_graph_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc_groups_test.java
     title: library/Scc_groups_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc_ids_test.java
     title: library/Scc_ids_test.java
   - icon: ':heavy_check_mark:'

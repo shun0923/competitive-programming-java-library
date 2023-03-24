@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc.java
     title: library/Scc.java
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/scc
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -33,7 +33,7 @@ data:
     \ library;\n\nimport library.Solver;\nimport library.AbstractGraph;\nimport library.Scc;\n\
     \npublic class Scc_groups_test extends Solver {\n\tpublic static void main(final\
     \ String[] args) { main(args, new Scc_groups_test()); }\n\n\tpublic void solve()\
-    \ {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tArrayUnweightedGraph g = new ArrayUnweightedGraph(n,\
+    \ {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tvar g = new UnweightedListGraph(n,\
     \ true);\n\t\tfor(int i = 0; i < m; i ++) g.add(ni(), ni());\n\t\tint groups[][]\
     \ = Scc.calGroups(g);\n\t\tprtln(groups.length);\n\t\tfor(int[] a : groups) {\n\
     \t\t\tprt(a.length);\n\t\t\tprt(' ');\n\t\t\tprtln(a);\n\t\t}\n\t}\n}"
@@ -44,8 +44,8 @@ data:
   isVerificationFile: true
   path: library/Scc_groups_test.java
   requiredBy: []
-  timestamp: '2023-03-25 00:12:54+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-03-25 01:16:43+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Scc_groups_test.java
 layout: document

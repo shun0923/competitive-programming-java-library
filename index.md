@@ -72,10 +72,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Kmp.java
       title: library/Kmp.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Kruskal.java
       title: library/Kruskal.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Lca.java
       title: library/Lca.java
     - icon: ':heavy_check_mark:'
@@ -105,7 +105,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/RollingHash.java
       title: library/RollingHash.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Scc.java
       title: library/Scc.java
     - icon: ':heavy_check_mark:'
@@ -303,10 +303,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Kmp_test.java
       title: library/Kmp_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Kruskal_test.java
       title: library/Kruskal_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Lca_test.java
       title: library/Lca_test.java
     - icon: ':heavy_check_mark:'
@@ -339,13 +339,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/RollingHash_test.java
       title: library/RollingHash_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Scc_graph_test.java
       title: library/Scc_graph_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Scc_groups_test.java
       title: library/Scc_groups_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/Scc_ids_test.java
       title: library/Scc_ids_test.java
     - icon: ':heavy_check_mark:'

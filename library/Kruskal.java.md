@@ -12,12 +12,12 @@ data:
     title: library/UnionFind.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Kruskal_test.java
     title: library/Kruskal_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -33,15 +33,18 @@ data:
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "package library;\n\nimport java.util.*;\nimport library.FastIO;\nimport library.AbstractGraph;\n\
     import library.UnionFind;\n\nclass Kruskal {\n\tprivate static UnionFind uf;\n\
-    \tprivate static ArrayWeightedNode used = new ArrayWeightedNode(-1);\n\t// O(ElogV)\n\
-    \tpublic static final long cal(WeightedGraph g) { return cal(g.numNode, g.edges());\
-    \ }\n\tpublic static final long cal(int numNode, WeightedNode edges) {\n\t\tuf\
-    \ = new UnionFind(numNode);\n\t\tused.clear();\n\t\tQueue<WeightedEdge> pq = new\
-    \ PriorityQueue<WeightedEdge>();\n\t\tfor(WeightedEdge e : edges) if(!FastIO.isINF(e.cost))\
-    \ pq.add(e);\n\n\t\tlong cost = 0;\n\t\twhile(!pq.isEmpty()) {\n\t\t\tWeightedEdge\
-    \ e = pq.poll();\n\t\t\tif(!uf.same(e.source, e.target)) {\n\t\t\t\tcost += e.cost;\n\
-    \t\t\t\tuf.unite(e);\n\t\t\t\tused.add(e);\n\t\t\t}\n\t\t}\n\t\treturn cost;\n\
-    \t}\n}"
+    \t// O(ElogV)\n\tpublic static final long cal(AbstractGraph<? extends WeightedNode,\
+    \ WeightedEdge> g) { return cal(g, null); }\n\tpublic static final long cal(AbstractGraph<?\
+    \ extends WeightedNode, WeightedEdge> g, WeightedNode used) { return cal(g.numNode,\
+    \ g.edges(), used); }\n\tpublic static final long cal(int numNode, WeightedNode\
+    \ edges) { return cal(numNode, edges, null); }\n\tpublic static final long cal(int\
+    \ numNode, WeightedNode edges, WeightedNode used) {\n\t\tuf = new UnionFind(numNode);\n\
+    \t\tif(used != null) used.clear();\n\t\tQueue<WeightedEdge> pq = new PriorityQueue<WeightedEdge>();\n\
+    \t\tfor(WeightedEdge e : edges) if(!FastIO.isINF(e.cost)) pq.add(e);\n\n\t\tlong\
+    \ cost = 0;\n\t\twhile(!pq.isEmpty()) {\n\t\t\tWeightedEdge e = pq.poll();\n\t\
+    \t\tif(!uf.same(e.source, e.target)) {\n\t\t\t\tcost += e.cost;\n\t\t\t\tuf.unite(e);\n\
+    \t\t\t\tif(used != null) used.add(e);\n\t\t\t}\n\t\t}\n\t\treturn cost;\n\t}\n\
+    }"
   dependsOn:
   - library/FastIO.java
   - library/AbstractGraph.java
@@ -49,8 +52,8 @@ data:
   isVerificationFile: false
   path: library/Kruskal.java
   requiredBy: []
-  timestamp: '2023-03-25 00:12:54+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-03-25 01:16:43+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Kruskal_test.java
 documentation_of: library/Kruskal.java

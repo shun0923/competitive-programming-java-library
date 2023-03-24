@@ -59,10 +59,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Kmp.java
     title: library/Kmp.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Kruskal.java
     title: library/Kruskal.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Lca.java
     title: library/Lca.java
   - icon: ':heavy_check_mark:'
@@ -89,7 +89,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/RollingHash.java
     title: library/RollingHash.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Scc.java
     title: library/Scc.java
   - icon: ':heavy_check_mark:'

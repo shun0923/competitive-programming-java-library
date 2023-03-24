@@ -8,7 +8,7 @@ data:
     path: library/FastIO.java
     title: library/FastIO.java
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/Kruskal.java
     title: library/Kruskal.java
   _extendedVerifiedWith:
