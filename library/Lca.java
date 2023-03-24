@@ -10,18 +10,16 @@ final class Lca {
 	public final int depth[];
 
 	// O(VlogV)
-	public Lca(final int numNode, final AbstractNode<? extends AbstractEdge>[] nodes, final int root) {
+	public <Edge extends AbstractEdge<Edge>> Lca(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g, final int root) { this(g.numNode, g.nodes(), root); }
+	public <Edge extends AbstractEdge<Edge>> Lca(final int numNode, final AbstractNode<Edge>[] nodes, final int root) {
 		FastIO.nonNegativeCheck(numNode);
 		FastIO.rangeCheck(root, numNode);
 		this.numNode = numNode;
 		depth = new int[numNode];
 		db = new Doubling(numNode, numNode, bfs(root, nodes));
 	}
-	public <Edge extends AbstractEdge<Edge>> Lca(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g, final int root) {
-		this(g.numNode, g.nodes(), root);
-	}
 
-	private final int[] bfs(final int start, final AbstractNode<? extends AbstractEdge>[] nodes) { // O(V)
+	private final <Edge extends AbstractEdge<Edge>> int[] bfs(final int start, final AbstractNode<Edge>[] nodes) { // O(V)
 		int edges[] = new int[numNode];
 		int stack[] = new int[numNode];
 		int ptr = 0;
@@ -34,7 +32,7 @@ final class Lca {
 		stack[size ++] = 0;
 		while(ptr != size) {
 			int crt = stack[ptr ++];
-			for(AbstractEdge e : nodes[crt]) {
+			for(Edge e : nodes[crt]) {
 				if(depth[e.target] == -1) {
 					depth[e.target] = depth[crt] + 1;
 					edges[e.target] = crt;

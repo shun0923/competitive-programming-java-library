@@ -5,7 +5,7 @@ import java.util.function.*;
 import library.FastIO;
 import library.AbstractGraph;
 
-class TemplateRerooting<T> {
+final class TemplateRerooting<T> {
 	@FunctionalInterface
 	interface MergeOperator<T> { T apply(T x1, T x2); }
 	interface AddEdgeOperator<T> { T apply(TemplateEdge<T> e, T x); }
@@ -13,7 +13,7 @@ class TemplateRerooting<T> {
 	interface CreateNodeOperator<T> { T apply(int v); }
 
 	private final int numNode;
-	private final ArrayTemplateNode<T> nodes[];
+	private final TemplateListNode<T> nodes[];
 	private final int start;
 
 	private final Supplier<T> eSupplier;
@@ -26,10 +26,14 @@ class TemplateRerooting<T> {
 	public final T dp[];
 	public final T ans[];
 
-
+	// O(V)
+	public TemplateRerooting(TemplateListGraph<T> g, int start, Supplier<T> eSupplier,
+			MergeOperator<T> merge, AddEdgeOperator<T> addEdge, AddRootOperator<T> addRoot, CreateNodeOperator<T> createNode) {
+		this(g.numNode, g.nodes(), start, merge, addEdge, addRoot, createNode);
+	}
 	@SuppressWarnings("unchecked")
-	public TemplateRerooting(int numNode, ArrayTemplateNode<T>[] nodes, int start, Supplier<T> eSupplier,
-		MergeOperator<T> merge, AddEdgeOperator<T> addEdge, AddRootOperator<T> addRoot, CreateNodeOperator<T> createNode) { // O(V)
+	public TemplateRerooting(int numNode, TemplateListNode<T>[] nodes, int start, Supplier<T> eSupplier,
+			MergeOperator<T> merge, AddEdgeOperator<T> addEdge, AddRootOperator<T> addRoot, CreateNodeOperator<T> createNode) {
 		this.numNode = numNode;
 		this.nodes = nodes;
 		this.start = start;
@@ -86,7 +90,7 @@ class TemplateRerooting<T> {
 		dq[size ++] = start;
 		while(ptr < size) {
 			int crt = dq[ptr];
-			ArrayTemplateNode<T> crtNode = nodes[crt];
+			TemplateListNode<T> crtNode = nodes[crt];
 			int len = crtNode.size();
 
 			T dpL[] = (T[]) new Object[len + 1];

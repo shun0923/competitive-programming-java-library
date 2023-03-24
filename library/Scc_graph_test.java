@@ -12,9 +12,9 @@ public class Scc_graph_test extends Solver {
 	public void solve() {
 		int n = ni();
 		int m = ni();
-		ArrayUnweightedGraph g = new ArrayUnweightedGraph(n, true);
+		var g = new UnweightedListGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni());
-		HashUnweightedGraph contracted = Scc.calGraph(g);
+		var contracted = Scc.calGraph(g);
 		int leaf = 0;
 		for(UnweightedNode node : contracted.nodes()) if(node.size() == 0) leaf ++;
 		int root = 0;

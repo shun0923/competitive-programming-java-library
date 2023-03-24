@@ -10,7 +10,7 @@ final class Scc {
 
 	// O(V+E)
 	public static final <Edge extends AbstractEdge<Edge>> int[][] calGroups(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return calGroups(g.numNode, g.numEdge(), g.nodes()); }
-	public static final int[][] calGroups(final int numNode, final int numEdge, final AbstractNode<? extends AbstractEdge>[] nodes) {
+	public static final <Edge extends AbstractEdge<Edge>> int[][] calGroups(final int numNode, final int numEdge, final AbstractNode<Edge>[] nodes) {
 		int ids[] = calIds(numNode, numEdge, nodes);
 		int len[] = new int[numGroup];
 		for(int x : ids) len[x] ++;
@@ -20,12 +20,12 @@ final class Scc {
 		for(int i = 0; i < numNode; i ++) groups[ids[i]][len[ids[i]] ++] = i;
 		return groups;
 	}
-	public static final <Edge extends AbstractEdge<Edge>> HashUnweightedGraph calGraph(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return calGraph(g.numNode, g.numEdge(), g.nodes()); }
-	public static final HashUnweightedGraph calGraph(final int numNode, final int numEdge, final AbstractNode<? extends AbstractEdge>[] nodes) {
+	public static final <Edge extends AbstractEdge<Edge>> UnweightedSetGraph calGraph(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return calGraph(g.numNode, g.numEdge(), g.nodes()); }
+	public static final <Edge extends AbstractEdge<Edge>> UnweightedSetGraph calGraph(final int numNode, final int numEdge, final AbstractNode<Edge>[] nodes) {
 		int ids[] = calIds(numNode, numEdge, nodes);
-		HashUnweightedGraph contracted = new HashUnweightedGraph(numGroup, true);
+		var contracted = new UnweightedSetGraph(numGroup, true);
 		for(int i = 0; i < numNode; i ++) {
-			for(AbstractEdge e : nodes[i]) {
+			for(Edge e : nodes[i]) {
 				int s = ids[e.source];
 				int t = ids[e.target];
 				if(s != t) contracted.add(s, t);
@@ -34,7 +34,7 @@ final class Scc {
 		return contracted;
 	}
 	public static final <Edge extends AbstractEdge<Edge>> int[] calIds(final AbstractGraph<? extends AbstractNode<Edge>, Edge> g) { return calIds(g.numNode, g.numEdge(), g.nodes()); }
-	public static final int[] calIds(final int numNode, final int numEdge, final AbstractNode<? extends AbstractEdge>[] nodes) {
+	public static final <Edge extends AbstractEdge<Edge>> int[] calIds(final int numNode, final int numEdge, final AbstractNode<Edge>[] nodes) {
 		int low[] = new int[numNode];
 		int ids[] = new int[numNode];
 		int visited[] = new int[numNode];
@@ -54,11 +54,11 @@ final class Scc {
 					low[v] = now ++;
 					visited[ptr1 ++] = v;
 					stack[ptr2 ++] = - v - 1;
-					for(AbstractEdge e : nodes[v]) if(low[e.target] == -1) stack[ptr2 ++] = e.target;
+					for(Edge e : nodes[v]) if(low[e.target] == -1) stack[ptr2 ++] = e.target;
 				}else {
 					v = - v - 1;
 					boolean root = true;
-					for(AbstractEdge e : nodes[v]) if(low[v] > low[e.target]) { low[v] = low[e.target]; root = false; }
+					for(Edge e : nodes[v]) if(low[v] > low[e.target]) { low[v] = low[e.target]; root = false; }
 					if(root) {
 						while(true) {
 							int u = visited[-- ptr1];

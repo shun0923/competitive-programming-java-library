@@ -6,8 +6,8 @@ import library.Solver;
 import library.AbstractGraph;
 import library.Bfs;
 
-public class Bfs_test extends Solver {
-	public static void main(final String[] args) { main(args, new Bfs_test()); }
+public class WeightedBfs_test extends Solver {
+	public static void main(final String[] args) { main(args, new WeightedBfs_test()); }
 
 	public void solve() {
 		int n = ni();

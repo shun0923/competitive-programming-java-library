@@ -12,7 +12,7 @@ public class Scc_ids_test extends Solver {
 	public void solve() {
 		int n = ni();
 		int m = ni();
-		ArrayUnweightedGraph g = new ArrayUnweightedGraph(n, true);
+		var g = new UnweightedListGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni());
 		int ids[] = Scc.calIds(g);
 		int q = ni();

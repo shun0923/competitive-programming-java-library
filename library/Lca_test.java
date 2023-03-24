@@ -12,7 +12,7 @@ public class Lca_test extends Solver {
 	public void solve() {
 		int n = ni();
 		int q = ni();
-		ArrayUnweightedGraph g = new ArrayUnweightedGraph(n, false);
+		var g = new UnweightedListGraph(n, false);
 		for(int i = 1; i < n; i ++) g.add(ni(), i);
 		Lca lca = new Lca(g, 0);
 		for(int i = 0; i < q; i ++) prtln(lca.cal(ni(), ni()));

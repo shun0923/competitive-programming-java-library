@@ -5,7 +5,7 @@ import java.util.function.*;
 import library.FastIO;
 import library.AbstractGraph;
 
-class Rerooting {
+final class Rerooting {
 	@FunctionalInterface
 	interface MergeOperator { long apply(long x1, long x2); }
 	interface AddEdgeOperator { long apply(WeightedEdge e, long x); }
@@ -13,7 +13,7 @@ class Rerooting {
 	interface CreateNodeOperator { long apply(int v); }
 
 	private final int numNode;
-	private final ArrayWeightedNode nodes[];
+	private final WeightedListNode nodes[];
 	private final int start;
 
 	private final long id;
@@ -27,8 +27,13 @@ class Rerooting {
 	public final long ans[];
 
 
-	public Rerooting(final int numNode, final ArrayWeightedNode[] nodes, final int start, final long id,
-		final MergeOperator merge, final AddEdgeOperator addEdge, final AddRootOperator addRoot, final CreateNodeOperator createNode) { // O(V)
+	// O(V)
+	public Rerooting(final WeightedListGraph g, final int start, final long id,
+			final MergeOperator merge, final AddEdgeOperator addEdge, final AddRootOperator addRoot, final CreateNodeOperator createNode) {
+		this(g.numNode, g.nodes(), start, merge, addEdge, addRoot, createNode);
+	}
+	public Rerooting(final int numNode, final WeightedListNode[] nodes, final int start, final long id,
+			final MergeOperator merge, final AddEdgeOperator addEdge, final AddRootOperator addRoot, final CreateNodeOperator createNode) {
 		this.numNode = numNode;
 		this.nodes = nodes;
 		this.start = start;
@@ -82,7 +87,7 @@ class Rerooting {
 		dq[size ++] = start;
 		while(ptr < size) {
 			int crt = dq[ptr];
-			ArrayWeightedNode crtNode = nodes[crt];
+			WeightedListNode crtNode = nodes[crt];
 			int len = crtNode.size();
 
 			long dpL[] = new long[len + 1];

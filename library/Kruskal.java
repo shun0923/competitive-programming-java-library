@@ -7,12 +7,13 @@ import library.UnionFind;
 
 class Kruskal {
 	private static UnionFind uf;
-	private static ArrayWeightedNode used = new ArrayWeightedNode(-1);
 	// O(ElogV)
-	public static final long cal(WeightedGraph g) { return cal(g.numNode, g.edges()); }
-	public static final long cal(int numNode, WeightedNode edges) {
+	public static final long cal(AbstractGraph<? extends WeightedNode, WeightedEdge> g) { return cal(g, null); }
+	public static final long cal(AbstractGraph<? extends WeightedNode, WeightedEdge> g, WeightedNode used) { return cal(g.numNode, g.edges(), used); }
+	public static final long cal(int numNode, WeightedNode edges) { return cal(numNode, edges, null); }
+	public static final long cal(int numNode, WeightedNode edges, WeightedNode used) {
 		uf = new UnionFind(numNode);
-		used.clear();
+		if(used != null) used.clear();
 		Queue<WeightedEdge> pq = new PriorityQueue<WeightedEdge>();
 		for(WeightedEdge e : edges) if(!FastIO.isINF(e.cost)) pq.add(e);
 
@@ -22,7 +23,7 @@ class Kruskal {
 			if(!uf.same(e.source, e.target)) {
 				cost += e.cost;
 				uf.unite(e);
-				used.add(e);
+				if(used != null) used.add(e);
 			}
 		}
 		return cost;

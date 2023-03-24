@@ -12,7 +12,7 @@ public class Scc_groups_test extends Solver {
 	public void solve() {
 		int n = ni();
 		int m = ni();
-		ArrayUnweightedGraph g = new ArrayUnweightedGraph(n, true);
+		var g = new UnweightedListGraph(n, true);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni());
 		int groups[][] = Scc.calGroups(g);
 		prtln(groups.length);

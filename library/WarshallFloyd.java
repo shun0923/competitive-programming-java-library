@@ -6,9 +6,9 @@ import library.AbstractGraph;
 
 final class WarshallFloyd {
 	// O(V^3)
-	public static final <Graph extends AbstractGraph<? extends WeightedNode, WeightedEdge>> long[][] dist(final Graph g) { return dist(g, null, null); }
-	public static final <Graph extends AbstractGraph<? extends WeightedNode, WeightedEdge>> long[][] dist(final Graph g, final int[][] prv) { return dist(g, prv, null); }
-	public static final <Graph extends AbstractGraph<? extends WeightedNode, WeightedEdge>> long[][] dist(final Graph g, final int[][] prv, final WeightedEdge[][] prvEdge) { return dist(g.numNode, g.directed, g.edges(), prv, prvEdge); }
+	public static final long[][] dist(final AbstractGraph<? extends WeightedNode, WeightedEdge> g) { return dist(g, null, null); }
+	public static final long[][] dist(final AbstractGraph<? extends WeightedNode, WeightedEdge> g, final int[][] prv) { return dist(g, prv, null); }
+	public static final long[][] dist(final AbstractGraph<? extends WeightedNode, WeightedEdge> g, final int[][] prv, final WeightedEdge[][] prvEdge) { return dist(g.numNode, g.directed, g.edges(), prv, prvEdge); }
 	public static final long[][] dist(final int numNode, final boolean directed, final WeightedNode edges) { return dist(numNode, directed, edges, null, null); }
 	public static final long[][] dist(final int numNode, final boolean directed, final WeightedNode edges, final int[][] prv) { return dist(numNode, directed, edges, prv, null); }
 	public static final long[][] dist(final int numNode, final boolean directed, final WeightedNode edges, final int[][] prv, final WeightedEdge[][] prvEdge) {

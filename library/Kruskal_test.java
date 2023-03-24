@@ -12,7 +12,7 @@ public class Kruskal_test extends Solver {
 	public void solve() {
 		int n = ni();
 		int m = ni();
-		ArrayWeightedGraph g = new ArrayWeightedGraph(n, false);
+		var g = new WeightedListGraph(n, false);
 		for(int i = 0; i < m; i ++) g.add(ni(), ni(), nl());
 		prtln(Kruskal.cal(g));
 	}

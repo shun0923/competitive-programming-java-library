@@ -11,9 +11,9 @@ public class Rerooting_test extends Solver {
 
 	public void solve() {
 		int n = ni();
-		ArrayWeightedGraph g = new ArrayWeightedGraph(n, false);
+		var g = new WeightedListGraph(n, false);
 		for(int i = 0; i < n - 1; i ++) g.add(ni(), ni(), nl());
-		Rerooting rr = new Rerooting(n, g.nodes(), 0, 0,
+		Rerooting rr = new Rerooting(g, 0, 0,
 				(x1, x2) -> max(x1, x2),
 				(e, x) -> e.cost + x,
 				(v, x) -> x,
