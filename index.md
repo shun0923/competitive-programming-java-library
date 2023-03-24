@@ -93,7 +93,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Pair.java
       title: library/Pair.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/PathRestoration.java
       title: library/PathRestoration.java
     - icon: ':heavy_check_mark:'
@@ -129,7 +129,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Swag.java
       title: library/Swag.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateDijkstra.java
       title: library/TemplateDijkstra.java
     - icon: ':heavy_check_mark:'
@@ -162,7 +162,7 @@ data:
     - icon: ':warning:'
       path: library/TwoSat.java
       title: library/TwoSat.java
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/UnionFind.java
       title: library/UnionFind.java
     - icon: ':warning:'
@@ -363,7 +363,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Swag_test.java
       title: library/Swag_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/TemplateDijkstra_path_test.java
       title: library/TemplateDijkstra_path_test.java
     - icon: ':heavy_check_mark:'
@@ -411,7 +411,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/UnionFind_test.java
       title: library/UnionFind_test.java
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/UnionFind_uniteAll_test.java
       title: library/UnionFind_uniteAll_test.java
     - icon: ':heavy_check_mark:'

@@ -7,14 +7,14 @@ data:
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/UnionFind.java
     title: library/UnionFind.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_D
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -33,8 +33,8 @@ data:
     \npackage library;\n\nimport library.Solver;\nimport library.AbstractGraph;\n\
     import library.UnionFind;\n\npublic class UnionFind_uniteAll_test extends Solver\
     \ {\n\tpublic static void main(final String[] args) { main(args, new UnionFind_uniteAll_test());\
-    \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tArrayUnweightedNode\
-    \ edges = new ArrayUnweightedNode(-1);\n\t\tfor(int i = 0; i < m; i ++) edges.add(ni(),\
+    \ }\n\n\tpublic void solve() {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tvar\
+    \ edges = new UnweightedListNode(-1);\n\t\tfor(int i = 0; i < m; i ++) edges.add(ni(),\
     \ ni());\n\t\tUnionFind uf = new UnionFind(n);\n\t\tuf.uniteAll(edges);\n\t\t\
     int q = ni();\n\t\tfor(int i = 0; i < q; i ++) prtln(uf.same(ni(), ni()) ? \"\
     yes\" : \"no\");\n\t}\n}"
@@ -45,8 +45,8 @@ data:
   isVerificationFile: true
   path: library/UnionFind_uniteAll_test.java
   requiredBy: []
-  timestamp: '2023-03-24 01:50:05+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-03-25 00:03:53+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/UnionFind_uniteAll_test.java
 layout: document

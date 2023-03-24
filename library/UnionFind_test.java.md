@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/UnionFind.java
     title: library/UnionFind.java
   _extendedRequiredBy: []
@@ -39,7 +39,7 @@ data:
   isVerificationFile: true
   path: library/UnionFind_test.java
   requiredBy: []
-  timestamp: '2023-03-23 19:06:36+09:00'
+  timestamp: '2023-03-25 00:03:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/UnionFind_test.java

@@ -180,7 +180,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Swag_test.java
     title: library/Swag_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra_path_test.java
     title: library/TemplateDijkstra_path_test.java
   - icon: ':heavy_check_mark:'
@@ -228,7 +228,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/UnionFind_test.java
     title: library/UnionFind_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/UnionFind_uniteAll_test.java
     title: library/UnionFind_uniteAll_test.java
   - icon: ':heavy_check_mark:'

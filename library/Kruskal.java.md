@@ -7,7 +7,7 @@ data:
   - icon: ':warning:'
     path: library/FastIO.java
     title: library/FastIO.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/UnionFind.java
     title: library/UnionFind.java
   _extendedRequiredBy: []
@@ -49,7 +49,7 @@ data:
   isVerificationFile: false
   path: library/Kruskal.java
   requiredBy: []
-  timestamp: '2023-03-24 01:50:05+09:00'
+  timestamp: '2023-03-25 00:03:53+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - library/Kruskal_test.java

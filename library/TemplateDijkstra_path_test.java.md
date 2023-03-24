@@ -4,20 +4,20 @@ data:
   - icon: ':question:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/shortest_path
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -35,8 +35,8 @@ data:
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/shortest_path\n\
     \npackage library;\n\nimport java.util.*;\nimport library.Solver;\nimport library.AbstractGraph;\n\
     import library.PathRestoration;\nimport library.TemplateDijkstra;\n\npublic class\
-    \ TemplateDijkstra_pathEdge_test extends Solver {\n\tpublic static void main(final\
-    \ String[] args) { main(args, new TemplateDijkstra_pathEdge_test()); }\n\n\tpublic\
+    \ TemplateDijkstra_path_test extends Solver {\n\tpublic static void main(final\
+    \ String[] args) { main(args, new TemplateDijkstra_path_test()); }\n\n\tpublic\
     \ void solve() {\n\t\tint n = ni();\n\t\tint m = ni();\n\t\tint s = ni();\n\t\t\
     int t = ni();\n\t\tvar g = new TemplateListGraph<Long>(n, true);\n\t\tfor(int\
     \ i = 0; i < m; i ++) g.add(ni(), ni(), nl());\n\t\tTemplateDijkstra<Long> djk\
@@ -53,8 +53,8 @@ data:
   isVerificationFile: true
   path: library/TemplateDijkstra_path_test.java
   requiredBy: []
-  timestamp: '2023-03-24 01:50:05+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-03-25 00:03:53+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/TemplateDijkstra_path_test.java
 layout: document

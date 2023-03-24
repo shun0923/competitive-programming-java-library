@@ -26,7 +26,7 @@ data:
   - icon: ':x:'
     path: library/Lca.java
     title: library/Lca.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':x:'
@@ -35,7 +35,7 @@ data:
   - icon: ':x:'
     path: library/Scc.java
     title: library/Scc.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra.java
     title: library/TemplateDijkstra.java
   - icon: ':x:'
@@ -47,7 +47,7 @@ data:
   - icon: ':warning:'
     path: library/TwoSat.java
     title: library/TwoSat.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/UnionFind.java
     title: library/UnionFind.java
   - icon: ':heavy_check_mark:'
@@ -108,7 +108,7 @@ data:
   - icon: ':x:'
     path: library/Scc_ids_test.java
     title: library/Scc_ids_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/TemplateDijkstra_path_test.java
     title: library/TemplateDijkstra_path_test.java
   - icon: ':heavy_check_mark:'
@@ -120,7 +120,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/TopologicalSort_test.java
     title: library/TopologicalSort_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/UnionFind_uniteAll_test.java
     title: library/UnionFind_uniteAll_test.java
   - icon: ':heavy_check_mark:'

@@ -15,12 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/UnionFind_test.java
     title: library/UnionFind_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/UnionFind_uniteAll_test.java
     title: library/UnionFind_uniteAll_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -39,7 +39,7 @@ data:
     \ // non neg: parent idx, neg: - size\n\tpublic int numGroups;\n\n\tpublic UnionFind(final\
     \ int n) { // O(N)\n\t\tFastIO.nonNegativeCheck(n);\n\t\tthis.n = n;\n\t\tnodes\
     \ = new int[n];\n\t\tnumGroups = n;\n\t\tArrays.fill(nodes, -1);\n\t}\n\n\tpublic\
-    \ final void uniteAll(final AbstractNode<? extends AbstractEdge> edges) { for(AbstractEdge\
+    \ final void uniteAll(final Collection<? extends AbstractEdge> edges) { for(AbstractEdge\
     \ e : edges) unite(e); } // O(a(N)M)\n\tpublic final void uniteAll(final AbstractEdge[]\
     \ edges) { for(AbstractEdge e : edges) unite(e); } // O(a(N)M)\n\tpublic final\
     \ boolean unite(final AbstractEdge e) { return unite(e.source, e.target); }\n\t\
@@ -65,8 +65,8 @@ data:
   path: library/UnionFind.java
   requiredBy:
   - library/Kruskal.java
-  timestamp: '2023-03-24 01:50:05+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-03-25 00:03:53+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/UnionFind_uniteAll_test.java
   - library/UnionFind_test.java
