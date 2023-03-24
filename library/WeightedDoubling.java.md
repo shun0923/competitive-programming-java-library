@@ -9,12 +9,12 @@ data:
     title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedDoubling_test.java
     title: library/WeightedDoubling_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -38,19 +38,19 @@ data:
     \ = n;\n\t\tlog = Long.numberOfTrailingZeros(Long.highestOneBit(max)) + 1;\n\t\
     \tnext = new int[log][n];\n\t\tval = new long[log][n];\n\t\tArrays.fill(next[0],\
     \ -1);\n\t}\n\t// O(NlogM)\n\tpublic WeightedDoubling(final int n, final long\
-    \ max, final long id, final LongBinaryOperator f, final WeightedNode edges) {\n\
-    \t\tthis(n, max, id, f);\n\t\tfor(WeightedEdge e : edges) {\n\t\t\tnext[0][e.source]\
-    \ = e.target;\n\t\t\tval[0][e.source] = e.cost;\n\t\t}\n\t\tinit();\n\t}\n\tprivate\
-    \ final void init() {\n\t\tfor(int k = 0; k + 1 < log; k ++) {\n\t\t\tfor(int\
-    \ v = 0; v < n; v ++) {\n\t\t\t\tif(next[k][v] == -1) {\n\t\t\t\t\tnext[k + 1][v]\
-    \ = -1;\n\t\t\t\t\tval[k + 1][v] = id;\n\t\t\t\t}else {\n\t\t\t\t\tnext[k + 1][v]\
-    \ = next[k][next[k][v]];\n\t\t\t\t\tval[k + 1][v] = f.applyAsLong(val[k][v], val[k][next[k][v]]);\n\
-    \t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tWeightedEdge cal(int x, final long q) { //\
-    \ O(logQ)\n\t\tFastIO.rangeCheck(x, n);\n\t\tFastIO.nonNegativeCheck(q);\n\t\t\
-    WeightedEdge e = new WeightedEdge(x, x, id);\n\t\tfor(int k = log - 1; k >= 0;\
-    \ k --) {\n\t\t\tif(e.target == -1) { e.cost = id; break; }\n\t\t\tif((q & 1l\
-    \ << k) != 0) {\n\t\t\t\te.cost = f.applyAsLong(e.cost, val[k][e.target]);\n\t\
-    \t\t\te.target = next[k][e.target];\n\t\t\t}\n\t\t}\n\t\treturn e;\n\t}\n\n\t\
+    \ max, final long id, final LongBinaryOperator f, final Collection<WeightedEdge>\
+    \ edges) {\n\t\tthis(n, max, id, f);\n\t\tfor(WeightedEdge e : edges) {\n\t\t\t\
+    next[0][e.source] = e.target;\n\t\t\tval[0][e.source] = e.cost;\n\t\t}\n\t\tinit();\n\
+    \t}\n\tprivate final void init() {\n\t\tfor(int k = 0; k + 1 < log; k ++) {\n\t\
+    \t\tfor(int v = 0; v < n; v ++) {\n\t\t\t\tif(next[k][v] == -1) {\n\t\t\t\t\t\
+    next[k + 1][v] = -1;\n\t\t\t\t\tval[k + 1][v] = id;\n\t\t\t\t}else {\n\t\t\t\t\
+    \tnext[k + 1][v] = next[k][next[k][v]];\n\t\t\t\t\tval[k + 1][v] = f.applyAsLong(val[k][v],\
+    \ val[k][next[k][v]]);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tWeightedEdge cal(int\
+    \ x, final long q) { // O(logQ)\n\t\tFastIO.rangeCheck(x, n);\n\t\tFastIO.nonNegativeCheck(q);\n\
+    \t\tWeightedEdge e = new WeightedEdge(x, x, id);\n\t\tfor(int k = log - 1; k >=\
+    \ 0; k --) {\n\t\t\tif(e.target == -1) { e.cost = id; break; }\n\t\t\tif((q &\
+    \ 1l << k) != 0) {\n\t\t\t\te.cost = f.applyAsLong(e.cost, val[k][e.target]);\n\
+    \t\t\t\te.target = next[k][e.target];\n\t\t\t}\n\t\t}\n\t\treturn e;\n\t}\n\n\t\
     long bisect(int x, long q) { // O(logM)\n\t\tFastIO.rangeCheck(x, n);\n\t\tlong\
     \ ans = 0;\n\t\tWeightedEdge e = new WeightedEdge(x, x, id);\n\t\tfor(int k =\
     \ log - 1; k >= 0; k --) {\n\t\t\tif(e.target == -1) return -1;\n\t\t\tlong tmp\
@@ -63,8 +63,8 @@ data:
   isVerificationFile: false
   path: library/WeightedDoubling.java
   requiredBy: []
-  timestamp: '2023-03-25 00:12:54+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-03-25 01:33:47+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/WeightedDoubling_test.java
 documentation_of: library/WeightedDoubling.java

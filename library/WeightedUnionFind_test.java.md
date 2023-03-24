@@ -40,7 +40,7 @@ data:
   isVerificationFile: true
   path: library/WeightedUnionFind_test.java
   requiredBy: []
-  timestamp: '2023-03-23 19:06:36+09:00'
+  timestamp: '2023-03-25 01:33:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/WeightedUnionFind_test.java

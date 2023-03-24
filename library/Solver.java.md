@@ -243,13 +243,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/WaveletMatrix_smallest_test.java
     title: library/WaveletMatrix_smallest_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedBfs_test.java
     title: library/WeightedBfs_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedDoubling_test.java
     title: library/WeightedDoubling_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedLca_test.java
     title: library/WeightedLca_test.java
   - icon: ':heavy_check_mark:'

@@ -36,22 +36,22 @@ data:
     \ 1;\n\t\tnext = new int[log][n];\n\t\tArrays.fill(next[0], -1);\n\t}\n\t// O(NlogM)\n\
     \tpublic Doubling(final int n, final long max, final int[] edges) {\n\t\tthis(n,\
     \ max);\n\t\tSystem.arraycopy(edges, 0, next[0], 0, n);\n\t\tinit();\n\t}\n\t\
-    public Doubling(final int n, final long max, final AbstractNode<? extends AbstractEdge>\
-    \ edges) {\n\t\tthis(n, max);\n\t\tfor(AbstractEdge e : edges) next[0][e.source]\
-    \ = e.target;\n\t\tinit();\n\t}\n\tprivate final void init() {\n\t\tfor(int k\
-    \ = 0; k + 1 < log; k ++) {\n\t\t\tfor(int v = 0; v < n; v ++) {\n\t\t\t\tif(next[k][v]\
-    \ == -1) next[k + 1][v] = -1;\n\t\t\t\telse next[k + 1][v] = next[k][next[k][v]];\n\
-    \t\t\t}\n\t\t}\n\t}\n\n\tint cal(int x, final long q) { // O(logQ)\n\t\tFastIO.rangeCheck(x,\
-    \ n);\n\t\tFastIO.nonNegativeCheck(q);\n\t\tfor(int k = log - 1; k >= 0; k --)\
-    \ {\n\t\t\tif(x == -1) break;\n\t\t\tif((q & 1l << k) != 0) x = next[k][x];\n\t\
-    \t}\n\t\treturn x;\n\t}\n}"
+    public <Edge extends AbstractEdge<Edge>> Doubling(final int n, final long max,\
+    \ final AbstractNode<Edge> edges) {\n\t\tthis(n, max);\n\t\tfor(Edge e : edges)\
+    \ next[0][e.source] = e.target;\n\t\tinit();\n\t}\n\tprivate final void init()\
+    \ {\n\t\tfor(int k = 0; k + 1 < log; k ++) {\n\t\t\tfor(int v = 0; v < n; v ++)\
+    \ {\n\t\t\t\tif(next[k][v] == -1) next[k + 1][v] = -1;\n\t\t\t\telse next[k +\
+    \ 1][v] = next[k][next[k][v]];\n\t\t\t}\n\t\t}\n\t}\n\n\tint cal(int x, final\
+    \ long q) { // O(logQ)\n\t\tFastIO.rangeCheck(x, n);\n\t\tFastIO.nonNegativeCheck(q);\n\
+    \t\tfor(int k = log - 1; k >= 0; k --) {\n\t\t\tif(x == -1) break;\n\t\t\tif((q\
+    \ & 1l << k) != 0) x = next[k][x];\n\t\t}\n\t\treturn x;\n\t}\n}"
   dependsOn:
   - library/FastIO.java
   - library/AbstractGraph.java
   isVerificationFile: false
   path: library/Doubling.java
   requiredBy: []
-  timestamp: '2023-03-25 00:12:54+09:00'
+  timestamp: '2023-03-25 01:33:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/Doubling_test.java

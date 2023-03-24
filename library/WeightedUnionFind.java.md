@@ -34,8 +34,8 @@ data:
     \tpublic int numGroups;\n\n\tpublic WeightedUnionFind(final int n) { // O(N)\n\
     \t\tFastIO.nonNegativeCheck(n);\n\t\tthis.n = n;\n\t\tnodes = new int[n];\n\t\t\
     weight = new long[n];\n\t\tnumGroups = n;\n\t\tArrays.fill(nodes, -1);\n\t}\n\n\
-    \tpublic final void uniteAll(final WeightedNode edges) { for(WeightedEdge e :\
-    \ edges) unite(e); } // O(a(N)M)\n\tpublic final void uniteAll(final WeightedEdge[]\
+    \tpublic final void uniteAll(final Collection<WeightedEdge> edges) { for(WeightedEdge\
+    \ e : edges) unite(e); } // O(a(N)M)\n\tpublic final void uniteAll(final WeightedEdge[]\
     \ edges) { for(WeightedEdge e : edges) unite(e); } // O(a(N)M)\n\tpublic final\
     \ boolean unite(final WeightedEdge e) { return unite(e.source, e.target, e.cost);\
     \ }\n\tpublic final boolean unite(final int x, final int y, long w) { // O(a(N))\n\
@@ -65,7 +65,7 @@ data:
   isVerificationFile: false
   path: library/WeightedUnionFind.java
   requiredBy: []
-  timestamp: '2023-03-25 00:12:54+09:00'
+  timestamp: '2023-03-25 01:33:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/WeightedUnionFind_test.java

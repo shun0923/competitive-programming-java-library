@@ -9,12 +9,12 @@ data:
     title: library/FastIO.java
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/WeightedLca_test.java
     title: library/WeightedLca_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -32,17 +32,18 @@ data:
     \ library.FastIO;\nimport library.AbstractGraph;\n\nfinal class WeightedLca {\n\
     \tprivate final long id;\n\tprivate final LongBinaryOperator f;\n\tprivate final\
     \ int numNode;\n\tprivate WeightedDoubling db;\n\tpublic final int depth[];\n\n\
-    \t// O(VlogV)\n\tpublic WeightedLca(final int numNode, final WeightedNode[] nodes,\
-    \ final int root, final long id, final LongBinaryOperator f) {\n\t\tFastIO.nonNegativeCheck(numNode);\n\
-    \t\tFastIO.rangeCheck(root, numNode);\n\t\tthis.numNode = numNode;\n\t\tthis.id\
-    \ = id;\n\t\tthis.f = f;\n\t\tdepth = new int[numNode];\n\t\tdb = new WeightedDoubling(numNode,\
-    \ numNode, id, f, bfs(root, nodes));\n\t}\n\tpublic WeightedLca(final WeightedGraph\
-    \ g, final int root, final long id, final LongBinaryOperator f) {\n\t\tthis(g.numNode,\
-    \ g.nodes(), root, id, f);\n\t}\n\n\tprivate final WeightedNode bfs(final int\
-    \ start, final WeightedNode[] nodes) { // O(V)\n\t\tArrayWeightedNode edges =\
-    \ new ArrayWeightedNode(-1);\n\t\tint stack[] = new int[numNode];\n\t\tint ptr\
-    \ = 0;\n\t\tint size = 0;\n\n\t\tArrays.fill(depth, -1);\n\t\tdepth[start] = 0;\n\
-    \t\tstack[size ++] = 0;\n\t\twhile(ptr != size) {\n\t\t\tint crt = stack[ptr ++];\n\
+    \t// O(VlogV)\n\tpublic WeightedLca(final AbstractGraph<? extends WeightedNode,\
+    \ WeightedEdge> g, final int root, final long id, final LongBinaryOperator f)\
+    \ {\n\t\tthis(g.numNode, g.nodes(), root, id, f);\n\t}\n\tpublic WeightedLca(final\
+    \ int numNode, final WeightedNode[] nodes, final int root, final long id, final\
+    \ LongBinaryOperator f) {\n\t\tFastIO.nonNegativeCheck(numNode);\n\t\tFastIO.rangeCheck(root,\
+    \ numNode);\n\t\tthis.numNode = numNode;\n\t\tthis.id = id;\n\t\tthis.f = f;\n\
+    \t\tdepth = new int[numNode];\n\t\tdb = new WeightedDoubling(numNode, numNode,\
+    \ id, f, bfs(root, nodes));\n\t}\n\n\tprivate final WeightedNode bfs(final int\
+    \ start, final WeightedNode[] nodes) { // O(V)\n\t\tWeightedListNode edges = new\
+    \ WeightedListNode(-1);\n\t\tint stack[] = new int[numNode];\n\t\tint ptr = 0;\n\
+    \t\tint size = 0;\n\n\t\tArrays.fill(depth, -1);\n\t\tdepth[start] = 0;\n\t\t\
+    stack[size ++] = 0;\n\t\twhile(ptr != size) {\n\t\t\tint crt = stack[ptr ++];\n\
     \t\t\tfor(WeightedEdge e : nodes[crt]) {\n\t\t\t\tif(depth[e.target] == -1) {\n\
     \t\t\t\t\tdepth[e.target] = depth[crt] + 1;\n\t\t\t\t\tedges.add(e.reverse());\n\
     \t\t\t\t\tstack[size ++] = e.target;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn edges;\n\
@@ -64,8 +65,8 @@ data:
   isVerificationFile: false
   path: library/WeightedLca.java
   requiredBy: []
-  timestamp: '2023-03-25 00:12:54+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-03-25 01:33:47+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/WeightedLca_test.java
 documentation_of: library/WeightedLca.java
