@@ -4,7 +4,7 @@ import library.FastIO;
 import library.AbstractGraph;
 import library.Scc;
 
-class TwoSat extends ArrayUnweightedGraph {
+class TwoSat extends UnweightedListGraph {
 	private final int n;
 	private final boolean ans[];
 
