@@ -81,6 +81,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/LcpArray.java
       title: library/LcpArray.java
+    - icon: ':heavy_check_mark:'
+      path: library/MaxFlow.java
+      title: library/MaxFlow.java
     - icon: ':warning:'
       path: library/Mo.java
       title: library/Mo.java
@@ -315,6 +318,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/ManyFastIO_test.java
       title: library/ManyFastIO_test.java
+    - icon: ':heavy_check_mark:'
+      path: library/MaxFlow_test.java
+      title: library/MaxFlow_test.java
     - icon: ':heavy_check_mark:'
       path: library/Mod107_manyCombination_test.java
       title: library/Mod107_manyCombination_test.java

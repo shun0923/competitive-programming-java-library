@@ -27,6 +27,9 @@ data:
     path: library/Lca.java
     title: library/Lca.java
   - icon: ':heavy_check_mark:'
+    path: library/MaxFlow.java
+    title: library/MaxFlow.java
+  - icon: ':heavy_check_mark:'
     path: library/PathRestoration.java
     title: library/PathRestoration.java
   - icon: ':heavy_check_mark:'
@@ -344,6 +347,7 @@ data:
   - library/Dijkstra.java
   - library/PathRestoration.java
   - library/WeightedLca.java
+  - library/MaxFlow.java
   - library/Lca.java
   - library/TwoSat.java
   - library/Scc.java

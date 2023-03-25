@@ -130,6 +130,9 @@ data:
     path: library/ManyFastIO_test.java
     title: library/ManyFastIO_test.java
   - icon: ':heavy_check_mark:'
+    path: library/MaxFlow_test.java
+    title: library/MaxFlow_test.java
+  - icon: ':heavy_check_mark:'
     path: library/Mod107_manyCombination_test.java
     title: library/Mod107_manyCombination_test.java
   - icon: ':heavy_check_mark:'
@@ -297,6 +300,7 @@ data:
   - library/WeightedUnionFind_test.java
   - library/TemplateDynamicSwag_test.java
   - library/ArbitraryMod_sqrt_test.java
+  - library/MaxFlow_test.java
   - library/ZAlgorithm_test.java
   - library/Fps_log_test.java
   - library/Dijkstra_pathEdge_test.java

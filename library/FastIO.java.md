@@ -69,6 +69,9 @@ data:
     path: library/LcpArray.java
     title: library/LcpArray.java
   - icon: ':heavy_check_mark:'
+    path: library/MaxFlow.java
+    title: library/MaxFlow.java
+  - icon: ':heavy_check_mark:'
     path: library/Mod.java
     title: library/Mod.java
   - icon: ':heavy_check_mark:'
@@ -440,6 +443,7 @@ data:
   - library/CompressedWaveletMatrix.java
   - library/Util.java
   - library/WeightedLca.java
+  - library/MaxFlow.java
   - library/Fps.java
   - library/TemplateSegmentTree.java
   - library/Lca.java
