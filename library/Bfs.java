@@ -21,9 +21,9 @@ final class Bfs {
 		int size = 0;
 		if(prv != null) Arrays.fill(prv, -1);
 
-		dq[size ++] = start;
 		dist[start] = 0;
 		visited[start] = true;
+		dq[size ++] = start;
 		while(ptr != size) {
 			int crt = dq[ptr ++];
 			for(Edge e : nodes[crt]) {
