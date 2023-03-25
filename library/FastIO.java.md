@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
+  - icon: ':x:'
+    path: library/AbstractGrid.java
+    title: library/AbstractGrid.java
   - icon: ':heavy_check_mark:'
     path: library/BellmanFord.java
     title: library/BellmanFord.java
@@ -56,6 +59,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps.java
     title: library/Fps.java
+  - icon: ':x:'
+    path: library/GridBfs.java
+    title: library/GridBfs.java
   - icon: ':heavy_check_mark:'
     path: library/Kmp.java
     title: library/Kmp.java
@@ -464,6 +470,8 @@ data:
   - library/UnionFind.java
   - library/BitVector.java
   - library/Rerooting.java
+  - library/GridBfs.java
+  - library/AbstractGrid.java
   - library/Convolution.java
   - library/TemplateDynamicSwag.java
   - library/TemplateRerooting.java

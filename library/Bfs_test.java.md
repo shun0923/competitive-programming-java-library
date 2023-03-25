@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Bfs.java
     title: library/Bfs.java
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: library/Bfs_test.java
   requiredBy: []
-  timestamp: '2023-03-25 00:20:39+09:00'
+  timestamp: '2023-03-25 18:52:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: library/Bfs_test.java

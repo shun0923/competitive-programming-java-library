@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/AbstractGraph.java
       title: library/AbstractGraph.java
+    - icon: ':x:'
+      path: library/AbstractGrid.java
+      title: library/AbstractGrid.java
     - icon: ':heavy_check_mark:'
       path: library/ArbitraryMod.java
       title: library/ArbitraryMod.java
@@ -66,6 +69,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Fps.java
       title: library/Fps.java
+    - icon: ':x:'
+      path: library/GridBfs.java
+      title: library/GridBfs.java
     - icon: ':warning:'
       path: library/Kitamasa.java
       title: library/Kitamasa.java
@@ -117,7 +123,7 @@ data:
     - icon: ':warning:'
       path: library/Select.java
       title: library/Select.java
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/Solver.java
       title: library/Solver.java
     - icon: ':warning:'
@@ -300,6 +306,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/Fps_sqrt_test.java
       title: library/Fps_sqrt_test.java
+    - icon: ':x:'
+      path: library/GridBfs_test.java
+      title: library/GridBfs_test.java
     - icon: ':heavy_check_mark:'
       path: library/HelloWorld_test.java
       title: library/HelloWorld_test.java

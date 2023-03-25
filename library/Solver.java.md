@@ -111,6 +111,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
+  - icon: ':x:'
+    path: library/GridBfs_test.java
+    title: library/GridBfs_test.java
   - icon: ':heavy_check_mark:'
     path: library/HelloWorld_test.java
     title: library/HelloWorld_test.java
@@ -261,9 +264,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ZAlgorithm_test.java
     title: library/ZAlgorithm_test.java
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -290,13 +293,14 @@ data:
   path: library/Solver.java
   requiredBy: []
   timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - library/TemplateDualSegmentTree_test.java
   - library/Permutation_test.java
   - library/Fps_mul_test.java
   - library/Bfs_test.java
   - library/Dijkstra_path_test.java
+  - library/GridBfs_test.java
   - library/WeightedUnionFind_test.java
   - library/TemplateDynamicSwag_test.java
   - library/ArbitraryMod_sqrt_test.java

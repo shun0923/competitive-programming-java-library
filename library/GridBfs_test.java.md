@@ -1,19 +1,22 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':x:'
+    path: library/AbstractGrid.java
+    title: library/AbstractGrid.java
+  - icon: ':x:'
+    path: library/GridBfs.java
+    title: library/GridBfs.java
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
-  - icon: ':heavy_check_mark:'
-    path: library/UnionFind.java
-    title: library/UnionFind.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: java
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    PROBLEM: https://judge.yosupo.jp/problem/unionfind
+    PROBLEM: https://atcoder.jp/contests/abc007/tasks/abc007_3
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -26,26 +29,29 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/unionfind\n\
-    \npackage library;\n\nimport library.Solver;\nimport library.UnionFind;\n\npublic\
-    \ class UnionFind_test extends Solver {\n\tpublic static void main(final String[]\
-    \ args) { main(args, new UnionFind_test()); }\n\n\tpublic void solve() {\n\t\t\
-    int n = ni();\n\t\tint q = ni();\n\t\tUnionFind uf = new UnionFind(n);\n\t\tfor(int\
-    \ i = 0; i < q; i ++) {\n\t\t\tif(ni() == 0) uf.unite(ni(), ni());\n\t\t\telse\
-    \ prtln(uf.same(ni(), ni()) ? 1 : 0);\n\t\t}\n\t}\n}"
+  code: "// verification-helper: PROBLEM https://atcoder.jp/contests/abc007/tasks/abc007_3\n\
+    \npackage library;\n\nimport library.Solver;\nimport library.AbstractGrid;\nimport\
+    \ library.GridBfs;\n\npublic class GridBfs_test extends Solver {\n\tpublic static\
+    \ void main(final String[] args) { main(args, new GridBfs_test()); }\n\n\tpublic\
+    \ void solve() {\n\t\tint h = ni();\n\t\tint w = ni();\n\t\tBooleanGrids g = new\
+    \ BooleanGrids(h, w);\n\t\tBooleanGrid start = g.get(ni() - 1, ni() - 1);\n\t\t\
+    BooleanGrid goal = g.get(ni() - 1, ni() - 1);\n\t\tboolean b[][] = nb(h, w, '#');\n\
+    \t\tg.init(b);\n\n\t\tint dist[] = GridBfs.dist(g, start);\n\t\tprtln(dist[goal.i]);\n\
+    \t}\n}"
   dependsOn:
   - library/Solver.java
-  - library/UnionFind.java
+  - library/AbstractGrid.java
+  - library/GridBfs.java
   isVerificationFile: true
-  path: library/UnionFind_test.java
+  path: library/GridBfs_test.java
   requiredBy: []
-  timestamp: '2023-03-25 00:03:53+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-03-25 18:52:00+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: library/UnionFind_test.java
+documentation_of: library/GridBfs_test.java
 layout: document
 redirect_from:
-- /verify/library/UnionFind_test.java
-- /verify/library/UnionFind_test.java.html
-title: library/UnionFind_test.java
+- /verify/library/GridBfs_test.java
+- /verify/library/GridBfs_test.java.html
+title: library/GridBfs_test.java
 ---
