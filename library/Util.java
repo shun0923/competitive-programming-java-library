@@ -250,6 +250,7 @@ class Util extends FastIO {
 
 	public static final boolean isUpper(final char c) { return c >= 'A' && c <= 'Z'; }
 	public static final boolean isLower(final char c) { return c >= 'a' && c <= 'z'; }
+	public static final boolean isNumber(final char c) { return c >= '0' && c <= '9'; }
 	public static final int upperToInt(final char c) { return c - 'A'; }
 	public static final int lowerToInt(final char c) { return c - 'a'; }
 	public static final int numToInt(final char c) { return c - '0'; }
