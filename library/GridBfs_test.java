@@ -1,6 +1,5 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc007/tasks/abc007_3
 
-
 package library;
 
 import library.Solver;
