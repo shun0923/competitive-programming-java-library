@@ -8,7 +8,7 @@ data:
   - icon: ':warning:'
     path: library/ExtendedMath.java
     title: library/ExtendedMath.java
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedVerifiedWith: []
@@ -225,7 +225,8 @@ data:
     \ isFlagged(final long x, final int i) { nonNegativeCheck(x); nonNegativeCheck(i);\
     \ return (x >> i & 1) != 0; }\n\n\n\tpublic static final boolean isUpper(final\
     \ char c) { return c >= 'A' && c <= 'Z'; }\n\tpublic static final boolean isLower(final\
-    \ char c) { return c >= 'a' && c <= 'z'; }\n\tpublic static final int upperToInt(final\
+    \ char c) { return c >= 'a' && c <= 'z'; }\n\tpublic static final boolean isNumber(final\
+    \ char c) { return c >= '0' && c <= '9'; }\n\tpublic static final int upperToInt(final\
     \ char c) { return c - 'A'; }\n\tpublic static final int lowerToInt(final char\
     \ c) { return c - 'a'; }\n\tpublic static final int numToInt(final char c) { return\
     \ c - '0'; }\n\tpublic static final int charToInt(final char c) { return isLower(c)\
@@ -1083,7 +1084,7 @@ data:
   requiredBy:
   - library/Solver.java
   - library/ExtendedMath.java
-  timestamp: '2023-03-23 19:02:13+09:00'
+  timestamp: '2023-03-26 18:09:04+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/Util.java

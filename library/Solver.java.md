@@ -22,9 +22,6 @@ data:
     path: library/ArbitraryMod_sqrt_test.java
     title: library/ArbitraryMod_sqrt_test.java
   - icon: ':heavy_check_mark:'
-    path: library/AtCoder_test.java
-    title: library/AtCoder_test.java
-  - icon: ':heavy_check_mark:'
     path: library/BellmanFord_reversed_test.java
     title: library/BellmanFord_reversed_test.java
   - icon: ':heavy_check_mark:'
@@ -114,7 +111,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps_sqrt_test.java
     title: library/Fps_sqrt_test.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/GridBfs_test.java
     title: library/GridBfs_test.java
   - icon: ':heavy_check_mark:'
@@ -267,9 +264,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/ZAlgorithm_test.java
     title: library/ZAlgorithm_test.java
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -295,8 +292,8 @@ data:
   isVerificationFile: false
   path: library/Solver.java
   requiredBy: []
-  timestamp: '2023-03-23 19:02:13+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-03-26 18:09:04+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - library/TemplateDualSegmentTree_test.java
   - library/Permutation_test.java
@@ -367,7 +364,6 @@ data:
   - library/ArbitraryMod_random_test.java
   - library/UnionFind_uniteAll_test.java
   - library/WeightedLca_test.java
-  - library/AtCoder_test.java
   - library/Fps_sqrt_test.java
   - library/Fps_addComposite_test.java
   - library/UnionFind_test.java

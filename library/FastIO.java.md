@@ -11,7 +11,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/AbstractGraph.java
     title: library/AbstractGraph.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/AbstractGrid.java
     title: library/AbstractGrid.java
   - icon: ':heavy_check_mark:'
@@ -59,7 +59,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/Fps.java
     title: library/Fps.java
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/GridBfs.java
     title: library/GridBfs.java
   - icon: ':heavy_check_mark:'
