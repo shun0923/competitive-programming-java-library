@@ -30,14 +30,14 @@ data:
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
   code: "// verification-helper: PROBLEM https://atcoder.jp/contests/abc007/tasks/abc007_3\n\
-    \n\npackage library;\n\nimport library.Solver;\nimport library.AbstractGrid;\n\
-    import library.GridBfs;\n\npublic class GridBfs_test extends Solver {\n\tpublic\
-    \ static void main(final String[] args) { main(args, new GridBfs_test()); }\n\n\
-    \tpublic void solve() {\n\t\tint h = ni();\n\t\tint w = ni();\n\t\tBooleanGrids\
-    \ g = new BooleanGrids(h, w);\n\t\tBooleanGrid start = g.get(ni() - 1, ni() -\
-    \ 1);\n\t\tBooleanGrid goal = g.get(ni() - 1, ni() - 1);\n\t\tboolean b[][] =\
-    \ nb(h, w, '#');\n\t\tg.init(b);\n\n\t\tint dist[] = GridBfs.dist(g, start);\n\
-    \t\tprtln(dist[goal.i]);\n\t}\n}"
+    \npackage library;\n\nimport library.Solver;\nimport library.AbstractGrid;\nimport\
+    \ library.GridBfs;\n\npublic class GridBfs_test extends Solver {\n\tpublic static\
+    \ void main(final String[] args) { main(args, new GridBfs_test()); }\n\n\tpublic\
+    \ void solve() {\n\t\tint h = ni();\n\t\tint w = ni();\n\t\tBooleanGrids g = new\
+    \ BooleanGrids(h, w);\n\t\tBooleanGrid start = g.get(ni() - 1, ni() - 1);\n\t\t\
+    BooleanGrid goal = g.get(ni() - 1, ni() - 1);\n\t\tboolean b[][] = nb(h, w, '#');\n\
+    \t\tg.init(b);\n\n\t\tint dist[] = GridBfs.dist(g, start);\n\t\tprtln(dist[goal.i]);\n\
+    \t}\n}"
   dependsOn:
   - library/Solver.java
   - library/AbstractGrid.java
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: library/GridBfs_test.java
   requiredBy: []
-  timestamp: '2023-03-25 21:03:29+09:00'
+  timestamp: '2023-03-26 16:19:41+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: library/GridBfs_test.java
