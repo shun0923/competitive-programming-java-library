@@ -22,6 +22,9 @@ data:
     path: library/ArbitraryMod_sqrt_test.java
     title: library/ArbitraryMod_sqrt_test.java
   - icon: ':heavy_check_mark:'
+    path: library/AtCoder_test.java
+    title: library/AtCoder_test.java
+  - icon: ':heavy_check_mark:'
     path: library/BellmanFord_reversed_test.java
     title: library/BellmanFord_reversed_test.java
   - icon: ':heavy_check_mark:'
@@ -364,6 +367,7 @@ data:
   - library/ArbitraryMod_random_test.java
   - library/UnionFind_uniteAll_test.java
   - library/WeightedLca_test.java
+  - library/AtCoder_test.java
   - library/Fps_sqrt_test.java
   - library/Fps_addComposite_test.java
   - library/UnionFind_test.java

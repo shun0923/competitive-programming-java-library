@@ -1,22 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
-    path: library/AbstractGrid.java
-    title: library/AbstractGrid.java
-  - icon: ':x:'
-    path: library/GridBfs.java
-    title: library/GridBfs.java
   - icon: ':question:'
     path: library/Solver.java
     title: library/Solver.java
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: java
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    PROBLEM: https://atcoder.jp/contests/abc007/tasks/abc007_3
+    PROBLEM: https://atcoder.jp/contests/abc283/tasks/abc283_a
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -29,29 +23,22 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/subprocess.py\"\
     , line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError:\
     \ Command '['false']' returned non-zero exit status 1.\n"
-  code: "// verification-helper: PROBLEM https://atcoder.jp/contests/abc007/tasks/abc007_3\n\
-    \n\npackage library;\n\nimport library.Solver;\nimport library.AbstractGrid;\n\
-    import library.GridBfs;\n\npublic class GridBfs_test extends Solver {\n\tpublic\
-    \ static void main(final String[] args) { main(args, new GridBfs_test()); }\n\n\
-    \tpublic void solve() {\n\t\tint h = ni();\n\t\tint w = ni();\n\t\tBooleanGrids\
-    \ g = new BooleanGrids(h, w);\n\t\tBooleanGrid start = g.get(ni() - 1, ni() -\
-    \ 1);\n\t\tBooleanGrid goal = g.get(ni() - 1, ni() - 1);\n\t\tboolean b[][] =\
-    \ nb(h, w, '#');\n\t\tg.init(b);\n\n\t\tint dist[] = GridBfs.dist(g, start);\n\
-    \t\tprtln(dist[goal.i]);\n\t}\n}"
+  code: "// verification-helper: PROBLEM https://atcoder.jp/contests/abc283/tasks/abc283_a\n\
+    \n\npackage library;\n\nimport library.Solver;\n\npublic class AtCoder_test extends\
+    \ Solver {\n\tpublic static void main(final String[] args) { main(args, new AtCoder_test());\
+    \ }\n\n\tpublic void solve() {\n\t\tprtln(pow(nl(), nl()));\n\t}\n}"
   dependsOn:
   - library/Solver.java
-  - library/AbstractGrid.java
-  - library/GridBfs.java
   isVerificationFile: true
-  path: library/GridBfs_test.java
+  path: library/AtCoder_test.java
   requiredBy: []
   timestamp: '2023-03-26 17:27:18+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: library/GridBfs_test.java
+documentation_of: library/AtCoder_test.java
 layout: document
 redirect_from:
-- /verify/library/GridBfs_test.java
-- /verify/library/GridBfs_test.java.html
-title: library/GridBfs_test.java
+- /verify/library/AtCoder_test.java
+- /verify/library/AtCoder_test.java.html
+title: library/AtCoder_test.java
 ---

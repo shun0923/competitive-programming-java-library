@@ -217,6 +217,9 @@ data:
       path: library/ArbitraryMod_sqrt_test.java
       title: library/ArbitraryMod_sqrt_test.java
     - icon: ':heavy_check_mark:'
+      path: library/AtCoder_test.java
+      title: library/AtCoder_test.java
+    - icon: ':heavy_check_mark:'
       path: library/BellmanFord_reversed_test.java
       title: library/BellmanFord_reversed_test.java
     - icon: ':heavy_check_mark:'
